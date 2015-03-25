@@ -1,0 +1,40 @@
+<div class="container-fluid">
+	<div class="page-header">
+		<h1>{{tuneName}} – {{patternName}}</h1>
+	</div>
+	<div>
+		<button type="button" class="btn btn-success" ng-click="play()"><span class="glyphicon glyphicon-play"></span> Play</button>
+		<button type="button" class="btn btn-danger" ng-click="stop()"><span class="glyphicon glyphicon-stop"></span> Stop</button>
+		<div class="btn-group" dropdown>
+			<button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle>Length: {{pattern.length}} <span class="caret"></span></button>
+			<ul class="dropdown-menu" role="menu">
+				<li ng-repeat="le in [ 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64 ]"><a href="javascript:" ng-click="pattern.length = le">Length: {{le}}</a></li>
+			</ul>
+		</div>
+		<div class="btn-group">
+			<slider ng-model="speed" min="60" max="180"></slider>
+		</div>
+	</div>
+	<div class="pattern-editor-container">
+		<table class="pattern-editor">
+			<thead>
+				<tr>
+					<td></td>
+					<td ng-repeat="(i,a) in getNumber(pattern.length) track by $index" colspan="{{pattern.measure}}" ng-class="{ 'before-bar': i%4 == 3, bar: i%4 == 0 }">{{i+1}}</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="(instrumentKey, instrument) in instruments">
+					<th>{{instrument.name}}</th>
+					<td ng-repeat="(i,a) in getNumber(pattern.length*pattern.measure) track by $index" ng-class="{ 'before-beat': (i+1)%pattern.measure == 0, beat: i%pattern.measure == 0, 'before-bar': (i+1)%(pattern.measure*4) == 0, bar: i%(pattern.measure*4) == 0}" dropdown>
+						<a href="javascript:" class="dropdown-toggle" dropdown-toggle>{{strokes[pattern[instrumentKey][i]] || ' '}}</a>
+						<ul class="dropdown-menu">
+							<li><a href="javascript:" ng-click="pattern[instrumentKey][i]=' '"> </a></li>
+							<li ng-repeat="stroke in instruments[instrumentKey].strokes"><a href="javascript:" ng-click="pattern[instrumentKey][i]=stroke">{{strokes[stroke]}}</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="ror-simulator">
+    <head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>RoR Simulator</title>
+
+	    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+	    <link href="bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet">
+	    <link href="assets/styles.css" rel="stylesheet">
+	    <link href="bower_components/seiyria-bootstrap-slider/css/bootstrap-slider.css" rel="stylesheet">
+
+	    <script src="bower_components/jquery/dist/jquery.js"></script>
+	    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	    <script src="bower_components/angular/angular.js"></script>
+	    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+	    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	    <script src="bower_components/modernizr/modernizr.js"></script>
+	    <script src="bower_components/angular-bootstrap-slider/slider.js"></script>
+	    <script src="bower_components/seiyria-bootstrap-slider/js/bootstrap-slider.js"></script>
+	    <script src="bower_components/howler/howler.js"></script>
+	    <script src="bower_components/async/lib/async.js"></script>
+	    <script src="app/app.js"></script>
+	    <script src="app/shared/tunes.js"></script>
+	    <script src="app/shared/constants.js"></script>
+	    <script src="app/shared/player.js"></script>
+	    <script src="app/components/patternEditor/patternEditor.js"></script>
+	</head>
+	<body ng-controller="PlayerCtrl">
+		<div class="container-fluid">
+			<div class="page-header">
+				<h1>RoR Simulator</h1>
+			</div>
+			<div class="row">
+				<div class="col-md-2" id="tunes">
+					<accordion ng-repeat="(tuneName, tune) in tunes">
+						<accordion-group heading="{{tuneName}}">
+							<div class="btn-group btn-group-justified" ng-repeat="(patternName, pattern) in tune.patterns">
+								<div class="btn-group" dropdown>
+									<button type="button" class="btn btn-default">{{patternName}}</button>
+									<button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle><span class="caret"></span></button>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="#" ng-click="editPattern(tuneName, patternName)">Edit</a></li>
+									</ul>
+								</div>
+							</div>
+						</accordion-group>
+					</accordion>
+				</div>
+				<div class="col-md-10">
+					Test 2
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

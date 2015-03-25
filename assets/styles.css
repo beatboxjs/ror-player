@@ -1,0 +1,49 @@
+#tunes button {
+	box-sizing: border-box;
+	width: 90%;
+	margin-bottom: 5px;
+}
+
+#tunes button.dropdown-toggle {
+	width: 10%;
+}
+
+.pattern-editor-container {
+	width: 100%;
+	overflow-x: auto;
+	padding: 1em 0;
+}
+
+.pattern-editor {
+	table-layout: fixed;
+}
+
+.pattern-editor tbody td {
+	border-right: 1px solid #ddd;
+	text-align: center;
+}
+
+.pattern-editor tbody td .dropdown-toggle {
+	display: inline-block;
+	min-width: 2.7ex;
+}
+
+.pattern-editor thead td {
+	padding-left: .5ex;
+	border-bottom: 1px solid #aaa;
+	padding-bottom: .5ex;
+}
+
+.pattern-editor thead td, .pattern-editor .before-beat {
+	border-right: 1px solid #aaa;
+}
+
+.pattern-editor .before-bar {
+	border-right: 2px solid #888;
+}
+
+.pattern-editor tbody th {
+	padding-right: 1ex;
+	border-right: 2px solid #888;
+	white-space: nowrap;
+}
