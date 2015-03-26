@@ -12,8 +12,13 @@ angular.module("ror-simulator").controller("patternEditorCtrl", function($scope,
 
 	$scope.playing = null;
 
-	$scope.play = function() {
-		$scope.playing = Player.playPattern($scope.pattern, 100);
+	$scope.playPause = function() {
+		if(!$scope.playing)
+			$scope.playing = Player.playPattern($scope.pattern, 100);
+		else if($scope.playing.playing)
+			$scope.playing.stop();
+		else
+			$scope.playing.start();
 	};
 
 	$scope.stop = function() {
@@ -27,4 +32,23 @@ angular.module("ror-simulator").controller("patternEditorCtrl", function($scope,
 		if($scope.playing)
 			$scope.playing.setSpeed(newSpeed);
 	});
+
+	$scope.getBeatClass = function(i) {
+		return {
+			'before-bar': i%4 == 3,
+			bar: i%4 == 0
+		};
+	};
+
+	$scope.getStrokeClass = function(i) {
+		return [
+			"stroke-"+(i%$scope.pattern.measure),
+			{
+				'before-beat': (i+1)%$scope.pattern.measure == 0,
+				beat: i%$scope.pattern.measure == 0,
+				'before-bar': (i+1)%($scope.pattern.measure*4) == 0,
+				bar: i%($scope.pattern.measure*4) == 0
+			}
+	];
+};
 });

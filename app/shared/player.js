@@ -18,6 +18,7 @@ angular.module("ror-simulator").factory("Player", function($rootScope) {
 		},
 		playPattern: function(pattern, speed, callback) {
 			var timeout;
+			var timeoutFunc;
 			var i = 0;
 			async.forever(
 				function(next) {
@@ -36,15 +37,26 @@ angular.module("ror-simulator").factory("Player", function($rootScope) {
 					}
 
 					timeout = setTimeout(next, 60000/speed/pattern.measure);
+					timeoutFunc = next;
 				}
 			);
 
 			return {
+				playing : true,
 				setSpeed : function(newSpeed) {
 					speed = newSpeed;
 				},
 				stop : function() {
-					clearTimeout(timeout);
+					if(this.playing) {
+						clearTimeout(timeout);
+						this.playing = false;
+					}
+				},
+				start : function() {
+					if(!this.playing) {
+						this.playing = true;
+						timeoutFunc();
+					}
 				}
 			};
 		}

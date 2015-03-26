@@ -58,20 +58,21 @@ angular.module("ror-simulator").constant("Tunes", {
 			}
 		}
 	},
-	/*'Crazy Monkey': {
+	'Crazy Monkey': {
+        measure: 12,
 		patterns: {
 			Tune: {
-				ls: 'X       X       X       X XX    ',
-				ms: '      X       X       X X XX  X ',
-				hs: '   XXXXX   XXXXX   XXXXXX XX    ',
-				re: 'f  hX XXf  hX XXf  hX XXX XX    ',
-				sn: '....X.XX....X.XX....X.XXX.XX..  ',
-				ta: '  XX  X  X X  X   XX  X  X X    ',
-				ag: 'l hhh ll h hh lll hhh ll {s3} hhhhh',
-				sh: 'X X X X X X X X X X X X X XX    '
+				ls: 'X                       X                       X                       X     X  X              ',
+				ms: '                  X                       X                       X     X     X  X        X     ',
+				hs: '         X  X  X  X  X           X  X  X  X  X           X  X  X  X  X  X     X  X              ',
+				re: 'f        h  X     X  X  f        h  X     X  X  f        h  X     X  X  X     X  X              ',
+				sn: '.  .  .  .  X  .  X  X  .  .  .  .  X  .  X  X  .  .  .  .  X  .  X  X  X  .  X  X  .  .        ',
+				ta: '      X  X        X        X     X        X           X  X        X        X     X              ',
+				ag: 'o     a  a  a     o  o     a     a  a     o  o  o     a  a  a     o  o      a   a   a   a   a   ',
+				sh: 'X     X     X     X     X     X     X     X     X     X     X     X     X     X  X              '
 			}
 		}
-	},*/
+	},
 	'General Breaks': {
 		patterns: {
 			/*"Kalashnikov": {

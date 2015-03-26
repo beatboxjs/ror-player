@@ -3,7 +3,7 @@
 		<h1>{{tuneName}} – {{patternName}}</h1>
 	</div>
 	<div>
-		<button type="button" class="btn btn-success" ng-click="play()"><span class="glyphicon glyphicon-play"></span> Play</button>
+		<button type="button" class="btn" ng-class="playing.playing ? 'btn-info' : 'btn-success'" ng-click="playPause()"><span class="glyphicon" ng-class="playing.playing ? 'glyphicon-pause' : 'glyphicon-play'"></span> {{playing.playing ? 'Pause' : 'Play'}}</button>
 		<button type="button" class="btn btn-danger" ng-click="stop()"><span class="glyphicon glyphicon-stop"></span> Stop</button>
 		<div class="btn-group" dropdown>
 			<button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle>Length: {{pattern.length}} <span class="caret"></span></button>
@@ -16,17 +16,17 @@
 		</div>
 	</div>
 	<div class="pattern-editor-container">
-		<table class="pattern-editor">
+		<table class="pattern-editor" ng-class="'measure-'+pattern.measure">
 			<thead>
 				<tr>
 					<td></td>
-					<td ng-repeat="(i,a) in getNumber(pattern.length) track by $index" colspan="{{pattern.measure}}" ng-class="{ 'before-bar': i%4 == 3, bar: i%4 == 0 }">{{i+1}}</td>
+					<td ng-repeat="(i,a) in getNumber(pattern.length) track by $index" colspan="{{pattern.measure}}" ng-class="getBeatClass(i)">{{i+1}}</td>
 				</tr>
 			</thead>
 			<tbody>
 				<tr ng-repeat="(instrumentKey, instrument) in instruments">
 					<th>{{instrument.name}}</th>
-					<td ng-repeat="(i,a) in getNumber(pattern.length*pattern.measure) track by $index" ng-class="{ 'before-beat': (i+1)%pattern.measure == 0, beat: i%pattern.measure == 0, 'before-bar': (i+1)%(pattern.measure*4) == 0, bar: i%(pattern.measure*4) == 0}" dropdown>
+					<td ng-repeat="(i,a) in getNumber(pattern.length*pattern.measure) track by $index" ng-class="getStrokeClass(i)" dropdown>
 						<a href="javascript:" class="dropdown-toggle" dropdown-toggle>{{strokes[pattern[instrumentKey][i]] || ' '}}</a>
 						<ul class="dropdown-menu">
 							<li><a href="javascript:" ng-click="pattern[instrumentKey][i]=' '"> </a></li>
