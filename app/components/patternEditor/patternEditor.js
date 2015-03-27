@@ -1,4 +1,5 @@
-angular.module("ror-simulator").controller("patternEditorCtrl", function($scope, Tunes, tuneName, patternName, Player) {
+angular.module("ror-simulator").controller("patternEditorCtrl", function($scope, $modalInstance, Tunes, tuneName, patternName, Player) {
+
 	$scope.tuneName = tuneName;
 	$scope.patternName = patternName;
 
@@ -27,6 +28,12 @@ angular.module("ror-simulator").controller("patternEditorCtrl", function($scope,
 			$scope.playing = null;
 		}
 	};
+
+	$modalInstance.result.then(function() {
+		$scope.stop();
+	}, function() {
+		$scope.stop();
+	});
 
 	$scope.$watch("speed", function(newSpeed) {
 		if($scope.playing)
