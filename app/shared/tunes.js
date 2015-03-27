@@ -37,7 +37,7 @@ angular.module("ror-simulator").constant("Tunes", {
 		time: 3,
 		patterns: {
 			Tune: {
-				ls: 'X       XX  X       XX  X       XX  X     X  X  ',
+				ls: 'X       XX  X       XX  X       XX  X    X   X  ',
 				ms: '@ls',
 				hs: '@ls',
 				re: 'X XX XX XX XX XX XX XX XX XX XX XX XXXXX  XXXX  ',
@@ -70,6 +70,32 @@ angular.module("ror-simulator").constant("Tunes", {
 				ta: '      X  X        X        X     X        X           X  X        X        X     X              ',
 				ag: 'o     a  a  a     o  o     a     a  a     o  o  o     a  a  a     o  o      a   a   a   a   a   ',
 				sh: 'X     X     X     X     X     X     X     X     X     X     X     X     X     X  X              '
+			}
+		}
+	},
+	'Drum&Bass': {
+		patterns: {
+			Tune: {
+				ls: 'X         X  X  X         X     X         X  X  X         X     ',
+				ms: '      XXXX            XXXX            XXXX            XXXX      ',
+				hs: '    X       X       X       X       X       X       X       X   ',
+				re: '    X  X X XX XX    X       X       X  X X XX XX    X       X   ',
+				sn: '....X..X....X.......X..X....X   ....X..X....X...X.X.X.X.X.X.X.X.',
+				ta: '    X     X X       X   X X X       X     X X       X   X X X   ',
+				ag: 'o ao ao a       o ao ao a       o ao ao a       o ao ao a       '
+			}
+		}
+	},
+	'Hafla': {
+		patterns: {
+			Tune: {
+				ls: 'X       X       X X     X       ',
+				ms: '  X   X     X         X     X   ',
+				hs: '    X   X   X       X   X   X   ',
+				re: 'r X   X r   X   r X XXr r   X XX',
+				sn: '..X...X.....X.....X.XXX.....X.XX',
+				ta: 'X X   X X   X XXX X   X X   X   ',
+				ag: 'o a   a o   a     a   a o   a   '
 			}
 		}
 	},
