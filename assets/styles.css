@@ -48,17 +48,17 @@
 	white-space: nowrap;
 }
 
-.pattern-editor.measure-12 tbody td .dropdown-toggle {
+.pattern-editor.time-12 tbody td .dropdown-toggle {
 	min-width: 1ex;
 }
 
-.pattern-editor.measure-12 .stroke-0,
-.pattern-editor.measure-12 .stroke-1,
-.pattern-editor.measure-12 .stroke-3,
-.pattern-editor.measure-12 .stroke-4,
-.pattern-editor.measure-12 .stroke-6,
-.pattern-editor.measure-12 .stroke-7,
-.pattern-editor.measure-12 .stroke-9,
-.pattern-editor.measure-12 .stroke-10 {
+.pattern-editor.time-12 .stroke-0,
+.pattern-editor.time-12 .stroke-1,
+.pattern-editor.time-12 .stroke-3,
+.pattern-editor.time-12 .stroke-4,
+.pattern-editor.time-12 .stroke-6,
+.pattern-editor.time-12 .stroke-7,
+.pattern-editor.time-12 .stroke-9,
+.pattern-editor.time-12 .stroke-10 {
 	border-right: none;
 }

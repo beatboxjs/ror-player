@@ -34,7 +34,7 @@ angular.module("ror-simulator").constant("Tunes", {
 		}
 	},
 	'Bhangra': {
-		measure: 3,
+		time: 3,
 		patterns: {
 			Tune: {
 				ls: 'X       XX  X       XX  X       XX  X     X  X  ',
@@ -59,9 +59,9 @@ angular.module("ror-simulator").constant("Tunes", {
 		}
 	},
 	'Crazy Monkey': {
-        measure: 12,
 		patterns: {
 			Tune: {
+				time: 12,
 				ls: 'X                       X                       X                       X     X  X              ',
 				ms: '                  X                       X                       X     X     X  X        X     ',
 				hs: '         X  X  X  X  X           X  X  X  X  X           X  X  X  X  X  X     X  X              ',

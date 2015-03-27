@@ -29,14 +29,14 @@ angular.module("ror-simulator").factory("Player", function($rootScope) {
 					}
 					Player.playSounds(strokes);
 
-					if(++i == pattern.length*pattern.measure) {
+					if(++i == pattern.length*pattern.time) {
 						if(callback)
 							return callback();
 						else
 							i = 0;
 					}
 
-					timeout = setTimeout(next, 60000/speed/pattern.measure);
+					timeout = setTimeout(next, 60000/speed/pattern.time);
 					timeoutFunc = next;
 				}
 			);

@@ -16,17 +16,17 @@
 		</div>
 	</div>
 	<div class="pattern-editor-container">
-		<table class="pattern-editor" ng-class="'measure-'+pattern.measure">
+		<table class="pattern-editor" ng-class="'time-'+pattern.time">
 			<thead>
 				<tr>
 					<td></td>
-					<td ng-repeat="(i,a) in getNumber(pattern.length) track by $index" colspan="{{pattern.measure}}" ng-class="getBeatClass(i)">{{i+1}}</td>
+					<td ng-repeat="(i,a) in getNumber(pattern.length) track by $index" colspan="{{pattern.time}}" ng-class="getBeatClass(i)">{{i+1}}</td>
 				</tr>
 			</thead>
 			<tbody>
 				<tr ng-repeat="(instrumentKey, instrument) in instruments">
 					<th>{{instrument.name}}</th>
-					<td ng-repeat="(i,a) in getNumber(pattern.length*pattern.measure) track by $index" ng-class="getStrokeClass(i)" dropdown>
+					<td ng-repeat="(i,a) in getNumber(pattern.length*pattern.time) track by $index" ng-class="getStrokeClass(i)" dropdown>
 						<a href="javascript:" class="dropdown-toggle" dropdown-toggle>{{strokes[pattern[instrumentKey][i]] || ' '}}</a>
 						<ul class="dropdown-menu">
 							<li><a href="javascript:" ng-click="pattern[instrumentKey][i]=' '"> </a></li>

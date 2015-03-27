@@ -42,12 +42,12 @@ angular.module("ror-simulator").controller("patternEditorCtrl", function($scope,
 
 	$scope.getStrokeClass = function(i) {
 		return [
-			"stroke-"+(i%$scope.pattern.measure),
+			"stroke-"+(i%$scope.pattern.time),
 			{
-				'before-beat': (i+1)%$scope.pattern.measure == 0,
-				beat: i%$scope.pattern.measure == 0,
-				'before-bar': (i+1)%($scope.pattern.measure*4) == 0,
-				bar: i%($scope.pattern.measure*4) == 0
+				'before-beat': (i+1)%$scope.pattern.time == 0,
+				beat: i%$scope.pattern.time == 0,
+				'before-bar': (i+1)%($scope.pattern.time*4) == 0,
+				bar: i%($scope.pattern.time*4) == 0
 			}
 	];
 };

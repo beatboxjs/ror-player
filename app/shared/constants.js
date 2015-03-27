@@ -58,7 +58,7 @@ angular.module("ror-simulator").run(function($rootScope, Tunes) {
 		for(var j in tune.patterns) {
 			var pattern = tune.patterns[j];
 
-			pattern.measure = pattern.measure || tune.measure || 4;
+			pattern.time = pattern.time || tune.time || 4;
 			pattern.length = 0;
 
 			for(var k in $rootScope.instruments) {
@@ -72,7 +72,7 @@ angular.module("ror-simulator").run(function($rootScope, Tunes) {
 				}
 			}
 
-			pattern.length = Math.ceil(pattern.length/pattern.measure);
+			pattern.length = Math.ceil(pattern.length/pattern.time);
 		}
 	}
 });
