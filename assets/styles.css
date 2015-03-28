@@ -8,6 +8,10 @@
 	width: 10%;
 }
 
+.accordion-toggle {
+	display: block;
+}
+
 .pattern-editor-container {
 	width: 100%;
 	overflow-x: auto;
@@ -31,7 +35,19 @@
 .pattern-editor thead td {
 	border-bottom: 1px solid #aaa;
 	padding-bottom: .5ex;
-	padding-left: .5ex;
+}
+
+.pattern-editor .beat span {
+	display: inline-block;
+	padding: 0 .5ex;
+	border-radius: 10px;
+	transition: background-color 1s, color 1s;
+}
+
+.pattern-editor .beat.active span {
+	background-color: #3a94a5;
+	color: #fff;
+	transition: all 0 ease 0;
 }
 
 .pattern-editor .beat, .pattern-editor .stroke.before-beat {

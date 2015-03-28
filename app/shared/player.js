@@ -27,6 +27,9 @@ angular.module("ror-simulator").factory("Player", function($rootScope) {
 			var i = 0;
 			async.forever(
 				function(next) {
+					if(options.strokeCallback)
+						options.strokeCallback(i);
+
 					var strokes = [ ];
 					for(var instr in $rootScope.instruments) {
 						if((!options.headphones || options.headphones == instr) && (!options.mute[instr]) && pattern[instr][i] && pattern[instr][i] != " ")

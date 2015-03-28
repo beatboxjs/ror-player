@@ -26,7 +26,7 @@
 			<thead>
 				<tr>
 					<td colspan="2" class="dummy"></td>
-					<td ng-repeat="(i,a) in getNumber(pattern.length) track by $index" colspan="{{pattern.time}}" class="beat" ng-class="getBeatClass(i)">{{i+1}}</td>
+					<td ng-repeat="(i,a) in getNumber(pattern.length) track by $index" colspan="{{pattern.time}}" class="beat" ng-class="getBeatClass(i)"><span>{{i+1}}</span></td>
 				</tr>
 			</thead>
 			<tbody>

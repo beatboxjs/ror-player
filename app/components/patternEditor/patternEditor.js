@@ -8,7 +8,14 @@ angular.module("ror-simulator").controller("patternEditorCtrl", function($scope,
 	$scope.playingOptions = {
 		speed: 100,
 		headphones: null,
-		muted: { }
+		muted: { },
+		strokeCallback: function(i) {
+			if(i%$scope.pattern.time == 0) {
+				var beat = $(".beat-"+(i/$scope.pattern.time)); // TODO: Proper selector
+				beat.addClass("active");
+				setTimeout(function() { beat.removeClass("active"); }, 12000/$scope.playingOptions.speed);
+			}
+		}
 	};
 
 	$scope.getNumber = function(num) {
@@ -40,10 +47,12 @@ angular.module("ror-simulator").controller("patternEditorCtrl", function($scope,
 	});
 
 	$scope.getBeatClass = function(i) {
-		return {
-			'before-bar': i%4 == 3,
-			bar: i%4 == 0
-		};
+		var ret = [ "beat-"+i ];
+		if(i%4 == 3)
+			ret.push("before-bar");
+		if(i%4 == 0)
+			ret.push("bar");
+		return ret;
 	};
 
 	$scope.getStrokeClass = function(i) {
