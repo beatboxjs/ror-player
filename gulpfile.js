@@ -9,6 +9,12 @@ var mainBowerFiles = require("main-bower-files");
 var filter = require("gulp-filter");
 var rename = require("gulp-rename");
 var templateCache = require("gulp-angular-templatecache");
+var uglify = require("gulp-uglify");
+var ngAnnotate = require("gulp-ng-annotate");
+var modifyCssUrls = require("gulp-modify-css-urls");
+var path = require("path");
+var runSequence = require("run-sequence");
+var minifyCss = require("gulp-minify-css");
 
 
 var files = [
@@ -20,8 +26,38 @@ var files = [
 
 var deps = mainBowerFiles();
 
+function commonPrefix(strs) {
+	// http://stackoverflow.com/a/1917041/242365
+	var A = strs.slice(0).sort(), word1 = A[0], word2 = A[A.length-1], L = word1.length, i= 0;
+    while(i<L && word1.charAt(i)=== word2.charAt(i)) i++;
+    return word1.substring(0, i);
+}
 
-gulp.task("default", [ "all" ]);
+function getDepStream() {
+	var apps = { };
+	deps.forEach(function(fileName) {
+		if(fileName.match(/\.less$/))
+			return;
+
+		var m = fileName.match(/\/bower_components\/([-_a-zA-Z0-9]+)\//);
+		if(!apps[m[1]])
+			apps[m[1]] = [ ];
+		apps[m[1]].push(fileName);
+	});
+
+	var src = [ ];
+	for(var i in apps) {
+		var prefix = (apps[i].length == 1) ? path.dirname(apps[0]) : commonPrefix(apps[i]);
+		src.push(gulp.src(apps[i], { base: prefix }));
+	}
+
+	return es.merge(src);
+}
+
+
+gulp.task("default", function(callback) {
+	runSequence("clean", "all", callback);
+});
 
 gulp.task("clean", function() {
 	return gulp.src("build").pipe(clean());
@@ -35,46 +71,56 @@ gulp.task("deps", function() {
 	return es.merge(
 		gulp.src(deps)
 			.pipe(filter("**/*.js"))
-			.pipe(concat("dependencies.js")),
-		gulp.src(deps)
+			.pipe(concat("dependencies.js"))
+			.pipe(uglify())
+		, gulp.src(deps)
 			.pipe(filter("**/*.css"))
-			.pipe(concat("dependencies.css")),
-		gulp.src(deps)
+			.pipe(concat("dependencies.css"))
+			.pipe(modifyCssUrls({ modify: function(url, filePath) { return url.replace(/^\.\.\//, ""); }}))
+			.pipe(minifyCss())
+		, getDepStream()
 			.pipe(filter(function(file) { return file.stat.isFile() && !file.path.match(/\.(js|css|html)$/); }))
 	).pipe(gulp.dest("build"));
 });
 
-gulp.task("appResources", function() {
+gulp.task("app", function() {
 	return es.merge(
 		es.merge(
 			gulp.src(files)
-				.pipe(filter("**/*.js")),
-			gulp.src("app/**/*.html", { base: process.cwd()+"/" })
+				.pipe(filter("**/*.js"))
+			, gulp.src("app/**/*.html", { base: process.cwd()+"/" })
 				.pipe(templateCache({ module: "ror-simulator" }))
-		).pipe(concat("app.js")),
-		gulp.src(files)
+		)
+			.pipe(concat("app.js"))
+			.pipe(ngAnnotate())
+			.pipe(uglify())
+		, gulp.src(files)
 			.pipe(filter("**/*.css"))
-			.pipe(concat("app.css")),
-		gulp.src(files, { base: process.cwd()+"/" })
+			.pipe(concat("app.css"))
+			.pipe(minifyCss())
+		, gulp.src(files, { base: process.cwd()+"/" })
 			.pipe(filter(function(file) { return file.stat.isFile() && !file.path.match(/\.(js|css|html)$/); }))
 	).pipe(gulp.dest("build"));
 });
 
-gulp.task("app", [ "appResources" ], function() {
-	// TODO: Doesn't work on first run
+gulp.task("allResources", [ "deps", "app" ], function() {
+	return es.merge(
+		gulp.src([ "build/dependencies.js", "build/app.js" ])
+			.pipe(concat("all.js"))
+		, gulp.src([ "build/dependencies.css", "build/app.css" ])
+			.pipe(concat("all.css"))
+	).pipe(gulp.dest("build"));
+});
+
+gulp.task("index", function() {
 	return gulp
 		.src("index.html")
 		.pipe(inject(gulp.src([ "build/all.js", "build/all.css" ], { read: false }), { ignorePath: "build/", relative: true }))
 		.pipe(gulp.dest("build"));
 });
 
-gulp.task("all", [ "deps", "app" ], function() {
-	return es.merge(
-		gulp.src([ "build/dependencies.js", "build/app.js" ])
-			.pipe(concat("all.js")),
-		gulp.src([ "build/dependencies.css", "build/app.css" ])
-			.pipe(concat("all.css"))
-	).pipe(gulp.dest("build"));
+gulp.task("all", function(callback) {
+	runSequence("allResources", "index", callback);
 });
 
 gulp.task("dev", function() {
