@@ -1,5 +1,5 @@
 {
-  "name": "RoR Simulator",
+  "name": "ror-simulator",
   "version": "0.0.1",
   "description": "RoR Simulator",
   "main": "index.html",
@@ -10,7 +10,19 @@
     "type": "git",
     "url": "https://github.com/K-rankenste-in/ror-simulator.git"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "event-stream": "^3.3.0",
+    "gulp": "^3.8.11",
+    "gulp-angular-templatecache": "^1.6.0",
+    "gulp-bower": "0.0.10",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-filter": "^2.0.2",
+    "gulp-inject": "^1.2.0",
+    "gulp-rename": "^1.2.0",
+    "main-bower-files": "^2.6.2",
+    "stream-series": "^0.1.1"
+  },
   "author": "Candid Dauth",
   "license": "Public Domain",
   "bugs": {
