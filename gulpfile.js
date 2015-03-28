@@ -15,6 +15,7 @@ var modifyCssUrls = require("gulp-modify-css-urls");
 var path = require("path");
 var runSequence = require("run-sequence");
 var minifyCss = require("gulp-minify-css");
+var sass = require("gulp-sass");
 
 
 var files = [
@@ -83,7 +84,7 @@ gulp.task("deps", function() {
 	).pipe(gulp.dest("build"));
 });
 
-gulp.task("app", function() {
+gulp.task("app", [ "scss" ], function() {
 	return es.merge(
 		es.merge(
 			gulp.src(files)
@@ -94,7 +95,7 @@ gulp.task("app", function() {
 			.pipe(concat("app.js"))
 			.pipe(ngAnnotate())
 			.pipe(uglify())
-		, gulp.src(files)
+		, gulp.src(files.concat([ "build/scss.css" ]))
 			.pipe(filter("**/*.css"))
 			.pipe(concat("app.css"))
 			.pipe(minifyCss())
@@ -112,25 +113,29 @@ gulp.task("allResources", [ "deps", "app" ], function() {
 	).pipe(gulp.dest("build"));
 });
 
-gulp.task("index", function() {
+gulp.task("all", [ "allResources" ], function() {
 	return gulp
 		.src("index.html")
 		.pipe(inject(gulp.src([ "build/all.js", "build/all.css" ], { read: false }), { ignorePath: "build/", relative: true }))
 		.pipe(gulp.dest("build"));
 });
 
-gulp.task("all", function(callback) {
-	runSequence("allResources", "index", callback);
+gulp.task("scss", function() {
+	return gulp.src(files)
+		.pipe(filter("**/*.scss"))
+		.pipe(sass())
+		.pipe(concat("scss.css"))
+		.pipe(gulp.dest("build"));
 });
 
-gulp.task("dev", function() {
+gulp.task("dev", [ "scss" ], function() {
 	return gulp
 		.src("index.html")
 		.pipe(rename("index_dev.html"))
-		.pipe(inject(gulp.src(deps.concat(files), { read: false }), { relative: true }))
+		.pipe(inject(gulp.src(deps.concat(files).concat([ "build/scss.css" ]), { read: false }), { relative: true }))
 		.pipe(gulp.dest(""));
 });
 
 gulp.task("watch", [ "dev" ], function() {
-	gulp.watch("index.html", [ "dev" ]);
+	gulp.watch([ "index.html"].concat(files), [ "dev" ]);
 });

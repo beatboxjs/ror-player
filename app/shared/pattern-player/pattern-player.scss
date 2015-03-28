@@ -1,0 +1,79 @@
+.pattern-editor-container {
+	width: 100%;
+	overflow-x: auto;
+	padding: 1em 0;
+	position: relative;
+
+	.pattern-editor {
+		table-layout: fixed;
+
+		.stroke {
+			border-right: 1px solid #ddd;
+			text-align: center;
+		}
+
+		.stroke-inner {
+			display: inline-block;
+			min-width: 2.7ex;
+		}
+
+		thead td {
+			border-bottom: 1px solid #aaa;
+			padding-bottom: .5ex;
+		}
+
+		.beat, .stroke.before-beat {
+			border-right: 1px solid #aaa;
+		}
+
+		.dummy, .instrument-operations, .stroke.before-bar, .beat.before-bar {
+			border-right: 2px solid #888;
+		}
+
+		.beat span {
+			display: inline-block;
+			padding: 0 .5ex;
+			border-radius: 10px;
+			transition: background-color 1s, color 1s;
+		}
+
+		.beat.active span {
+			background-color: #3a94a5;
+			color: #fff;
+			transition: all 0 ease 0;
+		}
+
+		tbody th {
+			padding-right: 1ex;
+		}
+
+		tbody th, td.instrument-operations {
+			white-space: nowrap;
+		}
+
+		.instrument-operations .inactive {
+			color: #bbb;
+		}
+
+		&.time-12 {
+			.stroke-inner {
+				min-width: 1ex;
+			}
+
+			.stroke-0, .stroke-1, .stroke-3, .stroke-4, .stroke-6, .stroke-7, .stroke-9, .stroke-10 {
+				border-right: none;
+			}
+		}
+	}
+
+	.position-marker {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		border-left: 1px solid #000;
+
+		&.player-stopped {
+			border: none;
+		}
+	}
+}
