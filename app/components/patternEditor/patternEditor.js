@@ -9,14 +9,22 @@ angular.module("ror-simulator").controller("patternEditorCtrl", function($scope,
 		speed: 100,
 		headphones: null,
 		muted: { },
-		strokeCallback: function(i) {
-			if(i%$scope.pattern.time == 0) {
-				var beat = $(".beat-"+(i/$scope.pattern.time)); // TODO: Proper selector
-				beat.addClass("active");
-				setTimeout(function() { beat.removeClass("active"); }, 12000/$scope.playingOptions.speed);
-			}
-		}
+		strokeCallback: strokeCallback
 	};
+
+	function strokeCallback(i) {
+		if(i%$scope.pattern.time == 0) {
+			var beat = $(".beat-i-"+(i/$scope.pattern.time)); // TODO: Proper selector
+			beat.addClass("active");
+			setTimeout(function() { beat.removeClass("active"); }, 12000/$scope.playingOptions.speed);
+		}
+
+		var stroke = $(".stroke-i-"+i);
+		var marker = $(".position-marker").finish(); // TODO: Proper selector
+
+		marker.offset({ left: stroke.offset().left });
+		marker.animate({ left: (parseInt(marker.css("left"))+stroke.outerWidth())+"px" }, 60000/$scope.playingOptions.speed/$scope.pattern.time, "linear");
+	}
 
 	$scope.getNumber = function(num) {
 		return new Array(num);
@@ -47,7 +55,7 @@ angular.module("ror-simulator").controller("patternEditorCtrl", function($scope,
 	});
 
 	$scope.getBeatClass = function(i) {
-		var ret = [ "beat-"+i ];
+		var ret = [ "beat-"+(i%4), "beat-i-"+i ];
 		if(i%4 == 3)
 			ret.push("before-bar");
 		if(i%4 == 0)
@@ -56,7 +64,10 @@ angular.module("ror-simulator").controller("patternEditorCtrl", function($scope,
 	};
 
 	$scope.getStrokeClass = function(i) {
-		var ret = [ "stroke-"+(i%$scope.pattern.time) ];
+		var ret = [
+			"stroke-"+(i%$scope.pattern.time),
+			"stroke-i-"+i
+		];
 		if((i+1)%$scope.pattern.time == 0)
 			ret.push("before-beat");
 		if(i%$scope.pattern.time == 0)

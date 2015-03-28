@@ -16,6 +16,7 @@
 	width: 100%;
 	overflow-x: auto;
 	padding: 1em 0;
+	position: relative;
 }
 
 .pattern-editor {
@@ -89,4 +90,15 @@
 .pattern-editor.time-12 .stroke-9,
 .pattern-editor.time-12 .stroke-10 {
 	border-right: none;
+}
+
+.pattern-editor-container .position-marker {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	border-left: 1px solid #000;
+}
+
+.pattern-editor-container .position-marker.player-stopped {
+	border: none;
 }
