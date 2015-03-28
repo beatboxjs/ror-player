@@ -1,0 +1,15 @@
+<div class="pattern-list">
+	<accordion ng-repeat="(tuneName, tune) in tunes">
+		<accordion-group heading="{{tuneName}}">
+			<div class="btn-group btn-group-justified" ng-repeat="(patternName, pattern) in tune.patterns">
+				<div class="btn-group" dropdown>
+					<button type="button" class="btn btn-default">{{patternName}}</button>
+					<button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle><span class="caret"></span></button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#" ng-click="editPattern(tuneName, patternName)">Edit</a></li>
+					</ul>
+				</div>
+			</div>
+		</accordion-group>
+	</accordion>
+</div>

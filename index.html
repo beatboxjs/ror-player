@@ -9,26 +9,14 @@
 		<!-- inject:css -->
 		<!-- endinject -->
 	</head>
-	<body ng-controller="PlayerCtrl">
+	<body>
 		<div class="container-fluid">
 			<div class="page-header">
 				<h1>RoR Simulator</h1>
 			</div>
 			<div class="row">
 				<div class="col-md-2" id="tunes">
-					<accordion ng-repeat="(tuneName, tune) in tunes">
-						<accordion-group heading="{{tuneName}}">
-							<div class="btn-group btn-group-justified" ng-repeat="(patternName, pattern) in tune.patterns">
-								<div class="btn-group" dropdown>
-									<button type="button" class="btn btn-default">{{patternName}}</button>
-									<button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle><span class="caret"></span></button>
-									<ul class="dropdown-menu" role="menu">
-										<li><a href="#" ng-click="editPattern(tuneName, patternName)">Edit</a></li>
-									</ul>
-								</div>
-							</div>
-						</accordion-group>
-					</accordion>
+					<ror-pattern-list></ror-pattern-list>
 				</div>
 				<div class="col-md-10">
 					Test 2
