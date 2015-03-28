@@ -18,37 +18,49 @@
 	table-layout: fixed;
 }
 
-.pattern-editor tbody td {
+.pattern-editor .stroke {
 	border-right: 1px solid #ddd;
 	text-align: center;
 }
 
-.pattern-editor tbody td .dropdown-toggle {
+.pattern-editor .stroke .dropdown-toggle {
 	display: inline-block;
 	min-width: 2.7ex;
 }
 
 .pattern-editor thead td {
-	padding-left: .5ex;
 	border-bottom: 1px solid #aaa;
 	padding-bottom: .5ex;
+	padding-left: .5ex;
 }
 
-.pattern-editor thead td, .pattern-editor .before-beat {
+.pattern-editor .beat, .pattern-editor .stroke.before-beat {
 	border-right: 1px solid #aaa;
 }
 
-.pattern-editor .before-bar {
+.pattern-editor .stroke.before-bar, .pattern-editor .beat.before-bar {
 	border-right: 2px solid #888;
 }
 
 .pattern-editor tbody th {
+	white-space: nowrap;
 	padding-right: 1ex;
+}
+
+.pattern-editor td.instrument-operations {
 	border-right: 2px solid #888;
 	white-space: nowrap;
 }
 
-.pattern-editor.time-12 tbody td .dropdown-toggle {
+.pattern-editor td.instrument-operations a.inactive {
+	color: #bbb;
+}
+
+.pattern-editor .dummy {
+	border-right: 2px solid #888;
+}
+
+.pattern-editor.time-12 td.stroke .dropdown-toggle {
 	min-width: 1ex;
 }
 

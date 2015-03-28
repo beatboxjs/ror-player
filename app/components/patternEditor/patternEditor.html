@@ -18,21 +18,25 @@
 			</ul>
 		</div>
 		<div class="btn-group">
-			<slider ng-model="speed" min="60" max="180"></slider>
+			<slider ng-model="playingOptions.speed" min="60" max="180"></slider>
 		</div>
 	</div>
 	<div class="pattern-editor-container">
 		<table class="pattern-editor" ng-class="'time-'+pattern.time">
 			<thead>
 				<tr>
-					<td></td>
-					<td ng-repeat="(i,a) in getNumber(pattern.length) track by $index" colspan="{{pattern.time}}" ng-class="getBeatClass(i)">{{i+1}}</td>
+					<td colspan="2" class="dummy"></td>
+					<td ng-repeat="(i,a) in getNumber(pattern.length) track by $index" colspan="{{pattern.time}}" class="beat" ng-class="getBeatClass(i)">{{i+1}}</td>
 				</tr>
 			</thead>
 			<tbody>
 				<tr ng-repeat="(instrumentKey, instrument) in instruments">
 					<th>{{instrument.name}}</th>
-					<td ng-repeat="(i,a) in getNumber(pattern.length*pattern.time) track by $index" ng-class="getStrokeClass(i)" dropdown>
+					<td class="instrument-operations">
+						<a href="javascript:" ng-click="headphones(instrumentKey)" ng-class="playingOptions.headphones == instrumentKey ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a>
+						<a href="javascript:" ng-click="mute(instrumentKey)" ng-class="playingOptions.mute[instrumentKey] ? 'active' : 'inactive'"><span class="glyphicon glyphicon-volume-off"></span></a>
+					</td>
+					<td ng-repeat="(i,a) in getNumber(pattern.length*pattern.time) track by $index" class="stroke" ng-class="getStrokeClass(i)" dropdown>
 						<a href="javascript:" class="dropdown-toggle" dropdown-toggle>{{strokes[pattern[instrumentKey][i]] || ' '}}</a>
 						<ul class="dropdown-menu">
 							<li><a href="javascript:" ng-click="pattern[instrumentKey][i]=' '"> </a></li>

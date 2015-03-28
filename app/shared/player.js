@@ -16,7 +16,12 @@ angular.module("ror-simulator").factory("Player", function($rootScope) {
 					sounds[instrument_strokes[i]].play();
 			}
 		},
-		playPattern: function(pattern, speed, callback) {
+		playPattern: function(pattern, options, callback) {
+			if(options.speed == null)
+				options.speed = 100;
+			if(options.mute == null)
+				options.mute = { };
+
 			var timeout;
 			var timeoutFunc;
 			var i = 0;
@@ -24,7 +29,7 @@ angular.module("ror-simulator").factory("Player", function($rootScope) {
 				function(next) {
 					var strokes = [ ];
 					for(var instr in $rootScope.instruments) {
-						if(pattern[instr][i] && pattern[instr][i] != " ")
+						if((!options.headphones || options.headphones == instr) && (!options.mute[instr]) && pattern[instr][i] && pattern[instr][i] != " ")
 							strokes.push(instr+"_"+pattern[instr][i]);
 					}
 					Player.playSounds(strokes);
@@ -36,16 +41,13 @@ angular.module("ror-simulator").factory("Player", function($rootScope) {
 							i = 0;
 					}
 
-					timeout = setTimeout(next, 60000/speed/pattern.time);
+					timeout = setTimeout(next, 60000/options.speed/pattern.time);
 					timeoutFunc = next;
 				}
 			);
 
 			return {
 				playing : true,
-				setSpeed : function(newSpeed) {
-					speed = newSpeed;
-				},
 				stop : function() {
 					if(this.playing) {
 						clearTimeout(timeout);

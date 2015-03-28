@@ -5,7 +5,11 @@ angular.module("ror-simulator").controller("patternEditorCtrl", function($scope,
 
 	$scope.tune = $scope.tunes[tuneName];
 	$scope.pattern = $scope.tune.patterns[patternName];
-	$scope.speed = 100;
+	$scope.playingOptions = {
+		speed: 100,
+		headphones: null,
+		muted: { }
+	};
 
 	$scope.getNumber = function(num) {
 		return new Array(num);
@@ -15,7 +19,7 @@ angular.module("ror-simulator").controller("patternEditorCtrl", function($scope,
 
 	$scope.playPause = function() {
 		if(!$scope.playing)
-			$scope.playing = Player.playPattern($scope.pattern, 100);
+			$scope.playing = Player.playPattern($scope.pattern, $scope.playingOptions);
 		else if($scope.playing.playing)
 			$scope.playing.stop();
 		else
@@ -35,11 +39,6 @@ angular.module("ror-simulator").controller("patternEditorCtrl", function($scope,
 		$scope.stop();
 	});
 
-	$scope.$watch("speed", function(newSpeed) {
-		if($scope.playing)
-			$scope.playing.setSpeed(newSpeed);
-	});
-
 	$scope.getBeatClass = function(i) {
 		return {
 			'before-bar': i%4 == 3,
@@ -48,14 +47,26 @@ angular.module("ror-simulator").controller("patternEditorCtrl", function($scope,
 	};
 
 	$scope.getStrokeClass = function(i) {
-		return [
-			"stroke-"+(i%$scope.pattern.time),
-			{
-				'before-beat': (i+1)%$scope.pattern.time == 0,
-				beat: i%$scope.pattern.time == 0,
-				'before-bar': (i+1)%($scope.pattern.time*4) == 0,
-				bar: i%($scope.pattern.time*4) == 0
-			}
-	];
-};
+		var ret = [ "stroke-"+(i%$scope.pattern.time) ];
+		if((i+1)%$scope.pattern.time == 0)
+			ret.push("before-beat");
+		if(i%$scope.pattern.time == 0)
+			ret.push("beat");
+		if((i+1)%($scope.pattern.time*4) == 0)
+			ret.push("before-bar");
+		if(i%($scope.pattern.time*4) == 0)
+			ret.push("bar");
+		return ret;
+	};
+
+	$scope.headphones = function(instrumentKey) {
+		if($scope.playingOptions.headphones == instrumentKey)
+			$scope.playingOptions.headphones = null;
+		else
+			$scope.playingOptions.headphones = instrumentKey;
+	};
+
+	$scope.mute = function(instrumentKey) {
+		$scope.playingOptions.mute[instrumentKey] = !$scope.playingOptions.mute[instrumentKey];
+	}
 });
