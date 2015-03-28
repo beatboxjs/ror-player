@@ -128,7 +128,7 @@ angular.module("ror-simulator").constant("RorTunes", {
 				re: '@ls',
 				sn: '@ls',
 				ta: '@ls',
-				ag: '@ls',
+				ag: 'o  o  o   o o   ',
 				sh: '@ls'
 			}
 		}

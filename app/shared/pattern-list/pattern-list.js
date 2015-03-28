@@ -2,7 +2,8 @@ angular.module("ror-simulator")
 	.directive("rorPatternList", function() {
 		return {
 			templateUrl: "app/shared/pattern-list/pattern-list.html",
-			controller: "RorPatternListController"
+			controller: "RorPatternListController",
+			scope: { }
 		};
 	})
 	.controller("RorPatternListController", function($scope, RorConstants, $modal) {

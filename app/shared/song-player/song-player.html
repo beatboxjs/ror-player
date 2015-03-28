@@ -1,0 +1,32 @@
+<div class="ror-song-player">
+	<div>
+		<button type="button" class="btn" ng-class="playing.playing ? 'btn-info' : 'btn-success'" ng-click="playPause()"><span class="glyphicon" ng-class="playing.playing ? 'glyphicon-pause' : 'glyphicon-play'"></span> {{playing.playing ? 'Pause' : 'Play'}}</button>
+		<button type="button" class="btn btn-danger" ng-click="stop()"><span class="glyphicon glyphicon-stop"></span> Stop</button>
+		<div class="btn-group">
+			<slider ng-model="playingOptions.speed" min="60" max="180"></slider>
+		</div>
+	</div>
+	<div class="song-player-container">
+		<table>
+			<thead>
+				<tr>
+					<td colspan="2" class="dummy"></td>
+					<td ng-repeat="(i,a) in utils.getNumber(getLength()*4) track by $index" colspan="{{pattern.time}}" class="beat" ng-class="getBeatClass(i)"><span>{{i}}</span></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="instrumentKey in ror.instrumentKeys">
+					<th>{{ror.instruments[instrumentKey].name}}</th>
+					<td class="instrument-operations">
+						<a href="javascript:" ng-click="headphones(instrumentKey)" ng-class="playingOptions.headphones == instrumentKey ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a>
+						<a href="javascript:" ng-click="mute(instrumentKey)" ng-class="playingOptions.mute[instrumentKey] ? 'active' : 'inactive'"><span class="glyphicon glyphicon-volume-off"></span></a>
+					</td>
+					<td ng-repeat="(i,a) in utils.getNumber(getLength()) track by $index" ng-if="shouldDisplay(instrumentKey, i)" class="bar" colspan="{{getColSpan(instrumentKey, i)*4}}" rowspan="{{getRowSpan(instrumentKey, i)}}">
+						{{song[i][instrumentKey]}}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="position-marker" ng-class="{'player-stopped': !playing}"></div>
+	</div>
+</div>

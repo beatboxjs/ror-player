@@ -1,0 +1,58 @@
+.ror-song-player {
+	.song-player-container {
+		position: relative;
+		overflow-x: auto;
+
+		table {
+			table-layout: fixed;
+		}
+
+		th,td {
+			white-space: nowrap;
+		}
+
+		tr {
+			height: 3em;
+		}
+
+		.beat {
+			width: 2em;
+		}
+
+		.beat, .dummy {
+			border-bottom: 1px solid #888;
+		}
+
+		.beat span {
+			display: inline-block;
+			padding: 0 .5ex;
+			border-radius: 10px;
+			transition: background-color 1s, color 1s;
+		}
+
+		.beat.active span {
+			background-color: #3a94a5;
+			color: #fff;
+			transition: all 0 ease 0;
+		}
+
+		.bar, .beat.before-bar, .instrument-operations, .dummy {
+			border-right: 1px solid #888;
+		}
+
+		.instrument-operations .inactive {
+			color: #bbb;
+		}
+
+		.position-marker {
+			position: absolute;
+			top: 0;
+			height: 100%;
+			border-left: 1px solid #000;
+
+			&.player-stopped {
+				border: none;
+			}
+		}
+	}
+}

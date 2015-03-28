@@ -9,8 +9,9 @@ angular.module("ror-simulator")
 			controller: "RorPatternController"
 		};
 	})
-	.controller("RorPatternController", function($scope, $element, Player, RorConstants) {
+	.controller("RorPatternController", function($scope, $element, Player, RorConstants, RorUtils) {
 		$scope.ror = RorConstants;
+		$scope.utils = RorUtils;
 
 		function strokeCallback(i) {
 			// DOM manipulation in the controller? Where else could this go?
@@ -32,13 +33,6 @@ angular.module("ror-simulator")
 			headphones: null,
 			muted: { },
 			strokeCallback: strokeCallback
-		};
-
-		$scope.getNumber = function(num) {
-			if(isFinite(num) && !isNaN(num))
-				return new Array(num);
-			else
-				return [ ];
 		};
 
 		$scope.playing = null;
