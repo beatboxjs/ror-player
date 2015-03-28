@@ -40,6 +40,8 @@ angular.module("ror-simulator").factory("RorConstants", function(RorTunes, ng) {
 		}
 	};
 
+	RorConstants.instrumentKeys = Object.keys(RorConstants.instruments);
+
 	RorConstants.strokes = {
 		"X": "X",
 		"h": "hd",
@@ -76,7 +78,11 @@ angular.module("ror-simulator").factory("RorConstants", function(RorTunes, ng) {
 
 			pattern.length = Math.ceil(pattern.length/pattern.time);
 		}
+
+		tune.patternKeys = Object.keys(RorConstants.tunes[i].patterns);
 	}
+
+	RorConstants.tuneKeys = Object.keys(RorConstants.tunes);
 
 	return RorConstants;
 });

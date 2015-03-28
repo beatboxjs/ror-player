@@ -6,7 +6,7 @@ angular.module("ror-simulator")
 		};
 	})
 	.controller("RorPatternListController", function($scope, RorConstants, $modal) {
-		$scope.tunes = RorConstants.tunes;
+		$scope.ror = RorConstants;
 
 		$scope.editPattern = function(tuneName, patternName) {
 			$modal.open({

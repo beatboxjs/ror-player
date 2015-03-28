@@ -10,8 +10,7 @@ angular.module("ror-simulator")
 		};
 	})
 	.controller("RorPatternController", function($scope, $element, Player, RorConstants) {
-		$scope.instruments = RorConstants.instruments;
-		$scope.strokes = RorConstants.strokes;
+		$scope.ror = RorConstants;
 
 		function strokeCallback(i) {
 			// DOM manipulation in the controller? Where else could this go?

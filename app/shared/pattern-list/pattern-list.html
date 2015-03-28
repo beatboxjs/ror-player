@@ -1,7 +1,7 @@
 <div class="pattern-list">
-	<accordion ng-repeat="(tuneName, tune) in tunes">
+	<accordion ng-repeat="tuneName in ror.tuneKeys">
 		<accordion-group heading="{{tuneName}}">
-			<div class="btn-group btn-group-justified" ng-repeat="(patternName, pattern) in tune.patterns">
+			<div class="btn-group btn-group-justified" ng-repeat="patternName in ror.tunes[tuneName].patternKeys">
 				<div class="btn-group" dropdown>
 					<button type="button" class="btn btn-default">{{patternName}}</button>
 					<button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle><span class="caret"></span></button>
