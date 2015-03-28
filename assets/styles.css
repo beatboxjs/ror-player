@@ -28,7 +28,7 @@
 	text-align: center;
 }
 
-.pattern-editor .stroke .dropdown-toggle {
+.pattern-editor .stroke-inner {
 	display: inline-block;
 	min-width: 2.7ex;
 }
@@ -77,7 +77,7 @@
 	border-right: 2px solid #888;
 }
 
-.pattern-editor.time-12 td.stroke .dropdown-toggle {
+.pattern-editor.time-12 .stroke-inner {
 	min-width: 1ex;
 }
 

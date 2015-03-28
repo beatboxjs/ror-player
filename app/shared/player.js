@@ -1,13 +1,15 @@
-angular.module("ror-simulator").factory("Player", function($rootScope) {
+angular.module("ror-simulator").factory("Player", function(RorConstants) {
 	var sounds = { };
-	for(var i in $rootScope.instruments) {
-		for(var j=0; j<$rootScope.instruments[i].strokes.length; j++) {
-			var k = i+"_"+$rootScope.instruments[i].strokes[j];
+	for(var i in RorConstants.instruments) {
+		for(var j=0; j<RorConstants.instruments[i].strokes.length; j++) {
+			var k = i+"_"+RorConstants.instruments[i].strokes[j];
 			sounds[k] = new Howl({
 				urls: [ "assets/audio/"+k+".mp3" ]
 			});
 		}
 	}
+
+	var allPlayers = [ ];
 
 	var Player = {
 		playSounds: function(instrument_strokes) {
@@ -31,7 +33,7 @@ angular.module("ror-simulator").factory("Player", function($rootScope) {
 						options.strokeCallback(i);
 
 					var strokes = [ ];
-					for(var instr in $rootScope.instruments) {
+					for(var instr in RorConstants.instruments) {
 						if((!options.headphones || options.headphones == instr) && (!options.mute[instr]) && pattern[instr][i] && pattern[instr][i] != " ")
 							strokes.push(instr+"_"+pattern[instr][i]);
 					}
@@ -49,7 +51,7 @@ angular.module("ror-simulator").factory("Player", function($rootScope) {
 				}
 			);
 
-			return {
+			var ret = {
 				playing : true,
 				stop : function() {
 					if(this.playing) {
@@ -64,6 +66,13 @@ angular.module("ror-simulator").factory("Player", function($rootScope) {
 					}
 				}
 			};
+			allPlayers.push(ret);
+			return ret;
+		},
+		stopAll : function() {
+			allPlayers.forEach(function(it) {
+				it.stop();
+			});
 		}
 	};
 

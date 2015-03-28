@@ -1,5 +1,7 @@
-angular.module("ror-simulator").run(function($rootScope, Tunes) {
-	$rootScope.instruments = {
+angular.module("ror-simulator").factory("RorConstants", function(RorTunes, ng) {
+	var RorConstants = { };
+
+	RorConstants.instruments = {
 		ls: {
 			name: "Low Surdo",
 			strokes: [ "X", "0", "s" ]
@@ -38,7 +40,7 @@ angular.module("ror-simulator").run(function($rootScope, Tunes) {
 		}
 	};
 
-	$rootScope.strokes = {
+	RorConstants.strokes = {
 		"X": "X",
 		"h": "hd",
 		"0": "0",
@@ -51,9 +53,9 @@ angular.module("ror-simulator").run(function($rootScope, Tunes) {
 		"w" : "whistle"
 	};
 
-	$rootScope.tunes = angular.copy(Tunes);
-	for(var i in $rootScope.tunes) {
-		var tune = $rootScope.tunes[i];
+	RorConstants.tunes = ng.copy(RorTunes);
+	for(var i in RorConstants.tunes) {
+		var tune = RorConstants.tunes[i];
 
 		for(var j in tune.patterns) {
 			var pattern = tune.patterns[j];
@@ -61,11 +63,11 @@ angular.module("ror-simulator").run(function($rootScope, Tunes) {
 			pattern.time = pattern.time || tune.time || 4;
 			pattern.length = 0;
 
-			for(var k in $rootScope.instruments) {
+			for(var k in RorConstants.instruments) {
 				pattern[k] = pattern[k] || "";
 				var m = pattern[k].match(/^@([a-z]{2})$/);
 				if(m)
-					pattern[k] = angular.copy(pattern[m[1]]);
+					pattern[k] = ng.copy(pattern[m[1]]);
 				else {
 					pattern[k] = pattern[k].split('');
 					pattern.length = Math.max(pattern.length, pattern[k].length);
@@ -75,4 +77,6 @@ angular.module("ror-simulator").run(function($rootScope, Tunes) {
 			pattern.length = Math.ceil(pattern.length/pattern.time);
 		}
 	}
+
+	return RorConstants;
 });

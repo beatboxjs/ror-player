@@ -1,0 +1,47 @@
+<div>
+	<button type="button" class="btn" ng-class="playing.playing ? 'btn-info' : 'btn-success'" ng-click="playPause()"><span class="glyphicon" ng-class="playing.playing ? 'glyphicon-pause' : 'glyphicon-play'"></span> {{playing.playing ? 'Pause' : 'Play'}}</button>
+	<button type="button" class="btn btn-danger" ng-click="stop()"><span class="glyphicon glyphicon-stop"></span> Stop</button>
+	<div class="btn-group" dropdown ng-if="editable">
+		<button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle>Length: {{pattern.length}} <span class="caret"></span></button>
+		<ul class="dropdown-menu" role="menu">
+			<li ng-repeat="le in [ 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64 ]"><a href="javascript:" ng-click="pattern.length = le">Length: {{le}}</a></li>
+		</ul>
+	</div>
+	<div class="btn-group" dropdown ng-if="editable">
+		<button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle>Time: {{pattern.time}}⁄4 <span class="caret"></span></button>
+		<ul class="dropdown-menu" role="menu">
+			<li ng-repeat="ti in [ 3, 4, 12 ]"><a href="javascript:" ng-click="pattern.time = ti">Time: {{ti}}⁄4</a></li>
+		</ul>
+	</div>
+	<div class="btn-group">
+		<slider ng-model="playingOptions.speed" min="60" max="180"></slider>
+	</div>
+</div>
+<div class="pattern-editor-container">
+	<table class="pattern-editor" ng-class="'time-'+pattern.time">
+		<thead>
+			<tr>
+				<td colspan="2" class="dummy"></td>
+				<td ng-repeat="(i,a) in getNumber(pattern.length) track by $index" colspan="{{pattern.time}}" class="beat" ng-class="getBeatClass(i)"><span>{{i+1}}</span></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="(instrumentKey, instrument) in instruments">
+				<th>{{instrument.name}}</th>
+				<td class="instrument-operations">
+					<a href="javascript:" ng-click="headphones(instrumentKey)" ng-class="playingOptions.headphones == instrumentKey ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a>
+					<a href="javascript:" ng-click="mute(instrumentKey)" ng-class="playingOptions.mute[instrumentKey] ? 'active' : 'inactive'"><span class="glyphicon glyphicon-volume-off"></span></a>
+				</td>
+				<td ng-repeat="(i,a) in getNumber(pattern.length*pattern.time) track by $index" class="stroke" ng-class="getStrokeClass(i)" dropdown>
+					<span ng-if="!editable" class="stroke-inner">{{strokes[pattern[instrumentKey][i]] || ' '}}</span>
+					<a ng-if="editable" href="javascript:" class="stroke-inner dropdown-toggle" dropdown-toggle>{{strokes[pattern[instrumentKey][i]] || ' '}}</a>
+					<ul ng-if="editable" class="dropdown-menu">
+						<li><a href="javascript:" ng-click="pattern[instrumentKey][i]=' '"> </a></li>
+						<li ng-repeat="stroke in instruments[instrumentKey].strokes"><a href="javascript:" ng-click="pattern[instrumentKey][i]=stroke">{{strokes[stroke]}}</a></li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="position-marker" ng-class="{'player-stopped': !playing}"></div>
+</div>

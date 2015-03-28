@@ -1,4 +1,4 @@
-angular.module("ror-simulator").constant("Tunes", {
+angular.module("ror-simulator").constant("RorTunes", {
 	'Funk': {
 		patterns: {
 			Tune: {
