@@ -1,4 +1,48 @@
 angular.module("ror-simulator").constant("RorTunes", {
+	'General Breaks': {
+		patterns: {
+			/*"Kalashnikov": {
+				ls: '{v30}XXXXXXXXXXXXXXXX{v50}XXXXXXXXXXXXXXXX{v70}XXXXXXXXXXXXXXXX{v100}X               ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: '@ls',
+				sh: '@ls'
+			},
+			"8 up": {
+				ls: '{v7}X{v10}X{v13}X{v16}X{v19}X{v22}X{v25}X{v28}X{v31}X{v34}X{v37}X{v40}X{v43}X{v46}X{v49}X{v52}X{v55}X{v58}X{v61}X{v64}X{v67}X{v70}X{v73}X{v76}X{v79}X{v82}X{v85}X{v88}X{v91}X{v94}X{v97}X{v100}X',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: '@ls',
+				sh: '@ls'
+			}*/
+			"Clave": {
+				ls: 'X  X  X   X X   ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: '$ls',
+				sh: '@ls'
+			},
+			'Clave Inverted': {
+				ls: '  X X   X  X  X ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: '@ls',
+				sh: '@ls'
+			}
+		}
+	},
 	'Bhangra': {
 		time: 3,
 		patterns: {
@@ -19,7 +63,7 @@ angular.module("ror-simulator").constant("RorTunes", {
 				re: '               X  X                    X  X                    X  X                             ',
 				sn: '               X  X                    X  X                    X  X                 XXXX  XXXX  ',
 				ta: '@re',
-				ag: '               o  o                    o  o                    o  o                             '
+				ag: '@re'
 			},
 			'Break 2': {
 				ls: 'X XX  X XX  X       XX    X  XX  X  X       XX  X XX  X XX  X       XX    X  XX  X              ',
@@ -37,7 +81,7 @@ angular.module("ror-simulator").constant("RorTunes", {
 				re: '@ls',
 				sn: '@ls',
 				ta: '@ls',
-				ag: 'oooo  oooo  ',
+				ag: '@ls',
 				sh: '@ls'
 			}
 		}
@@ -75,7 +119,7 @@ angular.module("ror-simulator").constant("RorTunes", {
 				re: '  X   X   X   X   X   X XXXX    ',
 				sn: '@re',
 				ta: '  X   X   X   X   X   X         ',
-				ag: '  o   o   o   o   o   o         '
+				ag: '@ta'
 			},
 			'Break 3': {
 				ls: 'X     X   X  X  X     X   X  X  X     X   X  X  ',
@@ -84,7 +128,7 @@ angular.module("ror-simulator").constant("RorTunes", {
 				re: '@ls',
 				sn: '@ls',
 				ta: '@ls',
-				ag: 'o     o   o  o  o     o   o  o  o     o   o  o  '
+				ag: '@ls'
 			},
 			'Progressive Break': {
 				ls: 'X   X   X   X   X X X X X X X X XXXXXXXXXXXXXXXX',
@@ -93,7 +137,7 @@ angular.module("ror-simulator").constant("RorTunes", {
 				re: '@ls',
 				sn: '@ls',
 				ta: '@ls',
-				ag: 'o   o   o   o   o o o o o o o o oooooooooooooooo'
+				ag: '@ls'
 			},
 			'Hip-Hop Break': {
 				ls: 'X  X     X X    X  X   X X X  X X  X     X X                    X  X     X X    X  X   X X X  X X  X     X X                    ',
@@ -125,7 +169,7 @@ angular.module("ror-simulator").constant("RorTunes", {
 				re: '    X X     X       X X   X   X     X X     X       X X   XXX   ',
 				sn: '@re',
 				ta: '@re',
-				ag: '    o o     o       o o   o   o     o o     o       o o   ooo   ',
+				ag: '@re',
 				sh: '@re'
 			},
 			"Break 2": {
@@ -158,7 +202,7 @@ angular.module("ror-simulator").constant("RorTunes", {
 				re: '@ls',
 				sn: '@ls',
 				ta: '@ls',
-				ag: 'o o   o o   o   '
+				ag: '@ls'
 			},
 			'Kick Back 1': {
 				ls: 'X       X       ',
@@ -167,7 +211,7 @@ angular.module("ror-simulator").constant("RorTunes", {
 				re: '  X   X     X   ',
 				sn: '@re',
 				ta: '@re',
-				ag: '  o   o     o   '
+				ag: '@re'
 			},
 			'Break 3': {
 				ls: '    X       X       X X     X   ',
@@ -176,7 +220,7 @@ angular.module("ror-simulator").constant("RorTunes", {
 				re: '@ls',
 				sn: 'XXXX            XXXX    XXXX    ',
 				ta: '@ls',
-				ag: '    o       o       o o     o   '
+				ag: '@ls'
 			},
 			'Hook Break': {
 				ls: 'X X     X       X       X X     X   X   X   X   X       X       ',
@@ -185,14 +229,44 @@ angular.module("ror-simulator").constant("RorTunes", {
 				re: '   XXX    XXX XX  XXXXX     X XX  XX  XX  XX  XX  X   X     X   ',
 				sn: '@re',
 				ta: '@re',
-				ag: '   ooo    ooo oo  ooooo     o oo  oo  oo  oo  oo  o   o     o   '
+				ag: '@re'
 			}
 		}
 	},
-	'General Breaks': {
+	'Ragga': {
 		patterns: {
-			/*"Kalashnikov": {
-				ls: '{v30}XXXXXXXXXXXXXXXX{v50}XXXXXXXXXXXXXXXX{v70}XXXXXXXXXXXXXXXX{v100}X               ',
+			Tune: {
+				ls: 'X  X  0 X  X  0 X  X  0 X  X  0 ',
+				ms: '0  X  X 0  X  X 0  X  X 0  X  X ',
+				hs: '0     X 0     X 0     X 0     X ',
+				re: '  X   X   X   X   X   X  XXX  X ',
+				sn: '..XX..X...XX..X...XX..X...XX..X.',
+				ta: '  X   X   X   X   X   X   XX  X ',
+				ag: 'o a o a oa ao a o a  oooo a o   ',
+				sh: 'X X X X X X X X X X X X X X X X '
+			},
+			'Kick Back 1': {
+				ls: 'X  X    X  X    X  X    X  X    ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '      X       X       X       X ',
+				sn: '@re',
+				ta: '@re',
+				ag: '@re',
+				sh: '@re'
+			},
+			'Kick Back 2': {
+				ls: 'X  X X  X  X X  X  X X  X  X X  ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '  X   X   X   X   X   X   X   X ',
+				sn: '@re',
+				ta: '@re',
+				ag: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+				sh: '@re'
+			},
+			'Break 2': {
+				ls: 'X           XXX ',
 				ms: '@ls',
 				hs: '@ls',
 				re: '@ls',
@@ -201,25 +275,20 @@ angular.module("ror-simulator").constant("RorTunes", {
 				ag: '@ls',
 				sh: '@ls'
 			},
-			"8 up": {
-				ls: '{v7}X{v10}X{v13}X{v16}X{v19}X{v22}X{v25}X{v28}X{v31}X{v34}X{v37}X{v40}X{v43}X{v46}X{v49}X{v52}X{v55}X{v58}X{v61}X{v64}X{v67}X{v70}X{v73}X{v76}X{v79}X{v82}X{v85}X{v88}X{v91}X{v94}X{v97}X{v100}X',
+			'Break 3': {
+				ls: 'X  X  X         ',
 				ms: '@ls',
 				hs: '@ls',
-				re: '@ls',
-				sn: '@ls',
-				ta: '@ls',
-				ag: '@ls',
-				sh: '@ls'
-			}*/
-			"Clave": {
-				ls: 'X  X  X   X X   ',
+				re: '        X  X  X ',
+				sn: '@re',
+				ta: '@re',
+				ag: '@re',
+				sh: '@re'
+			},
+			'Zorro-Break': {
+				ls: 'X       X       X       X  X  X ',
 				ms: '@ls',
-				hs: '@ls',
-				re: '@ls',
-				sn: '@ls',
-				ta: '@ls',
-				ag: 'o  o  o   o o   ',
-				sh: '@ls'
+				hs: '@ls'
 			}
 		}
 	}
