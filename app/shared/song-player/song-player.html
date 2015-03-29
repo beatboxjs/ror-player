@@ -2,8 +2,12 @@
 	<div>
 		<button type="button" class="btn" ng-class="playing.playing ? 'btn-info' : 'btn-success'" ng-click="playPause()"><span class="glyphicon" ng-class="playing.playing ? 'glyphicon-pause' : 'glyphicon-play'"></span> {{playing.playing ? 'Pause' : 'Play'}}</button>
 		<button type="button" class="btn btn-danger" ng-click="stop()"><span class="glyphicon glyphicon-stop"></span> Stop</button>
+		<button type="button" class="btn btn-info" ng-click="clear()"><span class="glyphicon glyphicon-trash"></span> Clear</button>
 		<div class="btn-group">
 			<slider ng-model="playingOptions.speed" min="60" max="180"></slider>
+		</div>
+		<div class="btn-group trash-drop" ng-show="dragging" ng-drop="true" ng-drag-start="dragStart()" ng-drag-stop="dragStop()">
+			<span class="glyphicon glyphicon-trash"></span>
 		</div>
 	</div>
 	<div class="song-player-container">
@@ -22,8 +26,8 @@
 						<a href="javascript:" ng-click="mute(instrumentKey)" ng-class="playingOptions.mute[instrumentKey] ? 'active' : 'inactive'"><span class="glyphicon glyphicon-volume-off"></span></a>
 					</td>
 					<td ng-repeat="(i,a) in utils.getNumber(getLength()) track by $index" ng-if="shouldDisplay(instrumentKey, i)" class="bar" colspan="{{getColSpan(instrumentKey, i)*4}}" rowspan="{{getRowSpan(instrumentKey, i)}}"
-					    data-drop="true" jqyoui-droppable="{ onDrop: 'onDrop(instrumentKey, i)' }" ng-model="dropModel" data-jqyoui-options="{ hoverClass: 'drag-enter' }" ng-drop-success="onDrop(instrumentKey, i, $data)">
-						<ror-pattern-placeholder ng-if="song[i][instrumentKey]" ror-tune-name="song[i][instrumentKey][0]" ror-pattern-name="song[i][instrumentKey][1]" ror-draggable="true">
+					    ng-drop="!song[i][instrumentKey]" ng-drop-success="onDrop(instrumentKey, i, $data)">
+						<ror-pattern-placeholder ng-if="song[i][instrumentKey]" ror-tune-name="song[i][instrumentKey][0]" ror-pattern-name="song[i][instrumentKey][1]" ror-draggable="true" ror-drag-success="onDrag(instrumentKey, i)">
 							<ror-pattern-placeholder-item ng-click="removePattern(instrumentKey, i)">Remove</ror-pattern-placeholder-item>
 						</ror-pattern-placeholder>
 					</td>
@@ -33,7 +37,7 @@
 				<tr ng-show="dragging">
 					<th>All</th>
 					<td class="instrument-operations"></td>
-					<td ng-repeat="(i,a) in utils.getNumber(getLength()) track by $index" class="all-drop" ng-drag-start="dragStart()" ng-drag-stop="dragStop()" ng-drop="true" ng-drop-success="onDrop(null, i, $data)" colspan="4"></td>
+					<td ng-repeat="(i,a) in utils.getNumber(getLength()) track by $index" class="all-drop" ng-drop="true" ng-drop-success="onDrop(null, i, $data)" colspan="4">(All)</td>
 				</tr>
 			</tfoot>
 		</table>

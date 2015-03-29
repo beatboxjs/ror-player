@@ -7,7 +7,8 @@ angular.module("ror-simulator")
 				tuneName: "=rorTuneName",
 				patternName: "=rorPatternName",
 				clickHandler: "&rorPatternClick",
-				draggable: "=rorDraggable"
+				draggable: "=rorDraggable",
+				dragSuccess: "&rorDragSuccess"
 			},
 			transclude: true,
 			replace: true,

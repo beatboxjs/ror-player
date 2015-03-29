@@ -8,7 +8,7 @@ angular.module("ror-simulator")
 			}
 		};
 	})
-	.controller("RorSongPlayerController", function($scope, RorConstants, $modal, ng, RorUtils, Player, $element) {
+	.controller("RorSongPlayerController", function($scope, RorConstants, $modal, ng, RorUtils, Player, $element, $timeout) {
 		$scope.ror = RorConstants;
 		$scope.utils = RorUtils;
 
@@ -37,7 +37,7 @@ angular.module("ror-simulator")
 		$scope.playPause = function() {
 			if(!$scope.playing) {
 				$scope.playing = Player.playSong($scope.song, $scope.playingOptions, function() {
-					$scope.$apply(function() {
+					$timeout(function() {
 						$scope.playing = null;
 					});
 				});
@@ -64,6 +64,10 @@ angular.module("ror-simulator")
 
 		$scope.mute = function(instrumentKey) {
 			$scope.playingOptions.mute[instrumentKey] = !$scope.playingOptions.mute[instrumentKey];
+		};
+
+		$scope.clear = function() {
+			$scope.song = { };
 		};
 
 		$scope.getLength = function() {
@@ -141,13 +145,7 @@ angular.module("ror-simulator")
 			$scope.removePattern(instrumentKey, idx);
 		};
 
-		$scope.dropModel = null;
-
 		$scope.onDrop = function(instrumentKey, idx, data) {
-			console.log(arguments);
-			console.log($scope.dropModel);
-			setTimeout(function(){ console.log($scope.dropModel); }, 500);
-			/*
 			if(!$scope.song[idx])
 				$scope.song[idx] = { };
 
@@ -157,7 +155,7 @@ angular.module("ror-simulator")
 				for(var i in RorConstants.instruments) {
 					$scope.song[idx][i] = data;
 				}
-			}*/
+			}
 		};
 
 		$scope.dragStart = function() {

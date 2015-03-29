@@ -19,6 +19,7 @@ html body .pattern-placeholder {
 		left: 0;
 		width: 100%;
 		overflow: hidden;
+		cursor: move;
 	}
 
 	.btn.pattern-button .tune-name {
@@ -36,6 +37,10 @@ html body .pattern-placeholder {
 	.dropdown-menu {
 		left: auto;
 		right: 0;
+	}
+
+	.btn.dragging {
+		opacity: .5;
 	}
 
 }

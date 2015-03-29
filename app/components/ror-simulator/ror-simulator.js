@@ -27,4 +27,6 @@ angular.module("ror-simulator").controller("RorSimulatorController", function($s
 		return false;
 	};
 
+	//$scope.$watch(function() { console.log("digest"); }, function() {})
+
 });

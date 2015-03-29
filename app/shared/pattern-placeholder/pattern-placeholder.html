@@ -1,5 +1,5 @@
 <div class="pattern-placeholder" dropdown>
-	<span class="btn btn-default pattern-button" data-drag="draggable" ng-model="dragModel" data-jqyoui-options="{revert: true, revertDuration: 0 }" jqyoui-draggable="{ animate: false }"><span class="tune-name">{{tuneName}}</span><br><span class="pattern-name">{{patternName}}</span></span>
+	<span class="btn btn-default pattern-button" ng-drag="draggable" ng-drag-success="dragSuccess()" ng-drag-data="[ tuneName, patternName ]"><span class="tune-name">{{tuneName}}</span><br><span class="pattern-name">{{patternName}}</span></span>
 	<a type="button" class="btn btn-default dropdown-toggle" dropdown-toggle><span class="caret"></span></a>
 	<ul class="dropdown-menu" role="menu">
 		<li><a href="javascript:" ng-click="editPattern()">Edit</a></li>

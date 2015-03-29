@@ -1,4 +1,17 @@
 .ror-song-player {
+	.trash-drop {
+		font-size: 2.5em;
+		line-height: 1;
+		position: absolute;
+		margin: -.5em 0 0 .5em;
+		padding: .5em;
+		border-radius: 4em;
+
+		&.drag-enter {
+			background: #def;
+		}
+	}
+
 	.song-player-container {
 		position: relative;
 		/*overflow-x: auto;*/
@@ -26,6 +39,8 @@
 		.all-drop {
 			border-top: 1px solid #888;
 			border-bottom: 1px solid #888;
+			font-style: italic;
+			text-align: center;
 		}
 
 		.bar.drag-enter, .all-drop.drag-enter {
