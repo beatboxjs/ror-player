@@ -1,14 +1,12 @@
 <div class="pattern-list">
 	<accordion ng-repeat="tuneName in ror.tuneKeys">
 		<accordion-group heading="{{tuneName}}">
-			<div class="btn-group btn-group-justified" ng-repeat="patternName in ror.tunes[tuneName].patternKeys">
-				<div class="btn-group" dropdown>
-					<button type="button" class="btn btn-default">{{patternName}}</button>
-					<button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle><span class="caret"></span></button>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="#" ng-click="editPattern(tuneName, patternName)">Edit</a></li>
-					</ul>
-				</div>
+			<ror-pattern-placeholder ror-tune-name="tuneName" ror-pattern-name="patternName" ror-pattern-click="patternClick(tuneName, patternName)" ng-repeat="patternName in ror.tunes[tuneName].patternKeys" ror-draggable="true">
+				<ror-pattern-placeholder-item ng-click="patternClick(tuneName, patternName)">Add to song</ror-pattern-placeholder-item>
+				<ror-pattern-placeholder-item ng-click="removePattern(tuneName, patternName)" ng-if="tuneName == ror.myTunesKey">Remove</ror-pattern-placeholder-item>
+			</ror-pattern-placeholder>
+			<div ng-if="tuneName == ror.myTunesKey">
+				<a href="javascript:" ng-click="createPattern()">New break</a>
 			</div>
 		</accordion-group>
 	</accordion>

@@ -21,6 +21,15 @@
     "bootstrap": "~3.3.4",
     "howler": "~1.1.25",
     "async": "~0.9.2",
-    "angular-bootstrap-slider": "~0.1.1"
+    "angular-bootstrap-slider": "~0.1.1",
+    "ngDraggable": "~0.1.3",
+    "angular-dragdrop": "~1.0.11"
+  },
+  "overrides": {
+    "angular": {
+      "dependencies": {
+        "jquery": "*"
+      }
+    }
   }
 }

@@ -9,17 +9,17 @@
 		<!-- inject:css -->
 		<!-- endinject -->
 	</head>
-	<body>
+	<body ng-controller="RorSimulatorController">
 		<div class="container-fluid">
 			<div class="page-header">
 				<h1>RoR Simulator</h1>
 			</div>
 			<div class="row">
-				<div class="col-md-2" id="tunes">
-					<ror-pattern-list></ror-pattern-list>
+				<div id="tunes">
+					<ror-pattern-list ror-pattern-click="patternClick(tuneName, patternName)"></ror-pattern-list>
 				</div>
-				<div class="col-md-10">
-					<ror-song-player></ror-song-player>
+				<div id="song-player">
+					<ror-song-player ror-song="song"></ror-song-player>
 				</div>
 			</div>
 		</div>

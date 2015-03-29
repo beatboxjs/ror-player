@@ -23,10 +23,11 @@ angular.module("ror-simulator").factory("RorUtils", function(RorConstants, ng) {
 			if(maxIndex == null)
 				return 0;
 
-			var length = 0;
+			var length = 1;
 			for(var i in song[maxIndex]) {
-				var pattern = RorConstants.tunes[song[maxIndex][i][0]].patterns[song[maxIndex][i][1]];
-				length = Math.max(length, pattern.length/pattern.time);
+				var pattern = RorUtils.getPattern(song[maxIndex][i]);
+				if(pattern)
+					length = Math.max(length, pattern.length/4);
 			}
 			return parseInt(maxIndex) + length;
 		},
@@ -41,6 +42,15 @@ angular.module("ror-simulator").factory("RorUtils", function(RorConstants, ng) {
 				remaining = remaining.slice(4*pattern.time);
 			}
 			return ret;
+		},
+
+		getPattern: function(tuneName, patternName) {
+			if(Array.isArray(tuneName)) {
+				patternName = tuneName[1];
+				tuneName = tuneName[0];
+			}
+
+			return RorConstants.tunes[tuneName] && RorConstants.tunes[tuneName].patterns[patternName];
 		}
 	};
 

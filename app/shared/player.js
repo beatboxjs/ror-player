@@ -126,8 +126,8 @@ angular.module("ror-simulator").factory("Player", function(RorConstants, RorUtil
 
 				var pattern = { };
 				for(var inst in RorConstants.instruments) {
-					if(song[songIdx] && song[songIdx][inst])
-						buffer[inst] = RorUtils.splitPattern(RorConstants.tunes[song[songIdx][inst][0]].patterns[song[songIdx][inst][1]], inst);
+					if(song[songIdx] && song[songIdx][inst] && RorUtils.getPattern(song[songIdx][inst]))
+						buffer[inst] = RorUtils.splitPattern(RorUtils.getPattern(song[songIdx][inst]), inst);
 
 					if(buffer[inst] && buffer[inst].length > 0)
 						pattern[inst] = buffer[inst].shift();

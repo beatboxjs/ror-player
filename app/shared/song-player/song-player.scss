@@ -1,7 +1,7 @@
 .ror-song-player {
 	.song-player-container {
 		position: relative;
-		overflow-x: auto;
+		/*overflow-x: auto;*/
 
 		table {
 			table-layout: fixed;
@@ -23,6 +23,15 @@
 			border-bottom: 1px solid #888;
 		}
 
+		.all-drop {
+			border-top: 1px solid #888;
+			border-bottom: 1px solid #888;
+		}
+
+		.bar.drag-enter, .all-drop.drag-enter {
+			background: #def;
+		}
+
 		.beat span {
 			display: inline-block;
 			padding: 0 .5ex;
@@ -36,8 +45,23 @@
 			transition: all 0 ease 0;
 		}
 
-		.bar, .beat.before-bar, .instrument-operations, .dummy {
+		.bar, .beat.before-bar, .instrument-operations, .dummy, .all-drop {
 			border-right: 1px solid #888;
+		}
+
+		.bar {
+			padding: .2em .5em;
+			height: 3em;
+			width: 8em;
+
+			.pattern-placeholder {
+				height: 100%;
+				min-height: 3em;
+			}
+		}
+
+		tbody th {
+			padding-right: 1ex;
 		}
 
 		.instrument-operations .inactive {

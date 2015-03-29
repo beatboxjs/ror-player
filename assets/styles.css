@@ -1,0 +1,10 @@
+#tunes {
+	width: 20em;
+	float: left;
+	padding: 0 15px;
+}
+
+#song-player {
+	margin-left: 20em;
+	padding: 0 15px;
+}

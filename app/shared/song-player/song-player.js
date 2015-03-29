@@ -3,31 +3,14 @@ angular.module("ror-simulator")
 		return {
 			templateUrl: "app/shared/song-player/song-player.html",
 			controller: "RorSongPlayerController",
-			scope: { }
+			scope: {
+				song: '=rorSong'
+			}
 		};
 	})
 	.controller("RorSongPlayerController", function($scope, RorConstants, $modal, ng, RorUtils, Player, $element) {
 		$scope.ror = RorConstants;
 		$scope.utils = RorUtils;
-
-		$scope.song = {
-			0: {
-				ag: [ "Crazy Monkey", "Tune" ],
-				ta: [ "General Breaks", "Clave" ]
-			},
-			1: {
-				ta: [ "General Breaks", "Clave" ]
-			},
-			2: { },
-			3: {
-				ag: [ "Funk", "Tune" ],
-				ta: [ "General Breaks", "Clave" ]
-			},
-			4: {
-				ag: [ "General Breaks", "Clave" ],
-				ta: [ "General Breaks", "Clave" ]
-			}
-		};
 
 		$scope.playingOptions = {
 			speed: 100,
@@ -92,7 +75,9 @@ angular.module("ror-simulator")
 			if(!pattern)
 				return 1;
 
-			pattern = RorConstants.tunes[pattern[0]].patterns[pattern[1]];
+			pattern = RorUtils.getPattern(pattern);
+			if(!pattern)
+				return 1;
 
 			var ret = 1;
 			while(ret<(pattern.length/4)) {
@@ -141,4 +126,49 @@ angular.module("ror-simulator")
 				ret.push("after-bar");
 			return ret;
 		};
+
+		$scope.removePattern = function(instrumentKey, idx) {
+			var span = $scope.getRowSpan(instrumentKey, idx);
+			var instrIdx = RorConstants.instrumentKeys.indexOf(instrumentKey);
+			for(var i=0; i<span; i++) {
+				delete $scope.song[idx][RorConstants.instrumentKeys[instrIdx+i]];
+			}
+			if(Object.keys($scope.song[idx]).length == 0)
+				delete $scope.song[idx];
+		};
+
+		$scope.onDrag = function(instrumentKey, idx) {
+			$scope.removePattern(instrumentKey, idx);
+		};
+
+		$scope.dropModel = null;
+
+		$scope.onDrop = function(instrumentKey, idx, data) {
+			console.log(arguments);
+			console.log($scope.dropModel);
+			setTimeout(function(){ console.log($scope.dropModel); }, 500);
+			/*
+			if(!$scope.song[idx])
+				$scope.song[idx] = { };
+
+			if(instrumentKey)
+				$scope.song[idx][instrumentKey] = data;
+			else {
+				for(var i in RorConstants.instruments) {
+					$scope.song[idx][i] = data;
+				}
+			}*/
+		};
+
+		$scope.dragStart = function() {
+			$scope.dragging = true;
+		};
+
+		$scope.dragStop = function() {
+			$scope.dragging = false;
+		}
+
+		$scope.onOver = function() {
+			console.log("over");
+		}
 	});

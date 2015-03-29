@@ -1,0 +1,41 @@
+html body .pattern-placeholder {
+
+	display: block;
+	height: 3em;
+	position: relative;
+
+	.btn {
+		height: 100%;
+		box-sizing: border-box;
+		position: absolute;
+		top: 0;
+		float: none;
+		display: block;
+	}
+
+	.btn.pattern-button {
+		text-align: left;
+		padding: 0 12px;
+		left: 0;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.btn.pattern-button .tune-name {
+		font-weight: bold;
+	}
+
+	.btn.dropdown-toggle {
+		width: 20px;
+		right: 0;
+		padding: 0;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+
+	.dropdown-menu {
+		left: auto;
+		right: 0;
+	}
+
+}

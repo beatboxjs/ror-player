@@ -1,4 +1,4 @@
-angular.module("ror-simulator").factory("RorConstants", function(RorTunes, ng) {
+angular.module("ror-simulator").factory("RorConstants", function(RorTunes, ng, $rootScope) {
 	var RorConstants = { };
 
 	RorConstants.instruments = {
@@ -81,6 +81,15 @@ angular.module("ror-simulator").factory("RorConstants", function(RorTunes, ng) {
 
 		tune.patternKeys = Object.keys(RorConstants.tunes[i].patterns);
 	}
+
+	RorConstants.myTunesKey = "My tunes";
+	RorConstants.tunes[RorConstants.myTunesKey] = localStorage.myTunes ? JSON.parse(localStorage.myTunes) : { patterns: { } };
+
+	RorConstants.myTunes = RorConstants.tunes[RorConstants.myTunesKey];
+	$rootScope.$watch(function(){ return RorConstants.myTunes; }, function(myTunes) {
+		localStorage.myTunes = JSON.stringify(myTunes);
+		myTunes.patternKeys = Object.keys(myTunes.patterns);
+	}, true);
 
 	RorConstants.tuneKeys = Object.keys(RorConstants.tunes);
 
