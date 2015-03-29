@@ -58,7 +58,7 @@ angular.module("ror-simulator")
 			if(i%4 == 3)
 				ret.push("before-bar");
 			if(i%4 == 0)
-				ret.push("bar");
+				ret.push("after-bar");
 			return ret;
 		};
 
@@ -70,11 +70,11 @@ angular.module("ror-simulator")
 			if((i+1)%$scope.pattern.time == 0)
 				ret.push("before-beat");
 			if(i%$scope.pattern.time == 0)
-				ret.push("beat");
+				ret.push("after-beat");
 			if((i+1)%($scope.pattern.time*4) == 0)
 				ret.push("before-bar");
 			if(i%($scope.pattern.time*4) == 0)
-				ret.push("bar");
+				ret.push("after-bar");
 			return ret;
 		};
 

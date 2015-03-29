@@ -74,6 +74,9 @@ angular.module("ror-simulator").factory("RorConstants", function(RorTunes, ng, $
 					pattern[k] = pattern[k].split('');
 					pattern.length = Math.max(pattern.length, pattern[k].length);
 				}
+
+				if(k == "ag")
+					pattern[k] = pattern[k].map(function(it) { return it == "X" ? "o" : it; });
 			}
 
 			pattern.length = Math.ceil(pattern.length/pattern.time);

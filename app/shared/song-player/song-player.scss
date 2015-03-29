@@ -14,14 +14,23 @@
 
 	.song-player-container {
 		position: relative;
-		/*overflow-x: auto;*/
+		overflow-x: auto;
 
 		table {
 			table-layout: fixed;
+			height: 100%;
 		}
 
 		th,td {
 			white-space: nowrap;
+		}
+
+		th {
+			height: 3em;
+		}
+
+		td {
+			height: 100%;
 		}
 
 		tr {
@@ -66,7 +75,6 @@
 
 		.bar {
 			padding: .2em .5em;
-			height: 3em;
 			width: 8em;
 
 			.pattern-placeholder {

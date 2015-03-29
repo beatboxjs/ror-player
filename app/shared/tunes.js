@@ -1,38 +1,4 @@
 angular.module("ror-simulator").constant("RorTunes", {
-	'Funk': {
-		patterns: {
-			Tune: {
-				ls: 'X  X  X X X     X  X  X X       ',
-				ms: '@ls',
-				hs: '@ls',
-				re: 'f  hf  hf  hf  hf  hf  hf  hXhrh',
-				sn: '....X.......X.......X.......X...',
-				ta: '    X       X X     X     X X   ',
-				ag: 'o  a  o   a a a o  a  o   a a a ',
-				sh: 'X X X X X X X X X X X X X X X X '
-			},
-			"Break 1": {
-				ls: 'X X     X X   X X X     X       X X     X X   X X X     X       ',
-				ms: '@ls',
-				hs: '@ls',
-				re: '    X X     X       X X   X   X     X X     X       X X   XXX   ',
-				sn: '@re',
-				ta: '@re',
-				ag: '    o o     o       o o   o   o     o o     o       o o   ooo   ',
-				sh: '@re'
-			},
-			"Break 2": {
-				ls: 'X X X X X X X X ',
-				ms: '@ls',
-				hs: '@ls',
-				re: '@ls',
-				sn: '@ls',
-				ta: '@ls',
-				ag: 'o o o o o o o o ',
-				sh: '@ls'
-			}
-		}
-	},
 	'Bhangra': {
 		time: 3,
 		patterns: {
@@ -45,6 +11,24 @@ angular.module("ror-simulator").constant("RorTunes", {
 				ta: 'X XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX X',
 				ag: 'aaaa  oooo              aaaa  oooo              ',
 				sh: 'X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  '
+			},
+			'Break 1': {
+				ls: 'X XX X  XX  X       XX  X XX X  XX  X       XX  X XX X  XX  X       XX  X    X   X              ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '               X  X                    X  X                    X  X                             ',
+				sn: '               X  X                    X  X                    X  X                 XXXX  XXXX  ',
+				ta: '@re',
+				ag: '               o  o                    o  o                    o  o                             '
+			},
+			'Break 2': {
+				ls: 'X XX  X XX  X       XX    X  XX  X  X       XX  X XX  X XX  X       XX    X  XX  X              ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: 'X XX  X XX  X       XX    X  XX  X  X       XX  X XX  X XX  X       XX    X  XX  X  XXXX  XXXX  ',
+				ta: '@ls',
+				ag: '@ls'
 			},
 			"Break 3": {
 				ls: "XXXX  XXXX  ",
@@ -83,6 +67,76 @@ angular.module("ror-simulator").constant("RorTunes", {
 				sn: '....X..X....X.......X..X....X   ....X..X....X...X.X.X.X.X.X.X.X.',
 				ta: '    X     X X       X   X X X       X     X X       X   X X X   ',
 				ag: 'o ao ao a       o ao ao a       o ao ao a       o ao ao a       '
+			},
+			'Break 2': {
+				ls: 'X  X X  X  X X  X  X X          ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '  X   X   X   X   X   X XXXX    ',
+				sn: '@re',
+				ta: '  X   X   X   X   X   X         ',
+				ag: '  o   o   o   o   o   o         '
+			},
+			'Break 3': {
+				ls: 'X     X   X  X  X     X   X  X  X     X   X  X  ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: 'o     o   o  o  o     o   o  o  o     o   o  o  '
+			},
+			'Progressive Break': {
+				ls: 'X   X   X   X   X X X X X X X X XXXXXXXXXXXXXXXX',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: 'o   o   o   o   o o o o o o o o oooooooooooooooo'
+			},
+			'Hip-Hop Break': {
+				ls: 'X  X     X X    X  X   X X X  X X  X     X X                    X  X     X X    X  X   X X X  X X  X     X X                    ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '    X       X       X       X       X       X   Xr Xr Xr Xr XXrr    X       X       X       X       X       X                   ',
+				sn: '    X       X       X       X       X       X                       X       X       X       X       X       X     X   X   X   X ',
+				ta: '    X       X       X       X       X       X                       X       X       X       X       X       X                   ',
+				ag: '    o       o       o       o       o       o                       o       o       o       o       o       o                   '
+			}
+		}
+	},
+	'Funk': {
+		patterns: {
+			Tune: {
+				ls: 'X  X  X X X     X  X  X X       ',
+				ms: '@ls',
+				hs: '@ls',
+				re: 'f  hf  hf  hf  hf  hf  hf  hXhrh',
+				sn: '....X.......X.......X.......X...',
+				ta: '    X       X X     X     X X   ',
+				ag: 'o  a  o   a a a o  a  o   a a a ',
+				sh: 'X X X X X X X X X X X X X X X X '
+			},
+			"Break 1": {
+				ls: 'X X     X X   X X X     X       X X     X X   X X X     X       ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '    X X     X       X X   X   X     X X     X       X X   XXX   ',
+				sn: '@re',
+				ta: '@re',
+				ag: '    o o     o       o o   o   o     o o     o       o o   ooo   ',
+				sh: '@re'
+			},
+			"Break 2": {
+				ls: 'X X X X X X X X ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: 'o o o o o o o o ',
+				sh: '@ls'
 			}
 		}
 	},
@@ -96,6 +150,42 @@ angular.module("ror-simulator").constant("RorTunes", {
 				sn: '..X...X.....X.....X.XXX.....X.XX',
 				ta: 'X X   X X   X XXX X   X X   X   ',
 				ag: 'o a   a o   a     a   a o   a   '
+			},
+			'Yala Break': {
+				ls: 'X X   X X   X   ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: 'o o   o o   o   '
+			},
+			'Kick Back 1': {
+				ls: 'X       X       ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '  X   X     X   ',
+				sn: '@re',
+				ta: '@re',
+				ag: '  o   o     o   '
+			},
+			'Break 3': {
+				ls: '    X       X       X X     X   ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: 'XXXX            XXXX    XXXX    ',
+				ta: '@ls',
+				ag: '    o       o       o o     o   '
+			},
+			'Hook Break': {
+				ls: 'X X     X       X       X X     X   X   X   X   X       X       ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '   XXX    XXX XX  XXXXX     X XX  XX  XX  XX  XX  X   X     X   ',
+				sn: '@re',
+				ta: '@re',
+				ag: '   ooo    ooo oo  ooooo     o oo  oo  oo  oo  oo  o   o     o   '
 			}
 		}
 	},
