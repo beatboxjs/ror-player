@@ -100,7 +100,7 @@ gulp.task("app", [ "scss" ], function() {
 			.pipe(concat("app.css"))
 			.pipe(minifyCss())
 		, gulp.src(files, { base: process.cwd()+"/" })
-			.pipe(filter(function(file) { return file.stat.isFile() && !file.path.match(/\.(js|css|html)$/); }))
+			.pipe(filter(function(file) { return file.stat.isFile() && !file.path.match(/\.(js|css|html|scss)$/); }))
 	).pipe(gulp.dest("build"));
 });
 
