@@ -26,7 +26,7 @@
 						<a href="javascript:" ng-click="mute(instrumentKey)" ng-class="playingOptions.mute[instrumentKey] ? 'active' : 'inactive'"><span class="glyphicon glyphicon-volume-off"></span></a>
 					</td>
 					<td ng-repeat="(i,a) in utils.getNumber(getLength()) track by $index" ng-if="shouldDisplay(instrumentKey, i)" class="bar" colspan="{{getColSpan(instrumentKey, i)*4}}" rowspan="{{getRowSpan(instrumentKey, i)}}"
-					    ng-drop="!song[i][instrumentKey]" ng-drop-success="onDrop(instrumentKey, i, $data)">
+					    ng-drop="{{!song[i][instrumentKey]}}" ng-drop-success="onDrop(instrumentKey, i, $data)">
 						<ror-pattern-placeholder ng-if="song[i][instrumentKey]" ror-tune-name="song[i][instrumentKey][0]" ror-pattern-name="song[i][instrumentKey][1]" ror-draggable="true" ror-drag-success="onDrag(instrumentKey, i)">
 							<ror-pattern-placeholder-item ng-click="removePattern(instrumentKey, i)">Remove</ror-pattern-placeholder-item>
 						</ror-pattern-placeholder>
