@@ -16,7 +16,7 @@ angular.module("ror-simulator").factory("RorConstants", function(RorTunes, ng, $
 		},
 		re: {
 			name: "Repi",
-			strokes: [ "X", "f", "r", "h" ]
+			strokes: [ "X", "f", "r", "h", "s" ]
 		},
 		sn: {
 			name: "Snare",
@@ -36,7 +36,7 @@ angular.module("ror-simulator").factory("RorConstants", function(RorTunes, ng, $
 		},
 		ot: {
 			name: "Others",
-			strokes: [ "w" ]
+			strokes: [ "w", "A", "B", "C", "D", "E", "F", "T", "U", "V", "W", "Y", "Z" ]
 		}
 	};
 
@@ -52,7 +52,19 @@ angular.module("ror-simulator").factory("RorConstants", function(RorTunes, ng, $
 		"o": "l",
 		"a": "h",
 		".": ".",
-		"w" : "whistle"
+		"w" : "Whistle",
+		"A" : "Oi!",
+		"B" : "Ua!",
+		"C" : "Aoo!",
+		"D" : "Oo",
+		"E" : "Ah",
+		"F" : "Hey!",
+		"T" : "E",
+		"U" : "very",
+		"V" : "bo",
+		"W" : "dy",
+		"Y" : "dance",
+		"Z" : "now"
 	};
 
 	RorConstants.tunes = ng.copy(RorTunes);

@@ -43,6 +43,74 @@ angular.module("ror-simulator").constant("RorTunes", {
 			}
 		}
 	},
+	"Afoxe": {
+		patterns: {
+			"Tune": {
+				ls: 's   s   s   s   s   s   X   X   ',
+				ms: '0     X 0     X 0     X X X X X ',
+				hs: '@ms',
+				re: 'f  hs r f  hs r f  hs r s r s r ',
+				sn: 'X...X..XX..X....X...X..XX..X....',
+				ta: 'X X X X XX XX X X X X X XX XX X ',
+				ag: 'a a o o aa o oo a a o o aa o oo '
+			},
+			"Break 1": {
+				ls: 'X       X       X       X XXXXX ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '   XXXX    XXXX    XXXX X XXXXX ',
+				sn: '@re',
+				ta: '@re',
+				ag: '@re'
+			},
+			"Break 2": {
+				ls: 's   s   s   s   s   s   X   X   ',
+				ms: '      X       X       X   XXXXX ',
+				hs: '@ms',
+				re: 'f  hs r f  hs r f  hs r s r s r ',
+				sn: 'X...X..XX..X....X...X..XX..X....',
+				ta: 'X X X X XX XX X X X X X XX XX X ',
+				ag: 'a a o o aa o oo a a o o aa o oo '
+			},
+			"Break 3": {
+				ls: 's   s   s   s   s   s   X   X   ',
+				ms: '   XXXX    XXXX    XXXX X XXXXX ',
+				hs: '@ms',
+				re: 'f  hs r f  hs r f  hs r s r s r ',
+				sn: 'X...X..XX..X....X...X..XX..X....',
+				ta: 'X X X X XX XX X X X X X XX XX X ',
+				ag: 'a a o o aa o oo a a o o aa o oo '
+			},
+			"Bra Break": {
+				ls: '        XX XX           XX XX           XX XX   X X X X XX XX X ',
+				ms: '@ls',
+				hs: '@ls',
+				re: 'X X X           X X X           X X X           X X X X XX XX X ',
+				sn: '@ls',
+				ta: '@ls',
+				ag: '@ls'
+			},
+			"Tamborim Stroke": {
+				ls: 'X X X X XX XX X ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: '@ls'
+			},
+			"Wulf Break": {
+				ls: 'X X   XXX X    XX X    XX X     X X   XXX X    XX X X X X       ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '    X       X       X       X       X       X  XX X X X X       ',
+				sn: '@re',
+				ta: '@re',
+				ag: '@re',
+				ot: '                                                          C     '
+			}
+		}
+	},
 	'Bhangra': {
 		time: 3,
 		patterns: {
@@ -83,6 +151,16 @@ angular.module("ror-simulator").constant("RorTunes", {
 				ta: '@ls',
 				ag: '@ls',
 				sh: '@ls'
+			},
+			"Bra Break": {
+				ls: '                                                                        X XX XX XX              ',
+				ms: '@ls',
+				hs: '@ls',
+				re: 'XXXXXXXXXX              XXXXXXXXXX              XXXX        XXXXXXXXXX              XXXXXXX     ',
+				sn: '            XXXXXXXXXX              XXXXXXXXXX        XXXX                          XXXXXXX     ',
+				ta: '@re',
+				ag: '@re',
+				ot: '                                                                                             F  '
 			}
 		}
 	},
@@ -98,6 +176,58 @@ angular.module("ror-simulator").constant("RorTunes", {
 				ta: '      X  X        X        X     X        X           X  X        X        X     X              ',
 				ag: 'o     a  a  a     o  o     a     a  a     o  o  o     a  a  a     o  o      a   a   a   a   a   ',
 				sh: 'X     X     X     X     X     X     X     X     X     X     X     X     X     X  X              '
+			},
+			"Break 1": {
+				ls: '        X XX            X XX          X X     X X   X   X XX    ',
+				ms: '        X XX            X XX          X X     X X   X   X XX  X ',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: 'o aaa oo      o o aaa oo      o o aaa   o aaa   o aao aao       ',
+				sh: '@ls'
+			},
+			"Break 2": {
+				ls: '        X XX            X XX        X XX    X XX        X XX    ',
+				ms: '        X XX            X XX        X XX    X XX        X XX  X ',
+				hs: '@ls',
+				re: '@ls',
+				sn: '....X.XXX.XX........X.XXX.XX........X.XX....X.XX....X.XXX.XX    ',
+				ta: '@ls',
+				ag: '@ls',
+				sh: '@ls'
+			},
+			"Break 3": {
+				ls: 'X XX    X XX    X XXX XXX XX    ',
+				ms: 'X XX    X XX    X XXX XXX XX  X ',
+				hs: '@ls',
+				re: '      X       X X XXX XXX XX    ',
+				sn: '@re',
+				ta: '@re',
+				ag: '      X       X o aoo aoo oo  a ',
+				sh: '@re'
+			},
+			"Bongo Break 1": {
+				ls: 'X   X   X   X   X   X   X XX    ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '   X  X  X X  X    X  X       X ',
+				sn: '@re',
+				ta: '@re',
+				ag: 'o  ao a oa ao a o  ao a o oo  a ',
+				sh: '@re'
+			},
+			"Bongo Break 2": {
+				ls: 'X   X   X   X   X   X   X XX  X ',
+				ms: '@ls',
+				hs: '@ls',
+				re: 'X XX XX X XX XX X XX XX       X ',
+				ta: '@re',
+				ag: 'o  ao a oa ao a o  ao a o oo  a ',
+				sh: '@re'
+			},
+			"Monkey Break": {
+				ot: 'D  D  D E  E  E '
 			}
 		}
 	},
@@ -111,6 +241,10 @@ angular.module("ror-simulator").constant("RorTunes", {
 				sn: '....X..X....X.......X..X....X   ....X..X....X...X.X.X.X.X.X.X.X.',
 				ta: '    X     X X       X   X X X       X     X X       X   X X X   ',
 				ag: 'o ao ao a       o ao ao a       o ao ao a       o ao ao a       '
+			},
+			'Break 1': {
+				time: 2,
+				ot: 'TUVWY Z '
 			},
 			'Break 2': {
 				ls: 'X  X X  X  X X  X  X X          ',
@@ -181,6 +315,30 @@ angular.module("ror-simulator").constant("RorTunes", {
 				ta: '@ls',
 				ag: 'o o o o o o o o ',
 				sh: '@ls'
+			},
+			"Call Break Oi": {
+				time: 3,
+				ls: 'X  XXXX     ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: '@ls',
+				sh: '@ls',
+				ot: '         A  '
+			},
+			"Call Break Ua": {
+				time: 3,
+				ls: 'X  XXXX     ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: '@ls',
+				sh: '@ls',
+				ot: '         B  '
 			}
 		}
 	},

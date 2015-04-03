@@ -56,6 +56,12 @@
 			color: #bbb;
 		}
 
+		&.time-2 {
+			.stroke-inner {
+				min-width: 5.4ex;
+			}
+		}
+
 		&.time-12 {
 			.stroke-inner {
 				min-width: 1ex;
