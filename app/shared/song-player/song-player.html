@@ -1,10 +1,10 @@
 <div class="bb-song-player">
 	<div>
-		<button type="button" class="btn" ng-class="playing.playing ? 'btn-info' : 'btn-success'" ng-click="playPause()"><span class="glyphicon" ng-class="playing.playing ? 'glyphicon-pause' : 'glyphicon-play'"></span> {{playing.playing ? 'Pause' : 'Play'}}</button>
+		<button type="button" class="btn" ng-class="player.playing ? 'btn-info' : 'btn-success'" ng-click="playPause()"><span class="glyphicon" ng-class="player.playing ? 'glyphicon-pause' : 'glyphicon-play'"></span> {{player.playing ? 'Pause' : 'Play'}}</button>
 		<button type="button" class="btn btn-danger" ng-click="stop()"><span class="glyphicon glyphicon-stop"></span> Stop</button>
 		<button type="button" class="btn btn-info" ng-click="clear()"><span class="glyphicon glyphicon-trash"></span> Clear</button>
 		<div class="btn-group">
-			<slider ng-model="playingOptions.speed" min="60" max="180"></slider>
+			<slider ng-model="playerOptions.speed" min="60" max="180"></slider>
 		</div>
 		<div class="btn-group trash-drop" ng-show="dragging" ng-drop="true" ng-drag-start="dragStart()" ng-drag-stop="dragStop()">
 			<span class="glyphicon glyphicon-trash"></span>
@@ -22,8 +22,8 @@
 				<tr ng-repeat="instrumentKey in utils.getKeys(config.instruments)">
 					<th>{{config.instruments[instrumentKey].name}}</th>
 					<td class="instrument-operations">
-						<a href="javascript:" ng-click="headphones(instrumentKey)" ng-class="playingOptions.headphones == instrumentKey ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a>
-						<a href="javascript:" ng-click="mute(instrumentKey)" ng-class="playingOptions.mute[instrumentKey] ? 'active' : 'inactive'"><span class="glyphicon glyphicon-volume-off"></span></a>
+						<a href="javascript:" ng-click="headphones(instrumentKey)" ng-class="playerOptions.headphones == instrumentKey ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a>
+						<a href="javascript:" ng-click="mute(instrumentKey)" ng-class="playerOptions.mute[instrumentKey] ? 'active' : 'inactive'"><span class="glyphicon glyphicon-volume-off"></span></a>
 					</td>
 					<td ng-repeat="(i,a) in utils.getNumber(getLength()) track by $index" ng-if="shouldDisplay(instrumentKey, i)" class="bar" colspan="{{getColSpan(instrumentKey, i)*4}}" rowspan="{{getRowSpan(instrumentKey, i)}}"
 					    ng-drop="{{!song[i][instrumentKey]}}" ng-drop-success="onDrop(instrumentKey, i, $data)">
@@ -41,6 +41,6 @@
 				</tr>
 			</tfoot>
 		</table>
-		<div class="position-marker" ng-class="{'player-stopped': !playing}"></div>
+		<div class="position-marker" ng-class="{'player-stopped': !player.playing && player.getPosition() == 0}"></div>
 	</div>
 </div>

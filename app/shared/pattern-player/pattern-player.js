@@ -14,43 +14,56 @@ angular.module("beatbox")
 		$scope.utils = bbUtils;
 
 		function strokeCallback(i) {
+			var fac = bbConfig.playTime / $scope.pattern.time;
+			if(i % fac != 0)
+				return;
+			i = i/fac;
+
 			// DOM manipulation in the controller? Where else could this go?
 			if(i%$scope.pattern.time == 0) {
 				var beat = $(".beat-i-"+(i/$scope.pattern.time), $element);
 				beat.addClass("active");
-				setTimeout(function() { beat.removeClass("active"); }, 12000/$scope.playingOptions.speed);
+				setTimeout(function() { beat.removeClass("active"); }, 12000/$scope.playerOptions.speed);
 			}
 
 			var stroke = $(".stroke-i-"+i, $element);
 			var marker = $(".position-marker", $element).finish();
 
-			marker.offset({ left: stroke.offset().left });
-			marker.animate({ left: (parseInt(marker.css("left"))+stroke.outerWidth())+"px" }, 60000/$scope.playingOptions.speed/$scope.pattern.time, "linear");
+			if(stroke.length > 0) {
+				marker.offset({ left: stroke.offset().left });
+				marker.animate({ left: (parseInt(marker.css("left"))+stroke.outerWidth())+"px" }, 60000/$scope.playerOptions.speed/$scope.pattern.time, "linear");
+			}
 		}
 
-		$scope.playingOptions = {
+		$scope.player = bbPlayer.createBeatbox(true);
+		$scope.player.onbeat = strokeCallback;
+
+		$scope.playerOptions = {
 			speed: 100,
 			headphones: null,
-			muted: { },
-			strokeCallback: strokeCallback
+			mute: { }
 		};
 
-		$scope.playing = null;
+		function updatePattern() {
+			$scope.player.setPattern(bbPlayer.patternToBeatbox($scope.pattern, $scope.playerOptions.headphones, $scope.playerOptions.mute));
+		}
+
+		$scope.$watch("pattern", updatePattern, true);
+		$scope.$watch("playerOptions.speed", function(newSpeed) {
+			$scope.player.setBeatLength(60000/newSpeed/bbConfig.playTime);
+		});
 
 		$scope.playPause = function() {
-			if(!$scope.playing)
-				$scope.playing = bbPlayer.playPattern($scope.pattern, $scope.playingOptions);
-			else if($scope.playing.playing)
-				$scope.playing.stop();
+			if(!$scope.player.playing)
+				$scope.player.play();
 			else
-				$scope.playing.start();
+				$scope.player.stop();
 		};
 
 		$scope.stop = function() {
-			if($scope.playing) {
-				$scope.playing.stop();
-				$scope.playing = null;
-			}
+			if($scope.player.playing)
+				$scope.player.stop();
+			$scope.player.setPosition(0);
 		};
 
 		$scope.getBeatClass = function(i) {
@@ -79,13 +92,15 @@ angular.module("beatbox")
 		};
 
 		$scope.headphones = function(instrumentKey) {
-			if($scope.playingOptions.headphones == instrumentKey)
-				$scope.playingOptions.headphones = null;
+			if($scope.playerOptions.headphones == instrumentKey)
+				$scope.playerOptions.headphones = null;
 			else
-				$scope.playingOptions.headphones = instrumentKey;
+				$scope.playerOptions.headphones = instrumentKey;
+			updatePattern();
 		};
 
 		$scope.mute = function(instrumentKey) {
-			$scope.playingOptions.mute[instrumentKey] = !$scope.playingOptions.mute[instrumentKey];
+			$scope.playerOptions.mute[instrumentKey] = !$scope.playerOptions.mute[instrumentKey];
+			updatePattern();
 		};
 	});

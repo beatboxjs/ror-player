@@ -65,6 +65,11 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 		"Z" : "now"
 	};
 
+	bbConfig.times = [ 2, 3, 4, 12 ];
+
+	// Time measurement that is used for beatbox.js. Should be able to represent all the time measurements above
+	bbConfig.playTime = 12;
+
 	bbConfig.tunes = {
 		'General Breaks': {
 			patterns: {
