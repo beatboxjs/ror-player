@@ -23,11 +23,15 @@ angular.module("beatbox").factory("bbPlayer", function(bbConfig, bbUtils, ng, Be
 
 			var fac = bbConfig.playTime/pattern.time;
 			var ret = new Array(pattern.length*pattern.time*fac);
+			var vol = 1;
 			for(var i=0; i<pattern.length*pattern.time; i++) {
+				if(pattern.volumeHack && pattern.volumeHack[i] != null)
+					vol = pattern.volumeHack[i];
+
 				var stroke = [ ];
 				for(var instr in bbConfig.instruments) {
 					if((!headphones || headphones == instr) && !mute[instr] && pattern[instr] && pattern[instr][i] && pattern[instr][i] != " ")
-						stroke.push(instr+"_"+pattern[instr][i]);
+						stroke.push({ instrument: instr+"_"+pattern[instr][i], volume: vol });
 				}
 				ret[i*fac] = stroke;
 			}
@@ -45,7 +49,7 @@ angular.module("beatbox").factory("bbPlayer", function(bbConfig, bbUtils, ng, Be
 				var patternBeatbox = bbPlayer.patternToBeatbox(pattern, instrumentKey);
 				idx = idx*bbConfig.playTime*4;
 				for(var i=0; i<patternBeatbox.length; i++) {
-					ret[i+idx] = (ret[i+idx] || [ ]).filter(function(it) { return it != instrumentKey; }).concat(patternBeatbox[i]);
+					ret[i+idx] = (ret[i+idx] || [ ]).filter(function(it) { return it.instrument != instrumentKey; }).concat(patternBeatbox[i]);
 				}
 			}
 

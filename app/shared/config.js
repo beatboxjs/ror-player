@@ -73,26 +73,28 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 	bbConfig.tunes = {
 		'General Breaks': {
 			patterns: {
-				/*"Kalashnikov": {
-					ls: '{v30}XXXXXXXXXXXXXXXX{v50}XXXXXXXXXXXXXXXX{v70}XXXXXXXXXXXXXXXX{v100}X               ',
+				"Kalashnikov": {
+					ls: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX               ',
 					ms: '@ls',
 					hs: '@ls',
 					re: '@ls',
 					sn: '@ls',
 					ta: '@ls',
 					ag: '@ls',
-					sh: '@ls'
+					sh: '@ls',
+					volumeHack: { 0: .1, 16: .4, 32: .7, 48: 1  }
 				},
 				"8 up": {
-					ls: '{v7}X{v10}X{v13}X{v16}X{v19}X{v22}X{v25}X{v28}X{v31}X{v34}X{v37}X{v40}X{v43}X{v46}X{v49}X{v52}X{v55}X{v58}X{v61}X{v64}X{v67}X{v70}X{v73}X{v76}X{v79}X{v82}X{v85}X{v88}X{v91}X{v94}X{v97}X{v100}X',
+					ls: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
 					ms: '@ls',
 					hs: '@ls',
 					re: '@ls',
 					sn: '@ls',
 					ta: '@ls',
 					ag: '@ls',
-					sh: '@ls'
-				}*/
+					sh: '@ls',
+					volumeHack: (function(){ var r={}; for(var i=0; i<32; i++) r[i] = .07+.03*i; return r; })()
+				},
 				"Clave": {
 					ls: 'X  X  X   X X   ',
 					ms: '@ls',
