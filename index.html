@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en-us" ng-app="ror-simulator">
+<html lang="en-us" ng-app="beatbox">
     <head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>RoR Simulator</title>
+		<title>Angular Beatbox</title>
 
 		<!-- inject:css -->
 		<!-- endinject -->
 	</head>
-	<body ng-controller="RorSimulatorController">
+	<body ng-controller="BeatboxController">
 		<div class="container-fluid">
 			<div class="page-header">
-				<h1>RoR Simulator</h1>
+				<h1>Angular Beatbox</h1>
 			</div>
 			<div class="row">
 				<div id="tunes">
-					<ror-pattern-list ror-pattern-click="patternClick(tuneName, patternName)"></ror-pattern-list>
+					<bb-pattern-list bb-pattern-click="patternClick(tuneName, patternName)"></bb-pattern-list>
 				</div>
 				<div id="song-player">
-					<ror-song-player ror-song="song"></ror-song-player>
+					<bb-song-player bb-song="song"></bb-song-player>
 				</div>
 			</div>
 		</div>

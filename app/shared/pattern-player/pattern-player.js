@@ -1,17 +1,17 @@
-angular.module("ror-simulator")
-	.directive("rorPatternPlayer", function($) {
+angular.module("beatbox")
+	.directive("bbPatternPlayer", function($) {
 		return {
 			templateUrl: "app/shared/pattern-player/pattern-player.html",
 			scope: {
-				pattern: "=rorPattern",
-				editable: "=rorPatternEditable"
+				pattern: "=bbPattern",
+				editable: "=bbPatternEditable"
 			},
-			controller: "RorPatternController"
+			controller: "bbPatternController"
 		};
 	})
-	.controller("RorPatternController", function($scope, $element, Player, RorConstants, RorUtils) {
-		$scope.ror = RorConstants;
-		$scope.utils = RorUtils;
+	.controller("bbPatternController", function($scope, $element, bbPlayer, bbConfig, bbUtils) {
+		$scope.config = bbConfig;
+		$scope.utils = bbUtils;
 
 		function strokeCallback(i) {
 			// DOM manipulation in the controller? Where else could this go?
@@ -39,7 +39,7 @@ angular.module("ror-simulator")
 
 		$scope.playPause = function() {
 			if(!$scope.playing)
-				$scope.playing = Player.playPattern($scope.pattern, $scope.playingOptions);
+				$scope.playing = bbPlayer.playPattern($scope.pattern, $scope.playingOptions);
 			else if($scope.playing.playing)
 				$scope.playing.stop();
 			else

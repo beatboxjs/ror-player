@@ -1,15 +1,16 @@
-angular.module("ror-simulator")
-	.directive("rorPatternList", function() {
+angular.module("beatbox")
+	.directive("bbPatternList", function() {
 		return {
 			templateUrl: "app/shared/pattern-list/pattern-list.html",
-			controller: "RorPatternListController",
+			controller: "bbPatternListController",
 			scope: {
-				clickHandler: "&rorPatternClick"
+				clickHandler: "&bbPatternClick"
 			}
 		};
 	})
-	.controller("RorPatternListController", function($scope, RorConstants, PatternEditorDialog) {
-		$scope.ror = RorConstants;
+	.controller("bbPatternListController", function($scope, bbConfig, bbUtils, bbPatternEditorDialog) {
+		$scope.config = bbConfig;
+		$scope.utils = bbUtils;
 
 		$scope.patternClick = function(tuneName, patternName) {
 			return $scope.clickHandler({ patternName: patternName, tuneName: tuneName });
@@ -20,23 +21,23 @@ angular.module("ror-simulator")
 			if(!patternName)
 				return;
 
-			while(patternName && RorConstants.myTunes.patterns[patternName])
+			while(patternName && bbConfig.myTunes.patterns[patternName])
 				patternName = prompt("This name is already taken. Please enter a new one.");
 			if(!patternName)
 				return;
 
-			RorConstants.myTunes.patterns[patternName] = {
+			bbConfig.myTunes.patterns[patternName] = {
 				length: 4,
 				time: 4
 			};
 
-			for(var i in RorConstants.instruments)
-				RorConstants.myTunes.patterns[patternName][i] = [ ];
+			for(var i in bbConfig.instruments)
+				bbConfig.myTunes.patterns[patternName][i] = [ ];
 
-			PatternEditorDialog.editPattern(RorConstants.myTunesKey, patternName);
+			bbPatternEditorDialog.editPattern(bbConfig.myTunesKey, patternName);
 		};
 
 		$scope.removePattern = function(tuneName, patternName) {
-			delete RorConstants.tunes[tuneName].patterns[patternName];
+			delete bbConfig.tunes[tuneName].patterns[patternName];
 		};
 	});

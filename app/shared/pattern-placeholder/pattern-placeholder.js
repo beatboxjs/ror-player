@@ -1,14 +1,14 @@
-angular.module("ror-simulator")
-	.directive("rorPatternPlaceholder", function() {
+angular.module("beatbox")
+	.directive("bbPatternPlaceholder", function() {
 		return {
 			templateUrl: "app/shared/pattern-placeholder/pattern-placeholder.html",
-			controller: "RorPatternPlaceholderController",
+			controller: "bbPatternPlaceholderController",
 			scope: {
-				tuneName: "=rorTuneName",
-				patternName: "=rorPatternName",
-				clickHandler: "&rorPatternClick",
-				draggable: "=rorDraggable",
-				dragSuccess: "&rorDragSuccess"
+				tuneName: "=bbTuneName",
+				patternName: "=bbPatternName",
+				clickHandler: "&bbPatternClick",
+				draggable: "=bbDraggable",
+				dragSuccess: "&bbDragSuccess"
 			},
 			transclude: true,
 			replace: true,
@@ -21,18 +21,18 @@ angular.module("ror-simulator")
 			}
 		};
 	})
-	.directive("rorPatternPlaceholderItem", function() {
+	.directive("bbPatternPlaceholderItem", function() {
 		return {
 			templateUrl: "app/shared/pattern-placeholder/pattern-placeholder-item.html",
 			scope: {
-				label: "=rorLabel"
+				label: "=bbLabel"
 			},
 			replace: true,
 			transclude: true
 		};
 	})
-	.controller("RorPatternPlaceholderController", function($scope, RorConstants, PatternEditorDialog) {
-		$scope.ror = RorConstants;
+	.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPatternEditorDialog) {
+		$scope.config = bbConfig;
 
 		$scope.click = function() {
 			if($scope.clickHandler() != false)
@@ -40,7 +40,7 @@ angular.module("ror-simulator")
 		};
 
 		$scope.editPattern = function() {
-			PatternEditorDialog.editPattern($scope.tuneName, $scope.patternName);
+			bbPatternEditorDialog.editPattern($scope.tuneName, $scope.patternName);
 		};
 
 		// On drop, dragdrop will exchange the drag-model with the drop-model. It thus needs something to write to.

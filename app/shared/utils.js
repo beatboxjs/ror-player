@@ -1,10 +1,14 @@
-angular.module("ror-simulator").factory("RorUtils", function(RorConstants, ng) {
-	var RorUtils = {
+angular.module("beatbox").factory("bbUtils", function(bbConfig, ng) {
+	var bbUtils = {
 		getNumber: function(num) {
 			if(isFinite(num) && !isNaN(num))
 				return new Array(num);
 			else
 				return [ ];
+		},
+
+		getKeys : function(obj) {
+			return Object.keys(obj);
 		},
 
 		getMaxIndex: function(arr) {
@@ -19,13 +23,13 @@ angular.module("ror-simulator").factory("RorUtils", function(RorConstants, ng) {
 		},
 
 		getSongLength: function(song) {
-			var maxIndex = RorUtils.getMaxIndex(song);
+			var maxIndex = bbUtils.getMaxIndex(song);
 			if(maxIndex == null)
 				return 0;
 
 			var length = 1;
 			for(var i in song[maxIndex]) {
-				var pattern = RorUtils.getPattern(song[maxIndex][i]);
+				var pattern = bbUtils.getPattern(song[maxIndex][i]);
 				if(pattern)
 					length = Math.max(length, pattern.length/4);
 			}
@@ -50,9 +54,9 @@ angular.module("ror-simulator").factory("RorUtils", function(RorConstants, ng) {
 				tuneName = tuneName[0];
 			}
 
-			return RorConstants.tunes[tuneName] && RorConstants.tunes[tuneName].patterns[patternName];
+			return bbConfig.tunes[tuneName] && bbConfig.tunes[tuneName].patterns[patternName];
 		}
 	};
 
-	return RorUtils;
+	return bbUtils;
 });

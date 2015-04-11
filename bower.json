@@ -1,11 +1,10 @@
 {
-  "name": "ror-simulator",
-  "version": "0.0.0",
-  "homepage": "https://github.com/K-rankenste-in/ror-simulator",
+  "name": "angular-beatbox",
+  "version": "0.1.0",
+  "homepage": "https://github.com/beatboxjs/angular-beatbox",
   "authors": [
     "Candid Dauth <cdauth@cdauth.eu>"
   ],
-  "license": "MIT",
   "private": true,
   "ignore": [
     "**/.*",

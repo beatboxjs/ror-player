@@ -1,8 +1,8 @@
-angular.module("ror-simulator").factory("Player", function(RorConstants, RorUtils, ng) {
+angular.module("beatbox").factory("bbPlayer", function(bbConfig, bbUtils, ng) {
 	var sounds = { };
-	for(var i in RorConstants.instruments) {
-		for(var j=0; j<RorConstants.instruments[i].strokes.length; j++) {
-			var k = i+"_"+RorConstants.instruments[i].strokes[j];
+	for(var i in bbConfig.instruments) {
+		for(var j=0; j<bbConfig.instruments[i].strokes.length; j++) {
+			var k = i+"_"+bbConfig.instruments[i].strokes[j];
 			sounds[k] = new Howl({
 				urls: [ "assets/audio/"+k+".mp3" ]
 			});
@@ -11,7 +11,7 @@ angular.module("ror-simulator").factory("Player", function(RorConstants, RorUtil
 
 	var allPlayers = [ ];
 
-	var Player = {
+	var bbPlayer = {
 		playSounds: function(instrument_strokes) {
 			for(var i=0; i<instrument_strokes.length; i++) {
 				if(sounds[instrument_strokes[i]])
@@ -80,11 +80,11 @@ angular.module("ror-simulator").factory("Player", function(RorConstants, RorUtil
 					_specialStrokeCallback(patternIdx);
 
 				var strokes = [ ];
-				for(var instr in RorConstants.instruments) {
+				for(var instr in bbConfig.instruments) {
 					if((!options.headphones || options.headphones == instr) && (!options.mute[instr]) && pattern[instr] && pattern[instr][patternIdx] && pattern[instr][patternIdx] != " ")
 						strokes.push(instr+"_"+pattern[instr][patternIdx]);
 				}
-				Player.playSounds(strokes);
+				bbPlayer.playSounds(strokes);
 
 				patternIdx++;
 
@@ -119,15 +119,15 @@ angular.module("ror-simulator").factory("Player", function(RorConstants, RorUtil
 			async.forever(function(next) {
 				patternPlayers = [ ];
 
-				if(songIdx >= RorUtils.getSongLength(song)) {
+				if(songIdx >= bbUtils.getSongLength(song)) {
 					ret.playing = false;
 					return callback && callback();
 				}
 
 				var pattern = { };
-				for(var inst in RorConstants.instruments) {
-					if(song[songIdx] && song[songIdx][inst] && RorUtils.getPattern(song[songIdx][inst]))
-						buffer[inst] = RorUtils.splitPattern(RorUtils.getPattern(song[songIdx][inst]), inst);
+				for(var inst in bbConfig.instruments) {
+					if(song[songIdx] && song[songIdx][inst] && bbUtils.getPattern(song[songIdx][inst]))
+						buffer[inst] = bbUtils.splitPattern(bbUtils.getPattern(song[songIdx][inst]), inst);
 
 					if(buffer[inst] && buffer[inst].length > 0)
 						pattern[inst] = buffer[inst].shift();
@@ -151,7 +151,7 @@ angular.module("ror-simulator").factory("Player", function(RorConstants, RorUtil
 				ng.forEach(timePatterns, function(it) {
 					var songIdxBkp = songIdx;
 					funcs.push(function(next) {
-						patternPlayers.push(Player.playPattern(it, options, next, first && options.beatCallback ? function(patternIdx) {
+						patternPlayers.push(bbPlayer.playPattern(it, options, next, first && options.beatCallback ? function(patternIdx) {
 							if(patternIdx%it.time == 0)
 								options.beatCallback(songIdxBkp*4 + patternIdx/it.time);
 						} : null));
@@ -173,5 +173,5 @@ angular.module("ror-simulator").factory("Player", function(RorConstants, RorUtil
 		}
 	};
 
-	return Player;
+	return bbPlayer;
 });

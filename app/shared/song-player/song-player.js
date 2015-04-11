@@ -1,16 +1,16 @@
-angular.module("ror-simulator")
-	.directive("rorSongPlayer", function() {
+angular.module("beatbox")
+	.directive("bbSongPlayer", function() {
 		return {
 			templateUrl: "app/shared/song-player/song-player.html",
-			controller: "RorSongPlayerController",
+			controller: "bbSongPlayerController",
 			scope: {
-				song: '=rorSong'
+				song: '=bbSong'
 			}
 		};
 	})
-	.controller("RorSongPlayerController", function($scope, RorConstants, $modal, ng, RorUtils, Player, $element, $timeout) {
-		$scope.ror = RorConstants;
-		$scope.utils = RorUtils;
+	.controller("bbSongPlayerController", function($scope, bbConfig, $modal, ng, bbUtils, bbPlayer, $element, $timeout) {
+		$scope.config = bbConfig;
+		$scope.utils = bbUtils;
 
 		$scope.playingOptions = {
 			speed: 100,
@@ -36,7 +36,7 @@ angular.module("ror-simulator")
 
 		$scope.playPause = function() {
 			if(!$scope.playing) {
-				$scope.playing = Player.playSong($scope.song, $scope.playingOptions, function() {
+				$scope.playing = bbPlayer.playSong($scope.song, $scope.playingOptions, function() {
 					$timeout(function() {
 						$scope.playing = null;
 					});
@@ -71,7 +71,7 @@ angular.module("ror-simulator")
 		};
 
 		$scope.getLength = function() {
-			return RorUtils.getSongLength($scope.song)+1;
+			return bbUtils.getSongLength($scope.song)+1;
 		};
 
 		$scope.getColSpan = function(instrumentKey, i) {
@@ -79,7 +79,7 @@ angular.module("ror-simulator")
 			if(!pattern)
 				return 1;
 
-			pattern = RorUtils.getPattern(pattern);
+			pattern = bbUtils.getPattern(pattern);
 			if(!pattern)
 				return 1;
 
@@ -97,11 +97,12 @@ angular.module("ror-simulator")
 			if(!$scope.song[i] || !$scope.song[i][instrumentKey])
 				return 1;
 
-			var idx = RorConstants.instrumentKeys.indexOf(instrumentKey);
+			var instrumentKeys = Object.keys(bbConfig.instruments);
+			var idx = instrumentKeys.indexOf(instrumentKey);
 			var colspan = $scope.getColSpan(instrumentKey, i);
 			var ret = 1;
-			for(var j=idx+1; j<RorConstants.instrumentKeys.length; j++) {
-				if(ng.equals($scope.song[i][instrumentKey], $scope.song[i][RorConstants.instrumentKeys[j]]) && colspan == $scope.getColSpan(RorConstants.instrumentKeys[j], i))
+			for(var j=idx+1; j<instrumentKeys.length; j++) {
+				if(ng.equals($scope.song[i][instrumentKey], $scope.song[i][instrumentKeys[j]]) && colspan == $scope.getColSpan(instrumentKeys[j], i))
 					ret++;
 				else
 					break;
@@ -110,8 +111,9 @@ angular.module("ror-simulator")
 		};
 
 		$scope.shouldDisplay = function(instrumentKey, i) {
-			var idx = RorConstants.instrumentKeys.indexOf(instrumentKey);
-			if (idx > 0 && $scope.getRowSpan(RorConstants.instrumentKeys[idx-1], i) >= 2)
+			var instrumentKeys = Object.keys(bbConfig.instruments);
+			var idx = instrumentKeys.indexOf(instrumentKey);
+			if (idx > 0 && $scope.getRowSpan(instrumentKeys[idx-1], i) >= 2)
 				return false;
 
 			for(var j=i-1; j>=0; j--) {
@@ -132,10 +134,11 @@ angular.module("ror-simulator")
 		};
 
 		$scope.removePattern = function(instrumentKey, idx) {
+			var instrumentKeys = bbConfig.instrumentKeys;
 			var span = $scope.getRowSpan(instrumentKey, idx);
-			var instrIdx = RorConstants.instrumentKeys.indexOf(instrumentKey);
+			var instrIdx = instrumentKeys.indexOf(instrumentKey);
 			for(var i=0; i<span; i++) {
-				delete $scope.song[idx][RorConstants.instrumentKeys[instrIdx+i]];
+				delete $scope.song[idx][instrumentKeys[instrIdx+i]];
 			}
 			if(Object.keys($scope.song[idx]).length == 0)
 				delete $scope.song[idx];
@@ -152,7 +155,7 @@ angular.module("ror-simulator")
 			if(instrumentKey)
 				$scope.song[idx][instrumentKey] = data;
 			else {
-				for(var i in RorConstants.instruments) {
+				for(var i in bbConfig.instruments) {
 					$scope.song[idx][i] = data;
 				}
 			}

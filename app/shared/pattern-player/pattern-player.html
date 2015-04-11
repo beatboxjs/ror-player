@@ -17,7 +17,7 @@
 		<slider ng-model="playingOptions.speed" min="60" max="180"></slider>
 	</div>
 </div>
-<div class="pattern-editor-container">
+<div class="bb-pattern-editor-container">
 	<table class="pattern-editor" ng-class="'time-'+pattern.time">
 		<thead>
 			<tr>
@@ -26,18 +26,18 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="instrumentKey in ror.instrumentKeys">
-				<th>{{ror.instruments[instrumentKey].name}}</th>
+			<tr ng-repeat="instrumentKey in utils.getKeys(config.instruments)">
+				<th>{{config.instruments[instrumentKey].name}}</th>
 				<td class="instrument-operations">
 					<a href="javascript:" ng-click="headphones(instrumentKey)" ng-class="playingOptions.headphones == instrumentKey ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a>
 					<a href="javascript:" ng-click="mute(instrumentKey)" ng-class="playingOptions.mute[instrumentKey] ? 'active' : 'inactive'"><span class="glyphicon glyphicon-volume-off"></span></a>
 				</td>
 				<td ng-repeat="(i,a) in utils.getNumber(pattern.length*pattern.time) track by $index" class="stroke" ng-class="getStrokeClass(i)" dropdown>
-					<span ng-if="!editable" class="stroke-inner">{{ror.strokes[pattern[instrumentKey][i]] || ' '}}</span>
-					<a ng-if="editable" href="javascript:" class="stroke-inner dropdown-toggle" dropdown-toggle>{{ror.strokes[pattern[instrumentKey][i]] || ' '}}</a>
+					<span ng-if="!editable" class="stroke-inner">{{config.strokes[pattern[instrumentKey][i]] || ' '}}</span>
+					<a ng-if="editable" href="javascript:" class="stroke-inner dropdown-toggle" dropdown-toggle>{{config.strokes[pattern[instrumentKey][i]] || ' '}}</a>
 					<ul ng-if="editable" class="dropdown-menu">
 						<li><a href="javascript:" ng-click="pattern[instrumentKey][i]=' '"> </a></li>
-						<li ng-repeat="stroke in ror.instruments[instrumentKey].strokes"><a href="javascript:" ng-click="pattern[instrumentKey][i]=stroke">{{ror.strokes[stroke]}}</a></li>
+						<li ng-repeat="stroke in config.instruments[instrumentKey].strokes"><a href="javascript:" ng-click="pattern[instrumentKey][i]=stroke">{{config.strokes[stroke]}}</a></li>
 					</ul>
 				</td>
 			</tr>

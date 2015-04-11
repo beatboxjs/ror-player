@@ -1,4 +1,4 @@
-<div class="ror-song-player">
+<div class="bb-song-player">
 	<div>
 		<button type="button" class="btn" ng-class="playing.playing ? 'btn-info' : 'btn-success'" ng-click="playPause()"><span class="glyphicon" ng-class="playing.playing ? 'glyphicon-pause' : 'glyphicon-play'"></span> {{playing.playing ? 'Pause' : 'Play'}}</button>
 		<button type="button" class="btn btn-danger" ng-click="stop()"><span class="glyphicon glyphicon-stop"></span> Stop</button>
@@ -19,17 +19,17 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="instrumentKey in ror.instrumentKeys">
-					<th>{{ror.instruments[instrumentKey].name}}</th>
+				<tr ng-repeat="instrumentKey in utils.getKeys(config.instruments)">
+					<th>{{config.instruments[instrumentKey].name}}</th>
 					<td class="instrument-operations">
 						<a href="javascript:" ng-click="headphones(instrumentKey)" ng-class="playingOptions.headphones == instrumentKey ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a>
 						<a href="javascript:" ng-click="mute(instrumentKey)" ng-class="playingOptions.mute[instrumentKey] ? 'active' : 'inactive'"><span class="glyphicon glyphicon-volume-off"></span></a>
 					</td>
 					<td ng-repeat="(i,a) in utils.getNumber(getLength()) track by $index" ng-if="shouldDisplay(instrumentKey, i)" class="bar" colspan="{{getColSpan(instrumentKey, i)*4}}" rowspan="{{getRowSpan(instrumentKey, i)}}"
 					    ng-drop="{{!song[i][instrumentKey]}}" ng-drop-success="onDrop(instrumentKey, i, $data)">
-						<ror-pattern-placeholder ng-if="song[i][instrumentKey]" ror-tune-name="song[i][instrumentKey][0]" ror-pattern-name="song[i][instrumentKey][1]" ror-draggable="true" ror-drag-success="onDrag(instrumentKey, i)">
-							<ror-pattern-placeholder-item ng-click="removePattern(instrumentKey, i)">Remove</ror-pattern-placeholder-item>
-						</ror-pattern-placeholder>
+						<bb-pattern-placeholder ng-if="song[i][instrumentKey]" bb-tune-name="song[i][instrumentKey][0]" bb-pattern-name="song[i][instrumentKey][1]" bb-draggable="true" bb-drag-success="onDrag(instrumentKey, i)">
+							<bb-pattern-placeholder-item ng-click="removePattern(instrumentKey, i)">Remove</bb-pattern-placeholder-item>
+						</bb-pattern-placeholder>
 					</td>
 				</tr>
 			</tbody>
