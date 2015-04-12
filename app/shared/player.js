@@ -47,7 +47,7 @@ angular.module("beatbox").factory("bbPlayer", function(bbConfig, bbUtils, ng, Be
 				var patternBeatbox = bbPlayer.patternToBeatbox(pattern, instrumentKey);
 				idx = idx*bbConfig.playTime*4;
 				for(var i=0; i<patternBeatbox.length; i++) {
-					ret[i+idx] = (ret[i+idx] || [ ]).filter(function(it) { return it.instrument != instrumentKey; }).concat(patternBeatbox[i]);
+					ret[i+idx] = (ret[i+idx] || [ ]).filter(function(it) { return it.instrument != instrumentKey; }).concat(patternBeatbox[i] || [ ]);
 				}
 			}
 
