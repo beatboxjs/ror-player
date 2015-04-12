@@ -7,6 +7,8 @@
     "url": "https://github.com/beatboxjs/angular-beatbox.git"
   },
   "devDependencies": {
+    "async": "^0.9.0",
+    "audiosprite": "^0.5.0",
     "event-stream": "^3.3.0",
     "gulp": "^3.8.11",
     "gulp-angular-templatecache": "^1.6.0",

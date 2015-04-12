@@ -1,11 +1,9 @@
-angular.module("beatbox").factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox) {
-	for(var i in bbConfig.instruments) {
-		for(var j=0; j<bbConfig.instruments[i].strokes.length; j++) {
-			var k = i+"_"+bbConfig.instruments[i].strokes[j];
-			Beatbox.registerInstrument(k, new Howl({
-				urls: [ "assets/audio/"+k+".mp3" ]
-			}));
-		}
+angular.module("beatbox").factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioSprite) {
+
+	var sound = new Howl(bbAudioSprite);
+
+	for(var i in bbAudioSprite.sprite) {
+		Beatbox.registerInstrument(i, sound, i);
 	}
 
 	var allPlayers = [ ];
