@@ -102,7 +102,7 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 					re: '@ls',
 					sn: '@ls',
 					ta: '@ls',
-					ag: '$ls',
+					ag: '@ls',
 					sh: '@ls'
 				},
 				'Clave Inverted': {
