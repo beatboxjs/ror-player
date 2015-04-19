@@ -13,11 +13,29 @@ angular.module("beatbox")
 		$scope.config = bbConfig;
 		$scope.utils = bbUtils;
 
-		function strokeCallback(i) {
+		function handleIdx(i) {
+			var i = $scope.player.getPosition();
 			var fac = bbConfig.playTime / $scope.pattern.time;
 			if(i % fac != 0)
+				return null;
+			return i/fac;
+		}
+
+		function updateMarkerPosition() {
+			var i = handleIdx($scope.player.getPosition());
+			if(i == null)
 				return;
-			i = i/fac;
+
+			var stroke = $(".stroke-i-"+i, $element);
+			var marker = $(".position-marker", $element).finish();
+			if(stroke.length > 0)
+				marker.offset({ left: stroke.offset().left });
+		}
+
+		function strokeCallback(i) {
+			var i = handleIdx($scope.player.getPosition());
+			if(i == null)
+				return;
 
 			// DOM manipulation in the controller? Where else could this go?
 			if(i%$scope.pattern.time == 0) {
@@ -26,11 +44,12 @@ angular.module("beatbox")
 				setTimeout(function() { beat.removeClass("active"); }, 12000/$scope.playerOptions.speed);
 			}
 
+			updateMarkerPosition();
+
 			var stroke = $(".stroke-i-"+i, $element);
 			var marker = $(".position-marker", $element).finish();
 
 			if(stroke.length > 0) {
-				marker.offset({ left: stroke.offset().left });
 				marker.animate({ left: (parseInt(marker.css("left"))+stroke.outerWidth())+"px" }, 60000/$scope.playerOptions.speed/$scope.pattern.time, "linear");
 			}
 		}
@@ -102,5 +121,10 @@ angular.module("beatbox")
 		$scope.mute = function(instrumentKey) {
 			$scope.playerOptions.mute[instrumentKey] = !$scope.playerOptions.mute[instrumentKey];
 			updatePattern();
+		};
+
+		$scope.setPosition = function(i) {
+			$scope.player.setPosition(i*bbConfig.playTime);
+			updateMarkerPosition();
 		};
 	});
