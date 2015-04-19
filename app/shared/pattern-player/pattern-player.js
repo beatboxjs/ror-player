@@ -22,20 +22,20 @@ angular.module("beatbox")
 		}
 
 		function updateMarkerPosition() {
-			var i = handleIdx($scope.player.getPosition());
-			if(i == null)
-				return;
+			var i = $scope.player.getPosition() * $scope.pattern.time / bbConfig.playTime;
+			var strokeIdx = Math.floor(i);
 
-			var stroke = $(".stroke-i-"+i, $element);
+			var stroke = $(".stroke-i-"+strokeIdx, $element);
 			var marker = $(".position-marker", $element).finish();
 			if(stroke.length > 0)
-				marker.offset({ left: stroke.offset().left });
+				marker.offset({ left: stroke.offset().left + stroke.outerWidth() * (i - strokeIdx) });
 		}
 
 		function strokeCallback(i) {
-			var i = handleIdx($scope.player.getPosition());
-			if(i == null)
+			var fac = bbConfig.playTime / $scope.pattern.time;
+			if(i % fac != 0)
 				return;
+			i = i/fac;
 
 			// DOM manipulation in the controller? Where else could this go?
 			if(i%$scope.pattern.time == 0) {
@@ -123,8 +123,10 @@ angular.module("beatbox")
 			updatePattern();
 		};
 
-		$scope.setPosition = function(i) {
-			$scope.player.setPosition(i*bbConfig.playTime);
+		$scope.setPosition = function(i, $event) {
+			var beat = $($event.target).closest(".beat");
+			var add = ($event.pageX - beat.offset().left) / beat.outerWidth();
+			$scope.player.setPosition(Math.floor((i+add)*bbConfig.playTime));
 			updateMarkerPosition();
 		};
 	});

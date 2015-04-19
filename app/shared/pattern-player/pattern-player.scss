@@ -31,14 +31,18 @@
 			border-right: 2px solid #888;
 		}
 
-		.beat a {
+		.beat {
+			cursor: pointer;
+		}
+
+		.beat span {
 			display: inline-block;
 			padding: 0 .5ex;
 			border-radius: 10px;
 			transition: background-color 1s, color 1s;
 		}
 
-		.beat.active a {
+		.beat.active span {
 			background-color: #3a94a5;
 			color: #fff;
 			transition: all 0 ease 0;
