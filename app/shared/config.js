@@ -235,6 +235,28 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 					ta: '@re',
 					ag: '@re',
 					ot: '                                                                                             F  '
+				},
+				"Kalashnikov (3⁄4)": {
+					ls: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX           ',
+					ms: '@ls',
+					hs: '@ls',
+					re: '@ls',
+					sn: '@ls',
+					ta: '@ls',
+					ag: '@ls',
+					sh: '@ls',
+					volumeHack: { 0: .1, 12: .4, 24: .7, 36: 1  }
+				},
+				"8 up (3⁄4)": {
+					ls: 'XXXXXXXXXXXXXXXXXXXXXXXX',
+					ms: '@ls',
+					hs: '@ls',
+					re: '@ls',
+					sn: '@ls',
+					ta: '@ls',
+					ag: '@ls',
+					sh: '@ls',
+					volumeHack: (function(){ var r={}; for(var i=0; i<24; i++) r[i] = .011+.043*i; return r; })()
 				}
 			}
 		},
