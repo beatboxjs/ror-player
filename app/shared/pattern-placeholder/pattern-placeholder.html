@@ -1,8 +1,14 @@
-<div class="bb-pattern-placeholder" dropdown>
-	<span class="btn btn-default pattern-button" ng-drag="draggable" ng-drag-success="dragSuccess()" ng-drag-data="[ tuneName, patternName ]"><span class="tune-name">{{tuneName}}</span><br><span class="pattern-name">{{patternName}}</span></span>
-	<a type="button" class="btn btn-default dropdown-toggle" dropdown-toggle><span class="caret"></span></a>
-	<ul class="dropdown-menu" role="menu">
-		<li><a href="javascript:" ng-click="editPattern()">Edit</a></li>
+<div class="bb-pattern-placeholder">
+	<div class="btn btn-default pattern-button">
+		<span class="tune-name">{{tuneName}}</span>
+		<br>
+		<span class="pattern-name">{{patternName}}</span>
+	</div>
+	<div class="drag-handle" ng-drag="draggable" ng-drag-success="dragSuccess()" ng-drag-data="getDragData(tuneName, patternName)">
+	</div>
+	<ul class="actions">
+		<li><a href="javascript:" title="Listen" ng-click="playPattern()"><span ng-class="'glyphicon glyphicon-'+(player.playing ? 'stop' : 'play-circle')"></span></a></li>
+		<li><a href="javascript:" title="Edit" ng-click="editPattern()"><span class="glyphicon glyphicon-pencil"></span></a></li>
 		<ng-transclude></ng-transclude>
 	</ul>
 </div>

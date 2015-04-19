@@ -10,18 +10,11 @@
 		<!-- endinject -->
 	</head>
 	<body ng-controller="BeatboxController">
-		<div class="container-fluid">
-			<div class="page-header">
-				<h1>Angular Beatbox</h1>
-			</div>
-			<div class="row">
-				<div id="tunes">
-					<bb-pattern-list bb-pattern-click="patternClick(tuneName, patternName)"></bb-pattern-list>
-				</div>
-				<div id="song-player">
-					<bb-song-player bb-song="song"></bb-song-player>
-				</div>
-			</div>
+		<div id="tunes">
+			<bb-pattern-list bb-pattern-click="patternClick(tuneName, patternName)"></bb-pattern-list>
+		</div>
+		<div id="song-player">
+			<bb-song-player bb-song="song"></bb-song-player>
 		</div>
 		<!-- inject:js -->
 		<!-- endinject -->

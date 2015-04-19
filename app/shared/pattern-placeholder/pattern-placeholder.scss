@@ -1,47 +1,52 @@
 html body .bb-pattern-placeholder {
 
-	display: block;
 	height: 3em;
 	position: relative;
 
-	.btn {
+	.pattern-button {
 		height: 100%;
 		box-sizing: border-box;
-		position: absolute;
-		top: 0;
-		float: none;
 		display: block;
-	}
-
-	.btn.pattern-button {
 		text-align: left;
 		padding: 0 12px;
+
+		.tune-name {
+			font-weight: bold;
+		}
+	}
+
+	.drag-handle {
+		position: absolute;
+		top: 0;
 		left: 0;
-		width: 100%;
-		overflow: hidden;
+		right: 0;
+		bottom: 0;
 		cursor: move;
 	}
 
-	.btn.pattern-button .tune-name {
-		font-weight: bold;
-	}
-
-	.btn.dropdown-toggle {
-		width: 20px;
-		right: 0;
-		padding: 0;
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
-	}
-
-	.dropdown-menu {
-		left: auto;
-		right: 0;
-		top: 50%;
-	}
-
-	.btn.dragging {
+	.actions {
+		position: absolute;
+		padding: 3px 5px;
+		top: 2px;
+		right: 2px;
+		list-style-type: none;
+		margin: 0;
+		border-radius: 5px;
 		opacity: .5;
+
+		&:hover {
+			opacity: 1;
+			background-color: #fff;
+			transition: all .3s;
+		}
+
+		li {
+			display: inline;
+		}
 	}
 
+}
+
+#bb-pattern-placeholder-drag-clone {
+	opacity: .5;
 }

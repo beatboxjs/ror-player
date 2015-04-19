@@ -37,11 +37,6 @@ angular.module("beatbox")
 			marker.animate({ left: (parseInt(marker.css("left"))+beat.outerWidth())+"px" }, 60000/$scope.playerOptions.speed, "linear");
 		};
 
-		$scope.player.onstop = function() {
-			if(!$scope.$root.$$phase)
-				$scope.$apply();
-		};
-
 		function updatePattern() {
 			$scope.player.setPattern(bbPlayer.songToBeatbox($scope.song, $scope.playerOptions.headphones, $scope.playerOptions.mute));
 		}
@@ -154,6 +149,32 @@ angular.module("beatbox")
 			if(Object.keys($scope.song[idx]).length == 0)
 				delete $scope.song[idx];
 		};
+
+		$scope.toggleInstrument = function(instrumentKey, idx, tuneAndPattern) {
+			if(ng.equals($scope.song[idx][instrumentKey], tuneAndPattern))
+				delete $scope.song[idx][instrumentKey];
+			else
+				$scope.song[idx][instrumentKey] = tuneAndPattern;
+		};
+
+		$scope.getPreviewPlayerOptions = function(instrumentKey, idx) {
+			var ret = {
+				mute: { },
+				speed: $scope.playerOptions.speed,
+				length: $scope.getColSpan(instrumentKey, idx)*4
+			};
+
+			var instrumentKeys = Object.keys(bbConfig.instruments);
+			var instrumentIdx = instrumentKeys.indexOf(instrumentKey);
+			var rowSpan = $scope.getRowSpan(instrumentKey, idx);
+			for(var i=0; i<instrumentKeys.length; i++) {
+				ret.mute[instrumentKeys[i]] = (i < instrumentIdx || i >= instrumentIdx+rowSpan);
+			}
+
+			return ret;
+		};
+
+		$scope.equals = ng.equals;
 
 		$scope.onDrag = function(instrumentKey, idx) {
 			$scope.removePattern(instrumentKey, idx);

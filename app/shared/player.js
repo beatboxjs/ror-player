@@ -1,4 +1,4 @@
-angular.module("beatbox").factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioSprite) {
+angular.module("beatbox").factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioSprite, $rootScope) {
 
 	var sound = new Howl(bbAudioSprite);
 
@@ -11,6 +11,10 @@ angular.module("beatbox").factory("bbPlayer", function(bbConfig, bbUtils, ng, Be
 	var bbPlayer = {
 		createBeatbox: function(repeat) {
 			var ret = new Beatbox([ ], 1, repeat);
+			ret.onstop = function() {
+				if(!$rootScope.$$phase)
+					$rootScope.$apply();
+			};
 			allPlayers.push(ret);
 			return ret;
 		},
