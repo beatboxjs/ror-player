@@ -12,7 +12,7 @@ angular.module("beatbox")
 		$scope.config = bbConfig;
 		$scope.utils = bbUtils;
 
-		testPlayer = $scope.player = bbPlayer.createBeatbox();
+		$scope.player = bbPlayer.createBeatbox();
 
 		$scope.playerOptions = {
 			speed: 100,
@@ -199,9 +199,5 @@ angular.module("beatbox")
 
 		$scope.dragStop = function() {
 			$scope.dragging = false;
-		}
-
-		$scope.onOver = function() {
-			console.log("over");
-		}
+		};
 	});
