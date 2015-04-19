@@ -56,14 +56,14 @@
 			background: #def;
 		}
 
-		.beat span {
+		.beat a {
 			display: inline-block;
 			padding: 0 .5ex;
 			border-radius: 10px;
 			transition: background-color 1s, color 1s;
 		}
 
-		.beat.active span {
+		.beat.active a {
 			background-color: #3a94a5;
 			color: #fff;
 			transition: all 0 ease 0;

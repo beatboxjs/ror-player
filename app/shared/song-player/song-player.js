@@ -20,6 +20,16 @@ angular.module("beatbox")
 			mute: { }
 		};
 
+		function updateMarkerPos() {
+			var i = $scope.player.getPosition();
+			if(i%bbConfig.playTime != 0)
+				return;
+			i = i/bbConfig.playTime;
+
+			var beat = $(".beat-i-"+i, $element);
+			$(".position-marker", $element).finish().offset({ left: beat.offset().left });
+		}
+
 		$scope.player.onbeat = function(i) {
 			if(i%bbConfig.playTime != 0)
 				return;
@@ -30,10 +40,10 @@ angular.module("beatbox")
 			beat.addClass("active");
 			setTimeout(function() { beat.removeClass("active"); }, 60000/$scope.playerOptions.speed);
 
-			var beat = $(".beat-i-"+i, $element);
-			var marker = $(".position-marker", $element).finish();
+			updateMarkerPos();
 
-			marker.offset({ left: beat.offset().left });
+			var beat = $(".beat-i-"+i, $element);
+			var marker = $(".position-marker", $element);
 			marker.animate({ left: (parseInt(marker.css("left"))+beat.outerWidth())+"px" }, 60000/$scope.playerOptions.speed, "linear");
 		};
 
@@ -172,6 +182,11 @@ angular.module("beatbox")
 			}
 
 			return ret;
+		};
+
+		$scope.setPosition = function(idx) {
+			$scope.player.setPosition(idx * bbConfig.playTime);
+			updateMarkerPos();
 		};
 
 		$scope.equals = ng.equals;
