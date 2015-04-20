@@ -128,6 +128,7 @@ gulp.task("scss", function() {
 	return gulp.src(files)
 		.pipe(filter("**/*.scss"))
 		.pipe(sass())
+		.on("error", function(err) { console.error(err); })
 		.pipe(concat("scss.css"))
 		.pipe(gulp.dest("build"));
 });
