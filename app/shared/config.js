@@ -510,13 +510,14 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 					sh: '@re'
 				},
 				'Kick Back 2': {
-					ls: 'X  X X  X  X X  X  X X  X  X X  ',
+					time: 12,
+					ls: 'X        X     X        X        X     X        X        X     X        X        X     X        ',
 					ms: '@ls',
 					hs: '@ls',
-					re: '  X   X   X   X   X   X   X   X ',
+					re: '      X           X           X           X           X           X           X           X     ',
 					sn: '@re',
 					ta: '@re',
-					ag: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+					ag: 'oaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoa',
 					sh: '@re'
 				},
 				'Break 2': {
