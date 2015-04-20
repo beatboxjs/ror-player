@@ -493,9 +493,9 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 		'Orangutan': {
 			patterns: {
 				Tune: {
-					ls: '        X XX    ',
+					ls: '    XXXX    XXXX',
 					ms: 'X XX        XXXX',
-					hs: '    XXXX    XXXX',
+					hs: '        X XX    ',
 					re: 'X rrX rr rrrX r ',
 					sn: '..XX..XX..XX..XX',
 					ta: '  XX XX   XX XX ',
