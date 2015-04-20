@@ -26,12 +26,14 @@ angular.module("beatbox")
 			var strokeIdx = Math.floor(i);
 
 			var stroke = $(".stroke-i-"+strokeIdx, $element);
-			var marker = $(".position-marker", $element).finish();
+			var marker = $(".position-marker", $element);
 			if(stroke.length > 0)
 				marker.offset({ left: stroke.offset().left + stroke.outerWidth() * (i - strokeIdx) });
 		}
 
 		function strokeCallback(i) {
+			updateMarkerPosition();
+			
 			var fac = bbConfig.playTime / $scope.pattern.time;
 			if(i % fac != 0)
 				return;
@@ -42,15 +44,6 @@ angular.module("beatbox")
 				var beat = $(".beat-i-"+(i/$scope.pattern.time), $element);
 				beat.addClass("active");
 				setTimeout(function() { beat.removeClass("active"); }, 12000/$scope.playerOptions.speed);
-			}
-
-			updateMarkerPosition();
-
-			var stroke = $(".stroke-i-"+i, $element);
-			var marker = $(".position-marker", $element).finish();
-
-			if(stroke.length > 0) {
-				marker.animate({ left: (parseInt(marker.css("left"))+stroke.outerWidth())+"px" }, 60000/$scope.playerOptions.speed/$scope.pattern.time, "linear");
 			}
 		}
 

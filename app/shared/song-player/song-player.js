@@ -21,16 +21,16 @@ angular.module("beatbox")
 		};
 
 		function updateMarkerPos() {
-			var i = $scope.player.getPosition();
-			if(i%bbConfig.playTime != 0)
-				return;
-			i = i/bbConfig.playTime;
+			var i = $scope.player.getPosition()/bbConfig.playTime;
+			var beatIdx = Math.floor(i);
 
-			var beat = $(".beat-i-"+i, $element);
-			$(".position-marker", $element).finish().offset({ left: beat.offset().left });
+			var beat = $(".beat-i-"+beatIdx, $element);
+			$(".position-marker", $element).offset({ left: beat.offset().left + (i-beatIdx) * beat.outerWidth() });
 		}
 
 		$scope.player.onbeat = function(i) {
+			updateMarkerPos();
+
 			if(i%bbConfig.playTime != 0)
 				return;
 			i = i/bbConfig.playTime;
@@ -39,12 +39,6 @@ angular.module("beatbox")
 			var beat = $(".beat-i-"+i, $element);
 			beat.addClass("active");
 			setTimeout(function() { beat.removeClass("active"); }, 60000/$scope.playerOptions.speed);
-
-			updateMarkerPos();
-
-			var beat = $(".beat-i-"+i, $element);
-			var marker = $(".position-marker", $element);
-			marker.animate({ left: (parseInt(marker.css("left"))+beat.outerWidth())+"px" }, 60000/$scope.playerOptions.speed, "linear");
 		};
 
 		function updatePattern() {
@@ -184,8 +178,10 @@ angular.module("beatbox")
 			return ret;
 		};
 
-		$scope.setPosition = function(idx) {
-			$scope.player.setPosition(idx * bbConfig.playTime);
+		$scope.setPosition = function(idx, $event) {
+			var beat = $($event.target).closest(".beat");
+			var add = ($event.pageX - beat.offset().left) / beat.outerWidth();
+			$scope.player.setPosition(Math.floor((idx+add)*bbConfig.playTime));
 			updateMarkerPos();
 		};
 
