@@ -14,84 +14,84 @@
 
 	.song-player-container {
 		position: relative;
-		overflow-x: auto;
+		white-space: nowrap;
+		margin-top: .5em;
 
-		table {
-			table-layout: fixed;
-			height: 100%;
-		}
-
-		th,td {
-			white-space: nowrap;
-		}
-
-		th {
-			height: 3em;
-		}
-
-		td {
-			height: 100%;
-		}
-
-		tr {
-			height: 3em;
-		}
-
-		.beat {
-			width: 2em;
-		}
-
-		.beat, .dummy {
-			border-bottom: 1px solid #888;
-		}
-
-		.all-drop {
-			border-top: 1px solid #888;
-			border-bottom: 1px solid #888;
-			font-style: italic;
-			text-align: center;
-		}
-
-		.bar.drag-enter, .all-drop.drag-enter {
+		.drag-enter {
 			background: #def;
 		}
 
-		.beat {
-			cursor: pointer;
-		}
-
-		.beat span {
+		.song-container {
 			display: inline-block;
-			padding: 0 .5ex;
-			border-radius: 10px;
-			transition: background-color 1s, color 1s;
+			vertical-align: top;
 		}
 
-		.beat.active span {
-			background-color: #3a94a5;
-			color: #fff;
-			transition: all 0 ease 0;
-		}
+		.col {
+			display: inline-block;
+			vertical-align: top;
 
-		.bar, .beat.before-bar, .instrument-operations, .dummy, .all-drop {
-			border-right: 1px solid #888;
-		}
+			&.song {
+				width: 10em;
 
-		.bar {
-			padding: .2em .5em;
-			width: 8em;
+				.field {
+					padding: .2em .5em;
 
-			.bb-pattern-placeholder {
-				height: 100%;
-				min-height: 3em;
+					@for $i from 1 through 20 {
+						.bb-pattern-placeholder.colspan-#{$i} {
+							width: 10em * $i - 1em;
+						}
+
+						.bb-pattern-placeholder.rowspan-#{$i} {
+							height: 3.4em * $i - .4em;
+						}
+					}
+
+					.bb-pattern-placeholder {
+						height: 100%;
+					}
+				}
+			}
+
+			&.instruments .field {
+				font-weight: bold;
+				padding-right: 1ex;
+			}
+
+			&.instrument-actions,&.song {
+				border-right: 1px solid #888;
+			}
+
+			&.instruments .field,&.instrument-actions .field,&.instrument-actions .glyphicon {
+				line-height: 3.4em;
+				vertical-align: middle;
+			}
+
+			.field {
+				height: 3.4em;
+			}
+
+			.timeline {
+				height: 2em;
+				border-bottom: 1px solid #888;
+			}
+
+			.beat {
+				width: 25%;
+				cursor: pointer;
+				display: inline-block;
+				padding: 0 .5ex;
+				border-radius: 10px;
+				transition: background-color 1s, color 1s;
+
+				&.active {
+					background-color: #3a94a5;
+					color: #fff;
+					transition: all 0 ease 0;
+				}
 			}
 		}
 
-		tbody th {
-			padding-right: 1ex;
-		}
-
-		.instrument-operations .inactive {
+		.inactive {
 			color: #bbb;
 		}
 

@@ -134,15 +134,6 @@ angular.module("beatbox")
 			return true;
 		};
 
-		$scope.getBeatClass = function(i) {
-			var ret = [ "beat-"+(i%4), "beat-i-"+i ];
-			if(i%4 == 3)
-				ret.push("before-bar");
-			if(i%4 == 0)
-				ret.push("after-bar");
-			return ret;
-		};
-
 		$scope.removePattern = function(instrumentKey, idx) {
 			var instrumentKeys = Object.keys(bbConfig.instruments);
 			var span = $scope.getRowSpan(instrumentKey, idx);
@@ -181,6 +172,7 @@ angular.module("beatbox")
 		$scope.setPosition = function(idx, $event) {
 			var beat = $($event.target).closest(".beat");
 			var add = ($event.pageX - beat.offset().left) / beat.outerWidth();
+			console.log(idx, add);
 			$scope.player.setPosition(Math.floor((idx+add)*bbConfig.playTime));
 			updateMarkerPos();
 		};
@@ -191,16 +183,13 @@ angular.module("beatbox")
 			$scope.removePattern(instrumentKey, idx);
 		};
 
-		$scope.onDrop = function(instrumentKey, idx, data) {
+		$scope.onDrop = function(idx, data) {
 			if(!$scope.song[idx])
 				$scope.song[idx] = { };
 
-			if(instrumentKey)
-				$scope.song[idx][instrumentKey] = data;
-			else {
-				for(var i in bbConfig.instruments) {
+			for(var i in bbConfig.instruments) {
+				if(!$scope.song[idx][i])
 					$scope.song[idx][i] = data;
-				}
 			}
 		};
 

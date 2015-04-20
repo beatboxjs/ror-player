@@ -6,7 +6,7 @@
 	</div>
 	<div class="drag-handle" ng-drag="draggable" ng-drag-success="dragSuccess()" ng-drag-data="getDragData(tuneName, patternName)">
 	</div>
-	<ul class="actions">
+	<ul class="actions icon-list">
 		<li><a href="javascript:" title="Listen" ng-click="playPattern()"><span ng-class="'glyphicon glyphicon-'+(player.playing ? 'stop' : 'play-circle')"></span></a></li>
 		<li><a href="javascript:" title="Edit" ng-click="editPattern()"><span class="glyphicon glyphicon-pencil"></span></a></li>
 		<ng-transclude></ng-transclude>
