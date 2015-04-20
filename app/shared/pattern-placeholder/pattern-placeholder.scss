@@ -45,6 +45,13 @@ html body .bb-pattern-placeholder {
 		}
 	}
 
+	.position-marker {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		border-left: 1px solid #000;
+	}
+
 }
 
 #bb-pattern-placeholder-drag-clone {

@@ -41,7 +41,7 @@ angular.module("beatbox")
 			transclude: true
 		};
 	})
-	.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPatternEditorDialog, bbPlayer, bbUtils) {
+	.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPatternEditorDialog, bbPlayer, bbUtils, $element) {
 		$scope.config = bbConfig;
 		$scope.player = null;
 
@@ -54,9 +54,15 @@ angular.module("beatbox")
 			bbPatternEditorDialog.editPattern($scope.tuneName, $scope.patternName);
 		};
 
+		var onbeat = function(beat) {
+			$(".position-marker", $element).css("left", (beat / $scope.player._pattern.length) * $element.outerWidth() + "px");
+		};
+
 		$scope.playPattern = function() {
-			if($scope.player == null)
+			if($scope.player == null) {
 				$scope.player = bbPlayer.createBeatbox(false);
+				$scope.player.onbeat = onbeat;
+			}
 
 			if(!$scope.player.playing) {
 				var playerOptions = $scope.getPlayerOptions() || { };
