@@ -4,31 +4,31 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 	bbConfig.instruments = {
 		ls: {
 			name: "Low Surdo",
-			strokes: [ "X", "0", "s" ]
+			strokes: [ "X", "0", "s", "t", "r" ]
 		},
 		ms: {
 			name: "Mid Surdo",
-			strokes: [ "X", "0", "s" ]
+			strokes: [ "X", "0", "s", "t", "r" ]
 		},
 		hs: {
 			name: "High Surdo",
-			strokes: [ "X", "0", "s" ]
+			strokes: [ "X", "0", "s", "t", "r" ]
 		},
 		re: {
 			name: "Repi",
-			strokes: [ "X", "f", "r", "h", "s" ]
+			strokes: [ "X", "f", "r", "h", "s", "." ]
 		},
 		sn: {
 			name: "Snare",
-			strokes: [ ".", "X" ]
+			strokes: [ ".", "X", "r" ]
 		},
 		ta: {
 			name: "Tamborim",
-			strokes: [ "X" ]
+			strokes: [ "X", "r" ]
 		},
 		ag: {
 			name: "Agogo",
-			strokes: [ "o", "a" ]
+			strokes: [ "o", "a", "r" ]
 		},
 		sh: {
 			name: "Shaker",
@@ -36,7 +36,7 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 		},
 		ot: {
 			name: "Others",
-			strokes: [ "w", "A", "B", "C", "D", "E", "F", "T", "U", "V", "W", "Y", "Z" ]
+			strokes: [ "w", "y", "A", "B", "C", "D", "E", "F", "G", "T", "U", "V", "W", "Y", "Z" ]
 		}
 	};
 
@@ -49,14 +49,17 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 		"r": "rim",
 		"o": "l",
 		"a": "h",
+		"t": "w", // Whippy stick (tamborim stick)
 		".": ".",
-		"w" : "Whistle",
+		"w" : "Wh",
+		"y" : "Wh2", // Long whistle
 		"A" : "Oi!",
 		"B" : "Ua!",
 		"C" : "Aoo!",
 		"D" : "Oo",
 		"E" : "Ah",
 		"F" : "Hey!",
+		"G" : "Ook!",
 		"T" : "E",
 		"U" : "very",
 		"V" : "bo",
@@ -487,6 +490,47 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 				}
 			}
 		},
+		'Orangutan': {
+			patterns: {
+				Tune: {
+					ls: '        X XX    ',
+					ms: 'X XX        XXXX',
+					hs: '    XXXX    XXXX',
+					re: 'X rrX rr rrrX r ',
+					sn: '..XX..XX..XX..XX',
+					ta: '  XX XX   XX XX ',
+					ag: 'oa  o aa o  a oo'
+				},
+				"Funky gibbon" : {
+					ls: 'X   X   X  XX X XX              X   X   X  XX X X               ',
+					ms: '@ls',
+					hs: '@ls',
+					re: '  r   r   r   r   r   r   r   r   r   r   r   r   r   r   r   r ',
+					sn: '..X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X.',
+					ta: '@re',
+					ag: '@re'
+				},
+				"Monkey break" : {
+					ls: '  XX XX   XX XX ',
+					ms: '@ls',
+					hs: '@ls',
+					re: '@ls',
+					sn: '@ls',
+					ta: '@ls',
+					ag: '@ls',
+					ot: 'G       G       '
+				},
+				"Break 2": {
+					ls: 'X   X       X   ',
+					ms: '@ls',
+					hs: '@ls',
+					re: '  XX  XX XXX  X ',
+					sn: '@re',
+					ta: '@re',
+					ag: '@re'
+				}
+			}
+		},
 		'Ragga': {
 			patterns: {
 				Tune: {
@@ -544,6 +588,51 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 					ls: 'X       X       X       X  X  X ',
 					ms: '@ls',
 					hs: '@ls'
+				}
+			}
+		},
+		'Sambasso': {
+			patterns: {
+				Tune: {
+					ls: 'X  tX t X  tX t X  tX t X  tX t ',
+					ms: '@ls',
+					hs: '@ls',
+					re: 'X..X..X..XX..XX.X..X..X..XX..XX.',
+					sn: 'X..X..X...X..X..X..X..X...X..X..',
+					ta: ' X XX X XX XX  X X XXXX X  XX   ',
+					ag: 'o  aa oo a oo a o  aa oo a oo a ',
+					sh: 'X X X X X X X X X X X X X X X X '
+				},
+				'Break 1': {
+					ls: 'X  tX t XX XX   ',
+					ms: '@ls',
+					hs: '@ls',
+					re: 'X..X..X.XX XX   ',
+					sn: 'X..X..X.XX XX   ',
+					ta: ' X XX X XX XX   ',
+					ag: 'o  aa ooXX XX   ',
+					sh: 'X X X X XX XX   ',
+					ot: 'y w w           '
+				},
+				'Break 2': {
+					ls: 'X X X X X       ',
+					ms: '@ls',
+					hs: '@ls',
+					re: '          XX XX ',
+					sn: '@re',
+					ta: '@re',
+					ag: '@re',
+					sh: '@re'
+				},
+				'Intro': {
+					ls: '        XX XX           XX XX           XX XX           XX XX                       X X X X XX X    X X   X X   X                   X X X X XX X    X X   X X   X                   X X X X XX X    X X   X X   X                   X X X X XX X    X X   X X   ',
+					ms: '@ls',
+					hs: '@ls',
+					re: 'X X X          fX X X          fX X X          fX X X           X..X..X..X..ffffX                               X..X..X..X..ffffX                               X..X..X..X..ffffX                               X..X..X..X..ffffX                               ',
+					sn: '@ls',
+					ta: '@ls',
+					ag: '@ls',
+					sh: '@ls'
 				}
 			}
 		}
