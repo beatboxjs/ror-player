@@ -82,7 +82,18 @@
 				padding: 0 .5ex;
 				border-radius: 10px;
 				transition: background-color 1s, color 1s;
+			}
 
+			.all-drop {
+				border-top: 1px solid #888;
+			}
+
+			&.song .all-drop {
+				font-style: italic;
+				text-align: center;
+				line-height: 3.4em;
+				vertical-align: center;
+				border-bottom: 1px solid #888;
 			}
 		}
 
