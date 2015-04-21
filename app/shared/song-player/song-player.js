@@ -25,21 +25,14 @@ angular.module("beatbox")
 			var beatIdx = Math.floor(i);
 
 			var beat = $(".beat-i-"+beatIdx, $element);
+			$(".beat.active").not(beat).removeClass("active");
+			beat.addClass("active");
 			$(".position-marker", $element).offset({ left: beat.offset().left + (i-beatIdx) * beat.outerWidth() });
+
+			i = i/bbConfig.playTime;
 		}
 
-		$scope.player.onbeat = function(i) {
-			updateMarkerPos();
-
-			if(i%bbConfig.playTime != 0)
-				return;
-			i = i/bbConfig.playTime;
-
-			// DOM manipulation in the controller? Where else could this go?
-			var beat = $(".beat-i-"+i, $element);
-			beat.addClass("active");
-			setTimeout(function() { beat.removeClass("active"); }, 60000/$scope.playerOptions.speed);
-		};
+		$scope.player.onbeat = updateMarkerPos;
 
 		function updatePattern() {
 			$scope.player.setPattern(bbPlayer.songToBeatbox($scope.song, $scope.playerOptions.headphones, $scope.playerOptions.mute));
