@@ -36,18 +36,34 @@
 				.field {
 					padding: .2em .5em;
 
+					.pattern-container {
+						position: relative;
+					}
+
 					@for $i from 1 through 20 {
-						.bb-pattern-placeholder.colspan-#{$i} {
+						.pattern-container.colspan-#{$i} {
 							width: 10em * $i - 1em;
 						}
 
-						.bb-pattern-placeholder.rowspan-#{$i} {
+						.pattern-container.rowspan-#{$i} {
 							height: 3.4em * $i - .4em;
 						}
 					}
 
 					.bb-pattern-placeholder {
 						height: 100%;
+					}
+
+					.placeholder-drag-handle {
+						position: absolute;
+						bottom: 0;
+						right: 0;
+						cursor: se-resize;
+						display: block;
+
+						.caret-se {
+							display: block;
+						}
 					}
 				}
 			}

@@ -82,7 +82,7 @@ angular.module("beatbox")
 
 		$scope.getDragData = function(tuneName, patternName) {
 			var ret = [ tuneName, patternName ];
-			ret.bbDragPatternPlaceholder = true;
+			ret.bbDragType = "pattern-placeholder";
 			return ret;
 		};
 

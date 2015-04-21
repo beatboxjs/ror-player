@@ -176,6 +176,13 @@ angular.module("beatbox")
 		};
 
 		$scope.onDrop = function(instrumentKey, idx, data) {
+			if(data.bbDragType == "pattern-placeholder")
+				$scope.dropPattern(instrumentKey, idx, data);
+			else if(data.bbDragType == "resize-pattern")
+				$scope.resizePattern(data[0], data[1], instrumentKey, idx);
+		};
+
+		$scope.dropPattern = function(instrumentKey, idx, data) {
 			if(!$scope.song[idx])
 				$scope.song[idx] = { };
 
@@ -188,6 +195,24 @@ angular.module("beatbox")
 			}
 		};
 
+		$scope.resizePattern = function(instrumentKey, idx, toInstrumentKey, toIdx) {
+			var tuneAndPattern = $scope.song[idx][instrumentKey];
+			$scope.removePattern(instrumentKey, idx);
+
+			var instrumentKeys = Object.keys(bbConfig.instruments);
+			var instrumentIdx = instrumentKeys.indexOf(instrumentKey);
+			var toInstrumentIdx = Math.max(instrumentIdx, instrumentKeys.indexOf(toInstrumentKey));
+			toIdx = Math.max(idx, toIdx);
+
+			var patternLength = Math.ceil(bbUtils.getPattern(tuneAndPattern[0], tuneAndPattern[1]).length/4);
+
+			for(var i=idx; i<=toIdx; i += patternLength) {
+				for(var j=instrumentIdx; j<=toInstrumentIdx; j++) {
+					$scope.dropPattern(instrumentKeys[j], i, tuneAndPattern);
+				}
+			}
+		};
+
 		$scope.dragStart = function() {
 			$scope.dragging = true;
 		};
@@ -195,4 +220,10 @@ angular.module("beatbox")
 		$scope.dragStop = function() {
 			$scope.dragging = false;
 		};
+
+		$scope.getResizeDragData = function(instrumentKey, i) {
+			var ret = [ instrumentKey, i ];
+			ret.bbDragType = "resize-pattern";
+			return ret;
+		}
 	});
