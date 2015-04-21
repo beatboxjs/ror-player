@@ -117,7 +117,7 @@
 			color: #bbb;
 		}
 
-		.position-marker {
+		.song-position-marker {
 			position: absolute;
 			top: 0;
 			height: 100%;
@@ -125,7 +125,7 @@
 		}
 	}
 
-	&.stopped .position-marker {
+	&.stopped .song-position-marker {
 		border: none;
 	}
 

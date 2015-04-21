@@ -11,7 +11,9 @@
 	</head>
 	<body ng-controller="BeatboxController">
 		<div id="tunes">
-			<bb-pattern-list bb-pattern-click="patternClick(tuneName, patternName)"></bb-pattern-list>
+			<bb-pattern-list>
+				<bb-pattern-placeholder-item><a href="javascript:" title="Add to song {{tuneName}} {{patternName}}" ng-click="patternClick(tuneName, patternName)"><span class="glyphicon glyphicon-plus"></span></a></bb-pattern-placeholder-item>
+			</bb-pattern-list>
 		</div>
 		<div id="song-player">
 			<bb-song-player bb-song="song"></bb-song-player>

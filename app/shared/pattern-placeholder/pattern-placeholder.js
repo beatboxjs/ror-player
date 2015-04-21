@@ -34,9 +34,6 @@ angular.module("beatbox")
 	.directive("bbPatternPlaceholderItem", function() {
 		return {
 			templateUrl: "app/shared/pattern-placeholder/pattern-placeholder-item.html",
-			scope: {
-				label: "=bbLabel"
-			},
 			replace: true,
 			transclude: true
 		};

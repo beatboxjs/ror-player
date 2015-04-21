@@ -20,19 +20,19 @@ angular.module("beatbox")
 			mute: { }
 		};
 
-		function updateMarkerPos() {
+		function updateMarkerPos(scrollFurther) {
 			var i = $scope.player.getPosition()/bbConfig.playTime;
 			var beatIdx = Math.floor(i);
 
 			var beat = $(".beat-i-"+beatIdx, $element);
 			$(".beat.active").not(beat).removeClass("active");
 			beat.addClass("active");
-			$(".position-marker", $element).offset({ left: beat.offset().left + (i-beatIdx) * beat.outerWidth() });
 
-			i = i/bbConfig.playTime;
+			if(beat.length > 0)
+				bbUtils.scrollToElement($(".song-position-marker", $element).offset({ left: beat.offset().left + (i-beatIdx) * beat.outerWidth() }), scrollFurther);
 		}
 
-		$scope.player.onbeat = updateMarkerPos;
+		$scope.player.onbeat = function(idx) { updateMarkerPos(true); };
 
 		function updatePattern() {
 			$scope.player.setPattern(bbPlayer.songToBeatbox($scope.song, $scope.playerOptions.headphones, $scope.playerOptions.mute));
@@ -166,7 +166,7 @@ angular.module("beatbox")
 			var beat = $($event.target).closest(".beat");
 			var add = ($event.pageX - beat.offset().left) / beat.outerWidth();
 			$scope.player.setPosition(Math.floor((idx+add)*bbConfig.playTime));
-			updateMarkerPos();
+			updateMarkerPos(false);
 		};
 
 		$scope.equals = ng.equals;

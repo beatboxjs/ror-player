@@ -4,17 +4,27 @@ angular.module("beatbox")
 			templateUrl: "app/shared/pattern-list/pattern-list.html",
 			controller: "bbPatternListController",
 			scope: {
-				clickHandler: "&bbPatternClick"
-			}
+			},
+			transclude: true
 		};
+	})
+	.directive("bbPatternListTransclude", function() {
+		return {
+			link: function(scope, el, attrs, ctrl, $transclude) {
+				var newScope = scope.$parent.$new();
+				var inject = scope.$eval(attrs.bbScope);
+				for(var i in inject) {
+					newScope[i] = inject[i];
+				}
+				$transclude(newScope, function(clone) {
+					el.replaceWith(clone);
+				});
+			}
+		}
 	})
 	.controller("bbPatternListController", function($scope, bbConfig, bbUtils, bbPatternEditorDialog) {
 		$scope.config = bbConfig;
 		$scope.utils = bbUtils;
-
-		$scope.patternClick = function(tuneName, patternName) {
-			return $scope.clickHandler({ patternName: patternName, tuneName: tuneName });
-		};
 
 		$scope.createPattern = function() {
 			var patternName = prompt("Please enter a name for the new break.");

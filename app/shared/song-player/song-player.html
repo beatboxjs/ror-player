@@ -1,5 +1,5 @@
 <div class="bb-song-player" ng-class="player.playing ? 'playing' : player.getPosition() == 0 ? 'stopped' : 'paused'">
-	<div>
+	<div class="control-panel">
 		<button type="button" class="btn" ng-class="player.playing ? 'btn-info' : 'btn-success'" ng-click="playPause()"><span class="glyphicon" ng-class="player.playing ? 'glyphicon-pause' : 'glyphicon-play'"></span> {{player.playing ? 'Pause' : 'Play'}}</button>
 		<button type="button" class="btn btn-danger" ng-click="stop()"><span class="glyphicon glyphicon-stop"></span> Stop</button>
 		<button type="button" class="btn btn-info" ng-click="clear()"><span class="glyphicon glyphicon-trash"></span> Clear</button>
@@ -46,6 +46,6 @@
 			</div>
 			<div class="field all-drop" ng-show="dragging" ng-drop="true" ng-drop-success="onDrop(null, i, $data)">(All)</div>
 		</div></div>
-		<div class="position-marker"></div>
+		<div class="song-position-marker"></div>
 	</div>
 </div>

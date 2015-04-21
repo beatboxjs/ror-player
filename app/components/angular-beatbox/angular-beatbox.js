@@ -22,7 +22,13 @@ angular.module("beatbox").controller("BeatboxController", function($scope, bbUti
 		ng.forEach(Object.keys(bbConfig.instruments), function(instrumentKey) {
 			songPart[instrumentKey] = [ tuneName, patternName ];
 		});
-		$scope.song[bbUtils.getSongLength($scope.song)] = songPart;
+
+		var newIdx = bbUtils.getSongLength($scope.song);
+		$scope.song[newIdx] = songPart;
+
+		setTimeout(function() {
+			bbUtils.scrollToElement($("#song-player .song-container"));
+		}, 0);
 
 		return false;
 	};

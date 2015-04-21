@@ -1,4 +1,4 @@
-angular.module("beatbox").factory("bbUtils", function(bbConfig, ng) {
+angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $) {
 	var bbUtils = {
 		getNumber: function(num) {
 			if(isFinite(num) && !isNaN(num))
@@ -55,6 +55,31 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng) {
 			}
 
 			return bbConfig.tunes[tuneName] && bbConfig.tunes[tuneName].patterns[patternName];
+		},
+
+		scrollToElement: function(el, scrollFurther) {
+			el = el[0];
+
+			if(!el.bbParent) {
+				var left = 0;
+				var curEl = el.offsetParent;
+				while(curEl && [ "auto", "scroll" ].indexOf(getComputedStyle(curEl)["overflow-x"]) == -1) {
+					left += curEl.offsetLeft;
+					curEl = curEl.offsetParent;
+				}
+
+				el.bbParent = curEl;
+				el.bbLeft = left;
+			}
+
+			var fac1 = (scrollFurther ? 0.1 : 0);
+			var fac2 = (scrollFurther ? 0.4 : 0);
+
+			var left = el.offsetLeft + el.bbLeft;
+			if(left + el.offsetWidth > el.bbParent.scrollLeft + el.bbParent.offsetWidth * (1-fac1))
+				$(el.bbParent).not(":animated").animate({ scrollLeft: left + el.offsetWidth - el.bbParent.offsetWidth * (1-fac2) }, 200);
+			else if(left < el.bbParent.scrollLeft + el.bbParent.offsetWidth * fac1)
+				$(el.bbParent).not(":animated").animate({ scrollLeft: left - el.bbParent.offsetWidth * fac2 }, 200);
 		}
 	};
 

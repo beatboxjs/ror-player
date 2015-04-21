@@ -1,0 +1,26 @@
+#tunes {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	padding: 1.2em;
+	width: 20em;
+	overflow-y: auto;
+}
+
+#song-player .control-panel {
+	position: absolute;
+	top: 0;
+	left: 20em;
+	padding: 1.2em;
+}
+
+#song-player .song-player-container {
+	position: absolute;
+	top: 3.7em;
+	left: 20em;
+	bottom: 0;
+	right: 0;
+	overflow: auto;
+	padding: 0 1.2em;
+}
