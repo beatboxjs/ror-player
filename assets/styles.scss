@@ -1,0 +1,49 @@
+#tunes {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	padding: 15px;
+	width: 20em;
+	overflow-y: auto;
+}
+
+#song-player {
+	position: absolute;
+	top: 0;
+	left: 20em;
+	bottom: 0;
+	right: 0;
+	padding: 15px;
+	overflow: auto;
+}
+
+.icon-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		display: inline;
+	}
+}
+
+.fliph {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -ms-filter: fliph; /*IE*/
+    filter: fliph; /*IE*/
+}
+
+.caret-se {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	color: #666;
+	border-bottom: .6em solid;
+	border-right: .6em solid;
+	border-top: .6em solid transparent;
+	border-left: .6em solid transparent;
+}
