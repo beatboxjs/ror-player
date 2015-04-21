@@ -199,31 +199,70 @@ angular.module("beatbox")
 			var tuneAndPattern = $scope.song[idx][instrumentKey];
 			$scope.removePattern(instrumentKey, idx);
 
-			var instrumentKeys = Object.keys(bbConfig.instruments);
-			var instrumentIdx = instrumentKeys.indexOf(instrumentKey);
-			var toInstrumentIdx = Math.max(instrumentIdx, instrumentKeys.indexOf(toInstrumentKey));
-			toIdx = Math.max(idx, toIdx);
-
 			var patternLength = Math.ceil(bbUtils.getPattern(tuneAndPattern[0], tuneAndPattern[1]).length/4);
-
-			for(var i=idx; i<=toIdx; i += patternLength) {
-				for(var j=instrumentIdx; j<=toInstrumentIdx; j++) {
-					$scope.dropPattern(instrumentKeys[j], i, tuneAndPattern);
-				}
-			}
+			getAffectedResizePatternRange(instrumentKey, idx, toInstrumentKey, toIdx, patternLength).forEach(function(it) {
+				$scope.dropPattern(it[0], it[1], tuneAndPattern);
+			});
 		};
 
-		$scope.dragStart = function() {
+		function getAffectedResizePatternRange(instrumentKey, idx, toInstrumentKey, toIdx, patternLength) {
+			var instrumentKeys = Object.keys(bbConfig.instruments);
+			var instrumentIdx = instrumentKeys.indexOf(instrumentKey);
+			var toInstrumentIdx = instrumentKeys.indexOf(toInstrumentKey);
+			toIdx = Math.max(idx, toIdx);
+
+			var ret = [ ];
+
+			for(var i=idx; i<=toIdx; i += (patternLength || 1)) {
+				for(var j=Math.min(instrumentIdx, toInstrumentIdx); j<=Math.max(instrumentIdx, toInstrumentIdx); j++) {
+					ret.push([ instrumentKeys[j], i ]);
+				}
+			}
+
+			return ret;
+		}
+
+		$scope.currentPatternDrag = null;
+
+		$scope.dragStart = function(data) {
+			if(data.bbDragType == "pattern-placeholder")
 			$scope.dragging = true;
 		};
 
 		$scope.dragStop = function() {
 			$scope.dragging = false;
+			$scope.currentPatternDrag = null;
+			updateDragStyles();
 		};
+
+		$scope.dragEnter = function(instrumentKey, i, data) {
+			if(data.bbDragType == "resize-pattern") {
+				$scope.currentPatternDrag = { instrumentKey: data[0], idx: data[1], toInstrumentKey: instrumentKey, toIdx: i };
+				updateDragStyles();
+			}
+		};
+
+		$scope.dragLeave = function(instrumentKey, i, data) {
+			if($scope.currentPatternDrag && $scope.currentPatternDrag.toInstrumentKey == instrumentKey && $scope.currentPatternDrag.toIdx == i) {
+				$scope.dragOver = null;
+				updateDragStyles();
+			}
+		};
+
+		function updateDragStyles() {
+			$(".pattern-resize-range", $element).removeClass("pattern-resize-range");
+
+			var c = $scope.currentPatternDrag;
+			if(c) {
+				getAffectedResizePatternRange(c.instrumentKey, c.idx, c.toInstrumentKey, c.toIdx).forEach(function(it) {
+					$(".song-field-"+it[0]+"-"+it[1], $element).addClass("pattern-resize-range");
+				});
+			}
+		}
 
 		$scope.getResizeDragData = function(instrumentKey, i) {
 			var ret = [ instrumentKey, i ];
 			ret.bbDragType = "resize-pattern";
 			return ret;
-		}
+		};
 	});

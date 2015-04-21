@@ -6,7 +6,7 @@
 		<div class="btn-group">
 			<slider ng-model="playerOptions.speed" min="60" max="180"></slider>
 		</div>
-		<div class="btn-group trash-drop" ng-show="dragging" ng-drop="true" ng-drag-start="dragStart()" ng-drag-stop="dragStop()">
+		<div class="btn-group trash-drop" ng-show="dragging" ng-drop="true" ng-drag-start="dragStart($data)" ng-drag-stop="dragStop()">
 			<span class="glyphicon glyphicon-trash"></span>
 		</div>
 	</div>
@@ -30,7 +30,7 @@
 			<div class="timeline">
 				<span ng-repeat="(i2,a2) in utils.getNumber(4) track by $index" class="beat" ng-class="'beat-i-'+(i*4+i2)" ng-click="setPosition(i*4+i2, $event)">{{i*4+i2+1}}</span>
 			</div>
-			<div class="field" ng-repeat="instrumentKey in utils.getKeys(config.instruments)" ng-drop="!song[i][instrumentKey]" ng-drop-success="onDrop(instrumentKey, i, $data)">
+			<div class="field" ng-class="'song-field-'+instrumentKey+'-'+i" ng-repeat="instrumentKey in utils.getKeys(config.instruments)" ng-drop="true" ng-drop-success="onDrop(instrumentKey, i, $data)" ng-drag-enter="dragEnter(instrumentKey, i, $data)", ng-drag-leave="dragLeave(instrumentKey, i, $data)">
 				<div class="pattern-container" ng-class="[ 'colspan-'+getColSpan(instrumentKey, i), 'rowspan-'+getRowSpan(instrumentKey, i) ]" ng-if="song[i][instrumentKey] && shouldDisplay(instrumentKey, i)">
 					<bb-pattern-placeholder bb-tune-name="song[i][instrumentKey][0]" bb-pattern-name="song[i][instrumentKey][1]" bb-draggable="true" bb-drag-success="onDrag(instrumentKey, i)" bb-player-options="getPreviewPlayerOptions(instrumentKey, i)">
 						<bb-pattern-placeholder-item dropdown dropdown-append-to-body>
