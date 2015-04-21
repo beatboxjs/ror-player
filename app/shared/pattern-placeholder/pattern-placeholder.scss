@@ -1,8 +1,7 @@
-html body .bb-pattern-placeholder {
+.bb-pattern-placeholder.bb-pattern-placeholder.bb-pattern-placeholder.bb-pattern-placeholder {
 
 	height: 3em;
 	position: relative;
-	overflow: hidden;
 
 	.pattern-button {
 		height: 100%;
@@ -10,6 +9,7 @@ html body .bb-pattern-placeholder {
 		display: block;
 		text-align: left;
 		padding: 0 12px;
+		overflow: hidden;
 
 		.tune-name {
 			font-weight: bold;

@@ -4,7 +4,7 @@
 		<br>
 		<span class="pattern-name">{{patternName}}</span>
 	</div>
-	<div class="drag-handle" ng-drag="draggable" ng-drag-success="dragSuccess()" ng-drag-data="getDragData(tuneName, patternName)">
+	<div class="drag-handle" ng-drag="draggable" ng-drag-success="dragSuccess()" ng-drag-data="getDragData(tuneName, patternName)" ng-if="draggable">
 	</div>
 	<ul class="actions icon-list">
 		<li><a href="javascript:" title="Listen" ng-click="playPattern()"><span ng-class="'glyphicon glyphicon-'+(player.playing ? 'stop' : 'play-circle')"></span></a></li>
