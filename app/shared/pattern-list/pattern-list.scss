@@ -2,6 +2,15 @@
 
 	.accordion-toggle {
 		display: block;
+		position: relative;
+
+		.caret {
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin: auto 0;
+		}
 	}
 
 	.panel-group {

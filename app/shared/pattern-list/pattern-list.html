@@ -1,6 +1,10 @@
 <div class="bb-pattern-list">
 	<accordion ng-repeat="tuneName in utils.getKeys(config.tunes)">
-		<accordion-group heading="{{tuneName}}">
+		<accordion-group>
+			<accordion-heading>
+				{{tuneName}}
+				<span class="caret"></span>
+			</accordion-heading>
 			<bb-pattern-placeholder bb-tune-name="tuneName" bb-pattern-name="patternName" bb-pattern-click="patternClick(tuneName, patternName)" ng-repeat="patternName in utils.getKeys(config.tunes[tuneName].patterns)" bb-draggable="true">
 				<bb-pattern-placeholder-item><a href="javascript:" title="Add to song" ng-click="patternClick(tuneName, patternName)"><span class="glyphicon glyphicon-plus"></span></a></bb-pattern-placeholder-item>
 				<bb-pattern-placeholder-item ng-if="tuneName == config.myTunesKey"><a href="javascript:" title="Remove" ng-click="removePattern(tuneName, patternName)"><span class="glyphicon glyphicon-trash"></span></a></bb-pattern-placeholder-item>
