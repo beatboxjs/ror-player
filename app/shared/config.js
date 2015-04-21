@@ -20,7 +20,7 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 		},
 		sn: {
 			name: "Snare",
-			strokes: [ ".", "X", "r" ]
+			strokes: [ ".", "X", "r", "f" ]
 		},
 		ta: {
 			name: "Tamborim",
@@ -633,6 +633,64 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 					ta: '@ls',
 					ag: '@ls',
 					sh: '@ls'
+				}
+			}
+		},
+		'Sheffield Samba Reggae': {
+			patterns: {
+				Tune: {
+					ls: '    X X     XXXX    X X     XXXX    X X     XXXX    X X     XXXX',
+					ms: 'X       X       X       X       X       X       X       X       ',
+					hs: '    X X     X X     X X X X XXXX    X X     X X     X X X X XXXX',
+					sn: 'X..X..X...X..X..X..X..X...X..X..X..X..X...X..X..X..X..X...X..X..',
+					re: '@sn',
+					ta: 'X XX    X XX    X XX    X XX    X XX    X XX    X XXX XXX XX    ',
+					ag: 'o  a  o   a  a  o  a  o   a  a  o  a  o   a  a  o  a  o   a  a  '
+				},
+				'Intro': {
+					ls: '                           XX X X             X X             X X             X XX X X X    X X ',
+					ms: '@ls',
+					hs: '@ls',
+					re: 'X X X X X  XXXXXX X X X X          fXX X fXXX      fXX X fXXX      fXX X fXXX            fXX    ',
+					sn: '@ls',
+					ta: '@ls',
+					ag: '@ls'
+				},
+				'Break 1': {
+					ls: 'X               X               X               X               ',
+					ms: '@ms',
+					hs: '@hs',
+					sn: 'X..X..X...X..X..X..X..X...X..X..X..X..X...X..X..X..X..X...X..X..',
+					re: '@sn',
+					ta: 'X XX    X XX    X XX    X XX    X XX    X XX    X XXX XXX XX    ',
+					ag: 'o  a  o   a  a  o  a  o   a  a  o  a  o   a  a  o  a  o   a  a  '
+				},
+				'Break 2': {
+					ls: 'X               X             X X               X               ',
+					ms: '@ls',
+					hs: '@ls',
+					sn: 'XXrXXXrXXXrXX r XXrXXXrXXXrXX r XXrXXXrXXXrXXXrXX X X X fXX X X ',
+					re: '@sn',
+					ta: '  X   X   X   X   X   X   X   X   X   X   X   XXX X X X     X X ',
+					ag: '@ta'
+				},
+				'Break 3': {
+					ls: 'X  X  X         X  X  X         ',
+					ms: '@ls',
+					hs: '@ls',
+					sn: '        X  X  X         XXXXX X ',
+					re: '@sn',
+					ta: '@sn',
+					ag: '@sn'
+				},
+				'Whistle Break': {
+					ls: 'X  XX  XXX XX   ',
+					ms: '@ls',
+					hs: '@ls',
+					sn: '  X   X   X   X ',
+					re: '@sn',
+					ta: '@sn',
+					ag: '@sn'
 				}
 			}
 		}
