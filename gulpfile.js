@@ -104,7 +104,7 @@ gulp.task("app", [ "scss", "audiosprite" ], function() {
 			.pipe(concat("app.css"))
 			.pipe(minifyCss())
 		, gulp.src(files, { base: process.cwd()+"/" })
-			.pipe(filter(function(file) { return file.stat.isFile() && !file.path.match(/\.(js|css|html|scss)$/); }))
+			.pipe(filter(function(file) { return file.stat.isFile() && !file.path.match(/\.(js|css|html|scss|mp3)$/); }))
 	).pipe(gulp.dest("build"));
 });
 
