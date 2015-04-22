@@ -36,7 +36,7 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 		},
 		ot: {
 			name: "Others",
-			strokes: [ "w", "y", "A", "B", "C", "D", "E", "F", "G", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "Y", "Z" ]
+			strokes: [ "w", "y", "A", "B", "C", "D", "F", "G", "J", "K", "L", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "Y", "Z" ]
 		}
 	};
 
@@ -55,7 +55,6 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 		"y" : "Wh2", // Long whistle
 		"A" : "Oi!",
 		"B" : "Ua!",
-		"C" : "Aoo!",
 		"D" : "Oo",
 		"E" : "Ah",
 		"F" : "Hey!",
@@ -63,7 +62,6 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 		"J" : "Groo",
 		"K" : "oo",
 		"L" : "ve",
-		"M" : "Hey!",
 		"N" : "Oh",
 		"O" : "Shit",
 		"P" : "Fuck",
@@ -220,7 +218,7 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 					ta: '@re',
 					ag: '@re',
 					sh: '@re',
-					ot: '                                                          C     '
+					ot: '                                                          E D   '
 				}
 			}
 		},
@@ -381,9 +379,9 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 					hs: '@ls',
 					re: 'XXXXXXXXXX              XXXXXXXXXX              XXXX        XXXXXXXXXX              XXXXXXX     ',
 					sn: '            XXXXXXXXXX              XXXXXXXXXX        XXXX                          XXXXXXX     ',
-					ta: '@re',
-					ag: '@re',
-					sh: '@re',
+					ta: '@sn',
+					ag: '@sn',
+					sh: '@sn',
 					ot: '                                                                                             F  '
 				},
 				"Kalashnikov (3⁄4)": {
@@ -1277,7 +1275,7 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 					ta: '@ls',
 					ag: '@ls',
 					sh: '@ls',
-					ot: 'J   K   K   L               M   '
+					ot: 'J   K   K   L               F   '
 				},
 				'Silence Break': {
 					ls: '              XX',
