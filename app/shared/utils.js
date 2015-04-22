@@ -63,7 +63,11 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $) {
 			if(!el.bbParent) {
 				var left = 0;
 				var curEl = el.offsetParent;
-				while(curEl && [ "auto", "scroll" ].indexOf(getComputedStyle(curEl)["overflow-x"]) == -1) {
+				function ov(el) {
+					var style = getComputedStyle(curEl);
+					return style["overflow-x"] || style["overflow"];
+				}
+				while(curEl && [ "auto", "scroll" ].indexOf(ov(curEl)) == -1) {
 					left += curEl.offsetLeft;
 					curEl = curEl.offsetParent;
 				}
@@ -71,6 +75,9 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $) {
 				el.bbParent = curEl;
 				el.bbLeft = left;
 			}
+			
+			if(!el.bbParent)
+				return;
 
 			var fac1 = (scrollFurther ? 0.1 : 0);
 			var fac2 = (scrollFurther ? 0.4 : 0);
