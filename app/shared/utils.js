@@ -85,7 +85,7 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $) {
 			var left = el.offsetLeft + el.bbLeft;
 			if(left + el.offsetWidth > el.bbParent.scrollLeft + el.bbParent.offsetWidth * (1-fac1))
 				$(el.bbParent).not(":animated").animate({ scrollLeft: left + el.offsetWidth - el.bbParent.offsetWidth * (1-fac2) }, 200);
-			else if(left < el.bbParent.scrollLeft + el.bbParent.offsetWidth * fac1)
+			else if(left < el.bbParent.scrollLeft)
 				$(el.bbParent).not(":animated").animate({ scrollLeft: left - el.bbParent.offsetWidth * fac2 }, 200);
 		}
 	};
