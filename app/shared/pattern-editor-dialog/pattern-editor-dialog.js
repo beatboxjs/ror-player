@@ -13,6 +13,7 @@ angular.module("beatbox")
 					templateUrl: "app/shared/pattern-editor-dialog/pattern-editor-dialog.html",
 					controller: "bbPatternEditorCtrl",
 					size: "lg",
+					windowClass: "bb-pattern-editor-dialog-window",
 					resolve: {
 						tuneName: function() { return tuneName },
 						patternName: function() { return patternName }
