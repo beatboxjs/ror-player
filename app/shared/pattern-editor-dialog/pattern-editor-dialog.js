@@ -7,9 +7,13 @@ angular.module("beatbox")
 		$scope.pattern = $scope.tune.patterns[patternName];
 	})
 	.factory("bbPatternEditorDialog", function($modal, bbPlayer) {
+		var openDialog = null;
+
 		return {
 			editPattern: function(tuneName, patternName) {
-				$modal.open({
+				this.close();
+
+				openDialog = $modal.open({
 					templateUrl: "app/shared/pattern-editor-dialog/pattern-editor-dialog.html",
 					controller: "bbPatternEditorCtrl",
 					size: "lg",
@@ -18,11 +22,19 @@ angular.module("beatbox")
 						tuneName: function() { return tuneName },
 						patternName: function() { return patternName }
 					}
-				}).result.then(function() {
+				});
+
+				openDialog.result.then(function() {
 					bbPlayer.stopAll();
 				}, function() {
 					bbPlayer.stopAll();
-				})
+				});
+
+				return openDialog;
+			},
+			close: function() {
+				if(openDialog)
+					openDialog.close();
 			}
 		};
 	});
