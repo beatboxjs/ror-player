@@ -57,7 +57,7 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $) {
 			return bbConfig.tunes[tuneName] && bbConfig.tunes[tuneName].patterns[patternName];
 		},
 
-		scrollToElement: function(el, scrollFurther) {
+		scrollToElement: function(el, scrollFurther, force) {
 			el = el[0];
 
 			if(!el.bbParent) {
@@ -72,21 +72,33 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $) {
 					curEl = curEl.offsetParent;
 				}
 
+				if(!curEl)
+					return;
+
 				el.bbParent = curEl;
 				el.bbLeft = left;
+				el.bbScrollingDisabled = false;
+				el.bbScrollingDisabledTimeout = null;
+				var scrollTimeout = null;
+				$(el.bbParent).on("scroll", function() {
+					el.bbScrollingDisabled = true;
+				});
 			}
-			
-			if(!el.bbParent)
-				return;
+
+			if(force)
+				el.bbScrollingDisabled = false;
 
 			var fac1 = (scrollFurther ? 0.1 : 0);
 			var fac2 = (scrollFurther ? 0.4 : 0);
 
 			var left = el.offsetLeft + el.bbLeft;
-			if(left + el.offsetWidth > el.bbParent.scrollLeft + el.bbParent.offsetWidth * (1-fac1))
-				$(el.bbParent).not(":animated").animate({ scrollLeft: left + el.offsetWidth - el.bbParent.offsetWidth * (1-fac2) }, 200);
-			else if(left < el.bbParent.scrollLeft)
-				$(el.bbParent).not(":animated").animate({ scrollLeft: left - el.bbParent.offsetWidth * fac2 }, 200);
+			if(!el.bbScrollingDisabled) {
+				if(left + el.offsetWidth > el.bbParent.scrollLeft + el.bbParent.offsetWidth * (1-fac1))
+					$(el.bbParent).not(":animated").animate({ scrollLeft: left + el.offsetWidth - el.bbParent.offsetWidth * (1-fac2) }, 200);
+				else if(left < el.bbParent.scrollLeft)
+					$(el.bbParent).not(":animated").animate({ scrollLeft: left - el.bbParent.offsetWidth * fac2 }, 200);
+			} else if(left >= el.bbParent.scrollLeft && left + el.offsetWidth <= el.bbParent.scrollLeft + el.bbParent.offsetWidth)
+				el.bbScrollingDisabled = false;
 		}
 	};
 
