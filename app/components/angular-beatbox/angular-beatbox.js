@@ -27,7 +27,7 @@ angular.module("beatbox").controller("BeatboxController", function($scope, bbUti
 		$scope.song[newIdx] = songPart;
 
 		setTimeout(function() {
-			bbUtils.scrollToElement($("#song-player .song-container"));
+			bbUtils.scrollToElement($("#song-player .song-container"), false, true);
 		}, 0);
 
 		return false;
