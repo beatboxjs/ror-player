@@ -76,7 +76,10 @@ angular.module("beatbox")
 		};
 
 		$scope.getLength = function() {
-			return bbUtils.getSongLength($scope.song)+1;
+			var length = bbUtils.getSongLength($scope.song)+1;
+			if($scope.currentPatternDrag)
+				length = Math.max(length, $scope.currentPatternDrag.toIdx+2);
+			return length;
 		};
 
 		$scope.getColSpan = function(instrumentKey, i) {
@@ -228,7 +231,7 @@ angular.module("beatbox")
 
 		$scope.dragStart = function(data) {
 			if(data.bbDragType == "pattern-placeholder")
-			$scope.dragging = true;
+				$scope.dragging = true;
 		};
 
 		$scope.dragStop = function() {
@@ -240,13 +243,6 @@ angular.module("beatbox")
 		$scope.dragEnter = function(instrumentKey, i, data) {
 			if(data.bbDragType == "resize-pattern") {
 				$scope.currentPatternDrag = { instrumentKey: data[0], idx: data[1], toInstrumentKey: instrumentKey, toIdx: i };
-				updateDragStyles();
-			}
-		};
-
-		$scope.dragLeave = function(instrumentKey, i, data) {
-			if($scope.currentPatternDrag && $scope.currentPatternDrag.toInstrumentKey == instrumentKey && $scope.currentPatternDrag.toIdx == i) {
-				$scope.dragOver = null;
 				updateDragStyles();
 			}
 		};
