@@ -23,7 +23,9 @@
     "angular-bootstrap-slider": "~0.1.1",
     "ngDraggable": "0.1.5",
     "beatbox": "~0.2.0",
-    "ui-router": "~0.2.14"
+    "ui-router": "~0.2.14",
+    "jszip": "~2.5.0",
+    "jszip-utils": "~0.0.2"
   },
   "overrides": {
     "angular": {

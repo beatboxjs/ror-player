@@ -1,10 +1,12 @@
-angular.module("beatbox").factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioSprite, $rootScope) {
+angular.module("beatbox").factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $rootScope) {
 
-	var sound = new Howl(bbAudioSprite);
+	bbAudioFiles.getFiles(function(err, files) {
+		if(err)
+			return console.log("Error loading mp3s", err);
 
-	for(var i in bbAudioSprite.sprite) {
-		Beatbox.registerInstrument(i, sound, i);
-	}
+		for(var i in files)
+			Beatbox.registerInstrument(i.replace(/\.mp3$/i, ""), new Howl({ urls: [ files[i] ] }));
+	});
 
 	var allPlayers = [ ];
 

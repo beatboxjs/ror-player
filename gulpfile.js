@@ -16,9 +16,10 @@ var path = require("path");
 var runSequence = require("run-sequence");
 var minifyCss = require("gulp-minify-css");
 var sass = require("gulp-sass");
-var audiosprite = require("audiosprite");
 var fs = require("fs");
 var async = require("async");
+var zip = require("gulp-zip");
+var ngConstant = require("gulp-ng-constant");
 
 
 var files = [
@@ -43,7 +44,7 @@ function getDepStream() {
 		if(fileName.match(/\.less$/))
 			return;
 
-		var m = fileName.match(/\/bower_components\/([-_a-zA-Z0-9]+)\//);
+		var m = fileName.match(/\/bower_components\/([-._a-zA-Z0-9]+)\//);
 		if(!apps[m[1]])
 			apps[m[1]] = [ ];
 		apps[m[1]].push(fileName);
@@ -87,14 +88,14 @@ gulp.task("deps", function() {
 	).pipe(gulp.dest("build"));
 });
 
-gulp.task("app", [ "scss", "audiosprite" ], function() {
+gulp.task("app", [ "scss", "audiosprite", "constants" ], function() {
 	return es.merge(
 		es.merge(
 			gulp.src(files)
 				.pipe(filter("**/*.js"))
 			, gulp.src("app/**/*.html", { base: process.cwd()+"/" })
 				.pipe(templateCache({ module: "beatbox" }))
-			, gulp.src("build/audiosprite.js")
+			, gulp.src("build/constants.js")
 		)
 			.pipe(concat("app.js"))
 			.pipe(ngAnnotate())
@@ -133,41 +134,50 @@ gulp.task("scss", function() {
 		.pipe(gulp.dest("build"));
 });
 
-gulp.task("audiosprite", function(callback) {
-	gulp.src(files, { read: false, base: process.cwd()+"/" })
+gulp.task("audiosprite", function() {
+	return gulp.src(files)
 		.pipe(filter("**/*.mp3"))
-		.pipe(es.writeArray(function(err, files) {
-			if(err)
-				return callback(err);
-
-			files = files.map(function(it) { return it.path; });
-
-			audiosprite(files, { output: "build/audio", format: "howler", path: "./" }, function(err, obj) {
-				if(err)
-					return callback(err);
-
-				var js1 = 'angular.module("beatbox").constant("bbAudioSprite",' + JSON.stringify(obj) + ');';
-
-				obj.urls = obj.urls.map(function(url) { return "build/"+url; });
-				var js2 = 'angular.module("beatbox").constant("bbAudioSprite",' + JSON.stringify(obj) + ');';
-
-				async.parallel([
-					function(next) {
-						fs.writeFile("build/audiosprite.js", js1, next);
-					},
-					function(next) {
-						fs.writeFile("build/audiosprite-dev.js", js2, next);
-					}
-				], callback);
-			});
-		}));
+		.pipe(zip("mp3.zip"))
+		.pipe(gulp.dest("build"));
 });
 
-gulp.task("dev", [ "scss", "audiosprite" ], function() {
+gulp.task("constants", function() {
+	return ngConstant({
+		name: "beatbox",
+		constants: {
+			bbBuildConstants: {
+				dev: false,
+				mp3: "mp3.zip"
+			}
+		},
+		stream: true,
+		deps: false
+	})
+		.pipe(rename("constants.js"))
+		.pipe(gulp.dest("build"));
+});
+
+gulp.task("constants-dev", function() {
+	return ngConstant({
+		name: "beatbox",
+		constants: {
+			bbBuildConstants: {
+				dev: true,
+				mp3: "build/mp3.zip"
+			}
+		},
+		stream: true,
+		deps: false
+	})
+		.pipe(rename("constants-dev.js"))
+		.pipe(gulp.dest("build"));
+});
+
+gulp.task("dev", [ "scss", "audiosprite", "constants-dev" ], function() {
 	return gulp
 		.src("index.html")
 		.pipe(rename("index_dev.html"))
-		.pipe(inject(gulp.src(deps.concat(files).concat([ "build/scss.css", "build/audiosprite-dev.js" ]), { read: false }), { relative: true }))
+		.pipe(inject(gulp.src(deps.concat(files).concat([ "build/scss.css", "build/constants-dev.js" ]), { read: false }), { relative: true }))
 		.pipe(gulp.dest(""));
 });
 
