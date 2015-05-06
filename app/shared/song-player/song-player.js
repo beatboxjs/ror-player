@@ -263,4 +263,16 @@ angular.module("beatbox")
 			ret.bbDragType = "resize-pattern";
 			return ret;
 		};
+
+		$scope.downloadMP3 = function() {
+			$scope.player.exportMP3(function(blob) {
+				saveAs(blob, "song.mp3");
+			});
+		};
+
+		$scope.downloadWAV = function() {
+			$scope.player.exportWAV(function(blob) {
+				saveAs(blob, "song.wav");
+			});
+		};
 	});

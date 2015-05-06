@@ -6,6 +6,16 @@
 		<div class="btn-group">
 			<slider ng-model="playerOptions.speed" min="60" max="180"></slider>
 		</div>
+		<div class="btn-group" dropdown>
+			<button type="button" class="btn btn-info" ng-click="downloadMP3()">Download</button>
+			<button type="button" class="btn btn-info dropdown-toggle" dropdown-toggle>
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" role="menu">
+				<li><a href="#" ng-click="downloadMP3()">MP3</a></li>
+				<li><a href="#" ng-click="downloadWAV()">WAV</a></li>
+			</ul>
+		</div>
 		<div class="btn-group trash-drop" ng-show="dragging" ng-drop="true" ng-drag-start="dragStart($data)" ng-drag-stop="dragStop()">
 			<span class="glyphicon glyphicon-trash"></span>
 		</div>
