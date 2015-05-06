@@ -265,13 +265,21 @@ angular.module("beatbox")
 		};
 
 		$scope.downloadMP3 = function() {
+			$scope.loading = true;
 			$scope.player.exportMP3(function(blob) {
+				$scope.$apply(function() {
+					$scope.loading = false;
+				});
 				saveAs(blob, "song.mp3");
 			});
 		};
 
 		$scope.downloadWAV = function() {
+			$scope.loading = true;
 			$scope.player.exportWAV(function(blob) {
+				$scope.$apply(function() {
+					$scope.loading = false;
+				});
 				saveAs(blob, "song.wav");
 			});
 		};
