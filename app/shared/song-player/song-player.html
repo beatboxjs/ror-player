@@ -6,16 +6,13 @@
 		<div class="btn-group">
 			<slider ng-model="playerOptions.speed" min="60" max="180"></slider>
 		</div>
-		<div class="btn-group" dropdown>
-			<button type="button" class="btn btn-info" ng-click="downloadMP3()">Download</button>
-			<button type="button" class="btn btn-info dropdown-toggle" dropdown-toggle>
-				<span class="caret"></span>
-			</button>
+		<span class="dropdown" dropdown>
+			<button class="btn btn-info dropdown-toggle" dropdown-toggle>Export <span class="caret"></span></button>
 			<ul class="dropdown-menu" role="menu">
-				<li><a href="#" ng-click="downloadMP3()">MP3</a></li>
-				<li><a href="#" ng-click="downloadWAV()">WAV</a></li>
+				<li><a href="javascript:" ng-click="downloadMP3()">MP3</a></li>
+				<li><a href="javascript:" ng-click="downloadWAV()">WAV</a></li>
 			</ul>
-		</div>
+		</span>
 		<div class="btn-group trash-drop" ng-show="dragging" ng-drop="true" ng-drag-start="dragStart($data)" ng-drag-stop="dragStop()">
 			<span class="glyphicon glyphicon-trash"></span>
 		</div>
@@ -40,7 +37,7 @@
 			<div class="timeline">
 				<span ng-repeat="(i2,a2) in utils.getNumber(4) track by $index" class="beat" ng-class="'beat-i-'+(i*4+i2)" ng-click="setPosition(i*4+i2, $event)">{{i*4+i2+1}}</span>
 			</div>
-			<div class="field" ng-class="'song-field-'+instrumentKey+'-'+i" ng-repeat="instrumentKey in utils.getKeys(config.instruments)" ng-drop="true" ng-drop-success="onDrop(instrumentKey, i, $data)" ng-drag-enter="dragEnter(instrumentKey, i, $data)", ng-drag-leave="dragLeave(instrumentKey, i, $data)">
+			<div class="field" ng-class="'song-field-'+instrumentKey+'-'+i" ng-repeat="instrumentKey in utils.getKeys(config.instruments)" ng-drop="true" ng-drop-success="onDrop(instrumentKey, i, $data)" ng-drag-enter="dragEnter(instrumentKey, i, $data)" ng-drag-leave="dragLeave(instrumentKey, i, $data)">
 				<div class="pattern-container" ng-class="[ 'colspan-'+getColSpan(instrumentKey, i), 'rowspan-'+getRowSpan(instrumentKey, i) ]" ng-if="song[i][instrumentKey] && shouldDisplay(instrumentKey, i)">
 					<bb-pattern-placeholder bb-tune-name="song[i][instrumentKey][0]" bb-pattern-name="song[i][instrumentKey][1]" bb-draggable="true" bb-drag-success="onDrag(instrumentKey, i)" bb-player-options="getPreviewPlayerOptions(instrumentKey, i)">
 						<bb-pattern-placeholder-item dropdown dropdown-append-to-body>
@@ -57,6 +54,8 @@
 			<div class="field all-drop" ng-show="dragging" ng-drop="true" ng-drop-success="onDrop(null, i, $data)">(All)</div>
 		</div></div>
 		<div class="song-position-marker"></div>
-		<div class="bb-loading" ng-show="loading"></div>
+		<div class="bb-loading progress" ng-show="loading != null">
+			<progressbar class="progress-striped" value="loading" type="success">{{loading | number: 0}} %</progressbar>
+		</div>
 	</div>
 </div>
