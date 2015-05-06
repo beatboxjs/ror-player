@@ -48,7 +48,20 @@ angular.module("beatbox")
 		};
 
 		$scope.editPattern = function() {
-			bbPatternEditorDialog.editPattern($scope.tuneName, $scope.patternName);
+			var loadingEl = $("<div/>").addClass("bb-loading").appendTo("body");
+
+			var watcher = $scope.$watch(function() {
+				return $(".bb-pattern-editor-dialog .instrument-operations").size() != 0;
+			}, function(it) {
+				if(it) {
+					loadingEl.remove()
+					watcher();
+				}
+			});
+
+			setTimeout(function() {
+				bbPatternEditorDialog.editPattern($scope.tuneName, $scope.patternName);
+			}, 0);
 		};
 
 		var onbeat = function(beat) {
