@@ -17,7 +17,8 @@ angular.module("beatbox")
 		$scope.playerOptions = {
 			speed: 100,
 			headphones: null,
-			mute: { }
+			mute: { },
+			loop: false
 		};
 
 		function updateMarkerPos(scrollFurther, force) {
@@ -41,6 +42,9 @@ angular.module("beatbox")
 		$scope.$watch("song", updatePattern, true);
 		$scope.$watch("playerOptions.speed", function(newSpeed) {
 			$scope.player.setBeatLength(60000/newSpeed/bbConfig.playTime);
+		});
+		$scope.$watch("playerOptions.loop", function(loop) {
+			$scope.player.setRepeat(loop);
 		});
 
 		$scope.playPause = function() {

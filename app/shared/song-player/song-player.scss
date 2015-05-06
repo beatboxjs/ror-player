@@ -12,6 +12,10 @@
 		}
 	}
 
+	.loop-button:not(.active) {
+		color: #bbb;
+	}
+
 	.song-player-container {
 		position: relative;
 		white-space: nowrap;
