@@ -2,18 +2,18 @@
 	<div class="control-panel">
 		<button type="button" class="btn" ng-class="player.playing ? 'btn-info' : 'btn-success'" ng-click="playPause()"><span class="glyphicon" ng-class="player.playing ? 'glyphicon-pause' : 'glyphicon-play'"></span> {{player.playing ? 'Pause' : 'Play'}}</button>
 		<button type="button" class="btn btn-danger" ng-click="stop()"><span class="glyphicon glyphicon-stop"></span> Stop</button>
-		<button type="button" class="btn btn-info" ng-click="clear()"><span class="glyphicon glyphicon-trash"></span> Clear</button>
+		<span class="dropdown" dropdown>
+			<button class="btn btn-info dropdown-toggle" dropdown-toggle><span class="glyphicon glyphicon-cog"></span> Tools <span class="caret"></span></button>
+			<ul class="dropdown-menu" role="menu">
+				<li><a href="javascript:" ng-model="playerOptions.loop" btn-checkbox><span class="glyphicon glyphicon-repeat"></span> Loop <span class="glyphicon glyphicon-ok" ng-style="{visibility:playerOptions.loop?'visible':'hidden'}"></span></a></li>
+				<li><a href="javascript:" ng-click="downloadMP3()"><span class="glyphicon glyphicon-download-alt"></span> Export MP3</a></li>
+				<li><a href="javascript:" ng-click="downloadWAV()"><span class="glyphicon glyphicon-download-alt"></span> Export WAV</a></li>
+				<li><a href="javascript:" ng-click="clear()"><span class="glyphicon glyphicon-trash"></span> Clear</a>
+			</ul>
+		</span>
 		<div class="btn-group">
 			<slider ng-model="playerOptions.speed" min="60" max="180"></slider>
 		</div>
-		<a href="javascript:" class="loop-button" ng-model="playerOptions.loop" btn-checkbox title="Loop"><span class="glyphicon glyphicon-repeat"></span></a>
-		<span class="dropdown" dropdown>
-			<button class="btn btn-info dropdown-toggle" dropdown-toggle>Export <span class="caret"></span></button>
-			<ul class="dropdown-menu" role="menu">
-				<li><a href="javascript:" ng-click="downloadMP3()">MP3</a></li>
-				<li><a href="javascript:" ng-click="downloadWAV()">WAV</a></li>
-			</ul>
-		</span>
 		<div class="btn-group trash-drop" ng-show="dragging" ng-drop="true" ng-drag-start="dragStart($data)" ng-drag-stop="dragStop()">
 			<span class="glyphicon glyphicon-trash"></span>
 		</div>
