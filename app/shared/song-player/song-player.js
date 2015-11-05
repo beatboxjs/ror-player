@@ -76,7 +76,9 @@ angular.module("beatbox")
 		};
 
 		$scope.clear = function() {
-			$scope.song = { };
+			if(confirm("Do you really want to remove your current song?")) {
+				$scope.song = { };
+			}
 		};
 
 		$scope.getLength = function() {
