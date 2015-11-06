@@ -16,6 +16,7 @@
 	<div class="btn-group speed-slider">
 		<slider ng-model="playerOptions.speed" min="60" max="180"></slider>
 	</div>
+	<button type="button" class="btn btn-warning" ng-show="hasLocalChanges" ng-click="reset()"><span class="glyphicon glyphicon-share-alt"></span> Restore original</button>
 </div>
 <div class="bb-pattern-editor-container">
 	<table class="pattern-editor" ng-class="'time-'+pattern.time">

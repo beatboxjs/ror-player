@@ -1406,6 +1406,8 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 		}
 	}
 
+	bbConfig.tunesBkp = ng.copy(bbConfig.tunes);
+
 	bbConfig.myTunesKey = "My tunes";
 	bbConfig.tunes[bbConfig.myTunesKey] = localStorage.myTunes ? JSON.parse(localStorage.myTunes) : { patterns: { } };
 

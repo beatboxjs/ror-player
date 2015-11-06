@@ -4,14 +4,16 @@ angular.module("beatbox")
 			templateUrl: "app/shared/pattern-player/pattern-player.html",
 			scope: {
 				pattern: "=bbPattern",
+				originalPattern: "=bbPatternOriginal",
 				editable: "=bbPatternEditable"
 			},
 			controller: "bbPatternController"
 		};
 	})
-	.controller("bbPatternController", function($scope, $element, bbPlayer, bbConfig, bbUtils) {
+	.controller("bbPatternController", function($scope, $element, bbPlayer, bbConfig, bbUtils, ng) {
 		$scope.config = bbConfig;
 		$scope.utils = bbUtils;
+		$scope.hasLocalChanges = false;
 
 		function handleIdx(i) {
 			var i = $scope.player.getPosition();
@@ -125,5 +127,13 @@ angular.module("beatbox")
 			var add = ($event.pageX - beat.offset().left) / beat.outerWidth();
 			$scope.player.setPosition(Math.floor((i+add)*bbConfig.playTime));
 			updateMarkerPosition(false);
+		};
+
+		$scope.$watch("pattern", function() {
+			$scope.hasLocalChanges = $scope.originalPattern && !angular.equals($scope.pattern, $scope.originalPattern);
+		}, true);
+
+		$scope.reset = function() {
+			ng.copy($scope.originalPattern, $scope.pattern);
 		};
 	});

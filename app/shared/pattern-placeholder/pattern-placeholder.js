@@ -38,7 +38,7 @@ angular.module("beatbox")
 			transclude: true
 		};
 	})
-	.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPatternEditorDialog, bbPlayer, bbUtils, $element) {
+	.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPatternEditorDialog, bbPlayer, bbUtils, $element, ng) {
 		$scope.config = bbConfig;
 		$scope.player = null;
 
@@ -103,4 +103,19 @@ angular.module("beatbox")
 			$scope.dragModel[0] = $scope.tuneName;
 			$scope.dragModel[1] = $scope.patternName;
 		});
+
+		$scope.hasLocalChanges = function() {
+			var originalPattern = bbConfig.tunesBkp[$scope.tuneName] && bbConfig.tunesBkp[$scope.tuneName].patterns[$scope.patternName];
+			var pattern = bbConfig.tunes[$scope.tuneName] && bbConfig.tunes[$scope.tuneName].patterns[$scope.patternName];
+			return originalPattern && !ng.equals(pattern, originalPattern);
+		};
+
+		$scope.restore = function() {
+			if(!confirm("Are you sure that you want to revert your modifications to "+$scope.patternName+" ("+$scope.tuneName+")?"))
+				return;
+			
+			var originalPattern = bbConfig.tunesBkp[$scope.tuneName] && bbConfig.tunesBkp[$scope.tuneName].patterns[$scope.patternName];
+			var pattern = bbConfig.tunes[$scope.tuneName].patterns[$scope.patternName];
+			ng.copy(originalPattern, pattern);
+		};
 	});

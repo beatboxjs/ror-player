@@ -5,6 +5,8 @@ angular.module("beatbox")
 
 		$scope.tune = bbConfig.tunes[tuneName];
 		$scope.pattern = $scope.tune.patterns[patternName];
+
+		$scope.originalPattern = bbConfig.tunesBkp[tuneName] && bbConfig.tunesBkp[tuneName].patterns[patternName];
 	})
 	.factory("bbPatternEditorDialog", function($uibModal, bbPlayer) {
 		var openDialog = null;
