@@ -70,12 +70,22 @@ gulp.task("bower", function() {
 });
 
 gulp.task("deps", function() {
+	var jsDeps = concat("dependencies.js");
+
+	gulp.src(multimatch(deps, [ "**/*.js", "!**/bower_components/wav-encoder/**" ])) // wav-encoder can not be minified due to self variable in InlineWorker
+		.pipe(newer("build/dependencies-without-wav-encoder.js"))
+		.pipe(concat("dependencies-without-wav-encoder.js"))
+		.pipe(uglify())
+		.pipe(gulp.dest("build"))
+		.pipe(es.wait(function(err) {
+			if(err) throw err;
+
+			gulp.src([ "build/dependencies-without-wav-encoder.js", "bower_components/wav-encoder/build/wav-encoder.min.js" ]).pipe(jsDeps);
+		}));
+
 	return es.merge(
-		gulp.src(multimatch(deps, "**/*.js"))
-			.pipe(newer("build/dependencies.js"))
-			.pipe(concat("dependencies.js"))
-			.pipe(uglify())
-		, gulp.src(multimatch(deps, "**/*.css"))
+		jsDeps,
+		gulp.src(multimatch(deps, "**/*.css"))
 			.pipe(newer("build/dependencies.css"))
 			.pipe(concat("dependencies.css"))
 			.pipe(modifyCssUrls({ modify: function(url, filePath) { return url.replace(/^\.\.\//, ""); }}))
