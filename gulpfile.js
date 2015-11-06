@@ -21,6 +21,7 @@ var async = require("async");
 var zip = require("gulp-zip");
 var ngConstant = require("gulp-ng-constant");
 var multimatch = require("multimatch");
+var newer = require("gulp-newer");
 
 
 var files = [
@@ -58,9 +59,7 @@ function getDepStream() {
 }
 
 
-gulp.task("default", function(callback) {
-	runSequence("clean", "all", callback);
-});
+gulp.task("default", [ "all" ]);
 
 gulp.task("clean", function() {
 	return gulp.src("build").pipe(clean());
@@ -73,14 +72,17 @@ gulp.task("bower", function() {
 gulp.task("deps", function() {
 	return es.merge(
 		gulp.src(multimatch(deps, "**/*.js"))
+			.pipe(newer("build/dependencies.js"))
 			.pipe(concat("dependencies.js"))
 			.pipe(uglify())
 		, gulp.src(multimatch(deps, "**/*.css"))
+			.pipe(newer("build/dependencies.css"))
 			.pipe(concat("dependencies.css"))
 			.pipe(modifyCssUrls({ modify: function(url, filePath) { return url.replace(/^\.\.\//, ""); }}))
 			.pipe(minifyCss())
 		, getDepStream()
 			.pipe(filter(function(file) { return file.stat.isFile() && !file.path.match(/\.(js|css|html)$/); }))
+			.pipe(newer("build"))
 	).pipe(gulp.dest("build"));
 });
 
@@ -132,6 +134,7 @@ gulp.task("scss", function() {
 
 gulp.task("audiosprite", function() {
 	return gulp.src(files)
+		.pipe(newer("build/mp3.zip"))
 		.pipe(filter("**/*.mp3"))
 		.pipe(zip("mp3.zip"))
 		.pipe(gulp.dest("build"));
