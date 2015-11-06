@@ -13,7 +13,6 @@ angular.module("beatbox")
 	.controller("bbPatternController", function($scope, $element, bbPlayer, bbConfig, bbUtils, ng) {
 		$scope.config = bbConfig;
 		$scope.utils = bbUtils;
-		$scope.hasLocalChanges = false;
 
 		function handleIdx(i) {
 			var i = $scope.player.getPosition();
@@ -129,9 +128,9 @@ angular.module("beatbox")
 			updateMarkerPosition(false);
 		};
 
-		$scope.$watch("pattern", function() {
-			$scope.hasLocalChanges = $scope.originalPattern && !angular.equals($scope.pattern, $scope.originalPattern);
-		}, true);
+		$scope.hasLocalChanges = function() {
+			return $scope.originalPattern && !angular.equals($scope.pattern, $scope.originalPattern);
+		};
 
 		$scope.reset = function() {
 			ng.copy($scope.originalPattern, $scope.pattern);
