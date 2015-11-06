@@ -8,7 +8,7 @@ angular.module("beatbox")
 			}
 		};
 	})
-	.controller("bbSongPlayerController", function($scope, bbConfig, $modal, ng, bbUtils, bbPlayer, $element, $timeout) {
+	.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, ng, bbUtils, bbPlayer, $element, $timeout) {
 		$scope.config = bbConfig;
 		$scope.utils = bbUtils;
 

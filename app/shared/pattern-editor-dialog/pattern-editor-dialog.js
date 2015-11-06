@@ -6,14 +6,14 @@ angular.module("beatbox")
 		$scope.tune = bbConfig.tunes[tuneName];
 		$scope.pattern = $scope.tune.patterns[patternName];
 	})
-	.factory("bbPatternEditorDialog", function($modal, bbPlayer) {
+	.factory("bbPatternEditorDialog", function($uibModal, bbPlayer) {
 		var openDialog = null;
 
 		return {
 			editPattern: function(tuneName, patternName) {
 				this.close();
 
-				openDialog = $modal.open({
+				openDialog = $uibModal.open({
 					templateUrl: "app/shared/pattern-editor-dialog/pattern-editor-dialog.html",
 					controller: "bbPatternEditorCtrl",
 					size: "lg",

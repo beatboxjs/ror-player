@@ -20,6 +20,7 @@ var fs = require("fs");
 var async = require("async");
 var zip = require("gulp-zip");
 var ngConstant = require("gulp-ng-constant");
+var multimatch = require("multimatch");
 
 
 var files = [
@@ -41,9 +42,6 @@ function commonPrefix(strs) {
 function getDepStream() {
 	var apps = { };
 	deps.forEach(function(fileName) {
-		if(fileName.match(/\.less$/))
-			return;
-
 		var m = fileName.match(/\/bower_components\/([-._a-zA-Z0-9]+)\//);
 		if(!apps[m[1]])
 			apps[m[1]] = [ ];
@@ -74,12 +72,10 @@ gulp.task("bower", function() {
 
 gulp.task("deps", function() {
 	return es.merge(
-		gulp.src(deps)
-			.pipe(filter("**/*.js"))
+		gulp.src(multimatch(deps, "**/*.js"))
 			.pipe(concat("dependencies.js"))
 			.pipe(uglify())
-		, gulp.src(deps)
-			.pipe(filter("**/*.css"))
+		, gulp.src(multimatch(deps, "**/*.css"))
 			.pipe(concat("dependencies.css"))
 			.pipe(modifyCssUrls({ modify: function(url, filePath) { return url.replace(/^\.\.\//, ""); }}))
 			.pipe(minifyCss())
