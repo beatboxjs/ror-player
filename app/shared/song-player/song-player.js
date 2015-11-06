@@ -9,7 +9,7 @@ angular.module("beatbox")
 			}
 		};
 	})
-	.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, ng, bbUtils, bbPlayer, $element, $timeout) {
+	.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, ng, bbUtils, bbPlayer, $element, $timeout, bootbox) {
 		$scope.config = bbConfig;
 		$scope.utils = bbUtils;
 
@@ -304,29 +304,45 @@ angular.module("beatbox")
 		$scope.createSong = function(song) {
 			$scope.stop();
 
-			$scope.song = {
-				name: prompt("Enter song name")
-			};
+			bootbox.prompt("Enter song name", function(songName) {
+				if(songName == null)
+					return;
 
-			$scope.songs.push($scope.song);
+				$scope.song = {
+					name: songName
+				};
+
+				$scope.songs.push($scope.song);
+			});
 		};
 
 		$scope.renameSong = function(song) {
-			$scope.song.name = prompt("Enter song name", $scope.song.name);
+			bootbox.prompt({
+				title: "Enter song name",
+				value: $scope.song.name,
+				callback: function(songName) {
+					if(songName == null)
+						return;
+
+					$scope.song.name = songName;
+				}
+			});
 		};
 
 		$scope.removeSong = function(song) {
-			if(!confirm("Do you really want to remove the song "+(song.name || "Untitled song")+"?"))
-				return;
+			bootbox.confirm("Do you really want to remove the song "+(song.name || "Untitled song")+"?", function(result) {
+				if(!result)
+					return;
 
-			var idx = $scope.songs.indexOf(song);
-			if(idx != -1)
-				$scope.songs.splice(idx, 1);
+				var idx = $scope.songs.indexOf(song);
+				if(idx != -1)
+					$scope.songs.splice(idx, 1);
 
-			if($scope.songs.length == 0)
-				$scope.songs.push({ });
+				if($scope.songs.length == 0)
+					$scope.songs.push({ });
 
-			if($scope.song === song)
-				$scope.selectSong($scope.songs[0]);
+				if($scope.song === song)
+					$scope.selectSong($scope.songs[0]);
+			});
 		};
 	});

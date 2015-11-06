@@ -22,32 +22,41 @@ angular.module("beatbox")
 			}
 		}
 	})
-	.controller("bbPatternListController", function($scope, bbConfig, bbUtils, bbPatternEditorDialog) {
+	.controller("bbPatternListController", function($scope, bbConfig, bbUtils, bbPatternEditorDialog, bootbox) {
 		$scope.config = bbConfig;
 		$scope.utils = bbUtils;
 
 		$scope.createPattern = function() {
-			var patternName = prompt("Please enter a name for the new break.");
-			if(!patternName)
-				return;
+			var patternName = "";
+			async.doWhilst(function(next) {
+				bootbox.prompt(patternName == "" ? "Please enter a name for the new break." : "This name is already taken. Please enter a new one.", function(newPatternName) {
+					patternName = newPatternName;
+					next();
+				})
+			}, function() {
+				return patternName != null && (patternName == "" || bbConfig.myTunes.patterns[patternName]);
+			}, function() {
+				if(patternName == null)
+					return;
 
-			while(patternName && bbConfig.myTunes.patterns[patternName])
-				patternName = prompt("This name is already taken. Please enter a new one.");
-			if(!patternName)
-				return;
+				bbConfig.myTunes.patterns[patternName] = {
+					length: 4,
+					time: 4
+				};
 
-			bbConfig.myTunes.patterns[patternName] = {
-				length: 4,
-				time: 4
-			};
+				for(var i in bbConfig.instruments)
+					bbConfig.myTunes.patterns[patternName][i] = [ ];
 
-			for(var i in bbConfig.instruments)
-				bbConfig.myTunes.patterns[patternName][i] = [ ];
-
-			bbPatternEditorDialog.editPattern(bbConfig.myTunesKey, patternName);
+				bbPatternEditorDialog.editPattern(bbConfig.myTunesKey, patternName);
+			});
 		};
 
 		$scope.removePattern = function(tuneName, patternName) {
-			delete bbConfig.tunes[tuneName].patterns[patternName];
+			bootbox.confirm("Do you really want to remove "+patternName+" ("+tuneName+")?", function(result) {
+				if(!result)
+					return;
+
+				delete bbConfig.tunes[tuneName].patterns[patternName];
+			});
 		};
 	});

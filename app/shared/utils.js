@@ -1,4 +1,4 @@
-angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $) {
+angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScope) {
 	var bbUtils = {
 		getNumber: function(num) {
 			if(isFinite(num) && !isNaN(num))
@@ -99,6 +99,19 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $) {
 					$(el.bbParent).not(":animated").animate({ scrollLeft: left - el.bbParent.offsetWidth * fac2 }, 200);
 			} else if(left >= el.bbParent.scrollLeft && left + el.offsetWidth <= el.bbParent.scrollLeft + el.bbParent.offsetWidth)
 				el.bbScrollingDisabled = false;
+		},
+		wrapApply: function(func) {
+			return function() {
+				var t = this;
+				var args = arguments;
+				var ret;
+
+				$rootScope.$apply(function() {
+					ret = func.apply(t, args);
+				});
+
+				return ret;
+			};
 		}
 	};
 

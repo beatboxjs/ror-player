@@ -25,4 +25,19 @@ angular.module("beatbox", ["ui.bootstrap", "ui.bootstrap-slider", "ngDraggable",
 		bbPatternEditorDialog.editPattern = function(tuneName, patternName) {
 			$state.go("pattern", { tuneName: tuneName, patternName: patternName });
 		};
+	})
+	.factory("bootbox", function($, bbUtils) {
+		var ret = { };
+		[ "alert", "confirm", "prompt", "dialog" ].forEach(function(it) {
+			ret[it] = function() {
+				for(var j=0; j<arguments.length; j++) {
+					if($.isFunction(arguments[j]))
+						arguments[j] = bbUtils.wrapApply(arguments[j]);
+					if(arguments[j] != null && arguments[j].callback)
+						arguments[j].callback = bbUtils.wrapApply(arguments[j].callback);
+				}
+				return bootbox[it].apply(bootbox, arguments);
+			};
+		});
+		return ret;
 	});
