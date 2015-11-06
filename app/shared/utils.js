@@ -16,7 +16,7 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $) {
 			var ret = null;
 			for(var i=0; i<keys.length; i++) {
 				var t = parseInt(keys[i]);
-				if(ret == null || t > ret)
+				if(!isNaN(t) && (ret == null || t > ret))
 					ret = t;
 			}
 			return ret;

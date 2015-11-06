@@ -134,4 +134,26 @@
 		color: #fff;
 		transition: none;
 	}
+
+	.song-dropdown li {
+		position: relative;
+
+		a.song-name {
+			margin-right: 3em;
+		}
+
+		a.rename,a.remove {
+			position: absolute;
+			top: 0;
+			width: 1.5em;
+			padding-left: 0;
+			padding-right: 0;
+			text-align: center;
+			right: 0;
+		}
+
+		a.rename {
+			right: 1.5em;
+		}
+	}
 }

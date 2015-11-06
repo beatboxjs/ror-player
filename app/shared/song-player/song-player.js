@@ -4,7 +4,8 @@ angular.module("beatbox")
 			templateUrl: "app/shared/song-player/song-player.html",
 			controller: "bbSongPlayerController",
 			scope: {
-				song: '=bbSong'
+				songs: '=bbSongs',
+				song: '=bbSelectedSong'
 			}
 		};
 	})
@@ -73,12 +74,6 @@ angular.module("beatbox")
 		$scope.mute = function(instrumentKey) {
 			$scope.playerOptions.mute[instrumentKey] = !$scope.playerOptions.mute[instrumentKey];
 			updatePattern();
-		};
-
-		$scope.clear = function() {
-			if(confirm("Do you really want to remove your current song?")) {
-				$scope.song = { };
-			}
 		};
 
 		$scope.getLength = function() {
@@ -296,5 +291,42 @@ angular.module("beatbox")
 					$scope.loading = perc*100;
 				});
 			});
+		};
+
+		$scope.selectSong = function(song) {
+			if($scope.song === song)
+				return;
+
+			$scope.stop();
+			$scope.song = song;
+		};
+
+		$scope.createSong = function(song) {
+			$scope.stop();
+
+			$scope.song = {
+				name: prompt("Enter song name")
+			};
+
+			$scope.songs.push($scope.song);
+		};
+
+		$scope.renameSong = function(song) {
+			$scope.song.name = prompt("Enter song name", $scope.song.name);
+		};
+
+		$scope.removeSong = function(song) {
+			if(!confirm("Do you really want to remove the song "+(song.name || "Untitled song")+"?"))
+				return;
+
+			var idx = $scope.songs.indexOf(song);
+			if(idx != -1)
+				$scope.songs.splice(idx, 1);
+
+			if($scope.songs.length == 0)
+				$scope.songs.push({ });
+
+			if($scope.song === song)
+				$scope.selectSong($scope.songs[0]);
 		};
 	});

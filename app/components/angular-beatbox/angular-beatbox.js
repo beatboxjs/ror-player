@@ -1,18 +1,30 @@
 angular.module("beatbox").controller("BeatboxController", function($scope, bbUtils, bbConfig, ng) {
-	$scope.song = localStorage.song ? JSON.parse(localStorage.song) : { };
-	$scope.$watch("song", function(song) {
-		localStorage.song = JSON.stringify(song);
+	$scope.songs = localStorage.songs ? JSON.parse(localStorage.songs) : [ ];
+	if (localStorage.song) { // Legacy
+		$scope.songs.push(JSON.parse(localStorage.song));
+		delete localStorage.song;
+	}
+
+	$scope.song = $scope.songs[0];
+
+	$scope.$watch("songs", function(songs) {
+		localStorage.songs = JSON.stringify(songs);
 	}, true);
 
 	$scope.$watch(function() { return bbConfig.myTunes; }, function() {
 		// Check if all patterns still exist
-		for(var i in $scope.song) {
-			for(var j in $scope.song[i]) {
-				if(!bbUtils.getPattern($scope.song[i][j]))
+		for(var i=0; i<$scope.songs.length; i++) {
+			for(var j in $scope.songs[i]) {
+				if(j == "name")
+					continue;
+
+				for(var k in $scope.songs[i][j]) {
+					if(!bbUtils.getPattern($scope.songs[i][j][k]))
+						delete $scope.songs[i][j][k];
+				}
+				if(Object.keys($scope.songs[i][j]).length == 0)
 					delete $scope.song[i][j];
 			}
-			if(Object.keys($scope.song[i]).length == 0)
-				delete $scope.song[i];
 		}
 	}, true);
 
