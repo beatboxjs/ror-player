@@ -9,7 +9,7 @@ angular.module("beatbox")
 			}
 		};
 	})
-	.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, ng, bbUtils, bbPlayer, $element, $timeout, bootbox) {
+	.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, ng, bbUtils, bbPlayer, $element, $timeout, $ngBootbox) {
 		$scope.config = bbConfig;
 		$scope.utils = bbUtils;
 
@@ -304,10 +304,7 @@ angular.module("beatbox")
 		$scope.createSong = function(song) {
 			$scope.stop();
 
-			bootbox.prompt("Enter song name", function(songName) {
-				if(songName == null)
-					return;
-
+			$ngBootbox.prompt("Enter song name").then(function(songName) {
 				$scope.song = {
 					name: songName
 				};
@@ -317,23 +314,13 @@ angular.module("beatbox")
 		};
 
 		$scope.renameSong = function(song) {
-			bootbox.prompt({
-				title: "Enter song name",
-				value: $scope.song.name,
-				callback: function(songName) {
-					if(songName == null)
-						return;
-
-					$scope.song.name = songName;
-				}
+			$ngBootbox.prompt("Enter song name", song.name).then(function(songName) {
+				song.name = songName;
 			});
 		};
 
 		$scope.removeSong = function(song) {
-			bootbox.confirm("Do you really want to remove the song "+(song.name || "Untitled song")+"?", function(result) {
-				if(!result)
-					return;
-
+			$ngBootbox.confirm("Do you really want to remove the song "+(song.name || "Untitled song")+"?").then(function(result) {
 				var idx = $scope.songs.indexOf(song);
 				if(idx != -1)
 					$scope.songs.splice(idx, 1);

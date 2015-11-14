@@ -10,7 +10,7 @@ angular.module("beatbox")
 			controller: "bbPatternController"
 		};
 	})
-	.controller("bbPatternController", function($scope, $element, bbPlayer, bbConfig, bbUtils, ng, bootbox) {
+	.controller("bbPatternController", function($scope, $element, bbPlayer, bbConfig, bbUtils, ng, $ngBootbox) {
 		$scope.config = bbConfig;
 		$scope.utils = bbUtils;
 
@@ -133,10 +133,7 @@ angular.module("beatbox")
 		};
 
 		$scope.reset = function() {
-			bootbox.confirm("Are you sure that you want to revert your modifications and restore the original break?", function(result) {
-				if(!result)
-					return;
-
+			$ngBootbox.confirm("Are you sure that you want to revert your modifications and restore the original break?").then(function() {
 				ng.copy($scope.originalPattern, $scope.pattern);
 			});
 		};

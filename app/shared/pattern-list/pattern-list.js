@@ -22,23 +22,20 @@ angular.module("beatbox")
 			}
 		}
 	})
-	.controller("bbPatternListController", function($scope, bbConfig, bbUtils, bbPatternEditorDialog, bootbox) {
+	.controller("bbPatternListController", function($scope, bbConfig, bbUtils, bbPatternEditorDialog, $ngBootbox) {
 		$scope.config = bbConfig;
 		$scope.utils = bbUtils;
 
 		$scope.createPattern = function() {
-			var patternName = "";
+			var patternName;
 			async.doWhilst(function(next) {
-				bootbox.prompt(patternName == "" ? "Please enter a name for the new break." : "This name is already taken. Please enter a new one.", function(newPatternName) {
+				$ngBootbox.prompt(!patternName ? "Please enter a name for the new break." : "This name is already taken. Please enter a new one.").then(function(newPatternName) {
 					patternName = newPatternName;
 					next();
-				})
+				});
 			}, function() {
-				return patternName != null && (patternName == "" || bbConfig.myTunes.patterns[patternName]);
+				return patternName == "" || bbConfig.myTunes.patterns[patternName];
 			}, function() {
-				if(patternName == null)
-					return;
-
 				bbConfig.myTunes.patterns[patternName] = {
 					length: 4,
 					time: 4
@@ -52,10 +49,7 @@ angular.module("beatbox")
 		};
 
 		$scope.removePattern = function(tuneName, patternName) {
-			bootbox.confirm("Do you really want to remove "+patternName+" ("+tuneName+")?", function(result) {
-				if(!result)
-					return;
-
+			$ngBootbox.confirm("Do you really want to remove "+patternName+" ("+tuneName+")?").then(function(){
 				delete bbConfig.tunes[tuneName].patterns[patternName];
 			});
 		};
