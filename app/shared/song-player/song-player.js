@@ -304,13 +304,11 @@ angular.module("beatbox")
 		$scope.createSong = function(song) {
 			$scope.stop();
 
-			$ngBootbox.prompt("Enter song name").then(function(songName) {
-				$scope.song = {
-					name: songName
-				};
+			$scope.song = {
+				name: ""
+			};
 
-				$scope.songs.push($scope.song);
-			});
+			$scope.songs.push($scope.song);
 		};
 
 		$scope.renameSong = function(song) {
