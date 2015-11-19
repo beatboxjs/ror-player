@@ -112,6 +112,39 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScop
 
 				return ret;
 			};
+		},
+
+		/**
+		 * Encodes a numbers as a string.
+		 * @param number {number} The number to encode.
+		 * @param length {number} The number of bytes to use to represent the number (optional).
+		 * @returns {string} The number encoded as a string.
+		 */
+		numberToString : function(number, length) {
+			if(length == null) {
+				length = Math.min(1, Math.floor(Math.log(number) / Math.log(256)));
+			}
+			if(number >= Math.pow(256, length)) {
+				throw new Error("Number "+number+" larger than "+length+" bytes.");
+			}
+			var ret = "";
+			for(var i=0,digits=255; i<length; i++,digits<<=8) {
+				ret = String.fromCharCode((number & digits) >> i*8) + ret;
+			}
+			return ret;
+		},
+
+		/**
+		 * Decodes a number encoded as a string.
+		 * @param string {string} An encoded number as returned by `_numberToString()`.
+		 * @returns {number} The decoded number.
+		 */
+		stringToNumber : function(string) {
+			var number = 0;
+			for(var i=0; i<string.length; i++) {
+				number |= string.charCodeAt(i) << (string.length-i-1)*8;
+			}
+			return number;
 		}
 	};
 
