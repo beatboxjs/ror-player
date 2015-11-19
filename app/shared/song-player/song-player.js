@@ -330,4 +330,14 @@ angular.module("beatbox")
 					$scope.selectSong($scope.songs[0]);
 			});
 		};
+
+		$scope.clearSong = function() {
+			$ngBootbox.confirm("Do you really want to clear the current song?").then(function() {
+				var length = bbUtils.getSongLength($scope.song);
+				for(var i=0; i<length; i++) {
+					if($scope.song[i])
+						delete $scope.song[i];
+				}
+			});
+		};
 	});
