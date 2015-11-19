@@ -1,4 +1,6 @@
 angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScope) {
+	var CHARS = " !#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~";
+
 	var bbUtils = {
 		getNumber: function(num) {
 			if(isFinite(num) && !isNaN(num))
@@ -117,19 +119,26 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScop
 		/**
 		 * Encodes a numbers as a string.
 		 * @param number {number} The number to encode.
-		 * @param length {number} The number of bytes to use to represent the number (optional).
+		 * @param length {number?} The number of bytes to use to represent the number (optional).
 		 * @returns {string} The number encoded as a string.
 		 */
 		numberToString : function(number, length) {
-			if(length == null) {
-				length = Math.min(1, Math.floor(Math.log(number) / Math.log(256)));
-			}
-			if(number >= Math.pow(256, length)) {
-				throw new Error("Number "+number+" larger than "+length+" bytes.");
-			}
+			if(number < 0 || isNaN(number) || !isFinite(number))
+				throw new Error("Invalid number "+number);
+
 			var ret = "";
-			for(var i=0,digits=255; i<length; i++,digits<<=8) {
-				ret = String.fromCharCode((number & digits) >> i*8) + ret;
+			while(number > 0) {
+				var newNumber = Math.floor(number / CHARS.length);
+				ret = CHARS[number - newNumber*CHARS.length] + ret;
+				number = newNumber;
+			}
+
+			if(length != null) {
+				if(ret.length > length)
+					throw new Error("Number "+number+" larger than "+length+" bytes.");
+
+				while(ret.length < length)
+					ret = CHARS[0] + ret;
 			}
 			return ret;
 		},
@@ -140,11 +149,35 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScop
 		 * @returns {number} The decoded number.
 		 */
 		stringToNumber : function(string) {
-			var number = 0;
-			for(var i=0; i<string.length; i++) {
-				number |= string.charCodeAt(i) << (string.length-i-1)*8;
+			var ret = 0;
+			for(var i=string.length-1,fac=1; i>=0; i--,fac*=CHARS.length) {
+				var val = CHARS.indexOf(string.charAt(i));
+				if(val == -1)
+					throw new Error("Unrecognised char "+string.charAt(i));
+
+				ret += val*fac;
 			}
-			return number;
+			return ret;
+		},
+
+		songContainsPattern : function(song, tuneName, patternName) {
+			var length = bbUtils.getSongLength(song);
+
+			for(var i=0; i<length; i++) {
+				if(!song[i])
+					continue;
+
+				for(var instr in bbConfig.instruments) {
+					if(song[i][instr] && song[i][instr][0] == tuneName && song[i][instr][1] == patternName)
+						return true;
+				}
+			}
+
+			return false;
+		},
+
+		makeAbsoluteUrl : function(url) {
+			return $("<a/>").attr("href", url).prop("href");
 		}
 	};
 

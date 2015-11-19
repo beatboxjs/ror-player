@@ -17,6 +17,18 @@ angular.module("beatbox", ["ui.bootstrap", "ui.bootstrap-slider", "ngDraggable",
 						$state.go("song");
 					});
 				}
+			})
+			.state("importAndPattern", {
+				url: ":importData/:tuneName/:patternName",
+				onEnter: function($stateParams, $state, bbImportExport) {
+
+				}
+			})
+			.state("import", {
+				url: ":importData",
+				onEnter: function($stateParams, $state) {
+
+				}
 			});
 	})
 	.run(function($state, bbPatternEditorDialog) {

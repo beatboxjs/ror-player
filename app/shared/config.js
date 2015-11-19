@@ -1416,5 +1416,17 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 		localStorage.myTunes = JSON.stringify(myTunes);
 	}, true);
 
+	// Check some requirements for export so that we don't forget them at some point in the future
+	for(var stroke in bbConfig.strokes) {
+		if(stroke.length != 1)
+			throw new Error("Stroke key must be one character for `" + stroke + "`.");
+		if(stroke == "+" || stroke == "@")
+			throw new Error("Stroke must not be `+` or `@` as it would conflict with pattern encoder.");
+	}
+	for(var instr in bbConfig.instruments) {
+		if(instr.length != 2)
+			throw new Error("Instrument key must be 2 characters long for `" + instr + "` due to pattern encoder.");
+	}
+
 	return bbConfig;
 });
