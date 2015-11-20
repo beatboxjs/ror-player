@@ -161,9 +161,9 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScop
 		},
 
 		songContainsPattern : function(song, tuneName, patternName) {
-			var length = bbUtils.getMaxIndex(song);
+			var maxIndex = bbUtils.getMaxIndex(song);
 
-			for(var i=0; i<length; i++) {
+			for(var i=0; i<=maxIndex; i++) {
 				if(!song[i])
 					continue;
 
@@ -178,6 +178,25 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScop
 
 		makeAbsoluteUrl : function(url) {
 			return $("<a/>").attr("href", url).prop("href");
+		},
+
+		mergeTuneObjects : function(tunes1, tunes2) {
+			var ret = { };
+			for(var i=0; i<arguments.length; i++) {
+				if(!arguments[i])
+					continue;
+
+				for(var tuneName in arguments[i]) {
+					if(ret[tuneName] == null)
+						ret[tuneName] = ng.copy(arguments[i][tuneName]);
+					else if(arguments[i][tuneName].patterns) {
+						for(var patternName in arguments[i][tuneName].patterns) {
+							ret[tuneName].patterns[patternName] = arguments[i][tuneName].patterns[patternName];
+						}
+					}
+				}
+			}
+			return ret;
 		}
 	};
 

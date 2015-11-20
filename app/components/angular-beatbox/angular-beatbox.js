@@ -19,6 +19,18 @@ angular.module("beatbox").controller("BeatboxController", function($scope, bbUti
 		return false;
 	};
 
+	$scope.getHistoricStates = function() {
+		return bbState.getHistoricStates();
+	};
+
+	$scope.getHistoryKeyTitle = function(key) {
+		return new Date(key*1000).toISOString();
+	};
+
+	$scope.loadHistoricState = function(key) {
+		bbState.loadHistoricState(key);
+	};
+
 	//$scope.$watch(function() { console.log("digest"); }, function() {})
 
 });

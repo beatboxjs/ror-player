@@ -51,7 +51,7 @@ angular.module("beatbox")
 		};
 
 		$scope.shouldExportPattern = function(tuneName, patternName) {
-			return bbImportExport._shouldExportPattern($scope.songs, $scope.sharePatterns, tuneName, patternName);
+			return bbImportExport._shouldExportPattern($scope._getSelectedSongs(), $scope.sharePatterns, tuneName, patternName);
 		};
 
 		$scope.clickTune = function(tuneName) {

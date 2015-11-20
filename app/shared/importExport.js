@@ -13,7 +13,7 @@ angular.module("beatbox").factory("bbImportExport", function(bbConfig, ng, $, bb
 
 		exportObject : function(songs, tunes, selectedPatterns) {
 			var ret = { patterns: { } };
-			if(songs)
+			if(songs && songs.length > 0)
 				ret.songs = bbSongEncoder.encodeSongs(songs);
 
 			for(var tuneName in tunes) {
@@ -37,13 +37,18 @@ angular.module("beatbox").factory("bbImportExport", function(bbConfig, ng, $, bb
 			return ret;
 		},
 
-		exportString : function(songs, tunes, selectedPatterns) {
-			var compressed = JSZip.compressions.DEFLATE.compress(JSON.stringify(this.exportObject(songs, tunes, selectedPatterns)), { level: 9, to: "string" });
+		objectToString : function(object) {
+			var uncompressed = JSON.stringify(object);
+			var compressed = JSZip.compressions.DEFLATE.compress(uncompressed, { level: 9 });
 			compressed.charCodeAt = function(i) { return this[i]; };
-			return JSZip.base64.encode(compressed).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '.');
+			return JSZip.base64.encode(uncompressed.length < compressed.length ? uncompressed : compressed).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');
 		},
 
-		importObject : function(object) {
+		exportString : function(songs, tunes, selectedPatterns) {
+			return this.objectToString(this.exportObject(songs, tunes, selectedPatterns));
+		},
+
+		decodeObject : function(object) {
 			var ret = { songs: [ ], tunes: { }, errors: [ ] };
 			var errors = [ ];
 			if(object.patterns) {
@@ -63,13 +68,13 @@ angular.module("beatbox").factory("bbImportExport", function(bbConfig, ng, $, bb
 				ret.songs.push.apply(ret.songs, bbSongEncoder.decodeSongs(object.songs));
 
 				ret.songs.forEach(function(song) {
-					var length = bbUtils.getMaxIndex(song);
+					var maxIndex = bbUtils.getMaxIndex(song);
 					var missing = [ ];
-					for(var beatIdx=0; beatIdx<length; beatIdx++) {
+					for(var beatIdx=0; beatIdx<=maxIndex; beatIdx++) {
 						if(!song[beatIdx])
 							continue;
 
-						for(var instr in bbConfig.intruments) {
+						for(var instr in bbConfig.instruments) {
 							var pattern = song[beatIdx][instr];
 							if(!pattern)
 								continue;
@@ -87,12 +92,15 @@ angular.module("beatbox").factory("bbImportExport", function(bbConfig, ng, $, bb
 			return ret;
 		},
 
-		decodeString : function(string) {
-			return JSON.parse(JSZip.compressions.DEFLATE.decomress(JSZip.base64.decode(string).replace(/-/g, '+').replace(/_/g, '/').replace(/\./g, '=')));
+		stringToObject : function(string) {
+			var decoded = JSZip.base64.decode(string).replace(/-/g, '+').replace(/_/g, '/');
+			if(decoded.charAt(0) != '{')
+				decoded = JSZip.compressions.DEFLATE.decomress(decoded);
+			return JSON.parse(decoded);
 		},
 
-		importString : function(string) {
-			return this.importObject(this.decodeString(string));
+		decodeString : function(string) {
+			return this.decodeObject(this.stringToObject(string));
 		}
 	};
 	return bbImportExport;
