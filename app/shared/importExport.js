@@ -23,7 +23,9 @@ angular.module("beatbox").factory("bbImportExport", function(bbConfig, ng, $, bb
 						continue;
 
 					var originalPattern = bbConfig.tunes[tuneName] && bbConfig.tunes[tuneName].patterns[patternName];
-					encodedPatterns[patternName] = bbPatternEncoder.getEncodedPatternObject(tunes[tuneName].patterns[patternName], originalPattern);
+					var encodedPattern = bbPatternEncoder.getEncodedPatternObject(tunes[tuneName].patterns[patternName], originalPattern);
+					if(Object.keys(encodedPattern).length > 0)
+						encodedPatterns[patternName] = encodedPattern;
 				}
 				if(Object.keys(encodedPatterns).length > 0)
 					ret.patterns[tuneName] = encodedPatterns;
