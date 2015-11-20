@@ -11,7 +11,8 @@ angular.module("beatbox")
 				clickHandler: "&bbPatternClick",
 				draggable: "=bbDraggable",
 				dragSuccess: "&bbDragSuccess",
-				getPlayerOptions: "&bbPlayerOptions"
+				getPlayerOptions: "&bbPlayerOptions",
+				tunes: "=bbTunes"
 			},
 			transclude: true,
 			replace: true,
@@ -38,7 +39,7 @@ angular.module("beatbox")
 			transclude: true
 		};
 	})
-	.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPatternEditorDialog, bbPlayer, bbUtils, $element, ng, $ngBootbox) {
+	.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPatternEditorDialog, bbPlayer, bbUtils, $element, ng, $ngBootbox, bbState) {
 		$scope.config = bbConfig;
 		$scope.player = null;
 
@@ -60,7 +61,7 @@ angular.module("beatbox")
 			});
 
 			setTimeout(function() {
-				bbPatternEditorDialog.editPattern($scope.tuneName, $scope.patternName);
+				bbPatternEditorDialog.editPattern($scope.tunes, $scope.tuneName, $scope.patternName);
 			}, 0);
 		};
 
@@ -76,7 +77,7 @@ angular.module("beatbox")
 
 			if(!$scope.player.playing) {
 				var playerOptions = $scope.getPlayerOptions() || { };
-				var pattern = bbPlayer.patternToBeatbox(bbUtils.getPattern($scope.tuneName, $scope.patternName), playerOptions.headphones, playerOptions.mute);
+				var pattern = bbPlayer.patternToBeatbox(bbUtils.getPattern($scope.tunes, $scope.tuneName, $scope.patternName), playerOptions.headphones, playerOptions.mute);
 
 				if(playerOptions.length)
 					pattern = pattern.slice(0, playerOptions.length*bbConfig.playTime);
@@ -105,15 +106,15 @@ angular.module("beatbox")
 		});
 
 		$scope.hasLocalChanges = function() {
-			var originalPattern = bbConfig.tunesBkp[$scope.tuneName] && bbConfig.tunesBkp[$scope.tuneName].patterns[$scope.patternName];
-			var pattern = bbConfig.tunes[$scope.tuneName] && bbConfig.tunes[$scope.tuneName].patterns[$scope.patternName];
+			var originalPattern = bbConfig.tunes[$scope.tuneName] && bbConfig.tunes[$scope.tuneName].patterns[$scope.patternName];
+			var pattern = bbState.tunes[$scope.tuneName] && bbState.tunes[$scope.tuneName].patterns[$scope.patternName];
 			return originalPattern && !ng.equals(pattern, originalPattern);
 		};
 
 		$scope.restore = function() {
 			$ngBootbox.confirm("Are you sure that you want to revert your modifications to "+$scope.patternName+" ("+$scope.tuneName+")?").then(function() {
-				var originalPattern = bbConfig.tunesBkp[$scope.tuneName] && bbConfig.tunesBkp[$scope.tuneName].patterns[$scope.patternName];
-				var pattern = bbConfig.tunes[$scope.tuneName].patterns[$scope.patternName];
+				var originalPattern = bbConfig.tunes[$scope.tuneName] && bbConfig.tunes[$scope.tuneName].patterns[$scope.patternName];
+				var pattern = bbState.tunes[$scope.tuneName].patterns[$scope.patternName];
 				ng.copy(originalPattern, pattern);
 			});
 		};

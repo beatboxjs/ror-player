@@ -5,7 +5,8 @@ angular.module("beatbox")
 			controller: "bbSongPlayerController",
 			scope: {
 				songs: '=bbSongs',
-				song: '=bbSelectedSong'
+				song: '=bbSelectedSong',
+				tunes: "=bbTunes"
 			}
 		};
 	})
@@ -37,7 +38,7 @@ angular.module("beatbox")
 		$scope.player.onbeat = function(idx) { updateMarkerPos(true); };
 
 		function updatePattern() {
-			$scope.player.setPattern(bbPlayer.songToBeatbox($scope.song, $scope.playerOptions.headphones, $scope.playerOptions.mute));
+			$scope.player.setPattern(bbPlayer.songToBeatbox($scope.song, $scope.tunes, $scope.playerOptions.headphones, $scope.playerOptions.mute));
 		}
 
 		$scope.$watch("song", updatePattern, true);
@@ -77,7 +78,7 @@ angular.module("beatbox")
 		};
 
 		$scope.getLength = function() {
-			var length = bbUtils.getSongLength($scope.song)+1;
+			var length = bbUtils.getSongLength($scope.song, $scope.tunes)+1;
 			if($scope.currentPatternDrag)
 				length = Math.max(length, $scope.currentPatternDrag.toIdx+2);
 			return length;
@@ -88,7 +89,7 @@ angular.module("beatbox")
 			if(!pattern)
 				return 1;
 
-			pattern = bbUtils.getPattern(pattern);
+			pattern = bbUtils.getPattern($scope.tunes, pattern);
 			if(!pattern)
 				return 1;
 
@@ -205,7 +206,7 @@ angular.module("beatbox")
 			var tuneAndPattern = $scope.song[idx][instrumentKey];
 			$scope.removePattern(instrumentKey, idx);
 
-			var patternLength = Math.ceil(bbUtils.getPattern(tuneAndPattern[0], tuneAndPattern[1]).length/4);
+			var patternLength = Math.ceil(bbUtils.getPattern($scope.tunes, tuneAndPattern[0], tuneAndPattern[1]).length/4);
 			getAffectedResizePatternRange(instrumentKey, idx, toInstrumentKey, toIdx, patternLength).forEach(function(it) {
 				$scope.dropPattern(it[0], it[1], tuneAndPattern);
 			});
@@ -333,7 +334,7 @@ angular.module("beatbox")
 
 		$scope.clearSong = function() {
 			$ngBootbox.confirm("Do you really want to clear the current song?").then(function() {
-				var length = bbUtils.getSongLength($scope.song);
+				var length = bbUtils.getSongLength($scope.song, $scope.tunes);
 				for(var i=0; i<length; i++) {
 					if($scope.song[i])
 						delete $scope.song[i];
@@ -342,6 +343,6 @@ angular.module("beatbox")
 		};
 
 		$scope.openShareDialog = function() {
-			bbShareDialog.openDialog($scope.songs, $scope.songs.indexOf($scope.song));
+			bbShareDialog.openDialog($scope.tunes, $scope.songs, $scope.songs.indexOf($scope.song));
 		};
 	});

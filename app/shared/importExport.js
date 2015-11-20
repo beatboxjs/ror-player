@@ -11,19 +11,19 @@ angular.module("beatbox").factory("bbImportExport", function(bbConfig, ng, $, bb
 			return selectedPatterns && selectedPatterns[tuneName] && selectedPatterns[tuneName][patternName] ? 1 : 0;
 		},
 
-		exportObject : function(songs, selectedPatterns) {
+		exportObject : function(songs, tunes, selectedPatterns) {
 			var ret = { patterns: { } };
 			if(songs)
 				ret.songs = bbSongEncoder.encodeSongs(songs);
 
-			for(var tuneName in bbConfig.tunes) {
+			for(var tuneName in tunes) {
 				var encodedPatterns = { };
-				for(var patternName in bbConfig.tunes[tuneName].patterns) {
+				for(var patternName in tunes[tuneName].patterns) {
 					if(!this._shouldExportPattern(songs, selectedPatterns, tuneName, patternName))
 						continue;
 
-					var originalPattern = bbConfig.tunesBkp[tuneName] && bbConfig.tunesBkp[tuneName].patterns[patternName];
-					encodedPatterns[patternName] = bbPatternEncoder.getEncodedPatternObject(bbConfig.tunes[tuneName].patterns[patternName], originalPattern);
+					var originalPattern = bbConfig.tunes[tuneName] && bbConfig.tunes[tuneName].patterns[patternName];
+					encodedPatterns[patternName] = bbPatternEncoder.getEncodedPatternObject(tunes[tuneName].patterns[patternName], originalPattern);
 				}
 				if(Object.keys(encodedPatterns).length > 0)
 					ret.patterns[tuneName] = encodedPatterns;
@@ -35,21 +35,21 @@ angular.module("beatbox").factory("bbImportExport", function(bbConfig, ng, $, bb
 			return ret;
 		},
 
-		exportString : function(song, selectedPatterns) {
-			var compressed = JSZip.compressions.DEFLATE.compress(JSON.stringify(this.exportObject(song, selectedPatterns)), { level: 9, to: "string" });
+		exportString : function(songs, tunes, selectedPatterns) {
+			var compressed = JSZip.compressions.DEFLATE.compress(JSON.stringify(this.exportObject(songs, tunes, selectedPatterns)), { level: 9, to: "string" });
 			compressed.charCodeAt = function(i) { return this[i]; };
-			console.log(JSON.stringify(this.exportObject(song, selectedPatterns)).length, JSZip.base64.encode(compressed).length);
 			return JSZip.base64.encode(compressed).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '.');
 		},
 
 		importObject : function(object) {
-			var ret = { songs: [ ], errors: [ ] };
+			var ret = { songs: [ ], tunes: { }, errors: [ ] };
 			var errors = [ ];
 			if(object.patterns) {
 				for(var tuneName in object.patterns) {
+					ret.tunes[tuneName] = { };
 					for(var patternName in object.patterns[tuneName]) {
 						try {
-							bbPatternEncoder.applyEncodedPatternObject(object.patterns[tuneName][patternName], bbConfig.tunesBkp[tuneName] && bbConfig.tunesBkp[tuneName][patternName]);
+							ret.tunes[tuneName][patternName] = bbPatternEncoder.applyEncodedPatternObject(object.patterns[tuneName][patternName], bbConfig.tunes[tuneName] && bbConfig.tunes[tuneName][patternName]);
 						} catch(e) {
 							errors.push("Error importing " + patternName + " (" + tuneName + "): " + e.message);
 						}
@@ -61,7 +61,7 @@ angular.module("beatbox").factory("bbImportExport", function(bbConfig, ng, $, bb
 				ret.songs.push.apply(ret.songs, bbSongEncoder.decodeSongs(object.songs));
 
 				ret.songs.forEach(function(song) {
-					var length = bbUtils.getSongLength(song);
+					var length = bbUtils.getMaxIndex(song);
 					var missing = [ ];
 					for(var beatIdx=0; beatIdx<length; beatIdx++) {
 						if(!song[beatIdx])
@@ -72,13 +72,13 @@ angular.module("beatbox").factory("bbImportExport", function(bbConfig, ng, $, bb
 							if(!pattern)
 								continue;
 
-							if((!bbConfig.tunes[pattern[0]] || !bbConfig.tunes[pattern[0]].patterns[pattern[1]]) && missing.indexOf(pattern[0] + " (" + pattern[1] +")") == -1)
-								missing.push(pattern[0] + " (" + pattern[1] +")");
+							if(!bbUtils.getPattern(ret.tunes, pattern) && !bbUtils.getPattern(bbConfig.tunes, pattern) && missing.indexOf(pattern.join(" (") +")") == -1)
+								missing.push(pattern.join(" (") +")");
 						}
 					}
 
 					if(missing.length > 0)
-						ret.errors.push("Warning: The following tunes/breaks are used in song “" + (song.name || "Untitled song") + "” but are missing: " + missing.join(", "));
+						ret.errors.push("Warning: The following tunes/breaks are used in song “" + (song.name || "Untitled song") + "” but could not be imported: " + missing.join(", "));
 				});
 			}
 

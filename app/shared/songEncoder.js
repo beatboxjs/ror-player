@@ -11,7 +11,7 @@ angular.module("beatbox").factory("bbSongEncoder", function(bbConfig, ng, $, bbU
 			var patterns = { };
 			var emptyExists = false;
 			for(var songIdx=0; songIdx<songs.length; songIdx++) {
-				var length = bbUtils.getSongLength(songs[songIdx]);
+				var length = bbUtils.getMaxIndex(songs[songIdx]);
 				for(var beatIdx=0; beatIdx<length; beatIdx++) {
 					for(var inst in bbConfig.instruments) {
 						var pattern = songs[songIdx][beatIdx] && songs[songIdx][beatIdx][inst];
@@ -42,7 +42,7 @@ angular.module("beatbox").factory("bbSongEncoder", function(bbConfig, ng, $, bbU
 
 			var encodedSongs = new Array(songs.length);
 			for(var songIdx=0; songIdx<songs.length; songIdx++) {
-				var length = bbUtils.getSongLength(songs[songIdx]);
+				var length = bbUtils.getMaxIndex(songs[songIdx]);
 				encodedSongs[songIdx] = {
 					name: songs[songIdx].name,
 					beats: new Array(length)

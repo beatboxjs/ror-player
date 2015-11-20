@@ -12,12 +12,12 @@
 	<body ng-controller="BeatboxController">
 		<div id="loading" ng-hide="true">Loading...</div>
 		<div id="tunes">
-			<bb-pattern-list>
+			<bb-pattern-list bb-tunes="tunes">
 				<bb-pattern-placeholder-item><a href="javascript:" title="Add to song {{tuneName}} {{patternName}}" ng-click="patternClick(tuneName, patternName)"><span class="glyphicon glyphicon-plus"></span></a></bb-pattern-placeholder-item>
 			</bb-pattern-list>
 		</div>
 		<div id="song-player">
-			<bb-song-player bb-songs="songs" bb-selected-song="song"></bb-song-player>
+			<bb-song-player bb-tunes="tunes" bb-songs="songs" bb-selected-song="song"></bb-song-player>
 		</div>
 		<!-- inject:js -->
 		<!-- endinject -->

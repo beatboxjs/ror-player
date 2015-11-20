@@ -1,18 +1,18 @@
 angular.module("beatbox")
-	.controller("bbPatternEditorCtrl", function($scope, tuneName, patternName, bbConfig) {
+	.controller("bbPatternEditorCtrl", function($scope, tuneName, patternName, bbConfig, tunes) {
 		$scope.tuneName = tuneName;
 		$scope.patternName = patternName;
 
-		$scope.tune = bbConfig.tunes[tuneName];
+		$scope.tune = tunes[tuneName];
 		$scope.pattern = $scope.tune.patterns[patternName];
 
-		$scope.originalPattern = bbConfig.tunesBkp[tuneName] && bbConfig.tunesBkp[tuneName].patterns[patternName];
+		$scope.originalPattern = bbConfig.tunes[tuneName] && bbConfig.tunes[tuneName].patterns[patternName];
 	})
 	.factory("bbPatternEditorDialog", function($uibModal, bbPlayer) {
 		var openDialog = null;
 
 		return {
-			editPattern: function(tuneName, patternName) {
+			editPattern: function(tunes, tuneName, patternName) {
 				this.close();
 
 				openDialog = $uibModal.open({
@@ -21,6 +21,7 @@ angular.module("beatbox")
 					size: "lg",
 					windowClass: "bb-pattern-editor-dialog-window",
 					resolve: {
+						tunes: function() { return tunes; },
 						tuneName: function() { return tuneName },
 						patternName: function() { return patternName }
 					}

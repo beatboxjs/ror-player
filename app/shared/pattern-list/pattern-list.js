@@ -4,6 +4,7 @@ angular.module("beatbox")
 			templateUrl: "app/shared/pattern-list/pattern-list.html",
 			controller: "bbPatternListController",
 			scope: {
+				tunes: "=bbTunes"
 			},
 			transclude: true
 		};
@@ -23,7 +24,7 @@ angular.module("beatbox")
 		}
 	})
 	.controller("bbPatternListController", function($scope, bbConfig, bbUtils, bbPatternEditorDialog, $ngBootbox) {
-		$scope.config = bbConfig;
+		$scope.myTunesKey = bbConfig.myTunesKey;
 		$scope.utils = bbUtils;
 
 		$scope.createPattern = function() {
@@ -34,23 +35,23 @@ angular.module("beatbox")
 					next();
 				});
 			}, function() {
-				return patternName == "" || bbConfig.myTunes.patterns[patternName];
+				return patternName == "" || $scope.tunes[bbConfig.myTunesKey].patterns[patternName];
 			}, function() {
-				bbConfig.myTunes.patterns[patternName] = {
+				$scope.tunes[bbConfig.myTunesKey].patterns[patternName] = {
 					length: 4,
 					time: 4
 				};
 
 				for(var i in bbConfig.instruments)
-					bbConfig.myTunes.patterns[patternName][i] = [ ];
+					$scope.tunes[bbConfig.myTunesKey].patterns[patternName][i] = [ ];
 
-				bbPatternEditorDialog.editPattern(bbConfig.myTunesKey, patternName);
+				bbPatternEditorDialog.editPattern($scope.tunes, bbConfig.myTunesKey, patternName);
 			});
 		};
 
 		$scope.removePattern = function(tuneName, patternName) {
 			$ngBootbox.confirm("Do you really want to remove "+patternName+" ("+tuneName+")?").then(function(){
-				delete bbConfig.tunes[tuneName].patterns[patternName];
+				delete $scope.tunes[tuneName].patterns[patternName];
 			});
 		};
 	});

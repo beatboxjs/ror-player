@@ -1406,15 +1406,7 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope) {
 		}
 	}
 
-	bbConfig.tunesBkp = ng.copy(bbConfig.tunes);
-
 	bbConfig.myTunesKey = "My tunes";
-	bbConfig.tunes[bbConfig.myTunesKey] = localStorage.myTunes ? JSON.parse(localStorage.myTunes) : { patterns: { } };
-
-	bbConfig.myTunes = bbConfig.tunes[bbConfig.myTunesKey];
-	$rootScope.$watch(function(){ return bbConfig.myTunes; }, function(myTunes) {
-		localStorage.myTunes = JSON.stringify(myTunes);
-	}, true);
 
 	// Check some requirements for export so that we don't forget them at some point in the future
 	for(var stroke in bbConfig.strokes) {

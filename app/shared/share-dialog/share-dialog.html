@@ -34,7 +34,7 @@
 					</td>
 					<td>
 						<ul class="list-group">
-							<li ng-repeat="tuneName in utils.getKeys(config.tunes)" class="list-group-item" ng-class="getTuneClass(tuneName)" ng-if="getModifiedPatternNames(tuneName).length > 0">
+							<li ng-repeat="tuneName in utils.getKeys(state.tunes)" class="list-group-item" ng-class="getTuneClass(tuneName)" ng-if="getModifiedPatternNames(tuneName).length > 0">
 								<a href="javascript:" ng-click="clickTune(tuneName)">{{tuneName}}</a>
 								<div class="patterns-dropdown" uib-dropdown>
 									<a href="javascript:" uib-dropdown-toggle><span class="glyphicon glyphicon-chevron-down"></span></a>

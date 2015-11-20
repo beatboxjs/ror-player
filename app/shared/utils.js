@@ -24,14 +24,14 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScop
 			return ret;
 		},
 
-		getSongLength: function(song) {
+		getSongLength: function(song, tunes) {
 			var maxIndex = bbUtils.getMaxIndex(song);
 			if(maxIndex == null)
 				return 0;
 
 			var length = 1;
 			for(var i in song[maxIndex]) {
-				var pattern = bbUtils.getPattern(song[maxIndex][i]);
+				var pattern = bbUtils.getPattern(tunes, song[maxIndex][i]);
 				if(pattern)
 					length = Math.max(length, pattern.length/4);
 			}
@@ -50,13 +50,13 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScop
 			return ret;
 		},
 
-		getPattern: function(tuneName, patternName) {
+		getPattern: function(tunes, tuneName, patternName) {
 			if(Array.isArray(tuneName)) {
 				patternName = tuneName[1];
 				tuneName = tuneName[0];
 			}
 
-			return bbConfig.tunes[tuneName] && bbConfig.tunes[tuneName].patterns[patternName];
+			return tunes[tuneName] && tunes[tuneName].patterns[patternName];
 		},
 
 		scrollToElement: function(el, scrollFurther, force) {
@@ -161,7 +161,7 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScop
 		},
 
 		songContainsPattern : function(song, tuneName, patternName) {
-			var length = bbUtils.getSongLength(song);
+			var length = bbUtils.getMaxIndex(song);
 
 			for(var i=0; i<length; i++) {
 				if(!song[i])
