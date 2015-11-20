@@ -20,12 +20,18 @@ angular.module("beatbox")
 			return ret;
 		};
 
+		$scope._getSelectedSongs = function() {
+			return $scope.songs.filter(function(song, songIdx) {
+				return $scope.shareSongs[songIdx];
+			});
+		};
+
 		$scope.getRawString = function() {
-			return JSON.stringify(bbImportExport.exportObject($scope.songs, $scope.sharePatterns));
+			return JSON.stringify(bbImportExport.exportObject($scope._getSelectedSongs(), $scope.sharePatterns));
 		};
 
 		$scope.getUrl = function() {
-			return bbUtils.makeAbsoluteUrl("#" + encodeURIComponent(bbImportExport.exportString($scope.songs, $scope.sharePatterns)));
+			return bbUtils.makeAbsoluteUrl("#" + encodeURIComponent(bbImportExport.exportString($scope._getSelectedSongs(), $scope.sharePatterns)));
 		};
 
 		$scope.getTuneClass = function(tuneName) {

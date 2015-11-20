@@ -36,7 +36,10 @@ angular.module("beatbox").factory("bbImportExport", function(bbConfig, ng, $, bb
 		},
 
 		exportString : function(song, selectedPatterns) {
-			return JSON.stringify(this.exportObject(song, selectedPatterns));
+			var compressed = JSZip.compressions.DEFLATE.compress(JSON.stringify(this.exportObject(song, selectedPatterns)), { level: 9, to: "string" });
+			compressed.charCodeAt = function(i) { return this[i]; };
+			console.log(JSON.stringify(this.exportObject(song, selectedPatterns)).length, JSZip.base64.encode(compressed).length);
+			return JSZip.base64.encode(compressed).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '.');
 		},
 
 		importObject : function(object) {
@@ -83,7 +86,7 @@ angular.module("beatbox").factory("bbImportExport", function(bbConfig, ng, $, bb
 		},
 
 		decodeString : function(string) {
-			return JSON.parse(string);
+			return JSON.parse(JSZip.compressions.DEFLATE.decomress(JSZip.base64.decode(string).replace(/-/g, '+').replace(/_/g, '/').replace(/\./g, '=')));
 		},
 
 		importString : function(string) {
