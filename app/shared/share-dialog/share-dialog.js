@@ -37,13 +37,14 @@ angular.module("beatbox")
 
 		$scope.getTuneClass = function(tuneName) {
 			var enabled = 0;
-			for(var patternName in bbState.tunes[tuneName].patterns) {
+			var patternNames = $scope.getModifiedPatternNames(tuneName);
+			patternNames.forEach(function(patternName) {
 				if($scope.shouldExportPattern(tuneName, patternName))
 					enabled++;
-			}
+			});
 			if(enabled == 0)
 				return "";
-			else if(enabled == Object.keys(bbState.tunes[tuneName].patterns).length)
+			else if(enabled == patternNames.length)
 				return "active";
 			else
 				return "list-group-item-info";
