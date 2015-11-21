@@ -197,6 +197,13 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScop
 				}
 			}
 			return ret;
+		},
+
+		binArrayToString : function(binArray) {
+			var str = "";
+			for(var i=0; i<binArray.length; i++)
+				str += String.fromCharCode(binArray[i]);
+			return decodeURIComponent(escape(str));
 		}
 	};
 

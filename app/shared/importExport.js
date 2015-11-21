@@ -8,7 +8,7 @@ angular.module("beatbox").factory("bbImportExport", function(bbConfig, ng, $, bb
 				}
 			}
 
-			return selectedPatterns && selectedPatterns[tuneName] && selectedPatterns[tuneName][patternName] ? 1 : 0;
+			return !selectedPatterns || (selectedPatterns[tuneName] && selectedPatterns[tuneName][patternName]) ? 1 : 0;
 		},
 
 		exportObject : function(songs, tunes, selectedPatterns) {
@@ -53,10 +53,10 @@ angular.module("beatbox").factory("bbImportExport", function(bbConfig, ng, $, bb
 			var errors = [ ];
 			if(object.patterns) {
 				for(var tuneName in object.patterns) {
-					ret.tunes[tuneName] = { };
+					ret.tunes[tuneName] = { patterns: { } };
 					for(var patternName in object.patterns[tuneName]) {
 						try {
-							ret.tunes[tuneName][patternName] = bbPatternEncoder.applyEncodedPatternObject(object.patterns[tuneName][patternName], bbConfig.tunes[tuneName] && bbConfig.tunes[tuneName][patternName]);
+							ret.tunes[tuneName].patterns[patternName] = bbPatternEncoder.applyEncodedPatternObject(object.patterns[tuneName][patternName], bbConfig.tunes[tuneName] && bbConfig.tunes[tuneName].patterns[patternName]);
 						} catch(e) {
 							errors.push("Error importing " + patternName + " (" + tuneName + "): " + e.message);
 						}
@@ -93,9 +93,9 @@ angular.module("beatbox").factory("bbImportExport", function(bbConfig, ng, $, bb
 		},
 
 		stringToObject : function(string) {
-			var decoded = JSZip.base64.decode(string).replace(/-/g, '+').replace(/_/g, '/');
+			var decoded = JSZip.base64.decode(string.replace(/-/g, '+').replace(/_/g, '/'));
 			if(decoded.charAt(0) != '{')
-				decoded = JSZip.compressions.DEFLATE.decomress(decoded);
+				decoded = bbUtils.binArrayToString(JSZip.compressions.DEFLATE.uncompress(decoded));
 			return JSON.parse(decoded);
 		},
 

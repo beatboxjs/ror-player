@@ -81,10 +81,10 @@ angular.module("beatbox").factory("bbSongEncoder", function(bbConfig, ng, $, bbU
 				songs[songIdx] = { };
 				songs[songIdx].name = song.name;
 
-				var maxIdx = Array.isArray(encoded.songs[songIdx]) ? encoded.songs[songIdx].length-1 : bbUtils.getMaxIndex(encoded.songs[songIdx]);
+				var maxIdx = Array.isArray(song.beats) ? song.beats.length-1 : bbUtils.getMaxIndex(song.beats);
 
 				for(var beatIdx=0; beatIdx<=maxIdx; beatIdx++) {
-					var beat = encoded.songs[songIdx][beatIdx];
+					var beat = song.beats[beatIdx];
 					if(!beat)
 						continue;
 

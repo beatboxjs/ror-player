@@ -49,6 +49,14 @@ angular.module("beatbox")
 			$scope.player.setRepeat(loop);
 		});
 
+		$scope.$watch("songs", function() {
+			if($scope.songs.indexOf($scope.song) == -1) {
+				if($scope.songs.length == 0)
+					$scope.songs.push({ });
+				$scope.song = $scope.songs[0];
+			}
+		}, true);
+
 		$scope.playPause = function() {
 			if(!$scope.player.playing) {
 				$scope.player.play();

@@ -153,6 +153,12 @@ angular.module("beatbox").factory("bbPatternEncoder", function(bbConfig, ng, $, 
 				if(originalPattern != null && ng.equals(pattern[instrumentKeys[i]], originalPattern[instrumentKeys[i]]))
 					continue;
 
+				if(!pattern[instrumentKeys[i]]) {
+					if(originalPattern && originalPattern[instrumentKeys[i]])
+						ret[instrumentKeys[i]] = "";
+					continue;
+				}
+
 				var encoded = pattern[instrumentKeys[i]].join("");
 
 				if(originalPattern == null && encoded.match(/^ *$/))
@@ -160,6 +166,9 @@ angular.module("beatbox").factory("bbPatternEncoder", function(bbConfig, ng, $, 
 
 				// Try out which is the shortest encoded version
 				for(var i2=0; i2<i; i2++) {
+					if(!pattern[instrumentKeys[i2]])
+						continue;
+
 					var thisEncoded = this._PatternDiff.getDiffString(pattern[instrumentKeys[i2]], pattern[instrumentKeys[i]]);
 					if(thisEncoded.length+3 < encoded.length) {
 						encoded = "@"+instrumentKeys[i2]+thisEncoded;
