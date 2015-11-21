@@ -2,6 +2,7 @@ angular.module("beatbox").controller("BeatboxController", function($scope, bbUti
 	$scope.tunes = bbState.tunes;
 	$scope.songs = bbState.songs;
 	$scope.song = $scope.songs[0];
+	$scope.bbState = bbState;
 
 	$scope.patternClick = function(tuneName, patternName) {
 		var songPart = { };
@@ -19,16 +20,8 @@ angular.module("beatbox").controller("BeatboxController", function($scope, bbUti
 		return false;
 	};
 
-	$scope.getHistoricStates = function() {
-		return bbState.getHistoricStates();
-	};
-
 	$scope.getHistoryKeyTitle = function(key) {
 		return new Date(key*1000).toISOString();
-	};
-
-	$scope.loadHistoricState = function(key) {
-		bbState.loadHistoricState(key);
 	};
 
 	//$scope.$watch(function() { console.log("digest"); }, function() {})

@@ -5,7 +5,7 @@ angular.module("beatbox", ["ui.bootstrap", "ui.bootstrap-slider", "ngDraggable",
 	.config(function($stateProvider) {
 		$stateProvider
 			.state("song", {
-				url: "",
+				url: "/",
 				onEnter: function(bbPatternEditorDialog) {
 					bbPatternEditorDialog.close();
 				}
@@ -19,14 +19,14 @@ angular.module("beatbox", ["ui.bootstrap", "ui.bootstrap-slider", "ngDraggable",
 				}
 			})
 			.state("importAndPattern", {
-				url: ":importData/:tuneName/:patternName",
+				url: "/:importData/:tuneName/:patternName",
 				onEnter: function($stateParams, $state, bbState) {
 					bbState.loadEncodedString($stateParams.importData);
 					$state.go("pattern", { tuneName: $stateParams.tuneName, patternName: $stateParams.patternName });
 				}
 			})
 			.state("import", {
-				url: ":importData",
+				url: "/:importData",
 				onEnter: function($stateParams, $state, bbState) {
 					bbState.loadEncodedString($stateParams.importData);
 					$state.go("song");
