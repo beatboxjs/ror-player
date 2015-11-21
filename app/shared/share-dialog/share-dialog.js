@@ -32,7 +32,7 @@ angular.module("beatbox")
 		};
 
 		$scope.getUrl = function() {
-			return bbUtils.makeAbsoluteUrl("#" + encodeURIComponent(bbImportExport.exportString($scope._getSelectedSongs(), $scope.tunes, $scope.sharePatterns)));
+			return bbUtils.makeAbsoluteUrl("#/" + encodeURIComponent(bbImportExport.exportString($scope._getSelectedSongs(), $scope.tunes, $scope.sharePatterns)));
 		};
 
 		$scope.getTuneClass = function(tuneName) {
