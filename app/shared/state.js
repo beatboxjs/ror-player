@@ -2,30 +2,13 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, $rootScop
 	var BbState = function() { };
 
 	BbState.prototype = {
-		loadEncodedString : function(encodedString, _overwriteCurrentKey) {
+		loadEncodedString : function(encodedString) {
 			this._saveCurrentState();
+			this._loadFromString(encodedString);
 
-			var importData;
-			try {
-				importData = encodedString ? bbImportExport.decodeString(encodedString) : { };
-			} catch(e) {
-				console.error("Error decoding state", e);
-				return;
-			}
+			localStorage.removeItem("bbState");
 
-			ng.copy(importData.songs || [ ], this.songs);
-			ng.copy(bbUtils.mergeTuneObjects(bbConfig.tunes, importData.tunes), this.tunes);
-
-			if(this.songs.length == 0)
-				this.songs.push({ });
-			if(!this.tunes[bbConfig.myTunesKey])
-				this.tunes[bbConfig.myTunesKey] = { patterns: { } };
-
-			if(_overwriteCurrentKey)
-				localStorage.setItem("bbState", _overwriteCurrentKey);
-			else
-				localStorage.removeItem("bbState");
-			this._saveCurrentState();
+			this._saveCurrentState(true);
 		},
 		getCurrentKey : function() {
 			return localStorage.getItem("bbState");
@@ -43,13 +26,35 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, $rootScop
 			if(key == null)
 				key = localStorage.getItem("bbState");
 
-			this.loadEncodedString(key ? localStorage.getItem("bbState-"+key) : "", key);
+			this._saveCurrentState();
+			this._loadFromString(key ? localStorage.getItem("bbState-"+key) : "");
+			if(key)
+				localStorage.setItem("bbState", key);
+			else
+				localStorage.removeItem("bbState");
+			this._saveCurrentState();
+		},
+		_loadFromString : function(encodedString) {
+			var importData;
+			try {
+				importData = encodedString ? bbImportExport.decodeString(encodedString) : { };
+			} catch(e) {
+				console.error("Error decoding state", e);
+				return;
+			}
 
+			ng.copy(importData.songs || [ ], this.songs);
+			ng.copy(bbUtils.mergeTuneObjects(bbConfig.tunes, importData.tunes), this.tunes);
+
+			if(this.songs.length == 0)
+				this.songs.push({ });
+			if(!this.tunes[bbConfig.myTunesKey])
+				this.tunes[bbConfig.myTunesKey] = { patterns: { } };
 		},
 		_getNowKey : function() {
 			return Math.floor(new Date().getTime() / 1000);
 		},
-		_saveCurrentState : function() {
+		_saveCurrentState : function(findSameState) {
 			var currentKey = this.getCurrentKey();
 
 			var obj = bbImportExport.exportObject(this.songs, this.tunes);
@@ -60,8 +65,33 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, $rootScop
 			if(currentKey && newKey - currentKey < 3600)
 				localStorage.removeItem("bbState-" + currentKey);
 
+			if(findSameState) {
+				var sameState = this._findSameState(obj);
+				if(sameState) {
+					localStorage.setItem("bbState", sameState);
+					return;
+				}
+			}
+
 			localStorage.setItem("bbState-"+newKey, bbImportExport.objectToString(obj));
 			localStorage.setItem("bbState", newKey);
+
+			this._ensureMaxNumber();
+		},
+		_ensureMaxNumber : function() {
+			var currentKey = this.getCurrentKey();
+			this.getHistoricStates().slice(9).forEach(function(key) {
+				if(key != currentKey)
+					localStorage.removeItem("bbState-"+key);
+			});
+		},
+		_findSameState : function(obj) {
+			var keys = this.getHistoricStates();
+			for(var i=0; i<keys.length; i++) {
+				if(ng.equals(obj, bbImportExport.stringToObject(localStorage.getItem("bbState-"+keys[i]))))
+					return keys[i];
+			}
+			return null;
 		}
 	};
 
