@@ -6,12 +6,12 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, $rootScop
 			this._saveCurrentState();
 			this._loadFromString(encodedString);
 
-			localStorage.removeItem("bbState");
+			this._currentKey = null;
 
 			this._saveCurrentState(true);
 		},
 		getCurrentKey : function() {
-			return localStorage.getItem("bbState");
+			return this._currentKey;
 		},
 		getHistoricStates : function() {
 			var ret = [ ];
@@ -28,10 +28,7 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, $rootScop
 
 			this._saveCurrentState();
 			this._loadFromString(key ? localStorage.getItem("bbState-"+key) : "");
-			if(key)
-				localStorage.setItem("bbState", key);
-			else
-				localStorage.removeItem("bbState");
+			this._currentKey = key;
 			this._saveCurrentState();
 		},
 		_loadFromString : function(encodedString) {
@@ -55,35 +52,34 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, $rootScop
 			return Math.floor(new Date().getTime() / 1000);
 		},
 		_saveCurrentState : function(findSameState) {
-			var currentKey = this.getCurrentKey();
-
 			var obj = bbImportExport.exportObject(this.songs, this.tunes);
-			if(Object.keys(obj).length == 0 || (currentKey && ng.equals(obj, bbImportExport.stringToObject(localStorage.getItem("bbState-"+currentKey)))))
+			if(Object.keys(obj).length == 0 || (this._currentKey && ng.equals(obj, bbImportExport.stringToObject(localStorage.getItem("bbState-"+this._currentKey)))))
 				return;
 
 			var newKey = this._getNowKey();
-			if(currentKey && newKey - currentKey < 3600)
-				localStorage.removeItem("bbState-" + currentKey);
+			if(this._currentKey && newKey - this._currentKey < 3600)
+				localStorage.removeItem("bbState-" + this._currentKey);
 
 			if(findSameState) {
 				var sameState = this._findSameState(obj);
 				if(sameState) {
 					localStorage.setItem("bbState", sameState);
+					this._currentKey = sameState;
 					return;
 				}
 			}
 
 			localStorage.setItem("bbState-"+newKey, bbImportExport.objectToString(obj));
 			localStorage.setItem("bbState", newKey);
+			this._currentKey = newKey;
 
 			this._ensureMaxNumber();
 		},
 		_ensureMaxNumber : function() {
-			var currentKey = this.getCurrentKey();
 			this.getHistoricStates().slice(9).forEach(function(key) {
-				if(key != currentKey)
+				if(key != this._currentKey)
 					localStorage.removeItem("bbState-"+key);
-			});
+			}.bind(this));
 		},
 		_findSameState : function(obj) {
 			var keys = this.getHistoricStates();
