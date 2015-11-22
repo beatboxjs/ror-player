@@ -1,0 +1,37 @@
+.bb-import-dialog {
+	.close-button {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+	}
+
+	.list-group-item > a:not(.badge) {
+		color: inherit;
+		display: block;
+	}
+
+	thead th {
+		width: 50%;
+	}
+
+	.badge {
+		border: 1px solid #ddd;
+		background-color: #fff;
+		color: #333;
+		float: none;
+		border-radius: 4px;
+		margin-right: .5ex;
+		font-weight: normal;
+
+		&:hover,&:focus {
+			text-decoration: underline;
+			color: #333;
+		}
+
+		&.active {
+			color: #fff;
+			background-color: #337ab7;
+			border-color: #fff;
+		}
+	}
+}

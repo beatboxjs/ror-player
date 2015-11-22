@@ -10,7 +10,7 @@ angular.module("beatbox")
 			}
 		};
 	})
-	.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, ng, bbUtils, bbPlayer, $element, $timeout, $ngBootbox, bbShareDialog) {
+	.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, ng, bbUtils, bbPlayer, $element, $timeout, $ngBootbox, bbShareDialog, bbImportDialog) {
 		$scope.config = bbConfig;
 		$scope.utils = bbUtils;
 
@@ -352,5 +352,9 @@ angular.module("beatbox")
 
 		$scope.openShareDialog = function() {
 			bbShareDialog.openDialog($scope.tunes, $scope.songs, $scope.songs.indexOf($scope.song));
+		};
+
+		$scope.openImportDialog = function() {
+			bbImportDialog.openDialog($scope.tunes, $scope.songs);
 		};
 	});

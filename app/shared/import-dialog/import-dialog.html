@@ -1,0 +1,49 @@
+<div class="bb-import-dialog">
+	<a href="javascript:" ng-click="$close()" class="close-button"><span class="glyphicon glyphicon-remove"></span></a>
+	<div class="container-fluid">
+		<div class="page-header">
+			<h1>Import</h1>
+		</div>
+		<textarea id="bb-import-dialog-paste" class="form-control" ng-model="pasted" rows="5" placeholder="Paste link or raw data object…"></textarea>
+		<div ng-if="error" class="alert alert-danger" role="alert"><strong>{{error}}</strong></div>
+		<div ng-if="obj">
+			<hr />
+			<h3>Customise selection</h3>
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>Songs</th>
+						<th>Tunes/Breaks</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<ul class="list-group">
+								<li ng-repeat="song in obj.songs track by $index" class="list-group-item" ng-class="{active: !skipSongs[$index]}">
+									<a href="javascript:" ng-click="skipSongs[$index] = !skipSongs[$index]">{{song.name || 'Untitled song'}}</a>
+								</li>
+							</ul>
+						</td>
+						<td>
+							<ul class="list-group">
+								<li ng-repeat="tuneName in utils.getKeys(obj.tunes)" class="list-group-item" ng-class="getTuneClass(tuneName)">
+									<a href="javascript:" ng-click="clickTune(tuneName)">{{tuneName}}</a>
+									<a ng-repeat="patternName in utils.getKeys(obj.tunes[tuneName].patterns)" class="badge" ng-class="{active: !skipPatterns[tuneName][patternName]}" ng-click="skipPatterns[tuneName][patternName] = !skipPatterns[tuneName][patternName]">{{patternName}}</a>
+									<!--<div class="patterns-dropdown" uib-dropdown>
+										<a href="javascript:" uib-dropdown-toggle><span class="glyphicon glyphicon-chevron-down"></span></a>
+										<ul class="uib-dropdown-menu">
+											<li ng-repeat="patternName in getModifiedPatternNames(tuneName)" ng-class="{active: shouldExportPattern(tuneName, patternName), disabled: shouldExportPattern(tuneName, patternName) == 2}">
+												<a href="javascript:" ng-click="sharePatterns[tuneName][patternName] = !sharePatterns[tuneName][patternName]">{{patternName}}</a>
+											</li>
+										</ul>
+									</div>-->
+								</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
