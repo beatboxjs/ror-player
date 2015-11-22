@@ -19,7 +19,7 @@ angular.module("beatbox")
 					templateUrl: "app/shared/pattern-editor-dialog/pattern-editor-dialog.html",
 					controller: "bbPatternEditorCtrl",
 					size: "lg",
-					windowClass: "bb-pattern-editor-dialog-window",
+					windowClass: "bb-pattern-editor-dialog",
 					resolve: {
 						tunes: function() { return tunes; },
 						tuneName: function() { return tuneName },

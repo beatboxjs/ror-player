@@ -1,42 +1,45 @@
-<div class="bb-import-dialog">
-	<a href="javascript:" ng-click="$close()" class="close-button"><span class="glyphicon glyphicon-remove"></span></a>
-	<div class="container-fluid">
-		<div class="page-header">
-			<h1>Import</h1>
+<div class="modal-header">
+	<button class="close" ng-click="$close()"><span aria-hidden="true">&times;</span></button>
+	<h3 class="modal-title">Import</h3>
+</div>
+<div class="modal-body">
+	<form>
+		<div class="form-group has-feedback" ng-class="error ? 'has-error' : obj.errors.length > 0 ? 'has-warning' : obj ? 'has-success' : ''">
+			<textarea id="bb-import-dialog-paste" class="form-control" ng-model="pasted" rows="5" placeholder="Paste link or raw data object…"></textarea>
+			<span ng-if="obj || error" class="glyphicon form-control-feedback" aria-hidden="true" ng-class="'glyphicon-' + (error ? 'remove' : obj.errors.length > 0 ? 'warning-sign' : 'ok')"></span>
 		</div>
-		<textarea id="bb-import-dialog-paste" class="form-control" ng-model="pasted" rows="5" placeholder="Paste link or raw data object…"></textarea>
 		<div ng-if="error" class="alert alert-danger" role="alert"><strong>{{error}}</strong></div>
 		<div ng-repeat="warning in obj.errors" class="alert alert-warning" role="alert"><strong>{{warning}}</strong></div>
-		<div ng-if="obj">
-			<hr />
-			<h3>Customise selection</h3>
-			<table class="table table-condensed">
-				<thead>
-					<tr>
-						<th>Songs</th>
-						<th>Tunes/Breaks</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							<ul class="list-group">
-								<li ng-repeat="song in obj.songs track by $index" class="list-group-item" ng-class="{active: !skipSongs[$index]}">
-									<a href="javascript:" ng-click="skipSongs[$index] = !skipSongs[$index]">{{song.name || 'Untitled song'}}</a>
-								</li>
-							</ul>
-						</td>
-						<td>
-							<ul class="list-group">
-								<li ng-repeat="tuneName in utils.getKeys(obj.tunes)" class="list-group-item" ng-class="getTuneClass(tuneName)">
-									<a href="javascript:" ng-click="clickTune(tuneName)">{{tuneName}}</a>
-									<a ng-repeat="patternName in utils.getKeys(obj.tunes[tuneName].patterns)" class="badge bb-inline-list-group-item" ng-class="{active: !skipPatterns[tuneName][patternName]}" ng-click="skipPatterns[tuneName][patternName] = !skipPatterns[tuneName][patternName]">{{patternName}}</a>
-								</li>
-							</ul>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
+	</form>
+	<div ng-if="obj">
+		<hr />
+		<h3>Customise selection</h3>
+		<table class="table table-condensed">
+			<thead>
+				<tr>
+					<th>Songs</th>
+					<th>Tunes/Breaks</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<ul class="list-group">
+							<li ng-repeat="song in obj.songs track by $index" class="list-group-item" ng-class="{active: !skipSongs[$index]}">
+								<a href="javascript:" ng-click="skipSongs[$index] = !skipSongs[$index]">{{song.name || 'Untitled song'}}</a>
+							</li>
+						</ul>
+					</td>
+					<td>
+						<ul class="list-group">
+							<li ng-repeat="tuneName in utils.getKeys(obj.tunes)" class="list-group-item" ng-class="getTuneClass(tuneName)">
+								<a href="javascript:" ng-click="clickTune(tuneName)">{{tuneName}}</a>
+								<a ng-repeat="patternName in utils.getKeys(obj.tunes[tuneName].patterns)" class="badge bb-inline-list-group-item" ng-class="{active: !skipPatterns[tuneName][patternName]}" ng-click="skipPatterns[tuneName][patternName] = !skipPatterns[tuneName][patternName]">{{patternName}}</a>
+							</li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 </div>

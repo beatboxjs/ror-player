@@ -80,7 +80,7 @@ angular.module("beatbox")
 					templateUrl: "app/shared/import-dialog/import-dialog.html",
 					controller: "bbImportDialogCtrl",
 					size: "lg",
-					windowClass: "bb-import-dialog-window",
+					windowClass: "bb-import-dialog",
 					resolve: {
 						tunes: function() { return tunes; },
 						songs: function() { return songs; }

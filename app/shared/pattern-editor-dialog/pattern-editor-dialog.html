@@ -1,10 +1,8 @@
-<div class="bb-pattern-editor-dialog">
-	<a href="javascript:" ng-click="$close()" class="close-button"><span class="glyphicon glyphicon-remove"></span></a>
-	<div class="container-fluid">
-		<div class="page-header">
-			<h1>{{tuneName}} – {{patternName}}</h1>
-		</div>
-		<bb-pattern-player bb-pattern="pattern" bb-pattern-original="originalPattern" bb-pattern-editable="true"></bb-pattern-player>
-	</div>
+<div class="modal-header">
+	<button class="close" ng-click="$close()"><span aria-hidden="true">&times;</span></button>
+	<h3 class="modal-title">{{tuneName}} – {{patternName}}</h3>
+</div>
+<div class="modal-body">
+	<bb-pattern-player bb-pattern="pattern" bb-pattern-original="originalPattern" bb-pattern-editable="true"></bb-pattern-player>
 </div>
 <div class="bb-loading" ng-show="loading"></div>

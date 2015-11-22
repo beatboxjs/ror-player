@@ -76,7 +76,7 @@ angular.module("beatbox")
 					templateUrl: "app/shared/share-dialog/share-dialog.html",
 					controller: "bbShareDialogCtrl",
 					size: "lg",
-					windowClass: "bb-share-dialog-window",
+					windowClass: "bb-share-dialog",
 					resolve: {
 						tunes: function() { return tunes; },
 						songs: function() { return songs; },
