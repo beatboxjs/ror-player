@@ -4,11 +4,13 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, $rootScop
 	BbState.prototype = {
 		loadEncodedString : function(encodedString) {
 			this._saveCurrentState();
-			this._loadFromString(encodedString);
+			var errs = this._loadFromString(encodedString);
 
 			this._currentKey = null;
 
 			this._saveCurrentState(true);
+
+			return errs;
 		},
 		getCurrentKey : function() {
 			return this._currentKey;
@@ -50,6 +52,8 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, $rootScop
 				this.songs.push({ });
 			if(!this.tunes[bbConfig.myTunesKey])
 				this.tunes[bbConfig.myTunesKey] = { patterns: { } };
+
+			return importData.errors;
 		},
 		_getNowKey : function() {
 			return Math.floor(new Date().getTime() / 1000);

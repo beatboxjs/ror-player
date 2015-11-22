@@ -50,7 +50,6 @@ angular.module("beatbox").factory("bbImportExport", function(bbConfig, ng, $, bb
 
 		decodeObject : function(object) {
 			var ret = { songs: [ ], tunes: { }, errors: [ ] };
-			var errors = [ ];
 			if(object.patterns) {
 				for(var tuneName in object.patterns) {
 					ret.tunes[tuneName] = { patterns: { } };
@@ -58,7 +57,8 @@ angular.module("beatbox").factory("bbImportExport", function(bbConfig, ng, $, bb
 						try {
 							ret.tunes[tuneName].patterns[patternName] = bbPatternEncoder.applyEncodedPatternObject(object.patterns[tuneName][patternName], bbConfig.tunes[tuneName] && bbConfig.tunes[tuneName].patterns[patternName]);
 						} catch(e) {
-							errors.push("Error importing " + patternName + " (" + tuneName + "): " + e.message);
+							ret.errors.push("Error importing " + patternName + " (" + tuneName + "): " + e.message);
+							console.error("Error importing " + patternName + " (" + tuneName + "): ", e);
 						}
 					}
 				}

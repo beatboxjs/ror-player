@@ -20,15 +20,23 @@ angular.module("beatbox", ["ui.bootstrap", "ui.bootstrap-slider", "ngDraggable",
 			})
 			.state("importAndPattern", {
 				url: "/:importData/:tuneName/:patternName",
-				onEnter: function($stateParams, $state, bbState) {
-					bbState.loadEncodedString($stateParams.importData);
+				onEnter: function($stateParams, $state, bbState, $ngBootbox) {
+					var errs = bbState.loadEncodedString($stateParams.importData);
+
+					if(errs.length > 0)
+						$ngBootbox.alert("Errors while loading data:\n" + errs.join("\n"));
+
 					$state.go("pattern", { tuneName: $stateParams.tuneName, patternName: $stateParams.patternName });
 				}
 			})
 			.state("import", {
 				url: "/:importData",
-				onEnter: function($stateParams, $state, bbState) {
-					bbState.loadEncodedString($stateParams.importData);
+				onEnter: function($stateParams, $state, bbState, $ngBootbox) {
+					var errs = bbState.loadEncodedString($stateParams.importData);
+
+					if(errs.length > 0)
+						$ngBootbox.alert("Errors while loading data:\n" + errs.join("\n"));
+
 					$state.go("song");
 				}
 			});

@@ -6,6 +6,7 @@
 		</div>
 		<textarea id="bb-import-dialog-paste" class="form-control" ng-model="pasted" rows="5" placeholder="Paste link or raw data object…"></textarea>
 		<div ng-if="error" class="alert alert-danger" role="alert"><strong>{{error}}</strong></div>
+		<div ng-repeat="warning in obj.errors" class="alert alert-warning" role="alert"><strong>{{warning}}</strong></div>
 		<div ng-if="obj">
 			<hr />
 			<h3>Customise selection</h3>
