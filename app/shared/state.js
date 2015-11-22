@@ -31,6 +31,9 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, $rootScop
 			this._currentKey = key;
 			this._saveCurrentState();
 		},
+		clear : function() {
+			this._ensureMaxNumber(1);
+		},
 		_loadFromString : function(encodedString) {
 			var importData;
 			try {
@@ -75,8 +78,8 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, $rootScop
 
 			this._ensureMaxNumber();
 		},
-		_ensureMaxNumber : function() {
-			this.getHistoricStates().slice(9).forEach(function(key) {
+		_ensureMaxNumber : function(number) {
+			this.getHistoricStates().slice(number || 30).forEach(function(key) {
 				if(key != this._currentKey)
 					localStorage.removeItem("bbState-"+key);
 			}.bind(this));
