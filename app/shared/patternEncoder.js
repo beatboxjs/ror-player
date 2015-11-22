@@ -185,7 +185,7 @@ angular.module("beatbox").factory("bbPatternEncoder", function(bbConfig, ng, $, 
 				ret[instrumentKeys[i]] = encoded;
 			}
 
-			if(originalPattern == null || pattern.time != originalPattern.time) {
+			if(originalPattern == null ? (pattern.time != 4) : (pattern.time != originalPattern.time)) {
 				ret.time = pattern.time;
 			}
 			if(originalPattern == null || pattern.length != originalPattern.length) {
@@ -208,6 +208,8 @@ angular.module("beatbox").factory("bbPatternEncoder", function(bbConfig, ng, $, 
 				ret.length = encodedPatternObject.length;
 			if(encodedPatternObject.time != null)
 				ret.time = encodedPatternObject.time;
+			else if(!originalPattern)
+				ret.time = 4;
 
 			if(ret.length == null)
 				throw new Error("No pattern length provided.");
