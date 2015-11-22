@@ -19,12 +19,7 @@
 		<div id="song-player">
 			<bb-song-player bb-tunes="tunes" bb-songs="songs" bb-selected-song="song"></bb-song-player>
 		</div>
-		<div id="history" ng-show="bbState.getHistoricStates().length > 1" uib-dropdown>
-			<button id="history-button" type="button" class="btn" uib-dropdown-toggle><span class="glyphicon glyphicon-time"></span> History <span class="caret"></span></button>
-			<ul class="uib-dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="history-button">
-				<li ng-repeat="historicKey in bbState.getHistoricStates()" ng-class="{active: historicKey == bbState.getCurrentKey()}"><a href="javascript:" ng-click="bbState.loadHistoricState(historicKey)">{{getHistoryKeyTitle(historicKey)}}</a></li>
-			</ul>
-		</div>
+		<bb-history></bb-history>
 		<!-- inject:js -->
 		<!-- endinject -->
 	</body>
