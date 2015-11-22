@@ -60,7 +60,7 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, $rootScop
 		},
 		_saveCurrentState : function(findSameState) {
 			var obj = bbImportExport.exportObject(this.songs, this.tunes);
-			if(Object.keys(obj).length == 0 || (this._currentKey && ng.equals(obj, bbImportExport.stringToObject(localStorage.getItem("bbState-"+this._currentKey)))))
+			if(Object.keys(obj).length == 0 || (this._currentKey && localStorage.getItem("bbState-"+this._currentKey) && ng.equals(obj, bbImportExport.stringToObject(localStorage.getItem("bbState-"+this._currentKey)))))
 				return;
 
 			var newKey = this._getNowKey();

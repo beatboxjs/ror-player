@@ -13,8 +13,8 @@ angular.module("beatbox").factory("bbPatternEncoder", function(bbConfig, ng, $, 
 			/**
 			 * Returns the difference from pattern1 to pattern2 encoded as a string.
 			 *
-			 * @param pattern1 {array} A sequence of strokes
-			 * @param pattern2 {array} A sequence of strokes
+			 * @param pattern1 {string} A sequence of strokes
+			 * @param pattern2 {string} A sequence of strokes
 			 * @returns {string} An encoded pattern diff. A concatenated list of strings of the following format:
 			 *                   Bytes 0 to a: The start position of the segment encoded by bbUtils.numberToString(). a is the number of bytes returned by _getNumberChars().
 			 *                   Bytes a to a+1: The length of the segment, encoded by bbUtils.numberToString()
@@ -22,7 +22,7 @@ angular.module("beatbox").factory("bbPatternEncoder", function(bbConfig, ng, $, 
 			 *
 			 */
 			getDiffString : function(pattern1, pattern2) {
-				var segments = this._getDiffSegments(pattern1.join(""), pattern2.join(""));
+				var segments = this._getDiffSegments(pattern1, pattern2);
 				var numberChars = this._getNumberChars(pattern2.length);
 				var ret = "";
 				for(var i=0; i<segments.length; i++) {
@@ -34,13 +34,13 @@ angular.module("beatbox").factory("bbPatternEncoder", function(bbConfig, ng, $, 
 			/**
 			 * Applies a diff string as returned by `getDiffString()` to a pattern.
 			 *
-			 * @param pattern {array} A sequence of strokes
+			 * @param pattern {string} A sequence of strokes
 			 * @param diffString {string} A diff string as returned by `getDiffString()`
 			 * @param patternLength {number} The length of the encoded pattern. Necessary to know the number of bytes that stroke positions are encoded with.
-			 * @returns {array} The modified pattern, a sequence of strokes
+			 * @returns {string} The modified pattern, a sequence of strokes
 			 */
 			applyDiffString : function(pattern, diffString, patternLength) {
-				return this._applyDiffSegments(pattern, this._getDiffSegmentsFromString(diffString, patternLength == null ? pattern.length : patternLength)).split('');
+				return this._applyDiffSegments(pattern, this._getDiffSegmentsFromString(diffString, patternLength == null ? pattern.length : patternLength));
 			},
 
 			/**
@@ -72,7 +72,7 @@ angular.module("beatbox").factory("bbPatternEncoder", function(bbConfig, ng, $, 
 				var currentSegment = null;
 				var numberChars = bbUtils.numberToString(pattern2.length).length;
 				for(var i=0; i<pattern2.length; i++) {
-					if(pattern1.charAt(i) != pattern2.charAt(i)) {
+					if(pattern1.charAt(i) != pattern2.charAt(i) && !(pattern2.charAt(i) == " " && pattern1.charAt(i) == "")) {
 						// If the characters since the last segment are few, it will produce less data to connect the segments
 						if(currentSegment == null && segments.length > 0 && i - (segments[segments.length-1].start + segments[segments.length-1].data.length) <= numberChars) {
 							currentSegment = segments[segments.length-1];
@@ -125,8 +125,15 @@ angular.module("beatbox").factory("bbPatternEncoder", function(bbConfig, ng, $, 
 			 * @returns {string} The modified pattern
 			 */
 			_applyDiffSegments : function(pattern, segments) {
+				var substr = function(str, start, length) {
+					var ret = str.substr(start, length);
+					while(ret.length < length)
+						ret += " ";
+					return ret;
+				};
+
 				for(var i=0; i<segments.length; i++) {
-					pattern = pattern.substr(0, segments[i].start) + segments[i].data + pattern.substr(segments[i].start + segments[i].data.length);
+					pattern = substr(pattern, 0, segments[i].start) + segments[i].data + pattern.substr(segments[i].start + segments[i].data.length);
 				}
 				return pattern;
 			}
@@ -148,6 +155,7 @@ angular.module("beatbox").factory("bbPatternEncoder", function(bbConfig, ng, $, 
 		 */
 		getEncodedPatternObject : function(pattern, originalPattern) {
 			var instrumentKeys = Object.keys(bbConfig.instruments);
+			var le = pattern.length * pattern.time;
 			var ret = { };
 			for(var i=0; i<instrumentKeys.length; i++) {
 				if(originalPattern != null && ng.equals(pattern[instrumentKeys[i]], originalPattern[instrumentKeys[i]]))
@@ -159,24 +167,28 @@ angular.module("beatbox").factory("bbPatternEncoder", function(bbConfig, ng, $, 
 					continue;
 				}
 
-				var encoded = pattern[instrumentKeys[i]].join("");
+				// Try out which is the shortest encoded version
+				var encoded = this._pattern2str(pattern[instrumentKeys[i]], le);
 
 				if(originalPattern == null && encoded.match(/^ *$/))
 					continue;
 
-				// Try out which is the shortest encoded version
+				var thisEncoded = this._PatternDiff.getDiffString("", encoded);
+				if(thisEncoded.length+1 < encoded.length)
+					encoded = "!" + thisEncoded;
+
 				for(var i2=0; i2<i; i2++) {
 					if(!pattern[instrumentKeys[i2]])
 						continue;
 
-					var thisEncoded = this._PatternDiff.getDiffString(pattern[instrumentKeys[i2]], pattern[instrumentKeys[i]]);
+					var thisEncoded = this._PatternDiff.getDiffString(this._pattern2str(pattern[instrumentKeys[i2]], le), this._pattern2str(pattern[instrumentKeys[i]], le));
 					if(thisEncoded.length+3 < encoded.length) {
 						encoded = "@"+instrumentKeys[i2]+thisEncoded;
 					}
 				}
 
 				if(originalPattern != null) {
-					var thisEncoded = this._PatternDiff.getDiffString(originalPattern[instrumentKeys[i]], pattern[instrumentKeys[i]]);
+					var thisEncoded = this._PatternDiff.getDiffString(this._pattern2str(originalPattern[instrumentKeys[i]], originalPattern.length*originalPattern.time), this._pattern2str(pattern[instrumentKeys[i]], le));
 					if(thisEncoded.length+1 < encoded.length) {
 						encoded = "+"+thisEncoded;
 					}
@@ -219,28 +231,45 @@ angular.module("beatbox").factory("bbPatternEncoder", function(bbConfig, ng, $, 
 					continue;
 
 				switch(encodedPatternObject[instr].charAt(0)) {
+					case "!":
+						ret[instr] = this._PatternDiff.applyDiffString("", encodedPatternObject[instr].substr(1), ret.length*ret.time);
+						break;
+
 					case "+":
 						if(originalPattern == null)
 							throw new Error("Could not apply diff as original pattern does not exist.");
 
-						ret[instr] = this._PatternDiff.applyDiffString(originalPattern[instr], encodedPatternObject[instr].substr(1), ret.length);
+						ret[instr] = this._PatternDiff.applyDiffString(originalPattern[instr], encodedPatternObject[instr].substr(1), ret.length*ret.time);
 						break;
 
 					case '@':
 						var toInstr = encodedPatternObject[instr].substr(1, 2);
-						if(!ret[toInstr])
-							throw new Error("Cannot diff `" + instr + "` to `" + toInstr + "` as the latter does not exist.");
-
-						ret[instr] = this._PatternDiff.applyDiffString(ret[toInstr], encodedPatternObject[instr].substr(3), ret.length);
+						ret[instr] = this._PatternDiff.applyDiffString(this._pattern2str(ret[toInstr] || [ ], ret.length*ret.time), encodedPatternObject[instr].substr(3), ret.length*ret.time);
 						break;
 
 					default:
-						ret[instr] = encodedPatternObject[instr].split("");
+						ret[instr] = encodedPatternObject[instr];
 						break;
 				}
+
+				ret[instr] = this._str2pattern(ret[instr]);
 			}
 
 			return ret;
+		},
+
+		_pattern2str : function(pattern, length) {
+			// Note: Cannot use pattern.map or pattern.forEach, as it skips undefined values
+
+			var ret = "";
+			for(var i=0; i<length; i++) {
+				ret += pattern[i] || " ";
+			}
+			return ret.replace(/ +$/, "");
+		},
+
+		_str2pattern : function(string) {
+			return string.split("");
 		}
 	};
 

@@ -61,8 +61,6 @@ angular.module("beatbox")
 				}
 			}
 
-			console.log(skipped);
-
 			if(skipped == Object.keys($scope.obj.tunes[tuneName].patterns).length)
 				return "";
 			else if(skipped == 0)
