@@ -77,6 +77,16 @@
 		color: #333;
 	}
 
+	&.disabled {
+		color: #777;
+		background-color: #eee;
+
+		&:hover,&:focus {
+			cursor: not-allowed;
+			text-decoration: none;
+		}
+	}
+
 	&.active {
 		color: #fff;
 		background-color: #337ab7;
@@ -85,10 +95,5 @@
 		.list-group-item.active & {
 			border-color: #fff;
 		}
-	}
-
-	&.disabled:hover,&.disabled:focus {
-		cursor: not-allowed;
-		text-decoration: none;
 	}
 }

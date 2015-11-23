@@ -204,6 +204,24 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScop
 			for(var i=0; i<binArray.length; i++)
 				str += String.fromCharCode(binArray[i]);
 			return decodeURIComponent(escape(str));
+		},
+
+		songEquals : function(song1, song2, checkName) {
+			if(checkName && song1.name != song2.name)
+				return false;
+
+			var maxIndex1 = bbUtils.getMaxIndex(song1);
+			var maxIndex2 = bbUtils.getMaxIndex(song2);
+
+			if(maxIndex1 != maxIndex2)
+				return false;
+
+			for(var i=0; i<=maxIndex1; i++) {
+				if(!ng.equals(song1[i], song2[i]) && (song1[i] != null || song2[i] != null))
+					return false;
+			}
+
+			return true;
 		}
 	};
 

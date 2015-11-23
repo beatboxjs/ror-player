@@ -145,7 +145,7 @@ angular.module("beatbox").factory("bbPatternEncoder", function(bbConfig, ng, $, 
 		 * - (If there is an original version of the pattern) a diff to the original
 		 * - The instrument line as is
 		 * @param pattern {object} A pattern object with an array of strokes for each instrument and a length and time property
-		 * @param originalPattern {object} Optional, a pattern object of the original pattern
+		 * @param originalPattern {object?} Optional, a pattern object of the original pattern
 		 * @returns {object} A pattern object where some of the instruments have been replaced by diffs and the time and length
 		 *                   properties have been removed if they don't differ from the original. The format is as follows:
 		 *                   - If the instrument line starts with a '@', it is followed by a two-char instrument key and

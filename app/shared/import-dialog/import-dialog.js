@@ -1,12 +1,12 @@
 angular.module("beatbox")
-	.controller("bbImportDialogCtrl", function($scope, songs, tunes, bbConfig, bbUtils, ng, bbImportExport, bbState) {
+	.controller("bbImportDialogCtrl", function($scope, songs, tunes, bbConfig, bbUtils, ng, bbImportExport, bbState, bbPatternEncoder) {
 		$scope.songs = songs;
 		$scope.tunes = tunes;
 		$scope.utils = bbUtils;
 		$scope.state = bbState;
 
-		$scope.skipSongs = { };
-		$scope.skipPatterns = { };
+		$scope.importSongs = { };
+		$scope.importPatterns = { };
 
 		$scope.obj = null;
 		$scope.error = null;
@@ -37,36 +37,104 @@ angular.module("beatbox")
 			if(!$scope.obj)
 				return;
 
-			if(!$scope.skipPatterns[tuneName])
-				$scope.skipPatterns[tuneName] = { };
+			if(!$scope.importPatterns[tuneName])
+				$scope.importPatterns[tuneName] = { };
 
 			var enable = false;
 			for(var patternName in $scope.obj.tunes[tuneName].patterns) {
-				if($scope.skipPatterns[tuneName][patternName])
+				if(!$scope.shouldImportPattern(tuneName, patternName)) {
 					enable = true;
-				else if(!enable)
-					$scope.skipPatterns[tuneName][patternName] = true;
-			}
-
-			if(enable)
-				$scope.skipPatterns[tuneName] = { };
-		};
-
-		$scope.getTuneClass = function(tuneName) {
-			var skipped = 0;
-			if($scope.skipPatterns[tuneName]) {
-				for(var patternName in $scope.obj.tunes[tuneName].patterns) {
-					if($scope.skipPatterns[tuneName][patternName])
-						skipped++;
+					break;
 				}
 			}
 
-			if(skipped == Object.keys($scope.obj.tunes[tuneName].patterns).length)
+			for(var patternName in $scope.obj.tunes[tuneName].patterns) {
+				$scope.importPatterns[tuneName][patternName] = enable;
+			}
+		};
+
+		$scope.songExists = function(song) {
+			for(var i=0; i<bbState.songs.length; i++) {
+				if(bbUtils.songEquals(song, bbState.songs[i], true))
+					return true;
+			}
+			return false;
+		};
+
+		$scope.patternExists = function(tuneName, patternName) {
+			if(!bbState.tunes[tuneName] || !bbState.tunes[tuneName].patterns[patternName])
+				return 0;
+
+			var obj1 = bbPatternEncoder.getEncodedPatternObject($scope.obj.tunes[tuneName].patterns[patternName]);
+			var obj2 = bbPatternEncoder.getEncodedPatternObject(bbState.tunes[tuneName].patterns[patternName]);
+			return ng.equals(obj1, obj2) ? 2 : 1;
+		};
+
+		$scope.patternIsUsed = function(tuneName, patternName) {
+			for(var i=0; i<$scope.obj.songs.length; i++) {
+				if($scope.shouldImportSong(i) && bbUtils.songContainsPattern($scope.obj.songs[i], tuneName, patternName))
+					return true;
+			}
+			return false;
+		};
+
+		$scope.shouldImportSong = function(songIdx) {
+			if($scope.songExists($scope.obj.songs[songIdx]))
+				return false;
+			else if($scope.importSongs[songIdx] != null)
+				return $scope.importSongs[songIdx];
+			else
+				return true;
+		};
+
+		$scope.shouldImportPattern = function(tuneName, patternName) {
+			var exists = $scope.patternExists(tuneName, patternName);
+			if(exists == 2)
+				return false;
+			else if(!exists && $scope.patternIsUsed(tuneName, patternName))
+				return true;
+			else if($scope.importPatterns[tuneName] && $scope.importPatterns[tuneName][patternName] != null)
+				return $scope.importPatterns[tuneName][patternName];
+			else
+				return exists != 1;
+		};
+
+		$scope.getTuneClass = function(tuneName) {
+			var imported = 0;
+			for(var patternName in $scope.obj.tunes[tuneName].patterns) {
+				if($scope.shouldImportPattern(tuneName, patternName))
+					imported++;
+			}
+
+			if(imported == 0)
 				return "";
-			else if(skipped == 0)
+			else if(imported == Object.keys($scope.obj.tunes[tuneName].patterns).length)
 				return "active";
 			else
 				return "list-group-item-info";
+		};
+
+		$scope.doImport = function() {
+			for(var tuneName in $scope.obj.tunes) {
+				for(var patternName in $scope.obj.tunes[tuneName].patterns) {
+					if(!$scope.shouldImportPattern(tuneName, patternName))
+						continue;
+
+					if(!bbState.tunes[tuneName])
+						bbState.tunes[tuneName] = { patterns: { } };
+
+					bbState.tunes[tuneName].patterns[patternName] = $scope.obj.tunes[tuneName].patterns[patternName];
+				}
+			}
+
+			for(var i=0; i<$scope.obj.songs.length; i++) {
+				if(!$scope.shouldImportSong(i))
+					continue;
+
+				bbState.songs.push($scope.obj.songs[i]);
+			}
+
+			$scope.$close();
 		};
 	})
 	.factory("bbImportDialog", function($uibModal, $timeout) {
