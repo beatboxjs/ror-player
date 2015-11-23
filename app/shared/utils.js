@@ -176,6 +176,29 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScop
 			return false;
 		},
 
+		songReplacePattern : function(song, fromTuneAndName, toTuneAndName) {
+			var maxIndex = bbUtils.getMaxIndex(song);
+
+			for(var i=0; i<=maxIndex; i++) {
+				if(!song[i])
+					continue;
+
+				for(var instr in bbConfig.instruments) {
+					if(song[i][instr] && song[i][instr][0] == fromTuneAndName[0] && song[i][instr][1] == toTuneAndName[1]) {
+						if(toTuneAndName == null)
+							delete song[i][instr];
+						else
+							song[i][instr] = ng.copy(toTuneAndName);
+					}
+				}
+
+				if(Object.keys(song[i]).length == 0)
+					delete song[i];
+			}
+
+			return false;
+		},
+
 		makeAbsoluteUrl : function(url) {
 			return $("<a/>").attr("href", url).prop("href");
 		},

@@ -9,8 +9,8 @@ angular.module("beatbox")
 			replace: true
 		};
 	})
-	.controller("bbHistoryController", function($scope, bbState) {
-		$scope.bbState = bbState;
+	.controller("bbHistoryController", function($scope, bbHistory) {
+		$scope.bbHistory = bbHistory;
 
 		$scope.getHistoryKeyTitle = function(key) {
 			return new Date(key*1000).toISOString();

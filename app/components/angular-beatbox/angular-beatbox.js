@@ -1,8 +1,8 @@
-angular.module("beatbox").controller("BeatboxController", function($scope, bbUtils, bbConfig, ng, bbState) {
-	$scope.tunes = bbState.tunes;
-	$scope.songs = bbState.songs;
+angular.module("beatbox").controller("BeatboxController", function($scope, bbUtils, bbConfig, ng, bbHistory) {
+	$scope.tunes = bbHistory.tunes;
+	$scope.songs = bbHistory.songs;
 	$scope.song = $scope.songs[0];
-	$scope.bbState = bbState;
+	$scope.bbHistory = bbHistory;
 
 	$scope.patternClick = function(tuneName, patternName) {
 		var songPart = { };

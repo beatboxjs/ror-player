@@ -1,9 +1,9 @@
 angular.module("beatbox")
-	.controller("bbShareDialogCtrl", function($scope, songs, tunes, currentSongIdx, bbConfig, bbUtils, ng, bbImportExport, bbState) {
+	.controller("bbShareDialogCtrl", function($scope, songs, tunes, currentSongIdx, bbConfig, bbUtils, ng, bbImportExport, bbHistory) {
 		$scope.songs = songs;
 		$scope.tunes = tunes;
 		$scope.utils = bbUtils;
-		$scope.state = bbState;
+		$scope.state = bbHistory;
 
 		$scope.shareSongs = { };
 		$scope.shareSongs[currentSongIdx] = true;
@@ -12,9 +12,9 @@ angular.module("beatbox")
 
 		$scope.getModifiedPatternNames = function(tuneName) {
 			var ret = [ ];
-			for(var patternName in bbState.tunes[tuneName].patterns) {
+			for(var patternName in bbHistory.tunes[tuneName].patterns) {
 				var originalPattern = bbConfig.tunes[tuneName] && bbConfig.tunes[tuneName].patterns[patternName];
-				var pattern = bbState.tunes[tuneName] && bbState.tunes[tuneName].patterns[patternName];
+				var pattern = bbHistory.tunes[tuneName] && bbHistory.tunes[tuneName].patterns[patternName];
 				if(!originalPattern || !ng.equals(pattern, originalPattern))
 					ret.push(patternName);
 			}
@@ -58,7 +58,7 @@ angular.module("beatbox")
 			var enable = ($scope.getTuneClass(tuneName) != "active");
 			$scope.sharePatterns[tuneName] = { };
 			if(enable) {
-				for(var i in bbState.tunes[tuneName].patterns) {
+				for(var i in bbHistory.tunes[tuneName].patterns) {
 					$scope.sharePatterns[tuneName][i] = true;
 				}
 			}

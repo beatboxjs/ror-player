@@ -1,9 +1,9 @@
 angular.module("beatbox")
-	.controller("bbImportDialogCtrl", function($scope, songs, tunes, bbConfig, bbUtils, ng, bbImportExport, bbState, bbPatternEncoder) {
+	.controller("bbImportDialogCtrl", function($scope, songs, tunes, bbConfig, bbUtils, ng, bbImportExport, bbHistory, bbPatternEncoder) {
 		$scope.songs = songs;
 		$scope.tunes = tunes;
 		$scope.utils = bbUtils;
-		$scope.state = bbState;
+		$scope.state = bbHistory;
 
 		$scope.importSongs = { };
 		$scope.importPatterns = { };
@@ -54,19 +54,19 @@ angular.module("beatbox")
 		};
 
 		$scope.songExists = function(song) {
-			for(var i=0; i<bbState.songs.length; i++) {
-				if(bbUtils.songEquals(song, bbState.songs[i], true))
+			for(var i=0; i<bbHistory.songs.length; i++) {
+				if(bbUtils.songEquals(song, bbHistory.songs[i], true))
 					return true;
 			}
 			return false;
 		};
 
 		$scope.patternExists = function(tuneName, patternName) {
-			if(!bbState.tunes[tuneName] || !bbState.tunes[tuneName].patterns[patternName])
+			if(!bbHistory.tunes[tuneName] || !bbHistory.tunes[tuneName].patterns[patternName])
 				return 0;
 
 			var obj1 = bbPatternEncoder.getEncodedPatternObject($scope.obj.tunes[tuneName].patterns[patternName]);
-			var obj2 = bbPatternEncoder.getEncodedPatternObject(bbState.tunes[tuneName].patterns[patternName]);
+			var obj2 = bbPatternEncoder.getEncodedPatternObject(bbHistory.tunes[tuneName].patterns[patternName]);
 			return ng.equals(obj1, obj2) ? 2 : 1;
 		};
 
@@ -120,10 +120,10 @@ angular.module("beatbox")
 					if(!$scope.shouldImportPattern(tuneName, patternName))
 						continue;
 
-					if(!bbState.tunes[tuneName])
-						bbState.tunes[tuneName] = { patterns: { } };
+					if(!bbHistory.tunes[tuneName])
+						bbHistory.tunes[tuneName] = { patterns: { } };
 
-					bbState.tunes[tuneName].patterns[patternName] = $scope.obj.tunes[tuneName].patterns[patternName];
+					bbHistory.tunes[tuneName].patterns[patternName] = $scope.obj.tunes[tuneName].patterns[patternName];
 				}
 			}
 
@@ -131,7 +131,7 @@ angular.module("beatbox")
 				if(!$scope.shouldImportSong(i))
 					continue;
 
-				bbState.songs.push($scope.obj.songs[i]);
+				bbHistory.songs.push($scope.obj.songs[i]);
 			}
 
 			$scope.$close();
