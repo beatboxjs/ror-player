@@ -9,7 +9,7 @@
 	<ul class="actions icon-list">
 		<li><a href="javascript:" title="Listen" ng-click="playPattern()"><span ng-class="'glyphicon glyphicon-'+(player.playing ? 'stop' : 'play-circle')"></span></a></li>
 		<li><a href="javascript:" title="Edit" ng-click="editPattern()"><span class="glyphicon glyphicon-pencil"></span></a></li>
-		<li><a href="javascript:" title="Revert modifications" ng-show="hasLocalChanges()" ng-click="restore()"><span class="glyphicon glyphicon-erase"></span></a></li>
+		<li ng-if="hasLocalChanges()"><a href="javascript:" title="Revert modifications" ng-click="restore()"><span class="glyphicon glyphicon-erase"></span></a></li>
 		<ng-transclude></ng-transclude>
 	</ul>
 	<div class="position-marker" ng-show="player.playing"></div>
