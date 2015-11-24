@@ -90,10 +90,17 @@
 }
 
 .bb-pattern-player-stokes-dropdown-menu {
-	min-width: 0;
-	padding: 0;
 	max-width: 300px;
 	text-align: center;
+	margin: -10px -15px;
+	padding: 0;
+	border-radius: 6px;
+	overflow: hidden;
+	position: static;
+	display: block;
+	float: none;
+	border: none;
+	min-width: 0;
 
 	li {
 		display: inline-block;
@@ -103,6 +110,7 @@
 		margin-top: -1px;
 
 		a {
+			display: block;
 			padding: 5px 10px;
 		}
 	}
