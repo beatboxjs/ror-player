@@ -7,10 +7,17 @@ angular.module("beatbox")
 			replace: true
 		};
 	})
-	.controller("bbHistoryController", function($scope, bbHistory) {
+	.controller("bbHistoryController", function($scope, bbHistory, bbUtils) {
 		$scope.bbHistory = bbHistory;
 
-		$scope.getHistoryKeyTitle = function(key) {
-			return new Date(key*1000).toISOString();
-		};
+		$scope.$watchCollection("bbHistory.getHistoricStates()", function(states) {
+			$scope.historicStates = [ ];
+			for(var i=0; i<states.length; i++) {
+				$scope.historicStates.push({
+					key: states[i],
+					readableDate: bbUtils.readableDate(states[i], states[i-1], states[i+1]),
+					isoDate: bbUtils.isoDate(states[i])
+				});
+			}
+		});
 	});
