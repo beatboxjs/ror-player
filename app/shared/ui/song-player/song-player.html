@@ -21,9 +21,9 @@
 			<ul class="dropdown-menu song-dropdown" role="menu">
 				<li ng-repeat="thisSong in state.songs track by $index" ng-class="{active: $index == state.songIdx}">
 					<a href="javascript:" class="song-name" ng-click="selectSong($index)">{{state.getSongName($index)}}</a>
-					<a href="javascript:" ng-click="renameSong($index)" title="Rename" class="rename"><span class="glyphicon glyphicon-pencil"></span></a>
-					<a href="javascript:" ng-click="copySong($index)" title="Copy" class="copy"><span class="glyphicon glyphicon-duplicate"></span></a>
-					<a href="javascript:" ng-click="removeSong($index)" title="Remove" class="remove"><span class="glyphicon glyphicon-trash"></span></a>
+					<a href="javascript:" ng-click="renameSong($index)" uib-tooltip="Rename" tooltip-append-to-body="true" class="rename"><span class="glyphicon glyphicon-pencil"></span></a>
+					<a href="javascript:" ng-click="copySong($index)" uib-tooltip="Copy" tooltip-append-to-body="true" class="copy"><span class="glyphicon glyphicon-duplicate"></span></a>
+					<a href="javascript:" ng-click="removeSong($index)" uib-tooltip="Remove" tooltip-append-to-body="true" class="remove"><span class="glyphicon glyphicon-trash"></span></a>
 				</li>
 				<li role="separator" class="divider"></li>
 				<li><a href="javascript:" ng-click="createSong()">New song</a></li>
@@ -57,12 +57,12 @@
 				<div class="pattern-container" ng-class="[ 'colspan-'+getColSpan(instrumentKey, i), 'rowspan-'+getRowSpan(instrumentKey, i) ]" ng-if="song[i][instrumentKey] && shouldDisplay(instrumentKey, i)">
 					<bb-pattern-placeholder bb-state="state" bb-tune-name="song[i][instrumentKey][0]" bb-pattern-name="song[i][instrumentKey][1]" bb-draggable="true" bb-drag-success="onDrag(instrumentKey, i)" bb-player-options="getPreviewPlayerOptions(instrumentKey, i)">
 						<bb-pattern-placeholder-item uib-dropdown uib-dropdown-append-to-body>
-							<a href="javascript:" title="Pick instruments" uib-dropdown-toggle><span class="glyphicon glyphicon-hand-right"></span></a>
+							<a href="javascript:" uib-tooltip="Pick instruments" tooltip-append-to-body="true" uib-dropdown-toggle><span class="glyphicon glyphicon-hand-right"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								<li ng-repeat="instrumentKey2 in utils.getKeys(config.instruments)"><a href="javascript:" ng-click="toggleInstrument(instrumentKey2, i, song[i][instrumentKey])"><span class="glyphicon glyphicon-ok" ng-style="{visibility: equals(song[i][instrumentKey2], song[i][instrumentKey]) ? 'visible' : 'hidden'}"></span> {{config.instruments[instrumentKey2].name}}</a></li>
 							</ul>
 						</bb-pattern-placeholder-item>
-						<bb-pattern-placeholder-item><a href="javascript:" ng-click="removePattern(instrumentKey, i)" title="Remove"><span class="glyphicon glyphicon-trash"></span></a></bb-pattern-placeholder-item>
+						<bb-pattern-placeholder-item><a href="javascript:" ng-click="removePattern(instrumentKey, i)" uib-tooltip="Remove" tooltip-append-to-body="true"><span class="glyphicon glyphicon-trash"></span></a></bb-pattern-placeholder-item>
 					</bb-pattern-placeholder>
 					<span class="placeholder-drag-handle" ng-drag="true" ng-drag-data="getResizeDragData(instrumentKey, i)"><span class="caret-se"></span></span>
 				</div>
