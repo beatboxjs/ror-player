@@ -1,5 +1,5 @@
 angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScope) {
-	var CHARS = " !#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~";
+	var CHARS = bbConfig.numberToStringChars;
 
 	var bbUtils = {
 		getNumber: function(num) {
@@ -22,41 +22,6 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScop
 					ret = t;
 			}
 			return ret;
-		},
-
-		getSongLength: function(song, tunes) {
-			var maxIndex = bbUtils.getMaxIndex(song);
-			if(maxIndex == null)
-				return 0;
-
-			var length = 1;
-			for(var i in song[maxIndex]) {
-				var pattern = bbUtils.getPattern(tunes, song[maxIndex][i]);
-				if(pattern)
-					length = Math.max(length, pattern.length/4);
-			}
-			return parseInt(maxIndex) + length;
-		},
-
-		splitPattern: function(pattern, instrument) {
-			var ret = [ ];
-			var remaining = ng.copy(pattern[instrument]);
-			while(remaining.length > 0) {
-				var slice = remaining.slice(0, 4*pattern.time);
-				slice.time = pattern.time;
-				ret.push(slice);
-				remaining = remaining.slice(4*pattern.time);
-			}
-			return ret;
-		},
-
-		getPattern: function(tunes, tuneName, patternName) {
-			if(Array.isArray(tuneName)) {
-				patternName = tuneName[1];
-				tuneName = tuneName[0];
-			}
-
-			return tunes[tuneName] && tunes[tuneName].patterns[patternName];
 		},
 
 		scrollToElement: function(el, scrollFurther, force) {
@@ -160,66 +125,8 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScop
 			return ret;
 		},
 
-		songContainsPattern : function(song, tuneName, patternName) {
-			var maxIndex = bbUtils.getMaxIndex(song);
-
-			for(var i=0; i<=maxIndex; i++) {
-				if(!song[i])
-					continue;
-
-				for(var instr in bbConfig.instruments) {
-					if(song[i][instr] && song[i][instr][0] == tuneName && song[i][instr][1] == patternName)
-						return true;
-				}
-			}
-
-			return false;
-		},
-
-		songReplacePattern : function(song, fromTuneAndName, toTuneAndName) {
-			var maxIndex = bbUtils.getMaxIndex(song);
-
-			for(var i=0; i<=maxIndex; i++) {
-				if(!song[i])
-					continue;
-
-				for(var instr in bbConfig.instruments) {
-					if(song[i][instr] && song[i][instr][0] == fromTuneAndName[0] && song[i][instr][1] == toTuneAndName[1]) {
-						if(toTuneAndName == null)
-							delete song[i][instr];
-						else
-							song[i][instr] = ng.copy(toTuneAndName);
-					}
-				}
-
-				if(Object.keys(song[i]).length == 0)
-					delete song[i];
-			}
-
-			return false;
-		},
-
 		makeAbsoluteUrl : function(url) {
 			return $("<a/>").attr("href", url).prop("href");
-		},
-
-		mergeTuneObjects : function(tunes1, tunes2) {
-			var ret = { };
-			for(var i=0; i<arguments.length; i++) {
-				if(!arguments[i])
-					continue;
-
-				for(var tuneName in arguments[i]) {
-					if(ret[tuneName] == null)
-						ret[tuneName] = ng.copy(arguments[i][tuneName]);
-					else if(arguments[i][tuneName].patterns) {
-						for(var patternName in arguments[i][tuneName].patterns) {
-							ret[tuneName].patterns[patternName] = arguments[i][tuneName].patterns[patternName];
-						}
-					}
-				}
-			}
-			return ret;
 		},
 
 		binArrayToString : function(binArray) {
@@ -229,22 +136,20 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScop
 			return decodeURIComponent(escape(str));
 		},
 
-		songEquals : function(song1, song2, checkName) {
-			if(checkName && song1.name != song2.name)
-				return false;
+		objectToString : function(object) {
+			var uncompressed = JSON.stringify(object);
+			var compressed = JSZip.compressions.DEFLATE.compress(uncompressed, { level: 9 });
+			compressed.charCodeAt = function(i) { return this[i]; };
+			return JSZip.base64.encode(uncompressed.length < compressed.length ? uncompressed : compressed).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');
+		},
 
-			var maxIndex1 = bbUtils.getMaxIndex(song1);
-			var maxIndex2 = bbUtils.getMaxIndex(song2);
-
-			if(maxIndex1 != maxIndex2)
-				return false;
-
-			for(var i=0; i<=maxIndex1; i++) {
-				if(!ng.equals(song1[i], song2[i]) && (song1[i] != null || song2[i] != null))
-					return false;
-			}
-
-			return true;
+		stringToObject : function(string) {
+			var decoded = JSZip.base64.decode(string.replace(/-/g, '+').replace(/_/g, '/'));
+			if(decoded.charAt(0) != '{')
+				decoded = bbUtils.binArrayToString(JSZip.compressions.DEFLATE.uncompress(decoded));
+			if(decoded.charCodeAt(decoded.length-1) == 0) // Happened once, don't know why
+				decoded = decoded.substr(0, decoded.length-1);
+			return JSON.parse(decoded);
 		}
 	};
 

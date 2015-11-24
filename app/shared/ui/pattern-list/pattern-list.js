@@ -1,10 +1,10 @@
 angular.module("beatbox")
 	.directive("bbPatternList", function() {
 		return {
-			templateUrl: "app/shared/pattern-list/pattern-list.html",
+			templateUrl: "app/shared/ui/pattern-list/pattern-list.html",
 			controller: "bbPatternListController",
 			scope: {
-				tunes: "=bbTunes"
+				state: "=bbState"
 			},
 			transclude: true
 		};
@@ -35,15 +35,9 @@ angular.module("beatbox")
 					next();
 				});
 			}, function() {
-				return patternName == "" || $scope.tunes[bbConfig.myTunesKey].patterns[patternName];
+				return patternName == "" || $scope.getPattern(bbConfig.myTunesKey, patternName);
 			}, function() {
-				$scope.tunes[bbConfig.myTunesKey].patterns[patternName] = {
-					length: 4,
-					time: 4
-				};
-
-				for(var i in bbConfig.instruments)
-					$scope.tunes[bbConfig.myTunesKey].patterns[patternName][i] = [ ];
+				$scope.state.createPattern(bbConfig.myTunesKey, patternName);
 
 				bbPatternEditorDialog.editPattern($scope.tunes, bbConfig.myTunesKey, patternName);
 			});
@@ -51,7 +45,7 @@ angular.module("beatbox")
 
 		$scope.removePattern = function(tuneName, patternName) {
 			$ngBootbox.confirm("Do you really want to remove "+patternName+" ("+tuneName+")?").then(function(){
-				delete $scope.tunes[tuneName].patterns[patternName];
+				$scope.state.removePattern(tuneName, patternName);
 			});
 		};
 	});

@@ -13,7 +13,7 @@ angular.module("beatbox", ["ui.bootstrap", "ui.bootstrap-slider", "ngDraggable",
 			.state("pattern", {
 				url: "/:tuneName/:patternName",
 				onEnter: function($stateParams, $state, bbPatternEditorDialog, bbHistory) {
-					bbPatternEditorDialog.editPatternBkp(bbHistory.tunes, $stateParams.tuneName, $stateParams.patternName).result.finally(function() {
+					bbPatternEditorDialog.editPatternBkp(bbHistory.state, $stateParams.tuneName, $stateParams.patternName).result.finally(function() {
 						$state.go("song");
 					});
 				}
@@ -44,8 +44,8 @@ angular.module("beatbox", ["ui.bootstrap", "ui.bootstrap-slider", "ngDraggable",
 	.run(function($state, bbPatternEditorDialog) {
 		bbPatternEditorDialog.editPatternBkp = bbPatternEditorDialog.editPattern;
 
-		bbPatternEditorDialog.editPattern = function(tunes, tuneName, patternName) {
-			// FIXME; tunes is ignored
+		bbPatternEditorDialog.editPattern = function(state, tuneName, patternName) {
+			// FIXME: state is ignored
 			$state.go("pattern", { tuneName: tuneName, patternName: patternName });
 		};
 	});

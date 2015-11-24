@@ -26,8 +26,8 @@
 			<tr>
 				<td>
 					<ul class="list-group">
-						<li ng-repeat="song in songs track by $index" class="list-group-item" ng-class="{active: shareSongs[$index]}">
-							<a href="javascript:" ng-click="shareSongs[$index] = !shareSongs[$index]">{{song.name || 'Untitled song'}}</a>
+						<li ng-repeat="song in state.songs track by $index" class="list-group-item" ng-class="{active: shareSongs[$index]}">
+							<a href="javascript:" ng-click="shareSongs[$index] = !shareSongs[$index]">{{state.getSongName($index)}}</a>
 						</li>
 					</ul>
 				</td>

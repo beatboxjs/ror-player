@@ -1,27 +1,27 @@
 angular.module("beatbox")
 	.directive("bbSongPlayer", function() {
 		return {
-			templateUrl: "app/shared/song-player/song-player.html",
+			templateUrl: "app/shared/ui/song-player/song-player.html",
 			controller: "bbSongPlayerController",
 			scope: {
-				songs: '=bbSongs',
-				song: '=bbSelectedSong',
-				tunes: "=bbTunes"
+				state: '=bbState'
 			}
 		};
 	})
 	.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, ng, bbUtils, bbPlayer, $element, $timeout, $ngBootbox, bbShareDialog, bbImportDialog) {
+		$scope.$watch("state.songs[state.songIdx]", function(song) {
+			if(song == null) {
+				if($scope.state.songs.length == 0)
+					$scope.state.createSong();
+				song = $scope.state.songs[$scope.state.songIdx = 0];
+			}
+			$scope.song = song;
+		});
+
 		$scope.config = bbConfig;
 		$scope.utils = bbUtils;
 
 		$scope.player = bbPlayer.createBeatbox();
-
-		$scope.playerOptions = {
-			speed: 100,
-			headphones: null,
-			mute: { },
-			loop: false
-		};
 
 		function updateMarkerPos(scrollFurther, force) {
 			var i = $scope.player.getPosition()/bbConfig.playTime;
@@ -38,24 +38,16 @@ angular.module("beatbox")
 		$scope.player.onbeat = function(idx) { updateMarkerPos(true); };
 
 		function updatePattern() {
-			$scope.player.setPattern(bbPlayer.songToBeatbox($scope.song, $scope.tunes, $scope.playerOptions.headphones, $scope.playerOptions.mute));
+			$scope.player.setPattern(bbPlayer.songToBeatbox($scope.state));
 		}
 
 		$scope.$watch("song", updatePattern, true);
-		$scope.$watch("playerOptions.speed", function(newSpeed) {
+		$scope.$watch("state.speed", function(newSpeed) {
 			$scope.player.setBeatLength(60000/newSpeed/bbConfig.playTime);
 		});
-		$scope.$watch("playerOptions.loop", function(loop) {
+		$scope.$watch("state.loop", function(loop) {
 			$scope.player.setRepeat(loop);
 		});
-
-		$scope.$watch("songs", function() {
-			if($scope.songs.indexOf($scope.song) == -1) {
-				if($scope.songs.length == 0)
-					$scope.songs.push({ });
-				$scope.song = $scope.songs[0];
-			}
-		}, true);
 
 		$scope.playPause = function() {
 			if(!$scope.player.playing) {
@@ -73,20 +65,20 @@ angular.module("beatbox")
 		};
 
 		$scope.headphones = function(instrumentKey) {
-			if($scope.playerOptions.headphones == instrumentKey)
-				$scope.playerOptions.headphones = null;
+			if($scope.state.headphones == instrumentKey)
+				$scope.state.headphones = null;
 			else
-				$scope.playerOptions.headphones = instrumentKey;
+				$scope.state.headphones = instrumentKey;
 			updatePattern();
 		};
 
 		$scope.mute = function(instrumentKey) {
-			$scope.playerOptions.mute[instrumentKey] = !$scope.playerOptions.mute[instrumentKey];
+			$scope.state.mute[instrumentKey] = !$scope.state.mute[instrumentKey];
 			updatePattern();
 		};
 
 		$scope.getLength = function() {
-			var length = bbUtils.getSongLength($scope.song, $scope.tunes)+1;
+			var length = $scope.song.getEffectiveLength($scope.state)+1;
 			if($scope.currentPatternDrag)
 				length = Math.max(length, $scope.currentPatternDrag.toIdx+2);
 			return length;
@@ -97,7 +89,7 @@ angular.module("beatbox")
 			if(!pattern)
 				return 1;
 
-			pattern = bbUtils.getPattern($scope.tunes, pattern);
+			pattern = $scope.state.getPattern(pattern);
 			if(!pattern)
 				return 1;
 
@@ -163,7 +155,6 @@ angular.module("beatbox")
 		$scope.getPreviewPlayerOptions = function(instrumentKey, idx) {
 			var ret = {
 				mute: { },
-				speed: $scope.playerOptions.speed,
 				length: $scope.getColSpan(instrumentKey, idx)*4
 			};
 
@@ -214,7 +205,7 @@ angular.module("beatbox")
 			var tuneAndPattern = $scope.song[idx][instrumentKey];
 			$scope.removePattern(instrumentKey, idx);
 
-			var patternLength = Math.ceil(bbUtils.getPattern($scope.tunes, tuneAndPattern[0], tuneAndPattern[1]).length/4);
+			var patternLength = Math.ceil($scope.state.getPattern(tuneAndPattern).length/4);
 			getAffectedResizePatternRange(instrumentKey, idx, toInstrumentKey, toIdx, patternLength).forEach(function(it) {
 				$scope.dropPattern(it[0], it[1], tuneAndPattern);
 			});
@@ -282,9 +273,11 @@ angular.module("beatbox")
 				});
 				saveAs(blob, "song.mp3");
 			}, function(perc) {
-				$scope.$apply(function() {
-					$scope.loading = perc*100;
-				});
+				if(Math.floor(perc*20) != Math.floor($scope.loading/5)) {
+					$scope.$apply(function() {
+						$scope.loading = perc*100;
+					});
+				}
 			});
 		};
 
@@ -296,65 +289,52 @@ angular.module("beatbox")
 				});
 				saveAs(blob, "song.wav");
 			}, function(perc) {
-				$scope.$apply(function() {
-					$scope.loading = perc*100;
-				});
+				if(Math.floor(perc*20) != Math.floor($scope.loading/5)) {
+					$scope.$apply(function() {
+						$scope.loading = perc*100;
+					});
+				}
 			});
 		};
 
-		$scope.selectSong = function(song) {
-			if($scope.song === song)
+		$scope.selectSong = function(songIdx) {
+			if($scope.state.songIdx == songIdx)
 				return;
 
 			$scope.stop();
-			$scope.song = song;
+			$scope.state.songIdx = songIdx;
 		};
 
-		$scope.createSong = function(song) {
+		$scope.createSong = function() {
 			$scope.stop();
 
-			$scope.song = {
-				name: ""
-			};
-
-			$scope.songs.push($scope.song);
+			$scope.state.songIdx = $scope.state.createSong();
 		};
 
-		$scope.renameSong = function(song) {
+		$scope.renameSong = function(songIdx) {
+			var song = $scope.state.songs[songIdx];
 			$ngBootbox.prompt("Enter song name", song.name).then(function(songName) {
 				song.name = songName;
 			});
 		};
 
-		$scope.removeSong = function(song) {
-			$ngBootbox.confirm("Do you really want to remove the song "+(song.name || "Untitled song")+"?").then(function(result) {
-				var idx = $scope.songs.indexOf(song);
-				if(idx != -1)
-					$scope.songs.splice(idx, 1);
-
-				if($scope.songs.length == 0)
-					$scope.songs.push({ });
-
-				if($scope.song === song)
-					$scope.selectSong($scope.songs[0]);
+		$scope.removeSong = function(songIdx) {
+			$ngBootbox.confirm("Do you really want to remove the song "+$scope.state.getSongName(songIdx)+"?").then(function() {
+				$scope.state.removeSong(songIdx);
 			});
 		};
 
 		$scope.clearSong = function() {
 			$ngBootbox.confirm("Do you really want to clear the current song?").then(function() {
-				var length = bbUtils.getSongLength($scope.song, $scope.tunes);
-				for(var i=0; i<length; i++) {
-					if($scope.song[i])
-						delete $scope.song[i];
-				}
+				$scope.song.clear();
 			});
 		};
 
 		$scope.openShareDialog = function() {
-			bbShareDialog.openDialog($scope.tunes, $scope.songs, $scope.songs.indexOf($scope.song));
+			bbShareDialog.openDialog($scope.state);
 		};
 
 		$scope.openImportDialog = function() {
-			bbImportDialog.openDialog($scope.tunes, $scope.songs);
+			bbImportDialog.openDialog($scope.state);
 		};
 	});

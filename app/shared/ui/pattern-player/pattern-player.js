@@ -1,7 +1,7 @@
 angular.module("beatbox")
 	.directive("bbPatternPlayer", function($) {
 		return {
-			templateUrl: "app/shared/pattern-player/pattern-player.html",
+			templateUrl: "app/shared/ui/pattern-player/pattern-player.html",
 			scope: {
 				pattern: "=bbPattern",
 				originalPattern: "=bbPatternOriginal",
@@ -129,7 +129,7 @@ angular.module("beatbox")
 		};
 
 		$scope.hasLocalChanges = function() {
-			return $scope.originalPattern && !angular.equals($scope.pattern, $scope.originalPattern);
+			return $scope.originalPattern && !ng.equals($scope.pattern, $scope.originalPattern);
 		};
 
 		$scope.reset = function() {

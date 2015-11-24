@@ -1,9 +1,7 @@
 angular.module("beatbox")
 	.directive("bbHistory", function() {
-		var cloneInitialised = false;
-
 		return {
-			templateUrl: "app/shared/history/history.html",
+			templateUrl: "app/shared/ui/history/history.html",
 			controller: "bbHistoryController",
 			scope: { },
 			replace: true

@@ -4,12 +4,12 @@
 </div>
 <div class="modal-body">
 	<form>
-		<div class="form-group has-feedback" ng-class="error ? 'has-error' : obj.errors.length > 0 ? 'has-warning' : obj ? 'has-success' : ''">
+		<div class="form-group has-feedback" ng-class="error ? 'has-error' : warnings.length > 0 ? 'has-warning' : obj ? 'has-success' : ''">
 			<textarea id="bb-import-dialog-paste" class="form-control" ng-model="pasted" rows="5" placeholder="Paste link or raw data object…"></textarea>
-			<span ng-if="obj || error" class="glyphicon form-control-feedback" aria-hidden="true" ng-class="'glyphicon-' + (error ? 'remove' : obj.errors.length > 0 ? 'warning-sign' : 'ok')"></span>
+			<span ng-if="obj || error" class="glyphicon form-control-feedback" aria-hidden="true" ng-class="'glyphicon-' + (error ? 'remove' : warnings.length > 0 ? 'warning-sign' : 'ok')"></span>
 		</div>
 		<div ng-if="error" class="alert alert-danger" role="alert"><strong>{{error}}</strong></div>
-		<div ng-repeat="warning in obj.errors" class="alert alert-warning" role="alert"><strong>{{warning}}</strong></div>
+		<div ng-repeat="warning in warnings" class="alert alert-warning" role="alert"><strong>{{warning}}</strong></div>
 	</form>
 	<div ng-if="obj">
 		<hr />
@@ -25,7 +25,7 @@
 				<tr>
 					<td>
 						<ul class="list-group">
-							<li ng-repeat="song in obj.songs track by $index" data-init-hack="{{_shouldImport=shouldImportSong($index); _songExists=songExists(song); ''}}" class="list-group-item" ng-class="{active:_shouldImport, disabled:_songExists}">
+							<li ng-repeat="song in obj.songs track by $index" data-init-hack="{{_shouldImport=shouldImportSong($index); _songExists=state.songExists(song); ''}}" class="list-group-item" ng-class="{active:_shouldImport, disabled:_songExists}">
 								<a ng-if="!_songExists" href="javascript:" ng-click="importSongs[$index] = !_shouldImport">{{song.name || 'Untitled song'}}</a>
 								<span ng-if="_songExists" title="Song already exists.">{{song.name || 'Untitled song'}} <span class="glyphicon glyphicon-ok"></span></span>
 							</li>

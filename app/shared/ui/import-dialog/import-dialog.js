@@ -1,9 +1,7 @@
 angular.module("beatbox")
-	.controller("bbImportDialogCtrl", function($scope, songs, tunes, bbConfig, bbUtils, ng, bbImportExport, bbHistory, bbPatternEncoder) {
-		$scope.songs = songs;
-		$scope.tunes = tunes;
+	.controller("bbImportDialogCtrl", function($scope, state, bbUtils, bbState) {
+		$scope.state = state;
 		$scope.utils = bbUtils;
-		$scope.state = bbHistory;
 
 		$scope.importSongs = { };
 		$scope.importPatterns = { };
@@ -14,6 +12,7 @@ angular.module("beatbox")
 		$scope.$watch("pasted", function(pasted) {
 			$scope.obj = null;
 			$scope.error = null;
+			$scope.warnings = [ ];
 
 			if(!pasted)
 				return;
@@ -22,10 +21,10 @@ angular.module("beatbox")
 
 			try {
 				var m;
-				if(pasted.charAt(0) == "{")
-					$scope.obj = bbImportExport.decodeObject(JSON.parse(pasted));
-				else if(m = pasted.match(/#\/([-_a-zA-Z0-9]+)/))
-					$scope.obj = bbImportExport.decodeString(m[1]);
+				if(pasted.charAt(0) == "{" || (m = pasted.match(/#\/([-_a-zA-Z0-9]+)/))) {
+					$scope.obj = new bbState({ });
+					$scope.warnings = $scope.obj.extendFromCompressed(m ? bbUtils.stringToObject(m[1]) : JSON.parse(pasted), null, null, false, false, true);
+				}
 				else
 					$scope.error = "Unrecognised format.";
 			} catch(e) {
@@ -53,33 +52,24 @@ angular.module("beatbox")
 			}
 		};
 
-		$scope.songExists = function(song) {
-			for(var i=0; i<bbHistory.songs.length; i++) {
-				if(bbUtils.songEquals(song, bbHistory.songs[i], true))
-					return true;
-			}
-			return false;
-		};
-
 		$scope.patternExists = function(tuneName, patternName) {
-			if(!bbHistory.tunes[tuneName] || !bbHistory.tunes[tuneName].patterns[patternName])
+			var pattern = state.getPattern(tuneName, patternName);
+			if(!state.getPattern(tuneName, patternName))
 				return 0;
 
-			var obj1 = bbPatternEncoder.getEncodedPatternObject($scope.obj.tunes[tuneName].patterns[patternName]);
-			var obj2 = bbPatternEncoder.getEncodedPatternObject(bbHistory.tunes[tuneName].patterns[patternName]);
-			return ng.equals(obj1, obj2) ? 2 : 1;
+			return pattern.equals($scope.obj.getPattern(tuneName, patternName)) ? 2 : 1;
 		};
 
 		$scope.patternIsUsed = function(tuneName, patternName) {
 			for(var i=0; i<$scope.obj.songs.length; i++) {
-				if($scope.shouldImportSong(i) && bbUtils.songContainsPattern($scope.obj.songs[i], tuneName, patternName))
+				if($scope.shouldImportSong(i) && $scope.obj.songs[i].containsPattern(tuneName, patternName))
 					return true;
 			}
 			return false;
 		};
 
 		$scope.shouldImportSong = function(songIdx) {
-			if($scope.songExists($scope.obj.songs[songIdx]))
+			if($scope.state.songExists($scope.obj.songs[songIdx]))
 				return false;
 			else if($scope.importSongs[songIdx] != null)
 				return $scope.importSongs[songIdx];
@@ -115,24 +105,7 @@ angular.module("beatbox")
 		};
 
 		$scope.doImport = function() {
-			for(var tuneName in $scope.obj.tunes) {
-				for(var patternName in $scope.obj.tunes[tuneName].patterns) {
-					if(!$scope.shouldImportPattern(tuneName, patternName))
-						continue;
-
-					if(!bbHistory.tunes[tuneName])
-						bbHistory.tunes[tuneName] = { patterns: { } };
-
-					bbHistory.tunes[tuneName].patterns[patternName] = $scope.obj.tunes[tuneName].patterns[patternName];
-				}
-			}
-
-			for(var i=0; i<$scope.obj.songs.length; i++) {
-				if(!$scope.shouldImportSong(i))
-					continue;
-
-				bbHistory.songs.push($scope.obj.songs[i]);
-			}
+			$scope.state.extend($scope.obj, $scope.shouldImportSong.bind($scope), $scope.shouldImportPattern.bind($scope));
 
 			$scope.$close();
 		};
@@ -141,17 +114,16 @@ angular.module("beatbox")
 		var openDialog = null;
 
 		return {
-			openDialog: function(tunes, songs) {
+			openDialog: function(state) {
 				this.close();
 
 				openDialog = $uibModal.open({
-					templateUrl: "app/shared/import-dialog/import-dialog.html",
+					templateUrl: "app/shared/ui/import-dialog/import-dialog.html",
 					controller: "bbImportDialogCtrl",
 					size: "lg",
 					windowClass: "bb-import-dialog",
 					resolve: {
-						tunes: function() { return tunes; },
-						songs: function() { return songs; }
+						state: function() { return state; }
 					}
 				});
 

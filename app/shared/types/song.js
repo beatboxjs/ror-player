@@ -1,5 +1,86 @@
-angular.module("beatbox").factory("bbSongEncoder", function(bbConfig, ng, $, bbUtils) {
-	var bbSongEncoder = {
+angular.module("beatbox").factory("bbSong", function(bbConfig, ng, $, bbUtils, bbTune) {
+	function bbSong(data) {
+		this.name = "";
+
+		if(data)
+			$.extend(this, data);
+	}
+
+	bbSong.prototype = {
+		getLength : function() {
+			var maxIndex = bbUtils.getMaxIndex(this);
+			return maxIndex == null ? 0 : maxIndex+1;
+		},
+		clear : function() {
+			for(var i=0,length=this.getLength(); i<length; i++) {
+				delete this[i];
+			}
+		},
+		containsPattern : function(tuneName, patternName) {
+			for(var i=0,length=this.getLength(); i<=length; i++) {
+				if(!this[i])
+					continue;
+
+				for(var instr in bbConfig.instruments) {
+					if(this[i][instr] && this[i][instr][0] == tuneName && this[i][instr][1] == patternName)
+						return true;
+				}
+			}
+
+			return false;
+		},
+		getEffectiveLength: function(state) {
+			var maxIndex = this.getLength()-1;
+			if(maxIndex == -1)
+				return 0;
+
+			var length = 1;
+			for(var instr in bbConfig.instruments) {
+				var pattern = state.getPattern(this[maxIndex][instr]);
+				if(pattern)
+					length = Math.max(length, pattern.length/4);
+			}
+			return maxIndex + length;
+		},
+		replacePattern : function(fromTuneAndName, toTuneAndName) {
+			for(var i=0, length=this.getLength(); i<length; i++) {
+				if(!this[i])
+					continue;
+
+				for(var instr in bbConfig.instruments) {
+					if(this[i][instr] && this[i][instr][0] == fromTuneAndName[0] && this[i][instr][1] == toTuneAndName[1]) {
+						if(toTuneAndName == null)
+							delete this[i][instr];
+						else
+							this[i][instr] = ng.copy(toTuneAndName);
+					}
+				}
+
+				if(Object.keys(this[i]).length == 0)
+					delete this[i];
+			}
+
+			return false;
+		},
+		equals : function(song2, checkName) {
+			if(checkName && this.name != song2.name)
+				return false;
+
+			var length = this.getLength();
+
+			if(length != song2.getLength())
+				return false;
+
+			for(var i=0; i<length; i++) {
+				if(!ng.equals(this[i], song2[i]) && (this[i] != null || song2[i] != null))
+					return false;
+			}
+
+			return true;
+		}
+	};
+
+	$.extend(bbSong, {
 		/**
 		 * Creates an index for the used patterns in the given songs.
 		 * @param songs {array} An array of songs
@@ -11,8 +92,7 @@ angular.module("beatbox").factory("bbSongEncoder", function(bbConfig, ng, $, bbU
 			var patterns = { };
 			var emptyExists = false;
 			for(var songIdx=0; songIdx<songs.length; songIdx++) {
-				var maxIndex = bbUtils.getMaxIndex(songs[songIdx]);
-				for(var beatIdx=0; beatIdx<=maxIndex; beatIdx++) {
+				for(var beatIdx=0,length=songs[songIdx].getLength(); beatIdx<length; beatIdx++) {
 					for(var inst in bbConfig.instruments) {
 						var pattern = songs[songIdx][beatIdx] && songs[songIdx][beatIdx][inst];
 						if(!pattern)
@@ -37,16 +117,16 @@ angular.module("beatbox").factory("bbSongEncoder", function(bbConfig, ng, $, bbU
 
 			return { patterns: patterns, keys: keys };
 		},
-		encodeSongs : function(songs) {
+
+		compressSongs : function(songs) {
 			var index = this._makePatternIndex(songs);
 
 			var encodedSongs = new Array(songs.length);
 			for(var songIdx=0; songIdx<songs.length; songIdx++) {
-				var maxIndex = bbUtils.getMaxIndex(songs[songIdx]);
-
-				var beatsArr = new Array(maxIndex+1);
+				var length = songs[songIdx].getLength();
+				var beatsArr = new Array(length);
 				var beatsObj = { };
-				for(var beatIdx=0; beatIdx<=maxIndex; beatIdx++) {
+				for(var beatIdx=0; beatIdx<length; beatIdx++) {
 					var patterns = { };
 					var allSame = null;
 					for(var instr in bbConfig.instruments) {
@@ -75,10 +155,11 @@ angular.module("beatbox").factory("bbSongEncoder", function(bbConfig, ng, $, bbU
 
 			return { keys: index.keys, songs: encodedSongs };
 		},
-		decodeSongs : function(encoded) {
+
+		uncompressSongs : function(encoded) {
 			var songs = new Array(encoded.songs.length);
 			encoded.songs.forEach(function(song, songIdx) {
-				songs[songIdx] = { };
+				songs[songIdx] = new bbSong();
 				songs[songIdx].name = song.name;
 
 				var maxIdx = Array.isArray(song.beats) ? song.beats.length-1 : bbUtils.getMaxIndex(song.beats);
@@ -104,7 +185,7 @@ angular.module("beatbox").factory("bbSongEncoder", function(bbConfig, ng, $, bbU
 			});
 			return songs;
 		}
-	};
+	});
 
-	return bbSongEncoder;
+	return bbSong;
 });

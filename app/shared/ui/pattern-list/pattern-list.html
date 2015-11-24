@@ -1,11 +1,11 @@
 <div class="bb-pattern-list">
-	<uib-accordion ng-repeat="tuneName in utils.getKeys(tunes)">
+	<uib-accordion ng-repeat="tuneName in utils.getKeys(state.tunes)">
 		<uib-accordion-group>
 			<uib-accordion-heading>
 				{{tuneName}}
 				<span class="caret"></span>
 			</uib-accordion-heading>
-			<bb-pattern-placeholder bb-tunes="tunes" bb-tune-name="tuneName" bb-pattern-name="patternName" ng-repeat="patternName in utils.getKeys(tunes[tuneName].patterns)" bb-draggable="true">
+			<bb-pattern-placeholder bb-state="state" bb-tune-name="tuneName" bb-pattern-name="patternName" ng-repeat="patternName in utils.getKeys(state.tunes[tuneName].patterns)" bb-draggable="true">
 				<bb-transclude bb-scope="{ tuneName: tuneName, patternName: patternName }"></bb-transclude>
 				<bb-pattern-placeholder-item ng-if="tuneName == myTunesKey"><a href="javascript:" title="Remove" ng-click="removePattern(tuneName, patternName)"><span class="glyphicon glyphicon-trash"></span></a></bb-pattern-placeholder-item>
 			</bb-pattern-placeholder>

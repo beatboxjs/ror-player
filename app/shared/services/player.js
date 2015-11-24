@@ -42,11 +42,9 @@ angular.module("beatbox").factory("bbPlayer", function(bbConfig, bbUtils, ng, Be
 			return ret;
 		},
 
-		songToBeatbox: function(song, tunes, headphones, mute) {
-			if(!mute)
-				mute = { };
-
-			var length = bbUtils.getSongLength(song, tunes);
+		songToBeatbox: function(state) {
+			var song = state.songs[state.songIdx];
+			var length = song.getEffectiveLength(state);
 			var ret = new Array(length*bbConfig.playTime*4);
 
 			function insertPattern(idx, pattern, instrumentKey) {
@@ -57,11 +55,10 @@ angular.module("beatbox").factory("bbPlayer", function(bbConfig, bbUtils, ng, Be
 				}
 			}
 
-
 			for(var i=0; i<length; i++) {
 				for(var inst in bbConfig.instruments) {
-					if((!headphones || headphones == inst) && !mute[inst] && song[i] && song[i][inst] && bbUtils.getPattern(tunes, song[i][inst]))
-						insertPattern(i, bbUtils.getPattern(tunes, song[i][inst]), inst);
+					if((!state.headphones || state.headphones == inst) && !state.mute[inst] && song[i] && song[i][inst] && state.getPattern(song[i][inst]))
+						insertPattern(i, state.getPattern(song[i][inst]), inst);
 				}
 			}
 

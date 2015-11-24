@@ -1,27 +1,25 @@
 angular.module("beatbox")
-	.controller("bbPatternEditorCtrl", function($scope, tuneName, patternName, bbConfig, tunes) {
+	.controller("bbPatternEditorCtrl", function($scope, tuneName, patternName, state, bbDefaultTunes) {
 		$scope.tuneName = tuneName;
 		$scope.patternName = patternName;
 
-		$scope.tune = tunes[tuneName];
-		$scope.pattern = $scope.tune.patterns[patternName];
-
-		$scope.originalPattern = bbConfig.tunes[tuneName] && bbConfig.tunes[tuneName].patterns[patternName];
+		$scope.pattern = state.getPattern(tuneName, patternName);
+		$scope.originalPattern = bbDefaultTunes.getPattern(tuneName, patternName);
 	})
 	.factory("bbPatternEditorDialog", function($uibModal, bbPlayer) {
 		var openDialog = null;
 
 		return {
-			editPattern: function(tunes, tuneName, patternName) {
+			editPattern: function(state, tuneName, patternName) {
 				this.close();
 
 				openDialog = $uibModal.open({
-					templateUrl: "app/shared/pattern-editor-dialog/pattern-editor-dialog.html",
+					templateUrl: "app/shared/ui/pattern-editor-dialog/pattern-editor-dialog.html",
 					controller: "bbPatternEditorCtrl",
 					size: "lg",
 					windowClass: "bb-pattern-editor-dialog",
 					resolve: {
-						tunes: function() { return tunes; },
+						state: function() { return state; },
 						tuneName: function() { return tuneName },
 						patternName: function() { return patternName }
 					}
