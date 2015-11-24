@@ -10,9 +10,11 @@ angular.module("beatbox")
 			controller: "bbPatternController"
 		};
 	})
-	.controller("bbPatternController", function($scope, $element, bbPlayer, bbConfig, bbUtils, ng) {
+	.controller("bbPatternController", function($scope, $element, bbPlayer, bbConfig, bbUtils, ng, $templateRequest, $compile, $timeout) {
 		$scope.config = bbConfig;
 		$scope.utils = bbUtils;
+
+		var strokeDropdownTemplate = $templateRequest("app/shared/ui/pattern-player/pattern-player-stroke-dropdown.html");
 
 		function handleIdx(i) {
 			var i = $scope.player.getPosition();
@@ -135,6 +137,22 @@ angular.module("beatbox")
 		$scope.reset = function() {
 			bbUtils.confirm("Are you sure that you want to revert your modifications and restore the original break?").then(function() {
 				ng.copy($scope.originalPattern, $scope.pattern);
+			});
+		};
+
+		$scope.openStrokeDropdown = function(instrumentKey, i, event) {
+			// Initialise dropdown asynchronously, so that not all the dropdowns for all the strokes need to be initialised and synced
+
+			var strokeEl = $(event.target).closest("td");
+			var scope = ng.element(strokeEl).scope();
+			strokeDropdownTemplate.then(function(template) {
+				var dropdownEl = $(template).appendTo(strokeEl);
+				$compile(dropdownEl)(scope);
+				scope.strokeDropdownOpen = true;
+				setTimeout(function() {
+					console.log(dropdownEl);
+					$(".dropdown-toggle", strokeEl).click();
+				}, 0);
 			});
 		};
 	});

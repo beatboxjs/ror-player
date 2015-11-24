@@ -36,7 +36,7 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope, $injector
 		},
 		ot: {
 			name: "Others",
-			strokes: [ "w", "y", "A", "B", "C", "D", "F", "G", "J", "K", "L", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "Y", "Z" ]
+			strokes: [ "w", "y", "A", "B", "D", "F", "G", "J", "K", "L", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "Y", "Z" ]
 		}
 	};
 

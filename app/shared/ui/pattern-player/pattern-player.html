@@ -33,13 +33,9 @@
 					<a href="javascript:" ng-click="headphones(instrumentKey)" ng-class="playerOptions.headphones == instrumentKey ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a>
 					<a href="javascript:" ng-click="mute(instrumentKey)" ng-class="playerOptions.mute[instrumentKey] ? 'active' : 'inactive'"><span class="glyphicon glyphicon-volume-off"></span></a>
 				</td>
-				<td ng-repeat="(i,a) in utils.getNumber(pattern.length*pattern.time) track by $index" class="stroke" ng-class="getStrokeClass(i)" uib-dropdown dropdown-append-to-body>
+				<td ng-repeat="(i,a) in utils.getNumber(pattern.length*pattern.time) track by $index" class="stroke" ng-class="getStrokeClass(i)">
 					<span ng-if="!editable" class="stroke-inner">{{config.strokes[pattern[instrumentKey][i]] || ' '}}</span>
-					<a ng-if="editable" href="javascript:" class="stroke-inner dropdown-toggle" uib-dropdown-toggle>{{config.strokes[pattern[instrumentKey][i]] || ' '}}</a>
-					<ul uib-dropdown-menu class="bb-pattern-player-stokes-dropdown-menu">
-						<li><a href="javascript:" ng-click="pattern[instrumentKey][i]=' '"> </a></li><li
-							ng-repeat="stroke in config.instruments[instrumentKey].strokes"><a href="javascript:" ng-click="pattern[instrumentKey][i]=stroke">{{config.strokes[stroke]}}</a></li>
-					</ul>
+					<a ng-if="editable && !strokeDropdownOpen" href="javascript:" ng-click="openStrokeDropdown(intrumentKey, i, $event)" class="stroke-inner">{{config.strokes[pattern[instrumentKey][i]] || ' '}}</a>
 				</td>
 			</tr>
 		</tbody>
