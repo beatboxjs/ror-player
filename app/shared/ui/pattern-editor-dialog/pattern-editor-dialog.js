@@ -1,10 +1,14 @@
 angular.module("beatbox")
-	.controller("bbPatternEditorCtrl", function($scope, tuneName, patternName, state, bbDefaultTunes) {
+	.controller("bbPatternEditorCtrl", function($scope, tuneName, patternName, state, bbDefaultTunes, bbShareDialog) {
 		$scope.tuneName = tuneName;
 		$scope.patternName = patternName;
 
 		$scope.pattern = state.getPattern(tuneName, patternName);
 		$scope.originalPattern = bbDefaultTunes.getPattern(tuneName, patternName);
+
+		$scope.share = function() {
+			bbShareDialog.openDialog(state, [ tuneName, patternName ]);
+		};
 	})
 	.factory("bbPatternEditorDialog", function($uibModal, bbPlayer) {
 		var openDialog = null;

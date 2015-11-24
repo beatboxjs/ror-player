@@ -3,6 +3,8 @@
 	<h3 class="modal-title">{{tuneName}} – {{patternName}}</h3>
 </div>
 <div class="modal-body">
-	<bb-pattern-player bb-pattern="pattern" bb-pattern-original="originalPattern" bb-pattern-editable="true"></bb-pattern-player>
+	<bb-pattern-player bb-pattern="pattern" bb-pattern-original="originalPattern" bb-pattern-editable="true">
+		<button type="button" class="btn btn-info" ng-show="!originalPattern || !originalPattern.equals(pattern)" ng-click="share()"><span class="glyphicon glyphicon-share-alt"></span> Share</button>
+	</bb-pattern-player>
 </div>
 <div class="bb-loading" ng-show="loading"></div>

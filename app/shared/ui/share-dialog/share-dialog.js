@@ -1,12 +1,15 @@
 angular.module("beatbox")
-	.controller("bbShareDialogCtrl", function($scope, state, bbUtils, ng, bbDefaultTunes) {
+	.controller("bbShareDialogCtrl", function($scope, state, bbUtils, ng, bbDefaultTunes, linkPattern) {
 		$scope.state = state;
 		$scope.utils = bbUtils;
 
 		$scope.shareSongs = { };
-		$scope.shareSongs[state.songIdx] = true;
+		if(!linkPattern)
+			$scope.shareSongs[state.songIdx] = true;
 
 		$scope.sharePatterns = { };
+
+		$scope.linkPattern = linkPattern;
 
 		$scope.getModifiedPatternNames = function(tuneName) {
 			var ret = [ ];
@@ -33,7 +36,7 @@ angular.module("beatbox")
 		};
 
 		$scope.getUrl = function() {
-			return bbUtils.makeAbsoluteUrl("#/" + encodeURIComponent(bbUtils.objectToString($scope._getCompressedState())));
+			return bbUtils.makeAbsoluteUrl("#/" + encodeURIComponent(bbUtils.objectToString($scope._getCompressedState())) + ($scope.linkPattern ? "/" + encodeURIComponent($scope.linkPattern[0]) + "/" + encodeURIComponent($scope.linkPattern[1]) : ""));
 		};
 
 		$scope.getTuneClass = function(tuneName) {
@@ -51,8 +54,18 @@ angular.module("beatbox")
 				return "list-group-item-info";
 		};
 
+		$scope.isLink = function(tuneName, patternName) {
+			return $scope.linkPattern && $scope.linkPattern[0] == tuneName && $scope.linkPattern[1] == patternName;
+		};
+
+		$scope.isUsedInSong = function(tuneName, patternName) {
+			return $scope.state.songs.some(function(song, songIdx) { return $scope.shareSongs[songIdx] && song.containsPattern(tuneName, patternName); })
+		};
+
 		$scope.shouldExportPattern = function(tuneName, patternName) {
-			if($scope.state.songs.some(function(song) { return song.containsPattern(tuneName, patternName); }))
+			if($scope.isLink(tuneName, patternName))
+				return 3;
+			else if($scope.isUsedInSong(tuneName, patternName))
 				return 2;
 			else
 				return $scope.sharePatterns[tuneName] && $scope.sharePatterns[tuneName][patternName] ? 1 : 0;
@@ -73,7 +86,7 @@ angular.module("beatbox")
 		var openDialog = null;
 
 		return {
-			openDialog: function(state) {
+			openDialog: function(state, linkPattern) {
 				this.close();
 
 				openDialog = $uibModal.open({
@@ -82,7 +95,8 @@ angular.module("beatbox")
 					size: "lg",
 					windowClass: "bb-share-dialog",
 					resolve: {
-						state: function() { return state; }
+						state: function() { return state; },
+						linkPattern: function() { return linkPattern; }
 					}
 				});
 

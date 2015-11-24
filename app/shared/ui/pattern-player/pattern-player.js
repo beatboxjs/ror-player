@@ -7,7 +7,8 @@ angular.module("beatbox")
 				originalPattern: "=bbPatternOriginal",
 				editable: "=bbPatternEditable"
 			},
-			controller: "bbPatternController"
+			controller: "bbPatternController",
+			transclude: true
 		};
 	})
 	.controller("bbPatternController", function($scope, $element, bbPlayer, bbConfig, bbUtils, ng) {
