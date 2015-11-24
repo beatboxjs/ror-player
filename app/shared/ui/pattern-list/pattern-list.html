@@ -1,5 +1,5 @@
 <div class="bb-pattern-list">
-	<uib-accordion ng-repeat="tuneName in utils.getKeys(state.tunes)">
+	<uib-accordion ng-repeat="tuneName in state.getSortedTuneList()">
 		{{customTune = isCustomTune(tuneName); ''}}
 		<uib-accordion-group>
 			<uib-accordion-heading>

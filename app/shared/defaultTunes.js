@@ -1340,5 +1340,10 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 		}
 	});
 
+	Object.defineProperty(bbDefaultTunes, "firstInSorting", {
+		configurable: true,
+		value: [ "General Breaks", "Special Breaks" ]
+	});
+
 	return bbDefaultTunes;
 });

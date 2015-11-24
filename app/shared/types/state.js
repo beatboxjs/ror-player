@@ -242,6 +242,22 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, bbUtils, 
 			}
 
 			return "Untitled song "+no;
+		},
+
+		getSortedTuneList : function() {
+			return Object.keys(this.tunes).sort(function(a, b) {
+				var idx1 = bbDefaultTunes.firstInSorting.indexOf(a);
+				var idx2 = bbDefaultTunes.firstInSorting.indexOf(b);
+
+				if(idx1 != -1 && idx2 != -1)
+					return idx1-idx2;
+				else if(idx1 != -1)
+					return -1;
+				else if(idx2 != -1)
+					return 1;
+				else
+					return a.toLowerCase() < b.toLowerCase() ? -1 : 1;
+			});
 		}
 	};
 
