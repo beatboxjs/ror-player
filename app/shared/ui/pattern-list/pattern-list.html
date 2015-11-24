@@ -1,20 +1,27 @@
 <div class="bb-pattern-list">
 	<uib-accordion ng-repeat="tuneName in utils.getKeys(state.tunes)">
+		{{customTune = isCustomTune(tuneName); ''}}
 		<uib-accordion-group>
 			<uib-accordion-heading>
 				{{tuneName}}
+				<span ng-if="customTune" class="glyphicon glyphicon-star-empty" title="User-created tune"></span>
 				<span class="caret"></span>
 			</uib-accordion-heading>
 			<bb-pattern-placeholder bb-state="state" bb-tune-name="tuneName" bb-pattern-name="patternName" ng-repeat="patternName in utils.getKeys(state.tunes[tuneName].patterns)" bb-draggable="true">
-				{{custom = isCustomPattern(tuneName, patternName); ''}}
-				<bb-pattern-placeholder-item><a href="javascript:" title="Copy{{custom ? '/Move/Rename' : ''}} break" ng-click="copyPattern(tuneName, patternName)"><span class="glyphicon glyphicon-duplicate"></span></a></bb-pattern-placeholder-item>
-				<bb-pattern-placeholder-item ng-if="custom"><a href="javascript:" title="Remove" ng-click="removePattern(tuneName, patternName)"><span class="glyphicon glyphicon-trash"></span></a></bb-pattern-placeholder-item>
+				{{customPattern = isCustomPattern(tuneName, patternName); ''}}
+				<bb-pattern-placeholder-item><a href="javascript:" title="Copy{{customPattern ? '/Move/Rename' : ''}} break" ng-click="copyPattern(tuneName, patternName)"><span class="glyphicon glyphicon-duplicate"></span></a></bb-pattern-placeholder-item>
+				<bb-pattern-placeholder-item ng-if="customPattern"><a href="javascript:" title="Remove" ng-click="removePattern(tuneName, patternName)"><span class="glyphicon glyphicon-trash"></span></a></bb-pattern-placeholder-item>
 				<bb-transclude bb-scope="{ tuneName: tuneName, patternName: patternName }"></bb-transclude>
 			</bb-pattern-placeholder>
-			<span class="tune-actions">
+			<div class="tune-actions">
 				<a href="javascript:" ng-click="createPattern(tuneName)" title="New break"><span class="glyphicon glyphicon-plus-sign"></span></a>
-			</span>
+				<a ng-if="customTune" href="javascript:" ng-click="renameTune(tuneName)" title="Rename tune"><span class="glyphicon glyphicon-pencil"></span></a>
+				<a href="javascript:" ng-click="copyTune(tuneName)" title="Copy tune"><span class="glyphicon glyphicon-duplicate"></span></a>
+				<a ng-if="customTune" href="javascript:" ng-click="removeTune(tuneName)" title="Remove tune"><span class="glyphicon glyphicon-trash"></span></a>
+			</div>
 		</uib-accordion-group>
 	</uib-accordion>
-	<a href="javascript:" ng-click="createTune()">New tune</a>
+	<div class="general-actions">
+		<a href="javascript:" ng-click="createTune()">New tune</a>
+	</div>
 </div>

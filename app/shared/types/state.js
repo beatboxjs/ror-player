@@ -182,6 +182,22 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, bbUtils, 
 			return this.tunes[tuneName] = new bbTune(data);
 		},
 
+		renameTune : function(tuneName, newTuneName) {
+			this.tunes[newTuneName] = this.tunes[tuneName];
+			delete this.tunes[tuneName];
+
+			this._replacePattern([ tuneName, null ], [ newTuneName, null ]);
+		},
+
+		copyTune : function(tuneName, newTuneName) {
+			this.createTune(newTuneName, this.tunes[tuneName]);
+		},
+
+		removeTune : function(tuneName) {
+			delete this.tunes[tuneName];
+			this._replacePattern([ tuneName, null ], null);
+		},
+
 		createPattern : function(tuneName, patternName, data) {
 			if(!this.tunes[tuneName])
 				this.createTune(tuneName);

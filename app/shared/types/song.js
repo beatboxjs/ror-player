@@ -48,11 +48,14 @@ angular.module("beatbox").factory("bbSong", function(bbConfig, ng, $, bbUtils, b
 					continue;
 
 				for(var instr in bbConfig.instruments) {
-					if(this[i][instr] && this[i][instr][0] == fromTuneAndName[0] && this[i][instr][1] == toTuneAndName[1]) {
+					if(this[i][instr] && this[i][instr][0] == fromTuneAndName[0] && (fromTuneAndName[1] == null || this[i][instr][1] == fromTuneAndName[1])) {
 						if(toTuneAndName == null)
 							delete this[i][instr];
-						else
-							this[i][instr] = ng.copy(toTuneAndName);
+						else {
+							this[i][instr][0] = toTuneAndName[0];
+							if(toTuneAndName[1] != null)
+								this[i][instr][1] = toTuneAndName[1];
+						}
 					}
 				}
 

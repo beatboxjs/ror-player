@@ -93,4 +93,32 @@ angular.module("beatbox")
 				$scope.state.createTune(newTuneName);
 			});
 		};
+
+		$scope.renameTune = function(tuneName) {
+			bbUtils.prompt("Rename tune", tuneName, function(newTuneName) {
+				if(newTuneName.trim().length == 0 || newTuneName == tuneName)
+					return "Please enter a new name for the tune.";
+				if($scope.state.tunes[newTuneName])
+					return "This name is already taken. Please enter a different one.";
+			}).then(function(newTuneName) {
+				$scope.state.renameTune(tuneName, newTuneName);
+			});
+		};
+
+		$scope.copyTune = function(tuneName) {
+			bbUtils.prompt("Copy tune", tuneName, function(newTuneName) {
+				if(newTuneName.trim().length == 0 || newTuneName == tuneName)
+					return "Please enter a new name for the tune.";
+				if($scope.state.tunes[newTuneName])
+					return "This name is already taken. Please enter a different one.";
+			}).then(function(newTuneName) {
+				$scope.state.copyTune(tuneName, newTuneName);
+			});
+		};
+
+		$scope.removeTune = function(tuneName) {
+			bbUtils.confirm("Do you really want to remove the tune " + tuneName + "?").then(function() {
+				$scope.state.removeTune(tuneName);
+			});
+		};
 	});
