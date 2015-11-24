@@ -197,7 +197,7 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, bbUtils, 
 
 			var no = 1;
 			for(var i=0; i<songIdx; i++) {
-				if(!this.songs.name || !this.songs.name.trim())
+				if(!this.songs[i].name || !this.songs[i].name.trim())
 					no++;
 			}
 
