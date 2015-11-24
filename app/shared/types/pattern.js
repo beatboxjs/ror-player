@@ -1,12 +1,12 @@
 angular.module("beatbox").factory("bbPattern", function(bbConfig, ng, $, bbUtils) {
 	function bbPattern(data) {
-		this.length = data.length || 4;
-		this.time = data.time || 4;
-		if(data.volumeHack)
+		this.length = data && data.length || 4;
+		this.time = data && data.time || 4;
+		if(data && data.volumeHack)
 			this.volumeHack = data.volumeHack;
 
 		for(var instr in bbConfig.instruments) {
-			this[instr] = data[instr] || { };
+			this[instr] = data && data[instr] ? ng.copy(data[instr]) : { };
 		}
 	}
 
@@ -276,7 +276,7 @@ angular.module("beatbox").factory("bbPattern", function(bbConfig, ng, $, bbUtils
 						if(originalPattern == null)
 							throw new Error("Could not apply diff as original pattern does not exist.");
 
-						ret[instr] = bbPattern._PatternDiff.applyDiffString(originalPattern[instr], encodedPatternObject[instr].substr(1), ret.length*ret.time);
+						ret[instr] = bbPattern._PatternDiff.applyDiffString(bbPattern._pattern2str(originalPattern[instr], originalPattern.length*originalPattern.time), encodedPatternObject[instr].substr(1), ret.length*ret.time);
 						break;
 
 					case '@':

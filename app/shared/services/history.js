@@ -55,7 +55,7 @@ angular.module("beatbox").factory("bbHistory", function(bbConfig, ng, $, $rootSc
 			return Math.floor(new Date().getTime() / 1000);
 		},
 		_saveCurrentState : function(findSameState) {
-			var obj = this.state.compress(null, null, true);
+			var obj = this.state.compress(null, null, true, true);
 			if(Object.keys(obj).length == 0 || (this._currentKey && localStorage.getItem("bbState-"+this._currentKey) && ng.equals(obj, bbUtils.stringToObject(localStorage.getItem("bbState-"+this._currentKey)))))
 				return;
 

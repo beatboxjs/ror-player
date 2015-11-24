@@ -117,7 +117,7 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, bbUtils, 
 			return this.tunes[tuneName] && this.tunes[tuneName].patterns[patternName];
 		},
 
-		compress : function(selectSong, selectPattern, saveOptions) {
+		compress : function(selectSong, selectPattern, keepEmptyTunes, saveOptions) {
 			var ret = { patterns: { } };
 
 			var songs = selectSong ? this.songs.filter(function(song, songIdx) { return selectSong(songIdx); }) : this.songs;
@@ -135,7 +135,7 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, bbUtils, 
 					if(Object.keys(encodedPattern).length > 0)
 						encodedPatterns[patternName] = encodedPattern;
 				}
-				if(Object.keys(encodedPatterns).length > 0)
+				if(keepEmptyTunes || Object.keys(encodedPatterns).length > 0)
 					ret.patterns[tuneName] = encodedPatterns;
 			}
 
