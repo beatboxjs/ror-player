@@ -52,7 +52,7 @@ angular.module("beatbox")
 		};
 
 		$scope.shouldExportPattern = function(tuneName, patternName) {
-			if($scope.state.songs.some(function(song) { song.containsPattern(tuneName, patternName); }))
+			if($scope.state.songs.some(function(song) { return song.containsPattern(tuneName, patternName); }))
 				return 2;
 			else
 				return $scope.sharePatterns[tuneName] && $scope.sharePatterns[tuneName][patternName] ? 1 : 0;

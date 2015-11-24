@@ -104,7 +104,7 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, bbUtils, 
 
 		containsPattern : function(tuneName, patternName) {
 			return this.songs.some(function(song) {
-				song.containsPattern(tuneName, patternName);
+				return song.containsPattern(tuneName, patternName);
 			});
 		},
 
@@ -127,7 +127,7 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, bbUtils, 
 			for(var tuneName in this.tunes) {
 				var encodedPatterns = { };
 				for(var patternName in this.tunes[tuneName].patterns) {
-					if(selectPattern && !selectPattern(tuneName, patternName) && !songs.some(function(song) { song.containsPattern(tuneName, patternName); }))
+					if(selectPattern && !selectPattern(tuneName, patternName) && !songs.some(function(song) { return song.containsPattern(tuneName, patternName); }))
 						continue;
 
 					var originalPattern = bbDefaultTunes.getPattern(tuneName, patternName);
