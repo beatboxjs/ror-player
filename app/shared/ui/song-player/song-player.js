@@ -240,17 +240,16 @@ angular.module("beatbox")
 		$scope.dragStop = function() {
 			$scope.dragging = false;
 			$scope.currentPatternDrag = null;
-			updateDragStyles();
+			updateResizeRange();
 		};
 
 		$scope.dragEnter = function(instrumentKey, i, data) {
-			if(data.bbDragType == "resize-pattern") {
-				$scope.currentPatternDrag = { instrumentKey: data[0], idx: data[1], toInstrumentKey: instrumentKey, toIdx: i };
-				updateDragStyles();
-			}
+			$scope.currentPatternDrag = { instrumentKey: data[0], idx: data[1], toInstrumentKey: instrumentKey, toIdx: i };
+			if(data.bbDragType == "resize-pattern")
+				updateResizeRange();
 		};
 
-		function updateDragStyles() {
+		function updateResizeRange() {
 			$(".pattern-resize-range", $element).removeClass("pattern-resize-range");
 
 			var c = $scope.currentPatternDrag;
