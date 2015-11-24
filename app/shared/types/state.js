@@ -172,6 +172,12 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, bbUtils, 
 			return false
 		},
 
+		_replacePattern : function(fromTuneAndName, toTuneAndName) {
+			for(var i=0; i<this.songs.length; i++) {
+				this.songs[i].replacePattern(fromTuneAndName, toTuneAndName);
+			}
+		},
+
 		createTune : function(tuneName, data) {
 			return this.tunes[tuneName] = new bbTune(data);
 		},
@@ -183,12 +189,30 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, bbUtils, 
 			return this.tunes[tuneName].createPattern(patternName, data);
 		},
 
+		renamePattern : function(tuneName, patternName, newPatternName) {
+			this.tunes[tuneName].renamePattern(patternName, newPatternName);
+			this._replacePattern([ tuneName, patternName ], [ tuneName, newPatternName ]);
+		},
+
 		removePattern : function(tuneName, patternName) {
 			this.tunes[tuneName].removePattern(patternName);
+			this._replacePattern([ tuneName, patternName ], null);
+		},
 
-			for(var i=0; i<this.songs.length; i++) {
-				this.songs[i].replacePattern([ tuneName, patternName ], null);
-			}
+		movePattern : function(fromTuneAndName, toTuneAndName) {
+			if(!this.tunes[toTuneAndName[0]])
+				this.createTune(toTuneAndName[0]);
+
+			this.tunes[toTuneAndName[0]].createPattern(toTuneAndName[1], this.getPattern(fromTuneAndName));
+			this.tunes[fromTuneAndName[0]].removePattern(fromTuneAndName[1]);
+			this._replacePattern(fromTuneAndName, toTuneAndName);
+		},
+
+		copyPattern : function(fromTuneAndName, toTuneAndName) {
+			if(!this.tunes[toTuneAndName[0]])
+				this.createTune(toTuneAndName[0]);
+
+			this.tunes[toTuneAndName[0]].createPattern(toTuneAndName[1], this.getPattern(fromTuneAndName));
 		},
 
 		getSongName : function(songIdx) {

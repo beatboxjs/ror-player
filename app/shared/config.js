@@ -81,8 +81,6 @@ angular.module("beatbox").factory("bbConfig", function(ng, $rootScope, $injector
 	// Time measurement that is used for beatbox.js. Should be able to represent all the time measurements above
 	bbConfig.playTime = 12;
 
-	bbConfig.myTunesKey = "My tunes";
-
 	bbConfig.numberToStringChars = " !#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~";
 
 	// Check some requirements for export so that we don't forget them at some point in the future

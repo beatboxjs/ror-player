@@ -23,6 +23,10 @@ angular.module("beatbox").factory("bbTune", function(ng, $, bbUtils, bbPattern) 
 		createPattern : function(patternName, data) {
 			return this.patterns[patternName] = new bbPattern(data);
 		},
+		renamePattern : function(patternName, newPatternName) {
+			this.patterns[newPatternName] = this.patterns[patternName];
+			delete this.patterns[patternName];
+		},
 		removePattern : function(patternName) {
 			delete this.patterns[patternName];
 		}

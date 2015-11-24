@@ -1,0 +1,37 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="$close()"><span aria-hidden="true">&times;</span></button>
+	<h3 class="modal-title">{{copy ? 'Copy' : originalTuneName == tuneName ? 'Rename' : 'Move'}} break</h3>
+</div>
+<div class="modal-body">
+	<form class="form-horizontal">
+		{{custom = isCustomPattern(tuneName, patternName); ''}}
+		<div class="form-group has-feedback" ng-class="!changed() ? 'has-warning' : exists() ? 'has-error' : 'has-success'">
+			<label for="newPatternName" class="col-sm-4 control-label">New name</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control" id="newPatternName" ng-model="patternName" />
+				<span class="glyphicon form-control-feedback" ng-class="!changed() ? 'glyphicon-warning-sign' : exists() ? 'glyphicon-remove' : 'glyphicon-ok'"></span>
+				<span class="help-block" ng-if="!changed()">Please enter a new name for the break.</span>
+				<span class="help-block" ng-if="changed() && exists()">This name is already taken. Please type in a different name.</span>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="newTuneName" class="col-sm-4 control-label">{{copy ? 'Copy' : 'Move'}} to different tune?</label>
+			<div class="col-sm-8">
+				<select id="newTuneName" class="form-control" ng-model="tuneName" ng-options="tuneName for tuneName in utils.getKeys(state.tunes)"></select>
+			</div>
+		</div>
+		<div class="form-group" ng-show="isCustomPattern(originalTuneName, originalPatternName)">
+			<label for="copyMode" class="col-sm-4 control-label">Mode</label>
+			<div class="col-sm-8">
+				<select id="copyMode" class="form-control" ng-model="copy">
+					<option value="1">Copy</option>
+					<option value="">{{tuneName == originalTuneName ? 'Rename' : 'Move'}}</option>
+				</select>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+	<button type="button" class="btn btn-primary" ng-click="ok()" ng-disabled="exists() || !changed()")>OK</button>
+</div>

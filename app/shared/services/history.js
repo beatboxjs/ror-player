@@ -109,7 +109,7 @@ angular.module("beatbox").factory("bbHistory", function(bbConfig, ng, $, $rootSc
 
 	if(localStorage.myTunes) {
 		var tunes = { };
-		tunes[bbConfig.myTunesKey] = JSON.parse(localStorage.myTunes);
+		tunes["My tunes"] = JSON.parse(localStorage.myTunes);
 		bbHistory.state.extend({ tunes: tunes });
 		delete localStorage.myTunes;
 
