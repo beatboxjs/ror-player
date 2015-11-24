@@ -88,3 +88,21 @@
 		}
 	}
 }
+
+.bb-pattern-player-stokes-dropdown-menu {
+	min-width: 0;
+	padding: 0;
+	white-space: nowrap;
+
+	li {
+		display: inline-block;
+
+		&:not(:first-child) {
+			border-left: 1px solid #ddd;
+		}
+
+		a {
+			padding: 5px 10px;
+		}
+	}
+}
