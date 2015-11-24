@@ -22,6 +22,7 @@
 				<li ng-repeat="thisSong in state.songs track by $index" ng-class="{active: $index == state.songIdx}">
 					<a href="javascript:" class="song-name" ng-click="selectSong($index)">{{state.getSongName($index)}}</a>
 					<a href="javascript:" ng-click="renameSong($index)" title="Rename" class="rename"><span class="glyphicon glyphicon-pencil"></span></a>
+					<a href="javascript:" ng-click="copySong($index)" title="Copy" class="copy"><span class="glyphicon glyphicon-duplicate"></span></a>
 					<a href="javascript:" ng-click="removeSong($index)" title="Remove" class="remove"><span class="glyphicon glyphicon-trash"></span></a>
 				</li>
 				<li role="separator" class="divider"></li>

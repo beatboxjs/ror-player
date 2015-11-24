@@ -150,9 +150,10 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, bbUtils, 
 			return ret;
 		},
 
-		createSong : function(data) {
-			var idx = this.songs.length;
-			this.songs.push(new bbSong(data));
+		createSong : function(data, idx) {
+			if(idx == null)
+				idx = this.songs.length;
+			this.songs.splice(idx, 0, new bbSong(data));
 			return idx;
 		},
 

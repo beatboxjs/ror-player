@@ -318,6 +318,15 @@ angular.module("beatbox")
 			});
 		};
 
+		$scope.copySong = function(songIdx) {
+			var copy = ng.copy($scope.state.songs[songIdx]);
+			copy.name = copy.name ? "Copy of " + copy.name : "Copy";
+			$scope.state.createSong(copy, songIdx+1);
+
+			if($scope.state.songIdx == songIdx)
+				$scope.state.songIdx++;
+		};
+
 		$scope.removeSong = function(songIdx) {
 			$ngBootbox.confirm("Do you really want to remove the song "+$scope.state.getSongName(songIdx)+"?").then(function() {
 				$scope.state.removeSong(songIdx);

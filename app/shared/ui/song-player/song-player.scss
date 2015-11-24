@@ -139,10 +139,10 @@
 		position: relative;
 
 		a.song-name {
-			margin-right: 3em;
+			margin-right: 4.5em;
 		}
 
-		a.rename,a.remove {
+		a.rename,a.copy,a.remove {
 			position: absolute;
 			top: 0;
 			width: 1.5em;
@@ -153,6 +153,10 @@
 		}
 
 		a.rename {
+			right: 3em;
+		}
+
+		a.copy {
 			right: 1.5em;
 		}
 	}
