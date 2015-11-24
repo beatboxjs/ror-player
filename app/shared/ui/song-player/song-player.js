@@ -177,8 +177,10 @@ angular.module("beatbox")
 
 		$scope.equals = ng.equals;
 
-		$scope.onDrag = function(instrumentKey, idx) {
-			$scope.removePattern(instrumentKey, idx);
+		$scope.onDrag = function(instrumentKey, idx, $event) {
+			$timeout(function() {
+				$scope.removePattern(instrumentKey, idx);
+			});
 		};
 
 		$scope.onDrop = function(instrumentKey, idx, data) {
