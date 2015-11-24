@@ -97,3 +97,7 @@
 		}
 	}
 }
+
+body > .dropdown-menu {
+	z-index: 10000;
+}
