@@ -1,4 +1,4 @@
-angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScope) {
+angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScope, $uibModal, $q, $timeout) {
 	var CHARS = bbConfig.numberToStringChars;
 
 	var bbUtils = {
@@ -203,6 +203,50 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScop
 		         + pad(d.getHours())+':'
 		         + pad(d.getMinutes())+':'
 		         + pad(d.getSeconds());
+		},
+
+		dialog : function(type, title, value, getError) {
+			return $q(function(resolve, reject) {
+				var scope = $rootScope.$new();
+				scope.type = type;
+				scope.title = title;
+				scope.value = value;
+				scope.getError = function() {
+					return getError && getError(this.value);
+				};
+				scope.ok = function() {
+					this.$close();
+					resolve(this.value);
+				};
+				scope.cancel = function() {
+					console.log("cancel");
+					this.$close();
+					reject();
+				};
+
+				var dialog = $uibModal.open({
+					templateUrl: "app/shared/services/utils-alert.html",
+					scope: scope
+				});
+				dialog.result.catch(reject);
+				dialog.rendered.then(function() {
+					$timeout(function() {
+						$("#bb-alert-input").focus();
+					});
+				});
+			});
+		},
+
+		alert : function(title) {
+			return bbUtils.dialog("alert", title);
+		},
+
+		confirm : function(title) {
+			return bbUtils.dialog("confirm", title);
+		},
+
+		prompt : function(title, initialValue, getError) {
+			return bbUtils.dialog("prompt", title, initialValue, getError);
 		}
 	};
 

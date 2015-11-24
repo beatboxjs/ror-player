@@ -8,7 +8,7 @@ angular.module("beatbox")
 			}
 		};
 	})
-	.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, ng, bbUtils, bbPlayer, $element, $timeout, $ngBootbox, bbShareDialog, bbImportDialog) {
+	.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, ng, bbUtils, bbPlayer, $element, $timeout, bbShareDialog, bbImportDialog) {
 		$scope.$watch("state.songs[state.songIdx]", function(song) {
 			if(song == null) {
 				if($scope.state.songs.length == 0)
@@ -313,7 +313,7 @@ angular.module("beatbox")
 
 		$scope.renameSong = function(songIdx) {
 			var song = $scope.state.songs[songIdx];
-			$ngBootbox.prompt("Enter song name", song.name).then(function(songName) {
+			bbUtils.prompt("Enter song name", song.name).then(function(songName) {
 				song.name = songName;
 			});
 		};
@@ -328,13 +328,13 @@ angular.module("beatbox")
 		};
 
 		$scope.removeSong = function(songIdx) {
-			$ngBootbox.confirm("Do you really want to remove the song "+$scope.state.getSongName(songIdx)+"?").then(function() {
+			bbUtils.confirm("Do you really want to remove the song "+$scope.state.getSongName(songIdx)+"?").then(function() {
 				$scope.state.removeSong(songIdx);
 			});
 		};
 
 		$scope.clearSong = function() {
-			$ngBootbox.confirm("Do you really want to clear the current song?").then(function() {
+			bbUtils.confirm("Do you really want to clear the current song?").then(function() {
 				$scope.song.clear();
 			});
 		};

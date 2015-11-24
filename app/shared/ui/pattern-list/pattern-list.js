@@ -23,22 +23,18 @@ angular.module("beatbox")
 			}
 		}
 	})
-	.controller("bbPatternListController", function($scope, bbConfig, bbUtils, bbPatternEditorDialog, $ngBootbox, bbDefaultTunes, $uibModal) {
+	.controller("bbPatternListController", function($scope, bbConfig, bbUtils, bbPatternEditorDialog, bbDefaultTunes, $uibModal) {
 		$scope.utils = bbUtils;
 
 		$scope.createPattern = function(tuneName) {
-			var patternName;
-			async.doWhilst(function(next) {
-				$ngBootbox.prompt(!patternName ? "Please enter a name for the new break." : "This name is already taken. Please enter a new one.").then(function(newPatternName) {
-					patternName = newPatternName;
-					next();
-				});
-			}, function() {
-				return patternName == "" || $scope.state.getPattern(tuneName, patternName);
-			}, function() {
-				$scope.state.createPattern(tuneName, patternName);
-
-				bbPatternEditorDialog.editPattern($scope.tunes, tuneName, patternName);
+			bbUtils.prompt("New break", "", function(newPatternName) {
+				if(newPatternName.trim().length == 0)
+					return "Please enter a name for the new break.";
+				if($scope.state.getPattern(tuneName, newPatternName))
+					return "This name is already taken. Please enter a different one.";
+			}).then(function(newPatternName) {
+				$scope.state.createPattern(tuneName, newPatternName);
+				bbPatternEditorDialog.editPattern($scope.tunes, tuneName, newPatternName);
 			});
 		};
 
@@ -74,7 +70,7 @@ angular.module("beatbox")
 		};
 
 		$scope.removePattern = function(tuneName, patternName) {
-			$ngBootbox.confirm("Do you really want to remove "+patternName+" ("+tuneName+")?").then(function(){
+			bbUtils.confirm("Do you really want to remove "+patternName+" ("+tuneName+")?").then(function(){
 				$scope.state.removePattern(tuneName, patternName);
 			});
 		};
@@ -88,16 +84,13 @@ angular.module("beatbox")
 		};
 
 		$scope.createTune = function() {
-			var tuneName;
-			async.doWhilst(function(next) {
-				$ngBootbox.prompt(!tuneName ? "Please enter a name for the new tune." : "This name is already taken. Please enter a new one.").then(function(newTuneName) {
-					tuneName = newTuneName;
-					next();
-				});
-			}, function() {
-				return tuneName == "" || $scope.state.tunes[tuneName] != null;
-			}, function() {
-				$scope.state.createTune(tuneName);
+			bbUtils.prompt("Create tune", "", function(newTuneName) {
+				if(newTuneName.trim().length == 0)
+					return "Please enter a name for the new tune.";
+				if($scope.state.tunes[newTuneName])
+					return "This name is already taken. Please enter a different one.";
+			}).then(function(newTuneName) {
+				$scope.state.createTune(newTuneName);
 			});
 		};
 	});

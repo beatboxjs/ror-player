@@ -28,8 +28,7 @@
     "jszip-utils": "~0.0.2",
     "beatbox-export": "~0.1.0",
     "mp3": "https://github.com/audiocogs/mp3.js/releases/download/v0.1.0/mp3.js",
-    "FileSaver": "https://raw.githubusercontent.com/eligrey/FileSaver.js/master/FileSaver.js",
-    "ngBootbox": "~0.1.2"
+    "FileSaver": "https://raw.githubusercontent.com/eligrey/FileSaver.js/master/FileSaver.js"
   },
   "overrides": {
     "angular": {

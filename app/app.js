@@ -1,4 +1,4 @@
-angular.module("beatbox", ["ui.bootstrap", "ui.bootstrap-slider", "ngDraggable", "ui.router", "ngBootbox"])
+angular.module("beatbox", ["ui.bootstrap", "ui.bootstrap-slider", "ngDraggable", "ui.router"])
 	.constant("$", jQuery)
 	.constant("ng", angular)
 	.constant("Beatbox", Beatbox)
@@ -20,22 +20,22 @@ angular.module("beatbox", ["ui.bootstrap", "ui.bootstrap-slider", "ngDraggable",
 			})
 			.state("importAndPattern", {
 				url: "/:importData/:tuneName/:patternName",
-				onEnter: function($stateParams, $state, bbHistory, $ngBootbox) {
+				onEnter: function($stateParams, $state, bbHistory, bbUtils) {
 					var errs = bbHistory.loadEncodedString($stateParams.importData);
 
 					if(errs.length > 0)
-						$ngBootbox.alert("Errors while loading data:\n" + errs.join("\n"));
+						bbUtils.alert("Errors while loading data:\n" + errs.join("\n"));
 
 					$state.go("pattern", { tuneName: $stateParams.tuneName, patternName: $stateParams.patternName });
 				}
 			})
 			.state("import", {
 				url: "/:importData",
-				onEnter: function($stateParams, $state, bbHistory, $ngBootbox) {
+				onEnter: function($stateParams, $state, bbHistory, bbUtils) {
 					var errs = bbHistory.loadEncodedString($stateParams.importData);
 
 					if(errs.length > 0)
-						$ngBootbox.alert("Errors while loading data:\n" + errs.join("\n"));
+						bbUtils.alert("Errors while loading data:\n" + errs.join("\n"));
 
 					$state.go("song");
 				}
