@@ -129,7 +129,7 @@ angular.module("beatbox")
 		};
 
 		$scope.hasLocalChanges = function() {
-			return $scope.originalPattern && !ng.equals($scope.pattern, $scope.originalPattern);
+			return $scope.originalPattern && !$scope.pattern.equals($scope.originalPattern);
 		};
 
 		$scope.reset = function() {
