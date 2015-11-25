@@ -1,4 +1,4 @@
-angular.module("beatbox").controller("BeatboxController", function($scope, bbUtils, bbConfig, ng, bbHistory) {
+angular.module("beatbox").controller("BeatboxController", function($scope, bbUtils, bbConfig, ng, bbHistory, $document, $) {
 	$scope.state = bbHistory.state;
 
 	$scope.patternClick = function(tuneName, patternName) {
@@ -19,6 +19,14 @@ angular.module("beatbox").controller("BeatboxController", function($scope, bbUti
 		}, 0);
 
 		return false;
+	};
+
+	$scope.getAppName = function() {
+		return $document[0].title;
+	};
+
+	$scope.getDownloadFilename = function() {
+		return $scope.getAppName().toLowerCase().replace(/[-_ ]+/g, "-");
 	};
 
 	//$scope.$watch(function() { console.log("digest"); }, function() {})
