@@ -6,38 +6,52 @@ angular.module("beatbox", ["ui.bootstrap", "ui.bootstrap-slider", "ngDraggable",
 		$stateProvider
 			.state("song", {
 				url: "/",
-				onEnter: function(bbPatternEditorDialog) {
-					bbPatternEditorDialog.close();
+				onEnter: function($uibModalStack) {
+					$uibModalStack.dismissAll();
 				}
 			})
 			.state("pattern", {
 				url: "/:tuneName/:patternName",
-				onEnter: function($stateParams, $state, bbPatternEditorDialog, bbHistory) {
+				onEnter: function($stateParams, $state, bbPatternEditorDialog, bbHistory, $uibModalStack) {
+					if(!bbHistory.state.getPattern($stateParams.tuneName, $stateParams.patternName))
+						return $state.go("song");
+
+					$uibModalStack.dismissAll();
+
 					bbPatternEditorDialog.editPatternBkp(bbHistory.state, $stateParams.tuneName, $stateParams.patternName).result.finally(function() {
-						$state.go("song");
+						if($state.is("pattern", $stateParams))
+							$state.go("song");
 					});
 				}
 			})
 			.state("importAndPattern", {
 				url: "/:importData/:tuneName/:patternName",
-				onEnter: function($stateParams, $state, bbHistory, bbUtils) {
+				onEnter: function($stateParams, $state, bbHistory, bbUtils, $uibModalStack, $timeout) {
+					$uibModalStack.dismissAll();
+
 					var errs = bbHistory.loadEncodedString($stateParams.importData);
 
 					if(errs.length > 0)
 						bbUtils.alert("Errors while loading data:\n" + errs.join("\n"));
 
-					$state.go("pattern", { tuneName: $stateParams.tuneName, patternName: $stateParams.patternName });
+					$timeout(function() {
+						$state.go("pattern", { tuneName: $stateParams.tuneName, patternName: $stateParams.patternName });
+					});
 				}
 			})
 			.state("import", {
 				url: "/:importData",
-				onEnter: function($stateParams, $state, bbHistory, bbUtils) {
+				onEnter: function($stateParams, $state, bbHistory, bbUtils, $uibModalStack, $timeout) {
+					$uibModalStack.dismissAll();
+
 					var errs = bbHistory.loadEncodedString($stateParams.importData);
 
 					if(errs.length > 0)
 						bbUtils.alert("Errors while loading data:\n" + errs.join("\n"));
 
-					$state.go("song");
+					$timeout(function() {
+						$state.go("song");
+					});
 				}
 			});
 	})
