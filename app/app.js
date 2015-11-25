@@ -44,11 +44,15 @@ angular.module("beatbox", ["ui.bootstrap", "ui.bootstrap-slider", "ngDraggable",
 	.config(function($uibTooltipProvider) {
 		$uibTooltipProvider.options({ appendToBody: true });
 	})
-	.run(function($state, bbPatternEditorDialog) {
+	.run(function($state, bbPatternEditorDialog, bbUtils) {
 		bbPatternEditorDialog.editPatternBkp = bbPatternEditorDialog.editPattern;
 
 		bbPatternEditorDialog.editPattern = function(state, tuneName, patternName) {
 			// FIXME: state is ignored
 			$state.go("pattern", { tuneName: tuneName, patternName: patternName });
 		};
+
+
+		if(!Howler._codecs.mp3)
+			bbUtils.alert("This player uses MP3 files. Your browser doesn't seem to support them.");
 	});
