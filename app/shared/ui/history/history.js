@@ -7,7 +7,7 @@ angular.module("beatbox")
 			replace: true
 		};
 	})
-	.controller("bbHistoryController", function($scope, bbHistory, bbUtils) {
+	.controller("bbHistoryController", function($scope, bbHistory, bbUtils, $) {
 		$scope.bbHistory = bbHistory;
 
 		$scope.$watchCollection("bbHistory.getHistoricStates()", function(states) {
@@ -19,5 +19,20 @@ angular.module("beatbox")
 					isoDate: bbUtils.isoDate(states[i])
 				});
 			}
+		});
+
+		var ev1 = $scope.$on("bbHistory:loadEncodedString", function() {
+			if(bbHistory.getHistoricStates().length > 1) {
+				$scope.popoverMessage = "You have opened a shared view. Your previous songs and tunes can be restored here.";
+				$(document).one("click", function() {
+					$scope.$apply(function() {
+						$scope.popoverMessage = null;
+					})
+				});
+			}
+		});
+
+		$scope.$on("$destroy", function() {
+			ev1();
 		});
 	});

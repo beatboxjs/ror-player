@@ -12,6 +12,8 @@ angular.module("beatbox").factory("bbHistory", function(bbConfig, ng, $, $rootSc
 
 			this._saveCurrentState(true);
 
+			$rootScope.$broadcast("bbHistory:loadEncodedString");
+
 			return errs;
 		},
 		getCurrentKey : function() {
