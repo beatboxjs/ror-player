@@ -17,7 +17,7 @@
 		<div class="form-group">
 			<label for="newTuneName" class="col-sm-4 control-label">{{copy ? 'Copy' : 'Move'}} to different tune?</label>
 			<div class="col-sm-8">
-				<select id="newTuneName" class="form-control" ng-model="tuneName" ng-options="tuneName for tuneName in utils.getKeys(state.tunes)"></select>
+				<select id="newTuneName" class="form-control" ng-model="tuneName" ng-options="tuneName for tuneName in state.getSortedTuneList()"></select>
 			</div>
 		</div>
 		<div class="form-group" ng-show="isCustomPattern(originalTuneName, originalPatternName)">
