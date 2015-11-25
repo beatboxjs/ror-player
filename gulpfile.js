@@ -11,7 +11,6 @@ var rename = require("gulp-rename");
 var templateCache = require("gulp-angular-templatecache");
 var uglify = require("gulp-uglify");
 var ngAnnotate = require("gulp-ng-annotate");
-var modifyCssUrls = require("gulp-modify-css-urls");
 var path = require("path");
 var runSequence = require("run-sequence");
 var minifyCss = require("gulp-minify-css");
@@ -22,6 +21,10 @@ var zip = require("gulp-zip");
 var ngConstant = require("gulp-ng-constant");
 var multimatch = require("multimatch");
 var newer = require("gulp-newer");
+var cssBase64 = require("gulp-css-base64");
+var replace = require("gulp-replace");
+var gulpIf = require("gulp-if");
+var combine = require("stream-combiner");
 
 
 var files = [
@@ -70,30 +73,30 @@ gulp.task("bower", function() {
 });
 
 gulp.task("deps", function() {
-	var jsDeps = concat("dependencies.js");
-
-	gulp.src(multimatch(deps, [ "**/*.js", "!**/bower_components/wav-encoder/**" ])) // wav-encoder can not be minified due to self variable in InlineWorker
-		.pipe(newer("build/dependencies-without-wav-encoder.js"))
-		.pipe(concat("dependencies-without-wav-encoder.js"))
-		.pipe(uglify())
-		.pipe(gulp.dest("build"))
-		.pipe(es.wait(function(err) {
-			if(err) throw err;
-
-			gulp.src([ "build/dependencies-without-wav-encoder.js", "bower_components/wav-encoder/build/wav-encoder.min.js" ]).pipe(jsDeps);
-		}));
-
-	return es.merge(
-		jsDeps,
-		gulp.src(multimatch(deps, "**/*.css"))
-			.pipe(newer("build/dependencies.css"))
-			.pipe(concat("dependencies.css"))
-			.pipe(modifyCssUrls({ modify: function(url, filePath) { return url.replace(/^\.\.\//, ""); }}))
-			.pipe(minifyCss())
-		, getDepStream()
-			.pipe(filter(function(file) { return file.stat.isFile() && !file.path.match(/\.(js|css|html)$/); }))
-			.pipe(newer("build"))
-	).pipe(gulp.dest("build"));
+	return combine(
+		gulp.src(deps, { base: "." }),
+		gulpIf([ "**/*.js", "**/*.css" ], combine(
+			gulpIf("**/*.js", combine(
+				newer("build/dependencies.js"),
+				gulpIf("!**/bower_components/wav-encoder/**", combine(
+					concat("dependencies-without-wav-encoder.js"),
+					uglify()
+				)),
+				concat("dependencies.js")
+			)),
+			gulpIf("**/*.css", combine(
+				newer("build/dependencies.css"),
+				gulpIf("**/bower_components/bootstrap/**", combine(
+					replace("src: url('../fonts/glyphicons-halflings-regular.eot');", ""),
+					replace(/src: url\('\.\.\/fonts\/glyphicons-halflings-regular\..*/g, "src: url('../fonts/glyphicons-halflings-regular.ttf') format('truetype');")
+				)),
+				cssBase64({ maxWeightResource: 1000000 }),
+				concat("dependencies.css"),
+				minifyCss()
+			)),
+			gulp.dest("build")
+		))
+	);
 });
 
 gulp.task("app", [ "scss", "audiosprite", "constants" ], function() {
