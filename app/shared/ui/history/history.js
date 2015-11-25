@@ -24,7 +24,7 @@ angular.module("beatbox")
 		var ev1 = $scope.$on("bbHistory:loadEncodedString", function() {
 			if(bbHistory.getHistoricStates().length > 1) {
 				$scope.popoverMessage = "You have opened a shared view. Your previous songs and tunes can be restored here.";
-				$(document).one("click", function() {
+				$(".bb-history").one("click", function() {
 					$scope.$apply(function() {
 						$scope.popoverMessage = null;
 					})
