@@ -22,7 +22,7 @@ angular.module("beatbox").controller("BeatboxController", function($scope, bbUti
 	};
 
 	$scope.getAppName = function() {
-		return $document[0].title;
+		return bbConfig.appName;
 	};
 
 	$scope.getDownloadFilename = function() {

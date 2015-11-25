@@ -1,5 +1,7 @@
-angular.module("beatbox").factory("bbConfig", function(ng, $rootScope, $injector, $timeout) {
+angular.module("beatbox").factory("bbConfig", function(ng, $document) {
 	var bbConfig = { };
+
+	bbConfig.appName = $document[0].title;
 
 	bbConfig.instruments = {
 		ls: {

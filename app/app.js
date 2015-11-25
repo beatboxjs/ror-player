@@ -58,7 +58,7 @@ angular.module("beatbox", ["ui.bootstrap", "ui.bootstrap-slider", "ngDraggable",
 	.config(function($uibTooltipProvider) {
 		$uibTooltipProvider.options({ appendToBody: true });
 	})
-	.run(function($state, bbPatternEditorDialog, bbUtils) {
+	.run(function($state, bbPatternEditorDialog, bbUtils, bbConfig, $rootScope, $uibModal) {
 		bbPatternEditorDialog.editPatternBkp = bbPatternEditorDialog.editPattern;
 
 		bbPatternEditorDialog.editPattern = function(state, tuneName, patternName) {
@@ -67,6 +67,14 @@ angular.module("beatbox", ["ui.bootstrap", "ui.bootstrap-slider", "ngDraggable",
 		};
 
 
-		if(!Howler._codecs.mp3)
+		if(!Howler.usingWebAudio || !("btoa" in window)) {
+			var scope = $rootScope.$new();
+			scope.appName = bbConfig.appName;
+			$uibModal.open({
+				templateUrl: "assets/compatibility-error.html",
+				scope: scope
+			});
+		}
+		else if(!Howler._codecs.mp3)
 			bbUtils.alert("This player uses MP3 files. Your browser doesn't seem to support them.");
 	});
