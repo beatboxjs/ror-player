@@ -1,5 +1,6 @@
 var async = require("async");
 var es = require("event-stream");
+var fs = require("fs");
 var gulp = require("gulp");
 var templateCache = require("gulp-angular-templatecache");
 var clean = require("gulp-clean");
@@ -13,9 +14,13 @@ var ngAnnotate = require("gulp-ng-annotate");
 var replace = require("gulp-replace");
 var sass = require("gulp-sass");
 var uglify = require("gulp-uglify");
-var zip = require("gulp-zip");
 var mainBowerFiles = require("main-bower-files");
+var path = require("path");
 var combine = require("stream-combiner");
+var util = require("util");
+var stream = require("stream");
+var vinyl = require("vinyl");
+var zlib = require("zlib");
 
 var files = [
 	"app/app.js",
@@ -25,6 +30,32 @@ var files = [
 ];
 
 var deps = mainBowerFiles();
+
+function packAudioFiles(fileName) {
+	var binaries = {};
+
+	var ret = new stream.Transform({ objectMode: true });
+	ret._transform = function(file, encoding, callback) {
+		zlib.deflateRaw(file.contents, function(err, deflated) {
+			if(err)
+				return callback(err);
+
+			binaries[path.basename(file.path)] = new Buffer(deflated).toString("base64");
+			callback(null);
+		});
+	};
+	ret._flush = function(callback) {
+		if(Object.keys(binaries).length > 0) {
+			this.push(new vinyl({
+				path: fileName,
+				contents: new Buffer('angular.module("beatbox").constant("bbAudioFiles", ' + JSON.stringify(binaries) + ');')
+			}));
+		}
+		callback();
+	};
+
+	return ret;
+}
 
 gulp.task("default", [ "all" ]);
 
@@ -66,7 +97,7 @@ gulp.task("app", [ "scss", "audiosprite" ], function() {
 	return combine(
 		es.merge(
 			gulp.src(files, { base: process.cwd() + "/" }),
-			gulp.src("build/scss.css")
+			gulp.src([ "build/scss.css", "build/audioFiles.js" ])
 		),
 		gulpIf("**/*.html", templateCache({ module: "beatbox" })),
 		gulpIf("**/*.js", combine(
@@ -104,7 +135,9 @@ gulp.task("all", [ "deps", "app" ], function(callback) {
 		}, function(next) {
 			combine(
 				gulp.src("index.html"),
-				inject(gulp.src([ "build/all.js", "build/all.css" ], { read: false }), { ignorePath: "build/", relative: true }),
+				replace("<!-- inject:css -->", "<style>" + fs.readFileSync("build/all.css") + "</style>"),
+				replace("<!-- inject:js -->", "<script>" + fs.readFileSync("build/all.js") + "</script>"),
+				replace("<!-- endinject -->", ""),
 				gulp.dest("build"),
 				es.wait(next)
 			);
@@ -126,10 +159,10 @@ gulp.task("scss", function() {
 
 gulp.task("audiosprite", function() {
 	return combine(
-		gulp.src(files),
+		gulp.src(files, { base: process.cwd() + "/" }),
 		gulpIf("**/*.mp3", combine(
-			newer("build/mp3.zip"),
-			zip("mp3.zip"),
+			newer("build/audioFiles.js"),
+			packAudioFiles("audioFiles.js"),
 			gulp.dest("build")
 		))
 	);
@@ -139,7 +172,7 @@ gulp.task("dev", [ "scss", "audiosprite" ], function() {
 	return combine(
 		gulp.src("index.html"),
 		replace("<head>", "<head><base href=\"..\">"),
-		inject(gulp.src(deps.concat(files).concat([ "build/scss.css" ]), { read: false }), { relative: true }),
+		inject(gulp.src(deps.concat(files).concat([ "build/scss.css", "build/audioFiles.js" ]), { read: false }), { relative: true }),
 		gulp.dest("build")
 	);
 });

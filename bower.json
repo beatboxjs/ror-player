@@ -24,11 +24,10 @@
     "ngDraggable": "0.1.5",
     "beatbox": "~0.2.0",
     "angular-ui-router": "~0.2.15",
-    "jszip": "~2.5.0",
-    "jszip-utils": "~0.0.2",
     "beatbox-export": "~0.1.0",
     "mp3": "https://github.com/audiocogs/mp3.js/releases/download/v0.1.0/mp3.js",
-    "FileSaver": "https://raw.githubusercontent.com/eligrey/FileSaver.js/master/FileSaver.js"
+    "FileSaver": "https://raw.githubusercontent.com/eligrey/FileSaver.js/master/FileSaver.js",
+    "pako": "~0.2.8"
   },
   "overrides": {
     "angular": {

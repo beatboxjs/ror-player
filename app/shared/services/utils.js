@@ -129,24 +129,16 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScop
 			return $("<a/>").attr("href", url).prop("href");
 		},
 
-		binArrayToString : function(binArray) {
-			var str = "";
-			for(var i=0; i<binArray.length; i++)
-				str += String.fromCharCode(binArray[i]);
-			return decodeURIComponent(escape(str));
-		},
-
 		objectToString : function(object) {
 			var uncompressed = JSON.stringify(object);
-			var compressed = JSZip.compressions.DEFLATE.compress(uncompressed, { level: 9 });
-			compressed.charCodeAt = function(i) { return this[i]; };
-			return JSZip.base64.encode(uncompressed.length < compressed.length ? uncompressed : compressed).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');
+			var compressed = String.fromCharCode.apply(null, pako.deflateRaw(uncompressed, { level: 9 }));
+			return btoa(uncompressed.length < compressed.length ? uncompressed : compressed).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');
 		},
 
 		stringToObject : function(string) {
-			var decoded = JSZip.base64.decode(string.replace(/-/g, '+').replace(/_/g, '/'));
+			var decoded = atob(string.replace(/-/g, '+').replace(/_/g, '/'));
 			if(decoded.charAt(0) != '{')
-				decoded = bbUtils.binArrayToString(JSZip.compressions.DEFLATE.uncompress(decoded));
+				decoded = pako.inflateRaw(decoded, { to: "string" });
 			if(decoded.charCodeAt(decoded.length-1) == 0) // Happened once, don't know why
 				decoded = decoded.substr(0, decoded.length-1);
 			return JSON.parse(decoded);

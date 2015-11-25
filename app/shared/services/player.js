@@ -1,12 +1,8 @@
 angular.module("beatbox").factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $rootScope) {
-
-	bbAudioFiles.getFiles(function(err, files) {
-		if(err)
-			return console.log("Error loading mp3s", err);
-
-		for(var i in files)
-			Beatbox.registerInstrument(i.replace(/\.mp3$/i, ""), new Howl({ urls: [ files[i] ] }));
-	});
+	for(var i in bbAudioFiles) {
+		var decompressed = String.fromCharCode.apply(null, pako.inflateRaw(atob(bbAudioFiles[i])));
+		Beatbox.registerInstrument(i.replace(/\.mp3$/i, ""), new Howl({ urls: [ "data:audio/mp3;base64," + btoa(decompressed) ] }));
+	}
 
 	var allPlayers = [ ];
 
