@@ -7,9 +7,9 @@
 	<div class="drag-handle" ng-drag="draggable" ng-drag-success="dragSuccess()" ng-drag-data="getDragData(tuneName, patternName)" ng-if="draggable">
 	</div>
 	<ul class="actions icon-list">
-		<li><a href="javascript:" uib-tooltip="Listen" tooltip-append-to-body="true" ng-click="playPattern()"><span ng-class="'glyphicon glyphicon-'+(player.playing ? 'stop' : 'play-circle')"></span></a></li>
-		<li><a href="javascript:" uib-tooltip="Edit" tooltip-append-to-body="true" ng-click="editPattern()"><span class="glyphicon glyphicon-pencil"></span></a></li>
-		<li ng-if="hasLocalChanges"><a href="javascript:" uib-tooltip="Revert modifications" tooltip-append-to-body="true" ng-click="restore()"><span class="glyphicon glyphicon-erase"></span></a></li>
+		<li><a href="javascript:" uib-tooltip="Listen" ng-click="playPattern()"><span ng-class="'glyphicon glyphicon-'+(player.playing ? 'stop' : 'play-circle')"></span></a></li>
+		<li><a href="javascript:" uib-tooltip="Edit" ng-click="editPattern()"><span class="glyphicon glyphicon-pencil"></span></a></li>
+		<li ng-if="hasLocalChanges"><a href="javascript:" uib-tooltip="Revert modifications" ng-click="restore()"><span class="glyphicon glyphicon-erase"></span></a></li>
 		<ng-transclude></ng-transclude>
 	</ul>
 	<div class="position-marker" ng-show="player.playing"></div>

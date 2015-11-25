@@ -41,6 +41,9 @@ angular.module("beatbox", ["ui.bootstrap", "ui.bootstrap-slider", "ngDraggable",
 				}
 			});
 	})
+	.config(function($uibTooltipProvider) {
+		$uibTooltipProvider.options({ appendToBody: true });
+	})
 	.run(function($state, bbPatternEditorDialog) {
 		bbPatternEditorDialog.editPatternBkp = bbPatternEditorDialog.editPattern;
 
