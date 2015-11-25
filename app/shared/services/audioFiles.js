@@ -1,4 +1,4 @@
-angular.module("beatbox").factory("bbAudioFiles", function(bbBuildConstants) {
+angular.module("beatbox").factory("bbAudioFiles", function() {
 
 	var status = 0;
 	var error = null;
@@ -9,7 +9,8 @@ angular.module("beatbox").factory("bbAudioFiles", function(bbBuildConstants) {
 	function load() {
 		status = 1;
 
-		JSZipUtils.getBinaryContent(bbBuildConstants.mp3, function(err, data) {
+		var dir = (""+location.pathname).replace(/[^/]+$/, ""); // To avoid using base href in dev mode
+		JSZipUtils.getBinaryContent(dir + "mp3.zip", function(err, data) {
 			error = err;
 
 			if(!err) {
