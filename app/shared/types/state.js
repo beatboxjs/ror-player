@@ -232,6 +232,9 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, bbUtils, 
 		},
 
 		getSongName : function(songIdx) {
+			if(songIdx == null)
+				songIdx = this.songIdx;
+
 			if(this.songs[songIdx].name && this.songs[songIdx].name.trim())
 				return this.songs[songIdx].name;
 

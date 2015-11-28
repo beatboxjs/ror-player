@@ -272,7 +272,7 @@ angular.module("beatbox")
 				$scope.$apply(function() {
 					$scope.loading = null;
 				});
-				saveAs(blob, "song.mp3");
+				saveAs(blob, $scope.state.getSongName() + ".mp3");
 			}, function(perc) {
 				if(Math.floor(perc*20) != Math.floor($scope.loading/5)) {
 					$scope.$apply(function() {
@@ -288,7 +288,7 @@ angular.module("beatbox")
 				$scope.$apply(function() {
 					$scope.loading = null;
 				});
-				saveAs(blob, "song.wav");
+				saveAs(blob, $scope.state.getSongName() + ".wav");
 			}, function(perc) {
 				if(Math.floor(perc*20) != Math.floor($scope.loading/5)) {
 					$scope.$apply(function() {
