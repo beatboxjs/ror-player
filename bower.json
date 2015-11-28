@@ -14,17 +14,17 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.4.7",
+    "angular": "~1.4.8",
     "jquery": "~2.1.4",
     "angular-bootstrap": "~0.14.3",
-    "bootstrap": "~3.3.5",
+    "bootstrap": "~3.3.6",
     "howler.js": "~1.1.28",
     "async": "~1.5.0",
-    "angular-bootstrap-slider": "~0.1.18",
+    "angular-bootstrap-slider": "~0.1.21",
     "ngDraggable": "0.1.5",
-    "beatbox": "~0.2.0",
+    "beatbox.js": "~0.2.3",
     "angular-ui-router": "~0.2.15",
-    "beatbox-export": "~0.1.0",
+    "beatbox.js-export": "~0.2.1",
     "mp3": "https://github.com/audiocogs/mp3.js/releases/download/v0.1.0/mp3.js",
     "FileSaver": "https://raw.githubusercontent.com/eligrey/FileSaver.js/master/FileSaver.js",
     "pako": "~0.2.8"
@@ -51,8 +51,5 @@
         "av": "*"
       }
     }
-  },
-  "resolutions": {
-    "seiyria-bootstrap-slider": "~4.13"
   }
 }
