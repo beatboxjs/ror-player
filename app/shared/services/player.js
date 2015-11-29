@@ -43,18 +43,24 @@ angular.module("beatbox").factory("bbPlayer", function(bbConfig, bbUtils, ng, Be
 			var length = song.getEffectiveLength(state);
 			var ret = new Array(length*bbConfig.playTime*4);
 
-			function insertPattern(idx, pattern, instrumentKey) {
+			function insertPattern(idx, pattern, instrumentKey, patternLength) {
 				var patternBeatbox = bbPlayer.patternToBeatbox(pattern, instrumentKey);
 				idx = idx*bbConfig.playTime*4;
-				for(var i=0; i<patternBeatbox.length; i++) {
-					ret[i+idx] = (ret[i+idx] || [ ]).filter(function(it) { return it.instrument.split(/_/)[0] != instrumentKey; }).concat(patternBeatbox[i] || [ ]);
+				for(var i=0; i<patternLength*bbConfig.playTime*4; i++) {
+					ret[i+idx] = (ret[i+idx] || [ ])/*.filter(function(it) { return it.instrument.split(/_/)[0] != instrumentKey; })*/.concat(patternBeatbox[i] || [ ]);
 				}
 			}
 
 			for(var i=0; i<length; i++) {
 				for(var inst in bbConfig.instruments) {
-					if((!state.headphones || state.headphones == inst) && !state.mute[inst] && song[i] && song[i][inst] && state.getPattern(song[i][inst]))
-						insertPattern(i, state.getPattern(song[i][inst]), inst);
+					if((!state.headphones || state.headphones == inst) && !state.mute[inst] && song[i] && song[i][inst] && state.getPattern(song[i][inst])) {
+						var pattern = state.getPattern(song[i][inst]);
+						var patternLength = 1;
+						for(var j=i+1; j<i+pattern.length/4 && (!song[j] || !song[j][inst]); j++) // Check if pattern is cut off
+							patternLength++;
+
+						insertPattern(i, state.getPattern(song[i][inst]), inst, patternLength);
+					}
 				}
 			}
 
