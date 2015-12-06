@@ -1358,6 +1358,38 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					sh: '@re'
 				}
 			}
+		},
+		'Zurav Love / Truant': {
+			patterns: {
+				Tune: {
+					ls: 'X  X  X  X  X  X                ',
+					ms: '@ls',
+					hs: '                        X  X  X ',
+					re: 'f   h X f   h X f   h X f   h   ',
+					sn: 'X...X...X...X.....XXX...XXX.X...',
+					ta: '    X       X       X       X   ',
+					ag: '  aaa o aaa o     aaa           ',
+					sh: '   XX      XX      XX      XX   '
+				},
+				"Bra Break": {
+					ls: repeat(3, '        X       ') + 'X     X X  X  X ',
+					ms: '@ls',
+					hs: '@ls',
+					re: repeat(3, 'f hr hr         ') + 'X     X X  X  X ',
+					sn: repeat(3, '                ') + '..XXX...XXX.X...',
+					ta: repeat(3, '           X  X ') + 'X     X X  X  X ',
+					ag: '@ta',
+					sh: '@ta'
+				},
+				"Kick Back 1": {
+					re: '  XXX   XXX     ',
+					ms: '            X   '
+				},
+				"Kick Back 2": {
+					re: '  XXX   XXX     ',
+					ms: '    X       X   '
+				}
+			}
 		}
 	};
 
