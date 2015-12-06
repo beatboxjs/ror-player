@@ -777,6 +777,64 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 				}
 			}
 		},
+		'Menaiek': {
+			patterns: {
+				Tune: {
+					ls: 'X   z X X   z X X   z X X   z X ',
+					ms: '    z   X         z     X   X   ',
+					hs: 'X   z         X   z         X   ',
+					re: 'rrX z   f  f  f       Xhr Xhr Xh',
+					sn: 'X..XX..XX..XX.X.X..XX..XX...X.X.',
+					ta: 'X   X XXX X   f       f         ',
+					ag: 'o   a a o     o   a   o o   o   '
+				},
+				"Break 1": {
+					ls: 'X X X XX X XX X ',
+					ms: '@ls',
+					hs: '@ls',
+					re: '@ls',
+					sn: '@ls',
+					ta: '@ls',
+					ag: '@ls'
+				},
+				"Break 2": {
+					ls: repeat(3, '                      XXX XX  XX'),
+					ms: '@ls',
+					hs: '@ls',
+					re: '@ls',
+					sn: '@ls',
+					ta: '@ls',
+					ag: repeat(3, 'o a o     o  a                  ') + 'o a o  o a oo o                 '
+				},
+				"Double Break": {
+					ls: 'X z    X z    X ',
+					ms: '  z X    z  X X ',
+					hs: 'X hXX hXX hXX hX',
+					re: 'r  rr  r r rr r ',
+					sn: 'X..XX..XX..XX.X.',
+					ta: 'X   X XXX X   f ',
+					ag: 'o a o  o a oo oa'
+				},
+				"Kick Break": {
+					ls: 'X   X  X    X X ',
+					ms: '@ls',
+					hs: '@ls',
+					re: '  X       X     ',
+					sn: '@re',
+					ta: '@re',
+					ag: 'o a o  o a oo oa'
+				},
+				"Mozambique Break": {
+					ls: '   i  h    i  h ',
+					ms: '@ls',
+					hs: '@ls',
+					re: 'r r rr r rr rr r',
+					sn: '@re',
+					ta: '@re',
+					ag: '@re'
+				}
+			}
+		},
 		'No Border Bossa': {
 			patterns: {
 				Tune: {
