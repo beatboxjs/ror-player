@@ -1,4 +1,4 @@
 <ul class="dropdown-menu bb-pattern-player-stokes-dropdown-menu">
 	<li ng-class="{active: !pattern[instrumentKey][i] || pattern[instrumentKey][i]==' '}"><a href="javascript:" ng-click="pattern[instrumentKey][i]=' '"> </a></li><li
-		ng-repeat="stroke in config.instruments[instrumentKey].strokes" ng-class="{active: pattern[instrumentKey][i]==stroke}"><a href="javascript:" ng-click="pattern[instrumentKey][i]=stroke">{{config.strokes[stroke]}}</a></li>
+		ng-repeat="stroke in config.instruments[instrumentKey].strokes" ng-class="{active: pattern[instrumentKey][i]==stroke}"><a href="javascript:" ng-click="pattern[instrumentKey][i]=stroke" uib-tooltip="{{config.strokesDescription[stroke]}}">{{config.strokes[stroke]}}</a></li>
 </ul>
