@@ -34,11 +34,11 @@ angular.module("beatbox").factory("bbConfig", function(ng, $document) {
 		},
 		sh: {
 			name: "Shaker",
-			strokes: [ "X" ]
+			strokes: [ "X", "." ]
 		},
 		ot: {
 			name: "Others",
-			strokes: [ "w", "y", "A", "B", "D", "F", "G", "J", "K", "L", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "Y", "Z" ]
+			strokes: [ "w", "y", "A", "B", "D", "F", "G", "J", "K", "L", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "Y", "Z", "9", "8", "7", "6", "5" ]
 		}
 	};
 
@@ -75,7 +75,12 @@ angular.module("beatbox").factory("bbConfig", function(ng, $document) {
 		"V" : "bo",
 		"W" : "dy",
 		"Y" : "dance",
-		"Z" : "now"
+		"Z" : "now",
+		"9" : "Kein",
+		"8" : "Cent",
+		"7" : "für",
+		"6" : "Ax",
+		"5" : "el"
 	};
 
 	bbConfig.times = [ 2, 3, 4, 12 ];
