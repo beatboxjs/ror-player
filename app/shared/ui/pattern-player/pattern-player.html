@@ -36,7 +36,15 @@
 				</td>
 				<td ng-repeat="(i,a) in utils.getNumber(pattern.length*pattern.time) track by $index" class="stroke" ng-class="getStrokeClass(i)">
 					<span ng-if="!editable" class="stroke-inner" uib-tooltip="{{config.strokesDescription[pattern[instrumentKey][i]]}}">{{config.strokes[pattern[instrumentKey][i]] || ' '}}</span>
-					<a ng-if="editable && !strokeDropdownOpen" href="javascript:" tabindex="0" class="stroke-inner" uib-tooltip="{{config.strokesDescription[pattern[instrumentKey][i]]}}" uib-popover-template="'app/shared/ui/pattern-player/pattern-player-stroke-dropdown.html'" popover-placement="bottom" popover-trigger="focus">{{config.strokes[pattern[instrumentKey][i]] || ' '}}</a>
+					<a ng-if="editable"
+						href="javascript:" class="stroke-inner"
+						uib-tooltip="{{config.strokesDescription[pattern[instrumentKey][i]]}}"
+						uib-popover-template="'app/shared/ui/pattern-player/pattern-player-stroke-dropdown.html'"
+						popover-placement="bottom" popover-trigger="manual"
+						popover-is-open="currentStrokeDropdown[0] == instrumentKey && currentStrokeDropdown[1] == i"
+						ng-click="clickStroke(instrumentKey, i)">
+						{{config.strokes[pattern[instrumentKey][i]] || ' '}}
+					</a>
 				</td>
 			</tr>
 		</tbody>

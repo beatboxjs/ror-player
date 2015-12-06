@@ -11,7 +11,7 @@ angular.module("beatbox")
 			transclude: true
 		};
 	})
-	.controller("bbPatternController", function($scope, $element, bbPlayer, bbConfig, bbUtils, ng) {
+	.controller("bbPatternController", function($scope, $element, bbPlayer, bbConfig, bbUtils, ng, $) {
 		$scope.config = bbConfig;
 		$scope.utils = bbUtils;
 
@@ -138,4 +138,26 @@ angular.module("beatbox")
 				ng.copy($scope.originalPattern, $scope.pattern);
 			});
 		};
+
+		$scope.clickStroke = function(instrumentKey, i) {
+			if(ng.equals($scope.currentStrokeDropdown, [ instrumentKey, i ]))
+				$scope.currentStrokeDropdown = null;
+			else
+				$scope.currentStrokeDropdown = [ instrumentKey, i ];
+		};
+
+		var clickHandler = function(e) {
+			var el = $(e.target);
+			if(el.closest(".stroke-inner").length == 0 && $scope.currentStrokeDropdown != null ) {
+				$scope.$apply(function() {
+					$scope.currentStrokeDropdown = null;
+				});
+			}
+		};
+
+		$(document).click(clickHandler);
+
+		$scope.$on("$destroy", function() {
+			$(document).off("click", clickHandler);
+		});
 	});
