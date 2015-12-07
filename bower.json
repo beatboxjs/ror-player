@@ -23,7 +23,7 @@
     "angular-bootstrap-slider": "~0.1.21",
     "ngDraggable": "0.1.5",
     "beatbox.js": "~0.2.3",
-    "angular-ui-router": "~0.2.15",
+    "angular-ui-router": "0.2.14",
     "beatbox.js-export": "~0.2.1",
     "mp3": "https://github.com/audiocogs/mp3.js/releases/download/v0.1.0/mp3.js",
     "FileSaver": "https://raw.githubusercontent.com/eligrey/FileSaver.js/master/FileSaver.js",
