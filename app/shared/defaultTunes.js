@@ -780,13 +780,14 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 		'Menaiek': {
 			patterns: {
 				Tune: {
-					ls: 'X   z X X   z X X   z X X   z X ',
-					ms: '    z   X         z     X   X   ',
-					hs: 'X   z         X   z         X   ',
-					re: 'rrX z   f  f  f       Xhr Xhr Xh',
-					sn: 'X..XX..XX..XX.X.X..XX..XX...X.X.',
-					ta: 'X   X XXX X   f       f         ',
-					ag: 'o   a a o     o   a   o o   o   '
+					time: 12,
+					ls: stretch(4, 12, 'X   z X X   z X X   z X X   z X '),
+					ms: stretch(4, 12, '    z   X         z     X   X   '),
+					hs: stretch(4, 12, 'X   z         X   z         X   '),
+					re: stretch(4, 12, 'rrX z   f  f  f       Xhr Xhr Xh'),
+					sn: stretch(4, 12, 'X..XX..XX..XX.X.X..XX..XX...X.X.'),
+					ta: stretch(4, 12, 'X   X XXX X   f       f     ') + stretch(3, 12, 'XXX'),
+					ag: stretch(4, 12, 'o   a a o     o   a   o o   o   ')
 				},
 				"Break 1": {
 					ls: 'X X X XX X XX X ',
