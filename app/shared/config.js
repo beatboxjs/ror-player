@@ -82,7 +82,16 @@ angular.module("beatbox").factory("bbConfig", function(ng, $document) {
 		"8" : "Cent",
 		"7" : "für",
 		"6" : "Ax",
-		"5" : "el"
+		"5" : "el",
+		"4" : "I’ve",
+		"3" : "got",
+		"2" : "cus",
+		"1" : "tard",
+		"C" : "in",
+		"H" : "my",
+		"I" : "un",
+		"M" : "der",
+		"!" : "pants"
 	};
 
 	bbConfig.strokesDescription = {

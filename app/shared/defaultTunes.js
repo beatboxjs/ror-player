@@ -517,6 +517,63 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 				}
 			}
 		},
+		'Custard': {
+			patterns: {
+				Tune: {
+					ls: '0   X   0   X X ',
+					ms: 'X   0   X   0   ',
+					hs: 'X X 0   XX X0   ',
+					re: '  XX  XX  XX  XX',
+					sn: 'X.X.X..X.X..X...',
+					ta: 'X X XX X X X XX ',
+					ag: 'a a oo a a o oo ',
+					sh: 'XXXXXXXXXXXXXXXX'
+				},
+				'Break 1': {
+					ls: repeat(3, 'X X XX          ') + 'X X XX X X X XX ',
+					ms: '@ls',
+					hs: '@ls',
+					re: repeat(3, '       X X X XX ') + 'X X XX X X X XX ',
+					sn: '@re',
+					ta: '@re',
+					ag: '@re',
+					sh: '@re'
+				},
+				'Break 2': {
+					ls: repeat(3, '       X X X XX ') + 'X X XX X X X XX ',
+					ms: '@ls',
+					hs: '@ls',
+					re: '@ls',
+					sn: '@re',
+					ta: repeat(3, 'X X XX          ') + 'X X XX X X X XX ',
+					ag: '@ls',
+					sh: '@ls'
+				},
+				'Break 3' : {
+					ls: repeat(4, 'X             X X               '),
+					ms: '@ls',
+					hs: '@ls',
+					re: '@ls',
+					sn: repeat(3, 'X             X X               ') + 'X             X X.X.X..X.X..XXXX',
+					ta: '@ls',
+					ag: '@ls',
+					sh: '@ls'
+				},
+				'Break 5': {
+					ls: '              X X             X X     X X     X X   X   X   X   ',
+					ms: '@ls',
+					hs: '@ls',
+					re: '@ls',
+					sn: 'X.X.X..X.X..X     X.X..X.X..X     X X     X X     X   X   X   X ',
+					ta: '@ls',
+					ag: '@ls',
+					sh: '@ls'
+				},
+				'Singing Break': {
+					ot: '4 3 21 C H I M! '
+				}
+			}
+		},
 		'Drum&Bass': {
 			patterns: {
 				Tune: {
