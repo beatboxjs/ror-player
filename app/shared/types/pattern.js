@@ -211,7 +211,7 @@ angular.module("beatbox").factory("bbPattern", function(bbConfig, ng, $, bbUtils
 				var segments = [ ];
 				var i = 0;
 				while(i<diffString.length) {
-					var segmentLength = bbUtils.stringToNumber(diffString.substr(i+1, 1));
+					var segmentLength = bbUtils.stringToNumber(diffString.substr(i+numberChars, 1));
 					segments.push({
 						start: bbUtils.stringToNumber(diffString.substr(i, numberChars)),
 						data: diffString.substr(i+numberChars+1, segmentLength)
