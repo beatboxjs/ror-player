@@ -26,6 +26,16 @@ angular.module("beatbox")
 	.controller("bbPatternListController", function($scope, bbConfig, bbUtils, bbPatternEditorDialog, bbDefaultTunes, $uibModal) {
 		$scope.utils = bbUtils;
 
+		$scope.filter = { text: "", cat: "common" };
+
+		$scope.filterCats = {
+			common: "Common tunes",
+			uncommon: "Uncommon tunes",
+			new: "New tunes",
+			custom: "Custom tunes",
+			all: "All tunes"
+		};
+
 		$scope.createPattern = function(tuneName) {
 			bbUtils.prompt("New break", "", function(newPatternName) {
 				if(newPatternName.trim().length == 0)
@@ -120,5 +130,17 @@ angular.module("beatbox")
 			bbUtils.confirm("Do you really want to remove the tune " + tuneName + "?").then(function() {
 				$scope.state.removeTune(tuneName);
 			});
+		};
+	})
+	.filter("bbPatternListFilter", function() {
+		return function(state, params) {
+			var ret = [ ];
+			var tuneNames = state.getSortedTuneList();
+			var text = params.text.trim().toLowerCase();
+			for(var i=0; i<tuneNames.length; i++) {
+				if(text ? (tuneNames[i].toLowerCase().indexOf(text) != -1) : state.tunes[tuneNames[i]].isInCategory(params.cat))
+					ret.push(tuneNames[i]);
+			}
+			return ret;
 		};
 	});

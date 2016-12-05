@@ -24,7 +24,7 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, bbUtils, 
 				for(var tuneName in data.tunes) {
 					var e = !!this.tunes[tuneName];
 					if(!e)
-						this.tunes[tuneName] = new bbTune();
+						this.tunes[tuneName] = new bbTune({ categories: data.tunes[tuneName].categories });
 
 					this.tunes[tuneName].extend(data.tunes[tuneName], function(patternName) {
 						return !selectPattern || selectPattern(tuneName, patternName);
@@ -190,7 +190,7 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, bbUtils, 
 		},
 
 		copyTune : function(tuneName, newTuneName) {
-			this.createTune(newTuneName, this.tunes[tuneName]);
+			this.createTune(newTuneName, $.extend({ }, this.tunes[tuneName], { categories: null }));
 		},
 
 		removeTune : function(tuneName) {

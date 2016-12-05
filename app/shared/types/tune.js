@@ -1,6 +1,7 @@
 angular.module("beatbox").factory("bbTune", function(ng, $, bbUtils, bbPattern) {
 	function bbTune(data) {
 		this.patterns = { };
+		this.categories = data && data.categories;
 
 		if(data)
 			this.extend(data);
@@ -29,6 +30,14 @@ angular.module("beatbox").factory("bbTune", function(ng, $, bbUtils, bbPattern) 
 		},
 		removePattern : function(patternName) {
 			delete this.patterns[patternName];
+		},
+		isInCategory : function(category) {
+			if(category == "all")
+				return true;
+			else if(!this.categories)
+				return category == "custom";
+			else
+				return this.categories.indexOf(category) != -1;
 		}
 	};
 

@@ -21,6 +21,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 
 	var bbDefaultTunes = {
 		'General Breaks': {
+			categories: [ "common", "uncommon", "new", "custom" ],
 			patterns: {
 				"Kalashnikov": {
 					ls: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX               ',
@@ -90,6 +91,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Special Breaks': {
+			categories: [ "common" ],
 			patterns: {
 				"Call Break Oi": {
 					time: 3,
@@ -141,6 +143,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		"Afoxe": {
+			categories: [ "common" ],
 			patterns: {
 				"Tune": {
 					ls: 's   s   s   s   s   s   X   X   ',
@@ -205,6 +208,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Angela Davis': {
+			categories: [ "common" ],
 			patterns: {
 				Tune: {
 					ls: 'X X X  XXXX X   ',
@@ -249,6 +253,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Angry Dwarfs': {
+			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
 					ls: 's   X   s   X   ',
@@ -293,6 +298,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Bhangra': {
+			categories: [ "common" ],
 			time: 3,
 			patterns: {
 				Tune: {
@@ -391,6 +397,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Cochabamba' : {
+			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
 					ls: 'XX  0    XX 0   XX  0    XX 0   ',
@@ -451,6 +458,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Crazy Monkey': {
+			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
 					time: 12,
@@ -518,6 +526,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Custard': {
+			categories: [ "common" ],
 			patterns: {
 				Tune: {
 					ls: '0   X   0   X X ',
@@ -575,6 +584,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Drum&Bass': {
+			categories: [ "common" ],
 			patterns: {
 				Tune: {
 					ls: 'X         X  X  X         X     X         X  X  X         X     ',
@@ -623,6 +633,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Drunken Sailor': {
+			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
 					ls: 'X   X   X X     X   X   X X     X   X   X X             X   X   ',
@@ -664,6 +675,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Funk': {
+			categories: [ "common" ],
 			patterns: {
 				Tune: {
 					ls: 'X  X  X X X     X  X  X X       ',
@@ -718,6 +730,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Hafla': {
+			categories: [ "common" ],
 			patterns: {
 				Tune: {
 					ls: 'X       X       X X     X       ',
@@ -767,6 +780,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Hedgehog': {
+			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
 					ls: 's  X    s  X    s  X    X X X X ',
@@ -801,6 +815,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Kalashnikov': {
+			categories: [ "common" ],
 			patterns: {
 				Tune: {
 					ls: 'X   0 XX    0   X   0 XX    0   X   0 XX    0   X   0 XX X XX X ',
@@ -835,6 +850,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Menaiek': {
+			categories: [ "new" ],
 			patterns: {
 				Tune: {
 					time: 12,
@@ -894,6 +910,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'No Border Bossa': {
+			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
 					ls: 's   h X X   h s s   h X X X h s s   h X X   h s s   h X    h s ',
@@ -945,6 +962,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Nova Balanca': {
+			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
 					ls: 'X  X            ',
@@ -990,6 +1008,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Orangutan': {
+			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
 					ls: '    XXXX    XXXX',
@@ -1031,6 +1050,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Ragga': {
+			categories: [ "common" ],
 			patterns: {
 				Tune: {
 					ls: 'X  X  0 X  X  0 X  X  0 X  X  0 ',
@@ -1091,6 +1111,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Rope Skipping': {
+			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
 					time: 12,
@@ -1154,6 +1175,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Samba Reggae': {
+			categories: [ "common" ],
 			patterns: {
 				Tune: {
 					ls: '0   X   0   X X ',
@@ -1250,6 +1272,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Sambasso': {
+			categories: [ "new" ],
 			patterns: {
 				Tune: {
 					ls: 'X  tX t X  tX t X  tX t X  tX t ',
@@ -1295,6 +1318,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Sheffield Samba Reggae': {
+			categories: [ "new" ],
 			patterns: {
 				Tune: {
 					ls: '    X X     XXXX    X X     XXXX    X X     XXXX    X X     XXXX',
@@ -1353,6 +1377,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Van Harte Pardon': {
+			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
 					ls: '0     XX0     X 0     XX0   X X ',
@@ -1408,6 +1433,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Voodoo': {
+			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
 					ls: '   XX 0    XX 0    XX 0 X X X 0 ',
@@ -1432,6 +1458,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Xango': {
+			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
 					ls: repeat(2, 's   X XX        '),
@@ -1476,6 +1503,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Zurav Love / Truant': {
+			categories: [ "new" ],
 			patterns: {
 				Tune: {
 					ls: 'X  X  X  X  X  X                ',
