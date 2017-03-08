@@ -122,6 +122,21 @@ angular.module("beatbox")
 			updatePattern();
 		};
 
+		$scope.allMuted = function() {
+			for(var instrumentKey in bbConfig.instruments) {
+				if(!$scope.playerOptions.mute[instrumentKey])
+					return false;
+			}
+			return true;
+		};
+
+		$scope.muteAll = function() {
+			var mute = !$scope.allMuted();
+			for(var instrumentKey in bbConfig.instruments) {
+				$scope.playerOptions.mute[instrumentKey] = mute;
+			}
+		};
+
 		$scope.setPosition = function(i, $event) {
 			var beat = $($event.target).closest(".beat");
 			var add = ($event.pageX - beat.offset().left) / beat.outerWidth();

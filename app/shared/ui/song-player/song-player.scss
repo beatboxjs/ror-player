@@ -77,9 +77,17 @@
 				border-right: 1px solid #888;
 			}
 
-			&.instruments .field,&.instrument-actions .field,&.instrument-actions .glyphicon {
+			&.instruments .field,&.instrument-actions .field,&.instrument-actions .field .glyphicon {
 				line-height: 3.4em;
 				vertical-align: middle;
+			}
+
+			&.instrument-actions .timeline {
+				text-align: right;
+
+				.glyphicon {
+					line-height: inherit;
+				}
 			}
 
 			.field {

@@ -77,6 +77,22 @@ angular.module("beatbox")
 			updatePattern();
 		};
 
+		$scope.allMuted = function() {
+			for(var instrumentKey in bbConfig.instruments) {
+				if(!$scope.state.mute[instrumentKey])
+					return false;
+			}
+			return true;
+		};
+
+		$scope.muteAll = function() {
+			var mute = !$scope.allMuted();
+			console.log("muteAll", mute);
+			for(var instrumentKey in bbConfig.instruments) {
+				$scope.state.mute[instrumentKey] = mute;
+			}
+		};
+
 		$scope.getLength = function() {
 			var length = $scope.song.getEffectiveLength($scope.state)+1;
 			if($scope.currentPatternDrag)
