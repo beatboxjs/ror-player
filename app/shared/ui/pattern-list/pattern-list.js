@@ -128,6 +128,9 @@ angular.module("beatbox")
 					return "This name is already taken. Please enter a different one.";
 			}).then(function(newTuneName) {
 				$scope.state.createTune(newTuneName);
+
+				$scope.isOpen[newTuneName] = true;
+				$scope.filter = { text: "", cat: "custom" };
 			});
 		};
 
