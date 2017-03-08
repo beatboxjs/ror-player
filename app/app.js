@@ -94,7 +94,7 @@ angular.module("beatbox", ["ui.bootstrap", "ui.bootstrap-slider", "ngDraggable",
 
 
 		$rootScope.$on("bbPatternList-tuneOpened", function(e, tuneName) {
-			if($state.is("song") || $state.is("tune"))
+			if($state.current.name == "" || $state.is("song") || $state.is("tune"))
 				$state.go("tune", { tuneName: tuneName });
 		});
 
