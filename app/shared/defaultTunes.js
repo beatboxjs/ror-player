@@ -1529,6 +1529,32 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 				}
 			}
 		},
+		'The Sirens of Titan': {
+			categories: [ "new" ],
+			time: 3,
+			patterns: {
+				Tune: {
+					ls: 'X  X              X  X        X  X        XXXX  ',
+					ms: '            X  X        X  X                    ',
+					hs: '      XXXX                          X  X        ',
+					re: repeat(4, 'X  X  X XX  '),
+					sn: repeat(4, 'X..X..X..X..'),
+					ta: 'XXXX        XXXX        XXXX  XXXX  XXXX        ',
+					ag: 'oooa oa oa  oooa oa oa  oooa  oooa  ooo   aaao  ',
+					sh: repeat(4, 'X XX  X XX  ')
+				},
+				'Rented a Tent Break': {
+					ls: 'XXX  X  X   XXX  X  X   XXX   XXX   XXX      X  ',
+					ms: 'XXX  X  X   XXX  X  X   XXX   XXX   XXX   XXX   ',
+					hs: '   X  X  X     X  X  X     X     X        XXX   ',
+					re: 'XXXX XX XX  XXXX XX XX  XXXX  XXXX  XXX   XXXX  ',
+					sn: 'XXXX.XX.XX..XXXX.XX.XX..XXXX..XXXX..XXX...XXXX..',
+					ta: '@re',
+					ag: 'oooa oa oa  oooa oa oa  oooa  oooa  ooo   aaao  ',
+					sh: '@re'
+				}
+			}
+		},
 		'Van Harte Pardon': {
 			categories: [ "uncommon" ],
 			patterns: {
