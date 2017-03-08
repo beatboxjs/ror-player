@@ -23,7 +23,7 @@ angular.module("beatbox")
 			}
 		}
 	})
-	.controller("bbPatternListController", function($scope, bbConfig, bbUtils, bbPatternEditorDialog, bbDefaultTunes, $uibModal) {
+	.controller("bbPatternListController", function($scope, bbConfig, bbUtils, bbPatternEditorDialog, bbDefaultTunes, $uibModal, $filter) {
 		$scope.utils = bbUtils;
 
 		$scope.filter = { text: "", cat: "common" };
@@ -35,6 +35,33 @@ angular.module("beatbox")
 			custom: "Custom tunes",
 			all: "All tunes"
 		};
+
+		$scope.isOpen = {};
+
+		$scope.$watch("isOpen", function(newOpen, oldOpen) {
+			for(var i in newOpen) {
+				if(!!newOpen[i] != !!oldOpen[i])
+					$scope.$emit(newOpen[i] ? "bbPatternList-tuneOpened" : "bbPatternList-tuneClosed", i);
+			}
+		}, true);
+
+		$scope.$watch("filter", function() {
+			var visibleTunes = $filter("bbPatternListFilter")($scope.state, $scope.filter);
+			for(var i in $scope.isOpen) {
+				if($scope.isOpen[i] && visibleTunes.indexOf(i) == -1)
+					$scope.$emit("bbPatternList-tuneClosed", i);
+			}
+		}, true);
+
+		$scope.$on("bbPatternList-openTune", function(e, tuneName) {
+			if(!$scope.state.tunes[tuneName])
+				return;
+
+			$scope.isOpen[tuneName] = true;
+
+			if($filter("bbPatternListFilter")($scope.state, $scope.filter).indexOf(tuneName) == -1)
+				$scope.filter = { text: "", cat: $scope.isCustomTune(tuneName) ? "custom" : ($scope.state.tunes[tuneName].categories[0] || "all") };
+		});
 
 		$scope.createPattern = function(tuneName) {
 			bbUtils.prompt("New break", "", function(newPatternName) {

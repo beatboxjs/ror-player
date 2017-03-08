@@ -13,7 +13,7 @@
 
 	<uib-accordion ng-repeat="tuneName in (state | bbPatternListFilter:filter)">
 		{{customTune = isCustomTune(tuneName); ''}}
-		<uib-accordion-group>
+		<uib-accordion-group is-open="isOpen[tuneName]">
 			<uib-accordion-heading>
 				{{tuneName}}
 				<span ng-if="customTune" class="glyphicon glyphicon-star-empty" uib-tooltip="User-created tune"></span>
