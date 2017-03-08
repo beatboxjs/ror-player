@@ -8,8 +8,10 @@ angular.module("beatbox")
 			$scope.shareSongs[state.songIdx] = true;
 
 		$scope.sharePatterns = { };
-
-		$scope.linkPattern = linkPattern;
+		if(linkPattern) {
+			$scope.sharePatterns[linkPattern[0]] = {};
+			$scope.sharePatterns[linkPattern[0]][linkPattern[1]] = true;
+		}
 
 		$scope.getModifiedPatternNames = function(tuneName) {
 			var ret = [ ];
@@ -36,7 +38,34 @@ angular.module("beatbox")
 		};
 
 		$scope.getUrl = function() {
-			return bbUtils.makeAbsoluteUrl("#/" + encodeURIComponent(bbUtils.objectToString($scope._getCompressedState())) + ($scope.linkPattern ? "/" + encodeURIComponent($scope.linkPattern[0]) + "/" + encodeURIComponent($scope.linkPattern[1]) : ""));
+			var onlyTune = null;
+			var onlyPattern = null;
+			for(var tuneName in $scope.sharePatterns) {
+				var patternNames = $scope.getModifiedPatternNames(tuneName);
+				for(var i=0; i<patternNames.length; i++) {
+					var patternName = patternNames[i];
+
+					if($scope.shouldExportPattern(tuneName, patternName)) {
+						if(onlyTune == null)
+							onlyTune = tuneName;
+						else if(onlyTune != tuneName)
+							onlyTune = false;
+
+						if(onlyPattern == null)
+							onlyPattern = [ tuneName, patternName ];
+						else
+							onlyPattern = false;
+					}
+				}
+			}
+
+			var url = "#/" + encodeURIComponent(bbUtils.objectToString($scope._getCompressedState()));
+			if(onlyPattern)
+				url += "/" + encodeURIComponent(onlyPattern[0]) + "/" + encodeURIComponent(onlyPattern[1]);
+			else if(onlyTune)
+				url += "/" + encodeURIComponent(onlyTune) + "/";
+
+			return bbUtils.makeAbsoluteUrl(url);
 		};
 
 		$scope.getTuneClass = function(tuneName) {
@@ -54,18 +83,12 @@ angular.module("beatbox")
 				return "list-group-item-info";
 		};
 
-		$scope.isLink = function(tuneName, patternName) {
-			return $scope.linkPattern && $scope.linkPattern[0] == tuneName && $scope.linkPattern[1] == patternName;
-		};
-
 		$scope.isUsedInSong = function(tuneName, patternName) {
 			return $scope.state.songs.some(function(song, songIdx) { return $scope.shareSongs[songIdx] && song.containsPattern(tuneName, patternName); })
 		};
 
 		$scope.shouldExportPattern = function(tuneName, patternName) {
-			if($scope.isLink(tuneName, patternName))
-				return 3;
-			else if($scope.isUsedInSong(tuneName, patternName))
+			if($scope.isUsedInSong(tuneName, patternName))
 				return 2;
 			else
 				return $scope.sharePatterns[tuneName] && $scope.sharePatterns[tuneName][patternName] ? 1 : 0;
