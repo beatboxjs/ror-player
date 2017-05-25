@@ -32,6 +32,7 @@ angular.module("beatbox")
 			common: "Common tunes",
 			uncommon: "Uncommon tunes",
 			new: "New tunes",
+			proposed: "Proposed tunes",
 			custom: "Custom tunes",
 			all: "All tunes"
 		};

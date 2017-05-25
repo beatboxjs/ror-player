@@ -21,7 +21,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 
 	var bbDefaultTunes = {
 		'General Breaks': {
-			categories: [ "common", "uncommon", "new", "custom" ],
+			categories: [ "common", "uncommon", "new", "proposed", "custom" ],
 			patterns: {
 				"Karla Break": {
 					ls: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX               ',
@@ -743,7 +743,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Hafla': {
-			categories: [ "common" ],
+			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
 					ls: 'X       X       X X     X       ',
@@ -863,7 +863,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Menaiek': {
-			categories: [ "new" ],
+			categories: [ "uncommon", "new" ],
 			patterns: {
 				Tune: {
 					time: 12,
@@ -1285,7 +1285,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 	    "Samba Reggae High": {
-			categories: [ "new" ],
+			categories: [ "proposed" ],
 		    patterns: {
 				Tune: {
 					ls: "0   X   0   X X ",
@@ -1353,7 +1353,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 		    }
 		},
 		"Samba Reggae Low": {
-			categories: [ "new" ],
+			categories: [ "proposed" ],
 			patterns: {
 				Tune: {
 					ls: "0   X   0   X   0   X   0   X   ",
@@ -1438,7 +1438,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Sambasso': {
-			categories: [ "new" ],
+			categories: [ "uncommon", "new" ],
 			patterns: {
 				Tune: {
 					ls: 'X  tX t X  tX t X  tX t X  tX t ',
@@ -1484,7 +1484,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Sheffield Samba Reggae': {
-			categories: [ "new" ],
+			categories: [ "uncommon", "new" ],
 			patterns: {
 				Tune: {
 					ls: '    X X     XXXX    X X     XXXX    X X     XXXX    X X     XXXX',
@@ -1543,7 +1543,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'The Sirens of Titan': {
-			categories: [ "new" ],
+			categories: [ "proposed" ],
 			time: 3,
 			patterns: {
 				Tune: {
@@ -1650,7 +1650,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Walc(z)': {
-			categories: [ "new" ],
+			categories: [ "uncommon", "new" ],
 			time: 6,
 			patterns: {
 				Tune: {
@@ -1768,7 +1768,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Wolf': {
-			categories: [ "new" ],
+			categories: [ "proposed" ],
 			patterns: {
 				Tune: {
 					ls: repeat(4, 'X   X   X   X   '),
@@ -1855,7 +1855,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			}
 		},
 		'Zurav Love / Truant': {
-			categories: [ "new" ],
+			categories: [ "uncommon", "new" ],
 			patterns: {
 				Tune: {
 					ls: 'X  X  X  X  X  X                ',
