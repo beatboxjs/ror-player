@@ -135,6 +135,7 @@ angular.module("beatbox")
 			for(var instrumentKey in bbConfig.instruments) {
 				$scope.playerOptions.mute[instrumentKey] = mute;
 			}
+			updatePattern();
 		};
 
 		$scope.setPosition = function(i, $event) {

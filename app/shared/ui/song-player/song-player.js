@@ -87,10 +87,10 @@ angular.module("beatbox")
 
 		$scope.muteAll = function() {
 			var mute = !$scope.allMuted();
-			console.log("muteAll", mute);
 			for(var instrumentKey in bbConfig.instruments) {
 				$scope.state.mute[instrumentKey] = mute;
 			}
+			updatePattern();
 		};
 
 		$scope.getLength = function() {
