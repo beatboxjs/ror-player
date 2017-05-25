@@ -1651,7 +1651,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 		},
 		'Walc(z)': {
 			categories: [ "new" ],
-			time: 3,
+			time: 6,
 			patterns: {
 				Tune: {
 					ls: 'X     X     X     X     ',
@@ -1722,6 +1722,48 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					ta: '@re',
 					ag: '@re',
 					sh: '@re'
+				},
+				"Karla Break (6⁄4)": {
+					ls: repeat(3, 'XXXXXXXXXXXXXXXXXXXXXXXX') + 'X                       ',
+					ms: '@ls',
+					hs: '@ls',
+					re: '@ls',
+					sn: '@ls',
+					ta: '@ls',
+					ag: '@ls',
+					sh: '@ls',
+					volumeHack: { 0: .1, 24: .4, 48: .7, 72: 1  }
+				},
+				"8 up (6⁄4)": {
+					ls: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+					ms: '@ls',
+					hs: '@ls',
+					re: '@ls',
+					sn: '@ls',
+					ta: '@ls',
+					ag: '@ls',
+					sh: '@ls',
+					volumeHack: crescendo(48)
+				},
+				'Progressive (6⁄4)': {
+					ls: 'X     X     X     X     X X X X X X X X X X X X XXXXXXXXXXXXXXXXXXXXXXXX',
+					ms: '@ls',
+					hs: '@ls',
+					re: '@ls',
+					sn: '@ls',
+					ta: '@ls',
+					ag: '@ls',
+					sh: '@ls'
+				},
+				'Progressive Karla (6⁄4)': {
+					ls: 'X     X     X     X     X X X X X X X X X X X X XXXXXXXXXXXXXXXXXXXXXXXXX                       ',
+					ms: '@ls',
+					hs: '@ls',
+					re: '@ls',
+					sn: '@ls',
+					ta: '@ls',
+					ag: '@ls',
+					sh: '@ls'
 				}
 			}
 		},

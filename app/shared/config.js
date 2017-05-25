@@ -107,7 +107,7 @@ angular.module("beatbox").factory("bbConfig", function(ng, $document) {
 		"z": "Hand + Stick"
 	};
 
-	bbConfig.times = [ 2, 3, 4, 12 ];
+	bbConfig.times = [ 2, 3, 4, 6, 12 ];
 
 	// Time measurement that is used for beatbox.js. Should be able to represent all the time measurements above
 	bbConfig.playTime = 12;
