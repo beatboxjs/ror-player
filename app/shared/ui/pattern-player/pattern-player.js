@@ -55,7 +55,7 @@ angular.module("beatbox")
 		$scope.player.onbeat = strokeCallback;
 
 		$scope.playerOptions = {
-			speed: 100,
+			speed: $scope.pattern.speed,
 			headphones: null,
 			mute: { }
 		};

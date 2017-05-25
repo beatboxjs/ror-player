@@ -312,6 +312,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 		},
 		'Bhangra': {
 			categories: [ "common" ],
+			speed: 120,
 			time: 3,
 			patterns: {
 				Tune: {
@@ -1545,6 +1546,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 		'The Sirens of Titan': {
 			categories: [ "proposed" ],
 			time: 3,
+			speed: 120,
 			patterns: {
 				Tune: {
 					ls: 'X  X              X  X        X  X        XXXX  ',
@@ -1652,6 +1654,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 		'Walc(z)': {
 			categories: [ "uncommon", "new" ],
 			time: 6,
+			speed: 60,
 			patterns: {
 				Tune: {
 					ls: 'X     X     X     X     ',
@@ -1897,6 +1900,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 
 			pattern.time = pattern.time || tune.time || 4;
 			pattern.length = 0;
+			pattern.speed = pattern.speed || tune.speed;
 
 			for(var k in bbConfig.instruments) {
 				pattern[k] = pattern[k] || "";

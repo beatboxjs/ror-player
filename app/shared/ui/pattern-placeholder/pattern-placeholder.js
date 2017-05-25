@@ -71,13 +71,14 @@ angular.module("beatbox")
 
 		var updatePlayer = function() {
 			var playerOptions = $scope.getPlayerOptions() || { };
-			var pattern = bbPlayer.patternToBeatbox($scope.state.getPattern($scope.tuneName, $scope.patternName), playerOptions.headphones, playerOptions.mute);
+			var patternObj = $scope.state.getPattern($scope.tuneName, $scope.patternName);
+			var pattern = bbPlayer.patternToBeatbox(patternObj, playerOptions.headphones, playerOptions.mute);
 
 			if(playerOptions.length)
 				pattern = pattern.slice(0, playerOptions.length*bbConfig.playTime);
 
 			$scope.player.setPattern(pattern);
-			$scope.player.setBeatLength(60000/(playerOptions.speed || $scope.state.speed)/bbConfig.playTime);
+			$scope.player.setBeatLength(60000/(playerOptions.speed || patternObj.speed)/bbConfig.playTime);
 			$scope.player.setRepeat(!!playerOptions.loop);
 		};
 
@@ -87,7 +88,6 @@ angular.module("beatbox")
 				$scope.player.onbeat = onbeat;
 
 				$scope.$watch("getPlayerOptions()", updatePlayer, true);
-				$scope.$watch("state.speed", updatePlayer);
 				$scope.$watch("state.getPattern(tuneName, patternName)", updatePlayer, true);
 
 				updatePlayer();
