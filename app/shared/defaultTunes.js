@@ -23,7 +23,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 		'General Breaks': {
 			categories: [ "common", "uncommon", "new", "custom" ],
 			patterns: {
-				"Kalashnikov": {
+				"Karla Break": {
 					ls: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX               ',
 					ms: '@ls',
 					hs: '@ls',
@@ -78,7 +78,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					ag: '@ls',
 					sh: '@ls'
 				},
-				'Progressive Kalashnikov': {
+				'Progressive Karla': {
 					ls: 'X   X   X   X   X X X X X X X X XXXXXXXXXXXXXXXXX               ',
 					ms: '@ls',
 					hs: '@ls',
@@ -365,7 +365,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					sh: '@sn',
 					ot: '                                                                                             F  '
 				},
-				"Kalashnikov (3⁄4)": {
+				"Karla Break (3⁄4)": {
 					ls: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX           ',
 					ms: '@ls',
 					hs: '@ls',
@@ -397,7 +397,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					ag: '@ls',
 					sh: '@ls'
 				},
-				'Progressive Kalashnikov (3⁄4)': {
+				'Progressive Karla (3⁄4)': {
 					ls: 'X  X  X  X  X XX XX XX XXXXXXXXXXXXXX           ',
 					ms: '@ls',
 					hs: '@ls',
@@ -827,7 +827,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 				}
 			}
 		},
-		'Kalashnikov': {
+		'Karla Shnikov': {
 			categories: [ "common" ],
 			patterns: {
 				Tune: {
