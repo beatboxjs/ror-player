@@ -139,6 +139,19 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					ag: '@re',
 					sh: '@re',
 					ot: '                                                          E D   '
+				},
+				'Hard Core Break': {
+					ls: repeat(2, '              XXX             XXX             XXX       XXXXXXXX') + repeat(2, 'X X X X X X X XXX X X X X X X XXX X X X X X X XXX X X X XXXXXXXX'),
+					ms: '@ls',
+					hs: '@ls',
+					re: repeat(1, '              XXX             XXX             XXX       XXXXXXXX') + repeat(3, 'X X X X X X X XXX X X X X X X XXX X X X X X X XXX X X X XXXXXXXX'),
+					sn: '@re',
+					ta: '@re',
+					ag: repeat(3, 'o o o o o o o ooo o o o o o o ooo o o o o o o ooo o o o oooooooo') + repeat(1, 'a a a a a a a aaa a a a a a a aaa a a a a a a aaa a a a aaaaaaaa'),
+					volumeHack: {
+						66:  .1, 78:  1, 82:  .1, 94:  1, 98:  .1, 110: 1, 114: .1, 120: 1,
+						130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1
+					}
 				}
 			}
 		},
