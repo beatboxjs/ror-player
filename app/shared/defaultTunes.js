@@ -1185,6 +1185,31 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					sn: '@re',
 					ta: '@re',
 					ag: '@re'
+				},
+				'Küsel Break': {
+					ls: 'X XXX X X X X                   ',
+					ms: '@ls',
+					hs: '@ls',
+					re: '                X XXX X X X X   ',
+					sn: 'X..XX..XX...X.X.X.X.X.X.X.X.X...',
+					ta: '@re',
+					ag: '@re',
+					sh: '@re'
+				},
+				'Skipping Agogo': {
+					ag: 'a  aaa aa  aaaoao  ooo oo  oooao'
+				},
+				'I like to move it': {
+					re: '                X   X   X   X   ',
+					ag: 'o   o   o   o a           a   a '
+				},
+				'Eye of the tiger': {
+					time: 12,
+					ls: stretch(4, 12, '                                              X                 '),
+					ms: stretch(4, 12, '           X               X               X                    '),
+					hs: stretch(4, 12, 'X       X     X         X     X         X                       '),
+					sn: stretch(4, 12, '................................................                '),
+					ag: stretch(4, 12, '                                                ') + 'oaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoa'
 				}
 			}
 		},
