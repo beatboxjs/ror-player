@@ -26,7 +26,7 @@ angular.module("beatbox").controller("BeatboxController", function($scope, bbUti
 	};
 
 	$scope.getDownloadFilename = function() {
-		return $scope.getAppName().toLowerCase().replace(/[-_ ]+/g, "-");
+		return $scope.getAppName().toLowerCase().replace(/[-_ ]+/g, "-") + '.html';
 	};
 
 	//$scope.$watch(function() { console.log("digest"); }, function() {})
