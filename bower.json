@@ -21,7 +21,7 @@
     "howler.js": "~1.1.28",
     "async": "~1.5.0",
     "angular-bootstrap-slider": "~0.1.21",
-    "ngDraggable": "0.1.5",
+    "ngDraggable": "beatboxjs/ngDraggable#master",
     "beatbox.js": "~0.2.3",
     "angular-ui-router": "0.2.14",
     "beatbox.js-export": "~0.2.1",
