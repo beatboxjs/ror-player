@@ -276,10 +276,16 @@ angular.module("beatbox")
 			}
 		}
 
+		var resizeDragDataCache = {};
 		$scope.getResizeDragData = function(instrumentKey, i) {
-			var ret = [ instrumentKey, i ];
-			ret.bbDragType = "resize-pattern";
-			return ret;
+			resizeDragDataCache[instrumentKey] = resizeDragDataCache[instrumentKey] || {};
+
+			if(!resizeDragDataCache[instrumentKey][i]) {
+				resizeDragDataCache[instrumentKey][i] = [ instrumentKey, i ];
+				resizeDragDataCache[instrumentKey][i].bbDragType = "resize-pattern";
+			}
+
+			return resizeDragDataCache[instrumentKey][i];
 		};
 
 		$scope.downloadMP3 = function() {

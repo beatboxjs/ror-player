@@ -101,11 +101,17 @@ angular.module("beatbox")
 			}
 		};
 
+		var dragDataCache = {};
 		$scope.getDragData = function(tuneName, patternName) {
-			var ret = [ tuneName, patternName ];
-			ret.bbDragType = "pattern-placeholder";
-			ret.bbState = $scope.state;
-			return ret;
+			dragDataCache[tuneName] = dragDataCache[tuneName] || {};
+
+			if(!dragDataCache[tuneName][patternName]) {
+				dragDataCache[tuneName][patternName] = [ tuneName, patternName ];
+				dragDataCache[tuneName][patternName].bbDragType = "pattern-placeholder";
+				dragDataCache[tuneName][patternName].bbState = $scope.state;
+			}
+
+			return dragDataCache[tuneName][patternName];
 		};
 
 		// On drop, dragdrop will exchange the drag-model with the drop-model. It thus needs something to write to.
