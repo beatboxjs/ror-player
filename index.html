@@ -17,9 +17,15 @@
 			</bb-pattern-list>
 		</div>
 		<div id="song-player">
-			<bb-song-player bb-state="state"></bb-song-player>
+			<bb-song-player bb-state="state">
+				<button type="button" class="btn btn-default visible-xs-inline-block" ng-click="togglePatternList()" uib-tooltip="Show tune list" tooltip-placement="bottom"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+				<bb-history></bb-history>
+			</bb-song-player>
 		</div>
-		<bb-history></bb-history>
+
+		<div id="cover" ng-click="togglePatternList()"></div>
+
+
 		<!-- inject:js -->
 		<!-- endinject -->
 

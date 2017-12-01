@@ -5,6 +5,14 @@ angular.module("beatbox")
 			controller: "bbSongPlayerController",
 			scope: {
 				state: '=bbState'
+			},
+			transclude: true,
+			compile: function() {
+				return {
+					post: function(scope, el, attrs) {
+						$("ng-transclude", el).replaceWith(function() { return $(this).contents(); });
+					}
+				}
 			}
 		};
 	})

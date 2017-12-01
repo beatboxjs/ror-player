@@ -6,6 +6,18 @@
 	padding: 1.2em;
 	width: 20em;
 	overflow-y: auto;
+	background: #fff;
+
+	@media (max-width: 767px) {
+		& {
+			transition: left .3s;
+			z-index: 200;
+		}
+
+		body:not(.bb-pattern-list-visible) & {
+			left: -20em;
+		}
+	}
 }
 
 #song-player .control-panel {
@@ -13,27 +25,53 @@
 	top: 0;
 	left: 20em;
 	right: 0;
-	padding: 1.2em;
+	padding: 1em 1em 0 1em;
+
+	@media (max-width: 767px) {
+		left: 0;
+	}
 }
 
 #song-player .song-player-container {
 	position: absolute;
-	top: 3.7em;
 	left: 20em;
 	bottom: 0;
 	right: 0;
 	overflow: auto;
 	padding: 0 1.2em;
+
+	@media (max-width: 767px) {
+		left: 0;
+	}
 }
 
 .bb-history {
-	position: absolute;
-	top: 1.2em;
-	right: 1.2em;
+	display: inline-block;
+	min-width: 0;
+	float: right;
 }
 
 #download-link {
 	position: absolute;
 	bottom: 5px;
 	right: 20px;
+}
+
+#cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10000;
+	background: rgba(0, 0, 0, 0.4);
+	visibility: hidden;
+	transition: left .3s;
+
+	@media (max-width: 767px) {
+		body.bb-pattern-list-visible & {
+			left: 20em;
+			visibility: visible;
+		}
+	}
 }

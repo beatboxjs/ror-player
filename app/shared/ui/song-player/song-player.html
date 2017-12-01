@@ -1,5 +1,6 @@
 <div class="bb-song-player" ng-class="player.playing ? 'playing' : player.getPosition() == 0 ? 'stopped' : 'paused'">
 	<div class="control-panel">
+		<ng-transclude></ng-transclude>
 		<button type="button" class="btn" ng-class="player.playing ? 'btn-info' : 'btn-success'" ng-click="playPause()"><span class="glyphicon" ng-class="player.playing ? 'glyphicon-pause' : 'glyphicon-play'"></span> {{player.playing ? 'Pause' : 'Play'}}</button>
 		<button type="button" class="btn btn-danger" ng-click="stop()"><span class="glyphicon glyphicon-stop"></span> Stop</button>
 		<span class="dropdown" uib-dropdown>

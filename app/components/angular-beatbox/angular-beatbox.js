@@ -29,6 +29,24 @@ angular.module("beatbox").controller("BeatboxController", function($scope, bbUti
 		return $scope.getAppName().toLowerCase().replace(/[-_ ]+/g, "-") + '.html';
 	};
 
+	$scope.togglePatternList = function() {
+		$("body").toggleClass("bb-pattern-list-visible");
+	};
+
+	function onResize() {
+		$("#song-player .song-player-container").css("top", $("#song-player .control-panel").outerHeight(true) + "px");
+	}
+
+	$(window).resize(onResize);
+	setTimeout(onResize, 0);
+	$scope.$watch(onResize, function(){});
+
+	$scope.$on("draggable:start", function(evt, obj) {
+		if(obj.data.bbDragType == "pattern-placeholder") {
+			$("body").removeClass("bb-pattern-list-visible");
+		}
+	});
+
 	//$scope.$watch(function() { console.log("digest"); }, function() {})
 
 });

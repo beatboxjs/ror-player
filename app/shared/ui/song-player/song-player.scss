@@ -1,11 +1,15 @@
 .bb-song-player {
 	.trash-drop {
 		font-size: 2.5em;
-		line-height: 1;
+		line-height: 0;
 		position: absolute;
-		margin: -.5em 0 0 .5em;
+		top: .5em;
+		right: .5em;
 		padding: .5em;
 		border-radius: 4em;
+		background: #fff;
+		box-shadow: 0 0 10px #000;
+		z-index: 100;
 
 		&.drag-enter {
 			background: #def;
@@ -167,5 +171,14 @@
 		a.copy {
 			right: 1.5em;
 		}
+	}
+
+	.control-panel {
+		line-height: 2.7em;
+	}
+
+	.slider .tooltip:not(.in) {
+		/* Prevent mouse interaction with hidden tooltip (might cover other buttons when wrapping lines) */
+		visibility: hidden;
 	}
 }
