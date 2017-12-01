@@ -13,5 +13,6 @@ RUN chmod 777 . && su beatbox -c 'npm run build' && mv build/* /usr/local/apache
 ENTRYPOINT [ "/usr/bin/dumb-init", "--" ]
 
 ENV TITLE Angular Beatbox
+ENV DESCRIPTION A pattern-based drumming machine.
 
-CMD [ "/bin/bash", "-c", "sed -ri /usr/local/apache2/htdocs/index.html -e \"s@<title>.*</title>@<title>$TITLE</title>@\" && httpd-foreground" ]
+CMD [ "/bin/bash", "-c", "sed -ri /usr/local/apache2/htdocs/index.html -e \"s@<title>.*</title>@<title>$TITLE</title>@\" -e \"s@(<meta name=\\\"description\\\" content=\\\").*(\\\">)@\\\\1$DESCRIPTION\\\\2@\" && httpd-foreground" ]
