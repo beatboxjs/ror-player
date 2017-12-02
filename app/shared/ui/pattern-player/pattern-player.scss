@@ -1,3 +1,10 @@
+.bb-pattern-editor-toolbar {
+	.slider .tooltip:not(.in) {
+		/* Prevent mouse interaction with hidden tooltip (might cover other buttons when wrapping lines) */
+		visibility: hidden;
+	}
+}
+
 .bb-pattern-editor-container {
 	width: 100%;
 	overflow-x: auto;
