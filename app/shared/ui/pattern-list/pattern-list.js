@@ -26,15 +26,15 @@ angular.module("beatbox")
 	.controller("bbPatternListController", function($scope, bbConfig, bbUtils, bbPatternEditorDialog, bbDefaultTunes, $uibModal, $filter) {
 		$scope.utils = bbUtils;
 
-		$scope.filter = { text: "", cat: "common" };
+		$scope.filter = { text: "", cat: "all" };
 
 		$scope.filterCats = {
+			all: "All tunes",
 			common: "Common tunes",
 			uncommon: "Uncommon tunes",
 			new: "New tunes",
 			proposed: "Proposed tunes",
-			custom: "Custom tunes",
-			all: "All tunes"
+			custom: "Custom tunes"
 		};
 
 		$scope.isOpen = {};
