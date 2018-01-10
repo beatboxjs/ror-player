@@ -38,7 +38,7 @@ angular.module("beatbox").factory("bbConfig", function(ng, $document) {
 		},
 		ot: {
 			name: "Others",
-			strokes: [ "w", "y", "A", "B", "D", "F", "G", "J", "K", "L", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "Y", "Z", "9", "8", "7", "6", "5" ]
+			strokes: [ "w", "y", "A", "B", "D", "F", "G", "J", "K", "L", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "Y", "Z", "9", "8", "7", "6", "5", "b", "c", "d", "e", "g", "q", "j", "k", "m", "n" ]
 		}
 	};
 
@@ -91,7 +91,17 @@ angular.module("beatbox").factory("bbConfig", function(ng, $document) {
 		"H" : "my",
 		"I" : "un",
 		"M" : "der",
-		"!" : "pants"
+		"!" : "pants",
+		"b" : "Tout",
+		"c" : "le",
+		"d" : "monde",
+		"e" : "dé",
+		"g" : "tes",
+		"q" : "te",
+		"j" : "la",
+		"k" : "po",
+		"m" : "li",
+		"n" : "ce"
 	};
 
 	bbConfig.strokesDescription = {
