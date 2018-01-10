@@ -3,6 +3,7 @@ angular.module("beatbox").factory("bbPattern", function(bbConfig, ng, $, bbUtils
 		this.length = data && data.length || 4;
 		this.time = data && data.time || 4;
 		this.speed = data && data.speed || 100;
+		this.loop = data && data.loop || false;
 		if(data && data.volumeHack)
 			this.volumeHack = data.volumeHack;
 

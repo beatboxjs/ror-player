@@ -159,6 +159,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "common" ],
 			patterns: {
 				"Tune": {
+					loop: true,
 					ls: 's   s   s   s   s   s   X   X   ',
 					ms: '0     X 0     X 0     X X X X X ',
 					hs: '@ms',
@@ -224,6 +225,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "common" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: 'X X X  XXXX X   ',
 					ms: 'XXXXXXXXX       ',
 					hs: '            XXXX',
@@ -269,6 +271,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: 's   X   s   X   ',
 					ms: 'X  XX  XX  XX X ',
 					hs: '@ms',
@@ -316,6 +319,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			time: 3,
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: 'X       XX  X       XX  X       XX  X    X   X  ',
 					ms: '@ls',
 					hs: '@ls',
@@ -414,6 +418,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: 'XX  0    XX 0   XX  0    XX 0   ',
 					ms: '@ls',
 					hs: '    0 XX    0 XX    0 XX    0 XX',
@@ -475,6 +480,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					time: 12,
 					ls: 'X                       X                       X                       X     X  X              ',
 					ms: '                  X                       X                       X     X     X  X        X     ',
@@ -516,6 +522,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					sh: '@re'
 				},
 				"Bongo Break 1": {
+					loop: true,
 					ls: 'X   X   X   X   X   X   X XX    ',
 					ms: '@ls',
 					hs: '@ls',
@@ -526,6 +533,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					sh: '@re'
 				},
 				"Bongo Break 2": {
+					loop: true,
 					ls: 'X   X   X   X   X   X   X XX  X ',
 					ms: '@ls',
 					hs: '@ls',
@@ -543,6 +551,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "common" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: '0   X   0   X X ',
 					ms: 'X   0   X   0   ',
 					hs: 'X X 0   XX X0   ',
@@ -601,6 +610,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "common" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: 'X         X  X  X         X     X         X  X  X         X     ',
 					ms: '      XXXX            XXXX            XXXX            XXXX      ',
 					hs: '    X       X       X       X       X       X       X       X   ',
@@ -650,6 +660,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: 'X   X   X X     X   X   X X     X   X   X X             X   X   ',
 					ms: 'X   X   X   X   X   X   X   X   X   X   X   X       X X         ',
 					hs: 'X   X   X     X X   X   X     X X   X   X     X X X             ',
@@ -692,6 +703,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "common" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: 'X  X  X X X     X  X  X X       ',
 					ms: '@ls',
 					hs: '@ls',
@@ -747,6 +759,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: 'X       X       X X     X       ',
 					ms: '  X   X     X         X     X   ',
 					hs: '    X   X   X       X   X   X   ',
@@ -765,6 +778,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					ag: '@ls'
 				},
 				'Kick Back 1': {
+					loop: true,
 					ls: 'X       X       ',
 					ms: '@ls',
 					hs: '@ls',
@@ -797,6 +811,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: 's  X    s  X    s  X    X X X X ',
 					ms: '      XX      XX      XX      XX',
 					hs: '   X  X    X  X    X  X   X   X ',
@@ -832,6 +847,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "common" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: 'X   0 XX    0   X   0 XX    0   X   0 XX    0   X   0 XX X XX X ',
 					ms: '@ls',
 					hs: '@ls',
@@ -867,6 +883,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "uncommon", "new" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					time: 12,
 					ls: stretch(4, 12, 'X   z X X   z X X   z X X   z X '),
 					ms: stretch(4, 12, '    z   X         z     X   X   '),
@@ -904,6 +921,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					ag: 'o a o  o a oo oa'
 				},
 				"Kick Break": {
+					loop: true,
 					ls: 'X   X  X    X X ',
 					ms: '@ls',
 					hs: '@ls',
@@ -927,6 +945,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: 's   h X X   h s s   h X X X h s s   h X X   h s s   h X    h s ',
 					ms: '@ls',
 					hs: '@ls',
@@ -979,6 +998,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: 'X  X            ',
 					ms: '     XX       X ',
 					hs: '        X  X    ',
@@ -1025,6 +1045,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: '    XXXX    XXXX',
 					ms: 'X XX        XXXX',
 					hs: '        X XX    ',
@@ -1067,6 +1088,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "common" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: 'X  X  0 X  X  0 X  X  0 X  X  0 ',
 					ms: '0  X  X 0  X  X 0  X  X 0  X  X ',
 					hs: '0     X 0     X 0     X 0     X ',
@@ -1077,6 +1099,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					sh: 'X X X X X X X X X X X X X X X X '
 				},
 				'Kick Back 1': {
+					loop: true,
 					ls: 'X  X    X  X    X  X    X  X    ',
 					ms: '@ls',
 					hs: '@ls',
@@ -1087,6 +1110,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					sh: '@re'
 				},
 				'Kick Back 2': {
+					loop: true,
 					time: 12,
 					ls: 'X        X     X        X        X     X        X        X     X        X        X     X        ',
 					ms: '@ls',
@@ -1128,6 +1152,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					time: 12,
 					ls: stretch(4, 12, repeat(2, 'XXXXXXXXX   X               X X ')),
 					ms: stretch(4, 12, repeat(2, '  ss       XX     ss       XX   ')),
@@ -1200,6 +1225,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					ag: 'a  aaa aa  aaaoao  ooo oo  oooao'
 				},
 				'I like to move it': {
+					loop: true,
 					re: '                X   X   X   X   ',
 					ag: 'o   o   o   o a           a   a '
 				},
@@ -1217,6 +1243,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "common" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: '0   X   0   X X ',
 					ms: 'X   0   X   0   ',
 					hs: '0     X 0   XXXX',
@@ -1314,6 +1341,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "proposed" ],
 		    patterns: {
 				Tune: {
+					loop: true,
 					ls: "0   X   0   X X ",
 					ms: "X   0   X   0   ",
 					hs: "0     X 0   XXXX",
@@ -1382,6 +1410,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "proposed" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: "0   X   0   X   0   X   0   X   ",
 					ms: "X   0   X   0   X   0   X   0   ",
 					hs: "0     XX0     XX0     XX0 X XXXX",
@@ -1467,6 +1496,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "uncommon", "new" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: 'X  tX t X  tX t X  tX t X  tX t ',
 					ms: '@ls',
 					hs: '@ls',
@@ -1513,6 +1543,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "uncommon", "new" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: '    X X     XXXX    X X     XXXX    X X     XXXX    X X     XXXX',
 					ms: 'X       X       X       X       X       X       X       X       ',
 					hs: '    X X     X X     X X X X XXXX    X X     X X     X X X X XXXX',
@@ -1531,6 +1562,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					ag: '@ls'
 				},
 				'Break 1': {
+					loop: true,
 					ls: 'X               X               X               X               ',
 					ms: '@ms',
 					hs: '@hs',
@@ -1558,6 +1590,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					ag: '@sn'
 				},
 				'Whistle Break': {
+					loop: true,
 					ls: 'X  XX  XXX XX   ',
 					ms: '@ls',
 					hs: '@ls',
@@ -1574,6 +1607,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			speed: 120,
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: 'X  X              X  X        X  X        XXXX  ',
 					ms: '            X  X        X  X                    ',
 					hs: '      XXXX                          X  X        ',
@@ -1599,6 +1633,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: '0     XX0     X 0     XX0   X X ',
 					ms: '@ls',
 					hs: 's  X    s  X    s  X    ss sX   ',
@@ -1655,6 +1690,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: '   XX 0    XX 0    XX 0 X X X 0 ',
 					ms: 's   s X s   s X s   s X s   s X ',
 					hs: '@ms',
@@ -1682,6 +1718,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			speed: 60,
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: 'X     X     X     X     ',
 					ms: '  X X   X X   X X   XXXX',
 					hs: '@ms',
@@ -1799,6 +1836,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "proposed" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: repeat(4, 'X   X   X   X   '),
 					ms: repeat(4, '  XX     XXX    '),
 					hs: repeat(2, '      XX      XX      XXXXXXXXXX'),
@@ -1841,6 +1879,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "uncommon" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: repeat(2, 's   X XX        '),
 					ms: repeat(2, 'X X             '),
 					hs: repeat(2, '            XXXX'),
@@ -1886,6 +1925,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			categories: [ "uncommon", "new" ],
 			patterns: {
 				Tune: {
+					loop: true,
 					ls: 'X  X  X  X  X  X                ',
 					ms: '@ls',
 					hs: '                        X  X  X ',
