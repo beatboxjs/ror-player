@@ -109,6 +109,16 @@ angular.module("beatbox").factory("bbConfig", function(ng, $document) {
 
 	bbConfig.times = [ 2, 3, 4, 6, 12 ];
 
+	bbConfig.filterCats = {
+		standard: "Standard tunes",
+		all: "All tunes",
+		common: "Common tunes",
+		uncommon: "Uncommon tunes",
+		new: "New tunes",
+		proposed: "Proposed tunes",
+		custom: "Custom tunes"
+	};
+
 	// Time measurement that is used for beatbox.js. Should be able to represent all the time measurements above
 	bbConfig.playTime = 12;
 

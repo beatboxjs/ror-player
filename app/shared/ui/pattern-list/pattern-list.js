@@ -28,14 +28,7 @@ angular.module("beatbox")
 
 		$scope.filter = { text: "", cat: "all" };
 
-		$scope.filterCats = {
-			all: "All tunes",
-			common: "Common tunes",
-			uncommon: "Uncommon tunes",
-			new: "New tunes",
-			proposed: "Proposed tunes",
-			custom: "Custom tunes"
-		};
+		$scope.filterCats = bbConfig.filterCats;
 
 		$scope.isOpen = {};
 
