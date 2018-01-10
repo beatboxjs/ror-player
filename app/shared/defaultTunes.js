@@ -87,6 +87,18 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					ta: '@ls',
 					ag: '@ls',
 					sh: '@ls'
+				},
+				'4 Silence': {
+					ls: repeat(16, ' ')
+				},
+				'8 Silence': {
+					ls: repeat(32, ' ')
+				},
+				'12 Silence': {
+					ls: repeat(48, ' ')
+				},
+				'16 Silence': {
+					ls: repeat(64, ' ')
 				}
 			}
 		},
