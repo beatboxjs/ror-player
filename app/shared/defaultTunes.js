@@ -1624,6 +1624,45 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 				}
 			}
 		},
+		'Tequila': {
+			categories: [ "proposed" ],
+			patterns: {
+				Tune: {
+					loop: true,
+					ls: '     X   X     X     X         X',
+					ms: 'X XX   X        X XX   X        ',
+					hs: '    X               X           ',
+					re: '    X      hX       X    X XrXh ',
+					sn: '....X.......X.X.....X.......X...',
+					ta: '    X       X X     X       X   ',
+					ag: 'a a o  a a ao o a a o  a        ',
+					sh: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+				},
+				'Break 1': {
+					ls: 'XXXX           X',
+					ms: '    X X         ',
+					hs: '        X       ',
+					ag: 'aaaaa a o       ',
+					ot: '           uv x '
+				},
+				'Break 2': {
+					ls: repeat(3, '             X  '),
+					ms: repeat(3, '       X      XX'),
+					hs: repeat(3, 'X               '),
+					sh: repeat(3, 'XXXXXXXX        ')
+				},
+				'Bra Break': {
+					ls: '    X       X X ',
+					ms: '@ls',
+					hs: '@ls',
+					re: 'X X    X X X    ',
+					sn: '@ls',
+					ta: '@ls',
+					ag: '@ls',
+					sh: '@ls'
+				}
+			}
+		},
 		'The Sirens of Titan': {
 			categories: [ "proposed" ],
 			time: 3,
