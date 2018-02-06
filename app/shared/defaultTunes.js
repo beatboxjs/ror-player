@@ -178,7 +178,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 				}
 			}
 		},
-		"Afoxe": {
+		"Afoxê": {
 			categories: [ "common" ],
 			patterns: {
 				"Tune": {
