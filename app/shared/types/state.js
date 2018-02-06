@@ -24,7 +24,7 @@ angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, bbUtils, 
 				for(var tuneName in data.tunes) {
 					var e = !!this.tunes[tuneName];
 					if(!e)
-						this.tunes[tuneName] = new bbTune({ categories: data.tunes[tuneName].categories });
+						this.tunes[tuneName] = new bbTune({ categories: data.tunes[tuneName].categories, displayName: data.tunes[tuneName].displayName });
 
 					this.tunes[tuneName].extend(data.tunes[tuneName], function(patternName) {
 						return !selectPattern || selectPattern(tuneName, patternName);

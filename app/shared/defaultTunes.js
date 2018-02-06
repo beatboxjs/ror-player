@@ -178,7 +178,8 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 				}
 			}
 		},
-		"Afoxê": {
+		"Afoxe": {
+			displayName: "Afoxê",
 			categories: [ "common" ],
 			patterns: {
 				"Tune": {
@@ -1983,7 +1984,8 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 				}
 			}
 		},
-		'Żurav Love / Truant': {
+		'Zurav Love / Truant': {
+			displayName: "Żurav Love / Truant",
 			categories: [ "uncommon", "new" ],
 			patterns: {
 				Tune: {

@@ -2,6 +2,7 @@ angular.module("beatbox").factory("bbTune", function(ng, $, bbUtils, bbPattern) 
 	function bbTune(data) {
 		this.patterns = { };
 		this.categories = data && data.categories;
+		this.displayName = data && data.displayName;
 
 		if(data)
 			this.extend(data);

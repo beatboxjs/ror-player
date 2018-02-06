@@ -1,8 +1,8 @@
 <div class="bb-pattern-placeholder">
 	<div class="btn btn-default pattern-button">
-		<span class="tune-name">{{tuneName}}</span>
+		<span class="tune-name">{{state.tunes[tuneName].displayName || tuneName}}</span>
 		<br>
-		<span class="pattern-name">{{patternName}}</span>
+		<span class="pattern-name">{{state.tunes[tuneName].patterns[patternName].displayName || patternName}}</span>
 	</div>
 	<div class="drag-handle" ng-drag="draggable" ng-drag-success="dragSuccess()" ng-drag-data="getDragData(tuneName, patternName)" ng-if="draggable">
 	</div>

@@ -15,7 +15,7 @@
 		{{customTune = isCustomTune(tuneName); ''}}
 		<uib-accordion-group is-open="isOpen[tuneName]">
 			<uib-accordion-heading>
-				{{tuneName}}
+				{{state.tunes[tuneName].displayName || tuneName}}
 				<span ng-if="customTune" class="glyphicon glyphicon-star-empty" uib-tooltip="User-created tune"></span>
 				<span class="caret"></span>
 			</uib-accordion-heading>

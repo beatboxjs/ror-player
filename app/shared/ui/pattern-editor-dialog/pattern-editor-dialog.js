@@ -3,6 +3,8 @@ angular.module("beatbox")
 		$scope.tuneName = tuneName;
 		$scope.patternName = patternName;
 
+		$scope.state = state;
+
 		$scope.pattern = state.getPattern(tuneName, patternName);
 		$scope.originalPattern = bbDefaultTunes.getPattern(tuneName, patternName);
 

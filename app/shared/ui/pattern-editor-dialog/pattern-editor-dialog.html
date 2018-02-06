@@ -1,6 +1,6 @@
 <div class="modal-header">
 	<button type="button" class="close" ng-click="$close()"><span aria-hidden="true">&times;</span></button>
-	<h3 class="modal-title">{{tuneName}} – {{patternName}}</h3>
+	<h3 class="modal-title">{{state.tunes[tuneName].displayName || tuneName}} – {{state.tunes[tuneName].patterns[patternName].displayName || patternName}}</h3>
 </div>
 <div class="modal-body">
 	<bb-pattern-player bb-pattern="pattern" bb-pattern-original="originalPattern" bb-pattern-editable="true">
