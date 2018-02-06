@@ -1983,7 +1983,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 				}
 			}
 		},
-		'Zurav Love / Truant': {
+		'Żurav Love / Truant': {
 			categories: [ "uncommon", "new" ],
 			patterns: {
 				Tune: {
@@ -1991,7 +1991,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					ls: 'X  X  X  X  X  X                ',
 					ms: '@ls',
 					hs: '                        X  X  X ',
-					re: 'f   h X f   h X f   h X f   h   ',
+					re: 'f   h X f   h   f   h X f   h   ',
 					sn: 'X...X...X...X.....XXX...XXX.X...',
 					ta: '    X       X       X       X   ',
 					ag: '  aaa o aaa o     aaa           ',
