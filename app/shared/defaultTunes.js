@@ -909,10 +909,10 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 				Tune: {
 					loop: true,
 					time: 12,
-					ls: stretch(4, 12, 'X   z X X   z X X   z X X   z X '),
-					ms: stretch(4, 12, '    z   X         z     X   X   '),
-					hs: stretch(4, 12, 'X   z         X   z         X   '),
-					re: stretch(4, 12, 'rrX z   f  f  f       Xhr Xhr Xh'),
+					ls: stretch(4, 12, 'X   s X X   s X X   s X X   s X '),
+					ms: stretch(4, 12, '    s   X         s     X   X   '),
+					hs: stretch(4, 12, 'X   s         X   s         X   '),
+					re: stretch(4, 12, 'rrX s   f  f  f       Xhr Xhr Xh'),
 					sn: stretch(4, 12, 'X..XX..XX..XX.X.X..XX..XX...X.X.'),
 					ta: stretch(4, 12, 'X   X XXX X   f       f     ') + stretch(3, 12, 'XXX'),
 					ag: stretch(4, 12, 'o   a a o     o   a   o o   o   ')
@@ -936,8 +936,8 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					ag: repeat(3, 'o a o     o  a                  ') + 'o a o  o a oo o                 '
 				},
 				"Double Break": {
-					ls: 'X z    X z    X ',
-					ms: '  z X    z  X X ',
+					ls: 'X s    X s    X ',
+					ms: '  s X    s  X X ',
 					hs: 'X hXX hXX hXX hX',
 					re: 'r  rr  r r rr r ',
 					sn: 'X..XX..XX..XX.X.',

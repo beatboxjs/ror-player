@@ -6,19 +6,19 @@ angular.module("beatbox").factory("bbConfig", function(ng, $document) {
 	bbConfig.instruments = {
 		ls: {
 			name: "Low Surdo",
-			strokes: [ "X", "0", "s", "t", "r", "z", "i" ]
+			strokes: [ "X", "0", "s", "t", "r", "i" ]
 		},
 		ms: {
 			name: "Mid Surdo",
-			strokes: [ "X", "0", "s", "t", "r", "z", "i" ]
+			strokes: [ "X", "0", "s", "t", "r", "i" ]
 		},
 		hs: {
 			name: "High Surdo",
-			strokes: [ "X", "0", "s", "t", "r", "z", "i" ]
+			strokes: [ "X", "0", "s", "t", "r", "i" ]
 		},
 		re: {
 			name: "Repi",
-			strokes: [ "X", "f", "r", "h", "s", ".", "z" ]
+			strokes: [ "X", "f", "r", "h", "s", "." ]
 		},
 		sn: {
 			name: "Snare",
@@ -116,8 +116,7 @@ angular.module("beatbox").factory("bbConfig", function(ng, $document) {
 		"t": "Whippy (tamborim) stick",
 		".": "Silent stroke",
 		"w" : "Whistle",
-		"y" : "Long whistle",
-		"z": "Hand + Stick"
+		"y" : "Long whistle"
 	};
 
 	bbConfig.times = [ 2, 3, 4, 6, 12 ];
