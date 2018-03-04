@@ -970,7 +970,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 			patterns: {
 				Tune: {
 					loop: true,
-					ls: 's   h X X   h s s   h X X X h s s   h X X   h s s   h X    h s ',
+					ls: 's   h X X   h s s   h X X X h s s   h X X   h s s   h X   X h s ',
 					ms: '@ls',
 					hs: '@ls',
 					re: '  X r   fh fh f   X r   fh fh f   X r   fh fh f   X r   fh fh f ',
