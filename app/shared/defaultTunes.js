@@ -976,7 +976,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					re: '  X r   fh fh f   X r   fh fh f   X r   fh fh f   X r   fh fh f ',
 					sn: 'X..XX..XX..XX..XX..XX..XX..XX..XX..XX..XX..XX..XX..XX..XX..XX..X',
 					ta: '  X X   X  X  X   X X   X  X  X   X X   X  X  X   X X   X  X  X ',
-					ag: 'a a x o o o x a a a x o o o x a a a x o o o x a a a x o o o x a '
+					ag: 'a a . o o o . a a a . o o o . a a a . o o o . a a a . o o o . a '
 				},
 				'Break 1': {
 					ls: '  X X   X  X  X   X X   XX XX   ',
@@ -1004,7 +1004,7 @@ angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbC
 					re: '  X r   fh fh f   X r   fh fh f ',
 					sn: 'X..XX..XX..XX..XX..XX..XX..XX..X',
 					ta: '  X X   X  X  X   X X   X  X  X ',
-					ag: 'a a x o o o x a a a x o o o x a ',
+					ag: 'a a . o o o . a a a . o o o . a ',
 					volumeHack: crescendo(32)
 				}*/
 				'Bra Break': {
