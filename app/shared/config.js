@@ -119,7 +119,7 @@ angular.module("beatbox").factory("bbConfig", function(ng, $document) {
 		"y" : "Long whistle"
 	};
 
-	bbConfig.times = [ 2, 3, 4, 6, 12 ];
+	bbConfig.times = [ 2, 3, 4, 5, 6, 12 ];
 
 	bbConfig.filterCats = {
 		standard: "Standard tunes",
@@ -132,7 +132,7 @@ angular.module("beatbox").factory("bbConfig", function(ng, $document) {
 	};
 
 	// Time measurement that is used for beatbox.js. Should be able to represent all the time measurements above
-	bbConfig.playTime = 12;
+	bbConfig.playTime = 60;
 
 	bbConfig.numberToStringChars = " !#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~";
 
