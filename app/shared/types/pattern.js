@@ -1,4 +1,6 @@
-angular.module("beatbox").factory("bbPattern", function(bbConfig, ng, $, bbUtils) {
+import app from "../../app";
+
+app.factory("bbPattern", function(bbConfig, ng, $, bbUtils) {
 	function bbPattern(data) {
 		this.length = data && data.length || 4;
 		this.time = data && data.time || 4;

@@ -8,7 +8,7 @@ RUN adduser -D -h /opt/angular-beatbox -s /bin/bash beatbox
 
 WORKDIR /opt/angular-beatbox/
 
-RUN chmod 777 . && su beatbox -c 'npm run build' && mv build/* /usr/local/apache2/htdocs && rm -rf build node_modules bower_components
+RUN chmod 777 . && su beatbox -c 'npm install && npm run build' && mv build/* /usr/local/apache2/htdocs && rm -rf build node_modules bower_components
 
 ENTRYPOINT [ "/usr/bin/dumb-init", "--" ]
 

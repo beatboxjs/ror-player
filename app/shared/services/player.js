@@ -1,7 +1,10 @@
-angular.module("beatbox").factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $rootScope) {
+import pako from "pako";
+import app from "../../app";
+
+app.factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $rootScope) {
 	for(var i in bbAudioFiles) {
 		var decompressed = String.fromCharCode.apply(null, pako.inflateRaw(atob(bbAudioFiles[i])));
-		Beatbox.registerInstrument(i.replace(/\.mp3$/i, ""), new Howl({ urls: [ "data:audio/mp3;base64," + btoa(decompressed) ] }));
+		Beatbox.registerInstrument(i.replace(/\.mp3$/i, ""), { src: [ "data:audio/mp3;base64," + btoa(decompressed) ] });
 	}
 
 	var allPlayers = [ ];
@@ -9,7 +12,7 @@ angular.module("beatbox").factory("bbPlayer", function(bbConfig, bbUtils, ng, Be
 	var bbPlayer = {
 		createBeatbox: function(repeat) {
 			var ret = new Beatbox([ ], 1, repeat);
-			ret.onstop = function() {
+			ret.onplay = ret.onstop = function() {
 				if(!$rootScope.$$phase)
 					$rootScope.$apply();
 			};

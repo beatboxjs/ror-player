@@ -1,4 +1,7 @@
-angular.module("beatbox").controller("BeatboxController", function($scope, bbUtils, bbConfig, ng, bbHistory, $document, $) {
+import app from "../../app";
+import "./angular-beatbox.scss";
+
+app.controller("BeatboxController", function($scope, bbUtils, bbConfig, ng, bbHistory, $document, $) {
 	$scope.state = bbHistory.state;
 
 	$scope.patternClick = function(tuneName, patternName) {

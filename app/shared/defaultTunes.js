@@ -1,4 +1,6 @@
-angular.module("beatbox").factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPattern, $) {
+import app from "../app";
+
+app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPattern, $) {
 	function stretch(from, to, pattern) {
 		return pattern.split("").concat([ "" ]).join(repeat((to/from)-1, " "));
 	}

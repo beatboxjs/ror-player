@@ -1,35 +1,55 @@
 {
   "name": "angular-beatbox",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A pattern-based drumming machine based on AngularJS.",
   "repository": {
     "type": "git",
     "url": "https://github.com/beatboxjs/angular-beatbox.git"
   },
   "scripts": {
-    "build": "npm install && bower install && gulp"
+    "build": "gulp",
+    "clean": "gulp clean"
   },
   "devDependencies": {
-    "async": "^1.5.2",
-    "bower": "^1.8.4",
-    "event-stream": "^3.3.4",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "coffee-loader": "^0.9.0",
+    "css-loader": "^0.28.11",
+    "expose-loader": "^0.7.5",
     "gulp": "^3.9.1",
-    "gulp-angular-templatecache": "^1.9.1",
     "gulp-clean": "^0.3.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-css-base64": "^1.3.4",
     "gulp-if": "^2.0.2",
-    "gulp-inject": "^1.5.0",
-    "gulp-minify-css": "^1.2.4",
     "gulp-newer": "^1.4.0",
-    "gulp-ng-annotate": "^0.5.3",
     "gulp-replace": "^0.5.4",
-    "gulp-sass": "^3.2.1",
-    "gulp-uglify": "^1.5.4",
-    "main-bower-files": "^2.13.1",
-    "pako": "^0.2.9",
+    "gulp-util": "^3.0.8",
+    "html-loader": "^0.5.5",
+    "imports-loader": "^0.8.0",
+    "ng-annotate-webpack-plugin": "^0.3.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
     "stream-combiner": "^0.2.2",
-    "vinyl": "^1.2.0"
+    "string-replace-loader": "^2.1.1",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "vinyl": "^1.2.0",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3"
   },
-  "author": "Candid Dauth"
+  "author": "Candid Dauth",
+  "dependencies": {
+    "angular": "^1.7.0",
+    "angular-bootstrap-slider": "git+https://github.com/seiyria/angular-bootstrap-slider.git",
+    "angular-ui-bootstrap": "^2.5.6",
+    "angular-ui-router": "^1.0.18",
+    "babel-polyfill": "^6.26.0",
+    "beatbox.js": "^1.0.1",
+    "bootstrap": "^3.3.7",
+    "bootstrap-slider": "git+https://github.com/seiyria/bootstrap-slider.git",
+    "file-saver": "^1.3.8",
+    "howler": "^2.0.12",
+    "jquery": "^3.3.1",
+    "ngdraggable": "git+https://github.com/beatboxjs/ngDraggable.git",
+    "pako": "^0.2.9"
+  }
 }

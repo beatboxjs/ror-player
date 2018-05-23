@@ -1,4 +1,6 @@
-angular.module("beatbox").factory("bbTune", function(ng, $, bbUtils, bbPattern) {
+import app from "../../app";
+
+app.factory("bbTune", function(ng, $, bbUtils, bbPattern) {
 	function bbTune(data) {
 		this.patterns = { };
 		this.categories = data && data.categories;

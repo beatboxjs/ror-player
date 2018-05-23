@@ -1,4 +1,6 @@
-angular.module("beatbox").factory("bbHistory", function(bbConfig, ng, $, $rootScope, bbUtils, bbState) {
+import app from "../../app";
+
+app.factory("bbHistory", function(bbConfig, ng, $, $rootScope, bbUtils, bbState) {
 	var BbHistory = function() {
 		this.state = new bbState();
 	};

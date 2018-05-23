@@ -1,4 +1,7 @@
-angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScope, $uibModal, $q, $timeout) {
+import pako from "pako";
+import app from "../../app";
+
+app.factory("bbUtils", function(bbConfig, ng, $, $rootScope, $uibModal, $q, $timeout) {
 	var CHARS = bbConfig.numberToStringChars;
 
 	var bbUtils = {
@@ -217,7 +220,7 @@ angular.module("beatbox").factory("bbUtils", function(bbConfig, ng, $, $rootScop
 				};
 
 				var dialog = $uibModal.open({
-					templateUrl: "app/shared/services/utils-alert.html",
+					template: require("./utils-alert.html"),
 					scope: scope
 				});
 				dialog.result.catch(reject);

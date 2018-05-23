@@ -1,4 +1,6 @@
-angular.module("beatbox").factory("bbState", function(bbConfig, ng, $, bbUtils, bbTune, bbSong, bbPattern, bbDefaultTunes) {
+import app from "../../app";
+
+app.factory("bbState", function(bbConfig, ng, $, bbUtils, bbTune, bbSong, bbPattern, bbDefaultTunes) {
 	function bbState(data) {
 		this.songs = [ ];
 		this.tunes = { };

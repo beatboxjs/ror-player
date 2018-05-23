@@ -1,4 +1,6 @@
-angular.module("beatbox").factory("bbConfig", function(ng, $document) {
+import app from "../app";
+
+app.factory("bbConfig", function(ng, $document) {
 	var bbConfig = { };
 
 	bbConfig.appName = $document[0].title;
