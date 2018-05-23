@@ -13,7 +13,7 @@ const depLoaders = {
 // Add imports to these modules, as they don't specify their imports properly
 const addDeps = {
 	// Until https://github.com/webpack-contrib/css-loader/issues/51 is resolved we have to include CSS files by hand
-	bootstrap: [ "bootstrap/dist/css/bootstrap.css" ],
+	bootstrap: [ "bootstrap/dist/css/bootstrap.css", "bootstrap/dist/css/bootstrap-theme.css" ],
 	"angular-ui-bootstrap": [ "angular" ],
 	"bootstrap-slider": [ "bootstrap-slider/dist/css/bootstrap-slider.css" ]
 };
