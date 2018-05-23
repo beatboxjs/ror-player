@@ -302,33 +302,39 @@ app.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, n
 
 	$scope.downloadMP3 = function() {
 		$scope.loading = 0;
-		$scope.player.exportMP3(function(blob) {
-			$scope.$apply(function() {
-				$scope.loading = null;
-			});
-			FileSaver.saveAs(blob, $scope.state.getSongName() + ".mp3");
-		}, function(perc) {
+		$scope.player.exportMP3(function(perc) {
 			if(Math.floor(perc*20) != Math.floor($scope.loading/5)) {
 				$scope.$apply(function() {
 					$scope.loading = perc*100;
 				});
 			}
+		}).then(function(blob) {
+			$scope.$apply(function() {
+				$scope.loading = null;
+			});
+			FileSaver.saveAs(blob, $scope.state.getSongName() + ".mp3");
+		}).catch(function(err) {
+			console.error("Error exporting MP3", err.stack || err);
+			bbUtils.alert("Error exporting MP3: " + err.message);
 		});
 	};
 
 	$scope.downloadWAV = function() {
 		$scope.loading = 0;
-		$scope.player.exportWAV(function(blob) {
-			$scope.$apply(function() {
-				$scope.loading = null;
-			});
-			FileSaver.saveAs(blob, $scope.state.getSongName() + ".wav");
-		}, function(perc) {
+		$scope.player.exportWAV(function(perc) {
 			if(Math.floor(perc*20) != Math.floor($scope.loading/5)) {
 				$scope.$apply(function() {
 					$scope.loading = perc*100;
 				});
 			}
+		}).then(function(blob) {
+			$scope.$apply(function() {
+				$scope.loading = null;
+			});
+			FileSaver.saveAs(blob, $scope.state.getSongName() + ".wav");
+		}).catch(function(err) {
+			console.error("Error exporting WAV", err.stack || err);
+			bbUtils.alert("Error exporting WAV: " + err.message);
 		});
 	};
 

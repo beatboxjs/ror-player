@@ -1,5 +1,6 @@
 const webpack = require("webpack");
 const ngAnnotatePlugin = require("ng-annotate-webpack-plugin");
+const fs = require("fs");
 
 const duplicatePlugin = require("./webpack-duplicates");
 
@@ -36,7 +37,15 @@ module.exports = {
 		rules: [
 			{ test: /\.css$/, use: [ "style-loader", "css-loader" ] },
 			{ test: /\.scss$/, use: [ "style-loader", "css-loader", "sass-loader" ]},
-			{ test: /\.js$/, exclude: /\/node_modules\//, loader: "babel-loader?presets=env" },
+			{
+				resource: { and: [ /\.js$/, [
+					__dirname + "/entry.js",
+					__dirname + "/app/",
+					fs.realpathSync(__dirname + "/node_modules/beatbox.js/src/"),
+					fs.realpathSync(__dirname + "/node_modules/beatbox.js-export/src/")
+				] ] },
+				loader: "babel-loader?presets=env"
+			},
 			{ test: /\.(png|jpe?g|gif|ttf|svg)$/, loader: "url-loader" },
 			{ test: /\.html$/, loader: "html-loader?attrs[]=img:src&attrs[]=link:href" },
 			{ test: /\.coffee$/, loader: "coffee-loader" },
