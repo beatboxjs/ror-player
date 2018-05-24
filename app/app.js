@@ -9,7 +9,9 @@ app.constant("$", jQuery);
 app.constant("ng", angular);
 app.constant("Beatbox", Beatbox);
 
-app.config(function($stateProvider) {
+app.config(function($locationProvider, $stateProvider) {
+	$locationProvider.hashPrefix(''); // https://stackoverflow.com/a/41273403/242365
+
 	$stateProvider
 		.state("song", {
 			url: "/",
