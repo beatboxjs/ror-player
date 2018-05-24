@@ -86,6 +86,19 @@
 				border-right: none;
 			}
 		}
+
+		&.time-20 {
+			.stroke-inner {
+				min-width: 1ex;
+			}
+
+			.stroke-0, .stroke-1, .stroke-2, .stroke-3,
+			.stroke-5, .stroke-6, .stroke-7, .stroke-8,
+			.stroke-10,.stroke-11,.stroke-12,.stroke-13,
+			.stroke-15,.stroke-16,.stroke-17,.stroke-18 {
+				border-right: none;
+			}
+		}
 	}
 
 	.position-marker {

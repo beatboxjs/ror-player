@@ -4,13 +4,13 @@
 	<div class="btn-group" uib-dropdown ng-if="editable">
 		<button type="button" class="btn btn-default dropdown-toggle" uib-dropdown-toggle>Length: {{pattern.length}} <span class="caret"></span></button>
 		<ul class="dropdown-menu" role="menu">
-			<li ng-repeat="le in [ 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64 ]"><a href="javascript:" ng-click="pattern.length = le">Length: {{le}}</a></li>
+			<li ng-repeat="le in [ 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64 ]" ng-class="{active: pattern.length == le}"><a href="javascript:" ng-click="pattern.length = le">Length: {{le}}</a></li>
 		</ul>
 	</div>
 	<div class="btn-group" uib-dropdown ng-if="editable">
-		<button type="button" class="btn btn-default dropdown-toggle" uib-dropdown-toggle>Time: {{pattern.time}}⁄4 <span class="caret"></span></button>
+		<button type="button" class="btn btn-default dropdown-toggle" uib-dropdown-toggle>{{config.times[pattern.time] || (pattern.time + '⁄4')}} <span class="caret"></span></button>
 		<ul class="dropdown-menu" role="menu">
-			<li ng-repeat="ti in config.times"><a href="javascript:" ng-click="pattern.time = ti">Time: {{ti}}⁄4</a></li>
+			<li ng-repeat="(ti, desc) in config.times" ng-class="{active: pattern.time == ti}"><a href="javascript:" ng-click="pattern.time = ti">Time signature: {{desc}}</a></li>
 		</ul>
 	</div>
 	<div class="btn-group speed-slider">

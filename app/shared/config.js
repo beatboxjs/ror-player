@@ -121,7 +121,15 @@ app.factory("bbConfig", function(ng, $document) {
 		"y" : "Long whistle"
 	};
 
-	bbConfig.times = [ 2, 3, 4, 5, 6, 12 ];
+	bbConfig.times = {
+		2: "2⁄4",
+		3: "3⁄4",
+		4: "4⁄4",
+		5: "5⁄8",
+		6: "3⁄4",
+		12: "4⁄4 with triplets",
+		20: "4⁄4 with quintuplets"
+	};
 
 	bbConfig.filterCats = {
 		standard: "Standard tunes",
