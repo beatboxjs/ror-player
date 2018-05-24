@@ -143,6 +143,15 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: '                                X   X   X                       ',
 					ta: '                                            X                   '
 				},
+				'Star Wars Extended Extended': {
+					ls: '            X       X                               X                                                 X     X       X           ',
+					ms: 'X   X   X       X       X                       X       X           X  X              X                         X       X       ',
+					hs: '               X       X                       X       X                                                       X       X        ',
+					re: '                                X   X   X                                                                                       ',
+					sn: '@re',
+					ta: '                                            X                                                   XXX     X                       ',
+					ag: '                                                                a       a   a  aooo     o   o  o                                '
+				},
 				"Wulf Break": {
 					ls: 'X X   XXX X    XX X    XX X     X X   XXX X    XX X X X X       ',
 					ms: '@ls',
