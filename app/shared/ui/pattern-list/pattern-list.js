@@ -34,9 +34,9 @@ app.controller("bbPatternListController", function($scope, bbConfig, bbUtils, bb
 
 	$scope.filterCats = bbConfig.filterCats;
 
-	$scope.isOpen = {};
+	$scope.isOpened = {};
 
-	$scope.$watch("isOpen", function(newOpen, oldOpen) {
+	$scope.$watch("isOpened", function(newOpen, oldOpen) {
 		for(var i in newOpen) {
 			if(!!newOpen[i] != !!oldOpen[i])
 				$scope.$emit(newOpen[i] ? "bbPatternList-tuneOpened" : "bbPatternList-tuneClosed", i);
@@ -45,8 +45,8 @@ app.controller("bbPatternListController", function($scope, bbConfig, bbUtils, bb
 
 	$scope.$watch("filter", function() {
 		var visibleTunes = $filter("bbPatternListFilter")($scope.state, $scope.filter);
-		for(var i in $scope.isOpen) {
-			if($scope.isOpen[i] && visibleTunes.indexOf(i) == -1)
+		for(var i in $scope.isOpened) {
+			if($scope.isOpened[i] && visibleTunes.indexOf(i) == -1)
 				$scope.$emit("bbPatternList-tuneClosed", i);
 		}
 	}, true);
@@ -55,7 +55,7 @@ app.controller("bbPatternListController", function($scope, bbConfig, bbUtils, bb
 		if(!$scope.state.tunes[tuneName])
 			return;
 
-		$scope.isOpen[tuneName] = true;
+		$scope.isOpened[tuneName] = true;
 
 		if($filter("bbPatternListFilter")($scope.state, $scope.filter).indexOf(tuneName) == -1)
 			$scope.filter = { text: "", cat: $scope.isCustomTune(tuneName) ? "custom" : ($scope.state.tunes[tuneName].categories[0] || "all") };
@@ -127,7 +127,7 @@ app.controller("bbPatternListController", function($scope, bbConfig, bbUtils, bb
 		}).then(function(newTuneName) {
 			$scope.state.createTune(newTuneName);
 
-			$scope.isOpen[newTuneName] = true;
+			$scope.isOpened[newTuneName] = true;
 			$scope.filter = { text: "", cat: "custom" };
 		});
 	};
