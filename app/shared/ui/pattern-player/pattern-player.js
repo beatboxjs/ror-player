@@ -156,7 +156,7 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 		if(ng.equals($scope.currentStrokeDropdown, [ instrumentKey, i ]))
 			$scope.currentStrokeDropdown = null;
 		else
-			$scope.currentStrokeDropdown = [ instrumentKey, i ];
+			$scope.currentStrokeDropdown = { instr: instrumentKey, i };
 	};
 
 	var clickHandler = function(e) {
@@ -168,9 +168,107 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 		}
 	};
 
-	$(document).click(clickHandler);
+	$scope.getCurrentStrokeSequenceOptions = function() {
+		let possibleStrokes = [];
+
+		if(!$scope.currentStrokeDropdown.sequence)
+			return possibleStrokes;
+
+		for(let strokeKey of bbConfig.instruments[$scope.currentStrokeDropdown.instr].strokes) {
+			let strokeDesc = bbConfig.strokes[strokeKey];
+
+			if(strokeDesc.toLowerCase().startsWith($scope.currentStrokeDropdown.sequence))
+				possibleStrokes.push(strokeKey);
+		}
+		return possibleStrokes;
+	};
+
+	var switchToNext = function(previous) {
+		if(!$scope.currentStrokeDropdown || previous && $scope.currentStrokeDropdown.i == 0 || !previous && $scope.currentStrokeDropdown.i >= $scope.pattern.length*$scope.pattern.time)
+			return $scope.currentStrokeDropdown = null;
+
+		$scope.currentStrokeDropdown = {
+			instr: $scope.currentStrokeDropdown.instr,
+			i: $scope.currentStrokeDropdown.i + (previous ? -1 : 1)
+		};
+		$scope.$apply();
+	};
+
+	var keyDownHandler = function(e) {
+		if(!$scope.currentStrokeDropdown || e.ctrlKey || e.altKey || e.metaKey)
+			return;
+
+		if(e.which == 37 | e.which == 39) { // Left/right arrow
+			$scope.currentStrokeDropdown.sequence = null;
+
+			let strokes = bbConfig.instruments[$scope.currentStrokeDropdown.instr].strokes;
+			let curIdx = strokes.indexOf($scope.pattern[$scope.currentStrokeDropdown.instr][$scope.currentStrokeDropdown.i]);
+
+			if(e.which == 39 && curIdx+1 < strokes.length)
+				$scope.pattern[$scope.currentStrokeDropdown.instr][$scope.currentStrokeDropdown.i] = strokes[curIdx+1];
+			else if(e.which == 37 && curIdx-1 >= 0)
+				$scope.pattern[$scope.currentStrokeDropdown.instr][$scope.currentStrokeDropdown.i] = strokes[curIdx-1];
+			else if(e.which == 37)
+				$scope.pattern[$scope.currentStrokeDropdown.instr][$scope.currentStrokeDropdown.i] = " ";
+
+			$scope.$apply();
+			e.preventDefault();
+		} else if(e.which == 13) { // Enter/return
+			let possibleStrokes = $scope.getCurrentStrokeSequenceOptions();
+			if(possibleStrokes.length > 0)
+				$scope.pattern[$scope.currentStrokeDropdown.instr][$scope.currentStrokeDropdown.i] = possibleStrokes[0];
+
+			switchToNext();
+			e.preventDefault();
+		} else if(e.which == 9) { // Tab
+			switchToNext(e.shiftKey);
+			e.preventDefault();
+		} else if(e.which == 27) { // Escape
+			$scope.currentStrokeDropdown = null;
+			e.preventDefault();
+		} else if(e.which == 32) { // Space
+			$scope.pattern[$scope.currentStrokeDropdown.instr][$scope.currentStrokeDropdown.i] = ' ';
+			switchToNext();
+			e.preventDefault();
+		}
+	};
+
+	var keySequenceTimeout = null;
+
+	var keyPressHandler = function(e) {
+		let d = $scope.currentStrokeDropdown;
+		if(!d || e.ctrlKey || e.altKey || e.metaKey)
+			return;
+
+		clearTimeout(keySequenceTimeout);
+		keySequenceTimeout = setTimeout(() => { d.sequence = null; $scope.$apply(); }, 1000);
+
+		d.sequence = (d.sequence || "") + String.fromCharCode(e.which).toLowerCase();
+
+		if(d.sequence.length == 1) {
+			let options = $scope.getCurrentStrokeSequenceOptions();
+			if(options.length == 1) {
+				$scope.pattern[$scope.currentStrokeDropdown.instr][$scope.currentStrokeDropdown.i] = options[0];
+				switchToNext();
+				return false;
+			}
+		}
+
+		$scope.$apply();
+		return false;
+	};
+
+	$(document).on({
+		click: clickHandler,
+		keydown: keyDownHandler,
+		keypress: keyPressHandler
+	});
 
 	$scope.$on("$destroy", function() {
-		$(document).off("click", clickHandler);
+		$(document).off({
+			click: clickHandler,
+			keydown: keyDownHandler,
+			keypress: keyPressHandler
+		});
 	});
 });

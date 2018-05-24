@@ -43,7 +43,7 @@
 						uib-tooltip="{{config.strokesDescription[pattern[instrumentKey][i]]}}"
 						uib-popover-template="'app/shared/ui/pattern-player/pattern-player-stroke-dropdown.html'"
 						popover-placement="bottom" popover-trigger="manual"
-						popover-is-open="currentStrokeDropdown[0] == instrumentKey && currentStrokeDropdown[1] == i"
+						popover-is-open="currentStrokeDropdown.instr == instrumentKey && currentStrokeDropdown.i == i"
 						ng-click="clickStroke(instrumentKey, i)">
 						{{config.strokes[pattern[instrumentKey][i]] || ' '}}
 					</a>
