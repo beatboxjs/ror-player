@@ -810,17 +810,30 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: '@ls',
 					sn: '@ls',
 					ta: '@ls',
-					ag: '@ls'
+					ag: '@ls',
+					sh: '@ls'
 				},
 				'Kick Back 1': {
 					loop: true,
-					ls: 'X       X       ',
+					ls: 'X       X       X       X       X       X       X       X       ',
 					ms: '@ls',
 					hs: '@ls',
-					re: '  X   X     X   ',
+					re: '  X   X     X     X   X     X     X   X     X     X   X     X   ',
 					sn: '@re',
 					ta: '@re',
-					ag: '@re'
+					ag: 'a a aaa a aaa aaa a aaa a aaa aao o ooo o ooo ooo o ooo o ooo oo',
+					sh: '@re'
+				},
+				'Kick Back 2': {
+					loop: true,
+					ls: 'X       X       X       X X     ',
+					ms: '@ls',
+					hs: '@ls',
+					re: '   X  X    X  X    X  X     X   ',
+					sn: '   X  X    X  X    X  X     X ..',
+					ta: '@re',
+					ag: '@re',
+					sh: '@re'
 				},
 				'Break 3': {
 					ls: '    X       X       X X     X   ',
@@ -944,29 +957,34 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: '@ls',
 					sn: '@ls',
 					ta: '@ls',
-					ag: repeat(3, 'o a o     o  a                  ') + 'o a o  o a oo o                 '
+					ag: repeat(3, 'o   a   o     o                 ') + 'o a o  o a oo o                 ',
+					sh: '@ls'
 				},
 				"Double Break": {
-					ls: 'X s    X s    X ',
-					ms: '  s X    s  X X ',
-					hs: 'X hXX hXX hXX hX',
-					re: 'r  rr  r r rr r ',
-					sn: 'X..XX..XX..XX.X.',
-					ta: 'X   X XXX X   f ',
-					ag: 'o a o  o a oo oa'
+					time: 12,
+					ls: repeat(2, stretch(4, 12, 'X hXX hXX hXX hX')),
+					ms: repeat(2, stretch(4, 12, '  s X    s  X X ')),
+					hs: repeat(2, stretch(4, 12, 'X s    X s    X ')),
+					re: stretch(4, 12, 'rrX s   f  f  f       Xhr Xhr Xh'),
+					sn: stretch(4, 12, 'X..XX..XX..XX.X.X..XX..XX...X.X.'),
+					ta: stretch(4, 12, 'X   X XXX X   f       f     ') + stretch(3, 12, 'XXX'),
+					ag: repeat(2, stretch(4, 12, 'o a o  o a oo oa')),
+					sh: stretch(4, 12, 'X..XX..XX..XX..XX..XX..XX..XX..X')
 				},
-				"Kick Break": {
+				"Kick Back 1": {
 					loop: true,
-					ls: 'X   X  X    X X ',
+					time: 12,
+					ls: stretch(4, 12, 'X   X  X   XX X '),
 					ms: '@ls',
 					hs: '@ls',
-					re: '  X       X     ',
+					re: stretch(4, 12, '  X       X ') + stretch(3, 12, 'XXX'),
 					sn: '@re',
 					ta: '@re',
-					ag: 'o a o  o a oo oa'
+					ag: stretch(4, 12, 'oaaoaaoa        '),
+					sh: '@re'
 				},
 				"Mozambique Break": {
-					ls: '   i  h    i  h ',
+					ls: '   h  0    h  0 ',
 					ms: '@ls',
 					hs: '@ls',
 					re: 'r r rr r rr rr r',
