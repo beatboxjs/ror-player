@@ -3,7 +3,7 @@
 		<ng-transclude></ng-transclude>
 		<button type="button" class="btn" ng-class="player.playing ? 'btn-info' : 'btn-success'" ng-click="playPause()"><span class="glyphicon" ng-class="player.playing ? 'glyphicon-pause' : 'glyphicon-play'"></span> {{player.playing ? 'Pause' : 'Play'}}</button>
 		<button type="button" class="btn btn-danger" ng-click="stop()"><span class="glyphicon glyphicon-stop"></span> Stop</button>
-		<bb-playback-settings ng-model="state.playbackSettings" tooltip-placement="bottom"></bb-playback-settings>
+		<bb-playback-settings ng-model="state.playbackSettings" default="defaultPlaybackSettings" tooltip-placement="bottom"></bb-playback-settings>
 
 		<div class="divider"></div>
 
@@ -56,7 +56,7 @@
 			</div>
 			<div class="field" ng-class="'song-field-'+instrumentKey+'-'+i" ng-repeat="instrumentKey in utils.getKeys(config.instruments)" ng-drop="true" ng-drop-success="onDrop(instrumentKey, i, $data)" ng-drag-enter="dragEnter(instrumentKey, i, $data)">
 				<div class="pattern-container" ng-class="[ 'colspan-'+getColSpan(instrumentKey, i), 'rowspan-'+getRowSpan(instrumentKey, i) ]" ng-if="song[i][instrumentKey] && shouldDisplay(instrumentKey, i)">
-					<bb-pattern-placeholder bb-state="state" bb-tune-name="song[i][instrumentKey][0]" bb-pattern-name="song[i][instrumentKey][1]" bb-draggable="true" bb-drag-success="onDrag(instrumentKey, i)" bb-player-options="getPreviewPlayerOptions(instrumentKey, i)">
+					<bb-pattern-placeholder bb-state="state" bb-tune-name="song[i][instrumentKey][0]" bb-pattern-name="song[i][instrumentKey][1]" bb-draggable="true" bb-drag-success="onDrag(instrumentKey, i)" bb-settings="getPreviewPlaybackSettings(instrumentKey, i)">
 						<bb-pattern-placeholder-item uib-dropdown uib-dropdown-append-to-body>
 							<a href="javascript:" uib-tooltip="Pick instruments" uib-dropdown-toggle><span class="glyphicon glyphicon-hand-right"></span></a>
 							<ul class="dropdown-menu" role="menu">

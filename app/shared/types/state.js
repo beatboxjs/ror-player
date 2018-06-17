@@ -13,10 +13,10 @@ app.factory("bbState", function(bbConfig, ng, $, bbUtils, bbTune, bbSong, bbPatt
 	bbState.prototype = {
 		extend: function(data, selectSong, selectPattern, keepEmptyTunes, importOptions) {
 			if(importOptions) {
-				for(var i of [ "songIdx", "playbackSettings" ]) {
-					if(i in data)
-						this[i] = data[i];
-				}
+				if("songIdx" in data)
+					this.songIdx = data.songIdx;
+				if("playbackSettings" in data)
+					this.playbackSettings.reset(data.playbackSettings);
 			}
 
 			if(data.tunes) {
@@ -44,10 +44,10 @@ app.factory("bbState", function(bbConfig, ng, $, bbUtils, bbTune, bbSong, bbPatt
 
 		extendFromCompressed : function(object, selectSong, selectPattern, keepEmptyTunes, importOptions, ignoreMissingDefaultPatterns) {
 			if(importOptions) {
-				for(var i of [ "songIdx", "playbackSettings" ]) {
-					if(i in object)
-						this[i] = object[i];
-				}
+				if("songIdx" in object)
+					this.songIdx = object.songIdx;
+				if("playbackSettings" in object)
+					this.playbackSettings.reset(object.playbackSettings);
 			}
 
 			var errors = [ ];

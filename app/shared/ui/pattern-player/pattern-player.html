@@ -1,7 +1,7 @@
 <div class="bb-pattern-editor-toolbar">
 	<button type="button" class="btn" ng-class="player.playing ? 'btn-info' : 'btn-success'" ng-click="playPause()"><span class="glyphicon" ng-class="player.playing ? 'glyphicon-pause' : 'glyphicon-play'"></span> {{player.playing ? 'Pause' : 'Play'}}</button>
 	<button type="button" class="btn btn-danger" ng-click="stop()"><span class="glyphicon glyphicon-stop"></span> Stop</button>
-	<bb-playback-settings ng-model="playbackSettings"></bb-playback-settings>
+	<bb-playback-settings ng-model="playbackSettings" default="defaultPlaybackSettings"></bb-playback-settings>
 
 	<div class="divider"></div>
 

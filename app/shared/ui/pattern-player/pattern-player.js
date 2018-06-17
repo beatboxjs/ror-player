@@ -55,6 +55,7 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 		speed: $scope.pattern.speed,
 		loop: true
 	});
+	$scope.defaultPlaybackSettings = new bbPlaybackSettings($scope.playbackSettings);
 
 	function updatePlayer() {
 		$scope.player.setPattern(bbPlayer.patternToBeatbox($scope.pattern, $scope.playbackSettings.headphones, $scope.playbackSettings.mute, $scope.playbackSettings.volume, $scope.playbackSettings.volumes));

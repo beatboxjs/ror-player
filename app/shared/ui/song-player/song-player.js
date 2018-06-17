@@ -59,6 +59,8 @@ app.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, n
 	$scope.$watch("state.playbackSettings", updatePattern, true);
 	// TODO: Listen for pattern changes
 
+	$scope.defaultPlaybackSettings = new bbPlaybackSettings();
+
 	$scope.playPause = function() {
 		if(!$scope.player.playing) {
 			$scope.player.play();
@@ -159,11 +161,11 @@ app.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, n
 			$scope.song[idx][instrumentKey] = tuneAndPattern;
 	};
 
-	$scope.getPreviewPlayerOptions = function(instrumentKey, idx) {
-		var ret = {
-			mute: { },
-			length: $scope.getColSpan(instrumentKey, idx)*4
-		};
+	$scope.getPreviewPlaybackSettings = function(instrumentKey, idx) {
+		var ret = new bbPlaybackSettings(Object.assign({}, $scope.state.playbackSettings, {
+			length: $scope.getColSpan(instrumentKey, idx)*4,
+			loop: false
+		}));
 
 		var instrumentKeys = Object.keys(bbConfig.instruments);
 		var instrumentIdx = instrumentKeys.indexOf(instrumentKey);

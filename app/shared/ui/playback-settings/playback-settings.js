@@ -7,6 +7,7 @@ app.directive("bbPlaybackSettings", () => {
 		controller: "bbPlaybackSettingsController",
 		scope: {
 			playbackSettings: "=ngModel",
+			defaultSettings: "=default",
 			tooltipPlacement: "@"
 		}
 	};
@@ -55,4 +56,8 @@ app.controller("bbPlaybackSettingsController", (bbConfig, $scope, bbUtils) => {
 			$scope.playbackSettings.mute[instrumentKey] = mute;
 		}
 	};
+
+	$scope.reset = function() {
+		$scope.playbackSettings.reset($scope.defaultSettings);
+	}
 });

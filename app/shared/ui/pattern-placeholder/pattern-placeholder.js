@@ -13,7 +13,7 @@ app.directive("bbPatternPlaceholder", function($templateRequest, $compile, $root
 			clickHandler: "&bbPatternClick",
 			draggable: "=bbDraggable",
 			dragSuccess: "&bbDragSuccess",
-			getPlayerOptions: "&bbPlayerOptions",
+			getPlaybackSettings: "&bbSettings",
 			state: "=bbState"
 		},
 		transclude: true,
@@ -41,7 +41,7 @@ app.directive("bbPatternPlaceholderItem", function() {
 	};
 });
 
-app.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPatternEditorDialog, bbPlayer, bbUtils, $element, ng, bbDefaultTunes, $) {
+app.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPatternEditorDialog, bbPlayer, bbUtils, $element, ng, bbDefaultTunes, $, bbPlaybackSettings) {
 	$scope.config = bbConfig;
 	$scope.player = null;
 
@@ -72,16 +72,19 @@ app.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPa
 	};
 
 	var updatePlayer = function() {
-		var playerOptions = $scope.getPlayerOptions() || { };
 		var patternObj = $scope.state.getPattern($scope.tuneName, $scope.patternName);
-		var pattern = bbPlayer.patternToBeatbox(patternObj, playerOptions.headphones, playerOptions.mute);
+		var playbackSettings = $scope.getPlaybackSettings() || new bbPlaybackSettings({
+			speed: patternObj.speed,
+			loop: patternObj.loop
+		});
+		var pattern = bbPlayer.patternToBeatbox(patternObj, playbackSettings.headphones, playbackSettings.mute, playbackSettings.volume, playbackSettings.volumes);
 
-		if(playerOptions.length)
-			pattern = pattern.slice(0, playerOptions.length*bbConfig.playTime);
+		if(playbackSettings.length)
+			pattern = pattern.slice(0, playbackSettings.length*bbConfig.playTime);
 
 		$scope.player.setPattern(pattern);
-		$scope.player.setBeatLength(60000/(playerOptions.speed || patternObj.speed)/bbConfig.playTime);
-		$scope.player.setRepeat(playerOptions.loop == null ? !!patternObj.loop : !!playerOptions.loop);
+		$scope.player.setBeatLength(60000/playbackSettings.speed/bbConfig.playTime);
+		$scope.player.setRepeat(playbackSettings.loop);
 	};
 
 	$scope.playPattern = function() {
@@ -89,7 +92,7 @@ app.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPa
 			$scope.player = bbPlayer.createBeatbox(false);
 			$scope.player.onbeat = onbeat;
 
-			$scope.$watch("getPlayerOptions()", updatePlayer, true);
+			$scope.$watch("getPlaybackSettings()", updatePlayer, true);
 			$scope.$watch("state.getPattern(tuneName, patternName)", updatePlayer, true);
 
 			updatePlayer();

@@ -4,25 +4,33 @@
 
 <script type="text/ng-template" id="playback-settings/popover">
 	<div>
-		<dl class="dl-horizontal">
-			<dt>Speed</dt>
-			<dd><slider ng-model="playbackSettings.speed" min="30" max="180"></slider></dd>
+		<div class="row">
+			<label class="col-sm-3 control-label">Speed</label>
+			<div class="col-sm-9">
+				<slider ng-model="playbackSettings.speed" min="30" max="180"></slider>
+			</div>
+		</div>
 
-			<dt>Loop</dt>
-			<dd><input type="checkbox" ng-model="playbackSettings.loop" /></dd>
-		</dl>
+		<div class="row">
+			<label class="col-sm-3 control-label">Loop</label>
+			<div class="col-sm-9">
+				<input type="checkbox" ng-model="playbackSettings.loop" />
+			</div>
+		</div>
+
 		<hr />
+
 		<table>
 			<tbody>
 				<tr>
 					<td class="master">
-						<slider ng-model="playbackSettings.volume" min="0" max="1" step="0.01" orientation="vertical" reversed="true"></slider>
+						<slider ng-model="playbackSettings.volume" min="0" max="2" step="0.05" orientation="vertical" reversed="true"></slider>
 					</td>
 					<td ng-repeat="instrumentKey in utils.getKeys(config.instruments)">
-						<slider ng-model="playbackSettings.volumes[instrumentKey]" min="0" max="1" step="0.01" orientation="vertical" reversed="true"></slider>
+						<slider ng-model="playbackSettings.volumes[instrumentKey]" min="0" max="2" step="0.05" orientation="vertical" reversed="true"></slider>
 					</td>
 				</tr>
-				<tr>
+				<tr class="mute">
 					<td class="master">
 						<a href="javascript:" ng-click="muteAll()" ng-class="allMuted() ? 'active' : 'inactive'"><span class="glyphicon glyphicon-volume-off"></span></a>
 					</td>
@@ -40,5 +48,9 @@
 				</tr>
 			</tbody>
 		</table>
+
+		<hr ng-if="defaultSettings"/>
+
+		<button ng-if="defaultSettings" type="button" class="btn btn-default btn-block" ng-click="reset()">Reset</button>
 	</div>
 </script>

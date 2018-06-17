@@ -121,6 +121,18 @@ app.factory("bbConfig", function(ng, $document) {
 		"z": "Soft flare"
 	};
 
+	bbConfig.defaultVolumes = {
+		ls: 1,
+		ms: 1,
+		hs: 1,
+		re: 1,
+		sn: 1.7,
+		ta: 1,
+		ag: 0.6,
+		sh: 0.5,
+		ot: 1
+	};
+
 	bbConfig.times = {
 		2: "2⁄4",
 		3: "3⁄4",
