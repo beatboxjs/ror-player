@@ -1,8 +1,11 @@
 const webpack = require("webpack");
-const ngAnnotatePlugin = require("ng-annotate-webpack-plugin");
 const fs = require("fs");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackInlineSourcePlugin = require("html-webpack-inline-source-plugin");
 
 const duplicatePlugin = require("./webpack-duplicates");
+
+const dev = !!process.env.WEBPACK_SERVE;
 
 const depLoaders = {
 	jquery: "expose-loader?jQuery",
@@ -44,7 +47,13 @@ module.exports = {
 					fs.realpathSync(__dirname + "/node_modules/beatbox.js/src/"),
 					fs.realpathSync(__dirname + "/node_modules/beatbox.js-export/src/")
 				] ] },
-				loader: "babel-loader?presets=env"
+				use: {
+					loader: "babel-loader",
+					options: {
+						presets: [ "env" ],
+						plugins: [ require("babel-plugin-angularjs-annotate") ]
+					}
+				}
 			},
 			{ test: /\.(png|jpe?g|gif|ttf|svg)$/, loader: "url-loader" },
 			{ test: /\.html$/, loader: "html-loader?attrs[]=img:src&attrs[]=link:href" },
@@ -66,15 +75,26 @@ module.exports = {
 	},
 	plugins: [
 		new duplicatePlugin(),
-		new ngAnnotatePlugin({
-			add: true
-		}),
 		new webpack.ProvidePlugin({
 		    $: "jquery",
 		    jQuery: "jquery",
 		    "window.jQuery": "jquery"
 		}),
+		new HtmlWebpackPlugin({
+			template: "./index.html",
+			inlineSource: "\.js$"
+		}),
+		//...(dev ? [
+			new HtmlWebpackInlineSourcePlugin()
+		//] : [])
 	],
-	mode: "production",
-	devtool: "source-map"
+	mode: dev ? "development" : "production",
+	devtool: dev ? "cheap-module-eval-source-map" : "source-map"
 };
+
+if(dev) {
+	module.exports.serve = {
+		content: __dirname + "build",
+		hot: false
+	};
+}

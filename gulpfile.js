@@ -13,8 +13,6 @@ var zlib = require("zlib");
 const webpack = require("webpack");
 const webpackConfig = require("./webpack.config.js");
 
-const webpackCompiler = webpack(webpackConfig);
-
 var files = [
 	"app/app.js",
     "app/shared/**/*",
@@ -61,7 +59,7 @@ gulp.task("audiosprite", function() {
 
 gulp.task("webpack", [ "audiosprite" ], async () => {
 	let stats = await new Promise((resolve, reject) => {
-		webpackCompiler.run((err, stats) => { err ? reject(err) : resolve(stats) });
+		webpack(webpackConfig).run((err, stats) => { err ? reject(err) : resolve(stats) });
 	});
 
 	gutil.log("[webpack]", stats.toString());
@@ -71,14 +69,7 @@ gulp.task("webpack", [ "audiosprite" ], async () => {
 });
 
 
-gulp.task("all", [ "webpack" ], function() {
-	return combine(
-		gulp.src("index.html"),
-		replace("<!-- inject:js -->", "<script>" + fs.readFileSync("build/angular-beatbox.js") + "</script>"),
-		replace("<!-- endinject -->", ""),
-		gulp.dest("build")
-	);
-});
+gulp.task("all", [ "webpack" ]);
 
 gulp.task("default", [ "all" ]);
 
