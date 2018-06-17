@@ -7,6 +7,7 @@ app.directive("bbPlaybackSettings", () => {
 		controller: "bbPlaybackSettingsController",
 		scope: {
 			playbackSettings: "=ngModel",
+			tooltipPlacement: "@"
 		}
 	};
 });
