@@ -95,9 +95,11 @@ app.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPa
 			updatePlayer();
 		}
 
-		if(!$scope.player.playing)
+		if(!$scope.player.playing) {
+			bbPlayer.stopAll();
+			$scope.player.setPosition(0);
 			$scope.player.play();
-		else {
+		} else {
 			$scope.player.stop();
 			$scope.player.setPosition(0);
 		}

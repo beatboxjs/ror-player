@@ -22,6 +22,8 @@ app.factory("bbPatternEditorDialog", function($uibModal, bbPlayer) {
 		editPattern: function(state, tuneName, patternName) {
 			this.close();
 
+			bbPlayer.stopAll();
+
 			openDialog = $uibModal.open({
 				template: require("./pattern-editor-dialog.html"),
 				controller: "bbPatternEditorCtrl",
