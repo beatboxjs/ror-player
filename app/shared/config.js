@@ -8,19 +8,19 @@ app.factory("bbConfig", function(ng, $document) {
 	bbConfig.instruments = {
 		ls: {
 			name: "Low Surdo",
-			strokes: [ "X", "0", "s", "t", "r", "i" ]
+			strokes: [ "X", "0", "s", "t", "r" ]
 		},
 		ms: {
 			name: "Mid Surdo",
-			strokes: [ "X", "0", "s", "t", "r", "i" ]
+			strokes: [ "X", "0", "s", "t", "r" ]
 		},
 		hs: {
 			name: "High Surdo",
-			strokes: [ "X", "0", "s", "t", "r", "i" ]
+			strokes: [ "X", "0", "s", "t", "r" ]
 		},
 		re: {
 			name: "Repi",
-			strokes: [ "X", "f", "r", "h", "s", "." ]
+			strokes: [ "X", "f", "r", "h", ".", "z" ]
 		},
 		sn: {
 			name: "Snare",
@@ -47,7 +47,6 @@ app.factory("bbConfig", function(ng, $document) {
 	bbConfig.strokes = {
 		"X": "X",
 		"h": "hd",
-		"i": "sl",
 		"0": "0",
 		"s": "sil",
 		"f": "fl",
@@ -58,7 +57,7 @@ app.factory("bbConfig", function(ng, $document) {
 		".": ".",
 		"w" : "Wh",
 		"y" : "Wh2", // Long whistle
-		"z": "HS", // Hand + Stick
+		"z": "s", // Soft flare
 		"A" : "Oi!",
 		"B" : "Ua!",
 		"D" : "Oo",
@@ -118,7 +117,8 @@ app.factory("bbConfig", function(ng, $document) {
 		"t": "Whippy (tamborim) stick",
 		".": "Silent stroke",
 		"w" : "Whistle",
-		"y" : "Long whistle"
+		"y" : "Long whistle",
+		"z": "Soft flare"
 	};
 
 	bbConfig.times = {

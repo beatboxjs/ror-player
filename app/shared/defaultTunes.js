@@ -21,6 +21,14 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 		return r;
 	}
 
+	function decrescendo(length) {
+		var r = { };
+		var b = 0.95/(length-1);
+		for(var i=0; i<length; i++)
+			r[i] = 1-b*i;
+		return r;
+	}
+
 	var bbDefaultTunes = {
 		'General Breaks': {
 			categories: [ "common", "uncommon", "new", "proposed", "custom" ],
@@ -47,6 +55,17 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sh: '@ls',
 					volumeHack: crescendo(32)
 				},
+				"8 down": {
+					ls: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+					ms: '@ls',
+					hs: '@ls',
+					re: '@ls',
+					sn: '@ls',
+					ta: '@ls',
+					ag: '@ls',
+					sh: '@ls',
+					volumeHack: decrescendo(32)
+				},
 				"Clave": {
 					ls: 'X  X  X   X X   ',
 					ms: '@ls',
@@ -67,11 +86,18 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					ag: '@ls',
 					sh: '@ls'
 				},
-				'Silence': {
-					ls: '                '
-				},
 				'Progressive': {
 					ls: 'X   X   X   X   X X X X X X X X XXXXXXXXXXXXXXXX',
+					ms: '@ls',
+					hs: '@ls',
+					re: '@ls',
+					sn: '@ls',
+					ta: '@ls',
+					ag: '@ls',
+					sh: '@ls'
+				},
+				'Progressive Inverted': {
+					ls: 'XXXXXXXXXXXXXXXXX X X X X X X X X   X   X   X   ',
 					ms: '@ls',
 					hs: '@ls',
 					re: '@ls',
@@ -171,6 +197,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: '@re',
 					ta: '@re',
 					ag: repeat(3, 'o o o o o o o ooo o o o o o o ooo o o o o o o ooo o o o oooooooo') + repeat(1, 'a a a a a a a aaa a a a a a a aaa a a a a a a aaa a a a aaaaaaaa'),
+					sh: '@re',
 					volumeHack: {
 						66:  .1, 78:  1, 82:  .1, 94:  1, 98:  .1, 110: 1, 114: .1, 120: 1,
 						130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1
@@ -202,7 +229,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: 'X...X..XX..X....X...X..XX..X....',
 					ta: 'X X X X XX XX X X X X X XX XX X ',
 					ag: 'a a o o aa o oo a a o o aa o oo ',
-					sh: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+					sh: '................................'
 				},
 				"Break 1": {
 					ls: 'X       X       X       X XXXXX ',
@@ -222,7 +249,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: 'X...X..XX..X....X...X..XX..X....',
 					ta: 'X X X X XX XX X X X X X XX XX X ',
 					ag: 'a a o o aa o oo a a o o aa o oo ',
-					sh: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+					sh: '................................'
 				},
 				"Break 3": {
 					ls: 's   s   s   s   s   s   X   X   ',
@@ -232,7 +259,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: 'X...X..XX..X....X...X..XX..X....',
 					ta: 'X X X X XX XX X X X X X XX XX X ',
 					ag: 'a a o o aa o oo a a o o aa o oo ',
-					sh: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+					sh: '................................'
 				},
 				"Bra Break": {
 					ls: '        XX XX           XX XX           XX XX   X X X X XX XX X ',
@@ -261,14 +288,14 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			patterns: {
 				Tune: {
 					loop: true,
-					ls: 'X X X  XXXX X   ',
+					ls: 'r r X  XrXr X   ',
 					ms: 'XXXXXXXXX       ',
 					hs: '            XXXX',
 					re: 'f   f   f  XXX  ',
 					sn: '....X.......X...',
 					ta: 'X   X  XXX  X   ',
 					ag: '  o a   oa  a   ',
-					sh: 'XXXXXXXXXXXXXXXX'
+					sh: '................'
 				},
 				'Break 1': {
 					ls: 'X X X X X X X X ',
@@ -288,7 +315,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: '@re',
 					ta: '@re',
 					ag: '@re',
-					sh: '@ls'
+					sh: '@re'
 				},
 				'Break 3': {
 					ls: 'X     XXXX      X X X  X        X     XXXX        X  X  X      XX X X X X X X X ',
@@ -358,11 +385,11 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					ls: 'X       XX  X       XX  X       XX  X    X   X  ',
 					ms: '@ls',
 					hs: '@ls',
-					re: 'X XX XX XX XX XX XX XX XX XX XX XX XXXXX  XXXX  ',
+					re: 'X zX zX zX zX zX zX zX zX zX zX zX zXXXX  XXXX  ',
 					sn: 'X..X..X..X..X..X..X..X..X..X..X..X..X..X..X..X..',
 					ta: 'X XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX X',
 					ag: 'aaaa  oooo              aaaa  oooo              ',
-					sh: 'X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  '
+					sh: 'X..X..X..X..X..X..X..X..X..X..X..X..X..X..X..X..'
 				},
 				'Break 1': {
 					ls: 'X XX X  XX  X       XX  X XX X  XX  X       XX  X XX X  XX  X       XX  X    X   X              ',
@@ -427,8 +454,29 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sh: '@ls',
 					volumeHack: crescendo(24)
 				},
+				"8 down (3⁄4)": {
+					ls: 'XXXXXXXXXXXXXXXXXXXXXXXX',
+					ms: '@ls',
+					hs: '@ls',
+					re: '@ls',
+					sn: '@ls',
+					ta: '@ls',
+					ag: '@ls',
+					sh: '@ls',
+					volumeHack: decrescendo(24)
+				},
 				'Progressive (3⁄4)': {
 					ls: 'X  X  X  X  X XX XX XX XXXXXXXXXXXXX',
+					ms: '@ls',
+					hs: '@ls',
+					re: '@ls',
+					sn: '@ls',
+					ta: '@ls',
+					ag: '@ls',
+					sh: '@ls'
+				},
+				'Progressive Inverted (3⁄4)': {
+					ls: 'XXXXXXXXXXXXX XX XX XX XX  X  X  X  ',
 					ms: '@ls',
 					hs: '@ls',
 					re: '@ls',
@@ -461,7 +509,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: '....X.......X.......X.......X...',
 					ta: '@re',
 					ag: 'aa.oo.aa.oo.a.a.oo.aa.oo.aa.o.o.',
-					sh: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+					sh: '................................'
 				},
 				'Break 1': {
 					ls: 'XX XX XX XX X X XX XX XX XX X X XX XX XX XX X X ',
@@ -524,7 +572,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: '.  .  .  .  X  .  X  X  .  .  .  .  X  .  X  X  .  .  .  .  X  .  X  X  X  .  X  X  .  .        ',
 					ta: '      X  X        X        X     X        X           X  X        X        X     X              ',
 					ag: 'o     a  a  a     o  o     a     a  a     o  o  o     a  a  a     o  o      a   a   a   a   a   ',
-					sh: 'X     X     X     X     X     X     X     X     X     X     X     X     X     X  X              '
+					sh: 'X  .  X  .  X  .  X  .  X  .  X  .  X  .  X  .  X  .  X  .  X  .  X  .  X     X  X              '
 				},
 				"Break 1": {
 					ls: '        X XX            X XX          X X     X X   X   X XX    ',
@@ -594,7 +642,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: 'X.X.X..X.X..X...',
 					ta: 'X X XX X X X XX ',
 					ag: 'a a oo a a o oo ',
-					sh: 'XXXXXXXXXXXXXXXX'
+					sh: '................'
 				},
 				'Break 1': {
 					ls: repeat(3, 'X X XX          ') + 'X X XX X X X XX ',
@@ -653,7 +701,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: '....X..X....X.......X..X....X   ....X..X....X...X.X.X.X.X.X.X.X.',
 					ta: '    X     X X       X   X X X       X     X X       X   X X X   ',
 					ag: 'o ao ao a       o ao ao a       o ao ao a       o ao ao a       ',
-					sh: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+					sh: '................................................................'
 				},
 				'Break 1': {
 					time: 2,
@@ -702,7 +750,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: 'f XrX XrX f X r f XrX XrX f X r f XrX XrX f X r f XrX XrX f X r ',
 					sn: 'X..XX..XX.......X..XX..XX.X.X.X.X..XX..XX.......X..XX..XX.X.X.X.',
 					ta: 'XX      X X X   XX      X X X   XX      X X X   XX      X X X   ',
-					ag: 'o oao oao o a o o oao oao o a o o oao oao o a o o oao oao o a o '
+					ag: 'o oao oao o a o o oao oao o a o o oao oao o a o o oao oao o a o ',
+					sh: '................................................................'
 				},
 				'Break 1': {
 					ls: 'X X XX  X   X   ',
@@ -746,7 +795,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: '....X.......X.......X.......X...',
 					ta: '    X       X X     X     X X   ',
 					ag: 'o  a  o   a a a o  a  o   a a a ',
-					sh: 'X X X X X X X X X X X X X X X X '
+					sh: 'X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.'
 				},
 				"Break 1": {
 					ls: 'X X     X X   X X X     X       X X     X X   X X X     X       ',
@@ -776,7 +825,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: '....X.......X.......X.......X...',
 					ta: '    X       X X   XXX   X X X   ',
 					ag: 'o  a  o   a a a o  a  o   a a a ',
-					sh: 'X X X X X X X X X X X X X X X X '
+					sh: 'X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.'
 				},
 				"Tune (Variant 2)": {
 					ls: 'X X     X X   X X X     X       ',
@@ -786,7 +835,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: '....X.......X.......X.......X...',
 					ta: '    X       X X     X     X X   ',
 					ag: 'o  a  o   a a a o  a  o   a a a ',
-					sh: 'X X X X X X X X X X X X X X X X '
+					sh: 'X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.'
 				}
 			}
 		},
@@ -801,7 +850,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: 'r X   X r   X   r X XXr r   X XX',
 					sn: '..X...X.....X.....X.XXX.....X.XX',
 					ta: 'X X   X X   X XXX X   X X   X   ',
-					ag: 'o a   a o   a     a   a o   a   '
+					ag: 'o a   a o   a     a   a o   a   ',
+					sh: '................................'
 				},
 				'Yala Break': {
 					ls: 'X X   X X   X   ',
@@ -842,7 +892,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: '@ls',
 					sn: 'XXXX            XXXX    XXXX    ',
 					ta: '@ls',
-					ag: '@ls'
+					ag: '@ls',
+					sh: '@ls'
 				},
 				'Hook Break': {
 					ls: 'X X     X       X       X X     X   X   X   X   X       X       ',
@@ -851,7 +902,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: '   XXX    XXX XX  XXXXX     X XX  XX  XX  XX  XX  X   X     X   ',
 					sn: '@re',
 					ta: '@re',
-					ag: '@re'
+					ag: '@re',
+					sh: '@re'
 				}
 			}
 		},
@@ -867,7 +919,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: 'X..X..X.X..X..X.X..X..X.X...X...',
 					ta: 'X  X    X  X    X  X    X X X   ',
 					ag: 'o  a  a o  a  a o  a  a o a o a ',
-					sh: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+					sh: '................................'
 				},
 				'Break 1': {
 					ls: 'X   X   X   X   ',
@@ -903,7 +955,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: '....X.......X.......X.......X.......X.......X.......X.......X...',
 					ta: '    X       X       X  X X XX       X       X       X  X X XX   ',
 					ag: 'o  oa o o  oa o o  oa o o  oa o o  oa o o  oa o o  oa o o  oa o ',
-					sh: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+					sh: '................................................................'
 				},
 				'Break 2': {
 					ls: 'XXXXXXXXXXXXXXXXX   X   X   X   X X    X X      X X    X X      ',
@@ -939,7 +991,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: stretch(4, 12, 'rrX s   f  f  f       Xhr Xhr Xh'),
 					sn: stretch(4, 12, 'X..XX..XX..XX.X.X..XX..XX...X.X.'),
 					ta: stretch(4, 12, 'X   X XXX X   f       f     ') + stretch(3, 12, 'XXX'),
-					ag: stretch(4, 12, 'o   a a o     o   a   o o   o   ')
+					ag: stretch(4, 12, 'o   a   o     o   a   o o   o   '),
+					sh: stretch(4, 12, 'X..XX..XX..XX..XX..XX..XX..XX..X')
 				},
 				"Break 1": {
 					ls: 'X X X XX X XX X ',
@@ -948,7 +1001,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: '@ls',
 					sn: '@ls',
 					ta: '@ls',
-					ag: '@ls'
+					ag: '@ls',
+					sh: '@ls'
 				},
 				"Break 2": {
 					ls: repeat(3, '                      XXX XX  XX'),
@@ -990,7 +1044,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: 'r r rr r rr rr r',
 					sn: '@re',
 					ta: '@re',
-					ag: '@re'
+					ag: '@re',
+					sh: 'X X XX X XX XX X'
 				}
 			}
 		},
@@ -1005,7 +1060,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: '  X r   fh fh f   X r   fh fh f   X r   fh fh f   X r   fh fh f ',
 					sn: 'X..XX..XX..XX..XX..XX..XX..XX..XX..XX..XX..XX..XX..XX..XX..XX..X',
 					ta: '  X X   X  X  X   X X   X  X  X   X X   X  X  X   X X   X  X  X ',
-					ag: 'a a . o o o . a a a . o o o . a a a . o o o . a a a . o o o . a '
+					ag: 'a a . o o o . a a a . o o o . a a a . o o o . a a a . o o o . a ',
+					sh: '@sn'
 				},
 				'Break 1': {
 					ls: '  X X   X  X  X   X X   XX XX   ',
@@ -1014,7 +1070,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: '@ls',
 					sn: '@ls',
 					ta: '@ls',
-					ag: '@ls'
+					ag: '@ls',
+					sh: '@ls'
 				},
 				'Break 2': {
 					ls: 's     s s     s s     s s     s ',
@@ -1023,7 +1080,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: '  X r   fh fh f   X r   fh fh f ',
 					sn: 'X..XX..XX..XX..XX..XX..XX..XX..X',
 					ta: '  X X   X  X  X   X X   X  X  X ',
-					ag: 'a a . o o o . a a a . o o o . a '
+					ag: 'a a . o o o . a a a . o o o . a ',
+					sh: '@sn'
 				},
 				/* TODO: volumeHack only for Surdo
 				'Break 2*': {
@@ -1043,7 +1101,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: 'X X X   X  X  X   X X           ',
 					sn: '@ls',
 					ta: '@ls',
-					ag: '@ls'
+					ag: '@ls',
+					sh: '@ls'
 				}
 			}
 		},
@@ -1059,7 +1118,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: '....X...XX..X...',
 					ta: 'X  XX X X  XX X ',
 					ag: 'o  oa o o  oa o ',
-					sh: 'XXXXXXXXXXXXXXXX'
+					sh: '................'
 				},
 				'Bra Break': {
 					ls: '    X     X         X     X     ',
@@ -1105,7 +1164,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: 'X rrX rr rrrX r ',
 					sn: '..XX..XX..XX..XX',
 					ta: '  XX XX   XX XX ',
-					ag: 'oa  o aa o  a oo'
+					ag: 'oa  o aa o  a oo',
+					sh: '@sn'
 				},
 				"Funky gibbon" : {
 					ls: 'X   X   X  XX X XX              X   X   X  XX X X               ',
@@ -1114,7 +1174,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: '  r   r   r   r   r   r   r   r   r   r   r   r   r   r   r   r ',
 					sn: '..X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X.',
 					ta: '@re',
-					ag: '@re'
+					ag: '@re',
+					sh: '  X   X   X   X   X   X   X   X   X   X   X   X   X   X   X   X '
 				},
 				"Monkey break" : {
 					ls: '  XX XX   XX XX ',
@@ -1124,6 +1185,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: '@ls',
 					ta: '@ls',
 					ag: '@ls',
+					sh: '@ls',
 					ot: 'G       G       '
 				},
 				"Break 2": {
@@ -1133,7 +1195,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: '  XX  XX XXX  X ',
 					sn: '@re',
 					ta: '@re',
-					ag: '@re'
+					ag: '@re',
+					sh: '@re'
 				}
 			}
 		},
@@ -1149,7 +1212,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: '..XX..X...XX..X...XX..X...XX..X.',
 					ta: '  X   X   X   X   X   X   XX  X ',
 					ag: 'o a o a oa ao a o a  oooo a o   ',
-					sh: 'X X X X X X X X X X X X X X X X '
+					sh: 'X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.'
 				},
 				'Kick Back 1': {
 					loop: true,
@@ -1213,7 +1276,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: stretch(4, 12, repeat(2, 's XXf   s XXf   s XXf   XXX f   ')),
 					sn: stretch(4, 12, repeat(2, '....X.......X.......X..XX..XX...')),
 					ta: stretch(4, 12, 'X  XX   X  XX   X  XX  XX  XX   X  XX   X  XX   X  XX   ') + stretch(3, 12, 'XXX   '),
-					ag: stretch(4, 12, repeat(2, 'a  aa  oo  oo a a  aa  oo  oo a '))
+					ag: stretch(4, 12, repeat(2, 'a  aa  oo  oo a a  aa  oo  oo a ')),
+					sh: stretch(4, 12, repeat(2, '................................'))
 				},
 				'Oh Shit': {
 					ls: 'X               ',
@@ -1244,7 +1308,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: '    X     X         X     X X   ',
 					sn: '@re',
 					ta: '@re',
-					ag: '@re'
+					ag: '@re',
+					sh: '@re'
 				},
 				'Break 2': {
 					ls: 'XX  XX  XX  X     XX  XX  XX    ',
@@ -1253,7 +1318,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: '  XX  XX  XX    XX  XX  XX  X   ',
 					sn: '@re',
 					ta: '@re',
-					ag: '@re'
+					ag: '@re',
+					sh: '@re'
 				},
 				'Break 3': {
 					ls: 'X   X   X   X   ',
@@ -1262,7 +1328,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: ' XX  XX  XX     ',
 					sn: '@re',
 					ta: '@re',
-					ag: '@re'
+					ag: '@re',
+					sh: '@re'
 				},
 				'Küsel Break': {
 					ls: 'X XXX X X X X                   ',
@@ -1304,7 +1371,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: 'X..X..X...X..X..',
 					ta: 'X  X  X   X X   ',
 					ag: 'o a a oo a aa o ',
-					sh: 'XXXXXXXXXXXXXXXX'
+					sh: '................'
 				},
 				'Bra Break': {
 					ls: '          X X             X X             X X                                                                 X ',
@@ -1402,7 +1469,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: "X..X..X...X..X..",
 					ta: "X XX XXX  X  X  ",
 					ag: "o a a oo a aa o ",
-					sh: "XXXXXXXXXXXXXXXX"
+					sh: "................"
 				},
 				"Break 1": {
 					ls: "                X X XX XX                       X  X  X X                                  XX                              XX                              XX                   ",
@@ -1471,7 +1538,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: "X..X..X...X.X...X..X..X...X.X...",
 					ta: "X  X  X   X X   X  X  X   X X   ",
 					ag: "o  a  o   a a   o  a  o   a a   ",
-					sh: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+					sh: "................................"
 				},
 				"Bra Break": {
 					ls: "          X X             X X             X X                                                                 X ",
@@ -1557,7 +1624,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: 'X..X..X...X..X..X..X..X...X..X..',
 					ta: ' X XX X XX XX  X X XXXX X  XX   ',
 					ag: 'o  aa oo a oo a o  aa oo a oo a ',
-					sh: 'X X X X X X X X X X X X X X X X '
+					sh: 'X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.'
 				},
 				'Break 1': {
 					ls: 'X  tX t XX XX   ',
@@ -1571,14 +1638,15 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					ot: 'y w w           '
 				},
 				'Break 2': {
-					ls: 'X X X X X       ',
+					ls: repeat(4, 'X X X X X       '),
 					ms: '@ls',
 					hs: '@ls',
-					re: '          XX XX ',
+					re: repeat(4, '          XX XX '),
 					sn: '@re',
 					ta: '@re',
 					ag: '@re',
-					sh: '@re'
+					sh: '@re',
+					volumeHack: { 0: .1, 16: .4, 32: .7, 48: 1  }
 				},
 				'Intro': {
 					ls: '        XX XX           XX XX           XX XX           XX XX                       X X X X XX X    X X   X X   X                   X X X X XX X    X X   X X   X                   X X X X XX X    X X   X X   X                   X X X X XX X    X X   X X   ',
@@ -1603,7 +1671,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: 'X..X..X...X..X..X..X..X...X..X..X..X..X...X..X..X..X..X...X..X..',
 					re: '@sn',
 					ta: 'X XX    X XX    X XX    X XX    X XX    X XX    X XXX XXX XX    ',
-					ag: 'o  a  o   a  a  o  a  o   a  a  o  a  o   a  a  o  a  o   a  a  '
+					ag: repeat(4, '  a o o aa oa o '),
+					sh: '................................................................'
 				},
 				'Intro': {
 					ls: '                           XX X X             X X             X X             X XX X X X    X X ',
@@ -1612,7 +1681,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					re: 'X X X X X  XXXXXX X X X X          fXX X fXXX      fXX X fXXX      fXX X fXXX            fXX    ',
 					sn: '@ls',
 					ta: '@ls',
-					ag: '@ls'
+					ag: '@ls',
+					sh: '@ls'
 				},
 				'Break 1': {
 					loop: true,
@@ -1622,7 +1692,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: 'X..X..X...X..X..X..X..X...X..X..X..X..X...X..X..X..X..X...X..X..',
 					re: '@sn',
 					ta: 'X XX    X XX    X XX    X XX    X XX    X XX    X XXX XXX XX    ',
-					ag: 'o  a  o   a  a  o  a  o   a  a  o  a  o   a  a  o  a  o   a  a  '
+					ag: 'o  a  o   a  a  o  a  o   a  a  o  a  o   a  a  o  a  o   a  a  ',
+					sh: '................................................................'
 				},
 				'Break 2': {
 					ls: 'X               X             X X               X               ',
@@ -1631,7 +1702,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: 'XXrXXXrXXXrXX r XXrXXXrXXXrXX r XXrXXXrXXXrXXXrXX X X X fXX X X ',
 					re: '@sn',
 					ta: '  X   X   X   X   X   X   X   X   X   X   X   XXX X X X     X X ',
-					ag: '@ta'
+					ag: '@ta',
+					sh: '@ta'
 				},
 				'Break 3': {
 					ls: 'X  X  X         X  X  X         ',
@@ -1640,7 +1712,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: '        X  X  X         XXXXX X ',
 					re: '@sn',
 					ta: '@sn',
-					ag: '@sn'
+					ag: '@sn',
+					sh: '@sn'
 				},
 				'Whistle Break': {
 					loop: true,
@@ -1650,7 +1723,18 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: '  X   X   X   X ',
 					re: '@sn',
 					ta: '@sn',
-					ag: '@sn'
+					ag: '@sn',
+					sh: '@sn'
+				},
+				'Outro': {
+					ls: 'XX X X X      X X               ',
+					ms: '@ls',
+					hs: '@ls',
+					sn: '@ls',
+					re: 'XX X X X fXXX X X               ',
+					ta: '@ls',
+					ag: '@ls',
+					sh: '@ls'
 				}
 			}
 		},
@@ -1666,7 +1750,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: '....X.......X.X.....X.......X...',
 					ta: '    X       X X     X       X   ',
 					ag: 'a a o  a a ao o a a o  a        ',
-					sh: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+					sh: '................................'
 				},
 				'Break 1': {
 					ls: 'XXXX           X',
@@ -1733,7 +1817,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: 'X..X..X.X..X..X.X..X..X.X..X..X.',
 					ta: '  X   X  X X  X   X   X  X X  X ',
 					ag: 'a.ooo.aa.o.oo.ooo.aaa.oo.a.aa.oo',
-					sh: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+					sh: '................................'
 				},
 				'Break 1': {
 					ls: '                XX XX XX        ',
@@ -1790,7 +1874,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: 'X..X..X.X..X..X.X..X..X.X..X..X.',
 					ta: 'X X X X X X X X XX              ',
 					ag: 'a a o o oa a oo a a o o oa a oo ',
-					sh: 'X       X       X       X       '
+					sh: 'X.......X.......X.......X.......'
 				},
 				'Scissor Break': {
 					ls: 'X X X X XX X XX ',
@@ -1936,7 +2020,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: repeat(4, 'f.X...X...X...X.'),
 					ta: 'X X     X X     XX XXX XX       X XX XX X X X X XX XXX XX       ',
 					ag: repeat(4, 'ooooo a   a   a '),
-					sh: repeat(4, 'XXXXXXXXXXXXXXXX')
+					sh: repeat(4, '................')
 				},
 				'Pat 1': {
 					ls: '              XXX     XXX       ',
@@ -1979,9 +2063,18 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: repeat(2, 'X..X....X.XX....'),
 					ta: 'X X X X X X X X XX              ',
 					ag: repeat(2, 'o a o  o o ao   '),
-					sh: repeat(2, 'XXXXXXXXXXXXXXXX')
+					sh: repeat(2, '................')
 				},
 				'Intro': {
+					loop: true,
+					re: repeat(4, 'r rrr r r r r r '),
+					sn: '@re',
+					ta: '@re',
+					ag: '@re',
+					sh: '@re'
+				},
+				'Intro+Surdos': {
+					loop: true,
 					ls: 'X         X X X X           X X X       X X X X X           X   ',
 					ms: '@ls',
 					hs: '@ls',
@@ -2014,7 +2107,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Zurav Love / Truant': {
-			displayName: "Żurav Love / Truant",
+			displayName: "Żurav Love",
 			categories: [ "uncommon", "new" ],
 			patterns: {
 				Tune: {
@@ -2026,7 +2119,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: 'X...X...X...X.....XXX...XXX.X...',
 					ta: '    X       X       X       X   ',
 					ag: '  aaa o aaa o     aaa           ',
-					sh: '   XX      XX      XX      XX   '
+					sh: '...XX......XX......XX......XX...'
 				},
 				"Bra Break": {
 					ls: repeat(3, '        X       ') + 'X     X X  X  X ',
@@ -2039,12 +2132,24 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sh: '@ta'
 				},
 				"Kick Back 1": {
+					ls: '            X   ',
+					ms: '@ls',
+					hs: '@ls',
 					re: '  XXX   XXX     ',
-					ms: '            X   '
+					sn: '@ls',
+					ta: '@ls',
+					ag: '@ls',
+					sh: '@ls'
 				},
 				"Kick Back 2": {
+					ls: '    X       X   ',
+					ms: '@ls',
+					hs: '@ls',
 					re: '  XXX   XXX     ',
-					ms: '    X       X   '
+					sn: '@ls',
+					ta: '@ls',
+					ag: '@ls',
+					sh: '@ls'
 				}
 			}
 		}
