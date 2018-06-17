@@ -20,7 +20,7 @@ app.factory("bbConfig", function(ng, $document) {
 		},
 		re: {
 			name: "Repi",
-			strokes: [ "X", "f", "r", "h", ".", "z" ]
+			strokes: [ "X", "f", "r", "h", ".", "z", "s" ]
 		},
 		sn: {
 			name: "Snare",
