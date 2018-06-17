@@ -112,6 +112,10 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 			$scope.playbackSettings.headphones = instrumentKey;
 	};
 
+	$scope.showCompactedSurdoHeadphones = function(instrumentKey) {
+		return ["ls", "ms", "hs"].includes(instrumentKey) && !["ls", "ms", "hs", "s"].includes($scope.playbackSettings.headphones);
+	};
+
 	$scope.setPosition = function(i, $event) {
 		var beat = $($event.target).closest(".beat");
 		var add = ($event.pageX - beat.offset().left) / beat.outerWidth();

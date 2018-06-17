@@ -45,7 +45,8 @@
 			<div class="timeline"></div>
 			<div class="field" ng-repeat="instrumentKey in utils.getKeys(config.instruments)">
 				<ul class="icon-list">
-					<li><a href="javascript:" ng-click="headphones(instrumentKey)" ng-class="state.playbackSettings.headphones == instrumentKey ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a></li>
+					<li ng-if="!showCompactedSurdoHeadphones(instrumentKey)"><a href="javascript:" ng-click="headphones(instrumentKey)" ng-class="state.playbackSettings.headphones == instrumentKey || ['ls', 'ms', 'hs'].includes(instrumentKey) && state.playbackSettings.headphones == 's' ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a></li>
+					<li ng-if="showCompactedSurdoHeadphones(instrumentKey) && instrumentKey == 'ms'"><a href="javascript:" ng-click="headphones('s')" ng-class="state.playbackSettings.headphones == 's' ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a></li>
 				</ul>
 			</div>
 			<div class="field all-drop" ng-show="dragging"></div>

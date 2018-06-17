@@ -20,6 +20,18 @@ app.factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $
 			return ret;
 		},
 
+		_isEnabled: function(instr, headphones, mute) {
+			if(mute[instr])
+				return false;
+
+			if(headphones == "s")
+				return [ "ls", "ms", "hs" ].includes(instr);
+			else if(headphones)
+				return headphones == instr;
+
+			return true;
+		},
+
 		patternToBeatbox: function(pattern, headphones, mute, volume, volumes) {
 			if(!mute)
 				mute = { };
@@ -33,7 +45,7 @@ app.factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $
 
 				var stroke = [ ];
 				for(var instr in bbConfig.instruments) {
-					if((!headphones || headphones == instr) && !mute[instr] && pattern[instr] && pattern[instr][i] && pattern[instr][i] != " ")
+					if(bbPlayer._isEnabled(instr, headphones, mute) && pattern[instr] && pattern[instr][i] && pattern[instr][i] != " ")
 						stroke.push({ instrument: instr+"_"+pattern[instr][i], volume: vol * (volume == null ? 1 : volume) * (!volumes || volumes[instr] == null ? 1 : volumes[instr]) });
 				}
 				ret[i*fac] = stroke;
@@ -56,7 +68,7 @@ app.factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $
 
 			for(var i=0; i<length; i++) {
 				for(var inst in bbConfig.instruments) {
-					if((!state.playbackSettings.headphones || state.playbackSettings.headphones == inst) && !state.playbackSettings.mute[inst] && song[i] && song[i][inst] && state.getPattern(song[i][inst])) {
+					if(bbPlayer._isEnabled(inst, state.playbackSettings.headphones, state.playbackSettings.mute) && song[i] && song[i][inst] && state.getPattern(song[i][inst])) {
 						var pattern = state.getPattern(song[i][inst]);
 						var patternLength = 1;
 						for(var j=i+1; j<i+pattern.length/4 && (!song[j] || !song[j][inst]); j++) // Check if pattern is cut off

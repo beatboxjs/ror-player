@@ -78,7 +78,10 @@ app.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, n
 			$scope.state.playbackSettings.headphones = null;
 		else
 			$scope.state.playbackSettings.headphones = instrumentKey;
-		updatePattern();
+	};
+
+	$scope.showCompactedSurdoHeadphones = function(instrumentKey) {
+		return ["ls", "ms", "hs"].includes(instrumentKey) && !["ls", "ms", "hs", "s"].includes($scope.state.playbackSettings.headphones);
 	};
 
 	$scope.getLength = function() {
