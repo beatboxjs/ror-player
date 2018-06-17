@@ -122,13 +122,13 @@ app.factory("bbConfig", function(ng, $document) {
 	};
 
 	bbConfig.defaultVolumes = {
-		ls: 1,
-		ms: 1,
-		hs: 1,
-		re: 1,
+		ls: 0.55,
+		ms: 0.55,
+		hs: 0.55,
+		re: 1.6,
 		sn: 1.7,
-		ta: 1,
-		ag: 0.6,
+		ta: 1.4,
+		ag: 1,
 		sh: 0.5,
 		ot: 1
 	};
