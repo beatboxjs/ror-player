@@ -1,14 +1,11 @@
 import app from "../../app";
 
-app.factory("bbState", function(bbConfig, ng, $, bbUtils, bbTune, bbSong, bbPattern, bbDefaultTunes) {
+app.factory("bbState", function(bbConfig, ng, $, bbUtils, bbTune, bbSong, bbPattern, bbDefaultTunes, bbPlaybackSettings) {
 	function bbState(data) {
 		this.songs = [ ];
 		this.tunes = { };
 		this.songIdx = 0;
-		this.loop = false;
-		this.mute = { };
-		this.speed = 100;
-		this.headphones = null;
+		this.playbackSettings = new bbPlaybackSettings();
 
 		this.extend(data || { tunes: bbDefaultTunes }, null, null, true, true);
 	}
@@ -16,7 +13,7 @@ app.factory("bbState", function(bbConfig, ng, $, bbUtils, bbTune, bbSong, bbPatt
 	bbState.prototype = {
 		extend: function(data, selectSong, selectPattern, keepEmptyTunes, importOptions) {
 			if(importOptions) {
-				for(var i in {songIdx:1, loop:1, mute:1, speed:1, headphones:1}) {
+				for(var i of [ "songIdx", "playbackSettings" ]) {
 					if(i in data)
 						this[i] = data[i];
 				}
@@ -47,7 +44,7 @@ app.factory("bbState", function(bbConfig, ng, $, bbUtils, bbTune, bbSong, bbPatt
 
 		extendFromCompressed : function(object, selectSong, selectPattern, keepEmptyTunes, importOptions, ignoreMissingDefaultPatterns) {
 			if(importOptions) {
-				for(var i in {songIdx:1, loop:1, mute:1, speed:1, headphones:1}) {
+				for(var i of [ "songIdx", "playbackSettings" ]) {
 					if(i in object)
 						this[i] = object[i];
 				}
@@ -145,7 +142,7 @@ app.factory("bbState", function(bbConfig, ng, $, bbUtils, bbTune, bbSong, bbPatt
 				delete ret.patterns;
 
 			if(saveOptions) {
-				for(var i in {songIdx:1, loop:1, mute:1, speed:1, headphones:1})
+				for(var i of ["songIdx", "playbackSettings"])
 					ret[i] = this[i];
 			}
 

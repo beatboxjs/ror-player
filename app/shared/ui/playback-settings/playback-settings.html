@@ -1,0 +1,44 @@
+<button type="button" class="btn btn-default" uib-popover-template="'playback-settings/popover'" popover-class="bb-playback-settings" popover-trigger="'outsideClick'" popover-placement="bottom" popover-title="Playback settings" uib-tooltip="Playback settings">
+	<span class="glyphicon glyphicon-equalizer"></span> <span class="caret"></span>
+</button>
+
+<script type="text/ng-template" id="playback-settings/popover">
+	<div>
+		<dl class="dl-horizontal">
+			<dt>Speed</dt>
+			<dd><slider ng-model="playbackSettings.speed" min="30" max="180"></slider></dd>
+
+			<dt>Loop</dt>
+			<dd><input type="checkbox" ng-model="playbackSettings.loop" /></dd>
+		</dl>
+		<hr />
+		<table>
+			<tbody>
+				<tr>
+					<td class="master">
+						<slider ng-model="playbackSettings.volume" min="0" max="1" step="0.01" orientation="vertical" reversed="true"></slider>
+					</td>
+					<td ng-repeat="instrumentKey in utils.getKeys(config.instruments)">
+						<slider ng-model="playbackSettings.volumes[instrumentKey]" min="0" max="1" step="0.01" orientation="vertical" reversed="true"></slider>
+					</td>
+				</tr>
+				<tr>
+					<td class="master">
+						<a href="javascript:" ng-click="muteAll()" ng-class="allMuted() ? 'active' : 'inactive'"><span class="glyphicon glyphicon-volume-off"></span></a>
+					</td>
+					<td ng-repeat="instrumentKey in utils.getKeys(config.instruments)">
+						<a href="javascript:" ng-click="mute(instrumentKey)" ng-class="playbackSettings.mute[instrumentKey] ? 'active' : 'inactive'"><span class="glyphicon glyphicon-volume-off"></span></a>
+					</td>
+				</tr>
+				<tr class="instrument-names">
+					<td class="master">
+						<strong>Master</strong>
+					</td>
+					<td ng-repeat="instrumentKey in utils.getKeys(config.instruments)">
+						<span>{{config.instruments[instrumentKey].name}}</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</script>

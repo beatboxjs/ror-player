@@ -20,7 +20,7 @@ app.factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $
 			return ret;
 		},
 
-		patternToBeatbox: function(pattern, headphones, mute) {
+		patternToBeatbox: function(pattern, headphones, mute, volume, volumes) {
 			if(!mute)
 				mute = { };
 
@@ -34,7 +34,7 @@ app.factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $
 				var stroke = [ ];
 				for(var instr in bbConfig.instruments) {
 					if((!headphones || headphones == instr) && !mute[instr] && pattern[instr] && pattern[instr][i] && pattern[instr][i] != " ")
-						stroke.push({ instrument: instr+"_"+pattern[instr][i], volume: vol });
+						stroke.push({ instrument: instr+"_"+pattern[instr][i], volume: vol * (volume == null ? 1 : volume) * (!volumes || volumes[instr] == null ? 1 : volumes[instr]) });
 				}
 				ret[i*fac] = stroke;
 			}
@@ -47,7 +47,7 @@ app.factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $
 			var ret = new Array(length*bbConfig.playTime*4);
 
 			function insertPattern(idx, pattern, instrumentKey, patternLength) {
-				var patternBeatbox = bbPlayer.patternToBeatbox(pattern, instrumentKey);
+				var patternBeatbox = bbPlayer.patternToBeatbox(pattern, instrumentKey, null, state.playbackSettings.volume, state.playbackSettings.volumes);
 				idx = idx*bbConfig.playTime*4;
 				for(var i=0; i<patternLength*bbConfig.playTime*4; i++) {
 					ret[i+idx] = (ret[i+idx] || [ ])/*.filter(function(it) { return it.instrument.split(/_/)[0] != instrumentKey; })*/.concat(patternBeatbox[i] || [ ]);
@@ -56,7 +56,7 @@ app.factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $
 
 			for(var i=0; i<length; i++) {
 				for(var inst in bbConfig.instruments) {
-					if((!state.headphones || state.headphones == inst) && !state.mute[inst] && song[i] && song[i][inst] && state.getPattern(song[i][inst])) {
+					if((!state.playbackSettings.headphones || state.playbackSettings.headphones == inst) && !state.playbackSettings.mute[inst] && song[i] && song[i][inst] && state.getPattern(song[i][inst])) {
 						var pattern = state.getPattern(song[i][inst]);
 						var patternLength = 1;
 						for(var j=i+1; j<i+pattern.length/4 && (!song[j] || !song[j][inst]); j++) // Check if pattern is cut off

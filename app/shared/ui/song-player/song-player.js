@@ -20,7 +20,7 @@ app.directive("bbSongPlayer", function($) {
 	};
 });
 
-app.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, ng, bbUtils, bbPlayer, $element, $timeout, bbShareDialog, bbImportDialog, $) {
+app.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, ng, bbUtils, bbPlayer, $element, $timeout, bbShareDialog, bbImportDialog, $, bbPlaybackSettings) {
 	$scope.$watch("state.songs[state.songIdx]", function(song) {
 		if(song == null) {
 			if($scope.state.songs.length == 0)
@@ -51,15 +51,13 @@ app.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, n
 
 	function updatePattern() {
 		$scope.player.setPattern(bbPlayer.songToBeatbox($scope.state));
+		$scope.player.setBeatLength(60000/$scope.state.playbackSettings.speed/bbConfig.playTime);
+		$scope.player.setRepeat($scope.state.playbackSettings.loop);
 	}
 
 	$scope.$watch("song", updatePattern, true);
-	$scope.$watch("state.speed", function(newSpeed) {
-		$scope.player.setBeatLength(60000/newSpeed/bbConfig.playTime);
-	});
-	$scope.$watch("state.loop", function(loop) {
-		$scope.player.setRepeat(loop);
-	});
+	$scope.$watch("state.playbackSettings", updatePattern, true);
+	// TODO: Listen for pattern changes
 
 	$scope.playPause = function() {
 		if(!$scope.player.playing) {
@@ -71,37 +69,15 @@ app.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, n
 	};
 
 	$scope.stop = function() {
-		if($scope.player.playing)
-			$scope.player.stop();
+		bbPlayer.stopAll();
 		$scope.player.setPosition(0);
 	};
 
 	$scope.headphones = function(instrumentKey) {
-		if($scope.state.headphones == instrumentKey)
-			$scope.state.headphones = null;
+		if($scope.state.playbackSettings.headphones == instrumentKey)
+			$scope.state.playbackSettings.headphones = null;
 		else
-			$scope.state.headphones = instrumentKey;
-		updatePattern();
-	};
-
-	$scope.mute = function(instrumentKey) {
-		$scope.state.mute[instrumentKey] = !$scope.state.mute[instrumentKey];
-		updatePattern();
-	};
-
-	$scope.allMuted = function() {
-		for(var instrumentKey in bbConfig.instruments) {
-			if(!$scope.state.mute[instrumentKey])
-				return false;
-		}
-		return true;
-	};
-
-	$scope.muteAll = function() {
-		var mute = !$scope.allMuted();
-		for(var instrumentKey in bbConfig.instruments) {
-			$scope.state.mute[instrumentKey] = mute;
-		}
+			$scope.state.playbackSettings.headphones = instrumentKey;
 		updatePattern();
 	};
 

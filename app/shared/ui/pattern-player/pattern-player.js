@@ -16,7 +16,7 @@ app.directive("bbPatternPlayer", function($, $templateCache) {
 	};
 });
 
-app.controller("bbPatternController", function($scope, $element, bbPlayer, bbConfig, bbUtils, ng, $) {
+app.controller("bbPatternController", function($scope, $element, bbPlayer, bbConfig, bbUtils, ng, $, bbPlaybackSettings) {
 	$scope.config = bbConfig;
 	$scope.utils = bbUtils;
 
@@ -51,20 +51,19 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 	$scope.player = bbPlayer.createBeatbox(true);
 	$scope.player.onbeat = strokeCallback;
 
-	$scope.playerOptions = {
+	$scope.playbackSettings = new bbPlaybackSettings({
 		speed: $scope.pattern.speed,
-		headphones: null,
-		mute: { }
-	};
+		loop: true
+	});
 
-	function updatePattern() {
-		$scope.player.setPattern(bbPlayer.patternToBeatbox($scope.pattern, $scope.playerOptions.headphones, $scope.playerOptions.mute));
+	function updatePlayer() {
+		$scope.player.setPattern(bbPlayer.patternToBeatbox($scope.pattern, $scope.playbackSettings.headphones, $scope.playbackSettings.mute, $scope.playbackSettings.volume, $scope.playbackSettings.volumes));
+		$scope.player.setBeatLength(60000/$scope.playbackSettings.speed/bbConfig.playTime);
+		$scope.player.setRepeat($scope.playbackSettings.loop);
 	}
 
-	$scope.$watch("pattern", updatePattern, true);
-	$scope.$watch("playerOptions.speed", function(newSpeed) {
-		$scope.player.setBeatLength(60000/newSpeed/bbConfig.playTime);
-	});
+	$scope.$watch("pattern", updatePlayer, true);
+	$scope.$watch("playbackSettings", updatePlayer, true);
 
 	$scope.playPause = function() {
 		if(!$scope.player.playing) {
@@ -107,32 +106,10 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 	};
 
 	$scope.headphones = function(instrumentKey) {
-		if($scope.playerOptions.headphones == instrumentKey)
-			$scope.playerOptions.headphones = null;
+		if($scope.playbackSettings.headphones == instrumentKey)
+			$scope.playbackSettings.headphones = null;
 		else
-			$scope.playerOptions.headphones = instrumentKey;
-		updatePattern();
-	};
-
-	$scope.mute = function(instrumentKey) {
-		$scope.playerOptions.mute[instrumentKey] = !$scope.playerOptions.mute[instrumentKey];
-		updatePattern();
-	};
-
-	$scope.allMuted = function() {
-		for(var instrumentKey in bbConfig.instruments) {
-			if(!$scope.playerOptions.mute[instrumentKey])
-				return false;
-		}
-		return true;
-	};
-
-	$scope.muteAll = function() {
-		var mute = !$scope.allMuted();
-		for(var instrumentKey in bbConfig.instruments) {
-			$scope.playerOptions.mute[instrumentKey] = mute;
-		}
-		updatePattern();
+			$scope.playbackSettings.headphones = instrumentKey;
 	};
 
 	$scope.setPosition = function(i, $event) {

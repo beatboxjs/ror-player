@@ -1,0 +1,40 @@
+.bb-playback-settings {
+
+	max-width: none;
+
+	.instrument-names td {
+		vertical-align: top;
+
+		span,strong {
+			display: inline-block;
+			white-space: nowrap;
+			writing-mode: vertical-rl;
+			transform: rotate(180deg);
+		}
+	}
+
+	.slider-vertical {
+		height: 120px;
+	}
+
+	.slider .tooltip:not(.in) {
+		/* Prevent mouse interaction with hidden tooltip (might cover other buttons when wrapping lines) */
+		visibility: hidden;
+	}
+
+	td {
+		padding: 1px 8px;
+		text-align: center;
+	}
+
+	td.master {
+		border-right: 1px solid #eee;
+		padding-left: 0;
+		padding-right: 8px;
+	}
+
+	.inactive {
+		color: #bbb;
+	}
+
+}

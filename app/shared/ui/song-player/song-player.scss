@@ -176,10 +176,13 @@
 
 	.control-panel {
 		line-height: 2.7em;
-	}
 
-	.slider .tooltip:not(.in) {
-		/* Prevent mouse interaction with hidden tooltip (might cover other buttons when wrapping lines) */
-		visibility: hidden;
+		> .divider {
+			display: inline-block;
+			vertical-align: top;
+			height: 34px;
+			margin: 0 9px;
+			border-left: 1px solid #eee;
+		}
 	}
 }

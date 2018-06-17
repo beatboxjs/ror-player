@@ -1,6 +1,10 @@
 <div class="bb-pattern-editor-toolbar">
 	<button type="button" class="btn" ng-class="player.playing ? 'btn-info' : 'btn-success'" ng-click="playPause()"><span class="glyphicon" ng-class="player.playing ? 'glyphicon-pause' : 'glyphicon-play'"></span> {{player.playing ? 'Pause' : 'Play'}}</button>
 	<button type="button" class="btn btn-danger" ng-click="stop()"><span class="glyphicon glyphicon-stop"></span> Stop</button>
+	<bb-playback-settings ng-model="playbackSettings"></bb-playback-settings>
+
+	<div class="divider"></div>
+
 	<div class="btn-group" uib-dropdown ng-if="editable">
 		<button type="button" class="btn btn-default dropdown-toggle" uib-dropdown-toggle>Length: {{pattern.length}} <span class="caret"></span></button>
 		<ul class="dropdown-menu" role="menu">
@@ -13,9 +17,6 @@
 			<li ng-repeat="(ti, desc) in config.times" ng-class="{active: pattern.time == ti}"><a href="javascript:" ng-click="pattern.time = ti">Time signature: {{desc}}</a></li>
 		</ul>
 	</div>
-	<div class="btn-group speed-slider">
-		<slider ng-model="playerOptions.speed" min="30" max="180"></slider>
-	</div>
 	<bb-transclude></bb-transclude>
 	<button type="button" class="btn btn-warning" ng-show="hasLocalChanges()" ng-click="reset()"><span class="glyphicon glyphicon-erase"></span> Restore original</button>
 </div>
@@ -23,9 +24,7 @@
 	<table class="pattern-editor" ng-class="'time-'+pattern.time">
 		<thead>
 			<tr>
-				<td colspan="2" class="dummy">
-					<a href="javascript:" ng-click="muteAll()" ng-class="allMuted() ? 'active' : 'inactive'" uib-tooltip="{{allMuted() ? 'Unmute' : 'Mute'}} all instruments"><span class="glyphicon glyphicon-volume-off"></span></a>
-				</td>
+				<td colspan="2" class="dummy"></td>
 				<td ng-repeat="(i,a) in utils.getNumber(pattern.length) track by $index" colspan="{{pattern.time}}" class="beat" ng-class="getBeatClass(i)" ng-click="setPosition(i, $event)"><span href="javascript:">{{i+1}}</span></td>
 			</tr>
 		</thead>
@@ -33,8 +32,7 @@
 			<tr ng-repeat="instrumentKey in utils.getKeys(config.instruments)">
 				<th>{{config.instruments[instrumentKey].name}}</th>
 				<td class="instrument-operations">
-					<a href="javascript:" ng-click="headphones(instrumentKey)" ng-class="playerOptions.headphones == instrumentKey ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a>
-					<a href="javascript:" ng-click="mute(instrumentKey)" ng-class="playerOptions.mute[instrumentKey] ? 'active' : 'inactive'"><span class="glyphicon glyphicon-volume-off"></span></a>
+					<a href="javascript:" ng-click="headphones(instrumentKey)" ng-class="playbackSettings.headphones == instrumentKey ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a>
 				</td>
 				<td ng-repeat="(i,a) in utils.getNumber(pattern.length*pattern.time) track by $index" class="stroke" ng-class="getStrokeClass(i)">
 					<span ng-if="!editable" class="stroke-inner" uib-tooltip="{{config.strokesDescription[pattern[instrumentKey][i]]}}">{{config.strokes[pattern[instrumentKey][i]] || ' '}}</span>
