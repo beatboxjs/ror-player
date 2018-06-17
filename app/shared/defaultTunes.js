@@ -2132,6 +2132,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sh: '@ta'
 				},
 				"Kick Back 1": {
+					loop: true,
 					ls: '            X   ',
 					ms: '@ls',
 					hs: '@ls',
@@ -2142,6 +2143,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sh: '@ls'
 				},
 				"Kick Back 2": {
+					loop: true,
 					ls: '    X       X   ',
 					ms: '@ls',
 					hs: '@ls',
