@@ -77,7 +77,7 @@ app.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPa
 			speed: patternObj.speed,
 			loop: patternObj.loop
 		});
-		var pattern = bbPlayer.patternToBeatbox(patternObj, playbackSettings.headphones, playbackSettings.mute, playbackSettings.volume, playbackSettings.volumes);
+		var pattern = bbPlayer.patternToBeatbox(patternObj, playbackSettings);
 
 		if(playbackSettings.length)
 			pattern = pattern.slice(0, playbackSettings.length*bbConfig.playTime);

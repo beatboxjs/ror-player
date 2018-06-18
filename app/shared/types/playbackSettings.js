@@ -14,6 +14,7 @@ app.factory("bbPlaybackSettings", function(bbConfig, $) {
 			this.volumes = bbConfig.defaultVolumes;
 			this.loop = false;
 			this.length = null; // Cut off after a certain amount of beats
+			this.whistle = false; // 1: Whistle on one, 2: whistle on all beats
 
 			Object.assign(this, data);
 
