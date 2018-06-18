@@ -1692,7 +1692,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sn: 'X..X..X...X..X..X..X..X...X..X..X..X..X...X..X..X..X..X...X..X..',
 					re: '@sn',
 					ta: 'X XX    X XX    X XX    X XX    X XX    X XX    X XXX XXX XX    ',
-					ag: 'o  a  o   a  a  o  a  o   a  a  o  a  o   a  a  o  a  o   a  a  ',
+					ag: repeat(4, '  a o o aa oa o '),
 					sh: '................................................................'
 				},
 				'Break 2': {
