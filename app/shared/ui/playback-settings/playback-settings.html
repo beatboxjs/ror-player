@@ -6,8 +6,11 @@
 	<div>
 		<div class="row">
 			<label class="col-sm-3 control-label">Speed</label>
-			<div class="col-sm-9">
+			<div class="col-sm-7">
 				<slider ng-model="playbackSettings.speed" min="30" max="180"></slider>
+			</div>
+			<div class="col-sm-2">
+				<button type="button" class="btn btn-default btn-xs" ng-click="resetSpeed()">Reset</button>
 			</div>
 		</div>
 
@@ -60,8 +63,12 @@
 			</tbody>
 		</table>
 
-		<hr ng-if="defaultSettings"/>
+		<hr/>
 
-		<button ng-if="defaultSettings" type="button" class="btn btn-default btn-block" ng-click="reset()">Reset</button>
+		<div class="row text-center">
+			<div class="btn-group">
+				<button ng-repeat="(i,settings) in config.volumePresets" type="button" class="btn btn-default" ng-click="setVolumes(settings)" ng-class="{active: areVolumesActive(settings)}">{{i}}</button>
+			</div>
+		</div>
 	</div>
 </script>

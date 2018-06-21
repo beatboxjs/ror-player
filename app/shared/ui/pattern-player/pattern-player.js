@@ -9,7 +9,8 @@ app.directive("bbPatternPlayer", function($, $templateCache) {
 		scope: {
 			pattern: "=bbPattern",
 			originalPattern: "=bbPatternOriginal",
-			editable: "=bbPatternEditable"
+			editable: "=bbPatternEditable",
+			presetPlaybackSettings: "=bbSettings"
 		},
 		controller: "bbPatternController",
 		transclude: true
@@ -51,11 +52,19 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 	$scope.player = bbPlayer.createBeatbox(true);
 	$scope.player.onbeat = strokeCallback;
 
-	$scope.playbackSettings = new bbPlaybackSettings({
+	$scope.playbackSettings = Object.assign(new bbPlaybackSettings($scope.presetPlaybackSettings), {
 		speed: $scope.pattern.speed,
 		loop: true
 	});
-	$scope.defaultPlaybackSettings = new bbPlaybackSettings($scope.playbackSettings);
+	$scope.$watch("playbackSettings", () => {
+		$scope.presetPlaybackSettings.volume = $scope.playbackSettings.volume;
+		$scope.presetPlaybackSettings.volumes = $scope.playbackSettings.volumes;
+	}, true);
+	$scope.$watch("presetPlaybackSettings", () => {
+		$scope.playbackSettings.volume = $scope.presetPlaybackSettings.volume;
+		$scope.playbackSettings.volumes = $scope.presetPlaybackSettings.volumes;
+	}, true);
+
 
 	function updatePlayer() {
 		$scope.player.setPattern(bbPlayer.patternToBeatbox($scope.pattern, $scope.playbackSettings));

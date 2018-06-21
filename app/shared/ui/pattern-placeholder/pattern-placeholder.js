@@ -73,10 +73,10 @@ app.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPa
 
 	var updatePlayer = function() {
 		var patternObj = $scope.state.getPattern($scope.tuneName, $scope.patternName);
-		var playbackSettings = $scope.getPlaybackSettings() || new bbPlaybackSettings({
+		var playbackSettings = $scope.getPlaybackSettings() || new bbPlaybackSettings(Object.assign({}, $scope.state.playbackSettings, {
 			speed: patternObj.speed,
 			loop: patternObj.loop
-		});
+		}));
 		var pattern = bbPlayer.patternToBeatbox(patternObj, playbackSettings);
 
 		if(playbackSettings.length)
@@ -94,6 +94,7 @@ app.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPa
 
 			$scope.$watch("getPlaybackSettings()", updatePlayer, true);
 			$scope.$watch("state.getPattern(tuneName, patternName)", updatePlayer, true);
+			$scope.$watch("state.playbackSettings", updatePlayer, true);
 
 			updatePlayer();
 		}

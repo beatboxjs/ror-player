@@ -59,8 +59,6 @@ app.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, n
 	$scope.$watch("state.playbackSettings", updatePattern, true);
 	// TODO: Listen for pattern changes
 
-	$scope.defaultPlaybackSettings = new bbPlaybackSettings();
-
 	$scope.playPause = function() {
 		if(!$scope.player.playing) {
 			$scope.player.play();

@@ -7,13 +7,13 @@ app.directive("bbPlaybackSettings", () => {
 		controller: "bbPlaybackSettingsController",
 		scope: {
 			playbackSettings: "=ngModel",
-			defaultSettings: "=default",
+			defaultSpeed: "=defaultSpeed",
 			tooltipPlacement: "@"
 		}
 	};
 });
 
-app.controller("bbPlaybackSettingsController", (bbConfig, $scope, bbUtils) => {
+app.controller("bbPlaybackSettingsController", (bbConfig, $scope, bbUtils, ng) => {
 	$scope.config = bbConfig;
 	$scope.utils = bbUtils;
 
@@ -57,7 +57,15 @@ app.controller("bbPlaybackSettingsController", (bbConfig, $scope, bbUtils) => {
 		}
 	};
 
-	$scope.reset = function() {
-		$scope.playbackSettings.reset($scope.defaultSettings);
-	}
+	$scope.resetSpeed = function() {
+		$scope.playbackSettings.speed = $scope.defaultSpeed || 100;
+	};
+
+	$scope.setVolumes = function(volumes) {
+		Object.assign($scope.playbackSettings.volumes, volumes);
+	};
+
+	$scope.areVolumesActive = function(volumes) {
+		return ng.equals(volumes, $scope.playbackSettings.volumes);
+	};
 });

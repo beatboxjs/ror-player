@@ -121,16 +121,29 @@ app.factory("bbConfig", function(ng, $document) {
 		"z": "Soft flare"
 	};
 
-	bbConfig.defaultVolumes = {
-		ls: 0.55,
-		ms: 0.55,
-		hs: 0.55,
-		re: 1.6,
-		sn: 1.7,
-		ta: 1.4,
-		ag: 1,
-		sh: 0.5,
-		ot: 1
+	bbConfig.volumePresets = {
+		"Defaults": {
+			ls: 0.7,
+			ms: 0.7,
+			hs: 0.7,
+			re: 1.6,
+			sn: 1.7,
+			ta: 1.4,
+			ag: 1,
+			sh: 0.5,
+			ot: 1
+		},
+		"Shitty speakers": {
+			ls: 1,
+			ms: 1,
+			hs: 1.1,
+			re: 1.5,
+			sn: 1.9,
+			ta: 1.2,
+			ag: 1,
+			sh: 0.45,
+			ot: 1
+		}
 	};
 
 	bbConfig.times = {
