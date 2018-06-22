@@ -73,15 +73,19 @@ app.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, n
 		$scope.player.setPosition(0);
 	};
 
-	$scope.headphones = function(instrumentKey) {
-		if($scope.state.playbackSettings.headphones == instrumentKey)
-			$scope.state.playbackSettings.headphones = null;
-		else
-			$scope.state.playbackSettings.headphones = instrumentKey;
+	$scope.headphones = function(...instrumentKeys) {
+		for(let instrumentKey of instrumentKeys) {
+			let idx = $scope.state.playbackSettings.headphones.indexOf(instrumentKey);
+			if(idx == -1)
+				$scope.state.playbackSettings.headphones.push(instrumentKey);
+			else
+				$scope.state.playbackSettings.headphones.splice(idx, 1);
+		}
 	};
 
-	$scope.showCompactedSurdoHeadphones = function(instrumentKey) {
-		return ["ls", "ms", "hs"].includes(instrumentKey) && !["ls", "ms", "hs", "s"].includes($scope.state.playbackSettings.headphones);
+	$scope.isHiddenSurdoHeadphone = function(instrumentKey) {
+		let surdos = ["ls", "ms", "hs"];
+		return surdos.includes(instrumentKey) && !surdos.some((it) => ($scope.state.playbackSettings.headphones.includes(it)));
 	};
 
 	$scope.getLength = function() {

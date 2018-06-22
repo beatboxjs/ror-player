@@ -8,7 +8,7 @@ app.factory("bbPlaybackSettings", function(bbConfig, $) {
 
 		reset(data) {
 			this.speed = 100;
-			this.headphones = null;
+			this.headphones = [ ];
 			this.mute = { };
 			this.volume = 1;
 			this.volumes = bbConfig.volumePresets[Object.keys(bbConfig.volumePresets)[0]];
@@ -18,6 +18,7 @@ app.factory("bbPlaybackSettings", function(bbConfig, $) {
 
 			Object.assign(this, data);
 
+			this.headphones = [].concat(this.headphones || []);
 			this.mute = Object.assign({ }, this.mute);
 			this.volumes = Object.assign({ }, this.volumes);
 		}

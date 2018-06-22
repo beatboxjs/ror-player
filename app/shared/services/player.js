@@ -24,10 +24,8 @@ app.factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $
 			if(mute[instr])
 				return false;
 
-			if(headphones == "s")
-				return [ "ls", "ms", "hs" ].includes(instr);
-			else if(headphones)
-				return headphones == instr;
+			if(headphones && headphones.length > 0)
+				return headphones.includes(instr);
 
 			return true;
 		},
@@ -64,7 +62,7 @@ app.factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $
 
 			function insertPattern(idx, pattern, instrumentKey, patternLength, whistle) {
 				var patternBeatbox = bbPlayer.patternToBeatbox(pattern, new bbPlaybackSettings({
-					headphones: instrumentKey,
+					headphones: [ instrumentKey ],
 					volume: state.playbackSettings.volume,
 					volumes: state.playbackSettings.volumes,
 					whistle

@@ -32,8 +32,8 @@
 			<tr ng-repeat="instrumentKey in utils.getKeys(config.instruments)">
 				<th>{{config.instruments[instrumentKey].name}}</th>
 				<td class="instrument-operations">
-					<a ng-if="!showCompactedSurdoHeadphones(instrumentKey)" href="javascript:" ng-click="headphones(instrumentKey)" ng-class="playbackSettings.headphones == instrumentKey || ['ls', 'ms', 'hs'].includes(instrumentKey) && playbackSettings.headphones == 's' ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a>
-					<a ng-if="showCompactedSurdoHeadphones(instrumentKey) && instrumentKey == 'ms'" href="javascript:" ng-click="headphones('s')" ng-class="playbackSettings.headphones == 's' ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a>
+					<a ng-if="!isHiddenSurdoHeadphone(instrumentKey)" href="javascript:" ng-click="headphones(instrumentKey)" ng-class="playbackSettings.headphones.includes(instrumentKey) ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a>
+					<a ng-if="isHiddenSurdoHeadphone(instrumentKey) && instrumentKey == 'ms'" href="javascript:" ng-click="headphones('ls', 'ms', 'hs')" class="inactive"><span class="glyphicon glyphicon-headphones"></span></a>
 				</td>
 				<td ng-repeat="(i,a) in utils.getNumber(pattern.length*pattern.time) track by $index" class="stroke" ng-class="getStrokeClass(i)">
 					<span ng-if="!editable" class="stroke-inner" uib-tooltip="{{config.strokesDescription[pattern[instrumentKey][i]]}}">{{config.strokes[pattern[instrumentKey][i]] || ' '}}</span>

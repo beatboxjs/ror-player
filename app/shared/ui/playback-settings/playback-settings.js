@@ -31,13 +31,6 @@ app.controller("bbPlaybackSettingsController", (bbConfig, $scope, bbUtils, ng) =
 			$scope.playbackSettings.volumes[instrKey] = 1;
 	}
 
-	$scope.headphones = (instrumentKey) => {
-		if($scope.playbackSettings.headphones == instrumentKey)
-			$scope.playbackSettings.headphones = null;
-		else
-			$scope.playbackSettings.headphones = instrumentKey;
-	};
-
 	$scope.mute = function(instrumentKey) {
 		$scope.playbackSettings.mute[instrumentKey] = !$scope.playbackSettings.mute[instrumentKey];
 	};

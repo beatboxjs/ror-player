@@ -115,15 +115,19 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 		return ret;
 	};
 
-	$scope.headphones = function(instrumentKey) {
-		if($scope.playbackSettings.headphones == instrumentKey)
-			$scope.playbackSettings.headphones = null;
-		else
-			$scope.playbackSettings.headphones = instrumentKey;
+	$scope.headphones = function(...instrumentKeys) {
+		for(let instrumentKey of instrumentKeys) {
+			let idx = $scope.playbackSettings.headphones.indexOf(instrumentKey)
+			if(idx == -1)
+				$scope.playbackSettings.headphones.push(instrumentKey);
+			else
+				$scope.playbackSettings.headphones.splice(idx, 1);
+		}
 	};
 
-	$scope.showCompactedSurdoHeadphones = function(instrumentKey) {
-		return ["ls", "ms", "hs"].includes(instrumentKey) && !["ls", "ms", "hs", "s"].includes($scope.playbackSettings.headphones);
+	$scope.isHiddenSurdoHeadphone = function(instrumentKey) {
+		let surdos = ["ls", "ms", "hs"];
+		return surdos.includes(instrumentKey) && !surdos.some((it) => ($scope.playbackSettings.headphones.includes(it)));
 	};
 
 	$scope.setPosition = function(i, $event) {
