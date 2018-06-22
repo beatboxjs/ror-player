@@ -1,0 +1,73 @@
+.bb-compose {
+	.bb-tunes {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		padding: 1.2em;
+		width: 20em;
+		overflow-y: auto;
+		background: #fff;
+
+		@media (max-width: 767px) {
+			& {
+				transition: left .3s;
+				z-index: 200;
+			}
+
+			body:not(.bb-pattern-list-visible) & {
+				left: -20em;
+			}
+		}
+	}
+
+	.bb-song-player .control-panel {
+		position: absolute;
+		top: 0;
+		left: 20em;
+		right: 0;
+		padding: 1em 1em 0 1em;
+
+		@media (max-width: 767px) {
+			left: 0;
+		}
+	}
+
+	.bb-song-player .song-player-container {
+		position: absolute;
+		left: 20em;
+		bottom: 0;
+		right: 0;
+		overflow: auto;
+		padding: 0 1.2em;
+
+		@media (max-width: 767px) {
+			left: 0;
+		}
+	}
+
+	.bb-history {
+		display: inline-block;
+		min-width: 0;
+		float: right;
+	}
+
+	.bb-cover {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 999; /* Under modal dialog (1050) */
+		background: rgba(0, 0, 0, 0.4);
+		visibility: hidden;
+		transition: left .3s;
+
+		@media (max-width: 767px) {
+			body.bb-pattern-list-visible & {
+				left: 20em;
+				visibility: visible;
+			}
+		}
+	}
+}

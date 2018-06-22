@@ -129,4 +129,14 @@ app.run(function($state, bbPatternEditorDialog, bbUtils, bbConfig, $rootScope, $
 		bbUtils.alert("This player uses MP3 files. Your browser doesn't seem to support them.");
 });
 
+app.controller("BeatboxController", function($scope, bbUtils, bbConfig) {
+	$scope.getAppName = function() {
+		return bbConfig.appName;
+	};
+
+	$scope.getDownloadFilename = function() {
+		return $scope.getAppName().toLowerCase().replace(/[-_ ]+/g, "-") + '.html';
+	};
+});
+
 export default app;
