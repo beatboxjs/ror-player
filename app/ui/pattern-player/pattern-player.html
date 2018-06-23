@@ -25,7 +25,7 @@
 		<thead>
 			<tr>
 				<td colspan="2" class="dummy">
-					<a href="javascript:" ng-click="headphoneAll()" ng-class="playbackSettings.state.headphones.length > 0 ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a>
+					<a href="javascript:" ng-click="headphoneAll()" ng-class="playbackSettings.headphones.length > 0 ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a>
 				</td>
 				<td ng-repeat="(i,a) in utils.getNumber(pattern.length) track by $index" colspan="{{pattern.time}}" class="beat" ng-class="getBeatClass(i)" ng-click="setPosition(i, $event)"><span href="javascript:">{{i+1}}</span></td>
 			</tr>
