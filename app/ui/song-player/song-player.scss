@@ -83,6 +83,10 @@
 				padding-right: 1ex;
 			}
 
+			&.instrument-actions > * {
+				padding-right: 5px;
+			}
+
 			&.instrument-actions,&.song {
 				border-right: 1px solid #888;
 			}
