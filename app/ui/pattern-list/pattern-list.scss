@@ -1,5 +1,9 @@
 .bb-pattern-list {
 
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
 	.accordion-toggle {
 		display: block;
 		position: relative;
@@ -55,6 +59,19 @@
 			opacity: 1;
 			font-style: italic;
 		}
+	}
+
+	> .bb-pattern-list-tunes {
+		flex-grow: 1;
+		overflow-y: auto;
+		padding: 0 1.2em;
+		margin: 0 -1.2em;
+	}
+
+	hr {
+		/* https://stackoverflow.com/a/34372979/242365 */
+		margin-left: 0;
+		margin-right: 0;
 	}
 
 }

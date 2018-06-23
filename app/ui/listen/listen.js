@@ -34,7 +34,7 @@ app.controller("bbListenController", ($scope, bbState, bbUtils, $filter, $, $ele
 	};
 
 	$scope.scrollToTune = (tuneName) => {
-		let list = $(".bb-listen-tunes", $element)[0];
+		let list = $(".bb-listen-tunes > .nav", $element)[0];
 
 		let el = $(".nav-item.active", list)[0];
 		if(!el)
