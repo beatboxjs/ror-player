@@ -234,7 +234,8 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 				'Super Mario Break': {
 					ls: '     X          ',
 					ms: 'XX X  X         ',
-					hs: '        X       '
+					hs: '        X       ',
+					ag: '            o   '
 				}
 			}
 		},
