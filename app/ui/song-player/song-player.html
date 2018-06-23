@@ -52,7 +52,7 @@
 				</ul>
 			</div>
 			<div class="field all-drop" ng-show="dragging"></div>
-		</div><div class="song-container"><div class="col song" ng-repeat="(i,a) in utils.getNumber(getLength() - (dragging ? 0 : 1)) track by $index">
+		</div><div class="song-container"><div class="col song" ng-repeat="(i,a) in utils.getNumber(getLength()) track by $index">
 			<div class="timeline">
 				<span ng-repeat="(i2,a2) in utils.getNumber(4) track by $index" class="beat" ng-class="'beat-i-'+(i*4+i2)" ng-click="setPosition(i*4+i2, $event)">{{i*4+i2+1}}</span>
 			</div>

@@ -96,9 +96,12 @@ app.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, n
 	};
 
 	$scope.getLength = function() {
-		var length = $scope.song.getEffectiveLength($scope.state)+1;
+		var length = $scope.song.getEffectiveLength($scope.state);
+		if($scope.dragging)
+			length++;
 		if($scope.currentPatternDrag)
 			length = Math.max(length, $scope.currentPatternDrag.toIdx+2);
+		length = Math.max(4, length);
 		return length;
 	};
 
