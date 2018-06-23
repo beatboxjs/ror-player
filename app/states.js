@@ -160,7 +160,7 @@ app.config(function($locationProvider, $stateProvider) {
 });
 
 
-app.run(function($state, bbPatternEditorDialog, bbUtils, bbConfig, $rootScope) {
+app.run(function($state, bbPatternEditorDialog, bbUtils, bbConfig, $rootScope, $timeout) {
 	let lastTune = null;
 
 	bbPatternEditorDialog.editPatternBkp = bbPatternEditorDialog.editPattern;
@@ -201,5 +201,10 @@ app.run(function($state, bbPatternEditorDialog, bbUtils, bbConfig, $rootScope) {
 			else
 				$state.go("root");
 		}
+	});
+
+	$timeout(() => {
+		if(!$state.current.name)
+			$state.go("root");
 	});
 });
