@@ -52,7 +52,7 @@ app.controller("bbListenController", ($scope, bbState, bbUtils, $filter, $, $ele
 	});
 
 	$scope.$on("bbListen", function(e, tuneName) {
-		if(!$scope.state.tunes[tuneName])
+		if(!$scope.state.tunes[tuneName] || tuneName == $scope.tuneName)
 			return;
 
 		if($filter("bbPatternListFilter")($scope.state, $scope.filter).indexOf(tuneName) == -1)

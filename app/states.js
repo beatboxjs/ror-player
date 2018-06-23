@@ -24,12 +24,16 @@ app.config(function($locationProvider, $stateProvider) {
 		})
 		.state("listen-pattern", {
 			url: "/listen/:tuneName/:patternName",
+			params: {
+				args: null
+			},
 			onEnter: ($stateParams, $state, $rootScope, $uibModalStack, bbPatternEditorDialog, bbState) => {
 				$rootScope.$broadcast("bbListen", $stateParams.tuneName);
 
 				$uibModalStack.dismissAll();
 
-				bbPatternEditorDialog.editPatternBkp(new bbState(), $stateParams.tuneName, $stateParams.patternName, true).result.finally(function() {
+				let args = $stateParams.args || [ new bbState(), $stateParams.tuneName, $stateParams.patternName, true ];
+				bbPatternEditorDialog.editPatternBkp(...args).result.finally(function() {
 					if($state.is("listen-pattern", $stateParams))
 						$state.go("listen-tune", { tuneName: $stateParams.tuneName });
 				});
@@ -62,6 +66,9 @@ app.config(function($locationProvider, $stateProvider) {
 		})
 		.state("compose-pattern", {
 			url: "/compose/:tuneName/:patternName",
+			params: {
+				args: null
+			},
 			onEnter: function($stateParams, $state, bbPatternEditorDialog, bbHistory, $uibModalStack, $rootScope) {
 				if(!bbHistory.state.getPattern($stateParams.tuneName, $stateParams.patternName))
 					return $state.go("compose");
@@ -71,7 +78,8 @@ app.config(function($locationProvider, $stateProvider) {
 
 				$uibModalStack.dismissAll();
 
-				bbPatternEditorDialog.editPatternBkp(bbHistory.state, $stateParams.tuneName, $stateParams.patternName, false).result.finally(function() {
+				let args = $stateParams.args || [ bbHistory.state, $stateParams.tuneName, $stateParams.patternName, false ];
+				bbPatternEditorDialog.editPatternBkp(...args).result.finally(function() {
 					if($state.is("compose-pattern", $stateParams))
 						$state.go("compose");
 				});
@@ -167,7 +175,7 @@ app.run(function($state, bbPatternEditorDialog, bbUtils, bbConfig, $rootScope, $
 
 	bbPatternEditorDialog.editPattern = function(state, tuneName, patternName) {
 		let isCompose = $state.current.name.match(/^compose($|-)/);
-		$state.go(isCompose ? "compose-pattern" : "listen-pattern", { tuneName: tuneName, patternName: patternName });
+		$state.go(isCompose ? "compose-pattern" : "listen-pattern", { tuneName: tuneName, patternName: patternName, args: arguments });
 	};
 
 

@@ -10,7 +10,8 @@ app.directive("bbPatternPlayer", function($, $templateCache) {
 			pattern: "=bbPattern",
 			originalPattern: "=bbPatternOriginal",
 			readonly: "<bbReadonly",
-			presetPlaybackSettings: "=bbSettings"
+			presetPlaybackSettings: "=bbSettings",
+			player: "=?bbPlayer"
 		},
 		controller: "bbPatternController",
 		transclude: true
@@ -49,7 +50,9 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 		beat.addClass("active");
 	}
 
-	$scope.player = bbPlayer.createBeatbox(true);
+	if(!$scope.player)
+		$scope.player = bbPlayer.createBeatbox(true);
+
 	$scope.player.onbeat = strokeCallback;
 
 	$scope.playbackSettings = Object.assign(new bbPlaybackSettings($scope.presetPlaybackSettings), {

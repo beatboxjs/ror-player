@@ -42,7 +42,7 @@ app.directive("bbPatternPlaceholderItem", function() {
 	};
 });
 
-app.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPatternEditorDialog, bbPlayer, bbUtils, $element, ng, bbDefaultTunes, $, bbPlaybackSettings) {
+app.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPatternEditorDialog, bbPlayer, bbUtils, $element, ng, bbDefaultTunes, $, bbPlaybackSettings, $timeout) {
 	$scope.config = bbConfig;
 	$scope.player = null;
 
@@ -63,9 +63,10 @@ app.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPa
 			}
 		});
 
-		setTimeout(function() {
-			bbPatternEditorDialog.editPattern($scope.state, $scope.tuneName, $scope.patternName, $scope.readonly);
-		}, 0);
+		$timeout(function() {
+			bbPatternEditorDialog.editPattern($scope.state, $scope.tuneName, $scope.patternName, $scope.readonly, $scope.player);
+			$scope.player = null;
+		});
 	};
 
 	var onbeat = function(beat) {
