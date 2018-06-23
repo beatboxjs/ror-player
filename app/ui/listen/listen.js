@@ -10,7 +10,7 @@ app.directive("bbListen", ($) => {
 	};
 });
 
-app.controller("bbListenController", ($scope, bbState, bbUtils, $filter, $, $element, ng) => {
+app.controller("bbListenController", ($scope, bbState, bbUtils, $filter, $, $element, ng, bbPlayer) => {
 	$scope.state = new bbState();
 	$scope.utils = bbUtils;
 
@@ -28,6 +28,8 @@ app.controller("bbListenController", ($scope, bbState, bbUtils, $filter, $, $ele
 		$scope.tune = $scope.state.tunes[tuneName];
 		$scope.tuneIdx = $scope.tuneList.indexOf(tuneName);
 		$scope.$emit("bbOverview-closePatternList");
+
+		bbPlayer.stopAll();
 
 		setTimeout(() => {
 			$scope.scrollToTune(tuneName);
