@@ -42,7 +42,9 @@
 			</div>
 			<div class="field all-drop" ng-show="dragging">All</div>
 		</div><div class="col instrument-actions">
-			<div class="timeline"></div>
+			<div class="timeline">
+				<a href="javascript:" ng-click="headphoneAll()" ng-class="playbackSettings.headphones.length > 0 ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a>
+			</div>
 			<div class="field" ng-repeat="instrumentKey in utils.getKeys(config.instruments)">
 				<ul class="icon-list">
 					<li ng-if="!isHiddenSurdoHeadphone(instrumentKey)"><a href="javascript:" ng-click="headphones(instrumentKey)" ng-class="state.playbackSettings.headphones.includes(instrumentKey) ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a></li>

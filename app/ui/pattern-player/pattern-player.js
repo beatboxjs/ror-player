@@ -125,6 +125,13 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 		}
 	};
 
+	$scope.headphoneAll = function() {
+		if($scope.playbackSettings.headphones.length == 0)
+			$scope.playbackSettings.headphones = Object.keys(bbConfig.instruments);
+		else
+			$scope.playbackSettings.headphones = [ ];
+	};
+
 	$scope.isHiddenSurdoHeadphone = function(instrumentKey) {
 		let surdos = ["ls", "ms", "hs"];
 		return surdos.includes(instrumentKey) && !surdos.some((it) => ($scope.playbackSettings.headphones.includes(it)));
