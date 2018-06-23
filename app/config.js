@@ -164,7 +164,10 @@ app.factory("bbConfig", function(ng, $document) {
 		new: "New tunes",
 		proposed: "Proposed tunes",
 		custom: "Custom tunes",
-		onesurdo: "One Surdo"
+		onesurdo: "One Surdo",
+		easy: "Easy",
+		medium: "Medium",
+		tricky: "Tricky"
 	};
 
 	// Time measurement that is used for beatbox.js. Should be able to represent all the time measurements above

@@ -33,7 +33,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 
 	var bbDefaultTunes = {
 		'General Breaks': {
-			categories: [ "standard", "common", "uncommon", "new", "proposed", "custom", "onesurdo" ],
+			categories: [ "standard", "common", "uncommon", "new", "proposed", "custom", "onesurdo", "easy", "medium", "tricky" ],
 			patterns: {
 				"Karla Break": {
 					ls: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX               ',
@@ -240,7 +240,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 		},
 		"Afoxe": {
 			displayName: "Afoxê",
-			categories: [ "standard", "common" ],
+			categories: [ "standard", "common", "medium" ],
 			sheet: sheetUrl + "afoxe.pdf",
 			description: require("../assets/tuneDescriptions/afoxe.md"),
 			patterns: {
@@ -308,7 +308,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Angela Davis': {
-			categories: [ "standard", "common" ],
+			categories: [ "standard", "common", "medium" ],
 			sheet: sheetUrl + "angela-davis.pdf",
 			description: require("../assets/tuneDescriptions/angela-davis.md"),
 			patterns: {
@@ -404,7 +404,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Bhangra': {
-			categories: [ "standard", "common", "onesurdo" ],
+			categories: [ "standard", "common", "onesurdo", "medium" ],
 			speed: 120,
 			time: 3,
 			displayName: "Bhaṅgṛā",
@@ -529,7 +529,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Cochabamba' : {
-			categories: [ "standard", "uncommon" ],
+			categories: [ "standard", "uncommon", "tricky" ],
 			sheet: sheetUrl + "cochabamba.pdf",
 			description: require("../assets/tuneDescriptions/cochabamba.md"),
 			patterns: {
@@ -593,7 +593,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Crazy Monkey': {
-			categories: [ "standard", "uncommon" ],
+			categories: [ "standard", "uncommon", "tricky" ],
 			sheet: sheetUrl + "crazy-monkey.pdf",
 			description: require("../assets/tuneDescriptions/crazy-monkey.md"),
 			patterns: {
@@ -666,7 +666,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Custard': {
-			categories: [ "standard", "common" ],
+			categories: [ "standard", "common", "medium" ],
 			sheet: sheetUrl + "custard.pdf",
 			description: require("../assets/tuneDescriptions/custard.md"),
 			patterns: {
@@ -727,7 +727,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Drum&Bass': {
-			categories: [ "standard", "common" ],
+			categories: [ "standard", "common", "medium" ],
 			sheet: sheetUrl + "drum-bass.pdf",
 			description: require("../assets/tuneDescriptions/drum-bass.md"),
 			patterns: {
@@ -779,7 +779,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Drunken Sailor': {
-			categories: [ "standard", "uncommon" ],
+			categories: [ "standard", "uncommon", "medium" ],
 			sheet: sheetUrl + "drunken-sailor.pdf",
 			description: require("../assets/tuneDescriptions/drunken-sailor.md"),
 			patterns: {
@@ -825,7 +825,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Funk': {
-			categories: [ "standard", "common", "onesurdo" ],
+			categories: [ "standard", "common", "onesurdo", "easy" ],
 			sheet: sheetUrl + "funk.pdf",
 			description: require("../assets/tuneDescriptions/funk.md"),
 			patterns: {
@@ -883,7 +883,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Hafla': {
-			categories: [ "standard", "uncommon" ],
+			categories: [ "standard", "uncommon", "tricky" ],
 			sheet: sheetUrl + "hafla.pdf",
 			description: require("../assets/tuneDescriptions/hafla.md"),
 			patterns: {
@@ -953,7 +953,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Hedgehog': {
-			categories: [ "standard", "uncommon" ],
+			categories: [ "standard", "uncommon", "easy" ],
 			sheet: sheetUrl + "hedgehog.pdf",
 			description: require("../assets/tuneDescriptions/hedgehog.md"),
 			patterns: {
@@ -991,7 +991,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Karla Shnikov': {
-			categories: [ "standard", "common", "onesurdo" ],
+			categories: [ "standard", "common", "onesurdo", "easy" ],
 			sheet: sheetUrl + "karla-shnikov.pdf",
 			description: require("../assets/tuneDescriptions/karla-shnikov.md"),
 			patterns: {
@@ -1029,7 +1029,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Menaiek': {
-			categories: [ "standard", "uncommon", "new" ],
+			categories: [ "standard", "uncommon", "new", "tricky" ],
 			sheet: sheetUrl + "menaiek.pdf",
 			description: require("../assets/tuneDescriptions/menaiek.md"),
 			patterns: {
@@ -1101,7 +1101,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'No Border Bossa': {
-			categories: [ "standard", "uncommon", "onesurdo" ],
+			categories: [ "standard", "uncommon", "onesurdo", "medium" ],
 			sheet: sheetUrl + "no-border-bossa.pdf",
 			description: require("../assets/tuneDescriptions/no-border-bossa.md"),
 			patterns: {
@@ -1161,7 +1161,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 		},
 		'Nova Balanca': {
 			displayName: "Nova Balança",
-			categories: [ "standard", "uncommon" ],
+			categories: [ "standard", "uncommon", "medium" ],
 			sheet: sheetUrl + "nova-balanca.pdf",
 			description: require("../assets/tuneDescriptions/nova-balanca.md"),
 			patterns: {
@@ -1210,7 +1210,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Orangutan': {
-			categories: [ "standard", "uncommon" ],
+			categories: [ "standard", "uncommon", "tricky" ],
 			sheet: sheetUrl + "orangutan.pdf",
 			description: require("../assets/tuneDescriptions/orangutan.md"),
 			patterns: {
@@ -1259,7 +1259,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Ragga': {
-			categories: [ "standard", "common" ],
+			categories: [ "standard", "common", "tricky" ],
 			sheet: sheetUrl + "ragga.pdf",
 			description: require("../assets/tuneDescriptions/ragga.md"),
 			patterns: {
@@ -1324,7 +1324,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Rope Skipping': {
-			categories: [ "standard", "uncommon" ],
+			categories: [ "standard", "uncommon", "tricky" ],
 			sheet: sheetUrl + "rope-skipping.pdf",
 			description: require("../assets/tuneDescriptions/rope-skipping.md"),
 			patterns: {
@@ -1421,7 +1421,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Samba Reggae': {
-			categories: [ "standard", "common" ],
+			categories: [ "standard", "common", "medium" ],
 			sheet: sheetUrl + "samba-reggae.pdf",
 			description: require("../assets/tuneDescriptions/samba-reggae.md"),
 			patterns: {
@@ -1678,7 +1678,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Sambasso': {
-			categories: [ "standard", "uncommon", "new", "onesurdo" ],
+			categories: [ "standard", "uncommon", "new", "onesurdo", "tricky" ],
 			sheet: sheetUrl + "sambasso.pdf",
 			description: require("../assets/tuneDescriptions/sambasso.md"),
 			patterns: {
@@ -1728,7 +1728,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Sheffield Samba Reggae': {
-			categories: [ "standard", "uncommon", "new" ],
+			categories: [ "standard", "uncommon", "new", "medium" ],
 			sheet: sheetUrl + "sheffield-samba-reggae.pdf",
 			description: require("../assets/tuneDescriptions/sheffield-samba-reggae.md"),
 			patterns: {
@@ -1878,7 +1878,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Van Harte Pardon': {
-			categories: [ "standard", "uncommon" ],
+			categories: [ "standard", "uncommon", "tricky" ],
 			sheet: sheetUrl + "van-harte-pardon.pdf",
 			description: require("../assets/tuneDescriptions/van-harte-pardon.md"),
 			patterns: {
@@ -1937,7 +1937,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Voodoo': {
-			categories: [ "standard", "uncommon" ],
+			categories: [ "standard", "uncommon", "easy" ],
 			sheet: sheetUrl + "voodoo.pdf",
 			description: require("../assets/tuneDescriptions/voodoo.md"),
 			patterns: {
@@ -1965,7 +1965,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Walc(z)': {
-			categories: [ "standard", "uncommon", "new" ],
+			categories: [ "standard", "uncommon", "new", "easy" ],
 			time: 6,
 			speed: 60,
 			sheet: sheetUrl + "walc.pdf",
@@ -2131,7 +2131,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Xango': {
-			categories: [ "standard", "uncommon" ],
+			categories: [ "standard", "uncommon", "tricky" ],
 			sheet: sheetUrl + "xango.pdf",
 			description: require("../assets/tuneDescriptions/xango.md"),
 			patterns: {
@@ -2189,7 +2189,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 		},
 		'Zurav Love / Truant': {
 			displayName: "Żurav Love",
-			categories: [ "standard", "uncommon", "new" ],
+			categories: [ "standard", "uncommon", "new", "tricky" ],
 			sheet: sheetUrl + "zurav-love.pdf",
 			description: require("../assets/tuneDescriptions/zurav-love.md"),
 			patterns: {
