@@ -75,6 +75,10 @@ app.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPa
 
 	var updatePlayer = function() {
 		var patternObj = $scope.state.getPattern($scope.tuneName, $scope.patternName);
+
+		if(!patternObj)
+			return;
+
 		var playbackSettings = $scope.getPlaybackSettings() || new bbPlaybackSettings(Object.assign({}, $scope.state.playbackSettings, {
 			speed: patternObj.speed,
 			loop: patternObj.loop
