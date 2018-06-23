@@ -12,12 +12,12 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 		return ret;
 	}
 
-	function crescendo(length) {
+	function crescendo(length, start=0) {
 		var r = { };
 		var a = .05;
 		var b = (1-a)/(length-1);
 		for(var i=0; i<length; i++)
-			r[i] = a+b*i;
+			r[start+i] = a+b*i;
 		return r;
 	}
 
@@ -218,6 +218,23 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					ag: '@ls',
 					sh: '@ls',
 					ot: 'b     c d     e g  qj k m   n   '
+				},
+				'Nellie the Elephant Break': {
+					ls: '            X X             X X             X X XX XX XX XX X X XX XX XX XX X X XX XX XX XX X X ' + repeat(2, '                ') + repeat(3, 'X  X  X         ') + 'X           XXX ',
+					ms: '@ls',
+					hs: '@ls',
+					re: 'XX XX XX XX     XX XX XX XX     XX XX XX XX     XX XX XX XX X X XX XX XX XX X X XX XX XX XX X X ' + repeat(2, '                ') + repeat(3, '        X  X  X ') + 'X           XXX ',
+					sn: '@ls',
+					ta: '@ls',
+					ag: '@ls',
+					sh: '@ls',
+					ot: '                                                                                                ' + repeat(2, 'DDDDDDDDDDDDDDDD') + repeat(3, '                ') + '                ',
+					volumeHack: Object.assign({ 48: .2, 64: .6, 80: 1, 128: .2, 144: .6, 160: 1 }, crescendo(32, 96))
+				},
+				'Super Mario Break': {
+					ls: '     X          ',
+					ms: 'XX X  X         ',
+					hs: '        X       '
 				}
 			}
 		},
