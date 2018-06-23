@@ -1,4 +1,8 @@
 .bb-song-player {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+
 	.trash-drop {
 		font-size: 2.5em;
 		line-height: 0;
@@ -17,9 +21,11 @@
 	}
 
 	.song-player-container {
+		flex-grow: 1;
 		position: relative;
 		white-space: nowrap;
 		margin-top: .5em;
+		overflow: auto;
 
 		.drag-enter,.pattern-resize-range {
 			background: #def;

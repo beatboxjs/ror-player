@@ -1,9 +1,10 @@
 import app from "../../app";
 import "./pattern-editor-dialog.scss";
 
-app.controller("bbPatternEditorCtrl", function($scope, tuneName, patternName, state, bbDefaultTunes, bbShareDialog) {
+app.controller("bbPatternEditorCtrl", function($scope, tuneName, patternName, state, bbDefaultTunes, bbShareDialog, readonly) {
 	$scope.tuneName = tuneName;
 	$scope.patternName = patternName;
+	$scope.readonly = readonly;
 
 	$scope.state = state;
 
@@ -19,7 +20,7 @@ app.factory("bbPatternEditorDialog", function($uibModal, bbPlayer) {
 	var openDialog = null;
 
 	return {
-		editPattern: function(state, tuneName, patternName) {
+		editPattern: function(state, tuneName, patternName, readonly) {
 			this.close();
 
 			bbPlayer.stopAll();
@@ -32,7 +33,8 @@ app.factory("bbPatternEditorDialog", function($uibModal, bbPlayer) {
 				resolve: {
 					state: function() { return state; },
 					tuneName: function() { return tuneName },
-					patternName: function() { return patternName }
+					patternName: function() { return patternName },
+					readonly: function() { return readonly; }
 				}
 			});
 

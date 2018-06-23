@@ -14,7 +14,8 @@ app.directive("bbPatternPlaceholder", function($templateRequest, $compile, $root
 			draggable: "=bbDraggable",
 			dragSuccess: "&bbDragSuccess",
 			getPlaybackSettings: "&bbSettings",
-			state: "=bbState"
+			state: "=bbState",
+			readonly: "<bbReadonly"
 		},
 		transclude: true,
 		replace: true,
@@ -63,7 +64,7 @@ app.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPa
 		});
 
 		setTimeout(function() {
-			bbPatternEditorDialog.editPattern($scope.state, $scope.tuneName, $scope.patternName);
+			bbPatternEditorDialog.editPattern($scope.state, $scope.tuneName, $scope.patternName, $scope.readonly);
 		}, 0);
 	};
 

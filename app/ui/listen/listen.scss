@@ -1,0 +1,55 @@
+.bb-listen {
+	display: flex;
+	height: 100%;
+
+	.bb-listen-tunes {
+		padding: 1.2em;
+		width: 20em;
+		background: #fff;
+		border-right: 1px solid #eee;
+		overflow-y: auto;
+
+		@media (max-width: 767px) {
+			position: fixed;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			transition: left .3s;
+			z-index: 999;
+
+			body:not(.bb-pattern-list-visible) & {
+				left: -20em;
+			}
+		}
+	}
+
+	.bb-listen-info {
+		width: 0;
+		flex-grow: 1;
+		padding: 1.2em;
+		overflow: auto;
+
+		.bb-tune-info {
+			max-width: 80em;
+		}
+	}
+
+	.bb-cover {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 999; /* Under modal dialog (1050) */
+		background: rgba(0, 0, 0, 0.4);
+		visibility: hidden;
+		transition: left .3s;
+
+		@media (max-width: 767px) {
+			body.bb-pattern-list-visible & {
+				left: 20em;
+				visibility: visible;
+			}
+		}
+	}
+}

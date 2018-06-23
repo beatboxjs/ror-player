@@ -1,0 +1,15 @@
+<div class="bb-listen">
+	<div class="bb-listen-tunes">
+		<bb-pattern-list-filter ng-model="filter"></bb-pattern-list-filter>
+
+		<hr />
+
+		<uib-tabset vertical="true" type="pills" active="tuneIdx">
+			<uib-tab ng-repeat="tuneName in tuneList" heading="{{state.tunes[tuneName].displayName || tuneName}}" select="selectTune(tuneName)"></uib-tab>
+		</uib-tabset>
+	</div>
+
+	<div class="bb-listen-info">
+		<bb-tune-info bb-state="state" bb-tune-name="tuneName"></bb-tune-info>
+	</div>
+</div>

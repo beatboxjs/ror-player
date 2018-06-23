@@ -5,6 +5,8 @@ app.factory("bbTune", function(ng, $, bbUtils, bbPattern) {
 		this.patterns = { };
 		this.categories = data && data.categories;
 		this.displayName = data && data.displayName;
+		this.sheet = data && data.sheet;
+		this.description = data && data.description;
 
 		if(data)
 			this.extend(data);

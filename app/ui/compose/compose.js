@@ -4,8 +4,9 @@ import "./compose.scss";
 app.directive("bbCompose", function() {
 	return {
 		template: require("./compose.html"),
-		scope: true,
-		controller: "bbComposeController"
+		scope: {},
+		controller: "bbComposeController",
+		replace: true
 	};
 });
 
@@ -32,24 +33,10 @@ app.controller("bbComposeController", function($scope, bbUtils, bbConfig, ng, bb
 		return false;
 	};
 
-	$scope.togglePatternList = function() {
-		$("body").toggleClass("bb-pattern-list-visible");
-	};
-
-	function onResize() {
-		$(".bb-song-player .song-player-container").css("top", $(".bb-song-player .control-panel").outerHeight(true) + "px");
-	}
-
-	$(window).resize(onResize);
-	setTimeout(onResize, 0);
-	$scope.$watch(onResize, function(){});
-
 	$scope.$on("draggable:start", function(evt, obj) {
 		if(obj.data.bbDragType == "pattern-placeholder") {
-			$("body").removeClass("bb-pattern-list-visible");
+			$scope.$emit("bbOverview-closePatternList");
 		}
 	});
-
-	//$scope.$watch(function() { console.log("digest"); }, function() {})
 
 });

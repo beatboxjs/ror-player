@@ -30,10 +30,6 @@ app.directive("bbPatternListTransclude", function() {
 app.controller("bbPatternListController", function($scope, bbConfig, bbUtils, bbPatternEditorDialog, bbDefaultTunes, $uibModal, $filter) {
 	$scope.utils = bbUtils;
 
-	$scope.filter = { text: "", cat: "all" };
-
-	$scope.filterCats = bbConfig.filterCats;
-
 	$scope.isOpened = {};
 
 	$scope.$watch("isOpened", function(newOpen, oldOpen) {
@@ -158,18 +154,5 @@ app.controller("bbPatternListController", function($scope, bbConfig, bbUtils, bb
 		bbUtils.confirm("Do you really want to remove the tune " + tuneName + "?").then(function() {
 			$scope.state.removeTune(tuneName);
 		});
-	};
-});
-
-app.filter("bbPatternListFilter", function() {
-	return function(state, params) {
-		var ret = [ ];
-		var tuneNames = state.getSortedTuneList();
-		var text = params.text.trim().toLowerCase();
-		for(var i=0; i<tuneNames.length; i++) {
-			if(text ? (tuneNames[i].toLowerCase().indexOf(text) != -1) : state.tunes[tuneNames[i]].isInCategory(params.cat))
-				ret.push(tuneNames[i]);
-		}
-		return ret;
 	};
 });

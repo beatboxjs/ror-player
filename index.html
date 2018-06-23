@@ -6,6 +6,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Angular Beatbox</title>
 		<meta name="description" content="A pattern-based drumming machine.">
+	    <style>
+		    #download-link {
+			    display: none;
+			    position: absolute;
+				bottom: 5px;
+				right: 20px;
+		    }
+
+		    .ng-scope #download-link {
+			    display: block;
+		    }
+	    </style>
 	</head>
 	<body ng-controller="BeatboxController">
 		<div id="loading" ng-hide="true">Loading...</div>

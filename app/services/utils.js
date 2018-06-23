@@ -13,7 +13,7 @@ app.factory("bbUtils", function(bbConfig, ng, $, $rootScope, $uibModal, $q, $tim
 		},
 
 		getKeys : function(obj) {
-			return Object.keys(obj);
+			return obj && Object.keys(obj);
 		},
 
 		getMaxIndex: function(arr) {

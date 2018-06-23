@@ -163,11 +163,14 @@ app.factory("bbConfig", function(ng, $document) {
 		uncommon: "Uncommon tunes",
 		new: "New tunes",
 		proposed: "Proposed tunes",
-		custom: "Custom tunes"
+		custom: "Custom tunes",
+		onesurdo: "One Surdo"
 	};
 
 	// Time measurement that is used for beatbox.js. Should be able to represent all the time measurements above
 	bbConfig.playTime = 60;
+
+	bbConfig.tuneOfTheYear = "Zurav Love / Truant";
 
 	bbConfig.numberToStringChars = " !#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~";
 

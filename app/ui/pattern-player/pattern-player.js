@@ -9,7 +9,7 @@ app.directive("bbPatternPlayer", function($, $templateCache) {
 		scope: {
 			pattern: "=bbPattern",
 			originalPattern: "=bbPatternOriginal",
-			editable: "=bbPatternEditable",
+			readonly: "<bbReadonly",
 			presetPlaybackSettings: "=bbSettings"
 		},
 		controller: "bbPatternController",
@@ -54,7 +54,7 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 
 	$scope.playbackSettings = Object.assign(new bbPlaybackSettings($scope.presetPlaybackSettings), {
 		speed: $scope.pattern.speed,
-		loop: true
+		loop: $scope.pattern.loop
 	});
 	$scope.$watch("playbackSettings", () => {
 		$scope.presetPlaybackSettings.volume = $scope.playbackSettings.volume;
@@ -117,7 +117,7 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 
 	$scope.headphones = function(...instrumentKeys) {
 		for(let instrumentKey of instrumentKeys) {
-			let idx = $scope.playbackSettings.headphones.indexOf(instrumentKey)
+			let idx = $scope.playbackSettings.headphones.indexOf(instrumentKey);
 			if(idx == -1)
 				$scope.playbackSettings.headphones.push(instrumentKey);
 			else

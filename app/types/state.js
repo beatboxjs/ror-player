@@ -22,8 +22,14 @@ app.factory("bbState", function(bbConfig, ng, $, bbUtils, bbTune, bbSong, bbPatt
 			if(data.tunes) {
 				for(var tuneName in data.tunes) {
 					var e = !!this.tunes[tuneName];
-					if(!e)
-						this.tunes[tuneName] = new bbTune({ categories: data.tunes[tuneName].categories, displayName: data.tunes[tuneName].displayName });
+					if(!e) {
+						this.tunes[tuneName] = new bbTune({
+							categories: data.tunes[tuneName].categories,
+							displayName: data.tunes[tuneName].displayName,
+							description: data.tunes[tuneName].description,
+							sheet: data.tunes[tuneName].sheet
+						});
+					}
 
 					this.tunes[tuneName].extend(data.tunes[tuneName], function(patternName) {
 						return !selectPattern || selectPattern(tuneName, patternName);

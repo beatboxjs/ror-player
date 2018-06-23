@@ -58,6 +58,7 @@ module.exports = {
 			{ test: /\.(png|jpe?g|gif|ttf|svg)$/, loader: "url-loader" },
 			{ test: /\.html$/, loader: "html-loader?attrs[]=img:src&attrs[]=link:href" },
 			{ test: /\.coffee$/, loader: "coffee-loader" },
+			{ test: /\.md$/, use: [ "html-loader?attrs[]=img:src&attrs[]=link:href", "markdown-loader" ]},
 
 			...Object.keys(depLoaders).map(key => ({ test: require.resolve(key), [Array.isArray(depLoaders[key]) ? "use" : "loader"]: depLoaders[key] })),
 
@@ -95,6 +96,6 @@ module.exports = {
 if(dev) {
 	module.exports.serve = {
 		content: __dirname + "build",
-		hot: false
+		//hot: false
 	};
 }
