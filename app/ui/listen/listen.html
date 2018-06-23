@@ -4,9 +4,11 @@
 
 		<hr />
 
-		<uib-tabset vertical="true" type="pills" active="tuneIdx">
-			<uib-tab ng-repeat="tuneName in tuneList" heading="{{state.tunes[tuneName].displayName || tuneName}}" select="selectTune(tuneName)"></uib-tab>
-		</uib-tabset>
+		<ul class="nav nav-pills nav-stacked">
+			<li class="nav-item" ng-repeat="thisTuneName in tuneList" ng-class="{active: thisTuneName == tuneName}">
+				<a href="javascript:" ng-click="selectTune(thisTuneName)">{{state.tunes[thisTuneName].displayName || thisTuneName}}</a>
+			</li>
+		</ul>
 	</div>
 
 	<div class="bb-listen-info">

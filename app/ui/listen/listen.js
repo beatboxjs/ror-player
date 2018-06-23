@@ -16,33 +16,27 @@ app.controller("bbListenController", ($scope, bbState, bbUtils, $filter, $, $ele
 
 	$scope.$watch("filter", () => {
 		$scope.tuneList = $filter("bbPatternListFilter")($scope.state, $scope.filter);
-		$scope.tuneIdx = $scope.tuneList.indexOf($scope.tuneName);
 	}, true);
 	$scope.$watch("state", () => {
 		$scope.tuneList = $filter("bbPatternListFilter")($scope.state, $scope.filter);
-		$scope.tuneIdx = $scope.tuneList.indexOf($scope.tuneName);
 	}, true);
 
 	$scope.selectTune = (tuneName) => {
 		$scope.tuneName = tuneName;
 		$scope.tune = $scope.state.tunes[tuneName];
-		$scope.tuneIdx = $scope.tuneList.indexOf(tuneName);
 		$scope.$emit("bbOverview-closePatternList");
 
 		bbPlayer.stopAll();
 
 		setTimeout(() => {
-			$scope.scrollToTune(tuneName);
+			$scope.scrollToTune();
 		}, 0);
 	};
 
 	$scope.scrollToTune = (tuneName) => {
 		let list = $(".bb-listen-tunes", $element)[0];
 
-		let el = $(".nav-item", list).filter(function() {
-			return ng.element(this).scope().tuneName == tuneName
-		})[0];
-
+		let el = $(".nav-item.active", list)[0];
 		if(!el)
 			return;
 
