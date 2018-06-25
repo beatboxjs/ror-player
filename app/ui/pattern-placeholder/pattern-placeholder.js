@@ -65,12 +65,19 @@ app.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPa
 
 		$timeout(function() {
 			bbPatternEditorDialog.editPattern($scope.state, $scope.tuneName, $scope.patternName, $scope.readonly, $scope.player);
-			$scope.player = null;
+
+			createPlayer();
 		});
 	};
 
 	var onbeat = function(beat) {
 		$(".position-marker", $element).css("left", (beat / $scope.player._pattern.length) * $element.outerWidth() + "px");
+	};
+
+	var createPlayer = function() {
+		$scope.player = bbPlayer.createBeatbox(false);
+		$scope.player.onbeat = onbeat;
+		updatePlayer();
 	};
 
 	var updatePlayer = function() {
@@ -95,14 +102,11 @@ app.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPa
 
 	$scope.playPattern = function() {
 		if($scope.player == null) {
-			$scope.player = bbPlayer.createBeatbox(false);
-			$scope.player.onbeat = onbeat;
+			createPlayer();
 
 			$scope.$watch("getPlaybackSettings()", updatePlayer, true);
 			$scope.$watch("state.getPattern(tuneName, patternName)", updatePlayer, true);
 			$scope.$watch("state.playbackSettings", updatePlayer, true);
-
-			updatePlayer();
 		}
 
 		if(!$scope.player.playing) {
