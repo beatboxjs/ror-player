@@ -6,6 +6,11 @@
 		margin: 0 9px;
 		border-left: 1px solid #eee;
 	}
+
+	button.has-changes {
+		background: linear-gradient(to bottom, #fdf4e8 0%, #f7d3a1 100%);
+		border-color: #f7d3a1;
+	}
 }
 
 .bb-pattern-editor-container {
@@ -21,6 +26,10 @@
 			border-right: 1px solid #ddd;
 			text-align: center;
 			position: relative;
+
+			&.has-changes {
+				background-color: #fbe8d0;
+			}
 		}
 
 		.stroke-inner {

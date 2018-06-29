@@ -103,8 +103,8 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 		return ret;
 	};
 
-	$scope.getStrokeClass = function(i) {
-		i = i - $scope.pattern.upbeat;
+	$scope.getStrokeClass = function(realI, instrumentKey) {
+		let i = realI - $scope.pattern.upbeat;
 
 		var ret = [
 			"stroke-"+(i%$scope.pattern.time),
@@ -118,6 +118,10 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 			ret.push("before-bar");
 		if(i%($scope.pattern.time*4) == 0)
 			ret.push("after-bar");
+
+		if($scope.originalPattern && ($scope.originalPattern[instrumentKey][realI] || "").trim() != ($scope.pattern[instrumentKey][realI] || "").trim())
+			ret.push("has-changes");
+
 		return ret;
 	};
 
