@@ -32,17 +32,17 @@ app.factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $
 
 		patternToBeatbox: function(pattern, playbackSettings) {
 			var fac = bbConfig.playTime/pattern.time;
-			var ret = new Array(pattern.length*pattern.time*fac);
+			var ret = new Array((pattern.length*pattern.time + pattern.upbeat) * fac);
 			var vol = 1;
-			for(var i=0; i<pattern.length*pattern.time; i++) {
+			for(var i=0; i<pattern.length*pattern.time+pattern.upbeat; i++) {
 				if(pattern.volumeHack && pattern.volumeHack[i] != null)
 					vol = pattern.volumeHack[i];
 
 				var stroke = [ ];
 
-				if(playbackSettings.whistle && i % (4*pattern.time) == 0)
+				if(playbackSettings.whistle && i >= pattern.upbeat && (i-pattern.upbeat) % (4*pattern.time) == 0)
 					stroke.push({ instrument: playbackSettings.whistle == 2 ? "ot_y" : "ot_w", volume: playbackSettings.volume});
-				else if(playbackSettings.whistle == 2 && i % pattern.time == 0)
+				else if(playbackSettings.whistle == 2 && i >= pattern.upbeat && (i-pattern.upbeat) % pattern.time == 0)
 					stroke.push({ instrument: "ot_w", volume: playbackSettings.volume});
 
 				for(var instr in bbConfig.instruments) {
@@ -52,6 +52,7 @@ app.factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $
 
 				ret[i*fac] = stroke;
 			}
+
 			return ret;
 		},
 
@@ -61,16 +62,30 @@ app.factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $
 			var ret = new Array(length*bbConfig.playTime*4);
 
 			function insertPattern(idx, pattern, instrumentKey, patternLength, whistle) {
-				var patternBeatbox = bbPlayer.patternToBeatbox(pattern, new bbPlaybackSettings({
+				let patternBeatbox = bbPlayer.patternToBeatbox(pattern, new bbPlaybackSettings({
 					headphones: [ instrumentKey ],
 					volume: state.playbackSettings.volume,
 					volumes: state.playbackSettings.volumes,
 					whistle
 				}));
+
+				let upbeatHasStarted = false;
+				let idxOffset = pattern.upbeat * bbConfig.playTime / pattern.time;
 				idx = idx*bbConfig.playTime*4;
-				for(var i=0; i<patternLength*bbConfig.playTime*4; i++) {
-					ret[i+idx] = (ret[i+idx] || [ ]).concat(patternBeatbox[i] || [ ]);
+				for(let i = 0; i<(patternLength*bbConfig.playTime*4 + idxOffset); i++) {
+					if((patternBeatbox[i] || []).length > 0)
+						upbeatHasStarted = true;
+
+					if(idx + i - idxOffset < 0)
+						continue;
+
+					let existingStrokes = (ret[idx + i - idxOffset] || [ ]);
+					if(upbeatHasStarted && i - idxOffset < 0)
+						existingStrokes = existingStrokes.filter((instr) => (instr.instrument.split("_", 2)[0] != instrumentKey));
+					ret[idx + i - idxOffset] = existingStrokes.concat(patternBeatbox[i] || [ ]);
 				}
+
+
 			}
 
 			for(var i=0; i<length; i++) {
@@ -89,17 +104,9 @@ app.factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $
 					insertPattern(i, new bbPattern({
 						length: 4,
 						time: 1,
+						upbeat: 0,
 						ot: '    '
 					}), "ot", 1, state.playbackSettings.whistle);
-				}
-			}
-
-			if(state.playbackSettings.whistle) {
-				for(var i=0; i<length; i++) {
-					let idx = i*bbConfig.playTime*4;
-					if(!ret[idx])
-						ret[idx] = [ ];
-					ret[idx].push({ instrument: state.playbackSettings.whistle == 1 ? "ot_w" : "ot_y", volume: state.playbackSettings.volume });
 				}
 			}
 

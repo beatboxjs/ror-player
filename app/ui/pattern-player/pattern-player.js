@@ -31,7 +31,7 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 	}
 
 	function updateMarkerPosition(scrollFurther, force) {
-		var i = $scope.player.getPosition() * $scope.pattern.time / bbConfig.playTime;
+		var i = ($scope.player.getPosition() * $scope.pattern.time / bbConfig.playTime) - $scope.pattern.upbeat;
 		var strokeIdx = Math.floor(i);
 
 		var stroke = $(".stroke-i-"+strokeIdx, $element);
@@ -42,10 +42,11 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 		}
 	}
 
-	function strokeCallback(i) {
+	function strokeCallback(beatIdx) {
 		updateMarkerPosition(true);
 
-		var beat = $(".beat-i-" + Math.floor(i / bbConfig.playTime), $element);
+		let i = Math.floor(beatIdx / bbConfig.playTime - $scope.pattern.upbeat / $scope.pattern.time);
+		var beat = $(".beat-i-" + i, $element);
 		$(".beat.active").not(beat).removeClass("active");
 		beat.addClass("active");
 	}
@@ -103,6 +104,8 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 	};
 
 	$scope.getStrokeClass = function(i) {
+		i = i - $scope.pattern.upbeat;
+
 		var ret = [
 			"stroke-"+(i%$scope.pattern.time),
 			"stroke-i-"+i

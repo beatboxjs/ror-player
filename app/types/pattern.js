@@ -5,6 +5,7 @@ app.factory("bbPattern", function(bbConfig, ng, $, bbUtils) {
 		this.length = data && data.length || 4;
 		this.time = data && data.time || 4;
 		this.speed = data && data.speed || 100;
+		this.upbeat = data && data.upbeat || 0;
 		this.loop = data && data.loop || false;
 		this.displayName = data && data.displayName;
 		if(data && data.volumeHack)
@@ -31,7 +32,7 @@ app.factory("bbPattern", function(bbConfig, ng, $, bbUtils) {
 		 */
 		compress : function(originalPattern) {
 			var instrumentKeys = Object.keys(bbConfig.instruments);
-			var le = this.length * this.time;
+			var le = this.length * this.time + this.upbeat;
 			var ret = { };
 			for(var i=0; i<instrumentKeys.length; i++) {
 				if(originalPattern != null && ng.equals(this[instrumentKeys[i]], originalPattern[instrumentKeys[i]]))
@@ -79,6 +80,9 @@ app.factory("bbPattern", function(bbConfig, ng, $, bbUtils) {
 			if(originalPattern == null || this.length != originalPattern.length) {
 				ret.length = this.length;
 			}
+			if(originalPattern == null ? (this.upbeat != 0) : (this.upbeat != originalPattern.upbeat)) {
+				ret.upbeat = this.upbeat;
+			}
 
 			return ret;
 		},
@@ -86,9 +90,18 @@ app.factory("bbPattern", function(bbConfig, ng, $, bbUtils) {
 		split: function(instrument) {
 			var ret = [ ];
 			var remaining = ng.copy(this[instrument]);
+
+			if(remaining.length > 0) {
+				var slice = remaining.slice(0, 4*this.time + this.upbeat);
+				slice.time = this.time;
+				slice.upbeat = this.upbeat;
+				remaining = remaining.slice(4*this.time + this.upbeat);
+			}
+
 			while(remaining.length > 0) {
 				var slice = remaining.slice(0, 4*this.time);
 				slice.time = this.time;
+				slice.upbeat = 0;
 				ret.push(slice);
 				remaining = remaining.slice(4*this.time);
 			}
@@ -100,10 +113,12 @@ app.factory("bbPattern", function(bbConfig, ng, $, bbUtils) {
 				return false;
 			if(this.time != pattern2.time)
 				return false;
+			if(this.upbeat != pattern2.upbeat)
+				return false;
 			if(!ng.equals(this.volumeHack, pattern2.volumeHack))
 				return false;
 
-			var length = this.length * this.time;
+			var length = this.length * this.time + this.upbeat;
 			for(var instr in bbConfig.instruments) {
 				if(bbPattern._pattern2str(this[instr] || [ ], length) != bbPattern._pattern2str(pattern2[instr] || [ ], length))
 					return false;
@@ -262,6 +277,10 @@ app.factory("bbPattern", function(bbConfig, ng, $, bbUtils) {
 				ret.time = encodedPatternObject.time;
 			else if(!originalPattern)
 				ret.time = 4;
+			if(encodedPatternObject.upbeat != null)
+				ret.upbeat = encodedPatternObject.upbeat;
+			else if(!originalPattern)
+				ret.upbeat = 0;
 			if(encodedPatternObject.volumeHack != null)
 				ret.volumeHack = encodedPatternObject.volumeHack;
 
@@ -274,19 +293,19 @@ app.factory("bbPattern", function(bbConfig, ng, $, bbUtils) {
 
 				switch(encodedPatternObject[instr].charAt(0)) {
 					case "!":
-						ret[instr] = bbPattern._PatternDiff.applyDiffString("", encodedPatternObject[instr].substr(1), ret.length*ret.time);
+						ret[instr] = bbPattern._PatternDiff.applyDiffString("", encodedPatternObject[instr].substr(1), ret.length*ret.time + ret.upbeat);
 						break;
 
 					case "+":
 						if(originalPattern == null)
 							throw new Error("Could not apply diff as original pattern does not exist.");
 
-						ret[instr] = bbPattern._PatternDiff.applyDiffString(bbPattern._pattern2str(originalPattern[instr], originalPattern.length*originalPattern.time), encodedPatternObject[instr].substr(1), ret.length*ret.time);
+						ret[instr] = bbPattern._PatternDiff.applyDiffString(bbPattern._pattern2str(originalPattern[instr], originalPattern.length*originalPattern.time), encodedPatternObject[instr].substr(1), ret.length*ret.time + ret.upbeat);
 						break;
 
 					case '@':
 						var toInstr = encodedPatternObject[instr].substr(1, 2);
-						ret[instr] = bbPattern._PatternDiff.applyDiffString(bbPattern._pattern2str(ret[toInstr] || [ ], ret.length*ret.time), encodedPatternObject[instr].substr(3), ret.length*ret.time);
+						ret[instr] = bbPattern._PatternDiff.applyDiffString(bbPattern._pattern2str(ret[toInstr] || [ ], ret.length*ret.time), encodedPatternObject[instr].substr(3), ret.length*ret.time + ret.upbeat);
 						break;
 
 					default:
