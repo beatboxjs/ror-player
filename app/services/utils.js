@@ -5,11 +5,19 @@ app.factory("bbUtils", function(bbConfig, ng, $, $rootScope, $uibModal, $q, $tim
 	var CHARS = bbConfig.numberToStringChars;
 
 	var bbUtils = {
-		getNumber: function(num) {
-			if(isFinite(num) && !isNaN(num))
-				return new Array(num);
-			else
+		Math: Math,
+
+		getNumber: function(from, to) {
+			[ from, to ] = [ to == null ? 0 : 1*from, to == null ? 1*from : 1*to ];
+
+			if(!isFinite(from) || isNaN(from) || !isFinite(to) || isNaN(to))
 				return [ ];
+
+			let ret = [ ];
+			for(let i=from; i<to; i++) {
+				ret.push(i);
+			}
+			return ret;
 		},
 
 		getKeys : function(obj) {

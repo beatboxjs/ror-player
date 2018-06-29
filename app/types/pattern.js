@@ -290,7 +290,7 @@ app.factory("bbPattern", function(bbConfig, ng, $, bbUtils) {
 			for(var instr in bbConfig.instruments) {
 				if(!encodedPatternObject[instr]) {
 					if(encodedPatternObject[instr] == "")
-						ret[instr] = "";
+						ret[instr] = [ ];
 
 					continue;
 				}

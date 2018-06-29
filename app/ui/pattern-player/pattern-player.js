@@ -31,7 +31,11 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 	}
 
 	function updateMarkerPosition(scrollFurther, force) {
-		var i = ($scope.player.getPosition() * $scope.pattern.time / bbConfig.playTime) - $scope.pattern.upbeat;
+		var i = ($scope.player.getPosition() * $scope.pattern.time / bbConfig.playTime);
+
+		if(!$scope.playbackSettings.loop)
+			i -= $scope.pattern.upbeat;
+
 		var strokeIdx = Math.floor(i);
 
 		var stroke = $(".stroke-i-"+strokeIdx, $element);
@@ -45,7 +49,11 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 	function strokeCallback(beatIdx) {
 		updateMarkerPosition(true);
 
-		let i = Math.floor(beatIdx / bbConfig.playTime - $scope.pattern.upbeat / $scope.pattern.time);
+		let i = beatIdx / bbConfig.playTime;
+		if(!$scope.playbackSettings.loop) // Only when not looped, upbeat is played in the beginning
+			i -= $scope.pattern.upbeat / $scope.pattern.time;
+		i = Math.floor(i);
+
 		var beat = $(".beat-i-" + i, $element);
 		$(".beat.active").not(beat).removeClass("active");
 		beat.addClass("active");
@@ -95,10 +103,14 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 	};
 
 	$scope.getBeatClass = function(i) {
-		var ret = [ "beat-"+(i%4), "beat-i-"+i ];
-		if(i%4 == 3)
+		let positiveI = i;
+		while(positiveI < 0) // Support negative numbers properly
+			positiveI += 4;
+
+		var ret = [ "beat-"+(positiveI%4), "beat-i-"+i ];
+		if(positiveI%4 == 3)
 			ret.push("before-bar");
-		if(i%4 == 0)
+		if(positiveI%4 == 0)
 			ret.push("after-bar");
 		return ret;
 	};
@@ -147,10 +159,20 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 		return surdos.includes(instrumentKey) && !surdos.some((it) => ($scope.playbackSettings.headphones.includes(it)));
 	};
 
-	$scope.setPosition = function(i, $event) {
-		var beat = $($event.target).closest(".beat");
-		var add = ($event.pageX - beat.offset().left) / beat.outerWidth();
-		$scope.player.setPosition(Math.floor((i+add)*bbConfig.playTime));
+	$scope.setPosition = function($event) {
+		let tr = $($event.target).closest("tr");
+		let firstBeat = tr.find("td.beat").first();
+
+		let patternLength = $scope.pattern.length * bbConfig.playTime + $scope.pattern.upbeat * bbConfig.playTime / $scope.pattern.time;
+		let pos = Math.floor(patternLength * ($event.pageX - firstBeat.offset().left) / (tr.outerWidth() - firstBeat.offset().left + tr.offset().left));
+
+		if($scope.playbackSettings.loop) { // upbeat is at the end
+			pos -= $scope.pattern.upbeat * bbConfig.playTime / $scope.pattern.time;
+			if(pos < 0)
+				pos += $scope.pattern.length * bbConfig.playTime;
+		}
+
+		$scope.player.setPosition(pos);
 		updateMarkerPosition(false);
 	};
 

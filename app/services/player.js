@@ -46,11 +46,28 @@ app.factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $
 					stroke.push({ instrument: "ot_w", volume: playbackSettings.volume});
 
 				for(var instr in bbConfig.instruments) {
-					if(bbPlayer._isEnabled(instr, playbackSettings.headphones, playbackSettings.mute) && pattern[instr] && pattern[instr][i] && pattern[instr][i] != " ")
-						stroke.push({ instrument: instr+"_"+pattern[instr][i], volume: vol * playbackSettings.volume * (playbackSettings.volumes[instr] == null ? 1 : playbackSettings.volumes[instr]) });
+					if(bbPlayer._isEnabled(instr, playbackSettings.headphones, playbackSettings.mute) && pattern[instr]) {
+						let strokeType = pattern[instr][i];
+
+						if(playbackSettings.loop) {
+							// Put upbeat at the end of pattern
+
+							let upbeatStart = pattern[instr].slice(0, pattern.upbeat).findIndex((stroke) => (stroke && stroke != " "));
+							if(upbeatStart != -1 && i >= pattern.length * pattern.time + upbeatStart)
+								strokeType = pattern[instr][i - pattern.length * pattern.time];
+						}
+
+						if(strokeType && strokeType != " ")
+							stroke.push({ instrument: instr+"_"+strokeType, volume: vol * playbackSettings.volume * (playbackSettings.volumes[instr] == null ? 1 : playbackSettings.volumes[instr]) });
+					}
 				}
 
 				ret[i*fac] = stroke;
+			}
+
+			if(playbackSettings.loop) {
+				// Cut out upbeat from the beginning
+				ret.splice(0, pattern.upbeat*fac);
 			}
 
 			return ret;

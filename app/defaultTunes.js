@@ -1823,17 +1823,18 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			patterns: {
 				Tune: {
 					loop: true,
-					ls: 'X   0X   X     XX   0X         X',
-					ms: 'X XX   X        X XX   X        ',
-					hs: '    X               X           ',
-					re: '    X      hX       X    X XrXh ',
-					sn: '....X.......X.X.....X.......X...',
-					ta: '    X       X X     X       X   ',
-					ag: 'a a o  a a ao o a a o  a        ',
-					sh: '................................'
+					upbeat: 1,
+					ls: 'XX   0X   X     XX   0X          ',
+					ms: ' X XX   X        X XX   X        ',
+					hs: '     X               X           ',
+					re: '     X      hX       X    X XrXh ',
+					sn: ' ....X.......X.X.....X.......X...',
+					ta: '     X       X X     X       X   ',
+					ag: ' a a o  a a ao o a a o  a        ',
+					sh: ' ................................'
 				},
 				'Break 1': {
-					ls: '               X',
+					ls: '                ',
 					ms: '                ',
 					hs: '                ',
 					ag: 'ooooo o a       ',
