@@ -1823,7 +1823,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			patterns: {
 				Tune: {
 					loop: true,
-					ls: '     X   X     X     X         X',
+					ls: 'X   0X   X     XX   0X         X',
 					ms: 'X XX   X        X XX   X        ',
 					hs: '    X               X           ',
 					re: '    X      hX       X    X XrXh ',
@@ -1833,10 +1833,10 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sh: '................................'
 				},
 				'Break 1': {
-					ls: 'XXXX           X',
-					ms: '    X X         ',
-					hs: '        X       ',
-					ag: 'aaaaa a o       ',
+					ls: '               X',
+					ms: '                ',
+					hs: '                ',
+					ag: 'ooooo o a       ',
 					ot: '           uv x '
 				},
 				'Break 2': {
@@ -1847,10 +1847,10 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					sh: '   XXXXXXXX        XXXXXXXX        XXXXXXXX        '
 				},
 				'Bra Break': {
-					ls: '    X       X X ',
+					ls: repeat(3, '    X       X X '),
 					ms: '@ls',
 					hs: '@ls',
-					re: 'X X    X X X    ',
+					re: repeat(3, 'X X    X X X    '),
 					sn: '@ls',
 					ta: '@ls',
 					ag: '@ls',
