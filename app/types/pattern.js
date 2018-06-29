@@ -288,8 +288,12 @@ app.factory("bbPattern", function(bbConfig, ng, $, bbUtils) {
 				throw new Error("No pattern length provided.");
 
 			for(var instr in bbConfig.instruments) {
-				if(!encodedPatternObject[instr])
+				if(!encodedPatternObject[instr]) {
+					if(encodedPatternObject[instr] == "")
+						ret[instr] = "";
+
 					continue;
+				}
 
 				switch(encodedPatternObject[instr].charAt(0)) {
 					case "!":
