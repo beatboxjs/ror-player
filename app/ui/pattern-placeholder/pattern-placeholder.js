@@ -64,7 +64,7 @@ app.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPa
 		});
 
 		$timeout(function() {
-			bbPatternEditorDialog.editPattern($scope.state, $scope.tuneName, $scope.patternName, $scope.readonly, $scope.player);
+			bbPatternEditorDialog.editPattern($scope.state, $scope.tuneName, $scope.patternName, $scope.readonly, $scope.player && $scope.player.playing ? $scope.player : null);
 
 			createPlayer();
 		});
