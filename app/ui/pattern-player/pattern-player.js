@@ -31,10 +31,7 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 	}
 
 	function updateMarkerPosition(scrollFurther, force) {
-		var i = ($scope.player.getPosition() * $scope.pattern.time / bbConfig.playTime);
-
-		if(!$scope.playbackSettings.loop)
-			i -= $scope.pattern.upbeat;
+		var i = ($scope.player.getPosition() * $scope.pattern.time / bbConfig.playTime) - $scope.pattern.upbeat;
 
 		var strokeIdx = Math.floor(i);
 
@@ -49,10 +46,7 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 	function strokeCallback(beatIdx) {
 		updateMarkerPosition(true);
 
-		let i = beatIdx / bbConfig.playTime;
-		if(!$scope.playbackSettings.loop) // Only when not looped, upbeat is played in the beginning
-			i -= $scope.pattern.upbeat / $scope.pattern.time;
-		i = Math.floor(i);
+		let i = Math.floor(beatIdx / bbConfig.playTime - $scope.pattern.upbeat / $scope.pattern.time);
 
 		var beat = $(".beat-i-" + i, $element);
 		$(".beat.active").not(beat).removeClass("active");
@@ -63,6 +57,9 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 		$scope.player = bbPlayer.createBeatbox(true);
 
 	$scope.player.onbeat = strokeCallback;
+	$scope.player.onstop = function() {
+		$(".beat.active").removeClass("active");
+	};
 
 	$scope.playbackSettings = Object.assign(new bbPlaybackSettings($scope.presetPlaybackSettings), {
 		speed: $scope.pattern.speed,
@@ -79,7 +76,9 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 
 
 	function updatePlayer() {
-		$scope.player.setPattern(bbPlayer.patternToBeatbox($scope.pattern, $scope.playbackSettings));
+		let beatboxPattern = bbPlayer.patternToBeatbox($scope.pattern, $scope.playbackSettings);
+		$scope.player.setPattern(beatboxPattern);
+		$scope.player.setUpbeat(beatboxPattern.upbeat);
 		$scope.player.setBeatLength(60000/$scope.playbackSettings.speed/bbConfig.playTime);
 		$scope.player.setRepeat($scope.playbackSettings.loop);
 	}
@@ -165,12 +164,6 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 
 		let patternLength = $scope.pattern.length * bbConfig.playTime + $scope.pattern.upbeat * bbConfig.playTime / $scope.pattern.time;
 		let pos = Math.floor(patternLength * ($event.pageX - firstBeat.offset().left) / (tr.outerWidth() - firstBeat.offset().left + tr.offset().left));
-
-		if($scope.playbackSettings.loop) { // upbeat is at the end
-			pos -= $scope.pattern.upbeat * bbConfig.playTime / $scope.pattern.time;
-			if(pos < 0)
-				pos += $scope.pattern.length * bbConfig.playTime;
-		}
 
 		$scope.player.setPosition(pos);
 		updateMarkerPosition(false);

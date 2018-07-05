@@ -36,7 +36,7 @@ app.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, n
 	$scope.player = bbPlayer.createBeatbox();
 
 	function updateMarkerPos(scrollFurther, force) {
-		var i = $scope.player.getPosition()/bbConfig.playTime;
+		var i = Math.max(0, ($scope.player.getPosition() - $scope.player._upbeat)/bbConfig.playTime);
 		var beatIdx = Math.floor(i);
 
 		var beat = $(".beat-i-"+beatIdx, $element);
@@ -50,7 +50,9 @@ app.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, n
 	$scope.player.onbeat = function(idx) { updateMarkerPos(true); };
 
 	function updatePattern() {
-		$scope.player.setPattern(bbPlayer.songToBeatbox($scope.state));
+		let songBeatbox = bbPlayer.songToBeatbox($scope.state);
+		$scope.player.setPattern(songBeatbox);
+		$scope.player.setUpbeat(songBeatbox.upbeat);
 		$scope.player.setBeatLength(60000/$scope.state.playbackSettings.speed/bbConfig.playTime);
 		$scope.player.setRepeat($scope.state.playbackSettings.loop);
 	}
@@ -192,7 +194,7 @@ app.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, n
 	$scope.setPosition = function(idx, $event) {
 		var beat = $($event.target).closest(".beat");
 		var add = ($event.pageX - beat.offset().left) / beat.outerWidth();
-		$scope.player.setPosition(Math.floor((idx+add)*bbConfig.playTime));
+		$scope.player.setPosition(Math.floor((idx+add)*bbConfig.playTime+$scope.player._upbeat));
 		updateMarkerPos(false);
 	};
 

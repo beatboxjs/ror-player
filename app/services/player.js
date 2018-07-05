@@ -65,10 +65,7 @@ app.factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $
 				ret[i*fac] = stroke;
 			}
 
-			if(playbackSettings.loop) {
-				// Cut out upbeat from the beginning
-				ret.splice(0, pattern.upbeat*fac);
-			}
+			ret.upbeat = pattern.upbeat * fac;
 
 			return ret;
 		},
@@ -76,7 +73,9 @@ app.factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $
 		songToBeatbox: function(state) {
 			var song = state.songs[state.songIdx];
 			var length = song.getEffectiveLength(state);
-			var ret = new Array(length*bbConfig.playTime*4);
+			let maxUpbeat = bbConfig.playTime*4;
+			var ret = new Array(maxUpbeat + length*bbConfig.playTime*4);
+			let upbeat = 0;
 
 			function insertPattern(idx, pattern, instrumentKey, patternLength, whistle) {
 				let patternBeatbox = bbPlayer.patternToBeatbox(pattern, new bbPlaybackSettings({
@@ -93,16 +92,13 @@ app.factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $
 					if((patternBeatbox[i] || []).length > 0)
 						upbeatHasStarted = true;
 
-					if(idx + i - idxOffset < 0)
-						continue;
+					upbeat = Math.max(upbeat, idxOffset - idx - i);
 
-					let existingStrokes = (ret[idx + i - idxOffset] || [ ]);
+					let existingStrokes = (ret[maxUpbeat + idx + i - idxOffset] || [ ]);
 					if(upbeatHasStarted && i - idxOffset < 0)
 						existingStrokes = existingStrokes.filter((instr) => (instr.instrument.split("_", 2)[0] != instrumentKey));
-					ret[idx + i - idxOffset] = existingStrokes.concat(patternBeatbox[i] || [ ]);
+					ret[maxUpbeat + idx + i - idxOffset] = existingStrokes.concat(patternBeatbox[i] || [ ]);
 				}
-
-
 			}
 
 			for(var i=0; i<length; i++) {
@@ -126,6 +122,9 @@ app.factory("bbPlayer", function(bbConfig, bbUtils, ng, Beatbox, bbAudioFiles, $
 					}), "ot", 1, state.playbackSettings.whistle);
 				}
 			}
+
+			ret = ret.slice(maxUpbeat - upbeat);
+			ret.upbeat = upbeat;
 
 			return ret;
 		},
