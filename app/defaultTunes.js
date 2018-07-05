@@ -1838,7 +1838,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					ms: '                ',
 					hs: '                ',
 					ag: 'ooooo o a       ',
-					ot: '           uv x '
+					ot: '           uvx  '
 				},
 				'Break 2': {
 					upbeat: 3,
