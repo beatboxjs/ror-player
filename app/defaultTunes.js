@@ -236,6 +236,9 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 					ms: 'XX X  X         ',
 					hs: '        X       ',
 					ag: '            o   '
+				},
+				'Punky Monkey Break': {
+					ot: 'DDEEDDEEA A A   '
 				}
 			}
 		},
