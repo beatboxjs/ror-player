@@ -25,7 +25,7 @@ The sign comes from the name sounding similar to "After-shave" (when pronounced 
 * **Repi:** hard (contains many variations in tone and speed)
 * **Snare:** hard (while it’s on beat in the beginning it’s getting some offbeat in the end)</dd>
 * **Tamb:** medium (quite exhausting if played for a long time)
-* **Agogô:** medium (easy to mix up with custard)</dd>
+* **Agogô:** medium (easy to mix up with custard)
 
 ### Breaks
 
