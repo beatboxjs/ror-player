@@ -12,7 +12,7 @@ app.factory("bbPattern", function(bbConfig, ng, $, bbUtils) {
 			this.volumeHack = data.volumeHack;
 
 		for(var instr in bbConfig.instruments) {
-			this[instr] = data && data[instr] ? ng.copy(data[instr]) : { };
+			this[instr] = data && data[instr] ? ng.copy(data[instr]) : [ ];
 		}
 	}
 
