@@ -1820,7 +1820,7 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Tequila': {
-			categories: [ "standard", "new", "tricky" ],
+			categories: [ "standard", "new", "medium" ],
 			sheet: sheetUrl + "tequila.pdf",
 			description: require("../assets/tuneDescriptions/tequila.md"),
 			patterns: {
