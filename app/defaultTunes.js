@@ -1820,14 +1820,14 @@ app.factory("bbDefaultTunes", function(ng, $rootScope, bbConfig, bbTune, bbPatte
 			}
 		},
 		'Tequila': {
-			categories: [ "proposed" ],
+			categories: [ "standard", "new", "tricky" ],
 			sheet: sheetUrl + "tequila.pdf",
 			description: require("../assets/tuneDescriptions/tequila.md"),
 			patterns: {
 				Tune: {
 					loop: true,
 					upbeat: 1,
-					ls: 'XX   0X   X     XX   0X          ',
+					ls: 'X0 00 X 0 X     X0 00 X 0        ',
 					ms: ' X XX   X        X XX   X        ',
 					hs: '     X               X           ',
 					re: '     X      hX       X    X XrXh ',
