@@ -1,3 +1,5 @@
+import jsonFormat from 'json-format';
+
 import app from "../../app";
 import "./share-dialog.scss";
 
@@ -26,17 +28,19 @@ app.controller("bbShareDialogCtrl", function($scope, state, bbUtils, ng, bbDefau
 		return ret;
 	};
 
-	$scope._getCompressedState = function() {
+	$scope._getCompressedState = function(encode) {
 		return $scope.state.compress(
 			function(songIdx) {
 				return $scope.shareSongs[songIdx];
 			},
-			$scope.shouldExportPattern.bind($scope)
+			$scope.shouldExportPattern.bind($scope),
+			encode
 		);
 	};
 
-	$scope.getRawString = function() {
-		return JSON.stringify($scope._getCompressedState());
+	$scope.getRawString = function(encode) {
+		var compressedState = $scope._getCompressedState(encode);
+		return encode ? JSON.stringify(compressedState) : jsonFormat(compressedState);
 	};
 
 	$scope.getUrl = function() {
@@ -61,7 +65,7 @@ app.controller("bbShareDialogCtrl", function($scope, state, bbUtils, ng, bbDefau
 			}
 		}
 
-		var url = "#/" + encodeURIComponent(bbUtils.objectToString($scope._getCompressedState()));
+		var url = "#/" + encodeURIComponent(bbUtils.objectToString($scope._getCompressedState(true)));
 		if(onlyPattern)
 			url += "/" + encodeURIComponent(onlyPattern[0]) + "/" + encodeURIComponent(onlyPattern[1]);
 		else if(onlyTune)

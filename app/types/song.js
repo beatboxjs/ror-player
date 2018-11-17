@@ -123,8 +123,8 @@ app.factory("bbSong", function(bbConfig, ng, $, bbUtils, bbTune) {
 			return { patterns: patterns, keys: keys };
 		},
 
-		compressSongs : function(songs) {
-			var index = this._makePatternIndex(songs);
+		compressSongs : function(songs, encode) {
+			var index = encode && this._makePatternIndex(songs);
 
 			var encodedSongs = new Array(songs.length);
 			for(var songIdx=0; songIdx<songs.length; songIdx++) {
@@ -136,7 +136,7 @@ app.factory("bbSong", function(bbConfig, ng, $, bbUtils, bbTune) {
 					var allSame = null;
 					for(var instr in bbConfig.instruments) {
 						var p = songs[songIdx][beatIdx] && songs[songIdx][beatIdx][instr] || [ "", "" ];
-						var key = index.patterns[p[0]][p[1]];
+						var key = encode ? index.patterns[p[0]][p[1]] : p;
 
 						if(allSame == null)
 							allSame = key;
@@ -148,7 +148,7 @@ app.factory("bbSong", function(bbConfig, ng, $, bbUtils, bbTune) {
 					}
 
 					beatsArr[beatIdx] = allSame ? allSame : patterns;
-					if(!allSame || index.keys[allSame] != null)
+					if(!allSame || (encode ? index.keys[allSame] != null : !ng.equals(allSame, [ "", "" ])))
 						beatsObj[beatIdx] = allSame ? allSame : patterns;
 				}
 
@@ -158,10 +158,16 @@ app.factory("bbSong", function(bbConfig, ng, $, bbUtils, bbTune) {
 				};
 			}
 
-			return { keys: index.keys, songs: encodedSongs };
+			if(encode)
+				return { keys: index.keys, songs: encodedSongs };
+			else
+				return encodedSongs;
 		},
 
 		uncompressSongs : function(encoded) {
+			if(!encoded.songs)
+				encoded = { songs: encoded };
+
 			var songs = new Array(encoded.songs.length);
 			encoded.songs.forEach(function(song, songIdx) {
 				songs[songIdx] = new bbSong();
@@ -175,15 +181,17 @@ app.factory("bbSong", function(bbConfig, ng, $, bbUtils, bbTune) {
 						continue;
 
 					songs[songIdx][beatIdx] = { };
-					if(typeof beat == "string") {
-						if(encoded.keys[beat] != null) {
+					if(typeof beat == "string" || Array.isArray(beat)) {
+						var decodedBeat = Array.isArray(beat) ? beat : encoded.keys[beat];
+						if(decodedBeat != null) {
 							for(var instr in bbConfig.instruments)
-								songs[songIdx][beatIdx][instr] = encoded.keys[beat];
+								songs[songIdx][beatIdx][instr] = decodedBeat;
 						}
 					} else {
 						for(var instr in beat) {
-							if(encoded.keys[beat[instr]] != null)
-								songs[songIdx][beatIdx][instr] = encoded.keys[beat[instr]];
+							var decodedBeat = Array.isArray(beat[instr]) ? beat[instr] : encoded.keys[beat[instr]];
+							if(decodedBeat != null)
+								songs[songIdx][beatIdx][instr] = decodedBeat;
 						}
 					}
 				}

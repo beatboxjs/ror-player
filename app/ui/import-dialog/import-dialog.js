@@ -30,6 +30,7 @@ app.controller("bbImportDialogCtrl", function($scope, state, bbUtils, bbState) {
 			else
 				$scope.error = "Unrecognised format.";
 		} catch(e) {
+			console.error(e.stack || e);
 			$scope.error = "Error decoding pasted data: " + (e.message || e);
 		}
 	});

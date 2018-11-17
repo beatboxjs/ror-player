@@ -5,11 +5,15 @@
 <div class="modal-body">
 	<uib-tabset>
 		<uib-tab heading="Link">
-			<textarea readonly="readonly" class="form-control" rows="5">{{getUrl()}}</textarea>
+			<textarea readonly="readonly" class="form-control" rows="5" ng-value="getUrl()"></textarea>
 			<p><em>Opening this URL will open the songs selected below and have the selected tunes/breaks available in the list.</em></p>
 		</uib-tab>
-		<uib-tab heading="Raw data object">
-			<textarea readonly="readonly" class="form-control" rows="5">{{getRawString()}}</textarea>
+		<uib-tab heading="Raw (compressed)">
+			<textarea readonly="readonly" class="form-control" rows="10" ng-value="getRawString(true)"></textarea>
+			<p><em>Copy this data into the “Import” menu to make the songs and tunes/breaks selected below available in the player.</em></p>
+		</uib-tab>
+		<uib-tab heading="Raw (uncompressed)">
+			<textarea readonly="readonly" class="form-control" rows="10" ng-value="getRawString(false)"></textarea>
 			<p><em>Copy this data into the “Import” menu to make the songs and tunes/breaks selected below available in the player.</em></p>
 		</uib-tab>
 	</uib-tabset>

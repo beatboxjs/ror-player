@@ -23,6 +23,7 @@ app.factory("bbPattern", function(bbConfig, ng, $, bbUtils) {
 		 * - (If there is an original version of the pattern) a diff to the original
 		 * - The instrument line as is
 		 * @param originalPattern {bbPattern?} Optional, a pattern object of the original pattern
+		 * @param encode {boolean?} Make is smaller by encoding the pattern
 		 * @returns {object} A pattern object where some of the instruments have been replaced by diffs and the time and length
 		 *                   properties have been removed if they don't differ from the original. The format is as follows:
 		 *                   - If the instrument line starts with a '@', it is followed by a two-char instrument key and
@@ -30,7 +31,7 @@ app.factory("bbPattern", function(bbConfig, ng, $, bbUtils) {
 		 *                   - If the instrument line starts with a '+', it is followed by a diff to the original instrument line
 		 *                   - Otherwise, the string is the actual instrument line
 		 */
-		compress : function(originalPattern) {
+		compress : function(originalPattern, encode) {
 			var instrumentKeys = Object.keys(bbConfig.instruments);
 			var le = this.length * this.time + this.upbeat;
 			var ret = { };
@@ -50,24 +51,26 @@ app.factory("bbPattern", function(bbConfig, ng, $, bbUtils) {
 				if(originalPattern == null && encoded.match(/^ *$/))
 					continue;
 
-				var thisEncoded = bbPattern._PatternDiff.getDiffString("", encoded);
-				if(thisEncoded.length+1 < encoded.length)
-					encoded = "!" + thisEncoded;
-
 				for(var i2=0; i2<i; i2++) {
 					if(!this[instrumentKeys[i2]])
 						continue;
 
 					var thisEncoded = bbPattern._PatternDiff.getDiffString(bbPattern._pattern2str(this[instrumentKeys[i2]], le), bbPattern._pattern2str(this[instrumentKeys[i]], le));
-					if(thisEncoded.length+3 < encoded.length) {
+					if(thisEncoded.length+3 < encoded.length && (encode || thisEncoded.length == 0)) {
 						encoded = "@"+instrumentKeys[i2]+thisEncoded;
 					}
 				}
 
-				if(originalPattern != null) {
-					var thisEncoded = bbPattern._PatternDiff.getDiffString(bbPattern._pattern2str(originalPattern[instrumentKeys[i]], originalPattern.length*originalPattern.time), bbPattern._pattern2str(this[instrumentKeys[i]], le));
-					if(thisEncoded.length+1 < encoded.length) {
-						encoded = "+"+thisEncoded;
+				if (encode) {
+					var thisEncoded = bbPattern._PatternDiff.getDiffString("", encoded);
+					if(thisEncoded.length+1 < encoded.length)
+						encoded = "!" + thisEncoded;
+
+					if(originalPattern != null) {
+						var thisEncoded = bbPattern._PatternDiff.getDiffString(bbPattern._pattern2str(originalPattern[instrumentKeys[i]], originalPattern.length*originalPattern.time), bbPattern._pattern2str(this[instrumentKeys[i]], le));
+						if(thisEncoded.length+1 < encoded.length) {
+							encoded = "+"+thisEncoded;
+						}
 					}
 				}
 

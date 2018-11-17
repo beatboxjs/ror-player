@@ -122,12 +122,12 @@ app.factory("bbState", function(bbConfig, ng, $, bbUtils, bbTune, bbSong, bbPatt
 			return this.tunes[tuneName] && this.tunes[tuneName].patterns[patternName];
 		},
 
-		compress : function(selectSong, selectPattern, keepEmptyTunes, saveOptions) {
+		compress : function(selectSong, selectPattern, encode, keepEmptyTunes, saveOptions) {
 			var ret = { patterns: { } };
 
 			var songs = selectSong ? this.songs.filter(function(song, songIdx) { return selectSong(songIdx); }) : this.songs;
 			if(songs.length > 0)
-				ret.songs = bbSong.compressSongs(songs);
+				ret.songs = bbSong.compressSongs(songs, encode);
 
 			for(var tuneName in this.tunes) {
 				var encodedPatterns = { };
@@ -136,7 +136,7 @@ app.factory("bbState", function(bbConfig, ng, $, bbUtils, bbTune, bbSong, bbPatt
 						continue;
 
 					var originalPattern = bbDefaultTunes.getPattern(tuneName, patternName);
-					var encodedPattern = this.tunes[tuneName].patterns[patternName].compress(originalPattern);
+					var encodedPattern = this.tunes[tuneName].patterns[patternName].compress(originalPattern, encode);
 					if(Object.keys(encodedPattern).length > 0)
 						encodedPatterns[patternName] = encodedPattern;
 				}
