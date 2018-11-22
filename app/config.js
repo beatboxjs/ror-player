@@ -31,7 +31,7 @@ app.factory("bbConfig", function(ng, $document) {
 			strokes: [ "X", "r", "f" ]
 		},
 		ag: {
-			name: "Agogo",
+			name: "Agogô",
 			strokes: [ "o", "a", "r", "." ]
 		},
 		sh: {
