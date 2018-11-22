@@ -148,7 +148,7 @@ app.factory("bbConfig", function(ng, $document) {
 
 	bbConfig.times = {
 		2: "2⁄4",
-		3: "3⁄4",
+		3: "6⁄8",
 		4: "4⁄4",
 		5: "5⁄8",
 		6: "3⁄4",
