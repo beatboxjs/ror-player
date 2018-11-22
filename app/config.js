@@ -175,6 +175,8 @@ app.factory("bbConfig", function(ng, $document) {
 
 	bbConfig.tuneOfTheYear = "Zurav Love / Truant";
 
+	bbConfig.defaultSpeed = 100;
+
 	bbConfig.numberToStringChars = " !#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~";
 
 	// Check some requirements for export so that we don't forget them at some point in the future

@@ -51,7 +51,7 @@ app.controller("bbPlaybackSettingsController", (bbConfig, $scope, bbUtils, ng) =
 	};
 
 	$scope.resetSpeed = function() {
-		$scope.playbackSettings.speed = $scope.defaultSpeed || 100;
+		$scope.playbackSettings.speed = $scope.defaultSpeed || bbConfig.defaultSpeed;
 	};
 
 	$scope.setVolumes = function(volumes) {

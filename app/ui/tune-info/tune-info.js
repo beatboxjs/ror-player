@@ -1,7 +1,7 @@
 import app from "../../app";
 import "./tune-info.scss";
 
-app.directive("bbTuneInfo", (bbUtils) => {
+app.directive("bbTuneInfo", (bbUtils, bbConfig) => {
 	return {
 		template: require("./tune-info.html"),
 		scope: {
@@ -12,8 +12,14 @@ app.directive("bbTuneInfo", (bbUtils) => {
 		link: (scope) => {
 			scope.utils = bbUtils;
 
-			scope.$watch("tuneName", (tuneName) => {
+			scope.$watch("tuneName", (tuneName, previousTuneName) => {
 				scope.tune = scope.state.tunes[tuneName];
+
+				if(scope.tune) {
+					let previousDefaultSpeed = previousTuneName && scope.state.tunes[previousTuneName].speed || bbConfig.defaultSpeed;
+					if(scope.state.playbackSettings.speed == previousDefaultSpeed)
+						scope.state.playbackSettings.speed = scope.tune.speed || bbConfig.defaultSpeed;
+				}
 			});
 		}
 	};

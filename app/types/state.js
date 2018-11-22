@@ -27,7 +27,8 @@ app.factory("bbState", function(bbConfig, ng, $, bbUtils, bbTune, bbSong, bbPatt
 							categories: data.tunes[tuneName].categories,
 							displayName: data.tunes[tuneName].displayName,
 							description: data.tunes[tuneName].description,
-							sheet: data.tunes[tuneName].sheet
+							sheet: data.tunes[tuneName].sheet,
+							speed: data.tunes[tuneName].speed
 						});
 					}
 

@@ -7,6 +7,7 @@ app.factory("bbTune", function(ng, $, bbUtils, bbPattern) {
 		this.displayName = data && data.displayName;
 		this.sheet = data && data.sheet;
 		this.description = data && data.description;
+		this.speed = data && data.speed;
 
 		if(data)
 			this.extend(data);

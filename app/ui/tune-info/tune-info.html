@@ -9,8 +9,8 @@
 		<p><a href="{{tune.sheet}}" target="_blank">Tune sheet (PDF)</a></p>
 	</div>
 
-	<bb-playback-settings ng-model="state.playbackSettings" class="pull-right"></bb-playback-settings>
+	<bb-playback-settings ng-model="state.playbackSettings" default-speed="tune.speed" class="pull-right"></bb-playback-settings>
 
 	<h3 ng-if="tune.description || tune.sheet">Sounds</h3>
-	<bb-pattern-placeholder bb-state="state" bb-tune-name="tuneName" bb-pattern-name="patternName" bb-readonly="true" ng-repeat="patternName in utils.getKeys(tune.patterns)"></bb-pattern-placeholder>
+	<bb-pattern-placeholder bb-state="state" bb-settings="state.playbackSettings" bb-tune-name="tuneName" bb-pattern-name="patternName" bb-readonly="true" ng-repeat="patternName in utils.getKeys(tune.patterns)"></bb-pattern-placeholder>
 </div>

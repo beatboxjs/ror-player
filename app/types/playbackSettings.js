@@ -7,7 +7,7 @@ app.factory("bbPlaybackSettings", function(bbConfig, $) {
 		}
 
 		reset(data) {
-			this.speed = 100;
+			this.speed = bbConfig.defaultSpeed;
 			this.headphones = [ ];
 			this.mute = { };
 			this.volume = 1;

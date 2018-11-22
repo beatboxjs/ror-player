@@ -4,7 +4,7 @@ app.factory("bbPattern", function(bbConfig, ng, $, bbUtils) {
 	function bbPattern(data) {
 		this.length = data && data.length || 4;
 		this.time = data && data.time || 4;
-		this.speed = data && data.speed || 100;
+		this.speed = data && data.speed || bbConfig.defaultSpeed;
 		this.upbeat = data && data.upbeat || 0;
 		this.loop = data && data.loop || false;
 		this.displayName = data && data.displayName;

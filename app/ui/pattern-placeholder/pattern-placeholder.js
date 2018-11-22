@@ -96,7 +96,7 @@ app.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPa
 		$scope.player.setPattern(playbackSettings.length ? pattern.slice(0, playbackSettings.length*bbConfig.playTime + pattern.upbeat) : pattern);
 		$scope.player.setUpbeat(pattern.upbeat);
 		$scope.player.setBeatLength(60000/playbackSettings.speed/bbConfig.playTime);
-		$scope.player.setRepeat(playbackSettings.loop);
+		$scope.player.setRepeat(playbackSettings.loop || patternObj.loop);
 	};
 
 	$scope.playPattern = function() {
