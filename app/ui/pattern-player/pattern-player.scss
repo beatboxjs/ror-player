@@ -46,11 +46,11 @@
 			border-right: 1px solid #aaa;
 		}
 
-		.dummy, .instrument-operations, .stroke.before-bar, .beat.before-bar {
+		.instrument-operations, .stroke.before-bar, .beat.before-bar {
 			border-right: 2px solid #888;
 		}
 
-		.dummy {
+		.instrument-operations {
 			text-align: right;
 		}
 
@@ -79,7 +79,7 @@
 			white-space: nowrap;
 		}
 
-		.instrument-operations .inactive,.dummy .inactive {
+		.instrument-operations .inactive {
 			color: #bbb;
 		}
 

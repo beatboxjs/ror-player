@@ -30,8 +30,8 @@
 	<table class="pattern-editor" ng-class="'time-'+pattern.time">
 		<thead>
 			<tr>
-				<td colspan="2" class="dummy">
-					<a href="javascript:" ng-click="headphoneAll()" ng-class="playbackSettings.headphones.length > 0 ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a>
+				<td colspan="2" class="instrument-operations">
+					<a href="javascript:" ng-click="muteAll()" ng-class="allMuted() ? 'active' : 'inactive'" uib-tooltip="{{allMuted() ? 'Unmute' : 'Mute'}} all instruments"><span class="glyphicon glyphicon-volume-off"></span></a>
 				</td>
 				<td ng-repeat="i in utils.getNumber(-utils.Math.ceil(pattern.upbeat / pattern.time), 0)" colspan="{{$first ? (pattern.upbeat-1) % pattern.time + 1 : pattern.time}}" class="beat" ng-class="getBeatClass(i)" ng-click="setPosition($event)"><span>{{i}}</span></td>
 				<td ng-repeat="i in utils.getNumber(pattern.length)" colspan="{{pattern.time}}" class="beat" ng-class="getBeatClass(i)" ng-click="setPosition($event)"><span>{{i+1}}</span></td>
@@ -41,8 +41,9 @@
 			<tr ng-repeat="instrumentKey in utils.getKeys(config.instruments)">
 				<th>{{config.instruments[instrumentKey].name}}</th>
 				<td class="instrument-operations">
-					<a ng-if="!isHiddenSurdoHeadphone(instrumentKey)" href="javascript:" ng-click="headphones(instrumentKey)" ng-class="playbackSettings.headphones.includes(instrumentKey) ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a>
-					<a ng-if="isHiddenSurdoHeadphone(instrumentKey) && instrumentKey == 'ms'" href="javascript:" ng-click="headphones('ls', 'ms', 'hs')" class="inactive"><span class="glyphicon glyphicon-headphones"></span></a>
+					<a ng-if="!isHiddenSurdoHeadphone(instrumentKey)" href="javascript:" ng-click="headphones([ instrumentKey ], $event.ctrlKey || $event.shiftKey)" ng-class="playbackSettings.headphones.includes(instrumentKey) ? 'active' : 'inactive'"><span class="glyphicon glyphicon-headphones"></span></a>
+					<a ng-if="isHiddenSurdoHeadphone(instrumentKey) && instrumentKey == 'ms'" href="javascript:" ng-click="headphones([ 'ls', 'ms', 'hs' ], $event.ctrlKey || $event.shiftKey)" class="inactive"><span class="glyphicon glyphicon-headphones"></span></a>
+					<a href="javascript:" ng-click="mute(instrumentKey)" ng-class="playbackSettings.mute[instrumentKey] ? 'active' : 'inactive'"><span class="glyphicon glyphicon-volume-off"></span></a>
 				</td>
 				<td ng-repeat="i in utils.getNumber(pattern.length*pattern.time + pattern.upbeat)" class="stroke" ng-class="getStrokeClass(i, instrumentKey)">
 					<span ng-if="readonly" class="stroke-inner" uib-tooltip="{{config.strokesDescription[pattern[instrumentKey][i]]}}">{{config.strokes[pattern[instrumentKey][i]] || ' '}}</span>

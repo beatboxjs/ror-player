@@ -75,21 +75,40 @@ app.controller("bbSongPlayerController", function($scope, bbConfig, $uibModal, n
 		$scope.player.setPosition(0);
 	};
 
-	$scope.headphones = function(...instrumentKeys) {
-		for(let instrumentKey of instrumentKeys) {
-			let idx = $scope.state.playbackSettings.headphones.indexOf(instrumentKey);
-			if(idx == -1)
-				$scope.state.playbackSettings.headphones.push(instrumentKey);
+	$scope.headphones = function(instrumentKeys, extend) {
+		if(!instrumentKeys.some((key) => !$scope.state.playbackSettings.headphones.includes(key))) {
+			if (!extend && $scope.state.playbackSettings.headphones.some((key) => !instrumentKeys.includes(key)))
+				$scope.state.playbackSettings.headphones = instrumentKeys;
 			else
-				$scope.state.playbackSettings.headphones.splice(idx, 1);
-		}
+				$scope.state.playbackSettings.headphones = $scope.state.playbackSettings.headphones.filter((key) => !instrumentKeys.includes(key));
+		} else if(extend)
+			$scope.state.playbackSettings.headphones = [ ...new Set([ ...$scope.state.playbackSettings.headphones, ...instrumentKeys ]) ];
+		else
+			$scope.state.playbackSettings.headphones = instrumentKeys;
 	};
 
-	$scope.headphoneAll = function() {
-		if($scope.state.playbackSettings.headphones.length == 0)
-			$scope.state.playbackSettings.headphones = Object.keys(bbConfig.instruments);
-		else
-			$scope.state.playbackSettings.headphones = [ ];
+	$scope.isHiddenSurdoHeadphone = function(instrumentKey) {
+		let surdos = ["ls", "ms", "hs"];
+		return surdos.includes(instrumentKey) && !surdos.some((it) => ($scope.state.playbackSettings.headphones.includes(it)));
+	};
+
+	$scope.mute = function(instrumentKey) {
+		$scope.state.playbackSettings.mute[instrumentKey] = !$scope.state.playbackSettings.mute[instrumentKey];
+	};
+
+	$scope.allMuted = function() {
+		for(let instrumentKey in bbConfig.instruments) {
+			if(!$scope.state.playbackSettings.mute[instrumentKey])
+				return false;
+		}
+		return true;
+	};
+
+	$scope.muteAll = function() {
+		let mute = !$scope.allMuted();
+		for(let instrumentKey in bbConfig.instruments) {
+			$scope.state.playbackSettings.mute[instrumentKey] = mute;
+		}
 	};
 
 	$scope.isHiddenSurdoHeadphone = function(instrumentKey) {

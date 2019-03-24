@@ -136,26 +136,40 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 		return ret;
 	};
 
-	$scope.headphones = function(...instrumentKeys) {
-		for(let instrumentKey of instrumentKeys) {
-			let idx = $scope.playbackSettings.headphones.indexOf(instrumentKey);
-			if(idx == -1)
-				$scope.playbackSettings.headphones.push(instrumentKey);
+	$scope.headphones = function(instrumentKeys, extend) {
+		if(!instrumentKeys.some((key) => !$scope.playbackSettings.headphones.includes(key))) {
+			if (!extend && $scope.playbackSettings.headphones.some((key) => !instrumentKeys.includes(key)))
+				$scope.playbackSettings.headphones = instrumentKeys;
 			else
-				$scope.playbackSettings.headphones.splice(idx, 1);
-		}
-	};
-
-	$scope.headphoneAll = function() {
-		if($scope.playbackSettings.headphones.length == 0)
-			$scope.playbackSettings.headphones = Object.keys(bbConfig.instruments);
+				$scope.playbackSettings.headphones = $scope.playbackSettings.headphones.filter((key) => !instrumentKeys.includes(key));
+		} else if(extend)
+			$scope.playbackSettings.headphones = [ ...new Set([ ...$scope.playbackSettings.headphones, ...instrumentKeys ]) ];
 		else
-			$scope.playbackSettings.headphones = [ ];
+			$scope.playbackSettings.headphones = instrumentKeys;
 	};
 
 	$scope.isHiddenSurdoHeadphone = function(instrumentKey) {
 		let surdos = ["ls", "ms", "hs"];
 		return surdos.includes(instrumentKey) && !surdos.some((it) => ($scope.playbackSettings.headphones.includes(it)));
+	};
+
+	$scope.mute = function(instrumentKey) {
+		$scope.playbackSettings.mute[instrumentKey] = !$scope.playbackSettings.mute[instrumentKey];
+	};
+
+	$scope.allMuted = function() {
+		for(let instrumentKey in bbConfig.instruments) {
+			if(!$scope.playbackSettings.mute[instrumentKey])
+				return false;
+		}
+		return true;
+	};
+
+	$scope.muteAll = function() {
+		let mute = !$scope.allMuted();
+		for(let instrumentKey in bbConfig.instruments) {
+			$scope.playbackSettings.mute[instrumentKey] = mute;
+		}
 	};
 
 	$scope.setPosition = function($event) {
