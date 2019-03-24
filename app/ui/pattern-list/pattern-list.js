@@ -65,7 +65,7 @@ app.controller("bbPatternListController", function($scope, bbConfig, bbUtils, bb
 				return "This name is already taken. Please enter a different one.";
 		}).then(function(newPatternName) {
 			$scope.state.createPattern(tuneName, newPatternName);
-			bbPatternEditorDialog.editPattern($scope.tunes, tuneName, newPatternName);
+			bbPatternEditorDialog.editPattern($scope.state, tuneName, newPatternName);
 		});
 	};
 
