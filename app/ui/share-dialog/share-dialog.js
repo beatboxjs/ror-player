@@ -65,7 +65,7 @@ app.controller("bbShareDialogCtrl", function($scope, state, bbUtils, ng, bbDefau
 			}
 		}
 
-		var url = "#/" + encodeURIComponent(bbUtils.objectToString($scope._getCompressedState(true)));
+		var url = "#/compose/" + encodeURIComponent(bbUtils.objectToString($scope._getCompressedState(true)));
 		if(onlyPattern)
 			url += "/" + encodeURIComponent(onlyPattern[0]) + "/" + encodeURIComponent(onlyPattern[1]);
 		else if(onlyTune)
