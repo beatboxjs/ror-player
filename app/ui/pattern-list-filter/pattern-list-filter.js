@@ -1,6 +1,6 @@
 import app from "../../app";
 
-const DEFAULT_FILTER = { text: "", cat: "standard" };
+const DEFAULT_FILTER = { text: "", cat: "all" };
 
 app.directive("bbPatternListFilter", function(bbConfig) {
 	return {
