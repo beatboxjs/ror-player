@@ -1,0 +1,22 @@
+.bb-pattern-list-filter {
+	&::-webkit-input-placeholder {
+		color: #888;
+		opacity: 1;
+		font-style: italic;
+	}
+	&::-moz-placeholder {
+		color: #888;
+		opacity: 1;
+		font-style: italic;
+	}
+	&::-ms-input-placeholder {
+		color: #888;
+		opacity: 1;
+		font-style: italic;
+	}
+	&:-moz-placeholder {
+		color: #888;
+		opacity: 1;
+		font-style: italic;
+	}
+}

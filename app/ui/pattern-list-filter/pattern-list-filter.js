@@ -1,4 +1,5 @@
 import app from "../../app";
+import "./pattern-list-filter.scss";
 
 const DEFAULT_FILTER = { text: "", cat: "all" };
 
