@@ -5,7 +5,7 @@ const HtmlWebpackInlineSourcePlugin = require("html-webpack-inline-source-plugin
 
 const duplicatePlugin = require("./webpack-duplicates");
 
-const dev = !!process.env.WEBPACK_SERVE;
+const dev = process.argv[1].includes('webpack-dev-server');
 
 const depLoaders = {
 	jquery: "expose-loader?jQuery",
@@ -31,7 +31,7 @@ for(let i in addDeps) {
 }
 
 module.exports = {
-	entry: [ "babel-polyfill", `${__dirname}/entry.js` ],
+	entry: [ "@babel/polyfill", `${__dirname}/entry.js` ],
 	output: {
 		path: __dirname + "/build/",
 		filename: "angular-beatbox.js"
@@ -50,7 +50,7 @@ module.exports = {
 				use: {
 					loader: "babel-loader",
 					options: {
-						presets: [ "env" ],
+						presets: [ "@babel/preset-env" ],
 						plugins: [ require("babel-plugin-angularjs-annotate") ]
 					}
 				}
@@ -67,8 +67,8 @@ module.exports = {
 				loader: "string-replace-loader",
 				options: {
 					multiple: [
-						{ search: "src: url\\('\\.\\./fonts/glyphicons-halflings-regular.eot'\\);", replace: "", flags: "" },
-						{ search: "src: url\\('\\.\\./fonts/glyphicons-halflings-regular\\..*", replace: "src: url('../fonts/glyphicons-halflings-regular.ttf') format('truetype');", flags: "" }
+						{ search: "src: url\\(\"\\.\\./fonts/glyphicons-halflings-regular.eot\"\\);", replace: "", flags: "" },
+						{ search: "src: url\\(\"\\.\\./fonts/glyphicons-halflings-regular\\..*", replace: "src: url(\"../fonts/glyphicons-halflings-regular.ttf\") format(\"truetype\");", flags: "" }
 					]
 				}
 			}

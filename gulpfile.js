@@ -6,7 +6,7 @@ var gulpIf = require("gulp-if");
 var newer = require("gulp-newer");
 var replace = require("gulp-replace");
 var path = require("path");
-var combine = require("stream-combiner");
+var combine = require("stream-combiner2").obj;
 var stream = require("stream");
 var vinyl = require("vinyl");
 var zlib = require("zlib");
@@ -57,7 +57,7 @@ gulp.task("audiosprite", function() {
 	);
 });
 
-gulp.task("webpack", [ "audiosprite" ], async () => {
+gulp.task("webpack", gulp.series("audiosprite", async function runWebpack() {
 	let stats = await new Promise((resolve, reject) => {
 		webpack(webpackConfig).run((err, stats) => { err ? reject(err) : resolve(stats) });
 	});
@@ -66,12 +66,12 @@ gulp.task("webpack", [ "audiosprite" ], async () => {
 
 	if(stats.compilation.errors && stats.compilation.errors.length > 0)
 		throw new gutil.PluginError("webpack", "There were compilation errors.");
-});
+}));
 
 
-gulp.task("all", [ "webpack" ]);
+gulp.task("all", gulp.series("webpack"));
 
-gulp.task("default", [ "all" ]);
+gulp.task("default", gulp.series("all"));
 
 gulp.task("clean", function() {
 	return combine(
