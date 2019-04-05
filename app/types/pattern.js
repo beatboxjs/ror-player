@@ -46,7 +46,8 @@ app.factory("bbPattern", function(bbConfig, ng, $, bbUtils) {
 				}
 
 				// Try out which is the shortest encoded version
-				var encoded = bbPattern._pattern2str(this[instrumentKeys[i]], le);
+				var original = bbPattern._pattern2str(this[instrumentKeys[i]], le);
+				var encoded = original.replace(/ +$/, "");
 
 				if(originalPattern == null && encoded.match(/^ *$/))
 					continue;
@@ -55,19 +56,19 @@ app.factory("bbPattern", function(bbConfig, ng, $, bbUtils) {
 					if(!this[instrumentKeys[i2]])
 						continue;
 
-					var thisEncoded = bbPattern._PatternDiff.getDiffString(bbPattern._pattern2str(this[instrumentKeys[i2]], le), bbPattern._pattern2str(this[instrumentKeys[i]], le));
+					var thisEncoded = bbPattern._PatternDiff.getDiffString(bbPattern._pattern2str(this[instrumentKeys[i2]], le), original);
 					if(thisEncoded.length+3 < encoded.length && (encode || thisEncoded.length == 0)) {
 						encoded = "@"+instrumentKeys[i2]+thisEncoded;
 					}
 				}
 
 				if (encode) {
-					var thisEncoded = bbPattern._PatternDiff.getDiffString("", encoded);
+					var thisEncoded = bbPattern._PatternDiff.getDiffString("", original);
 					if(thisEncoded.length+1 < encoded.length)
 						encoded = "!" + thisEncoded;
 
 					if(originalPattern != null) {
-						var thisEncoded = bbPattern._PatternDiff.getDiffString(bbPattern._pattern2str(originalPattern[instrumentKeys[i]], originalPattern.length*originalPattern.time), bbPattern._pattern2str(this[instrumentKeys[i]], le));
+						var thisEncoded = bbPattern._PatternDiff.getDiffString(bbPattern._pattern2str(originalPattern[instrumentKeys[i]], originalPattern.length*originalPattern.time), original);
 						if(thisEncoded.length+1 < encoded.length) {
 							encoded = "+"+thisEncoded;
 						}
@@ -333,7 +334,7 @@ app.factory("bbPattern", function(bbConfig, ng, $, bbUtils) {
 			for(var i=0; i<length; i++) {
 				ret += pattern[i] || " ";
 			}
-			return ret.replace(/ +$/, "");
+			return ret;
 		},
 
 		_str2pattern : function(string) {
