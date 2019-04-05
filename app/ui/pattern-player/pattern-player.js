@@ -58,7 +58,9 @@ app.controller("bbPatternController", function($scope, $element, bbPlayer, bbCon
 
 	$scope.player.onbeat = strokeCallback;
 	$scope.player.onstop = function() {
-		$(".beat.active").removeClass("active");
+		$scope.$apply(function() {
+			$(".beat.active").removeClass("active");
+		});
 	};
 
 	$scope.playbackSettings = Object.assign(new bbPlaybackSettings($scope.presetPlaybackSettings), {
