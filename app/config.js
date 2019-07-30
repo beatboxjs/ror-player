@@ -173,7 +173,7 @@ app.factory("bbConfig", function(ng, $document) {
 	// Time measurement that is used for beatbox.js. Should be able to represent all the time measurements above
 	bbConfig.playTime = 60;
 
-	bbConfig.tuneOfTheYear = "Zurav Love / Truant";
+	bbConfig.tuneOfTheYear = "Xango";
 
 	bbConfig.defaultSpeed = 100;
 
