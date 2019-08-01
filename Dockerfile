@@ -1,5 +1,7 @@
 FROM httpd:2.4-alpine
 
+RUN echo "AddType text/cache-manifest .manifest" >> /usr/local/apache2/conf/httpd.conf
+
 RUN apk --no-cache update && apk --no-cache add git nodejs nodejs-npm dumb-init
 
 COPY ./ /opt/angular-beatbox/

@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const fs = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackInlineSourcePlugin = require("html-webpack-inline-source-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const duplicatePlugin = require("./webpack-duplicates");
 
@@ -85,6 +86,9 @@ module.exports = {
 			template: "./index.html",
 			inlineSource: "\.js$"
 		}),
+		new CopyPlugin([
+			{ from: `${__dirname}/cache.manifest`, to: `${__dirname}/build/cache.manifest` }
+		]),
 		//...(dev ? [
 			new HtmlWebpackInlineSourcePlugin()
 		//] : [])
