@@ -1,0 +1,55 @@
+.bb-overview {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+
+	.bb-overview-toggle-patternList {
+		position: absolute;
+		top: 1em;
+		left: 1em;
+	}
+
+	> div {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+
+		> div > .nav {
+			padding: 1em 1em 0 1em;
+
+			@media (max-width: 767px) {
+				padding-left: 65px;
+			}
+		}
+
+		> .tab-content {
+			height: 0;
+			flex-grow: 1;
+			position: relative;
+
+			> .tab-pane {
+				height: 100%;
+			}
+		}
+	}
+
+	.bb-cover {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 998; /* Under modal dialog (1050) */
+		background: rgba(0, 0, 0, 0.4);
+		visibility: hidden;
+		transition: left .3s;
+
+		@media (max-width: 767px) {
+			body.bb-pattern-list-visible & {
+				visibility: visible;
+			}
+		}
+	}
+}

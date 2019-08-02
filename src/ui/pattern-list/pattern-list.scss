@@ -1,0 +1,54 @@
+.bb-pattern-list {
+
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding-right: 25px;
+
+	.card-header, .card-body {
+		padding: 0;
+	}
+
+	.card-header button {
+		text-align: left;
+		text-decoration: none;
+		color: inherit;
+		position: relative;
+
+		.fa-caret-down {
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+
+	.card {
+		margin-bottom: 5px;
+	}
+
+	.bb-pattern-placeholder {
+		margin: 2px;
+	}
+
+	.tune-actions {
+		text-align: center;
+	}
+
+	hr {
+		/* https://stackoverflow.com/a/34372979/242365 */
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.bb-pattern-list-tunes {
+		margin-right: -25px;
+		overflow-y: auto;
+		padding-right: 10px;
+	}
+
+	.general-actions {
+		padding-top: 10px;
+	}
+
+}

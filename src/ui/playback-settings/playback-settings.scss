@@ -1,0 +1,49 @@
+.bb-playback-settings-button {
+	.fa-caret-down {
+		margin-left: 5px;
+	}
+}
+
+.bb-playback-settings {
+
+	max-width: none;
+
+	.instrument-names td {
+		vertical-align: top;
+
+		span,strong {
+			display: inline-block;
+			white-space: nowrap;
+			writing-mode: vertical-rl;
+			transform: rotate(180deg);
+		}
+	}
+
+	.volumes input[type=range] {
+		writing-mode: bt-lr;
+		-webkit-appearance: slider-vertical;
+		width: 10px;
+		height: 120px;
+	}
+
+	td {
+		padding: 1px 8px;
+		text-align: center;
+	}
+
+	.mute td {
+		padding-top: 10px;
+		padding-bottom: 4px;
+	}
+
+	td.master {
+		border-right: 1px solid #eee;
+		padding-left: 0;
+		padding-right: 8px;
+	}
+
+	.inactive {
+		color: #bbb;
+	}
+
+}

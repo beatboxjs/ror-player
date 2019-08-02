@@ -1,0 +1,128 @@
+.bb-pattern-editor-toolbar {
+	.divider {
+		display: inline-block;
+		vertical-align: top;
+		height: 34px;
+		margin: 0 9px;
+		border-left: 1px solid #eee;
+	}
+
+	button.has-changes {
+		background: linear-gradient(to bottom, #fdf4e8 0%, #f7d3a1 100%);
+		border-color: #f7d3a1;
+	}
+}
+
+.bb-pattern-editor-container {
+	width: 100%;
+	overflow-x: auto;
+	padding: 1em 0;
+	position: relative;
+
+	.pattern-editor {
+		table-layout: fixed;
+
+		.stroke {
+			border-right: 1px solid #ddd;
+			text-align: center;
+			position: relative;
+
+			&.has-changes {
+				background-color: #fbe8d0;
+			}
+		}
+
+		.stroke-inner {
+			display: inline-block;
+			min-width: 2.7ex;
+		}
+
+		thead td {
+			border-bottom: 1px solid #aaa;
+			padding-bottom: .5ex;
+		}
+
+		.beat, .stroke.before-beat {
+			border-right: 1px solid #aaa;
+		}
+
+		.instrument-operations, .stroke.before-bar, .beat.before-bar {
+			border-right: 2px solid #888;
+		}
+
+		.instrument-operations {
+			text-align: right;
+		}
+
+		.beat {
+			cursor: pointer;
+		}
+
+		.beat span {
+			display: inline-block;
+			padding: 0 .5ex;
+			border-radius: 10px;
+			transition: background-color 1s, color 1s;
+		}
+
+		.beat.active span {
+			background-color: #3a94a5;
+			color: #fff;
+			transition: none;
+		}
+
+		tbody th {
+			padding-right: 1ex;
+		}
+
+		tbody th, td.instrument-operations {
+			white-space: nowrap;
+		}
+
+		.instrument-operations .inactive {
+			color: #bbb;
+		}
+
+		&.time-2 {
+			.stroke-inner {
+				min-width: 5.4ex;
+			}
+		}
+
+		&.time-12 {
+			.stroke-inner {
+				min-width: 1ex;
+			}
+
+			.stroke-0, .stroke-1, .stroke-3, .stroke-4, .stroke-6, .stroke-7, .stroke-9, .stroke-10 {
+				border-right: none;
+			}
+		}
+
+		&.time-20 {
+			.stroke-inner {
+				min-width: 1ex;
+			}
+
+			.stroke-0, .stroke-1, .stroke-2, .stroke-3,
+			.stroke-5, .stroke-6, .stroke-7, .stroke-8,
+			.stroke-10,.stroke-11,.stroke-12,.stroke-13,
+			.stroke-15,.stroke-16,.stroke-17,.stroke-18 {
+				border-right: none;
+			}
+		}
+	}
+
+	.position-marker {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		border-left: 1px solid #000;
+		transition: left 0.1s linear;
+		pointer-events: none;
+
+		&.player-stopped {
+			border: none;
+		}
+	}
+}

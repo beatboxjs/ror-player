@@ -1,29 +1,13 @@
 <!DOCTYPE html>
-<html lang="en-us" ng-app="beatbox" ng-strict-di manifest="./cache.manifest">
+<html lang="en-us">
     <head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Angular Beatbox</title>
 		<meta name="description" content="A pattern-based drumming machine.">
-	    <style>
-		    #download-link {
-			    display: none;
-			    position: absolute;
-				bottom: 5px;
-				right: 20px;
-		    }
-
-		    .ng-scope #download-link {
-			    display: block;
-		    }
-	    </style>
 	</head>
-	<body ng-controller="BeatboxController">
-		<div id="loading" ng-hide="true">Loading...</div>
-
-		<bb-overview></bb-overview>
-
-		<a id="download-link" href="?" download="{{getDownloadFilename()}}">Download {{getAppName()}}</a>
+	<body>
+		<div id="loading">Loading...</div>
 	</body>
 </html>

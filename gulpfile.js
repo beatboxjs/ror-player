@@ -12,16 +12,13 @@ var vinyl = require("vinyl");
 var zlib = require("zlib");
 const webpack = require("webpack");
 const webpackConfig = require("./webpack.config.js");
-
-var files = [
-	"app/app.js",
-    "app/shared/**/*",
-    "app/components/**/*",
-	"assets/**/*"
-];
+const util = require("util");
+const jsonFormat = require("json-format");
 
 function packAudioFiles(fileName) {
 	var binaries = {};
+
+	const template = util.promisify(fs.readFile)(`${__dirname}/audioFiles.template.ts`);
 
 	var ret = new stream.Transform({ objectMode: true });
 	ret._transform = function(file, encoding, callback) {
@@ -29,18 +26,26 @@ function packAudioFiles(fileName) {
 			if(err)
 				return callback(err);
 
-			binaries[path.basename(file.path)] = new Buffer(deflated).toString("base64");
+			binaries[path.basename(file.path)] = Buffer.from(deflated).toString("base64");
 			callback(null);
 		});
 	};
 	ret._flush = function(callback) {
 		if(Object.keys(binaries).length > 0) {
-			this.push(new vinyl({
-				path: fileName,
-				contents: new Buffer('import app from "../app/app"; app.constant("bbAudioFiles", ' + JSON.stringify(binaries) + ');')
-			}));
+			fs.readFile(`${__dirname}/audioFiles.template.ts`, "utf8", (err, template) => {
+				if(err)
+					return callback(err);
+
+				this.push(new vinyl({
+					path: fileName,
+					contents: Buffer.from(template.replace(/{\s*\/\*\s*SAMPLES\s*\*\/\s*}/gi, jsonFormat(binaries)))
+				}));
+
+				callback();
+			});
+		} else {
+			callback();
 		}
-		callback();
 	};
 
 	return ret;
@@ -48,12 +53,10 @@ function packAudioFiles(fileName) {
 
 gulp.task("audiosprite", function() {
 	return combine(
-		gulp.src(files, { base: process.cwd() + "/" }),
-		gulpIf("**/*.mp3", combine(
-			newer("build/audioFiles.js"),
-			packAudioFiles("audioFiles.js"),
-			gulp.dest("build")
-		))
+		gulp.src("assets/**/*.mp3", { base: process.cwd() + "/" }),
+		newer("build/audioFiles.ts"),
+		packAudioFiles("audioFiles.ts"),
+		gulp.dest("build")
 	);
 });
 

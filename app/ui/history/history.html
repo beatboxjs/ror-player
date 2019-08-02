@@ -1,8 +1,0 @@
-<div class="bb-history" ng-show="historicStates.length > 1" uib-dropdown>
-	<button type="button" class="btn btn-default" uib-dropdown-toggle uib-popover="{{popoverMessage}}" popover-append-to-body="false" popover-trigger="manual" popover-is-open="!!popoverMessage" popover-placement="bottom"><span class="glyphicon glyphicon-time"></span> History <span class="caret"></span></button>
-	<ul class="uib-dropdown-menu dropdown-menu-right" role="menu" uib-dropdown-menu>
-		<li ng-repeat="historicState in historicStates" ng-class="{active: historicState.key == bbHistory.getCurrentKey()}"><a href="javascript:" ng-click="bbHistory.loadHistoricState(historicState.key)" title="{{historicState.isoDate}}">{{historicState.readableDate}}</a></li>
-		<li role="separator" class="divider"></li>
-		<li><a href="javascript:" ng-click="bbHistory.clear()">Clear</a></li>
-	</ul>
-</div>
