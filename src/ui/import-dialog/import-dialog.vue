@@ -30,7 +30,7 @@
 							<b-list-group-item v-for="tune in tunes" :key="tune.tuneName" :class="tune.className">
 								<a href="javascript:" @click="clickTune(tune.tuneName)">{{tune.displayName}}</a>
 								<span v-for="pattern in tune.patterns" :key="pattern.patternName">
-									<b-badge v-if="(!pattern.isUsed || pattern.exists) && pattern.exists != 2" href="javascript:" class="bb-inline-list-group-item" :active="pattern.shouldImport" @click="importPatterns[tune.tuneName][pattern.patternName] = !pattern.shouldImport" :title="pattern.exists ?  'Already exists. Local version will be overridden.' : ''" v-b-tooltip.bottom>{{pattern.patternName}} <i v-if="pattern.exists" class="fas fa-exclamation-circle"></i></b-badge>
+									<b-badge v-if="(!pattern.isUsed || pattern.exists) && pattern.exists != 2" href="javascript:" class="bb-inline-list-group-item" :active="pattern.shouldImport" @click="importPatterns[tune.tuneName][pattern.patternName] = !pattern.shouldImport" :title="pattern.exists ?  'Already exists. Local version will be overridden.' : ''" v-b-tooltip.hover.bottom>{{pattern.patternName}} <i v-if="pattern.exists" class="fas fa-exclamation-circle"></i></b-badge>
 									<b-badge v-if="(pattern.isUsed && !pattern.exists) || pattern.exists == 2" class="bb-inline-list-group-item" disabled :active="pattern.shouldImport" :title="pattern.exists == 2 ? 'Pattern already exists.' : 'Pattern is used in song, cannot be disabled.'" v-b-tooltip.bottom>{{pattern.patternName}} <i v-if="pattern.exists == 2" class="fas fa-check"></i></b-badge>
 								</span>
 							</b-list-group-item>

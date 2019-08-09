@@ -80,17 +80,21 @@ export default class PatternPlayer extends Vue {
 	@Watch("playbackSettings.volume")
 	@Watch("playbackSettings.volumes", { deep: true })
 	onThisVolumeChange() {
-		events.$emit("update-state", updatePlaybackSettingsInState(this.state, {
-			volume: this.playbackSettings.volume,
-			volumes: this.playbackSettings.volumes
-		}));
+		if(this.playbackSettings.volume != this.state.playbackSettings.volume || !isEqual(this.playbackSettings.volumes, this.state.playbackSettings.volumes)) {
+			updatePlaybackSettings(this.state.playbackSettings, {
+				volume: this.playbackSettings.volume,
+				volumes: this.playbackSettings.volumes
+			});
+		}
 	}
 
 	@Watch("state.playbackSettings.volume")
 	@Watch("state.playbackSettings.volumes", { deep: true })
 	onThatVolumeChange() {
-		this.playbackSettings.volume = this.state.playbackSettings.volume;
-		this.playbackSettings.volumes = clone(this.state.playbackSettings.volumes);
+		if(this.playbackSettings.volume != this.state.playbackSettings.volume || !isEqual(this.playbackSettings.volumes, this.state.playbackSettings.volumes)) {
+			this.playbackSettings.volume = this.state.playbackSettings.volume;
+			this.playbackSettings.volumes = clone(this.state.playbackSettings.volumes);
+		}
 	}
 
 	@Watch("pattern", { deep: true })

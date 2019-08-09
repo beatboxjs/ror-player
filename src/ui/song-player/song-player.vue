@@ -13,9 +13,9 @@
 			</template>
 			<b-dropdown-group v-for="(thisSong, idx) in state.songs" :key="idx" :active="idx == state.songIdx" class="d-flex align-items-center">
 				<b-dropdown-item href="javascript:" class="song-name flex-grow-1" @click="selectSong(idx)">{{getSongName(idx)}}</b-dropdown-item>
-				<b-dropdown-item href="javascript:" @click="renameSong(idx)" title="Rename" v-b-tooltip class="rename"><i class="fas fa-pencil-alt"></i></b-dropdown-item>
-				<b-dropdown-item href="javascript:" @click="copySong(idx)" title="Copy" v-b-tooltip class="copy"><i class="fas fa-copy"></i></b-dropdown-item>
-				<b-dropdown-item href="javascript:" @click="removeSong(idx)" title="Remove" v-b-tooltip class="remove"><i class="fas fa-trash"></i></b-dropdown-item>
+				<b-dropdown-item href="javascript:" @click="renameSong(idx)" title="Rename" v-b-tooltip.hover class="rename"><i class="fas fa-pencil-alt"></i></b-dropdown-item>
+				<b-dropdown-item href="javascript:" @click="copySong(idx)" title="Copy" v-b-tooltip.hover class="copy"><i class="fas fa-copy"></i></b-dropdown-item>
+				<b-dropdown-item href="javascript:" @click="removeSong(idx)" title="Remove" v-b-tooltip.hover class="remove"><i class="fas fa-trash"></i></b-dropdown-item>
 			</b-dropdown-group>
 			<b-dropdown-divider/>
 			<b-dropdown-item href="javascript:" @click="createSong()">New song</b-dropdown-item>
@@ -52,7 +52,7 @@
 			<div class="field all-drop">All</div>
 		</div><div class="bb-col instrument-actions">
 			<div class="timeline">
-				<a href="javascript:" @click="muteAll()" :class="allMuted ? 'active' : 'inactive'" :title="`${allMuted ? 'Unmute' : 'Mute'} all instruments`" v-b-tooltip><i class="fas fa-volume-mute"></i></a>
+				<a href="javascript:" @click="muteAll()" :class="allMuted ? 'active' : 'inactive'" :title="`${allMuted ? 'Unmute' : 'Mute'} all instruments`" v-b-tooltip.hover><i class="fas fa-volume-mute"></i></a>
 			</div>
 			<div class="field" v-for="instrumentKey of config.instrumentKeys" :key="instrumentKey">
 				<ul class="icon-list">
@@ -80,13 +80,13 @@
 						<PatternPlaceholderItem>
 							<b-dropdown variant="link" toggle-class="text-decoration-none" no-caret>
 								<template slot="button-content">
-									<i class="fas fa-hand-point-right" title="Pick instruments" v-b-tooltip></i>
+									<i class="fas fa-hand-point-right" title="Pick instruments" v-b-tooltip.hover></i>
 								</template>
 								<b-dropdown-item v-for="instrumentKey2 in config.instrumentKeys" :key="instrumentKey2" href="javascript:" @click="toggleInstrument(instrumentKey2, i-1, song[i-1][instrumentKey])"><i class="fas fa-check" :style="{visibility: isEqual(song[i-1][instrumentKey2], song[i-1][instrumentKey]) ? 'visible' : 'hidden'}"></i> {{config.instruments[instrumentKey2].name}}</b-dropdown-item>
 							</b-dropdown>
 						</PatternPlaceholderItem>
 						<PatternPlaceholderItem>
-							<a href="javascript:" @click="removePatternFromSong(instrumentKey, i-1)" title="Remove" v-b-tooltip><i class="fas fa-trash" /></a>
+							<a href="javascript:" @click="removePatternFromSong(instrumentKey, i-1)" title="Remove" v-b-tooltip.hover><i class="fas fa-trash" /></a>
 						</PatternPlaceholderItem>
 					</PatternPlaceholder>
 					<span class="placeholder-drag-handle" draggable="true" @dragstart="handleResizeDragStart($event, instrumentKey, i-1)"><i class="fas fa-caret-down"></i></span>

@@ -5,9 +5,9 @@
 		<span class="pattern-name">{{state.tunes[tuneName].patterns[patternName].displayName || patternName}}</span>
 	</b-card>
 	<ul class="actions icon-list">
-		<li><a href="javascript:" title="Listen" v-b-tooltip @click="playPattern()"><i :class="`fas fa-${playerRef && playerRef.playing ? 'stop' : 'play-circle'}`"></i></a></li>
-		<li><a href="javascript:" :title="readonly ? 'Show notes' : 'Edit notes'" v-b-tooltip @click="editPattern()"><i class="fas fa-pen"></i></a></li>
-		<li v-if="hasLocalChanges"><a href="javascript:" title="Revert modifications" v-b-tooltip @click="restore()"><i class="fas fa-eraser"></i></a></li>
+		<li><a href="javascript:" title="Listen" v-b-tooltip.hover @click="playPattern()"><i :class="`fas fa-${playerRef && playerRef.playing ? 'stop' : 'play-circle'}`"></i></a></li>
+		<li><a href="javascript:" :title="readonly ? 'Show notes' : 'Edit notes'" v-b-tooltip.hover @click="editPattern()"><i class="fas fa-pen"></i></a></li>
+		<li v-if="hasLocalChanges"><a href="javascript:" title="Revert modifications" v-b-tooltip.hover @click="restore()"><i class="fas fa-eraser"></i></a></li>
 		<slot />
 	</ul>
 	<div class="position-marker" v-show="playerRef && playerRef.playing"></div>

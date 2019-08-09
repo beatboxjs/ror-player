@@ -43,7 +43,7 @@
 								:disabled="!!shouldExportPattern(tuneName, patternName) > 1"
 								@click="sharePatterns[tuneName][patternName] = !sharePatterns[tuneName][patternName]"
 								:title="isUsedInSong(tuneName, patternName) ? 'Used in song, cannot be disabled' : ''"
-								v-b-tooltip.bottom
+								v-b-tooltip.hover.bottom
 
 							>
 								{{state.tunes[tuneName].patterns[patternName].displayName || patternName}} <i class="fas fa-star" v-if="linkPattern && linkPattern[0] == tuneName && linkPattern[1] == patternName" />
