@@ -6,7 +6,9 @@
 			<Listen/>
 		</b-tab>
 		<b-tab title="Compose">
-			<Compose/>
+			<StateProvider>
+				<Compose/>
+			</StateProvider>
 		</b-tab>
 	</b-tabs>
 

@@ -59,7 +59,7 @@ export default class StrokeDropdown extends Vue {
 
 		if(e.key == "Backspace") {
 			e.preventDefault();
-			this.$emit("change", " ");
+			this.$emit("change-prev", " ");
 			this.$emit("prev");
 		} else if(e.key == "ArrowLeft") {
 			e.preventDefault();
@@ -72,6 +72,7 @@ export default class StrokeDropdown extends Vue {
 			this.$emit(e.shiftKey ? "prev" : "next");
 		} else if(e.key == "Escape") {
 			e.preventDefault();
+			e.stopImmediatePropagation();
 			this.$emit("close");
 		} else if(e.key == " ") {
 			e.preventDefault();
@@ -92,19 +93,20 @@ export default class StrokeDropdown extends Vue {
 		if(e.ctrlKey || e.altKey || e.metaKey)
 			return;
 
-		clearTimeout(this.keySequenceTimeout);
-		this.keySequenceTimeout = setTimeout(() => { this.sequence = null; }, 1000);
+		if(this.keySequenceTimeout)
+			clearTimeout(this.keySequenceTimeout);
 
 		this.sequence = (this.sequence || "") + String.fromCharCode(e.which).toLowerCase();
 
-		if(this.sequence.length == 1) {
-			let options = this.getCurrentStrokeSequenceOptions();
-			if(options.length == 1) {
-				this.$emit("change", options[0]);
-				this.$emit("next");
-				return false;
-			}
+		let options = this.getCurrentStrokeSequenceOptions();
+		if(options.length == 1) {
+			this.$emit("change", options[0]);
+			this.$emit("next");
+			this.sequence = null;
+			return false;
 		}
+
+		this.keySequenceTimeout = window.setTimeout(() => { this.sequence = null; }, 1000);
 
 		return false;
 	}

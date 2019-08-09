@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const fs = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackInlineSourcePlugin = require("html-webpack-inline-source-plugin");
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 const duplicatePlugin = require("./webpack-duplicates");
 
@@ -82,7 +83,8 @@ module.exports = {
 			template: "./index.html",
 			inlineSource: "\.js$"
 		}),
-		new HtmlWebpackInlineSourcePlugin()
+		new HtmlWebpackInlineSourcePlugin(),
+		new ForkTsCheckerWebpackPlugin()
 	],
 	mode: dev ? "development" : "production",
 	devtool: dev ? "cheap-module-eval-source-map" : "source-map"

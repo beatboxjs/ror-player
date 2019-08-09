@@ -3,7 +3,7 @@
 		<slot />
 		<b-button :variant="playerRef.playing ? 'info' : 'success'" @click="playPause()"><i :class="`fas fa-${playerRef.playing ? 'pause' : 'play'}`" /> {{playerRef.playing ? 'Pause' : 'Play'}}</b-button>
 		<b-button variant="danger" @click="stop()"><i class="fas fa-stop"/> Stop</b-button>
-		<PlaybackSettings :playback-settings="state.playbackSettings" @change="updatePlaybackSettings($event)" tooltip-placement="bottom" />
+		<PlaybackSettings :playback-settings="state.playbackSettings" tooltip-placement="bottom" />
 
 		<div class="divider"></div>
 

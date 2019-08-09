@@ -4,14 +4,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import template from "./song-player.vue";
 import { InjectReactive, Watch } from "vue-property-decorator";
-import {
-	getPatternFromState,
-	PatternReference,
-	replaceSong,
-	State,
-	updatePlaybackSettingsInState,
-	selectSong, createSong, getSongName, removeSong
-} from "../../state/state";
+import { getPatternFromState, PatternReference, State, selectSong, createSong, getSongName, removeSong } from "../../state/state";
 import { BeatboxReference, createBeatbox, getPlayerById, songToBeatbox, stopAllPlayers } from "../../services/player";
 import { scrollToElement } from "../../services/utils";
 import config, { Instrument } from "../../config";
@@ -23,7 +16,15 @@ import {
 	updatePlaybackSettings
 } from "../../state/playbackSettings";
 import events, { MultipleHandlers, registerMultipleHandlers } from "../../services/events";
-import { clearSong, getEffectiveSongLength, Song, SongParts } from "../../state/song";
+import {
+	clearSong,
+	deleteSongPart,
+	getEffectiveSongLength,
+	setSongPart,
+	Song,
+	SongParts,
+	updateSong
+} from "../../state/song";
 import isEqual from "lodash.isequal";
 import { clone, id } from "../../utils";
 import { DragType, getDragData, PatternDragData, PatternResizeDragData, setDragData } from "../../services/draggable";
@@ -135,7 +136,7 @@ export default class SongPlayer extends Vue {
 	}
 
 	updatePlaybackSettings(update: PlaybackSettingsOptional) {
-		events.$emit("update-state", updatePlaybackSettingsInState(this.state, update));
+		updatePlaybackSettings(this.state.playbackSettings, update);
 	}
 
 	headphones(instrumentKeys: Array<Instrument>, extend: boolean) {
@@ -237,29 +238,19 @@ export default class SongPlayer extends Vue {
 		return true;
 	}
 
-	_updateSong(updateSong: (song: Song) => void, idx: number = this.state.songIdx) {
-		const song = clone(this.state.songs[idx]);
-		updateSong(song);
-		events.$emit("update-state", replaceSong(this.state, idx, song));
-	}
-
 	removePatternFromSong(instrumentKey: Instrument, idx: number) {
-		this._updateSong((song) => {
-			const span = this.getRowSpan(instrumentKey, idx);
-			const instrIdx = config.instrumentKeys.indexOf(instrumentKey);
-			for(let i=0; i<span; i++) {
-				delete song[idx][config.instrumentKeys[instrIdx+i]];
-			}
-		});
+		const span = this.getRowSpan(instrumentKey, idx);
+		const instrIdx = config.instrumentKeys.indexOf(instrumentKey);
+		for(let i=0; i<span; i++) {
+			deleteSongPart(this.song, idx, config.instrumentKeys[instrIdx+i]);
+		}
 	}
 
 	toggleInstrument(instrumentKey: Instrument, idx: number, tuneAndPattern: PatternReference) {
-		this._updateSong((song) => {
-			if(isEqual(song[idx][instrumentKey], tuneAndPattern))
-				delete song[idx][instrumentKey];
-			else
-				song[idx][instrumentKey] = tuneAndPattern;
-		});
+		if(isEqual(this.song[idx][instrumentKey], tuneAndPattern))
+			deleteSongPart(this.song, idx, instrumentKey);
+		else
+			setSongPart(this.song, idx, instrumentKey, tuneAndPattern);
 	}
 
 	getPreviewPlaybackSettings(instrumentKey: Instrument, idx: number) {
@@ -329,18 +320,13 @@ export default class SongPlayer extends Vue {
 	}
 
 	dropPattern(pattern: PatternReference, instr: Instrument | null, idx: number) {
-		this._updateSong((song) => {
-			if(!song[idx])
-				song[idx] = { };
-
-			if(instr)
-				song[idx][instr] = pattern;
-			else {
-				for(const instr of config.instrumentKeys) {
-					song[idx][instr] = pattern;
-				}
+		if(instr)
+			setSongPart(this.song, idx, instr, pattern);
+		else {
+			for(const instr of config.instrumentKeys) {
+				setSongPart(this.song, idx, instr, pattern);
 			}
-		});
+		}
 	}
 
 	isDragOver(dragOver: DragOver) {
@@ -365,18 +351,16 @@ export default class SongPlayer extends Vue {
 
 		const dragOver = this.dragOver;
 
-		this._updateSong((song) => {
-			const span = this.getRowSpan(instr, idx);
-			const instrIdx = config.instrumentKeys.indexOf(instr);
-			for(let i=0; i<span; i++) {
-				delete song[idx][config.instrumentKeys[instrIdx+i]];
-			}
+		const span = this.getRowSpan(instr, idx);
+		const instrIdx = config.instrumentKeys.indexOf(instr);
+		for(let i=0; i<span; i++) {
+			deleteSongPart(this.song, idx, config.instrumentKeys[instrIdx+i]);
+		}
 
-			const patternLength = Math.ceil((getPatternFromState(this.state, tuneAndPattern) as Pattern).length / 4);
-			for(const part of this.getAffectedResizePatternRange(instr, idx, dragOver.instr as Instrument, dragOver.idx, patternLength)) {
-				this.dropPattern(tuneAndPattern, part[0], part[1]);
-			}
-		});
+		const patternLength = Math.ceil((getPatternFromState(this.state, tuneAndPattern) as Pattern).length / 4);
+		for(const part of this.getAffectedResizePatternRange(instr, idx, dragOver.instr as Instrument, dragOver.idx, patternLength)) {
+			this.dropPattern(tuneAndPattern, part[0], part[1]);
+		}
 	}
 
 	getAffectedResizePatternRange(instrumentKey: Instrument, idx: number, toInstrumentKey: Instrument, toIdx: number, patternLength: number) {
@@ -452,21 +436,19 @@ export default class SongPlayer extends Vue {
 
 		this.stop();
 
-		events.$emit("update-state", selectSong(this.state, songIdx));
+		selectSong(this.state, songIdx);
 	}
 
 	createSong() {
 		this.stop();
 
-		events.$emit("update-state", createSong(this.state, undefined, undefined, true));
+		createSong(this.state, undefined, undefined, true);
 	}
 
 	async renameSong(songIdx: number) {
 		const newName = await openPromptDialog(this, "Enter song name", this.song.name);
 		if(newName) {
-			this._updateSong((song) => {
-				song.name = newName;
-			}, songIdx);
+			updateSong(this.state.songs[songIdx], { name: newName });
 		}
 	}
 
@@ -474,17 +456,17 @@ export default class SongPlayer extends Vue {
 		const copy = clone(this.state.songs[songIdx]);
 		copy.name = copy.name ? "Copy of " + copy.name : "Copy";
 
-		events.$emit("update-state", createSong(this.state, copy, songIdx + 1, this.state.songIdx == songIdx));
+		createSong(this.state, copy, songIdx + 1, this.state.songIdx == songIdx);
 	}
 
 	async removeSong(songIdx: number) {
 		if(await this.$bvModal.msgBoxConfirm(`Do you really want to remove the song ${this.getSongName(songIdx)}?`))
-			events.$emit("update-state", removeSong(this.state, songIdx));
+			removeSong(this.state, songIdx);
 	}
 
 	async clearSong() {
 		if(await this.$bvModal.msgBoxConfirm("Do you really want to clear the current song?")) {
-			events.$emit("update-state", replaceSong(this.state, this.state.songIdx, clearSong(this.song)));
+			clearSong(this.song);
 		}
 	}
 

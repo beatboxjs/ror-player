@@ -5,23 +5,22 @@ import template from "./pattern-player.vue";
 import config, { Instrument } from "../../config";
 import { InjectReactive, Prop, Watch } from "vue-property-decorator";
 import { BeatboxReference, createBeatbox, getPlayerById, patternToBeatbox } from "../../services/player";
-import { Pattern, patternEquals, PatternOptional } from "../../state/pattern";
-import { normalizePlaybackSettings, PlaybackSettings } from "../../state/playbackSettings";
+import { Pattern, patternEquals, PatternOptional, updateStroke, updatePattern } from "../../state/pattern";
+import { normalizePlaybackSettings, PlaybackSettings, updatePlaybackSettings } from "../../state/playbackSettings";
 import $ from "jquery";
 import { scrollToElement } from "../../services/utils";
-import {
-	createPattern, getPatternFromState,
-	State,
-	updatePatternInState,
-	updatePlaybackSettingsInState,
-	updateStrokeInState
-} from "../../state/state";
-import events from "../../services/events";
+import { createPattern, getPatternFromState, State } from "../../state/state";
 import { clone } from "../../utils";
 import defaultTunes from "../../defaultTunes";
 import isEqual from "lodash.isequal";
 import PlaybackSettingsComponent from "../playback-settings/playback-settings";
 import StrokeDropdown from "./stroke-dropdown";
+
+type StrokeDropdownInfo = {
+	instr: Instrument,
+	i: number,
+	sequence?: string
+};
 
 @Component({
 	template,
@@ -38,11 +37,7 @@ export default class PatternPlayer extends Vue {
 
 	playerRef: BeatboxReference = null as any;
 	playbackSettings: PlaybackSettings = null as any;
-	currentStrokeDropdown: {
-		instr: Instrument,
-		i: number,
-		sequence?: string
-	} | null = null;
+	currentStrokeDropdown: StrokeDropdownInfo | null = null;
 
 	get playerInst() {
 		return getPlayerById(this.playerRef.id);
@@ -233,32 +228,30 @@ export default class PatternPlayer extends Vue {
 
 	async reset() {
 		if(await this.$bvModal.msgBoxConfirm("Are you sure that you want to revert your modifications and restore the original break?"))
-			events.$emit("update-state", createPattern(this.state, this.tuneName, this.patternName, this.originalPattern || undefined));
+			createPattern(this.state, this.tuneName, this.patternName, this.originalPattern || undefined);
 	}
 
-	async clickStroke(instrumentKey: Instrument, i: number) {
+	clickStroke(instrumentKey: Instrument, i: number) {
 		if(isEqual(this.currentStrokeDropdown, { instr: instrumentKey, i }))
 			this.currentStrokeDropdown = null;
 		else {
-			this.currentStrokeDropdown = { instr: instrumentKey, i };
-			await this.$nextTick();
-			this.$root.$emit("bv::show::popover", `bb-pattern-editor-stroke-${instrumentKey}-${i}`);
+			this.openStrokeDropdown({ instr: instrumentKey, i });
 		}
 	}
 
-	onStrokeChange(newStroke: string) {
-		if(this.currentStrokeDropdown)
-			events.$emit("update-state", updateStrokeInState(this.state, this.tuneName, this.patternName, this.currentStrokeDropdown.instr, this.currentStrokeDropdown.i, newStroke));
+	onStrokeChange(newStroke: string, prev: boolean) {
+		if(this.currentStrokeDropdown && (!prev || this.currentStrokeDropdown.i > 0))
+			updateStroke(this.pattern, this.currentStrokeDropdown.instr, this.currentStrokeDropdown.i - (prev ? 1 : 0), newStroke);
 	}
 
 	onStrokePrevNext(previous: boolean = false) {
 		if(!this.currentStrokeDropdown || previous && this.currentStrokeDropdown.i == 0 || !previous && this.currentStrokeDropdown.i >= this.pattern.length*this.pattern.time)
 			return this.currentStrokeDropdown = null;
 
-		this.currentStrokeDropdown = {
+		this.openStrokeDropdown({
 			instr: this.currentStrokeDropdown.instr,
 			i: this.currentStrokeDropdown.i + (previous ? -1 : 1)
-		};
+		});
 	}
 
 	onStrokeClose() {
@@ -266,7 +259,13 @@ export default class PatternPlayer extends Vue {
 	}
 
 	updatePattern(update: PatternOptional) {
-		events.$emit("update-state", updatePatternInState(this.state, this.tuneName, this.patternName, update));
+		updatePattern(this.pattern, update);
+	}
+
+	async openStrokeDropdown(strokeDropdown: StrokeDropdownInfo) {
+		this.currentStrokeDropdown = strokeDropdown;
+		await this.$nextTick();
+		this.$root.$emit("bv::show::popover", `bb-pattern-editor-stroke-${strokeDropdown.instr}-${strokeDropdown.i}`);
 	}
 
 }

@@ -48,9 +48,9 @@ export default class ImportDialog extends Vue {
 		try {
 			let m;
 			if(pasted.charAt(0) == "{" || (m = pasted.match(/#\/([-_a-zA-Z0-9]+)/))) {
-				const result = extendStateFromCompressed(normalizeState(), m ? stringToObject(m[1]) : JSON.parse(pasted), null, null, false, false, true);
-				this.obj = result.state;
-				this.warnings = result.errors;
+				const state = normalizeState();
+				this.warnings = extendStateFromCompressed(state, m ? stringToObject(m[1]) : JSON.parse(pasted), null, null, false, false, true);
+				this.obj = state;
 			}
 			else
 				this.error = "Unrecognised format.";
@@ -145,7 +145,7 @@ export default class ImportDialog extends Vue {
 
 	doImport() {
 		if(this.obj)
-			events.$emit("update-state", extendState(this.state, this.obj, this.shouldImportSong.bind(this), this.shouldImportPattern.bind(this)));
+			extendState(this.state, this.obj, this.shouldImportSong.bind(this), this.shouldImportPattern.bind(this));
 
 		this.$bvModal.hide(this.id);
 	};

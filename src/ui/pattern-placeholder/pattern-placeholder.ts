@@ -46,6 +46,7 @@ export default class PatternPlaceholder extends Vue {
 
 	playerRef: BeatboxReference | null = null;
 	editorId: string | null = null;
+	fallbackPlaybackSettings: PlaybackSettings = null as any;
 
 	get player() {
 		return this.playerRef && getPlayerById(this.playerRef.id);
@@ -55,15 +56,17 @@ export default class PatternPlaceholder extends Vue {
 		return getPatternFromState(this.state, this.tuneName, this.patternName);
 	}
 
-	get playbackSettings() {
-		if(this.settings)
-			return this.settings;
-
+	@Watch("state.playbackSettings", { deep: true, immediate: true })
+	handleFallbackPlaybackSettingsChange(newPlaybackSettings: PlaybackSettings) {
 		const pattern = this.pattern;
-		return normalizePlaybackSettings(Object.assign({}, this.state.playbackSettings, pattern && {
+		this.fallbackPlaybackSettings = normalizePlaybackSettings(Object.assign({}, this.state.playbackSettings, pattern && {
 			speed: pattern.speed,
 			loop: pattern.loop
 		}));
+	}
+
+	get playbackSettings() {
+		return this.settings || this.fallbackPlaybackSettings;
 	}
 
 	get hasLocalChanges() {
@@ -133,7 +136,7 @@ export default class PatternPlaceholder extends Vue {
 
 	async restore() {
 		if(await this.$bvModal.msgBoxConfirm(`Are you sure that you want to revert your modifications to ${this.patternName} (${this.tuneName})?`)) {
-			events.$emit("update-state", createPattern(this.state, this.tuneName, this.patternName, defaultTunes.getPattern(this.tuneName, this.patternName) || undefined));
+			createPattern(this.state, this.tuneName, this.patternName, defaultTunes.getPattern(this.tuneName, this.patternName) || undefined);
 		}
 	}
 

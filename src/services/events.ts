@@ -2,13 +2,6 @@ import Vue from "vue";
 import $ from "jquery";
 import { State } from "../state/state";
 
-/*
- * Events:
- * update-state(State)
- * history-load-encoded-string
- * pattern-drag-start
- */
-
 type Event0 = {
 	"pattern-drag-start": void,
 	"history-load-encoded-string": void,
@@ -21,12 +14,12 @@ type Event0 = {
 };
 
 type Event1 = {
-	"update-state": State,
+	"new-state": State,
 	"listen": string,
 	"pattern-list-tune-opened": string,
 	"pattern-list-tune-closed": string,
 	"pattern-list-open-tune": string
-}
+};
 
 type Handler0<That> = (this: That) => void;
 

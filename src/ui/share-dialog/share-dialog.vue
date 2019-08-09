@@ -39,8 +39,8 @@
 								v-for="patternName in getModifiedPatternNames(tuneName)"
 								:key="patternName"
 								class="bb-inline-list-group-item"
-								:active="shouldExportPattern(tuneName, patternName)"
-								:disabled="shouldExportPattern(tuneName, patternName) > 1"
+								:active="!!shouldExportPattern(tuneName, patternName)"
+								:disabled="!!shouldExportPattern(tuneName, patternName) > 1"
 								@click="sharePatterns[tuneName][patternName] = !sharePatterns[tuneName][patternName]"
 								:title="isUsedInSong(tuneName, patternName) ? 'Used in song, cannot be disabled' : ''"
 								v-b-tooltip.bottom

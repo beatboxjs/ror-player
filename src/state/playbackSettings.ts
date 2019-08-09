@@ -1,5 +1,6 @@
 import config, { Instrument } from "../config";
-import { clone } from "../utils";
+import { clone, vueSetMultiple } from "../utils";
+import Vue from "vue";
 
 export type Headphones = Array<Instrument>;
 
@@ -25,7 +26,7 @@ export type PlaybackSettingsOptional = {
 };
 
 export function normalizePlaybackSettings(data?: PlaybackSettingsOptional): PlaybackSettings {
-	return {
+	return Vue.observable({
 		speed: config.defaultSpeed,
 		headphones: [ ],
 		mute: { },
@@ -35,9 +36,9 @@ export function normalizePlaybackSettings(data?: PlaybackSettingsOptional): Play
 		length: undefined, // Cut off after a certain amount of beats
 		whistle: false, // 1: Whistle on one, 2: whistle on all beats
 		...clone(data || { })
-	};
+	});
 }
 
 export function updatePlaybackSettings(playbackSettings: PlaybackSettings, update: PlaybackSettingsOptional) {
-	return Object.assign(clone(playbackSettings), update);
+	vueSetMultiple(playbackSettings, update);
 }

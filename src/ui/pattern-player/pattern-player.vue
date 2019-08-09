@@ -2,7 +2,7 @@
 	<div class="bb-pattern-editor-toolbar">
 		<b-button :variant="playerRef && playerRef.playing ? 'info' : 'success'" @click="playPause()"><i :class="`fas fa-${playerRef && playerRef.playing ? 'pause' : 'play'}`"></i> {{playerRef && playerRef.playing ? 'Pause' : 'Play'}}</b-button>
 		<b-button variant="danger" @click="stop()"><i class="fas fa-stop"></i> Stop</b-button>
-		<PlaybackSettings v-model="playbackSettings" :default-speed="pattern.speed" />
+		<PlaybackSettings :playback-settings="playbackSettings" :default-speed="pattern.speed" />
 
 		<div class="divider"></div>
 
@@ -57,7 +57,7 @@
 							{{config.strokes[pattern[instrumentKey][i-1]] || ' '}}
 						</a>
 						<b-popover v-if="currentStrokeDropdown && currentStrokeDropdown.instr == instrumentKey && currentStrokeDropdown.i == i-1" :target="`bb-pattern-editor-stroke-${instrumentKey}-${i-1}`" placement="bottom">
-							<StrokeDropdown :instrument="instrumentKey" :value="pattern[instrumentKey][i-1] || ' '" @change="onStrokeChange($event)" @prev="onStrokePrevNext(true)" @next="onStrokePrevNext(false)" @close="onStrokeClose()" />
+							<StrokeDropdown :instrument="instrumentKey" :value="pattern[instrumentKey][i-1] || ' '" @change="onStrokeChange($event, false)" @change-prev="onStrokeChange($event, true)" @prev="onStrokePrevNext(true)" @next="onStrokePrevNext(false)" @close="onStrokeClose()" />
 						</b-popover>
 					</td>
 				</tr>

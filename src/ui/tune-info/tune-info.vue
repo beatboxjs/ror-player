@@ -10,7 +10,7 @@
 	</div>
 
 	<div class="text-right">
-		<PlaybackSettings v-model="playbackSettings" :default-speed="tune.speed" class="text-right" />
+		<PlaybackSettings :playback-settings="playbackSettings" :default-speed="tune.speed" class="text-right" />
 	</div>
 
 	<h3 v-if="tune.description || tune.sheet">Sounds</h3>

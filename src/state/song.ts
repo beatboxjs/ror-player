@@ -1,7 +1,8 @@
 import { getPatternFromState, PatternOrTuneReference, PatternReference, State } from "./state";
 import config, {Instrument} from "../config";
-import { clone, getMaxIndex, numberToString, TypedInstrumentObject, TypedNumberObject } from "../utils";
+import { clone, getMaxIndex, numberToString, TypedInstrumentObject, TypedNumberObject, vueSetMultiple } from "../utils";
 import isEqual from "lodash.isequal";
+import Vue from "vue";
 
 type SongProperties = {
     name: string
@@ -40,10 +41,10 @@ export type CompressedSongs = {
 };
 
 export function normalizeSong(data?: SongOptional): Song {
-	return {
+	return Vue.observable({
 		name: "",
 		...clone(data || {})
-	};
+	});
 }
 
 export function getSongLength(song: Song): number {
@@ -51,10 +52,9 @@ export function getSongLength(song: Song): number {
 	return maxIndex == null ? 0 : maxIndex+1;
 }
 
-export function clearSong(song: Song): Song {
-	return {
-		name: song.name
-	};
+export function clearSong(song: Song) {
+	for(const i of Object.keys(song).filter((i) => !["name"].includes(i)))
+		Vue.delete(song, i);
 }
 
 export function songContainsPattern(song: Song, tuneName: string, patternName: string): boolean {
@@ -63,7 +63,8 @@ export function songContainsPattern(song: Song, tuneName: string, patternName: s
 			continue;
 
 		for(const instr of config.instrumentKeys) {
-			if(song[i][instr] && song[i][instr][0] == tuneName && song[i][instr][1] == patternName)
+			const ref = song[i][instr];
+			if(ref && ref[0] == tuneName && ref[1] == patternName)
 				return true;
 		}
 	}
@@ -78,37 +79,35 @@ export function getEffectiveSongLength(song: Song, state: State): number {
 
 	let length = 1;
 	for(const instr of config.instrumentKeys) {
-		const pattern = getPatternFromState(state, song[maxIndex][instr]);
+		const ref = song[maxIndex][instr];
+		const pattern = ref && getPatternFromState(state, ref);
 		if(pattern)
 			length = Math.max(length, pattern.length/4);
 	}
 	return maxIndex + length;
 }
 
-export function replacePatternInSong(song: Song, fromTuneAndName: PatternOrTuneReference, toTuneAndName: PatternOrTuneReference | null): Song {
-	song = clone(song);
-
+export function replacePatternInSong(song: Song, fromTuneAndName: PatternOrTuneReference, toTuneAndName: PatternOrTuneReference | null) {
 	for(let i=0, length = getSongLength(song); i<length; i++) {
 		if(!song[i])
 			continue;
 
 		for(const instr of config.instrumentKeys) {
-			if(song[i][instr] && song[i][instr][0] == fromTuneAndName[0] && (fromTuneAndName[1] == null || song[i][instr][1] == fromTuneAndName[1])) {
+			const ref = song[i][instr];
+			if(ref && ref[0] == fromTuneAndName[0] && (fromTuneAndName[1] == null || ref[1] == fromTuneAndName[1])) {
 				if(toTuneAndName == null)
-					delete song[i][instr];
+					Vue.delete(song[i], instr);
 				else {
-					song[i][instr][0] = toTuneAndName[0];
+					Vue.set(ref, 0, toTuneAndName[0]);
 					if(toTuneAndName[1] != null)
-						song[i][instr][1] = toTuneAndName[1];
+						Vue.set(ref, 1, toTuneAndName[1]);
 				}
 			}
 		}
 
 		if(Object.keys(song[i]).length == 0)
-			delete song[i];
+			Vue.delete(song, i);
 	}
-
-	return song;
 }
 
 export function songEquals(song: Song, song2: Song, checkName?: boolean) {
@@ -253,4 +252,25 @@ export function uncompressSongs(encodedSongs: CompressedSongs | Array<Compressed
 		}
 	});
 	return songs;
+}
+
+export function appendSongPart(song: Song, songPart: SongPart, state: State) {
+	const newIdx = getEffectiveSongLength(song, state);
+	Vue.set(song, newIdx, songPart);
+}
+
+export function deleteSongPart(song: Song, idx: number, instr: Instrument) {
+	Vue.delete(song[idx], instr);
+	if(Object.keys(song[idx]).length == 0)
+		Vue.delete(song, "idx");
+}
+
+export function setSongPart(song: Song, idx: number, instr: Instrument, pattern: PatternReference) {
+	if(!song[idx])
+		Vue.set(song, idx, {});
+	Vue.set(song[idx], instr, pattern);
+}
+
+export function updateSong(song: Song, update: SongOptional) {
+	vueSetMultiple(song, update);
 }

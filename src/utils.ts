@@ -1,5 +1,6 @@
 import { inflateRaw, deflateRaw } from "pako";
 import { Instrument } from "./config";
+import Vue from "vue";
 
 export type TypedObject<Type> = {
     [key: string]: Type
@@ -92,4 +93,9 @@ export function clone<T>(obj: T): T {
 let idCounter = 0;
 export function id() {
     return idCounter++;
+}
+
+export function vueSetMultiple(target: object, update: object) {
+    for(const i of Object.keys(update))
+        Vue.set(target, i, (update as any)[i]);
 }

@@ -8,10 +8,11 @@ import Compose from "../compose/compose";
 import Listen from "../listen/listen";
 import events, { MultipleHandlers, registerMultipleHandlers } from "../../services/events";
 import "./overview.scss";
+import { StateProvider } from "../../services/history";
 
 @Component({
 	template,
-	components: { Compose, Listen }
+	components: { Compose, Listen, StateProvider }
 })
 export default class Overview extends Vue {
 	activeTab = 0;

@@ -19,7 +19,7 @@ import { id } from "../../utils";
 })
 export default class PlaybackSettingsComponent extends Vue {
 
-	@Model("change", { type: Object, required: true }) playbackSettings!: PlaybackSettings;
+	@Prop({ type: Object, required: true }) playbackSettings!: PlaybackSettings;
 	@Prop(Number) defaultSpeed?: number;
 	@Prop({ type: String, default: "top" }) tooltipPlacement!: string;
 
@@ -33,8 +33,8 @@ export default class PlaybackSettingsComponent extends Vue {
 		$(document).off("click", this.handleDocumentClick);
 	}
 
-	handleDocumentClick(event: MouseEvent) {
-		const $target = $(event.target as EventTarget);
+	handleDocumentClick(event: JQuery.ClickEvent) {
+		const $target = $(event.target);
 		if($target.closest(this.$el).length == 0 && $target.closest(".bb-playback-settings").length == 0) {
 			this.$root.$emit("bv::hide::popover", this.id);
 		}
@@ -85,7 +85,7 @@ export default class PlaybackSettingsComponent extends Vue {
 	}
 
 	update(update: PlaybackSettingsOptional) {
-		this.$emit("change", updatePlaybackSettings(this.playbackSettings, update));
+		updatePlaybackSettings(this.playbackSettings, update);
 	}
 
 }

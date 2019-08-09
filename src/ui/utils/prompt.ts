@@ -10,7 +10,7 @@ export async function openPromptDialog(instance: Vue, title: string, defaultValu
 	const prompt = instance.$createElement(Prompt, {
 		props: { title, defaultValue, validate },
 		on: {
-			change: (value: string) => {
+			change(value: string) {
 				result = value;
 			}
 		}

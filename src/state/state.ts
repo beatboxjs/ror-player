@@ -35,6 +35,7 @@ import {
     updateStroke
 } from "./pattern";
 import config, { Instrument } from "../config";
+import Vue from "vue";
 
 export type State = {
 	songs: Array<Song>,
@@ -65,14 +66,14 @@ export type CompressedState = {
 }
 
 export function normalizeState(data?: StateOptional): State {
-    let ret: State = {
+    let ret: State = Vue.observable({
 		songs: [ ],
 		tunes: { },
 		songIdx: 0,
 		playbackSettings: normalizePlaybackSettings({})
-    };
+    });
 
-    ret = extendState(ret, data || { tunes: defaultTunes }, undefined, undefined, true, true);
+    extendState(ret, data || { tunes: defaultTunes }, undefined, undefined, true, true);
 
     return ret;
 }
@@ -84,33 +85,31 @@ export function extendState(
     selectPattern?: (tuneName: string, patternName: string) => boolean,
     keepEmptyTunes?: boolean,
     importOptions?: boolean
-): State {
-    state = clone(state);
-
+): void {
     if(importOptions) {
         if(data.songIdx != null)
-            state.songIdx = data.songIdx;
+            Vue.set(state, "songIdx", data.songIdx);
         if(data.playbackSettings != null)
-            state.playbackSettings = normalizePlaybackSettings(data.playbackSettings);
+            Vue.set(state, "playbackSettings", normalizePlaybackSettings(data.playbackSettings));
     }
 
     if(data.tunes) {
         for(const tuneName in data.tunes) {
             const e = !!state.tunes[tuneName];
             if(!e) {
-                state.tunes[tuneName] = normalizeTune({
+                Vue.set(state.tunes, tuneName, normalizeTune({
                     categories: data.tunes[tuneName].categories,
                     displayName: data.tunes[tuneName].displayName,
                     description: data.tunes[tuneName].description,
                     sheet: data.tunes[tuneName].sheet,
                     speed: data.tunes[tuneName].speed
-                });
+                }));
             }
 
-            state.tunes[tuneName] = extendTune(state.tunes[tuneName], data.tunes[tuneName], (patternName) => (!selectPattern || selectPattern(tuneName, patternName)));
+            extendTune(state.tunes[tuneName], data.tunes[tuneName], (patternName) => (!selectPattern || selectPattern(tuneName, patternName)));
 
             if(!e && Object.keys(state.tunes[tuneName].patterns).length == 0 && !keepEmptyTunes)
-                delete state.tunes[tuneName];
+                Vue.delete(state.tunes, tuneName);
         }
     }
 
@@ -120,8 +119,6 @@ export function extendState(
                 state.songs.push(normalizeSong(data.songs[i]));
         }
     }
-
-    return state;
 }
 
 export function extendStateFromCompressed(
@@ -132,17 +129,12 @@ export function extendStateFromCompressed(
     keepEmptyTunes?: boolean,
     importOptions?: boolean,
     ignoreMissingDefaultPatterns?: boolean
-): {
-    state: State,
-    errors: Array<string>
-}{
-    state = clone(state);
-
+): Array<string> {
     if(importOptions) {
         if(object.songIdx != null)
-            state.songIdx = object.songIdx;
+            Vue.set(state, "songIdx", object.songIdx);
         if(object.playbackSettings != null)
-            state.playbackSettings = normalizePlaybackSettings(object.playbackSettings);
+            Vue.set(state, "playbackSettings", normalizePlaybackSettings(object.playbackSettings));
     }
 
     const errors: Array<string> = [ ];
@@ -163,7 +155,7 @@ export function extendStateFromCompressed(
             }
         }
 
-        state = extendState(state, { tunes: tunes }, undefined, undefined, keepEmptyTunes);
+        extendState(state, { tunes: tunes }, undefined, undefined, keepEmptyTunes);
     }
 
     if(object.songs) {
@@ -190,10 +182,10 @@ export function extendStateFromCompressed(
                 errors.push("Warning: The following tunes/breaks are used in song “" + (song.name || "Untitled song") + "” but could not be imported: " + missing.join(", "));
         }
 
-        state = extendState(state, { songs: songs });
+        extendState(state, { songs: songs });
     }
 
-    return { state, errors };
+    return errors;
 }
 
 export function stateContainsPattern(state: State, tuneName: string, patternName: string): boolean {
@@ -255,28 +247,20 @@ export function compressState(
     return ret;
 }
 
-export function createSong(state: State, data?: SongOptional, idx?: number, select: boolean = false): State {
-    state = clone(state);
-
+export function createSong(state: State, data?: SongOptional, idx?: number, select: boolean = false): void {
     if(idx == null)
         idx = state.songs.length;
     state.songs.splice(idx, 0, normalizeSong(data));
 
     if(select)
-        state.songIdx = idx;
-
-    return state;
+        Vue.set(state, "songIdx", idx);
 }
 
-export function removeSong(state: State, idx: number): State {
-    state = clone(state);
-
+export function removeSong(state: State, idx: number): void {
     state.songs.splice(idx, 1);
 
     if(state.songIdx >= state.songs.length)
-        state.songIdx = Math.max(0, state.songs.length-1);
-
-    return state;
+        Vue.set(state, "songIdx", Math.max(0, state.songs.length-1));
 }
 
 export function songExists(state: State, song: Song): boolean {
@@ -287,87 +271,70 @@ export function songExists(state: State, song: Song): boolean {
     return false
 }
 
-function replacePattern(state: State, fromTuneAndName: PatternOrTuneReference, toTuneAndName: PatternOrTuneReference | null): State {
-    state = clone(state);
+function replacePattern(state: State, fromTuneAndName: PatternOrTuneReference, toTuneAndName: PatternOrTuneReference | null): void {
     for(let i=0; i<state.songs.length; i++) {
-        state.songs[i] = replacePatternInSong(state.songs[i], fromTuneAndName, toTuneAndName);
+        replacePatternInSong(state.songs[i], fromTuneAndName, toTuneAndName);
     }
-    return state;
 }
 
-export function createTune(state: State, tuneName: string, data?: TuneOptional): State {
-    state = clone(state);
-    state.tunes[tuneName] = normalizeTune(data);
-    return state;
+export function createTune(state: State, tuneName: string, data?: TuneOptional): void {
+    Vue.set(state.tunes, tuneName, normalizeTune(data));
 }
 
-export function renameTune(state: State, tuneName: string, newTuneName: string): State {
+export function renameTune(state: State, tuneName: string, newTuneName: string): void {
     if (newTuneName != tuneName) {
-        state = replacePattern(state, [ tuneName, null ], [ newTuneName, null ]);
-        state.tunes[newTuneName] = state.tunes[tuneName];
-        delete state.tunes[tuneName];
+        replacePattern(state, [ tuneName, null ], [ newTuneName, null ]);
+        Vue.set(state.tunes, newTuneName, state.tunes[tuneName]);
+        Vue.delete(state.tunes, tuneName);
     }
-    return state;
 }
 
-export function copyTune(state: State, tuneName: string, newTuneName: string): State {
-    return createTune(state, newTuneName, {
+export function copyTune(state: State, tuneName: string, newTuneName: string): void {
+    createTune(state, newTuneName, {
         ...clone(state.tunes[tuneName]),
         categories: undefined
     });
 }
 
-export function removeTune(state: State, tuneName: string): State {
-    state = replacePattern(state, [ tuneName, null ], null);
-    delete state.tunes[tuneName];
-    return state;
+export function removeTune(state: State, tuneName: string): void {
+    replacePattern(state, [ tuneName, null ], null);
+    Vue.delete(state.tunes, tuneName);
 }
 
-export function createPattern(state: State, tuneName: string, patternName: string, data?: PatternOptional): State {
+export function createPattern(state: State, tuneName: string, patternName: string, data?: PatternOptional): void {
     if(!state.tunes[tuneName])
-        state = createTune(state, tuneName);
-    else
-        state = clone(state);
+        createTune(state, tuneName);
 
-    state.tunes[tuneName] = createPatternInTune(state.tunes[tuneName], patternName, data);
-    return state;
+    createPatternInTune(state.tunes[tuneName], patternName, data);
 }
 
-export function renamePattern(state: State, tuneName: string, patternName: string, newPatternName: string): State {
-    state = replacePattern(state, [ tuneName, patternName ], [ tuneName, newPatternName ]);
-    state.tunes[tuneName] = renamePatternInTune(state.tunes[tuneName], patternName, newPatternName);
-    return state;
+export function renamePattern(state: State, tuneName: string, patternName: string, newPatternName: string): void {
+    replacePattern(state, [ tuneName, patternName ], [ tuneName, newPatternName ]);
+    renamePatternInTune(state.tunes[tuneName], patternName, newPatternName);
 }
 
-export function removePattern(state: State, tuneName: string, patternName: string): State {
-    state = replacePattern(state, [ tuneName, patternName ], null);
+export function removePattern(state: State, tuneName: string, patternName: string): void {
+    replacePattern(state, [ tuneName, patternName ], null);
     removePatternFromTune(state.tunes[tuneName], patternName);
-    return state;
 }
 
-export function movePattern(state: State, fromTuneAndName: PatternReference, toTuneAndName: PatternReference): State {
+export function movePattern(state: State, fromTuneAndName: PatternReference, toTuneAndName: PatternReference): void {
     if (fromTuneAndName[0] == toTuneAndName[0] && fromTuneAndName[1] == toTuneAndName[1])
-        return state;
+        return;
 
     if(!state.tunes[toTuneAndName[0]])
-        state = createTune(state, toTuneAndName[0]);
+        createTune(state, toTuneAndName[0]);
 
-    state = replacePattern(state, fromTuneAndName, toTuneAndName);
-    state.tunes[toTuneAndName[0]] = createPatternInTune(state.tunes[toTuneAndName[0]], toTuneAndName[1], getPatternFromState(state, fromTuneAndName) || undefined);
-    state.tunes[toTuneAndName[0]] = removePatternFromTune(state.tunes[fromTuneAndName[0]], fromTuneAndName[1]);
-
-    return state;
+    replacePattern(state, fromTuneAndName, toTuneAndName);
+    createPatternInTune(state.tunes[toTuneAndName[0]], toTuneAndName[1], getPatternFromState(state, fromTuneAndName) || undefined);
+    removePatternFromTune(state.tunes[fromTuneAndName[0]], fromTuneAndName[1]);
 }
 
-export function copyPattern(state: State, fromTuneAndName: PatternReference, toTuneAndName: PatternReference): State {
+export function copyPattern(state: State, fromTuneAndName: PatternReference, toTuneAndName: PatternReference): void {
     if(!state.tunes[toTuneAndName[0]])
-        state = createTune(state, toTuneAndName[0]);
-    else
-        state = clone(state);
+        createTune(state, toTuneAndName[0]);
 
-    state.tunes[toTuneAndName[0]] = createPatternInTune(state.tunes[toTuneAndName[0]], toTuneAndName[1], getPatternFromState(state, fromTuneAndName) || undefined);
-
-    return state;
+    createPatternInTune(state.tunes[toTuneAndName[0]], toTuneAndName[1], getPatternFromState(state, fromTuneAndName) || undefined);
 }
 
 export function getSongName(state: State, songIdx?: number): string {
@@ -402,34 +369,6 @@ export function getSortedTuneList(state: State): Array<string> {
     });
 }
 
-export function updatePlaybackSettingsInState(state: State, update: PlaybackSettingsOptional): State {
-    state = clone(state);
-    state.playbackSettings = updatePlaybackSettings(state.playbackSettings, update);
-    return state;
-}
-
-export function updateStrokeInState(state: State, tuneName: string, patternName: string, instrument: Instrument, idx: number, stroke: string) {
-    const oldPattern = getPatternFromState(state, tuneName, patternName);
-    if(oldPattern == null)
-        throw new Error("Could not find pattern.");
-    return createPattern(state, tuneName, patternName, updateStroke(oldPattern, instrument, idx, stroke));
-}
-
-export function updatePatternInState(state: State, tuneName: string, patternName: string, update: PatternOptional) {
-    const oldPattern = getPatternFromState(state, tuneName, patternName);
-    if(oldPattern == null)
-        throw new Error("Could not find pattern.");
-    return createPattern(state, tuneName, patternName, updatePattern(oldPattern, update));
-}
-
-export function replaceSong(state: State, songIdx: number, song: Song): State {
-    state = clone(state);
-    state.songs[songIdx] = song;
-    return state;
-}
-
-export function selectSong(state: State, songIdx: number): State {
-    state = clone(state);
-    state.songIdx = songIdx;
-    return state;
+export function selectSong(state: State, songIdx: number): void {
+    Vue.set(state, "songIdx", songIdx);
 }

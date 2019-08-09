@@ -46,13 +46,9 @@ export default class RenamePatternDialog extends Vue {
 	}
 
 	submit() {
-		let newState: State;
-
 		if(this.copy)
-			newState = copyPattern(this.state, [ this.tuneName, this.patternName ], [ this.newTuneName, this.newPatternName ]);
+			copyPattern(this.state, [ this.tuneName, this.patternName ], [ this.newTuneName, this.newPatternName ]);
 		else
-			newState = movePattern(this.state, [ this.tuneName, this.patternName ], [ this.newTuneName, this.newPatternName ]);
-
-		events.$emit("update-state", newState);
+			movePattern(this.state, [ this.tuneName, this.patternName ], [ this.newTuneName, this.newPatternName ]);
 	}
 }

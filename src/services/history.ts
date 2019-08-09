@@ -1,8 +1,10 @@
 import { compressState, extendState, extendStateFromCompressed, normalizeState, State } from "../state/state";
 import { clone, objectToString, stringToObject } from "../utils";
 import { isEqual } from "lodash";
-import events from "./events";
-import deepFreeze from "deep-freeze";
+import events, { registerMultipleHandlers } from "./events";
+import Component from "vue-class-component";
+import Vue from "vue";
+import { ProvideReactive, Watch } from "vue-property-decorator";
 
 interface LocalStorageOperation {
 	<T>(callback: () => T, fallbackValue: T): T,
@@ -29,26 +31,17 @@ function getLocalStorageNumberItem(key: string): number | null {
 
 class History {
 
-	_state: State = deepFreeze(normalizeState()) as State;
+	state: State = normalizeState();
 
 	_currentKey: number | null = null;
 
-	get state() {
-		return this._state;
-	}
-
-	set state(state: State) {
-		this._state = deepFreeze(clone(state)) as State;
-		this._saveCurrentState();
-	}
-
 	loadEncodedString(encodedString: string): string[] | undefined {
-		this._saveCurrentState();
+		this.saveCurrentState();
 		const errs = this._loadFromString(encodedString);
 
 		this._currentKey = null;
 
-		this._saveCurrentState(true);
+		this.saveCurrentState(true);
 
 		events.$emit("history-load-encoded-string");
 
@@ -72,11 +65,11 @@ class History {
 			key = getLocalStorageNumberItem("bbState");
 
 		if(this._currentKey)
-			this._saveCurrentState();
+			this.saveCurrentState();
 
 		this._loadFromString(key && getLocalStorageItem("bbState-"+key) || "");
 		this._currentKey = key;
-		this._saveCurrentState();
+		this.saveCurrentState();
 	}
 
 	clear(): void {
@@ -85,10 +78,10 @@ class History {
 
 	_loadFromString(encodedString: string | null): string[] | undefined {
 		try {
-			const { state, errors } = extendStateFromCompressed(normalizeState(), encodedString ? stringToObject(encodedString) : { }, null, null, true, true, true);
-
+			const state = normalizeState();
+			const errors = extendStateFromCompressed(state, encodedString ? stringToObject(encodedString) : { }, null, null, true, true, true);
 			this.state = state;
-
+			events.$emit("new-state", state);
 			return errors;
 		} catch(e) {
 			console.error("Error decoding state", e);
@@ -100,7 +93,7 @@ class History {
 		return Math.floor(new Date().getTime() / 1000);
 	}
 
-	_saveCurrentState(findSameState: boolean = false): void {
+	saveCurrentState(findSameState: boolean = false): void {
 		const obj = compressState(this.state, null, null, true, true, true);
 		if(Object.keys(obj).length == 0 || (this._currentKey && getLocalStorageItem("bbState-"+this._currentKey) && isEqual(obj, stringToObject(getLocalStorageItem("bbState-"+this._currentKey) || ""))))
 			return;
@@ -153,22 +146,50 @@ history.loadHistoricState();
 
 const legacySong = getLocalStorageItem("song");
 if(legacySong) {
-	history.state = extendState(history.state, { songs: [ JSON.parse(legacySong) ] });
+	extendState(history.state, { songs: [ JSON.parse(legacySong) ] });
 	delete localStorage.song;
 
-	history._saveCurrentState();
+	history.saveCurrentState();
 }
 
 const legacyTunes = getLocalStorageItem("myTunes");
 if(legacyTunes) {
-	history.state = extendState(history.state, {
+	extendState(history.state, {
 		tunes: {
 			"My tunes": JSON.parse(legacyTunes)
 		}
 	});
 	delete localStorage.myTunes;
 
-	history._saveCurrentState();
+	history.saveCurrentState();
 }
 
 export default history;
+
+@Component({
+	template: `<div class="bb-state-provider"><slot/></div>`
+})
+export class StateProvider extends Vue {
+
+	@ProvideReactive() state = history.state;
+
+	_unregisterHandlers!: () => void;
+
+	@Watch("state", { deep: true })
+	handleStateChange() {
+		history.saveCurrentState();
+	}
+
+	created() {
+		this._unregisterHandlers = registerMultipleHandlers({
+			"new-state"(state) {
+				this.state = state;
+			}
+		}, this);
+	}
+
+	beforeDestroy() {
+		this._unregisterHandlers();
+	}
+
+}

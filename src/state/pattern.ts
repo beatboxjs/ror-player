@@ -1,7 +1,8 @@
 import config, { Instrument, Stroke } from "../config";
 import isEqual from "lodash.isequal";
-import { clone } from "../utils";
+import { clone, vueSetMultiple } from "../utils";
 import { applyDiffString, getDiffString } from "./patternDiff";
+import Vue from "vue";
 
 export type Beats = { [instr in Instrument]: Array<Stroke> };
 
@@ -49,7 +50,7 @@ export function normalizePattern(data?: PatternOptional): Pattern {
 		ret[instr] = data && data[instr] ? clone(data[instr]) : [ ];
 	}
 
-	return <Pattern> ret;
+	return Vue.observable(<Pattern> ret);
 }
 
 
@@ -246,15 +247,11 @@ function str2pattern(string: string): Array<string> {
 }
 
 export function updateStroke(pattern: Pattern, instrument: Instrument, i: number, stroke: string) {
-	pattern = clone(pattern);
 	if(!pattern[instrument])
-		pattern[instrument] = [];
-	pattern[instrument][i] = stroke;
-	return pattern;
+		Vue.set(pattern, instrument, []);
+	Vue.set(pattern[instrument], i, stroke);
 }
 
 export function updatePattern(pattern: Pattern, update: PatternOptional) {
-	pattern = clone(pattern);
-	Object.assign(pattern, update);
-	return pattern;
+	vueSetMultiple(pattern, update);
 }

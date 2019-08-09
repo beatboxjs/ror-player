@@ -49,7 +49,6 @@ export default class History extends Vue {
 
 	loadHistoricState(key: number) {
 		history.loadHistoricState(key);
-		events.$emit("update-state", history.state);
 	}
 
 	clearHistory() {

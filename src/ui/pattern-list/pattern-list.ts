@@ -100,7 +100,7 @@ export default class PatternList extends Vue {
 		});
 
 		if(newPatternName) {
-			events.$emit("update-state", createPattern(this.state, tuneName, newPatternName));
+			createPattern(this.state, tuneName, newPatternName);
 			this.showPatternEditor = { id: `bb-pattern-editor-dialog-${id()}`, tuneName, patternName: newPatternName };
 			await this.$nextTick();
 			this.$bvModal.show(this.showPatternEditor.id);
@@ -115,7 +115,7 @@ export default class PatternList extends Vue {
 
 	async removePatternFromTune(tuneName: string, patternName: string) {
 		if(await this.$bvModal.msgBoxConfirm("Do you really want to remove "+patternName+" ("+tuneName+")?")) {
-			events.$emit("update-state", removePattern(this.state, tuneName, patternName));
+			removePattern(this.state, tuneName, patternName);
 		}
 	}
 
@@ -136,7 +136,7 @@ export default class PatternList extends Vue {
 		});
 
 		if(newTuneName) {
-			events.$emit("update-state", createTune(this.state, newTuneName));
+			createTune(this.state, newTuneName);
 
 			this.isOpened[newTuneName] = true;
 			this.filter = { text: "", cat: "custom" };
@@ -152,7 +152,7 @@ export default class PatternList extends Vue {
 		});
 
 		if(newTuneName) {
-			events.$emit("update-state", renameTune(this.state, tuneName, newTuneName));
+			renameTune(this.state, tuneName, newTuneName);
 		}
 	};
 
@@ -165,13 +165,13 @@ export default class PatternList extends Vue {
 		});
 
 		if(newTuneName) {
-			events.$emit("update-state", copyTune(this.state, tuneName, newTuneName));
+			copyTune(this.state, tuneName, newTuneName);
 		}
 	};
 
 	async removeTune(tuneName: string) {
 		if(await this.$bvModal.msgBoxConfirm(`Do you really want to remove the tune ${tuneName}?`)) {
-			events.$emit("update-state", removeTune(this.state, tuneName));
+			removeTune(this.state, tuneName);
 		}
 	};
 }

@@ -9,7 +9,6 @@ import TuneInfo from "../tune-info/tune-info";
 import { ProvideReactive, Watch } from "vue-property-decorator";
 import events, { MultipleHandlers, registerMultipleHandlers } from "../../services/events";
 import "./listen.scss";
-import deepFreeze from "deep-freeze";
 
 @Component({
 	template,
@@ -17,7 +16,7 @@ import deepFreeze from "deep-freeze";
 	data: () => ({ filter: undefined })
 })
 export default class Listen extends Vue {
-	@ProvideReactive() state = deepFreeze(normalizeState()) as State;
+	@ProvideReactive() state = normalizeState();
 
 	tuneName: string | null = null;
 	tune: Tune | null = null;
