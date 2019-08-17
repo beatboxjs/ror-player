@@ -15,6 +15,7 @@ import defaultTunes from "../../defaultTunes";
 import isEqual from "lodash.isequal";
 import PlaybackSettingsComponent from "../playback-settings/playback-settings";
 import StrokeDropdown from "./stroke-dropdown";
+import { registerMultipleHandlers } from "../../services/events";
 
 type StrokeDropdownInfo = {
 	instr: Instrument,

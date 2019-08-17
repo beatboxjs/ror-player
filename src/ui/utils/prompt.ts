@@ -18,7 +18,7 @@ export async function openPromptDialog(instance: Vue, title: string, defaultValu
 
 	const answer = await instance.$bvModal.msgBoxConfirm(prompt, { title });
 
-	if(answer) {
+	if(answer && (!validate || validate(result || "") == null)) {
 		return result;
 	}
 }

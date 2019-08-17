@@ -136,6 +136,12 @@ export default class ShareDialog extends Vue {
 		}
 	}
 
+	togglePattern(tuneName: string, patternName: string) {
+		if(!this.sharePatterns[tuneName])
+			this.sharePatterns[tuneName] = {};
+		this.sharePatterns[tuneName][patternName] = !this.sharePatterns[tuneName][patternName]
+	}
+
 	getSongName(idx: number) {
 		return getSongName(this.state, idx);
 	}

@@ -1,6 +1,6 @@
 import Vue from "vue";
 import $ from "jquery";
-import { State } from "../state/state";
+import { PatternReference, State } from "../state/state";
 
 type Event0 = {
 	"pattern-drag-start": void,
@@ -16,6 +16,11 @@ type Event0 = {
 type Event1 = {
 	"new-state": State,
 	"listen": string,
+	"edit-pattern": {
+		pattern: PatternReference,
+		readonly: boolean,
+		handled?: boolean
+	},
 	"pattern-list-tune-opened": string,
 	"pattern-list-tune-closed": string,
 	"pattern-list-open-tune": string

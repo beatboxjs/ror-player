@@ -35,7 +35,7 @@ class History {
 
 	_currentKey: number | null = null;
 
-	loadEncodedString(encodedString: string): string[] | undefined {
+	loadEncodedString(encodedString: string) {
 		this.saveCurrentState();
 		const errs = this._loadFromString(encodedString);
 
@@ -76,7 +76,7 @@ class History {
 		this._ensureMaxNumber(1);
 	}
 
-	_loadFromString(encodedString: string | null): string[] | undefined {
+	_loadFromString(encodedString: string | null): string[] {
 		try {
 			const state = normalizeState();
 			const errors = extendStateFromCompressed(state, encodedString ? stringToObject(encodedString) : { }, null, null, true, true, true);
@@ -84,8 +84,8 @@ class History {
 			events.$emit("new-state", state);
 			return errors;
 		} catch(e) {
-			console.error("Error decoding state", e);
-			return;
+			console.error("Error decoding state", e.stack || e);
+			return [e.message || e];
 		}
 	}
 

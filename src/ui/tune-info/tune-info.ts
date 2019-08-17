@@ -12,6 +12,7 @@ import { PlaybackSettings } from "../../state/playbackSettings";
 import { clone } from "../../utils";
 import PlaybackSettingsComponent from "../playback-settings/playback-settings";
 import PatternPlaceholder from "../pattern-placeholder/pattern-placeholder";
+import { registerMultipleHandlers } from "../../services/events";
 
 export function getTuneDescription(tuneName: string): string | null {
 	if(!defaultTunes[tuneName])

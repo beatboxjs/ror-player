@@ -25,7 +25,7 @@
 		transition: opacity 0.7s;
 	}
 
-	.drag-over,.pattern-resize-range {
+	.drag-over {
 		background: #def;
 	}
 
@@ -38,11 +38,11 @@
 			opacity: 1;
 			pointer-events: auto;
 		}
+	}
 
-		.pattern-container {
-			pointer-events: none;
-			opacity: 0.7;
-		}
+	&.dragging .pattern-container, &.resizing .pattern-container {
+		pointer-events: none;
+		opacity: 0.7;
 	}
 
 	.song-player-container {
@@ -94,6 +94,14 @@
 
 						.caret-se {
 							display: block;
+							width: 0;
+							height: 0;
+							color: #666;
+							border-bottom: .6em solid;
+							border-right: .6em solid;
+							border-top: .6em solid transparent;
+							border-left: .6em solid transparent;
+							pointer-events: auto;
 						}
 					}
 				}
@@ -202,5 +210,9 @@
 			margin: 0 9px;
 			border-left: 1px solid #eee;
 		}
+	}
+
+	.actions .dropdown-toggle {
+		padding: 0;
 	}
 }

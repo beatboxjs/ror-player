@@ -1,5 +1,5 @@
-<b-modal title="Import" :id="id">
-	<b-form>
+<b-modal title="Import" :id="id" size="lg">
+	<b-form @submit.prevent>
 		<b-form-group :invalid-feedback="error">
 			<b-form-textarea id="bb-import-dialog-paste" v-model="pasted" rows="5" placeholder="Paste link or raw data object…" />
 		</b-form-group>

@@ -6,13 +6,13 @@
 	<div class="bb-pattern-list-tunes">
 		<b-card no-body v-for="tune in visibleTunes" :key="tune.tuneName">
 			<b-card-header>
-				<b-button block v-b-toggle="tune.collapseId" variant="link">
+				<b-button block @click="toggleTune(tune.tuneName)" variant="link">
 					{{tune.displayName}}
 					<i v-if="tune.isCustom" class="fas fa-star" title="User-created tune" v-b-tooltip></i>
 					<i class="fas fa-caret-down"></i>
 				</b-button>
 			</b-card-header>
-			<b-collapse :visible="isOpened[tune.tuneName]" :id="tune.collapseId">
+			<Collapse v-model="isOpened[tune.tuneName]" :id="tune.collapseId" :height="tune.height">
 				<b-card-body>
 					<PatternPlaceholder v-for="pattern in tune.patterns" :key="pattern.patternName" :tune-name="tune.tuneName" :pattern-name="pattern.patternName" :draggable="true">
 						<PatternPlaceholderItem><a href="javascript:" :title="`Copy${pattern.isCustom ? '/Move/Rename' : ''} break`" v-b-tooltip.hover @click="copyPattern(tune.tuneName, pattern.patternName)"><i class="fas fa-copy"></i></a></PatternPlaceholderItem>
@@ -26,7 +26,7 @@
 						<a v-if="tune.isCustom" href="javascript:" @click="removeTune(tune.tuneName)" title="Remove tune" v-b-tooltip.hover><i class="fas fa-trash"></i></a>
 					</div>
 				</b-card-body>
-			</b-collapse>
+			</Collapse>
 		</b-card>
 	</div>
 

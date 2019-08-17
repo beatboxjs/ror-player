@@ -3,11 +3,11 @@
 
 	<b-tabs v-model="activeTab">
 		<b-tab title="Listen">
-			<Listen/>
+			<Listen />
 		</b-tab>
 		<b-tab title="Compose">
 			<StateProvider>
-				<Compose/>
+				<Compose v-if="activeTab == 1" />
 			</StateProvider>
 		</b-tab>
 	</b-tabs>

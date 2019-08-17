@@ -36,7 +36,7 @@ import { Pattern } from "../../state/pattern";
 import ImportDialog from "../import-dialog/import-dialog";
 import ShareDialog from "../share-dialog/share-dialog";
 
-type DragOver = "trash" | { instr: Instrument | null, idx: number } | null;
+type DragOver = "trash" | { instr: Instrument | null, idx: number };
 
 @Component({
 	template,
@@ -56,7 +56,8 @@ export default class SongPlayer extends Vue {
 	importDialogId = `bb-import-dialog-${id()}`;
 	playerRef: BeatboxReference = createBeatbox(false);
 	dragging: boolean = false;
-	dragOver: DragOver = null;
+	resizing: PatternResizeDragData | null = null;
+	dragOver: DragOver | null = null;
 	dragOverCount: number = 0;
 	loading: number | null = null;
 
@@ -283,6 +284,12 @@ export default class SongPlayer extends Vue {
 		};
 
 		setDragData(event, data);
+
+		this.resizing = data;
+	}
+
+	handleResizeDragEnd(event: DragEvent) {
+		this.resizing = null;
 	}
 
 	handleDragEnter(event: DragEvent, dragOver: DragOver) {
@@ -330,6 +337,14 @@ export default class SongPlayer extends Vue {
 	}
 
 	isDragOver(dragOver: DragOver) {
+		if(this.resizing) {
+			return dragOver instanceof Object && dragOver.instr
+				&& this.dragOver instanceof Object && this.dragOver.instr
+				&& dragOver.idx >= this.resizing.idx && dragOver.idx <= this.dragOver.idx
+				&& config.instrumentKeys.indexOf(dragOver.instr) >= Math.min(config.instrumentKeys.indexOf(this.resizing.instr), config.instrumentKeys.indexOf(this.dragOver.instr))
+				&& config.instrumentKeys.indexOf(dragOver.instr) <= Math.max(config.instrumentKeys.indexOf(this.resizing.instr), config.instrumentKeys.indexOf(this.dragOver.instr));
+		}
+
 		if(isEqual(dragOver, this.dragOver))
 			return true;
 
@@ -378,17 +393,6 @@ export default class SongPlayer extends Vue {
 
 		return ret;
 	}
-
-	/*function updateResizeRange() {
-		$(".pattern-resize-range", this.$el).removeClass("pattern-resize-range");
-
-		const c = this.currentPatternDrag;
-		if(c) {
-			getAffectedResizePatternRange(c.instrumentKey, c.idx, c.toInstrumentKey, c.toIdx).forEach(function(it) {
-				$(".song-field-"+it[0]+"-"+it[1], this.$el).addClass("pattern-resize-range");
-			});
-		}
-	}*/
 
 	async downloadMP3() {
 		try {
@@ -446,9 +450,10 @@ export default class SongPlayer extends Vue {
 	}
 
 	async renameSong(songIdx: number) {
-		const newName = await openPromptDialog(this, "Enter song name", this.song.name);
+		const song = this.state.songs[songIdx];
+		const newName = await openPromptDialog(this, "Enter song name", song.name);
 		if(newName) {
-			updateSong(this.state.songs[songIdx], { name: newName });
+			updateSong(song, { name: newName });
 		}
 	}
 

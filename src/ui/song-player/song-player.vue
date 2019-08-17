@@ -1,4 +1,4 @@
-<div :class="`bb-song-player ${player.playing ? 'playing' : player.getPosition() == 0 ? 'stopped' : 'paused'} ${dragging ? 'dragging' : ''}`">
+<div :class="`bb-song-player ${player.playing ? 'playing' : player.getPosition() == 0 ? 'stopped' : 'paused'} ${dragging ? 'dragging' : ''} ${resizing ? 'resizing' : ''}`">
 	<div class="control-panel">
 		<slot />
 		<b-button :variant="playerRef.playing ? 'info' : 'success'" @click="playPause()"><i :class="`fas fa-${playerRef.playing ? 'pause' : 'play'}`" /> {{playerRef.playing ? 'Pause' : 'Play'}}</b-button>
@@ -89,7 +89,7 @@
 							<a href="javascript:" @click="removePatternFromSong(instrumentKey, i-1)" title="Remove" v-b-tooltip.hover><i class="fas fa-trash" /></a>
 						</PatternPlaceholderItem>
 					</PatternPlaceholder>
-					<span class="placeholder-drag-handle" draggable="true" @dragstart="handleResizeDragStart($event, instrumentKey, i-1)"><i class="fas fa-caret-down"></i></span>
+					<span class="placeholder-drag-handle" draggable="true" @dragstart="handleResizeDragStart($event, instrumentKey, i-1)" @dragend="handleResizeDragEnd($event)"><span class="caret-se"></span></span>
 				</div>
 			</div>
 			<div

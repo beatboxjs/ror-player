@@ -20,6 +20,7 @@ import { clone, id } from "../../utils";
 import events, { MultipleHandlers, registerMultipleHandlers } from "../../services/events";
 import RenamePatternDialog from "./rename-pattern-dialog";
 import PatternEditorDialog from "../pattern-editor-dialog/pattern-editor-dialog";
+import Collapse from "../utils/collapse";
 
 type Opened = {
 	[tuneName: string]: boolean
@@ -27,7 +28,7 @@ type Opened = {
 
 @Component({
 	template,
-	components: { PatternListFilter, PatternPlaceholder, PatternPlaceholderItem, PatternEditorDialog, RenamePatternDialog }
+	components: { PatternListFilter, PatternPlaceholder, PatternPlaceholderItem, PatternEditorDialog, RenamePatternDialog, Collapse }
 })
 export default class PatternList extends Vue {
 
@@ -44,8 +45,9 @@ export default class PatternList extends Vue {
 	@Watch("isOpened", { deep: true })
 	onOpenedChange(newOpen: Opened) {
 		for(const i in newOpen) {
-			if(!!newOpen[i] != !!this.previousIsOpened[i])
+			if(!!newOpen[i] != !!this.previousIsOpened[i]) {
 				events.$emit(newOpen[i] ? "pattern-list-tune-opened" : "pattern-list-tune-closed", i);
+			}
 		}
 		this.previousIsOpened = clone(newOpen);
 	}
@@ -69,7 +71,8 @@ export default class PatternList extends Vue {
 				patternName,
 				isCustom: this.isCustomPattern(tuneName, patternName)
 			})),
-			collapseId: `bb-pattern-list-collapse-${id()}`
+			collapseId: `bb-pattern-list-collapse-${id()}`,
+			height: Object.keys(this.state.tunes[tuneName].patterns).length * 50 + 24
 		}));
 	}
 
@@ -79,7 +82,7 @@ export default class PatternList extends Vue {
 				if(!this.state.tunes[tuneName])
 					return;
 
-				this.isOpened[tuneName] = true;
+				Vue.set(this.isOpened, tuneName, true);
 
 				if(!filterPatternList(this.state, this.filter).includes(tuneName))
 					this.filter = { text: "", cat: this.isCustomTune(tuneName) ? "custom" : (this.state.tunes[tuneName].categories[0] || "all") };
@@ -138,7 +141,7 @@ export default class PatternList extends Vue {
 		if(newTuneName) {
 			createTune(this.state, newTuneName);
 
-			this.isOpened[newTuneName] = true;
+			Vue.set(this.isOpened, newTuneName,  true);
 			this.filter = { text: "", cat: "custom" };
 		}
 	}
@@ -174,4 +177,8 @@ export default class PatternList extends Vue {
 			removeTune(this.state, tuneName);
 		}
 	};
+
+	toggleTune(tuneName: string) {
+		Vue.set(this.isOpened, tuneName, !this.isOpened[tuneName]);
+	}
 }

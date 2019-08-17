@@ -1,4 +1,4 @@
-<b-modal title="Share" hide-footer :id="id">
+<b-modal title="Share" hide-footer :id="id" size="lg">
 	<b-tabs>
 		<b-tab title="Link">
 			<textarea readonly="readonly" class="form-control" rows="5" :value="url"></textarea>
@@ -26,8 +26,14 @@
 			<tr>
 				<td>
 					<b-list-group>
-						<b-list-group-item v-for="(song, idx) in state.songs" :key="idx" :active="shareSongs[idx]">
-							<a href="javascript:" @click="shareSongs[idx] = !shareSongs[idx]">{{getSongName(idx)}}</a>
+						<b-list-group-item
+							v-for="(song, idx) in state.songs"
+							:key="idx"
+							:active="shareSongs[idx]"
+							href="javascript:"
+							@click="shareSongs[idx] = !shareSongs[idx]"
+						>
+							{{getSongName(idx)}}
 						</b-list-group-item>
 					</b-list-group>
 				</td>
@@ -41,7 +47,7 @@
 								class="bb-inline-list-group-item"
 								:active="!!shouldExportPattern(tuneName, patternName)"
 								:disabled="!!shouldExportPattern(tuneName, patternName) > 1"
-								@click="sharePatterns[tuneName][patternName] = !sharePatterns[tuneName][patternName]"
+								@click="togglePattern(tuneName, patternName)"
 								:title="isUsedInSong(tuneName, patternName) ? 'Used in song, cannot be disabled' : ''"
 								v-b-tooltip.hover.bottom
 

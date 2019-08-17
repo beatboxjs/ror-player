@@ -18,7 +18,7 @@ import config from "../../config";
 import defaultTunes from "../../defaultTunes";
 import { patternEquals } from "../../state/pattern";
 import patternPlaceholderItemTemplate from "./pattern-placeholder-item.vue";
-import events from "../../services/events";
+import events, { registerMultipleHandlers } from "../../services/events";
 import { DragType, PatternDragData, setDragData } from "../../services/draggable";
 import PatternEditorDialog from "../pattern-editor-dialog/pattern-editor-dialog";
 import { id } from "../../utils";
@@ -47,6 +47,22 @@ export default class PatternPlaceholder extends Vue {
 	playerRef: BeatboxReference | null = null;
 	editorId: string | null = null;
 	fallbackPlaybackSettings: PlaybackSettings = null as any;
+	_unregisterHandlers!: () => void;
+
+	created() {
+		this._unregisterHandlers = registerMultipleHandlers({
+			"edit-pattern"(data) {
+				if(!data.handled && data.pattern[0] == this.tuneName && data.pattern[1] == this.patternName && data.readonly == this.readonly) {
+					data.handled = true;
+					this.editPattern();
+				}
+			}
+		}, this);
+	}
+
+	beforeDestroy() {
+		this._unregisterHandlers();
+	}
 
 	get player() {
 		return this.playerRef && getPlayerById(this.playerRef.id);

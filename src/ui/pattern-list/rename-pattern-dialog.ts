@@ -16,11 +16,11 @@ export default class RenamePatternDialog extends Vue {
 	@Prop({ type: String, required: true }) tuneName!: string;
 	@Prop({ type: String, required: true }) patternName!: string;
 
-	newTuneName!: string;
-	newPatternName!: string;
-	copy: boolean = true;
+	newTuneName: string = null as any;
+	newPatternName: string = null as any;
+	copy: boolean = false;
 
-	mounted() {
+	created() {
 		this.newTuneName = this.tuneName;
 		this.newPatternName = this.patternName;
 	}
@@ -30,7 +30,7 @@ export default class RenamePatternDialog extends Vue {
 	};
 
 	get changed() {
-		return (this.tuneName != this.newTuneName || this.patternName != this.newPatternName) && this.newPatternName.trim() != "";
+		return (this.tuneName != this.newTuneName.trim() || this.patternName != this.newPatternName.trim()) && this.newPatternName.trim() != "";
 	}
 
 	get title() {
@@ -47,8 +47,8 @@ export default class RenamePatternDialog extends Vue {
 
 	submit() {
 		if(this.copy)
-			copyPattern(this.state, [ this.tuneName, this.patternName ], [ this.newTuneName, this.newPatternName ]);
+			copyPattern(this.state, [ this.tuneName, this.patternName ], [ this.newTuneName.trim(), this.newPatternName.trim() ]);
 		else
-			movePattern(this.state, [ this.tuneName, this.patternName ], [ this.newTuneName, this.newPatternName ]);
+			movePattern(this.state, [ this.tuneName, this.patternName ], [ this.newTuneName.trim(), this.newPatternName.trim() ]);
 	}
 }
