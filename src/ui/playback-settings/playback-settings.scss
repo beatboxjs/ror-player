@@ -8,6 +8,14 @@
 
 	max-width: none;
 
+	fieldset {
+		margin-bottom: 0;
+
+		.col {
+			display: flex;
+		}
+	}
+
 	.instrument-names td {
 		vertical-align: top;
 
@@ -19,11 +27,22 @@
 		}
 	}
 
-	.volumes input[type=range] {
-		writing-mode: bt-lr;
-		-webkit-appearance: slider-vertical;
-		width: 10px;
-		height: 120px;
+	.volumes {
+		table-layout: fixed;
+		width: 0;
+
+		.sliders td {
+			width: 28px;
+			height: 132px;
+		}
+
+		input[type=range] {
+			transform: rotate(-90deg);
+			transform-origin: bottom left;
+			margin: 105px 0 0 15px;
+			width: 120px;
+			height: 20px;
+		}
 	}
 
 	td {
@@ -37,9 +56,13 @@
 	}
 
 	td.master {
-		border-right: 1px solid #eee;
+		border-right: 1px solid #dee2e6;
 		padding-left: 0;
 		padding-right: 8px;
+
+		input[type=range] {
+			margin-left: 20px;
+		}
 	}
 
 	.inactive {

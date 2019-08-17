@@ -3,7 +3,6 @@ import $ from "jquery";
 import { PatternReference, State } from "../state/state";
 
 type Event0 = {
-	"pattern-drag-start": void,
 	"history-load-encoded-string": void,
 	"overview-close-pattern-list": void,
 	"compose": void,

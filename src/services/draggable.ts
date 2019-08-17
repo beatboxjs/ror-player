@@ -8,7 +8,11 @@ export enum DragType {
 
 export interface PatternDragData {
 	type: DragType.PLACEHOLDER,
-	pattern: PatternReference
+	pattern: PatternReference,
+	data?: {
+		instr: Instrument,
+		idx: number
+	}
 }
 
 export interface PatternResizeDragData {

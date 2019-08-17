@@ -1,5 +1,14 @@
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
-@import "../node_modules/bootstrap-vue/src/index.scss";
+@import "~bootswatch/dist/cerulean/bootstrap.css";
+@import "~bootstrap-vue/dist/bootstrap-vue.css";
+@import "~mobile-drag-drop/default.css";
+
+html {
+	font-size: 14px;
+}
+
+h1,h2,h3,h4,h5,h6,.popover-header {
+	color: inherit;
+}
 
 .icon-list {
 	list-style-type: none;

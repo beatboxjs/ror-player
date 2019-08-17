@@ -7,6 +7,10 @@
 		cursor: move;
 	}
 
+	&.dragging.drag-effect-move {
+		visibility: hidden;
+	}
+
 	.card-body {
 		padding: 0;
 	}

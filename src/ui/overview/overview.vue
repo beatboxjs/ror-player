@@ -1,5 +1,7 @@
 <div class="bb-overview">
-	<!--<button type="button" class="btn btn-default visible-xs-inline-block bb-overview-toggle-patternList" @click="togglePatternList()" uib-tooltip="Show tune list" tooltip-placement="bottom"><span class="glyphicon glyphicon-menu-hamburger"></span></button>-->
+	<span class="bb-overview-toggle-patternList navbar-light d-inline-block d-md-none" @click="togglePatternList()">
+		<b-button class="navbar-toggler"><span class="navbar-toggler-icon" /></b-button>
+	</span>
 
 	<b-tabs v-model="activeTab">
 		<b-tab title="Listen">

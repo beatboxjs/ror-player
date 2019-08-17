@@ -74,10 +74,14 @@ export default class SongPlayer extends Vue {
 	created() {
 		this._unregisterHandlers = registerMultipleHandlers({
 			"pattern-placeholder-drag-start"() {
-				this.dragging = true;
+				setTimeout(() => {
+					this.dragging = true;
+				}, 0);
 			},
 			"pattern-placeholder-drag-end"() {
-				this.dragging = false;
+				setTimeout(() => {
+					this.dragging = false;
+				}, 0);
 			}
 		}, this);
 	}
@@ -285,11 +289,15 @@ export default class SongPlayer extends Vue {
 
 		setDragData(event, data);
 
-		this.resizing = data;
+		setTimeout(() => {
+			this.resizing = data;
+		}, 0);
 	}
 
 	handleResizeDragEnd(event: DragEvent) {
-		this.resizing = null;
+		setTimeout(() => {
+			this.resizing = null;
+		}, 0);
 	}
 
 	handleDragEnter(event: DragEvent, dragOver: DragOver) {
@@ -315,6 +323,10 @@ export default class SongPlayer extends Vue {
 	handleDrop(event: DragEvent) {
 		const data = getDragData(event);
 		if(data && data.type == DragType.PLACEHOLDER && this.dragOver instanceof Object) {
+			if(data.data && data.data.instr != null && data.data.idx != null) {
+				this.removePatternFromSong(data.data.instr, data.data.idx);
+			}
+
 			this.dropPattern(data.pattern, this.dragOver.instr, this.dragOver.idx);
 			event.preventDefault();
 		} else if(data && data.type == DragType.PATTERN_RESIZE) {

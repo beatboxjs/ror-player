@@ -7,19 +7,19 @@
 		<div class="divider"></div>
 
 		<b-button-group v-if="!readonly">
-			<b-dropdown :text="`Length: ${pattern.length}`" :class="{'has-changes': originalPattern && originalPattern.length != pattern.length}" variant="light">
+			<b-dropdown :text="`Length: ${pattern.length}`" :class="{'has-changes': originalPattern && originalPattern.length != pattern.length}" variant="secondary">
 				<b-dropdown-item v-for="le in [ 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64 ]" :key="le" :active="pattern.length == le" href="javascript:" @click="updatePattern({ length: le })">Length: {{le}}</b-dropdown-item>
 			</b-dropdown>
 		</b-button-group>
 
 		<b-button-group v-if="!readonly">
-			<b-dropdown :text="config.times[pattern.time] || `${pattern.time}⁄4`" :class="{'has-changes': originalPattern && originalPattern.time != pattern.time}" variant="light">
+			<b-dropdown :text="config.times[pattern.time] || `${pattern.time}⁄4`" :class="{'has-changes': originalPattern && originalPattern.time != pattern.time}" variant="secondary">
 				<b-dropdown-item v-for="(desc, ti) in config.times" :key="ti" :active="pattern.time == ti" href="javascript:" @click="updatePattern({ time: ti })">Time signature: {{desc}}</b-dropdown-item>
 			</b-dropdown>
 		</b-button-group>
 
 		<b-button-group v-if="!readonly">
-			<b-dropdown :text="`Upbeat: ${pattern.upbeat}`" :class="{'has-changes': originalPattern && originalPattern.upbeat != pattern.upbeat}" variant="light">
+			<b-dropdown :text="`Upbeat: ${pattern.upbeat}`" :class="{'has-changes': originalPattern && originalPattern.upbeat != pattern.upbeat}" variant="secondary">
 				<b-dropdown-item v-for="i in pattern.time * 4 + 1" :key="i" :active="pattern.upbeat == i - 1" href="javascript:" @click="updatePattern({ upbeat: i - 1 })">Upbeat: {{i - 1}}</b-dropdown-item>
 			</b-dropdown>
 		</b-button-group>

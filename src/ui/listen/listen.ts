@@ -6,9 +6,10 @@ import { Tune } from "../../state/tune";
 import { stopAllPlayers } from "../../services/player";
 import PatternListFilter, { Filter, filterPatternList } from "../pattern-list-filter/pattern-list-filter";
 import TuneInfo from "../tune-info/tune-info";
-import { ProvideReactive, Watch } from "vue-property-decorator";
+import { ProvideReactive, Ref, Watch } from "vue-property-decorator";
 import events, { MultipleHandlers, registerMultipleHandlers } from "../../services/events";
 import "./listen.scss";
+import $ from "jquery";
 
 @Component({
 	template,
@@ -18,11 +19,15 @@ import "./listen.scss";
 export default class Listen extends Vue {
 	@ProvideReactive() state = normalizeState();
 
+	@Ref() tunes!: HTMLElement;
+
 	tuneName: string | null = null;
 	tune: Tune | null = null;
 	filter?: Filter = undefined;
 
 	_unregisterHandlers!: () => void;
+
+	touchStartX: number | null = null;
 
 	get tuneList() {
 		return filterPatternList(this.state, this.filter);
@@ -75,4 +80,34 @@ export default class Listen extends Vue {
 		else if(list.scrollTop < el.offsetTop + el.offsetHeight - list.offsetHeight)
 			$(list).animate({ scrollTop: el.offsetTop + el.offsetHeight - list.offsetHeight});
 	}
+
+	handleTouchStart(event: TouchEvent) {
+		if(event.touches && event.touches[0]) {
+			this.touchStartX = event.touches[0].clientX;
+			$(this.tunes).css("transition", "none");
+		}
+	}
+
+	handleTouchMove(event: TouchEvent) {
+		if(this.touchStartX != null && event.touches[0]) {
+			const left = Math.min(event.touches[0].clientX - this.touchStartX, 0);
+			$(this.tunes).css("left", `${left}px`);
+		}
+	}
+
+	handleTouchEnd(event: TouchEvent) {
+		if(this.touchStartX != null && event.changedTouches[0]) {
+			$(this.tunes).css({
+				left: "",
+				transition: ""
+			});
+
+			const left = Math.min(event.changedTouches[0].clientX - this.touchStartX, 0);
+			if(left < -($(this.tunes).width() as number / 2))
+				$("body").removeClass("bb-pattern-list-visible");
+
+			this.touchStartX = null;
+		}
+	}
+
 }

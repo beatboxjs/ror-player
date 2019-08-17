@@ -1,4 +1,4 @@
-<div class="bb-pattern-placeholder" :draggable="draggable ? 'true' : 'false'" @dragstart="handleDragStart($event)" @dragend="handleDragEnd($event)">
+<div class="bb-pattern-placeholder" :class="[{ dragging }, `drag-effect-${dragEffect}`]" :draggable="draggable ? 'true' : 'false'" @dragstart="handleDragStart($event)" @dragend="handleDragEnd($event)">
 	<b-card class="pattern-button">
 		<span class="tune-name">{{state.tunes[tuneName].displayName || tuneName}}</span>
 		<br>

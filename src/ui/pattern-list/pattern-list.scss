@@ -3,7 +3,6 @@
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-	padding-right: 25px;
 
 	.card-header, .card-body {
 		padding: 0;
@@ -38,13 +37,16 @@
 	hr {
 		/* https://stackoverflow.com/a/34372979/242365 */
 		margin-left: 0;
-		margin-right: 0;
+		margin-right: calc(30px - 1.2em);
+	}
+
+	.bb-pattern-list-filter {
+		padding-right: calc(30px - 1.2em);
 	}
 
 	.bb-pattern-list-tunes {
-		margin-right: -25px;
 		overflow-y: auto;
-		padding-right: 10px;
+		padding-right: 15px;
 	}
 
 	.general-actions {

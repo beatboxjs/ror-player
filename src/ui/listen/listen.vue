@@ -1,5 +1,5 @@
 <div class="bb-listen">
-	<div class="bb-listen-tunes">
+	<div class="bb-listen-tunes" v-touch:start="handleTouchStart" v-touch:moving="handleTouchMove" v-touch:end="handleTouchEnd" ref="tunes">
 		<PatternListFilter v-model="filter" />
 
 		<hr />

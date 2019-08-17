@@ -2,7 +2,7 @@ import "./compose.scss";
 import Vue from "vue";
 import Component from "vue-class-component";
 import template from "./compose.vue";
-import { InjectReactive, Prop, ProvideReactive } from "vue-property-decorator";
+import { InjectReactive, Prop, ProvideReactive, Ref } from "vue-property-decorator";
 import { State } from "../../state/state";
 import config from "../../config";
 import { appendSongPart, getEffectiveSongLength, SongPart } from "../../state/song";
@@ -25,11 +25,15 @@ export default class Compose extends Vue {
 
 	@InjectReactive() state!: State;
 
+	@Ref() tunes!: HTMLElement;
+
 	_unregisterHandlers!: () => void;
+
+	touchStartX: number | null = null;
 
 	created() {
 		this._unregisterHandlers = registerMultipleHandlers({
-			"pattern-drag-start"() {
+			"pattern-placeholder-drag-start"() {
 				events.$emit("overview-close-pattern-list");
 			}
 		}, this);
@@ -54,6 +58,35 @@ export default class Compose extends Vue {
 		this.$nextTick(() => {
 			scrollToElement($(".bb-song-player .song-container")[0], false, true);
 		});
+	}
+
+	handleTouchStart(event: TouchEvent) {
+		if(event.touches && event.touches[0] && $(event.target as EventTarget).closest("[draggable=true]").length == 0) {
+			this.touchStartX = event.touches[0].clientX;
+			$(this.tunes).css("transition", "none");
+		}
+	}
+
+	handleTouchMove(event: TouchEvent) {
+		if(this.touchStartX != null && event.touches[0]) {
+			const left = Math.min(event.touches[0].clientX - this.touchStartX, 0);
+			$(this.tunes).css("left", `${left}px`);
+		}
+	}
+
+	handleTouchEnd(event: TouchEvent) {
+		if(this.touchStartX != null && event.changedTouches[0]) {
+			$(this.tunes).css({
+				left: "",
+				transition: ""
+			});
+
+			const left = Math.min(event.changedTouches[0].clientX - this.touchStartX, 0);
+			if(left < -($(this.tunes).width() as number / 2))
+				$("body").removeClass("bb-pattern-list-visible");
+
+			this.touchStartX = null;
+		}
 	}
 
 }

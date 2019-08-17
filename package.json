@@ -67,15 +67,18 @@
     "beatbox.js-export": "^1.0.2",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.27",
+    "bootswatch": "^4.3.1",
     "file-saver": "^2.0.2",
     "howler": "^2.1.2",
     "jquery": "^3.4.1",
     "lodash.isequal": "^4.5.0",
+    "mobile-drag-drop": "^2.3.0-rc.2",
     "navigo": "^7.1.2",
     "pako": "^1.0.10",
     "portal-vue": "^2.1.6",
     "vue": "^2.6.10",
     "vue-class-component": "^7.1.0",
-    "vue-property-decorator": "^8.2.1"
+    "vue-property-decorator": "^8.2.1",
+    "vue2-touch-events": "^2.0.0"
   }
 }

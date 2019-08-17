@@ -41,13 +41,14 @@ export default class PatternPlaceholder extends Vue {
 	@Prop({ type: String, required: true }) readonly patternName!: string;
 	@Prop({ type: Boolean, default: false }) readonly readonly!: boolean;
 	@Prop(Object) readonly settings?: PlaybackSettings;
-	@Prop({ type: Boolean, default: false }) readonly draggable!: boolean;
+	@Prop({ default: null }) readonly draggable!: any;
 	@Prop({ type: String, default: "copy" }) readonly dragEffect!: string;
 
 	playerRef: BeatboxReference | null = null;
 	editorId: string | null = null;
 	fallbackPlaybackSettings: PlaybackSettings = null as any;
 	_unregisterHandlers!: () => void;
+	dragging: boolean = false;
 
 	created() {
 		this._unregisterHandlers = registerMultipleHandlers({
@@ -157,16 +158,25 @@ export default class PatternPlaceholder extends Vue {
 	}
 
 	handleDragStart(event: DragEvent) {
+		console.log("dragStart");
 		const dragData: PatternDragData = {
 			type: DragType.PLACEHOLDER,
-			pattern: [ this.tuneName, this.patternName ]
+			pattern: [ this.tuneName, this.patternName ],
+			data: this.draggable
 		};
 		(event.dataTransfer as DataTransfer).effectAllowed = this.dragEffect;
 		setDragData(event, dragData);
+		setTimeout(() => {
+			this.dragging = true;
+		}, 0);
 		events.$emit("pattern-placeholder-drag-start");
 	}
 
 	handleDragEnd(event: DragEvent) {
+		console.log("dragEnd");
 		events.$emit("pattern-placeholder-drag-end");
+		setTimeout(() => {
+			this.dragging = false;
+		}, 0);
 	}
 }

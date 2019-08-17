@@ -1,4 +1,4 @@
-<b-dropdown v-if="historicStates.length > 1" class="bb-history" variant="light">
+<b-dropdown v-if="historicStates.length > 1" class="bb-history" variant="secondary">
 	<template slot="button-content">
 		<span :id="popoverId" v-b-popover.bottom="popoverMessage"><i class="fas fa-clock"></i> History</span>
 	</template>

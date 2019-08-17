@@ -6,11 +6,11 @@
 		padding: 1.2em;
 		width: 20em;
 		background: #fff;
-		border-right: 1px solid #eee;
+		border-right: 1px solid #dee2e6;
 		display: flex;
 		flex-direction: column;
 
-		@media (max-width: 767px) {
+		@media (max-width: 767.98px) {
 			position: fixed;
 			top: 0;
 			left: 0;
@@ -33,8 +33,8 @@
 			flex-grow: 1;
 			height: 0;
 			overflow-y: auto;
-			padding: 0 1.2em;
-			margin: 0 -1.2em;
+			padding: 0 1.2em 1.2em 1.2em;
+			margin: 0 -1.2em -1.2em -1.2em;
 		}
 	}
 
@@ -60,7 +60,7 @@
 		visibility: hidden;
 		transition: left .3s;
 
-		@media (max-width: 767px) {
+		@media (max-width: 767.98px) {
 			body.bb-pattern-list-visible & {
 				left: 20em;
 				visibility: visible;

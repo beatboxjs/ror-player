@@ -7,9 +7,9 @@
 		width: 20em;
 		padding: 1.2em;
 		background: #fff;
-		border-right: 1px solid #eee;
+		border-right: 1px solid #dee2e6;
 
-		@media (max-width: 767px) {
+		@media (max-width: 767.98px) {
 			position: fixed;
 			top: 0;
 			left: 0;
@@ -27,12 +27,15 @@
 		flex-grow: 1;
 		height: 100%;
 		width: 0;
-		padding: 1.2em;
 	}
 
 	.bb-history {
 		display: inline-block;
 		min-width: 0;
 		float: right;
+	}
+
+	.bb-pattern-list-tunes {
+		margin-right: -1.2em;
 	}
 }

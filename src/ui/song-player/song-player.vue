@@ -7,7 +7,7 @@
 
 		<div class="divider"></div>
 
-		<b-dropdown class="song-dropdown" variant="light">
+		<b-dropdown class="song-dropdown" variant="secondary">
 			<template slot="button-content">
 				<i class="fas fa-music" /> {{getSongName()}}
 			</template>
@@ -21,7 +21,7 @@
 			<b-dropdown-item href="javascript:" @click="createSong()">New song</b-dropdown-item>
 		</b-dropdown>
 
-		<b-dropdown variant="light">
+		<b-dropdown variant="secondary">
 			<template slot="button-content">
 				<i class="fas fa-cog"></i> Tools
 			</template>
@@ -76,7 +76,7 @@
 				@drop="handleDrop($event)"
 			>
 				<div :class="`pattern-container colspan-${getColSpan(instrumentKey, i-1)} rowspan-${getRowSpan(instrumentKey, i-1)}`" v-if="song[i-1] && song[i-1][instrumentKey] && shouldDisplay(instrumentKey, i-1)">
-					<PatternPlaceholder :tune-name="song[i-1][instrumentKey][0]" :pattern-name="song[i-1][instrumentKey][1]" :draggable="true" dragEffect="move" :settings="getPreviewPlaybackSettings(instrumentKey, i-1)">
+					<PatternPlaceholder :tune-name="song[i-1][instrumentKey][0]" :pattern-name="song[i-1][instrumentKey][1]" :draggable="{ instr: instrumentKey, idx: i-1 }" dragEffect="move" :settings="getPreviewPlaybackSettings(instrumentKey, i-1)">
 						<PatternPlaceholderItem>
 							<b-dropdown variant="link" toggle-class="text-decoration-none" no-caret>
 								<template slot="button-content">

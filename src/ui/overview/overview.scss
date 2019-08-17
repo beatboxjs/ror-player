@@ -7,8 +7,8 @@
 
 	.bb-overview-toggle-patternList {
 		position: absolute;
-		top: 1em;
-		left: 1em;
+		top: 0.5em;
+		left: 0.5em;
 	}
 
 	.bb-state-provider {
@@ -23,8 +23,8 @@
 		> div > .nav {
 			padding: 1em 1em 0 1em;
 
-			@media (max-width: 767px) {
-				padding-left: 65px;
+			@media (max-width: 767.98px) {
+				padding: 0.5em 0.5em 0 5em;
 			}
 		}
 
@@ -50,7 +50,7 @@
 		visibility: hidden;
 		transition: left .3s;
 
-		@media (max-width: 767px) {
+		@media (max-width: 767.98px) {
 			body.bb-pattern-list-visible & {
 				visibility: visible;
 			}
