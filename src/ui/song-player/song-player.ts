@@ -35,6 +35,7 @@ import PatternPlaceholder, { PatternPlaceholderItem } from "../pattern-placehold
 import { Pattern } from "../../state/pattern";
 import ImportDialog from "../import-dialog/import-dialog";
 import ShareDialog from "../share-dialog/share-dialog";
+import $ from "jquery";
 
 type DragOver = "trash" | { instr: Instrument | null, idx: number };
 
@@ -87,8 +88,14 @@ export default class SongPlayer extends Vue {
 	}
 
 	mounted() {
-		this.player.onbeat = (idx) => { this.updateMarkerPos(true); };
+		this.player.on("beat", () => {
+			this.updateMarkerPos(true);
+		});
+		this.player.on("stop", () => {
+			this.updateMarkerPos(false);
+		});
 		this.updatePattern();
+		this.updateMarkerPos(false);
 	}
 
 	beforeDestroy() {
@@ -104,15 +111,20 @@ export default class SongPlayer extends Vue {
 	}
 
 	updateMarkerPos(scrollFurther: boolean, force: boolean = false) {
-		const i = Math.max(0, (this.player.getPosition() - this.player._upbeat)/config.playTime);
-		const beatIdx = Math.floor(i);
+		if(!this.player.playing && this.player.getPosition() == 0) {
+			$(".beat.active", this.$el).removeClass("active");
+			$(".song-position-marker", this.$el).hide();
+		} else {
+			const i = Math.max(0, (this.player.getPosition() - this.player._upbeat)/config.playTime);
+			const beatIdx = Math.floor(i);
 
-		const beat = $(".beat-i-"+beatIdx, this.$el);
-		$(".beat.active").not(beat).removeClass("active");
-		beat.addClass("active");
+			const beat = $(".beat-i-"+beatIdx, this.$el);
+			$(".beat.active", this.$el).not(beat).removeClass("active");
+			beat.addClass("active");
 
-		if(beat.length > 0)
-			scrollToElement($(".song-position-marker", this.$el).offset({ left: (beat.offset() as JQuery.Coordinates).left + (i-beatIdx) * (beat.outerWidth() as number) })[0], scrollFurther, force);
+			if(beat.length > 0)
+				scrollToElement($(".song-position-marker", this.$el).show().offset({ left: (beat.offset() as JQuery.Coordinates).left + (i-beatIdx) * (beat.outerWidth() as number) })[0], scrollFurther, force);
+		}
 	}
 
 	@Watch("song", { deep: true })
@@ -138,6 +150,7 @@ export default class SongPlayer extends Vue {
 	stop() {
 		stopAllPlayers();
 		this.player.setPosition(0);
+		this.updateMarkerPos(false);
 	}
 
 	updatePlaybackSettings(update: PlaybackSettingsOptional) {

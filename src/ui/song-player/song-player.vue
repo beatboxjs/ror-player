@@ -1,4 +1,4 @@
-<div :class="`bb-song-player ${player.playing ? 'playing' : player.getPosition() == 0 ? 'stopped' : 'paused'} ${dragging ? 'dragging' : ''} ${resizing ? 'resizing' : ''}`">
+<div :class="`bb-song-player ${dragging ? 'dragging' : ''} ${resizing ? 'resizing' : ''}`">
 	<div class="control-panel">
 		<slot />
 		<b-button :variant="playerRef.playing ? 'info' : 'success'" @click="playPause()"><i :class="`fas fa-${playerRef.playing ? 'pause' : 'play'}`" /> {{playerRef.playing ? 'Pause' : 'Play'}}</b-button>

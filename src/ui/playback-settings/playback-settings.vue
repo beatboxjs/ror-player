@@ -6,7 +6,7 @@
 	</b-tooltip>
 
 	<b-popover :target="id" custom-class="bb-playback-settings" placement="bottom" title="Playback settings">
-		<b-form-group label="Speed" label-cols-sm="3">
+		<b-form-group label="Speed" label-cols="3">
 			<b-button-group class="d-flex my-auto flex-grow-1">
 				<b-form-input type="range" class="my-auto" @update="update({ speed: $event })" :value="playbackSettings.speed" min="30" max="180" :id="`${id}-speed`"  />
 				<b-button size="sm" @click="resetSpeed()" variant="secondary" class="ml-2">Reset</b-button>
@@ -14,11 +14,11 @@
 			</b-button-group>
 		</b-form-group>
 
-		<b-form-group label="Loop" label-cols-sm="3">
+		<b-form-group label="Loop" label-cols="3">
 			<b-form-checkbox @change="update({ loop: $event })" :checked="playbackSettings.loop" class="my-auto" />
 		</b-form-group>
 
-		<b-form-group label="Whistle" label-cols-sm="3">
+		<b-form-group label="Whistle" label-cols="3">
 			<b-button-group class="my-auto">
 				<b-button size="sm" @click="update({ whistle: false })" :pressed="playbackSettings.whistle == false" variant="secondary">No</b-button>
 				<b-button size="sm" @click="update({ whistle: 1 })" :pressed="playbackSettings.whistle == 1" variant="secondary">On one</b-button>

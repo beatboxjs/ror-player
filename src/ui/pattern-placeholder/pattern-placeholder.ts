@@ -109,10 +109,10 @@ export default class PatternPlaceholder extends Vue {
 
 	createPlayer() {
 		this.playerRef = createBeatbox(false);
-		(this.player as Beatbox).onbeat = (beat) => {
+		(this.player as Beatbox).on("beat", (beat: number) => {
 			const $el = $(this.$el);
 			$el.find(".position-marker").css("left", (beat / (this.player as Beatbox)._pattern.length) * ($el.outerWidth() as number) + "px");
-		};
+		});
 		this.updatePlayer();
 	};
 
@@ -158,7 +158,6 @@ export default class PatternPlaceholder extends Vue {
 	}
 
 	handleDragStart(event: DragEvent) {
-		console.log("dragStart");
 		const dragData: PatternDragData = {
 			type: DragType.PLACEHOLDER,
 			pattern: [ this.tuneName, this.patternName ],
@@ -173,7 +172,6 @@ export default class PatternPlaceholder extends Vue {
 	}
 
 	handleDragEnd(event: DragEvent) {
-		console.log("dragEnd");
 		events.$emit("pattern-placeholder-drag-end");
 		setTimeout(() => {
 			this.dragging = false;

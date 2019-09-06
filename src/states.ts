@@ -201,8 +201,6 @@ export function enableRouter(app: Vue) {
 		if(paused)
 			return;
 
-		console.log(name, params);
-
 		router.pause();
 		navigate(name, params);
 		setTimeout(() => {

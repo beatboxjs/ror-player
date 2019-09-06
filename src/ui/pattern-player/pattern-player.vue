@@ -63,6 +63,6 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="position-marker" :class="{'player-stopped': !playerRef || !playerRef.playing && playerInst.getPosition() == 0}"></div>
+		<div class="position-marker"></div>
 	</div>
 </div>

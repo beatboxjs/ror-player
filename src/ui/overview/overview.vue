@@ -1,6 +1,12 @@
 <div class="bb-overview">
+	<Compatibility />
+
 	<span class="bb-overview-toggle-patternList navbar-light d-inline-block d-md-none" @click="togglePatternList()">
 		<b-button class="navbar-toggler"><span class="navbar-toggler-icon" /></b-button>
+	</span>
+
+	<span class="bb-overview-help">
+		<Help />
 	</span>
 
 	<b-tabs v-model="activeTab">

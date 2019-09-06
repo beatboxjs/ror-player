@@ -10,6 +10,16 @@ h1,h2,h3,h4,h5,h6,.popover-header {
 	color: inherit;
 }
 
+.btn-secondary.active {
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	background: #e9ecef !important;
+}
+
+.dropdown-menu {
+	max-height: 95vh;
+	overflow-y: auto;
+}
+
 .icon-list {
 	list-style-type: none;
 	margin: 0;

@@ -62,13 +62,6 @@ export default class PatternPlayer extends Vue {
 
 	created() {
 		this.playerRef = this.player || createBeatbox(true);
-		const player = this.playerInst;
-		player.onbeat = this.strokeCallback;
-		const onstop = player.onstop;
-		player.onstop = () => {
-			$(".beat.active", this.$el).removeClass("active");
-			onstop && onstop.apply(player);
-		};
 
 		this.playbackSettings = Object.assign(normalizePlaybackSettings(this.state.playbackSettings), {
 			speed: this.pattern.speed,
@@ -76,6 +69,17 @@ export default class PatternPlayer extends Vue {
 		});
 
 		this.updatePlayer();
+	}
+
+	mounted() {
+		const player = this.playerInst;
+		player.on("beat", () => {
+			this.updateMarkerPosition(true);
+		});
+		player.on("stop", () => {
+			this.updateMarkerPosition(false);
+		});
+		this.updateMarkerPosition(false);
 	}
 
 	@Watch("playbackSettings.volume")
@@ -109,26 +113,27 @@ export default class PatternPlayer extends Vue {
 	}
 
 	updateMarkerPosition(scrollFurther: boolean = false, force: boolean = false) {
-		const i = (this.playerInst.getPosition() * this.pattern.time / config.playTime) - this.pattern.upbeat;
-
-		const strokeIdx = Math.floor(i);
-
-		const stroke = $(".stroke-i-"+strokeIdx, this.$el);
 		const marker = $(".position-marker", this.$el);
-		if(stroke.length > 0) {
-			marker.offset({ left: (stroke.offset() as JQuery.Coordinates).left + (stroke.outerWidth() as number) * (i - strokeIdx) });
-			scrollToElement(marker[0], scrollFurther, force);
+		const position = this.playerInst.getPosition();
+
+		if(!this.playerInst.playing && position == 0) {
+			$(".beat.active").removeClass("active");
+			marker.hide();
+		} else {
+			const i = (position * this.pattern.time / config.playTime) - this.pattern.upbeat;
+
+			const strokeIdx = Math.floor(i);
+
+			const stroke = $(".stroke-i-"+strokeIdx, this.$el);
+			if(stroke.length > 0) {
+				marker.show().offset({ left: (stroke.offset() as JQuery.Coordinates).left + (stroke.outerWidth() as number) * (i - strokeIdx) });
+				scrollToElement(marker[0], scrollFurther, force);
+			}
+
+			const beat = $(".beat-i-" + Math.floor(i / this.pattern.time), this.$el);
+			$(".beat.active", this.$el).not(beat).removeClass("active");
+			beat.addClass("active");
 		}
-	}
-
-	strokeCallback(beatIdx: number) {
-		this.updateMarkerPosition(true);
-
-		let i = Math.floor(beatIdx / config.playTime - this.pattern.upbeat / this.pattern.time);
-
-		const beat = $(".beat-i-" + i, this.$el);
-		$(".beat.active").not(beat).removeClass("active");
-		beat.addClass("active");
 	}
 
 	playPause() {
@@ -144,6 +149,7 @@ export default class PatternPlayer extends Vue {
 		if(this.playerInst.playing)
 			this.playerInst.stop();
 		this.playerInst.setPosition(0);
+		this.updateMarkerPosition(false);
 	}
 
 	getBeatClass(i: number) {

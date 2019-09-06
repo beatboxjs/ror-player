@@ -186,11 +186,7 @@
 		}
 	}
 
-	&.stopped .song-player-container .song-position-marker {
-		border: none;
-	}
-
-	&.playing .song-player-container .bb-col .beat.active,&.paused .song-player-container .bb-col .beat.active {
+	.song-player-container .bb-col .beat.active {
 		background-color: #3a94a5;
 		color: #fff;
 		transition: none;

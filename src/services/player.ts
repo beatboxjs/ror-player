@@ -34,12 +34,12 @@ export function createBeatbox(repeat: boolean): BeatboxReference {
 	};
 
 	const player = new Beatbox([ ], 1, repeat);
-	player.onplay = () => {
+	player.on("play", () => {
 		reference.playing = true;
-	};
-	player.onstop = () => {
+	});
+	player.on("stop", () => {
 		reference.playing = false;
-	};
+	});
 	players[reference.id] = player;
 
 	return reference;
