@@ -92,7 +92,7 @@ app.factory("bbConfig", function(ng, $document) {
 		"H" : "my",
 		"I" : "un",
 		"M" : "der",
-		"!" : "pants",
+		"#" : "pants",
 		"b" : "Tout",
 		"c" : "le",
 		"d" : "monde",
@@ -105,7 +105,16 @@ app.factory("bbConfig", function(ng, $document) {
 		"n" : "ce",
 		"u" : "Te",
 		"v" : "qui",
-		"x" : "la"
+		"x" : "la",
+		"i": "The",
+		"l": "roof",
+		"p": "is",
+		"$": "on",
+		"%": "fi",
+		"&": "re",
+		"'": "Burn!"
+
+		// ()*,-./:;<=>?[\]^_`{|}~
 	};
 
 	bbConfig.strokesDescription = {
