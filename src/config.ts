@@ -127,7 +127,7 @@ const config: Config = {
 		"H" : "my",
 		"I" : "un",
 		"M" : "der",
-		"!" : "pants",
+		"#" : "pants",
 		"b" : "Tout",
 		"c" : "le",
 		"d" : "monde",
@@ -140,7 +140,16 @@ const config: Config = {
 		"n" : "ce",
 		"u" : "Te",
 		"v" : "qui",
-		"x" : "la"
+		"x" : "la",
+		"i": "The",
+		"l": "roof",
+		"p": "is",
+		"$": "on",
+		"%": "fi",
+		"&": "re",
+		"'": "Burn!"
+
+		// ()*,-./:;<=>?[\]^_`{|}~
 	},
 
 	strokesDescription: {

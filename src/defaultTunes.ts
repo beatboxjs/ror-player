@@ -838,7 +838,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '@ls'
 			},
 			'Singing Break': {
-				ot: '4 3 21 C H I M! '
+				ot: '4 3 21 C H I M# '
 			}
 		}
 	},
@@ -1968,6 +1968,40 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ta: '@ls',
 				ag: '@ls',
 				sh: '@ls'
+			}
+		}
+	},
+	'The Roof Is on Fire': {
+		categories: [ "new", "tricky" ],
+		sheet: sheetUrl + "the-roof-is-on-fire.pdf",
+		description: require("../assets/tuneDescriptions/the-roof-is-on-fire.md"),
+		patterns: {
+			Tune: {
+				loop: true,
+				ls: "        X       X       X   X   X ",
+				hs: "    XXX     XXX     XXX     X   X ",
+				re: "  X  X  X  XXXX   X X X X  XXXX   ",
+				sn: "  ...XX.....X.X......XX.....X.X...",
+				ta: "    X       X     X X X X   X     ",
+				ag: "o a     o a     o a a a   a       ",
+				sh: "  ................................",
+				upbeat: 2
+			},
+			"Break 1": {
+				ls: "    X X     X X             X     ",
+				ot: "i l     i l     i l p $ % &       ",
+				upbeat: 2
+			},
+			'Bra Break': {
+				ls: "                X     X X                       X     X X                       X     X X                                       ",
+				ms: "@ls",
+				hs: "@ls",
+				re: "X..X..X.X..X..X.                X..X..X.X..X..X.                X..X..X.X..X..X.                X  X  X X                       ",
+				sn: "@ls",
+				ta: "@ls",
+				ag: "                o     o a  a  a                 o     o a  a  a                 o     o a  a  a                                 ",
+				sh: "@ls",
+				ot: "                                                                                                            '                   "
 			}
 		}
 	},
