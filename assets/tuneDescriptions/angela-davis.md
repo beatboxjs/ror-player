@@ -14,7 +14,7 @@ accused several times for domestic violence. The name “Angela Davis” refers 
 she is also an anti-prison activist, hence the tune sign. The former sign (showing an Afro haircut) was changed due
 to its racist connotation.
 
-### Difficulty:
+### Difficulty
 
 * **Low Surdo:** hard
 * **Mid Surdo:** easy to remember, but hard to play it without beeing to fast nor to slow
