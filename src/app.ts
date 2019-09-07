@@ -8,6 +8,9 @@ import Vue2TouchEvents from "vue2-touch-events";
 import {polyfill} from "mobile-drag-drop";
 import {scrollBehaviourDragImageTranslateOverride} from "mobile-drag-drop/scroll-behaviour";
 import Overview from "./ui/overview/overview";
+import { registerServiceWorker } from "./services/service-worker";
+
+registerServiceWorker();
 
 polyfill({
     dragImageTranslateOverride: scrollBehaviourDragImageTranslateOverride

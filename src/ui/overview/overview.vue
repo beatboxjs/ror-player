@@ -1,5 +1,6 @@
 <div class="bb-overview">
 	<Compatibility />
+	<Update />
 
 	<span class="bb-overview-toggle-patternList navbar-light d-inline-block d-md-none" @click="togglePatternList()">
 		<b-button class="navbar-toggler"><span class="navbar-toggler-icon" /></b-button>

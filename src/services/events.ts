@@ -1,5 +1,4 @@
 import Vue from "vue";
-import $ from "jquery";
 import { PatternReference, State } from "../state/state";
 
 type Event0 = {
@@ -9,7 +8,8 @@ type Event0 = {
 	"overview-compose": void,
 	"overview-listen": void,
 	"pattern-placeholder-drag-start": void,
-	"pattern-placeholder-drag-end": void
+	"pattern-placeholder-drag-end": void,
+	"update-available": void
 };
 
 type Event1 = {

@@ -3,6 +3,7 @@ const fs = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackInlineSourcePlugin = require("html-webpack-inline-source-plugin");
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 const duplicatePlugin = require("./webpack-duplicates");
 
@@ -84,15 +85,14 @@ module.exports = {
 			inlineSource: "\.js$"
 		}),
 		new HtmlWebpackInlineSourcePlugin(),
-		new ForkTsCheckerWebpackPlugin()
+		new ForkTsCheckerWebpackPlugin(),
+		new CopyPlugin([
+			{ from: `${__dirname}/src/sw.js`, to: `${__dirname}/build/sw.js` }
+		]),
+		new webpack.EnvironmentPlugin({
+			DISABLE_SW: dev
+		})
 	],
 	mode: dev ? "development" : "production",
 	devtool: dev ? "cheap-module-eval-source-map" : "source-map"
 };
-
-if(dev) {
-	module.exports.serve = {
-		content: __dirname + "build",
-		//hot: false
-	};
-}

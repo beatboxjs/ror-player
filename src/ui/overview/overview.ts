@@ -11,10 +11,11 @@ import "./overview.scss";
 import { StateProvider } from "../../services/history";
 import Compatibility from "../compatibility/compatibility";
 import Help from "../help/help";
+import Update from "../update/update";
 
 @Component({
 	template,
-	components: { Compatibility, Compose, Listen, StateProvider, Help }
+	components: { Compatibility, Compose, Listen, StateProvider, Help, Update }
 })
 export default class Overview extends Vue {
 	activeTab = 0;
