@@ -65,13 +65,15 @@ export default class Listen extends Vue {
 
 		stopAllPlayers();
 
-		this.scrollToTune();
+		this.$nextTick(() => {
+			this.scrollToTune();
+		});
 	}
 
 	scrollToTune() {
 		let list = $(".bb-listen-tunes > .nav", this.$el)[0];
 
-		let el = $(".nav-item.active", list)[0];
+		let el = $(".nav-link.active", list)[0];
 		if(!el)
 			return;
 

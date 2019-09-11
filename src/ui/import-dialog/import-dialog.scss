@@ -1,10 +1,30 @@
 .bb-import-dialog {
-	.list-group-item > a:not(.badge) {
-		color: inherit;
-		display: block;
+	.list-group-item {
+		margin-bottom: 1px;
+
+		> a {
+			color: inherit;
+			display: block;
+		}
+
+		> div {
+			display: flex;
+
+			> :not(:first-child) {
+				margin-left: 4px;
+			}
+		}
 	}
 
 	thead th {
 		width: 50%;
+	}
+
+	.badge {
+		border: 1px solid transparent;
+
+		&.badge-primary {
+			border-color: #fff;
+		}
 	}
 }

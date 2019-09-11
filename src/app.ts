@@ -3,7 +3,7 @@ import BootstrapVue from "bootstrap-vue";
 import "./app.scss";
 import "@fortawesome/fontawesome-free/scss/fontawesome.scss"
 import "@fortawesome/fontawesome-free/scss/solid.scss"
-import { enableRouter } from "./states";
+import { enableRouter } from "./services/router";
 import Vue2TouchEvents from "vue2-touch-events";
 import {polyfill} from "mobile-drag-drop";
 import {scrollBehaviourDragImageTranslateOverride} from "mobile-drag-drop/scroll-behaviour";

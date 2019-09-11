@@ -1,7 +1,7 @@
-<b-modal title="Import" :id="id" size="lg">
+<b-modal title="Import" :id="id" size="lg" modal-class="bb-import-dialog">
 	<b-form @submit.prevent>
-		<b-form-group :invalid-feedback="error">
-			<b-form-textarea id="bb-import-dialog-paste" v-model="pasted" rows="5" placeholder="Paste link or raw data object…" />
+		<b-form-group :invalid-feedback="error" :state="pasted.length == 0 ? null : !error">
+			<b-form-textarea id="bb-import-dialog-paste" v-model="pasted" rows="5" placeholder="Paste link or raw data object…" :state="pasted.length == 0 ? null : !error" />
 		</b-form-group>
 		<b-alert v-for="warning in warnings" :key="warning" variant="warning" show>{{warning}}</b-alert>
 	</b-form>
@@ -20,7 +20,7 @@
 					<td>
 						<b-list-group>
 							<b-list-group-item v-for="(song, idx) in songs" :key="idx" :class="{active: song.shouldImport, disabled: song.exists}" :title="song.exists ? 'Song already exists.' : ''" v-b-tooltip.bottom>
-								<a v-if="!song.exists" href="javascript:" @click="importSongs[idx] = !song.shouldImport">{{song.name}}</a>
+								<a v-if="!song.exists" href="javascript:" @click="clickSong(idx)">{{song.name}}</a>
 								<span v-if="song.exists">{{song.name}} <span class="glyphicon glyphicon-ok"></span></span>
 							</b-list-group-item>
 						</b-list-group>
@@ -29,10 +29,24 @@
 						<b-list-group>
 							<b-list-group-item v-for="tune in tunes" :key="tune.tuneName" :class="tune.className">
 								<a href="javascript:" @click="clickTune(tune.tuneName)">{{tune.displayName}}</a>
-								<span v-for="pattern in tune.patterns" :key="pattern.patternName">
-									<b-badge v-if="(!pattern.isUsed || pattern.exists) && pattern.exists != 2" href="javascript:" class="bb-inline-list-group-item" :active="pattern.shouldImport" @click="importPatterns[tune.tuneName][pattern.patternName] = !pattern.shouldImport" :title="pattern.exists ?  'Already exists. Local version will be overridden.' : ''" v-b-tooltip.hover.bottom>{{pattern.patternName}} <i v-if="pattern.exists" class="fas fa-exclamation-circle"></i></b-badge>
-									<b-badge v-if="(pattern.isUsed && !pattern.exists) || pattern.exists == 2" class="bb-inline-list-group-item" disabled :active="pattern.shouldImport" :title="pattern.exists == 2 ? 'Pattern already exists.' : 'Pattern is used in song, cannot be disabled.'" v-b-tooltip.bottom>{{pattern.patternName}} <i v-if="pattern.exists == 2" class="fas fa-check"></i></b-badge>
-								</span>
+								<div>
+									<span
+										v-for="pattern in tune.patterns"
+										:key="pattern.patternName"
+										:title="pattern.exists == 2 ? 'Pattern already exists.' : pattern.isUsed ? 'Pattern is used in song, cannot be disabled.' : pattern.exists ? 'Already exists. Local version will be overridden.' : ''"
+										v-b-tooltip.hover.bottom
+									>
+										<b-badge
+											:href="pattern.clickable ? 'javascript:' : undefined"
+											class="bb-inline-list-group-item"
+											:disabled="!pattern.clickable"
+											:variant="pattern.shouldImport ? 'primary' : 'light'"
+											@click="pattern.clickable && clickPattern(tune.tuneName, pattern.patternName)"
+										>
+											{{pattern.patternName}} <i v-if="pattern.exists" :class="['fas', pattern.exists == 2 ? 'fa-check' : 'fa-exclamation-circle']"></i>
+										</b-badge>
+									</span>
+								</div>
 							</b-list-group-item>
 						</b-list-group>
 					</td>

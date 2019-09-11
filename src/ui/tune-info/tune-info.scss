@@ -5,8 +5,17 @@
 
 	text-align: justify;
 
-	.bb-pattern-placeholder .actions {
+	.bb-pattern-placeholder.bb-pattern-placeholder.bb-pattern-placeholder .actions {
 		font-size: 28px;
+		line-height: 28px;
+		top: 0;
+		height: 100%;
+		display: flex;
+		align-items: center;
 		background: transparent !important;
+
+		> *:not(:first-child) {
+			margin-left: 5px;
+		}
 	}
 }

@@ -14,7 +14,6 @@ import { InjectReactive, Prop, Watch } from "vue-property-decorator";
 import { stringToObject } from "../../utils";
 import { patternEquals } from "../../state/pattern";
 import { songContainsPattern } from "../../state/song";
-import events from "../../services/events";
 
 
 @Component({
@@ -47,9 +46,9 @@ export default class ImportDialog extends Vue {
 
 		try {
 			let m;
-			if(pasted.charAt(0) == "{" || (m = pasted.match(/#\/([-_a-zA-Z0-9]+)/))) {
-				const state = normalizeState();
-				this.warnings = extendStateFromCompressed(state, m ? stringToObject(m[1]) : JSON.parse(pasted), null, null, false, false, true);
+			if(pasted.charAt(0) == "{" || (m = pasted.match(/#(\/compose)?\/([-_a-zA-Z0-9]+)/))) {
+				const state = normalizeState({ tunes: { } });
+				this.warnings = extendStateFromCompressed(state, m ? stringToObject(m[2]) : JSON.parse(pasted), null, null, false, false, true);
 				this.obj = state;
 			}
 			else
@@ -60,12 +59,22 @@ export default class ImportDialog extends Vue {
 		}
 	}
 
+	clickSong(idx: number) {
+		Vue.set(this.importSongs, idx, !this.shouldImportSong(idx));
+	}
+
+	clickPattern(tuneName: string, patternName: string) {
+		if(!this.importPatterns[tuneName])
+			Vue.set(this.importPatterns, tuneName, {});
+		Vue.set(this.importPatterns[tuneName], patternName, !this.shouldImportPattern(tuneName, patternName));
+	}
+
 	clickTune(tuneName: string) {
 		if(!this.obj)
 			return;
 
 		if(!this.importPatterns[tuneName])
-			this.importPatterns[tuneName] = { };
+			Vue.set(this.importPatterns, tuneName, { });
 
 		let enable = false;
 		for(const patternName in this.obj.tunes[tuneName].patterns) {
@@ -76,7 +85,7 @@ export default class ImportDialog extends Vue {
 		}
 
 		for(const patternName in this.obj.tunes[tuneName].patterns) {
-			this.importPatterns[tuneName][patternName] = enable;
+			Vue.set(this.importPatterns[tuneName], patternName, enable);
 		}
 	};
 
@@ -140,7 +149,7 @@ export default class ImportDialog extends Vue {
 		else if(imported == Object.keys(this.obj.tunes[tuneName].patterns).length)
 			return "active";
 		else
-			return "list-group-item-info";
+			return "list-group-item-primary";
 	};
 
 	doImport() {
@@ -169,16 +178,22 @@ export default class ImportDialog extends Vue {
 			return [];
 
 		return Object.keys(this.obj.tunes).map((tuneName) => {
+			const orig = this.state.tunes[tuneName];
 			return {
 				tuneName,
-				displayName: this.state.tunes[tuneName].displayName || tuneName,
+				displayName: (orig && orig.displayName) || tuneName,
 				className: this.getTuneClass(tuneName),
-				patterns: Object.keys(this.state.tunes[tuneName].patterns).map((patternName) => ({
-					shouldImport: this.shouldImportPattern(tuneName, patternName),
-					isUsed: this.patternIsUsed(tuneName, patternName),
-					exists: this.patternExists(tuneName, patternName),
-					patternName
-				}))
+				patterns: Object.keys((this.obj as State).tunes[tuneName].patterns).map((patternName) => {
+					const isUsed = this.patternIsUsed(tuneName, patternName);
+					const exists = this.patternExists(tuneName, patternName);
+					return {
+						shouldImport: this.shouldImportPattern(tuneName, patternName),
+						isUsed,
+						exists,
+						patternName,
+						clickable: (!isUsed || exists) && exists != 2
+					};
+				})
 			}
 		});
 	}

@@ -1,12 +1,12 @@
 import $ from "jquery";
 import Navigo from "navigo";
-import config from "./config";
-import events from "./services/events";
-import history from "./services/history";
-import { getPatternFromState } from "./state/state";
+import config from "../config";
+import events from "./events";
+import history from "./history";
+import { getPatternFromState } from "../state/state";
 import Vue from "vue";
 import { BModal, BvModalEvent } from "bootstrap-vue";
-import PatternEditorDialog from "./ui/pattern-editor-dialog/pattern-editor-dialog";
+import PatternEditorDialog from "../ui/pattern-editor-dialog/pattern-editor-dialog";
 
 export function enableRouter(app: Vue) {
 	let lastTune: string | null = null;
@@ -135,6 +135,8 @@ export function enableRouter(app: Vue) {
 	});
 
 	router.resolve();
+	if(!currentState) // Might have already been set, for example when the * route navigated to the default tune
+		currentState = router.lastRouteResolved() as any;
 
 	app.$on("bv::modal::show", (bvEvent: BvModalEvent, modalId: string) => {
 		if(bvEvent.vueTarget instanceof Vue && (bvEvent.vueTarget as Vue).$parent instanceof PatternEditorDialog) {
