@@ -102,6 +102,7 @@ export function extendState(
                     displayName: data.tunes[tuneName].displayName,
                     description: data.tunes[tuneName].description,
                     sheet: data.tunes[tuneName].sheet,
+                    video: data.tunes[tuneName].video,
                     speed: data.tunes[tuneName].speed
                 }));
             }

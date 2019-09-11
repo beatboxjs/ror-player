@@ -45,6 +45,8 @@ type RawTune = { [i in keyof GenericTune<CompressedPattern>]?: GenericTune<Compr
 const rawTunes: {[tuneName: string]: RawTune} = {
 	'General Breaks': {
 		categories: [ "standard", "common", "uncommon", "new", "proposed", "custom", "onesurdo", "easy", "medium", "tricky" ],
+		sheet: sheetUrl + "breaks.pdf",
+		video: "https://tube.rhythms-of-resistance.org/videos/embed/37596e72-e93b-44f1-8770-760be8e5ce87",
 		patterns: {
 			"Karla Break": {
 				ls: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX               ',
@@ -148,6 +150,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	},
 	'Special Breaks': {
 		categories: [ "standard", "common", "onesurdo" ],
+		sheet: sheetUrl + "breaks.pdf",
+		video: "https://tube.rhythms-of-resistance.org/videos/embed/37596e72-e93b-44f1-8770-760be8e5ce87",
 		patterns: {
 			"Call Break Oi": {
 				time: 3,
@@ -326,6 +330,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		categories: [ "standard", "common", "medium" ],
 		sheet: sheetUrl + "angela-davis.pdf",
 		description: require("../assets/tuneDescriptions/angela-davis.md"),
+		video: "https://tube.rhythms-of-resistance.org/videos/embed/3a431ae3-e59b-4d31-b2d6-9abc4db3f242",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2291,6 +2296,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		categories: [ "standard", "uncommon", "tricky" ],
 		sheet: sheetUrl + "xango.pdf",
 		description: require("../assets/tuneDescriptions/xango.md"),
+		video: "https://tube.rhythms-of-resistance.org/videos/embed/ae1fe3a3-dd7e-4670-9415-b47ee60a54b0",
 		patterns: {
 			Tune: {
 				loop: true,

@@ -3,10 +3,13 @@
 
 	<div v-html="tuneDescription"></div>
 
-	<div v-if="tune.sheet">
-		<h3>Notation</h3>
-		<p><em>Click on the <span class="glyphicon glyphicon-pencil"></span> on the breaks below to see the notes.</em></p>
-		<p><a :href="tune.sheet" target="_blank">Tune sheet (PDF)</a></p>
+	<h3>Notation</h3>
+	<p><em>Click on the <span class="glyphicon glyphicon-pencil"></span> on the breaks below to see the notes.</em></p>
+	<p v-if="tune.sheet"><a :href="tune.sheet" target="_blank">Tune sheet (PDF)</a></p>
+
+	<div v-if="tune.video">
+		<h3>Video</h3>
+		<iframe width="560" height="315" sandbox="allow-same-origin allow-scripts" :src="tune.video" frameborder="0" allowfullscreen></iframe>
 	</div>
 
 	<div class="text-right">

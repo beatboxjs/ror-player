@@ -5,11 +5,12 @@ import Vue from "vue";
 
 export type GenericTune<PatternType> = {
 	patterns: { [name: string]: PatternType },
-    categories: Array<Category>,
-    displayName?: string,
-    sheet?: string,
-    description?: string,
-    speed?: number
+	categories: Array<Category>,
+	displayName?: string,
+	sheet?: string,
+	video?: string,
+	description?: string,
+	speed?: number
 };
 
 export type Tune = GenericTune<Pattern>;
@@ -24,6 +25,7 @@ export function normalizeTune(data?: TuneOptional): Tune {
 		categories: data && data.categories || [ ],
 		displayName: data && data.displayName,
 		sheet: data && data.sheet,
+		video: data && data.video,
 		description: data && data.description,
 		speed: data && data.speed
 	});
