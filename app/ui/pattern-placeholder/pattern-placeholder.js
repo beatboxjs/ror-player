@@ -86,17 +86,21 @@ app.controller("bbPatternPlaceholderController", function($scope, bbConfig, bbPa
 		if(!patternObj)
 			return;
 
-		var playbackSettings = $scope.getPlaybackSettings() || new bbPlaybackSettings(Object.assign({}, $scope.state.playbackSettings, {
-			speed: patternObj.speed,
-			loop: patternObj.loop
-		}));
+
+		var playbackSettings = new bbPlaybackSettings({
+			...($scope.getPlaybackSettings() || {
+				...$scope.state.playbackSettings,
+				speed: patternObj.speed
+			}),
+			...(patternObj.loop ? { loop: true } : { })
+		});
 
 		var pattern = bbPlayer.patternToBeatbox(patternObj, playbackSettings);
 
 		$scope.player.setPattern(playbackSettings.length ? pattern.slice(0, playbackSettings.length*bbConfig.playTime + pattern.upbeat) : pattern);
 		$scope.player.setUpbeat(pattern.upbeat);
 		$scope.player.setBeatLength(60000/playbackSettings.speed/bbConfig.playTime);
-		$scope.player.setRepeat(playbackSettings.loop || patternObj.loop);
+		$scope.player.setRepeat(playbackSettings.loop);
 	};
 
 	$scope.playPattern = function() {
