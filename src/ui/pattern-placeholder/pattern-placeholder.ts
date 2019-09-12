@@ -125,14 +125,16 @@ export default class PatternPlaceholder extends Vue {
 		if(!patternObj)
 			return;
 
-		const playbackSettings = this.playbackSettings;
+		let playbackSettings = this.playbackSettings;
+		if(patternObj.loop && !playbackSettings.loop)
+			playbackSettings = { ...playbackSettings, loop: true };
 
 		const pattern = patternToBeatbox(patternObj, playbackSettings);
 
 		this.player.setPattern(playbackSettings.length ? pattern.slice(0, playbackSettings.length*config.playTime + pattern.upbeat) : pattern);
 		this.player.setUpbeat(pattern.upbeat);
 		this.player.setBeatLength(60000/playbackSettings.speed/config.playTime);
-		this.player.setRepeat(playbackSettings.loop || patternObj.loop);
+		this.player.setRepeat(playbackSettings.loop);
 	};
 
 	playPattern() {
