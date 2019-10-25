@@ -12,7 +12,7 @@
 		<iframe width="560" height="315" sandbox="allow-same-origin allow-scripts" :src="tune.video" frameborder="0" allowfullscreen></iframe>
 	</div>
 
-	<div class="text-right">
+	<div class="float-right">
 		<PlaybackSettings :playback-settings="playbackSettings" :default-speed="tune.speed" class="text-right" />
 	</div>
 

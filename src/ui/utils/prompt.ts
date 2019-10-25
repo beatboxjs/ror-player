@@ -18,7 +18,7 @@ export async function openPromptDialog(instance: Vue, title: string, defaultValu
 		}
 	});
 
-	const answer = await instance.$bvModal.msgBoxConfirm(prompt, { title });
+	const answer = await instance.$bvModal.msgBoxConfirm([ prompt ], { title });
 
 	if(answer && (!validate || validate(result || "") == null)) {
 		await sleep(); // Let modal close
