@@ -7,12 +7,11 @@ import $ from "jquery";
 import config from "../../config";
 import { InjectReactive, Prop, Watch } from "vue-property-decorator";
 import { State } from "../../state/state";
-import { Tune } from "../../state/tune";
 import { PlaybackSettings } from "../../state/playbackSettings";
 import { clone } from "../../utils";
 import PlaybackSettingsComponent from "../playback-settings/playback-settings";
-import PatternPlaceholder from "../pattern-placeholder/pattern-placeholder";
-import { registerMultipleHandlers } from "../../services/events";
+import PatternPlaceholder, { PatternPlaceholderItem } from "../pattern-placeholder/pattern-placeholder";
+import ExampleSong from "../example-song/example-song";
 
 export function getTuneDescription(tuneName: string): string | null {
 	if(!defaultTunes[tuneName])
@@ -26,7 +25,7 @@ export function getTuneDescription(tuneName: string): string | null {
 
 @Component({
 	template,
-	components: { PlaybackSettings: PlaybackSettingsComponent, PatternPlaceholder }
+	components: { PlaybackSettings: PlaybackSettingsComponent, PatternPlaceholder, ExampleSong, PatternPlaceholderItem }
 })
 export default class TuneInfo extends Vue {
 

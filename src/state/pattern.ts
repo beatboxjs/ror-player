@@ -253,5 +253,19 @@ export function updateStroke(pattern: Pattern, instrument: Instrument, i: number
 }
 
 export function updatePattern(pattern: Pattern, update: PatternOptional) {
+	const shift = (update.upbeat || 0) - pattern.upbeat;
+
 	vueSetMultiple(pattern, update);
+
+	if(shift != 0) {
+		const unshift = [];
+		for(let i = 0; i < shift; i++)
+			unshift.push(' ');
+		const splice = Math.max(0, -shift);
+
+		for(const instr of config.instrumentKeys) {
+			pattern[instr].unshift(...unshift);
+			pattern[instr].splice(0, splice);
+		}
+	}
 }

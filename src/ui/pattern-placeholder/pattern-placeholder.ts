@@ -22,6 +22,9 @@ import events, { registerMultipleHandlers } from "../../services/events";
 import { DragType, PatternDragData, setDragData } from "../../services/draggable";
 import PatternEditorDialog from "../pattern-editor-dialog/pattern-editor-dialog";
 import { id } from "../../utils";
+import FileSaver from "file-saver";
+import Progress from "../utils/progress";
+import "beatbox.js-export";
 
 @Component({
 	template: patternPlaceholderItemTemplate
@@ -32,7 +35,7 @@ export class PatternPlaceholderItem extends Vue {
 
 @Component({
 	template,
-	components: { PatternEditorDialog }
+	components: { PatternEditorDialog, Progress }
 })
 export default class PatternPlaceholder extends Vue {
 	@InjectReactive() readonly state!: State;
@@ -49,6 +52,8 @@ export default class PatternPlaceholder extends Vue {
 	fallbackPlaybackSettings: PlaybackSettings = null as any;
 	_unregisterHandlers!: () => void;
 	dragging: boolean = false;
+	loading: number | null = null;
+	exportCanceled: boolean = false;
 
 	created() {
 		this._unregisterHandlers = registerMultipleHandlers({
@@ -178,5 +183,35 @@ export default class PatternPlaceholder extends Vue {
 		setTimeout(() => {
 			this.dragging = false;
 		}, 0);
+	}
+
+	async downloadMP3() {
+		if(this.player == null)
+			this.createPlayer();
+
+		const player = this.player as Beatbox;
+
+		try {
+			this.loading = 0;
+			this.exportCanceled = false;
+			const blob = await player.exportMP3((perc) => {
+				if(this.exportCanceled) {
+					this.loading = null;
+					return new Promise(() => {});
+				} else
+					this.loading = Math.round(perc*100);
+			});
+
+			this.loading = null;
+			FileSaver.saveAs(blob, `${this.tuneName} - ${this.patternName}.mp3`);
+		} catch(err) {
+			this.loading = null;
+			console.error("Error exporting MP3", err.stack || err);
+			this.$bvModal.msgBoxOk("Error exporting MP3: " + err.message);
+		}
+	}
+
+	cancelExport() {
+		this.exportCanceled = true;
 	}
 }

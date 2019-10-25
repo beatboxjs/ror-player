@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackInlineSourcePlugin = require("html-webpack-inline-source-plugin");
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const duplicatePlugin = require("./webpack-duplicates");
 
@@ -63,14 +64,12 @@ module.exports = {
 				]
 			},
 
-			{ test: /\.(png|jpe?g|gif|ttf|svg|woff2?|eot)$/, loader: "url-loader" },
+			{ test: /\.(png|jpe?g|gif|svg)$/, loader: "url-loader" },
 			{ test: /\.(html|vue)$/, loader: "html-loader?attrs[]=img:src&attrs[]=link:href" },
 			{ test: /\.coffee$/, loader: "coffee-loader" },
 			{ test: /\.md$/, use: [ "html-loader?attrs[]=img:src&attrs[]=link:href", "markdown-loader" ]},
 
-			...Object.keys(depLoaders).map(key => ({ test: require.resolve(key), [Array.isArray(depLoaders[key]) ? "use" : "loader"]: depLoaders[key] })),
-
-			/*{ test: /\.(woff2?|eot|svg)$/, loader: "null-loader" }*/
+			...Object.keys(depLoaders).map(key => ({ test: require.resolve(key), [Array.isArray(depLoaders[key]) ? "use" : "loader"]: depLoaders[key] }))
 		],
 	},
 	plugins: [
@@ -91,7 +90,8 @@ module.exports = {
 		]),
 		new webpack.EnvironmentPlugin({
 			DISABLE_SW: dev
-		})
+		}),
+		//new BundleAnalyzerPlugin()
 	],
 	mode: dev ? "development" : "production",
 	devtool: dev ? "cheap-module-eval-source-map" : "source-map"

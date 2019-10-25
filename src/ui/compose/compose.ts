@@ -5,7 +5,7 @@ import template from "./compose.vue";
 import { InjectReactive, Prop, ProvideReactive, Ref } from "vue-property-decorator";
 import { State } from "../../state/state";
 import config from "../../config";
-import { appendSongPart, getEffectiveSongLength, SongPart } from "../../state/song";
+import { allInstruments, appendSongPart, getEffectiveSongLength, SongPart } from "../../state/song";
 import $ from "jquery";
 import SongPlayer from "../song-player/song-player";
 import PatternList from "../pattern-list/pattern-list";
@@ -48,12 +48,7 @@ export default class Compose extends Vue {
 		if(!song)
 			return;
 
-		const songPart: SongPart = { } as SongPart;
-		for(const instr of config.instrumentKeys) {
-			songPart[instr] = [ tuneName, patternName ];
-		}
-
-		appendSongPart(song, songPart, this.state);
+		appendSongPart(song, allInstruments([ tuneName, patternName]), this.state);
 
 		this.$nextTick(() => {
 			scrollToElement($(".bb-song-player .song-container")[0], false, true);

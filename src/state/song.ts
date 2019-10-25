@@ -47,7 +47,7 @@ export function normalizeSong(data?: SongOptional): Song {
 	});
 }
 
-export function getSongLength(song: Song): number {
+export function getSongLength(song: SongParts): number {
 	const maxIndex = getMaxIndex(song);
 	return maxIndex == null ? 0 : maxIndex+1;
 }
@@ -72,7 +72,7 @@ export function songContainsPattern(song: Song, tuneName: string, patternName: s
 	return false;
 }
 
-export function getEffectiveSongLength(song: Song, state: State): number {
+export function getEffectiveSongLength(song: SongParts, state: State): number {
 	const maxIndex = getSongLength(song) - 1;
 	if(maxIndex == -1)
 		return 0;
@@ -262,7 +262,7 @@ export function appendSongPart(song: Song, songPart: SongPart, state: State) {
 export function deleteSongPart(song: Song, idx: number, instr: Instrument) {
 	Vue.delete(song[idx], instr);
 	if(Object.keys(song[idx]).length == 0)
-		Vue.delete(song, "idx");
+		Vue.delete(song, idx);
 }
 
 export function setSongPart(song: Song, idx: number, instr: Instrument, pattern: PatternReference) {
@@ -273,4 +273,12 @@ export function setSongPart(song: Song, idx: number, instr: Instrument, pattern:
 
 export function updateSong(song: Song, update: SongOptional) {
 	vueSetMultiple(song, update);
+}
+
+export function allInstruments(patternReference: PatternReference): SongPart {
+	const result = { } as SongPart;
+	for(const instr of config.instrumentKeys) {
+		result[instr] = patternReference;
+	}
+	return result;
 }

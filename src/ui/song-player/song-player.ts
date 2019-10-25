@@ -36,8 +36,10 @@ import { Pattern } from "../../state/pattern";
 import ImportDialog from "../import-dialog/import-dialog";
 import ShareDialog from "../share-dialog/share-dialog";
 import $ from "jquery";
+import Progress from "../utils/progress";
 
 type DragOver = "trash" | { instr: Instrument | null, idx: number };
+
 
 @Component({
 	template,
@@ -46,7 +48,8 @@ type DragOver = "trash" | { instr: Instrument | null, idx: number };
 		PatternPlaceholder,
 		PatternPlaceholderItem,
 		ShareDialog,
-		ImportDialog
+		ImportDialog,
+		Progress
 	}
 })
 export default class SongPlayer extends Vue {
@@ -61,6 +64,7 @@ export default class SongPlayer extends Vue {
 	dragOver: DragOver | null = null;
 	dragOverCount: number = 0;
 	loading: number | null = null;
+	exportCanceled: boolean = false;
 
 	_unregisterHandlers!: () => void;
 
@@ -131,7 +135,7 @@ export default class SongPlayer extends Vue {
 	@Watch("state.playbackSettings", { deep: true })
 	@Watch("state.tunes", { deep: true })
 	updatePattern() {
-		let songBeatbox = songToBeatbox(this.state);
+		let songBeatbox = songToBeatbox(this.state.songs[this.state.songIdx], this.state, this.state.playbackSettings);
 		this.player.setPattern(songBeatbox);
 		this.player.setUpbeat(songBeatbox.upbeat);
 		this.player.setBeatLength(60000/this.state.playbackSettings.speed/config.playTime);
@@ -422,10 +426,13 @@ export default class SongPlayer extends Vue {
 	async downloadMP3() {
 		try {
 			this.loading = 0;
+			this.exportCanceled = false;
 			const blob = await this.player.exportMP3((perc) => {
-				if(Math.floor(perc*20) != Math.floor((this.loading as number)/5)) {
-					this.loading = perc*100;
-				}
+				if(this.exportCanceled) {
+					this.loading = null;
+					return new Promise(() => {});
+				} else
+					this.loading = Math.round(perc*100);
 			});
 
 			this.loading = null;
@@ -440,10 +447,13 @@ export default class SongPlayer extends Vue {
 	async downloadWAV() {
 		try {
 			this.loading = 0;
+			this.exportCanceled = false;
 			const blob = await this.player.exportWAV((perc) => {
-				if(Math.floor(perc*20) != Math.floor((this.loading as number)/5)) {
-					this.loading = perc*100;
-				}
+				if(this.exportCanceled) {
+					this.loading = null;
+					return new Promise(() => {});
+				} else
+					this.loading = Math.round(perc*100);
 			});
 
 			this.loading = null;
@@ -453,6 +463,10 @@ export default class SongPlayer extends Vue {
 			console.error("Error exporting WAV", err.stack || err);
 			this.$bvModal.msgBoxOk("Error exporting WAV: " + err.message);
 		}
+	}
+
+	cancelExport() {
+		this.exportCanceled = true;
 	}
 
 	getSongName(songIdx: number = this.state.songIdx) {

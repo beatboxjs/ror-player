@@ -103,7 +103,8 @@ export function extendState(
                     description: data.tunes[tuneName].description,
                     sheet: data.tunes[tuneName].sheet,
                     video: data.tunes[tuneName].video,
-                    speed: data.tunes[tuneName].speed
+                    speed: data.tunes[tuneName].speed,
+                    exampleSong: data.tunes[tuneName].exampleSong
                 }));
             }
 
@@ -338,9 +339,12 @@ export function copyPattern(state: State, fromTuneAndName: PatternReference, toT
     createPatternInTune(state.tunes[toTuneAndName[0]], toTuneAndName[1], getPatternFromState(state, fromTuneAndName) || undefined);
 }
 
-export function getSongName(state: State, songIdx?: number): string {
+export function getSongName(state: State, songIdx?: number): string | null {
     if(songIdx == null)
         songIdx = state.songIdx;
+
+    if(!state.songs[songIdx])
+        return null;
 
     if(state.songs[songIdx].name && state.songs[songIdx].name.trim())
         return state.songs[songIdx].name;

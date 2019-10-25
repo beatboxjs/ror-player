@@ -15,7 +15,11 @@
 		background: transparent !important;
 
 		> *:not(:first-child) {
-			margin-left: 5px;
+			margin-left: 7px;
 		}
+	}
+
+	.bb-example-song {
+		margin-bottom: 1em;
 	}
 }

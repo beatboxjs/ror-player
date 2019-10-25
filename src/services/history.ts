@@ -1,4 +1,11 @@
-import { compressState, extendState, extendStateFromCompressed, normalizeState, State } from "../state/state";
+import {
+	compressState,
+	createSong,
+	extendState,
+	extendStateFromCompressed,
+	normalizeState,
+	State
+} from "../state/state";
 import { clone, objectToString, stringToObject } from "../utils";
 import { isEqual } from "lodash";
 import events, { registerMultipleHandlers } from "./events";
@@ -80,6 +87,9 @@ class History {
 		try {
 			const state = normalizeState();
 			const errors = extendStateFromCompressed(state, encodedString ? stringToObject(encodedString) : { }, null, null, true, true, true);
+			if(state.songs.length == 0) {
+				createSong(state);
+			}
 			this.state = state;
 			events.$emit("new-state", state);
 			return errors;

@@ -1,7 +1,7 @@
 <div>
 	<div class="bb-pattern-editor-toolbar">
-		<b-button :variant="playerRef && playerRef.playing ? 'info' : 'success'" @click="playPause()"><i :class="`fas fa-${playerRef && playerRef.playing ? 'pause' : 'play'}`"></i> {{playerRef && playerRef.playing ? 'Pause' : 'Play'}}</b-button>
-		<b-button variant="danger" @click="stop()"><i class="fas fa-stop"></i> Stop</b-button>
+		<b-button :variant="playerRef && playerRef.playing ? 'info' : 'success'" @click="playPause()"><fa :icon="playerRef && playerRef.playing ? 'pause' : 'play'"></fa> {{playerRef && playerRef.playing ? 'Pause' : 'Play'}}</b-button>
+		<b-button variant="danger" @click="stop()"><fa icon="stop"/> Stop</b-button>
 		<PlaybackSettings :playback-settings="playbackSettings" :default-speed="pattern.speed" />
 
 		<div class="divider"></div>
@@ -26,14 +26,14 @@
 
 		<slot/>
 
-		<b-button variant="warning" v-if="hasLocalChanges" @click="reset()"><i class="fas fa-eraser"></i> Restore original</b-button>
+		<b-button variant="warning" v-if="hasLocalChanges" @click="reset()"><fa icon="eraser"/> Restore original</b-button>
 	</div>
 	<div class="bb-pattern-editor-container">
 		<table class="pattern-editor" :class="'time-'+pattern.time">
 			<thead>
 				<tr>
 					<td colspan="2" class="instrument-operations">
-						<a href="javascript:" @click="muteAll()" :class="allMuted ? 'active' : 'inactive'" :title="`${allMuted ? 'Unmute' : 'Mute'} all instruments`" v-b-tooltip.hover><i class="fas fa-volume-mute"></i></a>
+						<a href="javascript:" @click="muteAll()" :class="allMuted ? 'active' : 'inactive'" :title="`${allMuted ? 'Unmute' : 'Mute'} all instruments`" v-b-tooltip.hover><fa icon="volume-mute"/></a>
 					</td>
 					<td v-for="i in upbeatBeats" :colspan="i == 1 ? (pattern.upbeat-1) % pattern.time + 1 : pattern.time" class="beat" :class="getBeatClass(i - upbeatBeats)" @click="setPosition($event)"><span>{{i - upbeatBeats}}</span></td>
 					<td v-for="i in pattern.length" :colspan="pattern.time" class="beat" :class="getBeatClass(i-1)" @click="setPosition($event)"><span>{{i}}</span></td>
@@ -43,9 +43,9 @@
 				<tr v-for="instrumentKey in config.instrumentKeys">
 					<th>{{config.instruments[instrumentKey].name}}</th>
 					<td class="instrument-operations">
-						<a v-if="!isHiddenSurdoHeadphone(instrumentKey)" href="javascript:" @click="headphones([ instrumentKey ], $event.ctrlKey || $event.shiftKey)" :class="playbackSettings.headphones.includes(instrumentKey) ? 'active' : 'inactive'"><i class="fas fa-headphones"></i></a>
-						<a v-if="isHiddenSurdoHeadphone(instrumentKey) && instrumentKey == 'ms'" href="javascript:" @click="headphones([ 'ls', 'ms', 'hs' ], $event.ctrlKey || $event.shiftKey)" class="inactive"><i class="fas fa-headphones"></i></a>
-						<a href="javascript:" @click="mute(instrumentKey)" :class="playbackSettings.mute[instrumentKey] ? 'active' : 'inactive'"><i class="fas fa-volume-mute"></i></a>
+						<a v-if="!isHiddenSurdoHeadphone(instrumentKey)" href="javascript:" @click="headphones([ instrumentKey ], $event.ctrlKey || $event.shiftKey)" :class="playbackSettings.headphones.includes(instrumentKey) ? 'active' : 'inactive'"><fa icon="headphones"/></a>
+						<a v-if="isHiddenSurdoHeadphone(instrumentKey) && instrumentKey == 'ms'" href="javascript:" @click="headphones([ 'ls', 'ms', 'hs' ], $event.ctrlKey || $event.shiftKey)" class="inactive"><fa icon="headphones"/></a>
+						<a href="javascript:" @click="mute(instrumentKey)" :class="playbackSettings.mute[instrumentKey] ? 'active' : 'inactive'"><fa icon="volume-mute"/></a>
 					</td>
 					<td v-for="i in pattern.length*pattern.time + pattern.upbeat" class="stroke" :class="getStrokeClass(i-1, instrumentKey)" :title="config.strokesDescription[pattern[instrumentKey][i-1]]" v-b-tooltip.hover>
 						<span v-if="readonly" class="stroke-inner" :title="config.strokesDescription[pattern[instrumentKey][i-1]]" v-b-tooltip>{{config.strokes[pattern[instrumentKey][i-1]] || ' '}}</span>

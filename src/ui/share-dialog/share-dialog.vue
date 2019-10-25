@@ -52,7 +52,7 @@
 								v-b-tooltip.hover.bottom
 
 							>
-								{{state.tunes[tuneName].patterns[patternName].displayName || patternName}} <i class="fas fa-star" v-if="linkPattern && linkPattern[0] == tuneName && linkPattern[1] == patternName" />
+								{{state.tunes[tuneName].patterns[patternName].displayName || patternName}} <fa icon="star" v-if="linkPattern && linkPattern[0] == tuneName && linkPattern[1] == patternName" />
 							</b-badge>
 						</b-list-group-item>
 					</b-list-group>

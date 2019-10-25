@@ -43,7 +43,7 @@
 											:variant="pattern.shouldImport ? 'primary' : 'light'"
 											@click="pattern.clickable && clickPattern(tune.tuneName, pattern.patternName)"
 										>
-											{{pattern.patternName}} <i v-if="pattern.exists" :class="['fas', pattern.exists == 2 ? 'fa-check' : 'fa-exclamation-circle']"></i>
+											{{pattern.patternName}} <fa v-if="pattern.exists" :icon="pattern.exists == 2 ? 'check' : 'exclamation-circle'"></fa>
 										</b-badge>
 									</span>
 								</div>

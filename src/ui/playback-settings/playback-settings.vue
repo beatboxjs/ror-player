@@ -1,5 +1,5 @@
 <div class="d-inline-block">
-	<b-button :id="id" class="bb-playback-settings-button" variant="secondary"><i class="fas fa-sliders-h"></i> <i class="fas fa-caret-down"></i></b-button>
+	<b-button :id="id" class="bb-playback-settings-button" variant="secondary"><fa icon="sliders-h"/> <fa icon="caret-down"/></b-button>
 
 	<b-tooltip :target="id" :placement="tooltipPlacement" triggers="hover">
 		Playback settings
@@ -42,10 +42,10 @@
 				</tr>
 				<tr class="mute">
 					<td class="master">
-						<a href="javascript:" @click="muteAll()" :class="allMuted ? 'active' : 'inactive'"><i class="fas fa-volume-mute"></i></a>
+						<a href="javascript:" @click="muteAll()" :class="allMuted ? 'active' : 'inactive'"><fa icon="volume-mute"/></a>
 					</td>
 					<td v-for="instrumentKey in config.instrumentKeys">
-						<a href="javascript:" @click="mute(instrumentKey)" :class="playbackSettings.mute[instrumentKey] ? 'active' : 'inactive'"><i class="fas fa-volume-mute"></i></a>
+						<a href="javascript:" @click="mute(instrumentKey)" :class="playbackSettings.mute[instrumentKey] ? 'active' : 'inactive'"><fa icon="volume-mute"/></a>
 					</td>
 				</tr>
 				<tr class="instrument-names">

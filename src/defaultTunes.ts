@@ -37,9 +37,7 @@ const sheetUrl = "https://github.com/rhythms-of-resistance/sheetbook/blob/master
 
 type RawTune = { [i in keyof GenericTune<CompressedPattern>]?: GenericTune<CompressedPattern>[i] } & {
 	time?: number,
-	defaultSong?: {
-		[i: number]: PatternReference
-	}
+	exampleSong?: Array<string>
 };
 
 const rawTunes: {[tuneName: string]: RawTune} = {
@@ -698,20 +696,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				time: 3
 			}
 		},
-		defaultSong: {
-			0: [ "Coupe-Decale", "Intro" ],
-			16: [ "Coupe-Decale", "Tune" ],
-			20: [ "Coupe-Decale", "Break 1" ],
-			21: [ "Coupe-Decale", "Tune" ],
-			25: [ "Coupe-Decale", "Break 2" ],
-			29: [ "Coupe-Decale", "Intro (6/8)" ],
-			33: [ "Coupe-Decale", "Tune 2 (6/8)" ],
-			35: [ "Coupe-Decale", "Break Crest (6/8)" ],
-			41: [ "Coupe-Decale", "Tune 2 (6/8)" ],
-			43: [ "Coupe-Decale", "Break 2" ],
-			47: [ "Coupe-Decale", "Tune" ],
-			51: [ "Coupe-Decale", "Break 1" ]
-		}
+		exampleSong: [ "Intro", "Tune", "Break 1", "Tune", "Break 2", "Intro (6/8)", "Tune (6/8)", "Crest Break (6/8)", "Tune (6/8)", "Break 2", "Tune", "Break 1" ]
 	},
 	'Crazy Monkey': {
 		categories: [ "standard", "uncommon", "tricky" ],
@@ -2348,7 +2333,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@re',
 				sh: '@re'
 			}
-		}
+		},
+		exampleSong: [ "Intro", "Intro", "Intro+Surdos", "Intro+Surdos", "Tune", "Tune", "Boum Shakala Break", "Tune", "Tune", "Break 2", "Tune", "Tune" ]
 	},
 	'Zurav Love / Truant': {
 		displayName: "Żurav Love",
@@ -2433,6 +2419,10 @@ for(const i in rawTunes) {
 	}
 
 	defaultTunes[i] = normalizeTune(newTune);
+
+	const unknown = (defaultTunes[i].exampleSong || []).filter((patternName) => !defaultTunes[i].patterns[patternName]);
+	if(unknown.length > 0)
+		console.error(`Unknown breaks in example song for ${i}: ${unknown.join(", ")}`);
 }
 
 Object.defineProperty(defaultTunes, "getPattern", {

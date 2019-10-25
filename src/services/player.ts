@@ -5,11 +5,12 @@ import config, { Instrument } from "../config";
 import { Headphones, Mute, normalizePlaybackSettings, PlaybackSettings, Whistle } from "../state/playbackSettings";
 import { normalizePattern, Pattern } from "../state/pattern";
 import { getPatternFromState, State } from "../state/state";
-import { getEffectiveSongLength } from "../state/song";
+import { getEffectiveSongLength, Song, SongParts } from "../state/song";
 
 export interface BeatboxReference {
 	id: number,
-	playing: boolean
+	playing: boolean,
+	customPosition: boolean
 }
 
 export interface RawPatternWithUpbeat extends RawPattern {
@@ -27,18 +28,31 @@ const players: {
 	[id: number]: Beatbox;
 } = { };
 
+class CustomBeatbox extends Beatbox {
+	setPosition(position: number) {
+		super.setPosition(position);
+		this.emit("setPosition");
+	}
+}
+
 export function createBeatbox(repeat: boolean): BeatboxReference {
 	const reference: BeatboxReference = {
 		id: currentNumber++,
-		playing: false
+		playing: false,
+		customPosition: false
 	};
 
-	const player = new Beatbox([ ], 1, repeat);
+	const player = new CustomBeatbox([ ], 1, repeat);
 	player.on("play", () => {
 		reference.playing = true;
+		reference.customPosition = true;
 	});
 	player.on("stop", () => {
 		reference.playing = false;
+		reference.customPosition = player._position != 0;
+	});
+	player.on("setPosition", () => {
+		reference.customPosition = reference.playing || player._position != 0
 	});
 	players[reference.id] = player;
 
@@ -95,8 +109,7 @@ export function patternToBeatbox(pattern: Pattern, playbackSettings: PlaybackSet
 	});
 }
 
-export function songToBeatbox(state: State): RawPatternWithUpbeat {
-	const song = state.songs[state.songIdx];
+export function songToBeatbox(song: SongParts, state: State, playbackSettings: PlaybackSettings): RawPatternWithUpbeat {
 	const length = getEffectiveSongLength(song, state);
 	let maxUpbeat = config.playTime*4;
 	let ret: RawPattern = new Array(maxUpbeat + length*config.playTime*4);
@@ -105,8 +118,8 @@ export function songToBeatbox(state: State): RawPatternWithUpbeat {
 	function insertPattern(idx: number, pattern: Pattern, instrumentKey: Instrument, patternLength: number, whistle: Whistle) {
 		let patternBeatbox = patternToBeatbox(pattern, normalizePlaybackSettings({
 			headphones: [ instrumentKey ],
-			volume: state.playbackSettings.volume,
-			volumes: state.playbackSettings.volumes,
+			volume: playbackSettings.volume,
+			volumes: playbackSettings.volumes,
 			whistle
 		}));
 
@@ -128,7 +141,7 @@ export function songToBeatbox(state: State): RawPatternWithUpbeat {
 
 	for(let i=0; i<length; i++) {
 		for(const inst of config.instrumentKeys) {
-			if(isEnabled(inst, state.playbackSettings.headphones, state.playbackSettings.mute) && song[i] && song[i][inst]) {
+			if(isEnabled(inst, playbackSettings.headphones, playbackSettings.mute) && song[i] && song[i][inst]) {
 				const patternReference = song[i][inst];
 				const pattern = patternReference && getPatternFromState(state, patternReference);
 				if(pattern) {
@@ -141,13 +154,13 @@ export function songToBeatbox(state: State): RawPatternWithUpbeat {
 			}
 		}
 
-		if(state.playbackSettings.whistle) {
+		if(playbackSettings.whistle) {
 			insertPattern(i, normalizePattern({
 				length: 4,
 				time: 1,
 				upbeat: 0,
 				ot: [ ' ', ' ', ' ', ' ' ]
-			}), "ot", 1, state.playbackSettings.whistle);
+			}), "ot", 1, playbackSettings.whistle);
 		}
 	}
 

@@ -17,6 +17,12 @@
 	</div>
 
 	<h3 v-if="tune.description || tune.sheet">Sounds</h3>
+	<ExampleSong
+		v-if="tune.exampleSong"
+		:tune-name="tuneName"
+		:song="tune.exampleSong"
+		:settings="playbackSettings"
+	/>
 	<PatternPlaceholder
 		:tune-name="tuneName"
 		:pattern-name="patternName"
@@ -24,5 +30,8 @@
 		v-for="(pattern, patternName) in tune.patterns"
 		:key="patternName"
 		:settings="playbackSettings"
-	/>
+		v-slot="slotProps"
+	>
+		<PatternPlaceholderItem><a href="javascript:" title="Download as MP3" v-b-tooltip.hover @click="slotProps.downloadMp3()"><fa icon="download"/></a></PatternPlaceholderItem>
+	</PatternPlaceholder>
 </div>

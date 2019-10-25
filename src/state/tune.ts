@@ -10,7 +10,8 @@ export type GenericTune<PatternType> = {
 	sheet?: string,
 	video?: string,
 	description?: string,
-	speed?: number
+	speed?: number,
+	exampleSong?: Array<string>
 };
 
 export type Tune = GenericTune<Pattern>;
@@ -27,7 +28,8 @@ export function normalizeTune(data?: TuneOptional): Tune {
 		sheet: data && data.sheet,
 		video: data && data.video,
 		description: data && data.description,
-		speed: data && data.speed
+		speed: data && data.speed,
+		exampleSong: data && data.exampleSong
 	});
 
 	if (data)
