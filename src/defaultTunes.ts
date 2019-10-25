@@ -221,17 +221,6 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 					130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1
 				}
 			},
-			'Tout le monde': {
-				ls: 'X     X X     X X  XX X X   X   ',
-				ms: '@ls',
-				hs: '@ls',
-				re: '@ls',
-				sn: '@ls',
-				ta: '@ls',
-				ag: '@ls',
-				sh: '@ls',
-				ot: 'b     c d     e g  qj k m   n   '
-			},
 			'Nellie the Elephant Break': {
 				ls: '            X X             X X             X X XX XX XX XX X X XX XX XX XX X X XX XX XX XX X X ' + repeat(2, '                ') + repeat(3, 'X  X  X         ') + 'X           XXX ',
 				ms: '@ls',
@@ -252,6 +241,74 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 			},
 			'Punky Monkey Break': {
 				ot: 'DDEEDDEEA A A   '
+			}
+		}
+	},
+	"Shouting Breaks": {
+		categories: [ "standard", "common", "onesurdo" ],
+		sheet: sheetUrl + "breaks.pdf",
+		video: "https://tube.rhythms-of-resistance.org/videos/embed/37596e72-e93b-44f1-8770-760be8e5ce87",
+		patterns: {
+			"Democracy Break": {
+				ls: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                X X X XX XX X X                 X X X XX XX X X                                                 X  X  X   X X   ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: '@ls',
+				ot: '                                                * , - ?: ;< = >                 * , - ?: ;< = >                 * , - ?: ;< = > * , - ?: ;< = > * , - ?: ;< = >                 ',
+				volumeHack: { 0: .1, 16: .4, 32: .7, 48: 1, 112: .4, 128: .7, 144: 1 }
+			},
+			'Tout le monde': {
+				ls: 'X     X X     X X  XX X X   X   ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: '@ls',
+				sh: '@ls',
+				ot: 'b     c d     e g  qj k m   n   '
+			},
+			'Dance Break': {
+				time: 2,
+				ot: 'TUVWY Z '
+			},
+			'Wir sind hier': {
+				time: 2,
+				ls: "     XX      XX              XX ",
+				ms: "@ls",
+				hs: "@ls",
+				re: "@ls",
+				sn: "@ls",
+				ta: "@ls",
+				ag: "@ls",
+				sh: "@ls",
+				ot: "K [\\    K [^    _ ` { | }~ À    "
+			},
+			'Keep it in the ground': {
+				ls: "                          X X   ",
+				ms: "@ls",
+				hs: "@ls",
+				re: "@ls",
+				sn: "@ls",
+				ta: "@ls",
+				ag: "@ls",
+				sh: "@ls",
+				ot: "Á   Â   Ã ÄÅ ÆÇ Á Â Ã ÄÅ        "
+			},
+			'Keine Profite mit der Miete': {
+				time: 4,
+				ls: "                X XXX X X X X X ",
+				ms: "@ls",
+				hs: "@ls",
+				re: "@ls",
+				sn: "@ls",
+				ta: "@ls",
+				ag: "@ls",
+				sh: "@ls",
+				ot: "È ÉÊË Ì Í Î Ï Ì                 "
 			}
 		}
 	},
@@ -322,7 +379,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@ls',
 				sh: '@ls'
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Break 1", "Tune", "Tune", "Bra Break", "Tune", "Tune", "Tamborim Stroke"]
 	},
 	'Angela Davis': {
 		categories: [ "standard", "common", "medium" ],
@@ -372,7 +430,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@ls',
 				sh: '@ls'
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune", "Break 3", "Break 3", "Tune", "Tune", "Tune", "Tune"]
 	},
 	'Angry Dwarfs': {
 		categories: [ "uncommon" ],
@@ -420,7 +479,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@hs',
 				sh: '@hs'
 			}
-		}
+		},
+		exampleSong: [ "Intro", "Tune", "Tune", "Tune", "Tune", "No-Cent-For-Axel-Break", "Tune", "Tune", "Tune", "Tune", "Tension Break", "Tune", "Tune", "Tune", "Tune" ]
 	},
 	'Bhangra': {
 		categories: [ "standard", "common", "onesurdo", "medium" ],
@@ -547,7 +607,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@ls',
 				sh: '@ls'
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Break 1", "Tune", "Break 2", "Tune", "Break 3", "Tune", "Bra Break", "Tune" ]
 	},
 	'Cochabamba' : {
 		categories: [ "standard", "uncommon", "tricky" ],
@@ -767,7 +828,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '@re'
 			},
 			"Monkey Break": {
-				ot: 'D  D  D E  E  E '
+				ot: '(  (  ( )  )  ) '
 			}
 		}
 	},
@@ -849,6 +910,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '................................................................'
 			},
 			'Break 1': {
+				displayName: 'Dance Break',
 				time: 2,
 				ot: 'TUVWY Z '
 			},
@@ -2049,7 +2111,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ta: '@ls',
 				ag: '@ls',
 				sh: '@ls',
-				ot: 'J   K   K   L               F   '
+				ot: 'J           L               F   '
 			},
 			'Silence Break': {
 				ls: '              XX',
@@ -2398,6 +2460,8 @@ for(const i in rawTunes) {
 	for(const j in tune.patterns) {
 		const pattern = tune.patterns[j];
 		const newPattern = <Pattern> clone(pattern);
+		if(!newPattern.time && tune.time)
+			newPattern.time = tune.time;
 
 		for(const k of config.instrumentKeys) {
 			const thisPattern = pattern[k] = pattern[k] || "";
@@ -2439,7 +2503,7 @@ Object.defineProperty(defaultTunes, "getPattern", {
 
 Object.defineProperty(defaultTunes, "firstInSorting", {
 	configurable: true,
-	value: [ "General Breaks", "Special Breaks" ]
+	value: [ "General Breaks", "Special Breaks", "Shouting Breaks" ]
 });
 
 interface DefaultTunesMethods {
