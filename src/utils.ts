@@ -99,3 +99,9 @@ export function vueSetMultiple(target: object, update: object) {
     for(const i of Object.keys(update))
         Vue.set(target, i, (update as any)[i]);
 }
+
+export async function sleep(millis: number = 0): Promise<void> {
+    await new Promise((resolve) => {
+        setTimeout(resolve, millis);
+    });
+}

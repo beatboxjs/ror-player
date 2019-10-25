@@ -1,4 +1,4 @@
-<b-modal title="Share" hide-footer :id="id" size="lg">
+<b-modal title="Share" hide-footer :id="id" size="lg" modal-class="bb-share-dialog">
 	<b-tabs>
 		<b-tab title="Link">
 			<textarea readonly="readonly" class="form-control" rows="5" :value="url"></textarea>
@@ -31,7 +31,7 @@
 							:key="idx"
 							:active="shareSongs[idx]"
 							href="javascript:"
-							@click="shareSongs[idx] = !shareSongs[idx]"
+							@click="$set(shareSongs, idx, !shareSongs[idx])"
 						>
 							{{getSongName(idx)}}
 						</b-list-group-item>
@@ -42,14 +42,15 @@
 						<b-list-group-item v-for="tuneName in sortedTuneList" :key="tuneName" :class="getTuneClass(tuneName)" v-if="getModifiedPatternNames(tuneName).length > 0">
 							<a href="javascript:" @click="clickTune(tuneName)">{{state.tunes[tuneName].displayName || tuneName}}</a>
 							<b-badge
+								href="javascript:"
 								v-for="patternName in getModifiedPatternNames(tuneName)"
 								:key="patternName"
 								class="bb-inline-list-group-item"
-								:active="!!shouldExportPattern(tuneName, patternName)"
 								:disabled="!!shouldExportPattern(tuneName, patternName) > 1"
 								@click="togglePattern(tuneName, patternName)"
-								:title="isUsedInSong(tuneName, patternName) ? 'Used in song, cannot be disabled' : ''"
+								:title="linkPattern && linkPattern[0] == tuneName && linkPattern[1] == patternName ? 'Will be opened by default' : isUsedInSong(tuneName, patternName) ? 'Used in song, cannot be disabled' : ''"
 								v-b-tooltip.hover.bottom
+								:variant="!!shouldExportPattern(tuneName, patternName) ? 'dark' : 'light'"
 
 							>
 								{{state.tunes[tuneName].patterns[patternName].displayName || patternName}} <fa icon="star" v-if="linkPattern && linkPattern[0] == tuneName && linkPattern[1] == patternName" />

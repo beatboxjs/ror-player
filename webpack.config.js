@@ -20,7 +20,7 @@ module.exports = {
 	entry: `${__dirname}/src/app.ts`,
 	output: {
 		path: __dirname + "/build/",
-		filename: "angular-beatbox.js"
+		filename: "ror-player.js"
 	},
 	resolve: {
 		extensions: [ ".ts", ".js" ],

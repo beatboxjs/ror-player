@@ -40,7 +40,7 @@
 											:href="pattern.clickable ? 'javascript:' : undefined"
 											class="bb-inline-list-group-item"
 											:disabled="!pattern.clickable"
-											:variant="pattern.shouldImport ? 'primary' : 'light'"
+											:variant="pattern.shouldImport ? 'dark' : 'light'"
 											@click="pattern.clickable && clickPattern(tune.tuneName, pattern.patternName)"
 										>
 											{{pattern.patternName}} <fa v-if="pattern.exists" :icon="pattern.exists == 2 ? 'check' : 'exclamation-circle'"></fa>

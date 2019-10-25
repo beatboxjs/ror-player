@@ -2,13 +2,15 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch } from "vue-property-decorator";
 import template from "./prompt.vue";
+import $ from 'jquery';
+import { sleep } from "../../utils";
 
 export type Validate = (value: string) => string | null | undefined;
 
 export async function openPromptDialog(instance: Vue, title: string, defaultValue?: string, validate?: Validate): Promise<string | undefined> {
 	let result = defaultValue;
 	const prompt = instance.$createElement(Prompt, {
-		props: { title, defaultValue, validate },
+		props: { defaultValue, validate },
 		on: {
 			change(value: string) {
 				result = value;
@@ -19,6 +21,7 @@ export async function openPromptDialog(instance: Vue, title: string, defaultValu
 	const answer = await instance.$bvModal.msgBoxConfirm(prompt, { title });
 
 	if(answer && (!validate || validate(result || "") == null)) {
+		await sleep(); // Let modal close
 		return result;
 	}
 }
@@ -44,6 +47,11 @@ export default class Prompt extends Vue {
 
 	mounted() {
 		this.value = this.defaultValue;
+	}
+
+	submit() {
+		if(!this.invalidFeedback)
+			$(this.$el).closest(".modal-content").find("> footer > .btn-primary").click();
 	}
 
 }

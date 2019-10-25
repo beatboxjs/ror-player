@@ -37,6 +37,7 @@ export default class TuneInfo extends Vue {
 
 	created() {
 		this.playbackSettings = clone(this.state.playbackSettings);
+		this.playbackSettings.speed = (this.tune && this.tune.speed) || config.defaultSpeed;
 	}
 
 	get tuneDescription() {

@@ -34,10 +34,10 @@ export default class ShareDialog extends Vue {
 
 	created() {
 		if(!this.linkPattern)
-			this.shareSongs[this.state.songIdx] = true;
+			Vue.set(this.shareSongs, this.state.songIdx, true);
 		else {
-			this.sharePatterns[this.linkPattern[0]] = {};
-			this.sharePatterns[this.linkPattern[0]][this.linkPattern[1]] = true;
+			Vue.set(this.sharePatterns, this.linkPattern[0], {});
+			Vue.set(this.sharePatterns[this.linkPattern[0]], this.linkPattern[1], true);
 		}
 	}
 
@@ -65,11 +65,11 @@ export default class ShareDialog extends Vue {
 	}
 
 	get rawStringUncompressed() {
-		return JSON.stringify(this._getCompressedState(true));
+		return jsonFormat(this._getCompressedState(false));
 	}
 
 	get rawStringCompressed() {
-		return jsonFormat(this._getCompressedState(false));
+		return jsonFormat(this._getCompressedState(true));
 	}
 
 	get url() {
@@ -128,18 +128,18 @@ export default class ShareDialog extends Vue {
 
 	clickTune(tuneName: string) {
 		const enable = (this.getTuneClass(tuneName) != "active");
-		this.sharePatterns[tuneName] = { };
+		Vue.set(this.sharePatterns, tuneName, { });
 		if(enable) {
 			for(const i in this.state.tunes[tuneName].patterns) {
-				this.sharePatterns[tuneName][i] = true;
+				Vue.set(this.sharePatterns[tuneName], i, true);
 			}
 		}
 	}
 
 	togglePattern(tuneName: string, patternName: string) {
 		if(!this.sharePatterns[tuneName])
-			this.sharePatterns[tuneName] = {};
-		this.sharePatterns[tuneName][patternName] = !this.sharePatterns[tuneName][patternName]
+			Vue.set(this.sharePatterns, tuneName, {});
+		Vue.set(this.sharePatterns[tuneName], patternName, !this.sharePatterns[tuneName][patternName]);
 	}
 
 	getSongName(idx: number) {
