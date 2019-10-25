@@ -3,7 +3,6 @@ var gulp = require("gulp");
 var gutil = require("gulp-util");
 var clean = require("gulp-clean");
 var gulpIf = require("gulp-if");
-var newer = require("gulp-newer");
 var replace = require("gulp-replace");
 var path = require("path");
 var combine = require("stream-combiner2").obj;
@@ -54,7 +53,6 @@ function packAudioFiles(fileName) {
 gulp.task("audiosprite", function() {
 	return combine(
 		gulp.src("assets/**/*.mp3", { base: process.cwd() + "/" }),
-		newer("build/audioFiles.ts"),
 		packAudioFiles("audioFiles.ts"),
 		gulp.dest("build")
 	);
