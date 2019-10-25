@@ -672,7 +672,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ls: 'XX  0       0   ',
 				hs: '    0       0 XX'
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Break 1", "Tune", "Tune", "Bra Break (Repi)", "Tune", "Tune", "Cross Kicks", "Tune", "Tune" ]
 	},
 	'Coupe-Decale': {
 		displayName: "Coupé-Decalé",
@@ -830,7 +831,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 			"Monkey Break": {
 				ot: '(  (  ( )  )  ) '
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune", "Break 3", "Tune", "Tune", "Bongo Break 1", "Bongo Break 1", "Bongo Break 2", "Bongo Break 2", "Monkey Break", "Tune", "Tune"]
 	},
 	'Custard': {
 		categories: [ "standard", "common", "medium" ],
@@ -878,6 +880,16 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@ls',
 				sh: '@ls'
 			},
+			'Break 3 (Agogô continues)' : {
+				ls: repeat(4, 'X             X X               '),
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: repeat(3, 'X             X X               ') + 'X             X X.X.X..X.X..XXXX',
+				ta: '@ls',
+				ag: repeat(8, 'a a oo a a o oo '),
+				sh: '@ls'
+			},
 			'Break 5': {
 				ls: '              X X             X X     X X     X X   X   X   X   ',
 				ms: '@ls',
@@ -891,7 +903,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 			'Singing Break': {
 				ot: '4 3 21 C H I M# '
 			}
-		}
+		},
+		exampleSong: ["Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune", "Break 3 (Agogô continues)", "Tune", "Tune", "Tune", "Tune", "Break 5", "Tune", "Tune", "Tune", "Tune", "Singing Break"]
 	},
 	'Drum&Bass': {
 		categories: [ "standard", "common", "medium" ],
@@ -944,7 +957,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@ta',
 				sh: '@ta'
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Break 2", "Tune", "Break 3", "Break 1", "Tune", "Hip-Hop Break", "Tune" ]
 	},
 	'Drunken Sailor': {
 		categories: [ "standard", "uncommon", "medium" ],
@@ -990,7 +1004,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ta: '@re',
 				ag: '                                                                                ooa         ooa ooa         ooa                 '
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Break 1", "Tune", "Break 2", "Tune", "White Shark", "Tune" ]
 	},
 	'Funk': {
 		categories: [ "standard", "common", "onesurdo", "easy" ],
@@ -1048,7 +1063,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: 'o  a  o   a a a o  a  o   a a a ',
 				sh: 'X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.'
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune" ]
 	},
 	'Hafla': {
 		categories: [ "standard", "uncommon", "tricky" ],
@@ -1118,7 +1134,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@re',
 				sh: '@re'
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Yala Break", "Tune", "Tune", "Break 3", "Tune", "Tune", "Hook Break", "Tune", "Tune", "Kick Back 1", "Kick Back 1", "Tune", "Tune", "Kick Back 2", "Kick Back 2", "Tune", "Tune" ]
 	},
 	'Hedgehog': {
 		categories: [ "standard", "uncommon", "easy" ],
@@ -1156,7 +1173,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@ls',
 				ot: '        R   S   '
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Break 2", "Tune", "Tune" ]
 	},
 	'Karla Shnikov': {
 		categories: [ "standard", "common", "onesurdo", "easy" ],
@@ -1194,7 +1212,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@re',
 				sh: '@re'
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Break 2", "Tune", "Break 2 Inverted", "Tune" ]
 	},
 	'Menaiek': {
 		categories: [ "standard", "uncommon", "new", "tricky" ],
@@ -1266,7 +1285,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@re',
 				sh: 'X X XX X XX XX X'
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune", "Double Break", "Tune", "Tune", "Mozambique Break", "Tune", "Tune", "Kick Back 1", "Kick Back 1", "Kick Back 1", "Kick Back 1", "Tune", "Tune" ]
 	},
 	'No Border Bossa': {
 		categories: [ "standard", "uncommon", "onesurdo", "medium" ],
@@ -1328,7 +1348,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@ls',
 				sh: '@ls'
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Break 1", "Tune", "Bra Break", "Tune" ]
 	},
 	'Nova Balanca': {
 		displayName: "Nova Balança",
@@ -1378,7 +1399,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@re',
 				sh: '@re'
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Tune", "Tune", "Bra Break", "Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune" ]
 	},
 	'Orangutan': {
 		categories: [ "standard", "uncommon", "tricky" ],
@@ -1427,7 +1449,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@re',
 				sh: '@re'
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Tune", "Tune", "Monkey break", "Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune", "Funky gibbon", "Funky gibbon", "Tune", "Tune", "Tune", "Tune" ]
 	},
 	'Ragga': {
 		categories: [ "standard", "common", "tricky" ],
@@ -1492,7 +1515,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ms: '@ls',
 				hs: '@ls'
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Break 2", "Tune", "Tune", "Break 3", "Tune", "Tune", "Kick Back 1", "Kick Back 1", "Kick Back 2", "Kick Back 2", "Tune", "Tune", "Zorro-Break", "Zorro-Break", "Tune", "Tune" ]
 	},
 	'Rope Skipping': {
 		categories: [ "standard", "uncommon", "tricky" ],
@@ -1574,6 +1598,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '@re'
 			},
 			'Skipping Agogo': {
+				displayName: "Skipping Agogô",
 				ag: 'a  aaa aa  aaaoao  ooo oo  oooao'
 			},
 			'I like to move it': {
@@ -1589,7 +1614,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sn: stretch(4, 12, '................................................                '),
 				ag: stretch(4, 12, '                                                ') + 'oaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoa'
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Oh Shit", "Tune", "Tune", "Fuck Off", "Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune", "Break 3", "Tune", "Tune", "Küsel Break", "Küsel Break", "Tune", "Tune", "Skipping Agogo", "Tune", "Tune", "I like to move it", "Tune", "Tune", "Eye of the tiger", "Tune", "Tune" ]
 	},
 	'Samba Reggae': {
 		categories: [ "standard", "common", "medium" ],
@@ -1689,7 +1715,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@re',
 				sh: '@re'
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Tune", "Tune", "Bra Break", "Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune", "Break 3", "Tune", "Tune", "Tune", "Tune", "SOS Break", "Tune", "Tune", "Tune", "Tune", "Knock On The Door Break", "Knock On The Door (Cut)", "Tune", "Tune", "Tune", "Tune", "Dancing Break", "Tune", "Tune", "Tune", "Tune" ]
 	},
 	"Samba Reggae High": {
 		categories: [ "proposed" ],
@@ -1759,7 +1786,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 			"Tam “Little Turn” Groove": {
 				ta: "X   XXXXX       X X XXXXX       X X X   XXXXX   XX XX   XXXXX   "
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune", "Break 3", "Tune", "Tune", "Tune", "Tune", "Stop on 1" ]
 	},
 	"Samba Reggae Low": {
 		categories: [ "proposed" ],
@@ -1846,7 +1874,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 			"Fancy Tam Line 2": {
 				ta: repeat(2, "X  X  X         X  X  X         ") + repeat(2, "X  X  X   XXX XXX  X  X         ")
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Tune", "Tune", "Bra Break", "Tune", "Tune", "Tune", "Tune", "SOS Break", "Tune", "Tune", "Tune", "Tune", "Knock On The Door Break", "Knock On The Door (Cut)", "Tune", "Tune", "Tune", "Tune", "Dancing Break", "Tune", "Tune", "Tune", "Tune", "Stop on 1" ]
 	},
 	'Sambasso': {
 		categories: [ "standard", "uncommon", "new", "onesurdo", "tricky" ],
@@ -1897,7 +1926,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@ls',
 				sh: '@ls'
 			}
-		}
+		},
+		exampleSong: [ "Intro", "Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune" ]
 	},
 	'Sheffield Samba Reggae': {
 		categories: [ "standard", "uncommon", "new", "medium" ],
@@ -1978,7 +2008,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@ls',
 				sh: '@ls'
 			}
-		}
+		},
+		exampleSong: [ "Intro", "Tune", "Break 1", "Tune", "Break 2", "Tune", "Break 3", "Tune", "Whistle Break", "Tune", "Outro" ]
 	},
 	'Tequila': {
 		categories: [ "standard", "new", "medium" ],
@@ -2021,7 +2052,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@ls',
 				sh: '@ls'
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Break 2", "Break 1", "Tune", "Tune", "Bra Break", "Break 1", "Tune", "Tune" ]
 	},
 	'The Roof Is on Fire': {
 		categories: [ "new", "tricky" ],
@@ -2045,17 +2077,18 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				upbeat: 2
 			},
 			'Bra Break': {
-				ls: "                X     X X                       X     X X                       X     X X                                       ",
+				ls: "                X     X X                       X     X X                       X     X X                       ",
 				ms: "@ls",
 				hs: "@ls",
-				re: "X..X..X.X..X..X.                X..X..X.X..X..X.                X..X..X.X..X..X.                X  X  X X                       ",
+				re: "X..X..X.X..X..X.                X..X..X.X..X..X.                X..X..X.X..X..X.                X  X  X X       ",
 				sn: "@ls",
 				ta: "@ls",
-				ag: "                o     o a  a  a                 o     o a  a  a                 o     o a  a  a                                 ",
+				ag: "                o     o a  a  a                 o     o a  a  a                 o     o a  a  a                 ",
 				sh: "@ls",
-				ot: "                                                                                                            '                   "
+				ot: "                                                                                                            '   "
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Break 1", "Tune", "Tune", "Bra Break", "Tune", "Tune" ]
 	},
 	'The Sirens of Titan': {
 		categories: [ "proposed" ],
@@ -2084,7 +2117,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: 'oooa oa oa  oooa oa oa  oooa  oooa  ooo   aaao  ',
 				sh: '@re'
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Rented a Tent Break", "Tune" ]
 	},
 	'Van Harte Pardon': {
 		categories: [ "standard", "uncommon", "tricky" ],
@@ -2143,7 +2177,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				hs: '@ls',
 				volumeHack: crescendo(16)
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Break 1", "Tune", "Tune", "Silence Break", "Tune", "Tune", "Break 2", "Break 2 (Cut)", "Tune", "Tune", "Cross Break", "Tune", "Tune", "Cross Eight Break", "Tune", "Tune" ]
 	},
 	'Voodoo': {
 		categories: [ "standard", "uncommon", "easy" ],
@@ -2171,7 +2206,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@ls',
 				sh: '@ls'
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Scissor Break", "Tune", "Tune" ]
 	},
 	'Walc(z)': {
 		categories: [ "standard", "uncommon", "new", "easy" ],
@@ -2293,7 +2329,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@ls',
 				sh: '@ls'
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Break 2", "Tune", "Tune", "Break 3", "Tune", "Tune", "Break 5", "Tune", "Tune", "Bra Break", "Tune", "Tune", "Cut-throat Break", "Tune", "Tune", "Cut-throat Break Fast", "Tune", "Tune" ]
 	},
 	'Wolf': {
 		categories: [ "proposed" ],
@@ -2337,7 +2374,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '@re',
 				ot: '                                                            A   '
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Pat 1", "Tune", "Tune", "Pat 2", "Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune" ]
 	},
 	'Xango': {
 		categories: [ "standard", "uncommon", "tricky" ],
@@ -2447,7 +2485,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@ls',
 				sh: '@ls'
 			}
-		}
+		},
+		exampleSong: [ "Tune", "Tune", "Bra Break", "Tune", "Tune", "Kick Back 1", "Kick Back 1", "Kick Back 2", "Kick Back 2", "Tune", "Tune" ]
 	}
 };
 
