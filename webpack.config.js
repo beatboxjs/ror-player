@@ -94,5 +94,8 @@ module.exports = {
 		//new BundleAnalyzerPlugin()
 	],
 	mode: dev ? "development" : "production",
-	devtool: dev ? "cheap-module-eval-source-map" : "source-map"
+	devtool: dev ? "cheap-module-eval-source-map" : "source-map",
+	performance: {
+		hints: false
+	}
 };

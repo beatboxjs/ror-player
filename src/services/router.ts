@@ -1,69 +1,85 @@
 import $ from "jquery";
-import Navigo from "navigo";
 import config from "../config";
 import events from "./events";
 import history from "./history";
 import { getPatternFromState } from "../state/state";
 import Vue from "vue";
-import { BModal, BvModalEvent } from "bootstrap-vue";
+import { BvModalEvent } from "bootstrap-vue";
 import PatternEditorDialog from "../ui/pattern-editor-dialog/pattern-editor-dialog";
+import { match, compile, MatchFunction, PathFunction } from "path-to-regexp";
+
+const ROUTES: { [key: string]: string } = {
+	"listen-tune": "/listen/:tuneName/",
+	"listen-pattern": "/listen/:tuneName/:patternName",
+	"compose": "/compose/",
+	"compose-tune": "/compose/:tuneName/",
+	"compose-pattern": "/compose/:tuneName/:patternName",
+	"compose-importAndTune": "/compose/:importData/:tuneName/",
+	"compose-importAndPattern": "/compose/:importData/:tuneName/:patternName",
+	"compose-import": "/compose/:importData",
+	"legacy-tune": "/:tuneName/",
+	"legacy-pattern": "/:tuneName/:patternName",
+	"legacy-importAndTune": "/:importData/:tuneName/",
+	"legacy-importAndPattern": "/:importData/:tuneName/:patternName",
+	"legacy-import": "/:importData"
+};
+
+const ROUTES_MATCH: { [key: string]: MatchFunction } = Object.keys(ROUTES).reduce((p, c) => ({ ...p, [c]: match(ROUTES[c], { decode: decodeURIComponent }) }), {});
+
+const ROUTES_COMPILE: { [key: string]: PathFunction } = Object.keys(ROUTES).reduce((p, c) => ({ ...p, [c]: compile(ROUTES[c], { encode: encodeURIComponent }) }), {});
+
+type Params = { [key: string]: string };
 
 export function enableRouter(app: Vue) {
-	let lastTune: string | null = null;
-	let currentState: { name: string, params?: object } | null = null;
-	let paused = false;
-
-	const router = new Navigo(`${location.protocol}//${location.host}${location.pathname}${location.search}`, true);
-
-	router.on({
-		"*": () => {
+	const HANDLERS: { [key: string]: (params: Params) => unknown } = {
+		"": () => {
 			navigate("listen-tune", { tuneName: config.tuneOfTheYear });
 		},
 
 
 		/* Listen */
 
-		"/listen/:tuneName/": { as: "listen-tune", uses: (params) => {
+		"listen-tune": async (params) => {
+			await ignoreSetState(closeAllDialogs);
+
 			events.$emit("listen", params.tuneName);
+		},
 
-			closeAllDialogs();
-		}},
-
-		"/listen/:tuneName/:patternName": { as: "listen-pattern", uses: async (params) => {
-			await pause(() => {
+		"listen-pattern": async (params) => {
+			await ignoreSetState(() => {
 				events.$emit("listen", params.tuneName);
 				closeAllDialogs();
 			});
 
 			events.$emit("edit-pattern", { pattern: [ params.tuneName, params.patternName ], readonly: true });
-		}},
+		},
 
 
 		/* Compose */
 
-		"/compose/": { as: "compose", uses: (params) => {
+		"compose": async (params) => {
+			await ignoreSetState(closeAllDialogs);
+
 			events.$emit("compose");
+		},
 
-			closeAllDialogs();
-		}},
-
-		"/compose/:tuneName/": { as: "compose-tune", uses: async (params) => {
+		"compose-tune": async (params) => {
 			if(!history.state.tunes[params.tuneName])
 				return navigate("compose");
 
-			await pause(() => {
+			await ignoreSetState(() => {
 				closeAllDialogs();
 				events.$emit("compose");
 			});
 
 			events.$emit("pattern-list-open-tune", params.tuneName);
-		}},
+		},
 
-		"/compose/:tuneName/:patternName": { as: "compose-pattern", uses: async (params) => {
+		"compose-pattern": async (params) => {
 			if(!getPatternFromState(history.state, params.tuneName, params.patternName))
 				return navigate("compose");
 
-			await pause(async () => {
+			await ignoreSetState(async () => {
 				events.$emit("compose");
 				await Vue.nextTick();
 				events.$emit("pattern-list-open-tune", params.tuneName);
@@ -72,10 +88,10 @@ export function enableRouter(app: Vue) {
 			});
 
 			events.$emit("edit-pattern", { pattern: [ params.tuneName, params.patternName ], readonly: false });
-		}},
+		},
 
-		"/compose/:importData/:tuneName/": { as: "compose-importAndTune", uses: async (params) => {
-			closeAllDialogs();
+		"compose-importAndTune": async (params) => {
+			await ignoreSetState(closeAllDialogs);
 
 			const errs = history.loadEncodedString(params.importData);
 
@@ -84,10 +100,10 @@ export function enableRouter(app: Vue) {
 
 			await Vue.nextTick();
 			navigate("compose-tune", { tuneName: params.tuneName });
-		}},
+		},
 
-		"/compose/:importData/:tuneName/:patternName": { as: "compose-importAndPattern", uses: async (params) => {
-			closeAllDialogs();
+		"compose-importAndPattern": async (params) => {
+			await ignoreSetState(closeAllDialogs);
 
 			const errs = history.loadEncodedString(params.importData);
 
@@ -96,10 +112,10 @@ export function enableRouter(app: Vue) {
 
 			await Vue.nextTick();
 			navigate("compose-pattern", { tuneName: params.tuneName, patternName: params.patternName });
-		}},
+		},
 
-		"/compose/:importData": { as: "compose-import", uses: async (params) => {
-			closeAllDialogs();
+		"compose-import": async (params) => {
+			await ignoreSetState(closeAllDialogs);
 
 			const errs = history.loadEncodedString(params.importData);
 
@@ -108,35 +124,96 @@ export function enableRouter(app: Vue) {
 
 			await Vue.nextTick();
 			navigate("compose");
-		}},
+		},
 
 
 		/* Legacy */
 
-		"/:tuneName/": { as: "legacy-tune", uses: (params) => {
+		"legacy-tune": (params) => {
 			navigate("listen-tune", params)
-		}},
+		},
 
-		"/:tuneName/:patternName": { as: "legacy-pattern", uses: (params) => {
+		"legacy-pattern": (params) => {
 			navigate("listen-pattern", params);
-		}},
+		},
 
-		"/:importData/:tuneName/": { as: "legacy-importAndTune", uses: (params) => {
+		"legacy-importAndTune": (params) => {
 			navigate("compose-importAndTune", params);
-		}},
+		},
 
-		"/:importData/:tuneName/:patternName": { as: "legacy-importAndPattern", uses: (params) => {
+		"legacy-importAndPattern": (params) => {
 			navigate("compose-importAndPattern", params);
-		}},
+		},
 
-		"/:importData": { as: "legacy-import", uses: (params) => {
+		"legacy-import": (params) => {
 			navigate("compose-import", params);
-		}}
-	});
+		}
+	};
 
-	router.resolve();
-	if(!currentState) // Might have already been set, for example when the * route navigated to the default tune
-		currentState = router.lastRouteResolved() as any;
+
+	let lastTune: string | null = null;
+	let currentState: { name: string, params: Params } | null = null;
+	let setStateIgnored = false;
+	let hashChangeIgnored = false;
+
+	function resolve() {
+		const hash = location.hash.replace(/^#/, "");
+
+		if(["", "/"].includes(hash)) {
+			currentState = null;
+			HANDLERS[""]({});
+			return;
+		}
+
+		for(const key of Object.keys(ROUTES_MATCH)) {
+			const match = ROUTES_MATCH[key](hash);
+			if(match) {
+				currentState = { name: key, params: match.params as any };
+				HANDLERS[key](match.params as any);
+				return;
+			}
+		}
+	}
+
+	async function ignoreSetState(callback: () => void) {
+		setStateIgnored = true;
+		try {
+			await callback();
+		} finally {
+			await Vue.nextTick();
+			setStateIgnored = false;
+		}
+	}
+
+	function navigate(name: string, params: Params = { }) {
+		setState(name, params);
+
+		resolve();
+	}
+
+	function setState(name: string, params: Params = { }) {
+		if(setStateIgnored)
+			return;
+
+		hashChangeIgnored = true;
+		setTimeout(() => {
+			hashChangeIgnored = false;
+		}, 0);
+
+		if(name == "") {
+			location.hash = "#";
+			currentState = null;
+		} else {
+			location.hash = "#" + ROUTES_COMPILE[name](params);
+			currentState = { name, params };
+		}
+	}
+
+	resolve();
+	window.addEventListener("hashchange", () => {
+		if(!hashChangeIgnored)
+			resolve();
+	}, false);
 
 	app.$on("bv::modal::show", (bvEvent: BvModalEvent, modalId: string) => {
 		if(bvEvent.vueTarget instanceof Vue && (bvEvent.vueTarget as Vue).$parent instanceof PatternEditorDialog) {
@@ -148,7 +225,10 @@ export function enableRouter(app: Vue) {
 	app.$on("bv::modal::hide", (bvEvent: BvModalEvent, modalId: string) => {
 		if(bvEvent.vueTarget instanceof Vue && (bvEvent.vueTarget as Vue).$parent instanceof PatternEditorDialog) {
 			const dialog = (bvEvent.vueTarget as Vue).$parent as PatternEditorDialog;
-			setState(dialog.$props.readonly ? "listen" : "compose");
+			if(dialog.$props.readonly)
+				setState("listen-tune", { tuneName: dialog.$props.tuneName });
+			else
+				setState("compose");
 		}
 	});
 
@@ -183,32 +263,6 @@ export function enableRouter(app: Vue) {
 				navigate("root");
 		}
 	});
-
-	async function pause(callback: () => void) {
-		paused = true;
-		try {
-			await callback();
-		} finally {
-			await Vue.nextTick();
-			paused = false;
-		}
-	}
-
-	function navigate(name: string, params?: object) {
-		currentState = { name, params };
-		router.navigate(router.generate(name, params));
-	}
-
-	function setState(name: string, params?: object) {
-		if(paused)
-			return;
-
-		router.pause();
-		navigate(name, params);
-		setTimeout(() => {
-			router.resume();
-		}, 0);
-	}
 
 	function closeAllDialogs() {
 		for(const id of [...$(".modal")].map((modal) => modal.getAttribute("id")))

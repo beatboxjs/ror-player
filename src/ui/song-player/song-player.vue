@@ -11,7 +11,7 @@
 			<template slot="button-content">
 				<fa icon="music"/> {{getSongName()}}
 			</template>
-			<b-dropdown-group v-for="(thisSong, idx) in state.songs" :key="idx" :active="idx == state.songIdx" class="d-flex align-items-center">
+			<b-dropdown-group v-for="(thisSong, idx) in state.songs" :key="idx" :active="idx == state.songIdx">
 				<b-dropdown-item href="javascript:" class="song-name flex-grow-1" @click="selectSong(idx)">{{getSongName(idx)}}</b-dropdown-item>
 				<b-dropdown-item href="javascript:" @click="renameSong(idx)" title="Rename" v-b-tooltip.hover class="rename"><fa icon="pencil-alt"/></b-dropdown-item>
 				<b-dropdown-item href="javascript:" @click="copySong(idx)" title="Copy" v-b-tooltip.hover class="copy"><fa icon="copy"/></b-dropdown-item>

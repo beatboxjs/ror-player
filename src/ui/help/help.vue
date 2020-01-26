@@ -3,5 +3,5 @@
 		<fa icon="info-circle"/>
 	</template>
 	<b-dropdown-item href="?" :download="downloadFilename"><fa icon="download"/> Download {{appName}}</b-dropdown-item>
-	<b-dropdown-item href="https://github.com/beatboxjs/angular-beatbox" target="_blank"><fa icon="code"/> Source code on GitHub</b-dropdown-item>
+	<b-dropdown-item href="https://github.com/beatboxjs/ror-player" target="_blank"><fa icon="code"/> Source code on GitHub</b-dropdown-item>
 </b-dropdown>

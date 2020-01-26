@@ -273,10 +273,8 @@ export default class PatternPlayer extends Vue {
 		updatePattern(this.pattern, update);
 	}
 
-	async openStrokeDropdown(strokeDropdown: StrokeDropdownInfo) {
+	openStrokeDropdown(strokeDropdown: StrokeDropdownInfo) {
 		this.currentStrokeDropdown = strokeDropdown;
-		await this.$nextTick();
-		this.$root.$emit("bv::show::popover", `bb-pattern-editor-stroke-${strokeDropdown.instr}-${strokeDropdown.i}`);
 	}
 
 }

@@ -2,20 +2,16 @@ import "./compose.scss";
 import Vue from "vue";
 import Component from "vue-class-component";
 import template from "./compose.vue";
-import { InjectReactive, Prop, ProvideReactive, Ref } from "vue-property-decorator";
+import { InjectReactive, Ref } from "vue-property-decorator";
 import { State } from "../../state/state";
-import config from "../../config";
-import { allInstruments, appendSongPart, getEffectiveSongLength, SongPart } from "../../state/song";
+import { allInstruments, appendSongPart } from "../../state/song";
 import $ from "jquery";
 import SongPlayer from "../song-player/song-player";
 import PatternList from "../pattern-list/pattern-list";
 import History from "../history/history";
 import { PatternPlaceholderItem } from "../pattern-placeholder/pattern-placeholder";
-import events, { MultipleHandlers, registerMultipleHandlers } from "../../services/events";
+import events, { registerMultipleHandlers } from "../../services/events";
 import { scrollToElement } from "../../services/utils";
-import history from "../../services/history";
-import { clone } from "../../utils";
-import isEqual from "lodash.isequal";
 
 @Component({
 	template,

@@ -8,15 +8,30 @@ import { isoDate, readableDate } from "../../services/utils";
 import $ from "jquery";
 import { id } from "../../utils";
 
+const globalData = Vue.observable({
+	// Store this globally because History might not be rendered when link is opened
+	showPopover: false
+});
+
+events.$on("history-load-encoded-string", () => {
+	globalData.showPopover = true;
+
+	$(document).one("click", () => {
+		globalData.showPopover = false;
+	});
+});
+
 @Component({
 	template,
 	components: { }
 })
 export default class History extends Vue {
 
-	popoverMessage: string | null = null;
 	popoverId = `bb-history-popover-${id()}`;
-	_unregisterHandlers!: () => void;
+
+	get showPopover() {
+		return globalData.showPopover;
+	}
 
 	get historicStates() {
 		const states = history.getHistoricStates();
@@ -27,24 +42,6 @@ export default class History extends Vue {
 			isoDate: isoDate(key),
 			isCurrent: key == currentKey
 		}));
-	}
-
-	created() {
-		this._unregisterHandlers = registerMultipleHandlers({
-			"history-load-encoded-string"() {
-				this.popoverMessage = "You have opened a shared view. Your previous songs and tunes can be restored here.";
-				this.$nextTick().then(() => {
-					this.$root.$emit("bv::show::popover", this.popoverId);
-				});
-				$(this.$el).one("click", () => {
-					this.popoverMessage = null;
-				});
-			}
-		}, this);
-	}
-
-	beforeDestroy() {
-		this._unregisterHandlers();
 	}
 
 	loadHistoricState(key: number) {

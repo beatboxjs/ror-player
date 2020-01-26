@@ -2375,7 +2375,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ot: '                                                            A   '
 			}
 		},
-		exampleSong: [ "Tune", "Tune", "Pat 1", "Tune", "Tune", "Pat 2", "Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune" ]
+		exampleSong: [ "Tune", "Pat 1", "Tune", "Pat 2", "Tune", "Break 1", "Tune", "Break 2", "Tune" ]
 	},
 	'Xango': {
 		categories: [ "standard", "uncommon", "tricky" ],

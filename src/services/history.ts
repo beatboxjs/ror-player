@@ -12,43 +12,30 @@ import events, { registerMultipleHandlers } from "./events";
 import Component from "vue-class-component";
 import Vue from "vue";
 import { ProvideReactive, Watch } from "vue-property-decorator";
-
-interface LocalStorageOperation {
-	<T>(callback: () => T, fallbackValue: T): T,
-	(callback: () => void): void
-}
-
-const localStorageOperation: LocalStorageOperation = <T>(callback: () => T, fallbackValue?: T): T | void => {
-	try {
-		return callback();
-	} catch (e) {
-		console.error(e.stack || e);
-		return fallbackValue;
-	}
-};
-
-function getLocalStorageItem(key: string): string | null {
-	return localStorageOperation(() => localStorage.getItem(key), null);
-}
-
-function getLocalStorageNumberItem(key: string): number | null {
-	const val = getLocalStorageItem(key);
-	return val == null ? null : parseInt(val, 10);
-}
+import {
+	getLocalStorageItem,
+	getLocalStorageKeys,
+	getLocalStorageNumberItem,
+	removeLocalStorageItem, setLocalStorageItem, setLocalStorageItems
+} from "./localStorage";
 
 class History {
 
 	state: State = normalizeState();
 
-	_currentKey: number | null = null;
+	_data: {
+		currentKey: number | null
+	} = Vue.observable({
+		currentKey: null
+	});
 
 	loadEncodedString(encodedString: string) {
 		this.saveCurrentState();
 		const errs = this._loadFromString(encodedString);
 
-		this._currentKey = null;
+		this._data.currentKey = null;
 
-		this.saveCurrentState(true);
+		this.saveCurrentState();
 
 		events.$emit("history-load-encoded-string");
 
@@ -56,11 +43,11 @@ class History {
 	}
 
 	getCurrentKey() {
-		return this._currentKey;
+		return this._data.currentKey;
 	}
 
 	getHistoricStates(): number[] {
-		return localStorageOperation(() => Object.keys(localStorage), [])
+		return getLocalStorageKeys()
 			.map((key) => key.match(/^bbState-(.*)$/))
 			.filter((m) => m)
 			.map((m) => parseInt((m as RegExpMatchArray)[1], 10))
@@ -71,11 +58,11 @@ class History {
 		if(key == null)
 			key = getLocalStorageNumberItem("bbState");
 
-		if(this._currentKey)
+		if(this._data.currentKey)
 			this.saveCurrentState();
 
 		this._loadFromString(key && getLocalStorageItem("bbState-"+key) || "");
-		this._currentKey = key;
+		this._data.currentKey = key;
 		this.saveCurrentState();
 	}
 
@@ -103,44 +90,44 @@ class History {
 		return Math.floor(new Date().getTime() / 1000);
 	}
 
-	saveCurrentState(findSameState: boolean = false): void {
+	saveCurrentState(): void {
 		const obj = compressState(this.state, null, null, true, true, true);
-		if(Object.keys(obj).length == 0 || (this._currentKey && getLocalStorageItem("bbState-"+this._currentKey) && isEqual(obj, stringToObject(getLocalStorageItem("bbState-"+this._currentKey) || ""))))
+		if(Object.keys(obj).length == 0 || (this._data.currentKey && getLocalStorageItem("bbState-"+this._data.currentKey) && isEqual(obj, stringToObject(getLocalStorageItem("bbState-"+this._data.currentKey) || ""))))
 			return;
 
 		const newKey = this._getNowKey();
-		if(this._currentKey && newKey - this._currentKey < 3600)
-			localStorageOperation(() => localStorage.removeItem("bbState-" + this._currentKey));
+		if(this._data.currentKey && newKey - this._data.currentKey < 3600)
+			removeLocalStorageItem("bbState-" + this._data.currentKey);
 
-		if(findSameState) {
-			const sameState = this._findSameState(obj);
-			if(sameState) {
-				localStorageOperation(() => localStorage.setItem("bbState", `${sameState}`));
-				this._currentKey = sameState;
-				return;
-			}
+		const sameState = this._findSameState(obj);
+		if(sameState) {
+			setLocalStorageItem("bbState", `${sameState}`);
+			this._data.currentKey = sameState;
+			return;
 		}
 
-		localStorageOperation(() => {
-			localStorage.setItem("bbState-"+newKey, objectToString(obj));
-			localStorage.setItem("bbState", `${newKey}`);
+		setLocalStorageItems({
+			["bbState-"+newKey]: objectToString(obj),
+			"bbState": newKey
 		});
-		this._currentKey = newKey;
+		this._data.currentKey = newKey;
 
 		this._ensureMaxNumber();
 	}
 
 	_ensureMaxNumber(number: number = 30): void {
 		for (const key of this.getHistoricStates().slice(number)) {
-			if(key != this._currentKey)
-				localStorageOperation(() => localStorage.removeItem("bbState-"+key));
+			if(key != this._data.currentKey)
+				removeLocalStorageItem("bbState-"+key);
 		}
 	}
 
 	_findSameState(obj: object): number | null {
+		const objCleared = clone(obj); // Clear it of observable stuff, otherwise isEqual will always be false
+
 		const keys = this.getHistoricStates();
 		for(let i=0; i<keys.length; i++) {
-			if(isEqual(obj, stringToObject(getLocalStorageItem("bbState-"+keys[i]) || "")))
+			if(isEqual(objCleared, stringToObject(getLocalStorageItem("bbState-"+keys[i]) || "")))
 				return keys[i];
 		}
 		return null;

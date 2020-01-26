@@ -106,10 +106,10 @@
 							width: 0;
 							height: 0;
 							color: #666;
-							border-bottom: .6em solid;
-							border-right: .6em solid;
-							border-top: .6em solid transparent;
-							border-left: .6em solid transparent;
+							border-bottom: 8px solid;
+							border-right: 8px solid;
+							border-top: 8px solid transparent;
+							border-left: 8px solid transparent;
 						}
 					}
 				}
@@ -203,6 +203,11 @@
 
 		li.remove {
 			margin-right: 10px;
+		}
+
+		.list-unstyled {
+			display: flex;
+			align-items: center;
 		}
 	}
 
