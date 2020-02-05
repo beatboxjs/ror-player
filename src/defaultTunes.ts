@@ -964,6 +964,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		categories: [ "standard", "uncommon", "medium" ],
 		sheet: sheetUrl + "drunken-sailor.pdf",
 		description: require("../assets/tuneDescriptions/drunken-sailor.md"),
+		video: "https://tube.rhythms-of-resistance.org/videos/embed/00dd3ac1-a872-49ea-aec1-8c8ebc8f334e",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1456,6 +1457,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		categories: [ "standard", "common", "tricky" ],
 		sheet: sheetUrl + "ragga.pdf",
 		description: require("../assets/tuneDescriptions/ragga.md"),
+		video: "https://tube.rhythms-of-resistance.org/videos/embed/bb2a4cd6-021b-4596-9917-f53bed8363a8",
 		patterns: {
 			Tune: {
 				loop: true,
