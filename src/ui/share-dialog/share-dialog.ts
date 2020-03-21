@@ -32,12 +32,19 @@ export default class ShareDialog extends Vue {
 	shareSongs: { [songIdx: number]: boolean } = { };
 	sharePatterns: { [tuneName: string]: { [patternName: string]: boolean } } = { };
 
-	created() {
-		if(!this.linkPattern)
-			Vue.set(this.shareSongs, this.state.songIdx, true);
-		else {
-			Vue.set(this.sharePatterns, this.linkPattern[0], {});
-			Vue.set(this.sharePatterns[this.linkPattern[0]], this.linkPattern[1], true);
+	resetSelection() {
+		if(this.linkPattern) {
+			this.shareSongs = { };
+			this.sharePatterns = {
+				[this.linkPattern[0]]: {
+					[this.linkPattern[1]]: true
+				}
+			};
+		} else {
+			this.shareSongs = {
+				[this.state.songIdx]: true
+			};
+			this.sharePatterns = { };
 		}
 	}
 

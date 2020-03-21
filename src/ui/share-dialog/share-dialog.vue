@@ -1,4 +1,4 @@
-<b-modal title="Share" hide-footer :id="id" size="lg" modal-class="bb-share-dialog">
+<b-modal title="Share" hide-footer :id="id" size="lg" modal-class="bb-share-dialog" @show="resetSelection()">
 	<b-tabs>
 		<b-tab title="Link">
 			<textarea readonly="readonly" class="form-control" rows="5" :value="url"></textarea>
