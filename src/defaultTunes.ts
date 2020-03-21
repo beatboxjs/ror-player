@@ -141,6 +141,26 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 			'16 Silence': {
 				ls: repeat(64, ' ')
 			},
+			'Boom Break': {
+				ls: 'X               ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: '@ls',
+				sh: '@ls'
+			},
+			'Yala Break': {
+				ls: 'X X   X X   X   ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: '@ls',
+				sh: '@ls'
+			},
 			"Whistle in": {
 				ot: 'y   y   y   y   '
 			}
