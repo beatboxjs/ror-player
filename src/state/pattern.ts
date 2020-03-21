@@ -10,7 +10,9 @@ type BeatsOptional = { [instr in Instrument]?: Array<Stroke> };
 
 type BeatsStringOptional = { [instr in Instrument]?: string }
 
-export type VolumeHack = { [idx: number]: number };
+export type LegacyVolumeHack = Record<number, number>;
+
+export type VolumeHack = Partial<Record<Instrument, LegacyVolumeHack>>;
 
 type PatternProperties = {
 	length: number,
@@ -22,8 +24,8 @@ type PatternProperties = {
 	volumeHack?: VolumeHack
 }
 
-type PatternPropertiesOptional = {
-	[i in keyof PatternProperties]?: PatternProperties[i]
+type PatternPropertiesOptional = Omit<Partial<PatternProperties>, "volumeHack"> & {
+	volumeHack?: LegacyVolumeHack | VolumeHack
 };
 
 export type Pattern = PatternProperties & Beats;
@@ -34,23 +36,24 @@ export type CompressedPattern = PatternPropertiesOptional & BeatsStringOptional;
 
 
 export function normalizePattern(data?: PatternOptional): Pattern {
-	const ret: PatternOptional = {
+	const ret = {
 		length: data && data.length || 4,
 		time: data && data.time || 4,
 		speed: data && data.speed || config.defaultSpeed,
 		upbeat: data && data.upbeat || 0,
 		loop: data && data.loop || false,
 		displayName: data && data.displayName
-	};
+	} as Pattern;
 
 	if(data && data.volumeHack)
-		ret.volumeHack = data.volumeHack;
+		ret.volumeHack = normalizeVolumeHack(data.volumeHack);
 
 	for(const instr of config.instrumentKeys) {
-		ret[instr] = data && data[instr] ? clone(data[instr]) : [ ];
+		const line = data && data[instr];
+		ret[instr] = line ? clone(line) : [ ];
 	}
 
-	return Vue.observable(<Pattern> ret);
+	return Vue.observable(ret);
 }
 
 
@@ -195,7 +198,7 @@ export function patternFromCompressed(encodedPatternObject: CompressedPattern, o
 	else if(!originalPattern || !ret.upbeat)
 		ret.upbeat = 0;
 	if(encodedPatternObject.volumeHack != null)
-		ret.volumeHack = encodedPatternObject.volumeHack;
+		ret.volumeHack = normalizeVolumeHack(encodedPatternObject.volumeHack);
 
 	if(ret.length == null)
 		throw new Error("No pattern length provided.");
@@ -268,4 +271,20 @@ export function updatePattern(pattern: Pattern, update: PatternOptional) {
 			pattern[instr].splice(0, splice);
 		}
 	}
+}
+
+function isLegacyVolumeHack(volumeHack: LegacyVolumeHack | VolumeHack): volumeHack is LegacyVolumeHack {
+	return Object.keys(volumeHack).every((key) => key.match(/^[0-9]+$/));
+}
+
+function normalizeVolumeHack(volumeHack: LegacyVolumeHack | VolumeHack): VolumeHack {
+	if (!isLegacyVolumeHack(volumeHack)) {
+		return volumeHack;
+	}
+
+	const result = { } as VolumeHack;
+	for (const instr of config.instrumentKeys) {
+		result[instr] = clone(volumeHack);
+	}
+	return result;
 }

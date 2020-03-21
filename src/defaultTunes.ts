@@ -1,6 +1,6 @@
 import config, { Instrument } from "./config";
 import { clone, TypedObject } from "./utils";
-import { CompressedPattern, normalizePattern, Pattern, VolumeHack } from "./state/pattern";
+import { CompressedPattern, LegacyVolumeHack, normalizePattern, Pattern, VolumeHack } from "./state/pattern";
 import { GenericTune, normalizeTune, Tune } from "./state/tune";
 import { Song, SongOptional } from "./state/song";
 import { PatternReference } from "./state/state";
@@ -16,8 +16,8 @@ function repeat(n: number, pattern: string): string {
 	return ret;
 }
 
-function crescendo(length: number, start: number = 0): VolumeHack {
-	const r: VolumeHack = { };
+function crescendo(length: number, start: number = 0): LegacyVolumeHack {
+	const r: LegacyVolumeHack = { };
 	const a = .05;
 	const b = (1-a)/(length-1);
 	for(let i=0; i<length; i++)
@@ -25,8 +25,8 @@ function crescendo(length: number, start: number = 0): VolumeHack {
 	return r;
 }
 
-function decrescendo(length: number): VolumeHack {
-	const r: VolumeHack = { };
+function decrescendo(length: number): LegacyVolumeHack {
+	const r: LegacyVolumeHack = { };
 	const b = 0.95/(length-1);
 	for(let i=0; i<length; i++)
 		r[i] = 1-b*i;
@@ -217,8 +217,13 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: repeat(3, 'o o o o o o o ooo o o o o o o ooo o o o o o o ooo o o o oooooooo') + repeat(1, 'a a a a a a a aaa a a a a a a aaa a a a a a a aaa a a a aaaaaaaa'),
 				sh: '@re',
 				volumeHack: {
-					66:  .1, 78:  1, 82:  .1, 94:  1, 98:  .1, 110: 1, 114: .1, 120: 1,
-					130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1
+					ls: { 66:  .3, 78:  1, 82:  .3, 94:  1, 98:  .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 },
+					ms: { 66:  .3, 78:  1, 82:  .3, 94:  1, 98:  .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 },
+					hs: { 66:  .3, 78:  1, 82:  .3, 94:  1, 98:  .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 },
+					re: { 66:  .3, 78:  1, 82:  .3, 94:  1, 98:  .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 },
+					sn: { 66:  .3, 78:  1, 82:  .3, 94:  1, 98:  .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 },
+					ta: { 66:  .3, 78:  1, 82:  .3, 94:  1, 98:  .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 },
+					sh: { 66:  .3, 78:  1, 82:  .3, 94:  1, 98:  .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 }
 				}
 			},
 			'Nellie the Elephant Break': {
@@ -1327,7 +1332,6 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '  a a . o o o . a a a . o o o . a ',
 				sh: '@sn'
 			},
-			/* TODO: volumeHack only for Surdo
 			'Break 2*': {
 				upbeat: 2,
 				ls: 's s     s s     s s     s s     s ',
@@ -1337,8 +1341,12 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sn: '  X..XX..XX..XX..XX..XX..XX..XX..X',
 				ta: '    X X   X  X  X   X X   X  X  X ',
 				ag: '  a a . o o o . a a a . o o o . a ',
-				volumeHack: crescendo(32)
-			}*/
+				volumeHack: {
+					ls: crescendo(32),
+					ms: crescendo(32),
+					hs: crescendo(32)
+				}
+			},
 			'Bra Break': {
 				ls: '                        XX XX   ',
 				ms: '@ls',

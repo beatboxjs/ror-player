@@ -72,10 +72,19 @@ function isEnabled(instr: Instrument, headphones: Headphones, mute: Mute) {
 export function patternToBeatbox(pattern: Pattern, playbackSettings: PlaybackSettings): RawPatternWithUpbeat {
 	const fac = config.playTime/pattern.time;
 	const ret: RawPattern = new Array((pattern.length*pattern.time + pattern.upbeat) * fac);
-	let vol = 1;
+
+	let vol = { } as Record<Instrument, number>;
+	for (const instr of config.instrumentKeys) {
+		vol[instr] = 1;
+	}
+
 	for(let i=0; i<pattern.length*pattern.time+pattern.upbeat; i++) {
-		if(pattern.volumeHack && pattern.volumeHack[i] != null)
-			vol = pattern.volumeHack[i];
+		if (pattern.volumeHack) {
+			for (const instr of Object.keys(pattern.volumeHack) as Instrument[]) {
+				if (pattern.volumeHack[instr] && pattern.volumeHack[instr]![i] != null)
+					vol[instr] = pattern.volumeHack[instr]![i];
+			}
+		}
 
 		const stroke = [ ];
 
@@ -97,7 +106,7 @@ export function patternToBeatbox(pattern: Pattern, playbackSettings: PlaybackSet
 				}
 
 				if(strokeType && strokeType != " ")
-					stroke.push({ instrument: instr+"_"+strokeType, volume: vol * playbackSettings.volume * (playbackSettings.volumes[instr] == null ? 1 : playbackSettings.volumes[instr]) });
+					stroke.push({ instrument: instr+"_"+strokeType, volume: vol[instr] * playbackSettings.volume * (playbackSettings.volumes[instr] == null ? 1 : playbackSettings.volumes[instr]) });
 			}
 		}
 
