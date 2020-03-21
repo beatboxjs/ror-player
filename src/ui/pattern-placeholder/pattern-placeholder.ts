@@ -98,6 +98,10 @@ export default class PatternPlaceholder extends Vue {
 		return original && current && !patternEquals(original, current);
 	}
 
+	get isCustomPattern() {
+		return !defaultTunes.getPattern(this.tuneName, this.patternName);
+	}
+
 	@Watch("playbackSettings", { deep: true })
 	@Watch("pattern", { deep: true })
 	onUpdate() {

@@ -2,7 +2,10 @@
 	<b-card class="pattern-button">
 		<span class="tune-name">{{state.tunes[tuneName].displayName || tuneName}}</span>
 		<br>
-		<span class="pattern-name">{{state.tunes[tuneName].patterns[patternName].displayName || patternName}}</span>
+		<span class="pattern-name">
+			{{state.tunes[tuneName].patterns[patternName].displayName || patternName}}
+			<fa v-if="isCustomPattern" icon="star" title="User-created break" v-b-tooltip/>
+		</span>
 	</b-card>
 	<ul class="actions icon-list">
 		<li><a href="javascript:" title="Listen" v-b-tooltip.hover @click="playPattern()"><fa :icon="playerRef && playerRef.playing ? 'stop' : 'play-circle'"></fa></a></li>
