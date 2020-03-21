@@ -89,6 +89,18 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@ls',
 				sh: '@ls'
 			},
+			"Clave 4x": {
+				displayName: "Clave 4× soft to loud",
+				ls: 'X  X  X   X X   X  X  X   X X   X  X  X   X X   X  X  X   X X   ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: '@ls',
+				sh: '@ls',
+				volumeHack: { 0: .1, 16: .4, 32: .7, 48: 1  }
+			},
 			'Clave Inverted': {
 				ls: '  X X   X  X  X ',
 				ms: '@ls',
