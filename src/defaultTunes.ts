@@ -526,6 +526,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		displayName: "Bhaṅgṛā",
 		sheet: sheetUrl + "bhangra.pdf",
 		description: require("../assets/tuneDescriptions/bhangra.md"),
+		video: "https://tube.rhythms-of-resistance.org/videos/embed/bb1e9a2e-ce51-435c-818f-d98cf95f9ed0",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -947,6 +948,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		categories: [ "standard", "common", "medium" ],
 		sheet: sheetUrl + "drum-bass.pdf",
 		description: require("../assets/tuneDescriptions/drum-bass.md"),
+		video: "https://tube.rhythms-of-resistance.org/videos/embed/f5331b5e-5de7-41e9-af0f-813f874bb074",
 		patterns: {
 			Tune: {
 				loop: true,
