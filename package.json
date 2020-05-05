@@ -2,6 +2,7 @@
   "name": "ror-player",
   "version": "1.0.0",
   "description": "A pattern-based drumming machine based on TypeScript, beatbox.js, Vue.js and Bootstrap.",
+  "license": "AGPL-3",
   "repository": {
     "type": "git",
     "url": "https://github.com/beatboxjs/ror-player.git"
