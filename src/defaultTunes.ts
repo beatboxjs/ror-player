@@ -2322,10 +2322,10 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '@re'
 			},
 			'Cut-throat Break Fast': {
-				ls: 'X  X  X     ',
+				ls: 'X  X  X                 ',
 				ms: '@ls',
 				hs: '@ls',
-				re: ' XX XX XX   ',
+				re: ' XX XX XX               ',
 				sn: '@re',
 				ta: '@re',
 				ag: '@re',
@@ -2374,7 +2374,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '@ls'
 			}
 		},
-		exampleSong: [ "Tune", "Tune", "Break 2", "Tune", "Tune", "Break 3", "Tune", "Tune", "Break 5", "Tune", "Tune", "Bra Break", "Tune", "Tune", "Cut-throat Break", "Tune", "Tune", "Cut-throat Break Fast", "Tune", "Tune" ]
+		exampleSong: [ "Tune", "Tune", "Break 2", "Tune", "Tune", "Break 3", "Tune", "Tune", "Break 5", "Tune", "Tune", "Bra Break", "Tune", "Tune", "Cut-throat Break", "Tune", "Tune" ]
 	},
 	'Wolf': {
 		categories: [ "proposed" ],
