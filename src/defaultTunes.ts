@@ -2538,11 +2538,11 @@ const defaultTunes: { [tuneName: string]: Tune } = { };
 
 for(const i in rawTunes) {
 	const tune = rawTunes[i];
-	const newTune = <Tune> clone(tune);
+	const newTune = clone(tune) as any as Tune;
 
 	for(const j in tune.patterns) {
 		const pattern = tune.patterns[j];
-		const newPattern = <Pattern> clone(pattern);
+		const newPattern = clone(pattern) as any as Pattern;
 		if(!newPattern.time && tune.time)
 			newPattern.time = tune.time;
 

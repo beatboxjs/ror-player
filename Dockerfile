@@ -10,7 +10,7 @@ RUN adduser -D -h /opt/ror-player -s /bin/sh beatbox
 
 WORKDIR /opt/ror-player/
 
-RUN chmod 777 . && su beatbox -c 'npm install && npm run build' && mv build/* /usr/local/apache2/htdocs && rm -rf build node_modules bower_components
+RUN chmod 777 . && su beatbox -c 'npm install && npm run build' && mv dist/* /usr/local/apache2/htdocs && rm -rf dist node_modules
 
 ENTRYPOINT [ "/usr/bin/dumb-init", "--" ]
 

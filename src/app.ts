@@ -28,6 +28,8 @@ new Vue({
 	el: "#loading",
 	render: (createElement) => createElement(Overview),
 	mounted() {
-		enableRouter(this);
+		setTimeout(() => {
+			enableRouter(this);
+		}, 0);
 	}
 });

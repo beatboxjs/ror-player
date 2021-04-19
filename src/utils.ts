@@ -1,6 +1,7 @@
 import { inflateRaw, deflateRaw } from "pako";
 import { Instrument } from "./config";
 import Vue from "vue";
+import { decode } from "base64-arraybuffer";
 
 export type TypedObject<Type> = {
     [key: string]: Type
@@ -78,11 +79,17 @@ export function objectToString(object: object): string {
 }
 
 export function stringToObject(string: string): object {
-    let decoded = atob(string.replace(/-/g, '+').replace(/_/g, '/'));
-    if(decoded.charAt(0) != '{')
-        decoded = inflateRaw(decoded, { to: "string" });
-    if(decoded.charCodeAt(decoded.length-1) == 0) // Happened once, don't know why
-        decoded = decoded.substr(0, decoded.length-1);
+    const encoded = string.replace(/-/g, '+').replace(/_/g, '/');
+
+    let decoded;
+    if (atob(encoded.substr(0, 2)).charAt(0) == "{")
+        decoded = atob(encoded);
+    else {
+        decoded = inflateRaw(new Uint8Array(decode(encoded)), { to: "string" });
+        if(decoded.charCodeAt(decoded.length-1) == 0) // Happened once, don't know why
+            decoded = decoded.substr(0, decoded.length-1);
+    }
+
     return JSON.parse(decoded);
 }
 

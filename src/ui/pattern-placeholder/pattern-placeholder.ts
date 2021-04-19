@@ -45,7 +45,7 @@ export default class PatternPlaceholder extends Vue {
 	@Prop({ type: Boolean, default: false }) readonly readonly!: boolean;
 	@Prop(Object) readonly settings?: PlaybackSettings;
 	@Prop({ default: null }) readonly draggable!: any;
-	@Prop({ type: String, default: "copy" }) readonly dragEffect!: string;
+	@Prop({ type: String, default: "copy" }) readonly dragEffect!: DataTransfer['dropEffect'];
 
 	playerRef: BeatboxReference | null = null;
 	editorId: string | null = null;
