@@ -1,13 +1,12 @@
 import Vue from "vue";
 import Component from "vue-class-component";
-import template from "./update.vue";
+import WithRender from "./update.vue";
 import { registerMultipleHandlers } from "../../services/events";
 import "./update.scss";
 import config from "../../config";
 
-@Component({
-	template
-})
+@WithRender
+@Component({})
 export default class Update extends Vue {
 	show: boolean = false;
 

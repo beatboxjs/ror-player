@@ -1,13 +1,13 @@
 import Component from "vue-class-component";
-import template from "./stroke-dropdown.vue";
+import WithRender from "./stroke-dropdown.vue";
 import Vue from "vue";
 import config, { Instrument } from "../../config";
 import { Model, Prop } from "vue-property-decorator";
 import $ from "jquery";
 import "./stroke-dropdown.scss";
 
+@WithRender
 @Component({
-	template,
 	components: { }
 })
 export default class StrokeDropdown extends Vue {

@@ -164,7 +164,9 @@ if(legacyTunes) {
 export default history;
 
 @Component({
-	template: `<div class="bb-state-provider"><slot/></div>`
+	render: function(createElement) {
+		return createElement("div", { "class": "bb-state-provider" }, this.$slots.default);
+	}
 })
 export class StateProvider extends Vue {
 

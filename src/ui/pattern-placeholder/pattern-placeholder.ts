@@ -1,6 +1,6 @@
 import "./pattern-placeholder.scss";
 import Component from "vue-class-component";
-import template from "./pattern-placeholder.vue";
+import WithRender from "./pattern-placeholder.vue";
 import Vue from "vue";
 import Beatbox from "beatbox.js";
 import { createPattern, getPatternFromState, State } from "../../state/state";
@@ -17,7 +17,7 @@ import { normalizePlaybackSettings, PlaybackSettings } from "../../state/playbac
 import config from "../../config";
 import defaultTunes from "../../defaultTunes";
 import { patternEquals } from "../../state/pattern";
-import patternPlaceholderItemTemplate from "./pattern-placeholder-item.vue";
+import WithPatternPlaceholderItemRender from "./pattern-placeholder-item.vue";
 import events, { registerMultipleHandlers } from "../../services/events";
 import { DragType, PatternDragData, setDragData } from "../../services/draggable";
 import PatternEditorDialog from "../pattern-editor-dialog/pattern-editor-dialog";
@@ -26,15 +26,14 @@ import FileSaver from "file-saver";
 import Progress from "../utils/progress";
 import "beatbox.js-export";
 
-@Component({
-	template: patternPlaceholderItemTemplate
-})
+@WithPatternPlaceholderItemRender
+@Component({})
 export class PatternPlaceholderItem extends Vue {
 }
 
 
+@WithRender
 @Component({
-	template,
 	components: { PatternEditorDialog, Progress }
 })
 export default class PatternPlaceholder extends Vue {

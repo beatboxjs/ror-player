@@ -1,7 +1,7 @@
 import "./history.scss";
 import Vue from "vue";
 import Component from "vue-class-component";
-import template from "./history.vue";
+import WithRender from "./history.vue";
 import events, { MultipleHandlers, registerMultipleHandlers } from "../../services/events";
 import history from "../../services/history";
 import { isoDate, readableDate } from "../../services/utils";
@@ -21,10 +21,8 @@ events.$on("history-load-encoded-string", () => {
 	});
 });
 
-@Component({
-	template,
-	components: { }
-})
+@WithRender
+@Component({})
 export default class History extends Vue {
 
 	popoverId = `bb-history-popover-${id()}`;

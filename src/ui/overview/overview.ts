@@ -2,7 +2,7 @@ import $ from "jquery";
 import { stopAllPlayers } from "../../services/player";
 import Vue from "vue";
 import Component from "vue-class-component";
-import template from "./overview.vue";
+import WithRender from "./overview.vue";
 import { Watch } from "vue-property-decorator";
 import Compose from "../compose/compose";
 import Listen from "../listen/listen";
@@ -13,8 +13,8 @@ import Compatibility from "../compatibility/compatibility";
 import Help from "../help/help";
 import Update from "../update/update";
 
+@WithRender
 @Component({
-	template,
 	components: { Compatibility, Compose, Listen, StateProvider, Help, Update }
 })
 export default class Overview extends Vue {

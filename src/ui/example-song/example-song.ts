@@ -1,5 +1,5 @@
 import Component from "vue-class-component";
-import template from "./example-song.vue";
+import WithRender from "./example-song.vue";
 import Vue from "vue";
 import { InjectReactive, Prop, Watch } from "vue-property-decorator";
 import { getPatternFromState, State } from "../../state/state";
@@ -15,8 +15,8 @@ import FileSaver from "file-saver";
 import Progress from "../utils/progress";
 import "beatbox.js-export";
 
+@WithRender
 @Component({
-	template,
 	components: { Progress }
 })
 export default class ExampleSong extends Vue {

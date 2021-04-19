@@ -1,14 +1,13 @@
 import Vue from "vue";
 import Component from "vue-class-component";
-import template from "./rename-pattern-dialog.vue";
+import WithRender from "./rename-pattern-dialog.vue";
 import { copyPattern, getPatternFromState, getSortedTuneList, movePattern, State } from "../../state/state";
 import { InjectReactive, Prop } from "vue-property-decorator";
 import defaultTunes from "../../defaultTunes";
 import events from "../../services/events";
 
-@Component({
-	template
-})
+@WithRender
+@Component({})
 export default class RenamePatternDialog extends Vue {
 	@InjectReactive() state!: State;
 

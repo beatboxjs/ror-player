@@ -1,7 +1,7 @@
 import Vue from "vue";
 import { normalizeState, State } from "../../state/state";
 import Component from "vue-class-component";
-import template from "./listen.vue";
+import WithRender from "./listen.vue";
 import { Tune } from "../../state/tune";
 import { stopAllPlayers } from "../../services/player";
 import PatternListFilter, { Filter, filterPatternList } from "../pattern-list-filter/pattern-list-filter";
@@ -11,8 +11,8 @@ import events, { MultipleHandlers, registerMultipleHandlers } from "../../servic
 import "./listen.scss";
 import $ from "jquery";
 
+@WithRender
 @Component({
-	template,
 	components: { PatternListFilter, TuneInfo },
 	data: () => ({ filter: undefined })
 })

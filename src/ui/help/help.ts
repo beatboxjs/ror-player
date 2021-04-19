@@ -1,12 +1,10 @@
 import config from "../../config";
 import Vue from "vue";
 import Component from "vue-class-component";
-import template from "./help.vue";
+import WithRender from "./help.vue";
 
-@Component({
-	template,
-	components: { }
-})
+@WithRender
+@Component({})
 export default class Help extends Vue {
 
 	appName = config.appName;

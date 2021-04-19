@@ -2,7 +2,7 @@ import FileSaver from "file-saver";
 import "./song-player.scss";
 import Vue from "vue";
 import Component from "vue-class-component";
-import template from "./song-player.vue";
+import WithRender from "./song-player.vue";
 import { InjectReactive, Watch } from "vue-property-decorator";
 import { getPatternFromState, PatternReference, State, selectSong, createSong, getSongName, removeSong } from "../../state/state";
 import { BeatboxReference, createBeatbox, getPlayerById, songToBeatbox, stopAllPlayers } from "../../services/player";
@@ -41,8 +41,8 @@ import Progress from "../utils/progress";
 type DragOver = "trash" | { instr: Instrument | null, idx: number };
 
 
+@WithRender
 @Component({
-	template,
 	components: {
 		PlaybackSettings: PlaybackSettingsComponent,
 		PatternPlaceholder,

@@ -1,12 +1,11 @@
 import Vue from "vue";
 import Component from "vue-class-component";
-import template from "./collapse.vue";
+import WithRender from "./collapse.vue";
 import { BCollapse } from "bootstrap-vue";
 import { Model, Prop, Ref, Watch } from "vue-property-decorator";
 
-@Component({
-	template
-})
+@WithRender
+@Component({})
 export default class Collapse extends Vue {
 
 	@Prop({ type: String, required: true }) id!: string;

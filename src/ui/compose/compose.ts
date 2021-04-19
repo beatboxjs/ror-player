@@ -1,7 +1,7 @@
 import "./compose.scss";
 import Vue from "vue";
 import Component from "vue-class-component";
-import template from "./compose.vue";
+import WithRender from "./compose.vue";
 import { InjectReactive, Ref } from "vue-property-decorator";
 import { State } from "../../state/state";
 import { allInstruments, appendSongPart } from "../../state/song";
@@ -13,8 +13,8 @@ import { PatternPlaceholderItem } from "../pattern-placeholder/pattern-placehold
 import events, { registerMultipleHandlers } from "../../services/events";
 import { scrollToElement } from "../../services/utils";
 
+@WithRender
 @Component({
-	template,
 	components: { PatternList, PatternPlaceholderItem, SongPlayer, History }
 })
 export default class Compose extends Vue {

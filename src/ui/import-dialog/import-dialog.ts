@@ -1,5 +1,5 @@
 import "./import-dialog.scss";
-import template from "./import-dialog.vue";
+import WithRender from "./import-dialog.vue";
 import Component from "vue-class-component";
 import Vue from "vue";
 import {
@@ -16,10 +16,8 @@ import { patternEquals } from "../../state/pattern";
 import { songContainsPattern } from "../../state/song";
 
 
-@Component({
-	template,
-	components: { }
-})
+@WithRender
+@Component({})
 export default class ImportDialog extends Vue {
 
 	@InjectReactive() readonly state!: State;

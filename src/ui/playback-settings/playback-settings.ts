@@ -1,7 +1,7 @@
 import "./playback-settings.scss";
 import Vue from "vue";
 import Component from "vue-class-component";
-import template from "./playback-settings.vue";
+import WithRender from "./playback-settings.vue";
 import { Model, Prop, Watch } from "vue-property-decorator";
 import {
 	Mute,
@@ -13,10 +13,8 @@ import isEqual from "lodash.isequal";
 import $ from "jquery";
 import { id } from "../../utils";
 
-@Component({
-	template,
-	components: { }
-})
+@WithRender
+@Component({})
 export default class PlaybackSettingsComponent extends Vue {
 
 	@Prop({ type: Object, required: true }) playbackSettings!: PlaybackSettings;

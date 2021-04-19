@@ -1,7 +1,7 @@
 import jsonFormat from 'json-format';
 import Vue from "vue";
 import Component from "vue-class-component";
-import template from "./share-dialog.vue";
+import WithRender from "./share-dialog.vue";
 import "./share-dialog.scss";
 import {
 	compressState,
@@ -18,10 +18,8 @@ import { objectToString } from "../../utils";
 import { makeAbsoluteUrl } from "../../services/utils";
 import { songContainsPattern } from "../../state/song";
 
-@Component({
-	template,
-	components: { }
-})
+@WithRender
+@Component({})
 export default class ShareDialog extends Vue {
 
 	@InjectReactive() readonly state!: State;
@@ -152,5 +150,5 @@ export default class ShareDialog extends Vue {
 	getSongName(idx: number) {
 		return getSongName(this.state, idx);
 	}
-	
+
 }

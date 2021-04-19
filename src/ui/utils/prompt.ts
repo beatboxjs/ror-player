@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop, Watch } from "vue-property-decorator";
-import template from "./prompt.vue";
+import WithRender from "./prompt.vue";
 import $ from 'jquery';
 import { sleep } from "../../utils";
 
@@ -26,9 +26,8 @@ export async function openPromptDialog(instance: Vue, title: string, defaultValu
 	}
 }
 
-@Component({
-	template
-})
+@WithRender
+@Component({})
 export default class Prompt extends Vue {
 
 	@Prop({ type: String, default: "" }) readonly defaultValue!: string;

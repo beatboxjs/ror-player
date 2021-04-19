@@ -4,7 +4,7 @@ import { tuneIsInCategory } from "../../state/tune";
 import config, { Category } from "../../config";
 import Vue from "vue";
 import Component from "vue-class-component";
-import template from "./pattern-list-filter.vue";
+import WithRender from "./pattern-list-filter.vue";
 import { Prop, Watch } from "vue-property-decorator";
 
 export interface Filter {
@@ -27,9 +27,8 @@ export function filterPatternList(state: State, params?: Filter | null) {
 	return ret;
 }
 
-@Component({
-	template
-})
+@WithRender
+@Component({})
 export default class PatternListFilter extends Vue {
 	filterCats = config.filterCats;
 

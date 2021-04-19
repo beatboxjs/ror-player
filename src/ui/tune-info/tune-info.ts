@@ -2,7 +2,7 @@ import "./tune-info.scss";
 import defaultTunes from "../../defaultTunes";
 import Vue from "vue";
 import Component from "vue-class-component";
-import template from "./tune-info.vue";
+import WithRender from "./tune-info.vue";
 import $ from "jquery";
 import config from "../../config";
 import { InjectReactive, Prop, Watch } from "vue-property-decorator";
@@ -23,8 +23,8 @@ export function getTuneDescription(tuneName: string): string | null {
 	return el.html();
 }
 
+@WithRender
 @Component({
-	template,
 	components: { PlaybackSettings: PlaybackSettingsComponent, PatternPlaceholder, ExampleSong, PatternPlaceholderItem }
 })
 export default class TuneInfo extends Vue {

@@ -1,6 +1,6 @@
 import "./pattern-editor-dialog.scss";
 import Component from "vue-class-component";
-import template from "./pattern-editor-dialog.vue";
+import WithRender from "./pattern-editor-dialog.vue";
 import { BeatboxReference, stopAllPlayers } from "../../services/player";
 import { InjectReactive, Prop, Ref, Vue } from "vue-property-decorator";
 import { getPatternFromState, State } from "../../state/state";
@@ -11,8 +11,8 @@ import { BModal } from "bootstrap-vue";
 import ShareDialog from "../share-dialog/share-dialog";
 import { id } from "../../utils";
 
+@WithRender
 @Component({
-	template,
 	components: { PatternPlayer, ShareDialog }
 })
 export default class PatternEditorDialog extends Vue {

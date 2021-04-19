@@ -1,7 +1,7 @@
 import "./pattern-list.scss";
 import Vue from "vue";
 import Component from "vue-class-component";
-import template from "./pattern-list.vue";
+import WithRender from "./pattern-list.vue";
 import { InjectReactive, Prop, Watch } from "vue-property-decorator";
 import {
 	copyTune,
@@ -26,8 +26,8 @@ type Opened = {
 	[tuneName: string]: boolean
 }
 
+@WithRender
 @Component({
-	template,
 	components: { PatternListFilter, PatternPlaceholder, PatternPlaceholderItem, PatternEditorDialog, RenamePatternDialog, Collapse }
 })
 export default class PatternList extends Vue {

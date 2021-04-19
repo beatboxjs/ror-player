@@ -4,6 +4,7 @@ import fs from "fs";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import HtmlWebpackInlineSourcePlugin from "html-webpack-inline-source-plugin";
 import CopyPlugin from "copy-webpack-plugin";
+import { compile, CompilerOptions } from "vue-template-compiler";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 const expose = {
@@ -25,7 +26,7 @@ export default (env: any, argv: any): Configuration => {
 		resolve: {
 			extensions: [ ".ts", ".js" ],
 			alias: {
-				vue: "vue/dist/vue.js"
+				vue: "vue/dist/vue.runtime.esm.js"
 			}
 		},
 		module: {
@@ -47,7 +48,19 @@ export default (env: any, argv: any): Configuration => {
 				},
 				{ test: /\.ts$/, loader: "ts-loader" },
 				{ test: /\.(png|jpe?g|gif|svg)$/, type: "asset/inline" },
-				{ test: /\.(html|vue)$/, loader: "html-loader" },
+				{ test: /\.html$/, loader: "html-loader" },
+				{
+					test: /\.vue$/,
+					loader: "vue-template-loader",
+					options: {
+						transformAssetUrls: {
+							img: 'src'
+						},
+						compiler: {
+							compile: (template: string, options: CompilerOptions) => compile(template, { ...options, whitespace: "condense" })
+						}
+					}
+				},
 				{ test: /\.coffee$/, loader: "coffee-loader" },
 				{ test: /\.md$/, use: [ "html-loader", "markdown-loader" ]},
 				...Object.entries(expose).map(([key, value]) => ({

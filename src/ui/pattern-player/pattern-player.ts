@@ -1,7 +1,7 @@
 import "./pattern-player.scss";
 import Vue from "vue";
 import Component from "vue-class-component";
-import template from "./pattern-player.vue";
+import WithRender from "./pattern-player.vue";
 import config, { Instrument } from "../../config";
 import { InjectReactive, Prop, Watch } from "vue-property-decorator";
 import { BeatboxReference, createBeatbox, getPlayerById, patternToBeatbox } from "../../services/player";
@@ -23,8 +23,8 @@ type StrokeDropdownInfo = {
 	sequence?: string
 };
 
+@WithRender
 @Component({
-	template,
 	components: { PlaybackSettings: PlaybackSettingsComponent, StrokeDropdown }
 })
 export default class PatternPlayer extends Vue {
