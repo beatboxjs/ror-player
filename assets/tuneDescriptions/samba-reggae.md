@@ -10,7 +10,7 @@ demonstrations in which there are other non-RoR samba bands.
 
 **Sign:** smoking a cigar/joint
 
-### Background
+## Background
 
 Part of the first set of tunes introduced in 2000. Samba Reggae is a mix of Samba and Reggae and was invented by
 the afro-bloc black liberation movements in Brazil ([Wikipedia](https://en.wikipedia.org/wiki/Samba_reggae)).
@@ -24,7 +24,7 @@ As an anecdote, RoR Samba Reggae is played with mid surdo hitting in 1 and 3 bea
 (mid-low-mid-low,low), while most of the samba bands used to play with low surdo in 1 and 3 and mid one in 2 and 4
 (low-mid-low-mid,mid). Sybarites of samba will tell you so. Repi and snare grooves use to be swapped too.
 
-### Difficulty
+## Difficulty
 
 * **Surdos**: medium
 * **Repinique**: medium

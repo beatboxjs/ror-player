@@ -1,15 +1,14 @@
 <div :class="`bb-song-player ${dragging ? 'dragging' : ''} ${resizing ? 'resizing' : ''}`">
 	<div class="control-panel">
-		<slot />
-		<b-button :variant="playerRef.playing ? 'info' : 'success'" @click="playPause()"><fa :icon="playerRef.playing ? 'pause' : 'play'" /> {{playerRef.playing ? 'Pause' : 'Play'}}</b-button>
-		<b-button variant="danger" @click="stop()"><fa icon="stop"/> Stop</b-button>
+		<b-button :variant="playerRef.playing ? 'info' : 'success'" @click="playPause()"><fa :icon="playerRef.playing ? 'pause' : 'play'" /><span class="d-none d-sm-inline"> {{playerRef.playing ? 'Pause' : 'Play'}}</span></b-button>
+		<b-button variant="danger" @click="stop()"><fa icon="stop"/><span class="d-none d-sm-inline"> Stop</span></b-button>
 		<PlaybackSettings :playback-settings="state.playbackSettings" tooltip-placement="bottom" />
 
 		<div class="divider"></div>
 
 		<b-dropdown class="song-dropdown" variant="secondary">
 			<template slot="button-content">
-				<fa icon="music"/> {{getSongName()}}
+				<fa icon="music"/><span class="d-none d-sm-inline"> {{getSongName()}}</span>
 			</template>
 			<b-dropdown-group v-for="(thisSong, idx) in state.songs" :key="idx" :active="idx == state.songIdx">
 				<b-dropdown-item href="javascript:" class="song-name flex-grow-1" @click="selectSong(idx)">{{getSongName(idx)}}</b-dropdown-item>
@@ -23,7 +22,7 @@
 
 		<b-dropdown variant="secondary">
 			<template slot="button-content">
-				<fa icon="cog"/> Tools
+				<fa icon="cog"/><span class="d-none d-sm-inline"> Tools</span>
 			</template>
 			<b-dropdown-item href="javascript:" @click="clearSong()"><fa icon="trash"/> Clear song</b-dropdown-item>
 			<b-dropdown-item href="javascript:" @click="downloadMP3()"><fa icon="file-export"/> Export MP3</b-dropdown-item>
@@ -41,6 +40,10 @@
 		>
 			<fa icon="trash"/>
 		</div>
+
+		<div class="flex-grow-1"></div>
+
+		<slot />
 	</div>
 
 	<div class="song-player-container">

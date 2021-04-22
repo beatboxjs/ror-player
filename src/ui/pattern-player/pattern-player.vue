@@ -1,7 +1,7 @@
 <div>
 	<div class="bb-pattern-editor-toolbar">
-		<b-button :variant="playerRef && playerRef.playing ? 'info' : 'success'" @click="playPause()"><fa :icon="playerRef && playerRef.playing ? 'pause' : 'play'"></fa> {{playerRef && playerRef.playing ? 'Pause' : 'Play'}}</b-button>
-		<b-button variant="danger" @click="stop()"><fa icon="stop"/> Stop</b-button>
+		<b-button :variant="playerRef && playerRef.playing ? 'info' : 'success'" @click="playPause()"><fa :icon="playerRef && playerRef.playing ? 'pause' : 'play'"></fa><span class="d-none d-sm-inline"> {{playerRef && playerRef.playing ? 'Pause' : 'Play'}}</span></b-button>
+		<b-button variant="danger" @click="stop()"><fa icon="stop"/><span class="d-none d-sm-inline"> Stop</span></b-button>
 		<PlaybackSettings :playback-settings="playbackSettings" :default-speed="pattern.speed" />
 
 		<div class="divider"></div>

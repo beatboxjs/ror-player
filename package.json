@@ -65,7 +65,6 @@
     "beatbox.js-export": "^1.2.2",
     "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",
-    "bootswatch": "^4.6.0",
     "file-saver": "^2.0.5",
     "howler": "^2.2.1",
     "jquery": "^3.6.0",

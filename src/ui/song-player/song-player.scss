@@ -212,13 +212,21 @@
 	}
 
 	.control-panel {
-		padding: 1.2em 1.2em 0 1.2em;
+		padding: 0.75rem 1.25rem 0 1.25rem;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+
+		> * {
+			flex-shrink: 0;
+			margin-top: 0.5rem;
+			margin-right: 0.25rem;
+		}
 
 		> .divider {
-			display: inline-block;
-			vertical-align: top;
 			height: 34px;
-			margin: 0 9px;
+			margin-left: 0.75rem;
+			margin-right: 0.5rem;
 			border-left: 1px solid #dee2e6;
 		}
 	}

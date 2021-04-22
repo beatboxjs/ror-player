@@ -9,7 +9,7 @@ The Surdo line has an upbeat, so when entering the groove (and Break 2), the Sur
 
 **Sign:** Shake salt onto your hand
 
-### Background
+## Background
 
 Invented by RoR Berlin in 2017. Based on the song “Tequila” by The Champs ([YouTube](https://www.youtube.com/watch?v=3H6amDbAwlY)).
 
@@ -17,7 +17,7 @@ Tequila is an alcoholic drink made from blue agave in the region around the city
 in the 16th century by Spanish colonisers, inspired by Pulque, a traditional alcoholic drink made from fermented agave.
 Outside of Mexico, it is common to lick salt and lemon from one’s hand before drinking Tequila, hence the tune sign.
 
-### Difficulty
+## Difficulty
 
 * **Low Surdo:** tricky
 * **Mid Surdo:** medium
@@ -27,7 +27,7 @@ Outside of Mexico, it is common to lick salt and lemon from one’s hand before 
 * **Tamb:** easy
 * **Agogô:** medium
 
-### Breaks
+## Breaks
 
 * **Break 1:** Only Agogô, then everyone shouting “Tequila!”. Typically played after Break 2 or Bra Break, also sounds good
   after other 3-bar breaks, such as the Progressive Break.

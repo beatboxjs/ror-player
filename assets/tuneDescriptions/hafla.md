@@ -2,11 +2,11 @@ It is not the easiest to play but sounds really cool!
 
 **Sign:** spread arms and shake your shoulders and hips
 
-### Background
+## Background
 
 This tune comes from the Tel Aviv Band and was introduced at the TNM 2011.
 
-### Difficulty
+## Difficulty
 
 * **Low Surdo**: easy
 * **Mid Surdo**: medium
@@ -16,7 +16,7 @@ This tune comes from the Tel Aviv Band and was introduced at the TNM 2011.
 * **Tamb**: medium
 * **Agogô**: medium
 
-### Breaks
+## Breaks
 
 * Hafla Break/Yala break is similar to the first two counts of the Tamb line.
 * Kick Back 1 Break is like the Hafla Break with alternating surdo and all-others (call-response). It is played in a

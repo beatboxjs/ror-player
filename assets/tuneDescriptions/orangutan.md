@@ -3,11 +3,11 @@ played by one Surdo player with three Surdos.
 
 **Sign:** monkey, both hands in armpits
 
-### Background
+## Background
 
 Introduced to the network by RoR London in 2012.
 
-### Difficulty
+## Difficulty
 
 * **Surdos**: Easy
 * **Repi**: Medium

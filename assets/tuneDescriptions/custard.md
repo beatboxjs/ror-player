@@ -8,12 +8,12 @@ out the differences and find your way to remember them.
 
 **Sign:** making an offer to the sky
 
-### Background
+## Background
 
 Was formerly callled “Welfare State” but was renamed because people don’t like the state. The new name was taken from
 the memory hook “I’ve got custard in my underpants.”
 
-### Difficulty
+## Difficulty
 
 * **Surdos**: medium
 * **Repi**: medium
@@ -21,7 +21,7 @@ the memory hook “I’ve got custard in my underpants.”
 * **Tamb**: medium (easy to remember, very tiring)
 * **Agogô**: medium (easy to mix up with afoxe)
 
-### Breaks
+## Breaks
 
 * Break 1&2 are variations of the Tamb stroke in a call&response-way. In Break 1 the Surdos call, in Break 2 the Tambs.
 * Break 3 can be used to have kind of solo parts for instrument sections: Let them continue while the others play Break 3.

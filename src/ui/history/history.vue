@@ -1,6 +1,6 @@
 <b-dropdown v-if="historicStates.length > 1" class="bb-history" variant="secondary" right>
 	<template slot="button-content">
-		<span :id="popoverId"><fa icon="clock"/> History</span>
+		<span :id="popoverId"><fa icon="clock"/><span class="d-none d-sm-inline"> History</span></span>
 	</template>
 	<b-dropdown-item v-for="historicState in historicStates" :key="historicState.key" :active="historicState.isCurrent" @click="loadHistoricState(historicState.key)" :title="historicState.isoDate">{{historicState.readableDate}}</b-dropdown-item>
 	<b-dropdown-divider />

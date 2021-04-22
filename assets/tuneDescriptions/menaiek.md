@@ -1,10 +1,10 @@
 **Sign:** put three fingers on your other upper arm (like covering a police badge)
 
-### Background
+## Background
 
 Introduced by RoR Jerusalem in 2015. “Menaiek” is Hebrew for “cop”.
 
-### Difficulty
+## Difficulty
 
 * **Low Surdo**: Easy
 * **Mid/High Surdo**: Tricky

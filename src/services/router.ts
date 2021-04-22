@@ -26,7 +26,10 @@ const ROUTES: { [key: string]: string } = {
 
 const ROUTES_MATCH: { [key: string]: MatchFunction } = Object.keys(ROUTES).reduce((p, c) => ({ ...p, [c]: match(ROUTES[c], { decode: decodeURIComponent }) }), {});
 
-const ROUTES_COMPILE: { [key: string]: PathFunction } = Object.keys(ROUTES).reduce((p, c) => ({ ...p, [c]: compile(ROUTES[c], { encode: encodeURIComponent }) }), {});
+const ROUTES_COMPILE: { [key: string]: PathFunction } = {
+	root: () => "/",
+	...Object.keys(ROUTES).reduce((p, c) => ({ ...p, [c]: compile(ROUTES[c], { encode: encodeURIComponent }) }), {})
+};
 
 type Params = { [key: string]: string };
 

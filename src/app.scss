@@ -1,4 +1,3 @@
-@import "~bootswatch/dist/cerulean/bootstrap.css";
 @import "~bootstrap-vue/dist/bootstrap-vue.css";
 @import "~mobile-drag-drop/default.css";
 
@@ -25,7 +24,7 @@ h1,h2,h3,h4,h5,h6,.popover-header {
 	align-items: center;
 
 	li:not(:first-child) {
-		margin-left: 3px;
+		margin-left: 0.25rem;
 	}
 
 	list-style-type: none;

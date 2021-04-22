@@ -10,12 +10,12 @@ while it’s great – make sure tho whole band plays like this, if some plays i
 
 **Sign:** folded hands, like praying
 
-### Background
+## Background
 
 Bhaṅgṛā is a style of pop music invented by Punjabi immigrants in Great Britain and North America
 ([Wikipedia](https://en.wikipedia.org/wiki/Bhangra_(music))).
 
-### Difficulty
+## Difficulty
 
 * **Surdos:** easy
 * **Repi:** easy
@@ -23,7 +23,7 @@ Bhaṅgṛā is a style of pop music invented by Punjabi immigrants in Great Bri
 * **Tamb:** medium
 * **Agogô:** easy
 
-### Breaks
+## Breaks
 
 * Break 1 and 2: are very similar, but luckily, there are memory-phrases to help you memorize and distinguish them.
   Singing them together in a rehearsal is also a good idea. (btw: papadam is an indian bread)

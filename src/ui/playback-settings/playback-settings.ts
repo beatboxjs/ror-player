@@ -2,7 +2,7 @@ import "./playback-settings.scss";
 import Vue from "vue";
 import Component from "vue-class-component";
 import WithRender from "./playback-settings.vue";
-import { Model, Prop, Watch } from "vue-property-decorator";
+import { Prop } from "vue-property-decorator";
 import {
 	Mute,
 	PlaybackSettings, PlaybackSettingsOptional,
@@ -12,9 +12,12 @@ import config, { Instrument } from "../../config";
 import isEqual from "lodash.isequal";
 import $ from "jquery";
 import { id } from "../../utils";
+import Popover from "../utils/popover";
 
 @WithRender
-@Component({})
+@Component({
+	components: { Popover }
+})
 export default class PlaybackSettingsComponent extends Vue {
 
 	@Prop({ type: Object, required: true }) playbackSettings!: PlaybackSettings;

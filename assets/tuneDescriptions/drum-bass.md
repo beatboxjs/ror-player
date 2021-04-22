@@ -8,11 +8,11 @@ also helpful to sing them all together (low, high, middle middle, low, high-low,
 
 **Sign:** With one hand in your ear lift the other and move it front and back (like a DJ).
 
-### Background
+## Background
 
 Has been developed transnationally by the network between 2009 and 2010.
 
-### Difficulty
+## Difficulty
 
 * **Low Surdo:** hard
 * **Mid Surdo:** easy
@@ -23,7 +23,7 @@ Has been developed transnationally by the network between 2009 and 2010.
 * **Agogô:** medium
 
 
-### Breaks
+## Breaks
 
 * Break 1 is a singing break (no drumming, all sing together "everybody dance now!”), brings a good mood and moves and
   can be used to involve audience. This break can be played in all other tunes as well.

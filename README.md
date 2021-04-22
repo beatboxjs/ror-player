@@ -13,8 +13,7 @@ It is written in TypeScript and relies heavily on beatbox.js, Vue.js and Bootstr
 
 Used technologies are:
 * [TypeScript](https://www.typescriptlang.org/) and [SASS](https://sass-lang.com/) for cleaner code
-* [Vue.js](https://vuejs.org/), [Bootstrap 4](https://getbootstrap.com/), [Font Awesome](https://fontawesome.com/) and
-  [Bootswatch Cerulian](https://bootswatch.com/cerulean/) for the UI
+* [Vue.js](https://vuejs.org/), [Bootstrap 4](https://getbootstrap.com/) and [Font Awesome](https://fontawesome.com/) for the UI
 * [howler.js](https://howlerjs.com/) to play audio in the browser
 * [wav-encoder](https://github.com/mohayonao/wav-encoder), [Aurora.js](https://github.com/audiocogs/aurora.js/),
   [audiolib.js](https://github.com/jussi-kalliokoski/audiolib.js/) and [libmp3lame.js](https://github.com/akrennmair/libmp3lame-js)
@@ -31,7 +30,7 @@ Technical notes
 * A service worker stores a copy of the `index.html` file in the application cache. When opening the player, it is loaded from the cache if
   it is available there (to speed up loading and to make offline access possible). Only after the player is loaded, the service worker
   downloads the most recent `index.html` from the server (if the connection is possible) and updates the cache. Once downloaded, if the file
-  has changed, a notification is shown in the player, and the page has to be reloaded in order to show the updated version. 
+  has changed, a notification is shown in the player, and the page has to be reloaded in order to show the updated version.
 
 
 Build and host it yourself

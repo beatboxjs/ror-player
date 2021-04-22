@@ -12,13 +12,13 @@ tiring for them so give them a break once in a while.
 
 **Sign:** Shaving the armpit
 
-### Background
+## Background
 
 Afoxê is “an Afro Brazilian genre of music” ([Wikipedia](https://en.wikipedia.org/wiki/Afox%C3%AA)).
 
 The sign comes from the name sounding similar to "After-shave" (when pronounced with an English accent).
 
-### Difficulty
+## Difficulty
 
 * **Low Surdo:** easy
 * **Mid/High Surdo:** medium (they play the same…)
@@ -27,7 +27,7 @@ The sign comes from the name sounding similar to "After-shave" (when pronounced 
 * **Tamb:** medium (quite exhausting if played for a long time)
 * **Agogô:** medium (easy to mix up with custard)
 
-### Breaks
+## Breaks
 
 * Break 1, a call&response between Surdos and all others
 * Breaks 2 & 3 which are exchange-surdo-lines for Mid and High Surdos

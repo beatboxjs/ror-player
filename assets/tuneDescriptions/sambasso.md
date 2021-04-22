@@ -1,10 +1,10 @@
 **Sign:** V with 4 fingers (vulcan salute) on both hands, slide the gaps into each other
 
-### Background
+## Background
 
 Introduced to the network by RoR London in 2012
 
-### Difficulty
+## Difficulty
 
 * **Surdos:** easy
 * **Repi:** hard

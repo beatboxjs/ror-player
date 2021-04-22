@@ -1,10 +1,10 @@
 **Sign:** heart formed with your hands
 
-### Background
+## Background
 
 Invented by RoR Maastricht
 
-### Difficulty
+## Difficulty
 
 * **Surdos**: Medium
 * **Repi**: Medium

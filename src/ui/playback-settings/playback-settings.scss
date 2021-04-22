@@ -1,12 +1,8 @@
-.bb-playback-settings-button {
-	.fa-caret-down {
-		margin-left: 5px;
-	}
-}
-
 .bb-playback-settings {
 
-	max-width: none;
+	&.b-popover {
+		max-width: none;
+	}
 
 	fieldset {
 		margin-bottom: 0;

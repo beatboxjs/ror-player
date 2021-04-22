@@ -5,14 +5,14 @@ the intro and into the groove using the Boum Shakla Break.
 
 **Sign:** rain trickling down, with 10 fingers
 
-### Background
+## Background
 
 Xangô is an Orisha, a spirit in the Yoruba religion (originating from Central Africa, but making its way to South
 America through slavery) (Wikipedia: [Shango](https://en.wikipedia.org/wiki/Shango),
 [Yoruba religion](https://en.wikipedia.org/wiki/Yoruba_religion)). the traditional Xango ceremonial drumming is one of
 the influences to Afro-Brazilian music.
 
-### Difficulty
+## Difficulty
 
 * **Surdos**: easy
 * **Repi**: medium

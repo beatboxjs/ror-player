@@ -1,10 +1,10 @@
 **Sign:** with both hands a rotating rope and jump up and down
 
-### Background
+## Background
 
 Introduced in 2010
 
-### Difficulty
+## Difficulty
 
 * **Low Surdo**: medium
 * **Mid Surdo**: tricky

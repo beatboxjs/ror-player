@@ -14,11 +14,11 @@ As Hedgehog is also a Tango-like-rhythm, Ragga-Hedgehog combinations use to soun
 
 **Sign:** fists together, thumbs to the left and to the right
 
-### Background
+## Background
 
 *More info needed.*
 
-### Difficulty
+## Difficulty
 
 * **Surdos**: medium
 * **Repinique**: medium (alternate-version: hard)
@@ -26,7 +26,7 @@ As Hedgehog is also a Tango-like-rhythm, Ragga-Hedgehog combinations use to soun
 * **Tamborim**: medium
 * **Agogô**: hard
 
-### Breaks
+## Breaks
 
 * The Kick Back Breaks are a call & response between Surdos and all others. While ‘Kick Back 1’ is quite moderate,
   ‘Kick Back 2’ is quite fast. Using them as Intros, to speed up, or to create tension works really good.

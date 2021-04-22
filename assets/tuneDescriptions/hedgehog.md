@@ -11,7 +11,7 @@ notation). Everyone else keeps playing their normal rhythm until they are counte
 
 **Sign:** spiky fingers on the head
 
-### Difficulty
+## Difficulty
 
 * **Low Surdo**: easy
 * **Mid Surdo**: easy
@@ -21,7 +21,7 @@ notation). Everyone else keeps playing their normal rhythm until they are counte
 * **Tamb**: easy
 * **Agogô**: medium
 
-### Breaks
+## Breaks
 
 It has only two breaks, which are (in contrast to every other break) both meant to be counted in in the beginning of
 the 8 steps, so the groove is really interrupted by the breaks.

@@ -1,10 +1,10 @@
 **Sign:** smoke a joint like a cup of tea (with thumb and index finger)
 
-### Background
+## Background
 
 Introduced by RoR London in 2012
 
-### Difficulty
+## Difficulty
 
 * **Low Surdo**: medium
 * **Mid Surdo**: easy

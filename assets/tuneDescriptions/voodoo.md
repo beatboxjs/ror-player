@@ -3,11 +3,11 @@ you start slowly and gradually speed up.
 
 **Sign:** aureole – make a circle around head with your index finger down
 
-### Background
+## Background
 
 *More info needed.*
 
-### Difficulty
+## Difficulty
 
 * **Low Surdo**: Medium
 * **Mid/High Surdo**: Easy

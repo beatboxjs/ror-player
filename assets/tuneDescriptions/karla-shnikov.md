@@ -10,16 +10,16 @@ together. But just try and find your own way!
 **Sign:** move index+middle finger like rabbit ears and cover other fingers with other hand
 
 
-### Background
+## Background
 
 Used to be called “Kalashnikov”, but was changed between 2014 and 2015 because some bands were getting in trouble for
 showing the sign (finger pistol).
 
 “Karla Shnikov” is a fictional character invented on the TNM 2014 to have a story for the new tune name. She was a lover
 of Trotzky but later became an anarchist. She was also an animal liberation activist and liberated the biggest rabbit
-farm in the Soviet Union (hence the tune sign). 
+farm in the Soviet Union (hence the tune sign).
 
-### Difficulty
+## Difficulty
 
 * **Surdos**: medium (it is important, that the double hit in every bar is not played to fast.)
 * **Repi**: medium
@@ -27,7 +27,7 @@ farm in the Soviet Union (hence the tune sign).
 * **Tamb**: easy
 * **Agogô**:easy
 
-### Breaks
+## Breaks
 
 Karla Shnikov has 3 breaks, one called just Karla Break (aka break 1), Break 2, and its inverted variation.
 

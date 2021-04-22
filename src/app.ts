@@ -1,5 +1,6 @@
 import Vue from "vue";
 import BootstrapVue from "bootstrap-vue";
+import "./bootstrap.scss";
 import "./app.scss";
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { enableRouter } from "./services/router";
