@@ -24,11 +24,11 @@
 			<template slot="button-content">
 				<fa icon="cog"/><span class="d-none d-sm-inline"> Tools</span>
 			</template>
-			<b-dropdown-item href="javascript:" @click="clearSong()"><fa icon="trash"/> Clear song</b-dropdown-item>
-			<b-dropdown-item href="javascript:" @click="downloadMP3()"><fa icon="file-export"/> Export MP3</b-dropdown-item>
-			<b-dropdown-item href="javascript:" @click="downloadWAV()"><fa icon="file-export"/> Export WAV</b-dropdown-item>
-			<b-dropdown-item href="javascript:" @click="openShareDialog()"><fa icon="share"/> Share</b-dropdown-item>
-			<b-dropdown-item href="javascript:" @click="openImportDialog()"><fa icon="file-import"/> Import</b-dropdown-item>
+			<b-dropdown-item href="javascript:" @click="clearSong()"><fa icon="trash" fixed-width/> Clear song</b-dropdown-item>
+			<b-dropdown-item href="javascript:" @click="downloadMP3()"><fa icon="file-export" fixed-width/> Export MP3</b-dropdown-item>
+			<b-dropdown-item href="javascript:" @click="downloadWAV()"><fa icon="file-export" fixed-width/> Export WAV</b-dropdown-item>
+			<b-dropdown-item href="javascript:" @click="openShareDialog()"><fa icon="share" fixed-width/> Share</b-dropdown-item>
+			<b-dropdown-item href="javascript:" @click="openImportDialog()"><fa icon="file-import" fixed-width/> Import</b-dropdown-item>
 		</b-dropdown>
 		<div
 			class="btn-group trash-drop"

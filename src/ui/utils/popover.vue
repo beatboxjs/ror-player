@@ -7,7 +7,7 @@
 		<slot name="button"></slot>
 	</b-button>
 
-	<b-popover :custom-class="customClass" :target="`${id}-popover-button`" placement="bottom" title="Playback settings">
+	<b-popover :custom-class="customClass" :target="`${id}-popover-button`" placement="bottom" title="Playback settings" triggers="click blur">
 		<slot></slot>
 	</b-popover>
 
