@@ -4,7 +4,6 @@ import WithRender from "./rename-pattern-dialog.vue";
 import { copyPattern, getPatternFromState, getSortedTuneList, movePattern, State } from "../../state/state";
 import { InjectReactive, Prop } from "vue-property-decorator";
 import defaultTunes from "../../defaultTunes";
-import events from "../../services/events";
 
 @WithRender
 @Component({})
@@ -15,13 +14,14 @@ export default class RenamePatternDialog extends Vue {
 	@Prop({ type: String, required: true }) tuneName!: string;
 	@Prop({ type: String, required: true }) patternName!: string;
 
-	newTuneName: string = null as any;
-	newPatternName: string = null as any;
-	copy: boolean = false;
+	newTuneName: string = "";
+	newPatternName: string = "";
+	copy: boolean = true;
 
-	created() {
+	initialize() {
 		this.newTuneName = this.tuneName;
 		this.newPatternName = this.patternName;
+		this.copy = true;
 	}
 
 	get exists() {

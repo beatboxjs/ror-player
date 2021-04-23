@@ -72,7 +72,7 @@ const config: Config = {
 			strokes: [ "X", "." ]
 		},
 		ot: {
-			name: "Others",
+			name: "Shouting",
 			strokes: [ "w", "y", "A", "B", "D", "E", "F", "G", "J", "K", "L", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "Y", "Z", "9", "8", "7", "6", "5", "b", "c", "d", "e", "g", "q", "j", "k", "m", "n", "u", "v", "x" ]
 		}
 	},

@@ -34,6 +34,6 @@
 		<a href="javascript:" @click="createTune()"><fa icon="plus"/> New tune</a>
 	</div>
 
-	<PatternEditorDialog v-if="showPatternEditor" :id="showPatternEditor.id" :tune-name="showPatternEditor.tuneName" :pattern-name="showPatternEditor.patternName"/>
-	<RenamePatternDialog v-if="showRename" :id="showRename.id" :tune-name="showRename.tuneName" :pattern-name="showRename.patternName"/>
+	<PatternEditorDialog v-if="showPatternEditor" :id="showPatternEditor.id" :tune-name="showPatternEditor.tuneName" :pattern-name="showPatternEditor.patternName" @hidden="showPatternEditor = null"/>
+	<RenamePatternDialog v-if="showRename" :id="showRename.id" :tune-name="showRename.tuneName" :pattern-name="showRename.patternName" @hidden="showRename = null"/>
 </div>

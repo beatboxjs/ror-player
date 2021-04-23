@@ -32,6 +32,10 @@
 
 	.tune-actions {
 		text-align: center;
+
+		> * + * {
+			margin-left: 0.25rem;
+		}
 	}
 
 	hr {

@@ -142,7 +142,13 @@ export default class PatternList extends Vue {
 			createTune(this.state, newTuneName);
 
 			Vue.set(this.isOpened, newTuneName,  true);
-			this.filter = { text: "", cat: "custom" };
+			if (!filterPatternList(this.state, this.filter).includes(newTuneName))
+				this.filter = { text: "", cat: "custom" };
+
+			createPattern(this.state, newTuneName, "Tune", { loop: true });
+			this.showPatternEditor = { id: `bb-pattern-editor-dialog-${id()}`, tuneName: newTuneName, patternName: "Tune" };
+			await this.$nextTick();
+			this.$bvModal.show(this.showPatternEditor.id);
 		}
 	}
 

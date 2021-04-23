@@ -30,13 +30,20 @@ export function filterPatternList(state: State, params?: Filter | null) {
 @WithRender
 @Component({})
 export default class PatternListFilter extends Vue {
-	filterCats = config.filterCats;
 
-	@Prop({ type: Object, default: () => ({ ...DEFAULT_FILTER }) })
-	readonly value!: Filter;
+	@Prop({ type: Object, default: () => ({ ...DEFAULT_FILTER }) }) readonly value!: Filter;
+	@Prop({ type: Boolean, default: true }) readonly showCustom!: boolean;
 
 	@Watch("value", { deep: true })
 	onFilterChange(filter: Filter) {
 		this.$emit("input", filter);
 	}
+
+	get filterCats() {
+		const cats: any = { ...config.filterCats };
+		if (!this.showCustom)
+			delete cats.custom;
+		return cats;
+	}
+
 }

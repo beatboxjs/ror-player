@@ -33,7 +33,7 @@
 			<thead>
 				<tr>
 					<td colspan="2" class="instrument-operations">
-						<a href="javascript:" @click="muteAll()" :class="allMuted ? 'active' : 'inactive'" :title="`${allMuted ? 'Unmute' : 'Mute'} all instruments`" v-b-tooltip.hover><fa icon="volume-mute"/></a>
+						<a href="javascript:" @click="muteAll()" :class="allMuted ? 'active' : 'inactive'" v-b-tooltip.hover="`${allMuted ? 'Unmute' : 'Mute'} all instruments`"><fa icon="volume-mute"/></a>
 					</td>
 					<td v-for="i in upbeatBeats" :colspan="i == 1 ? (pattern.upbeat-1) % pattern.time + 1 : pattern.time" class="beat" :class="getBeatClass(i - upbeatBeats)" @click="setPosition($event)"><span>{{i - upbeatBeats}}</span></td>
 					<td v-for="i in pattern.length" :colspan="pattern.time" class="beat" :class="getBeatClass(i-1)" @click="setPosition($event)"><span>{{i}}</span></td>
@@ -47,8 +47,8 @@
 						<a v-if="isHiddenSurdoHeadphone(instrumentKey) && instrumentKey == 'ms'" href="javascript:" @click="headphones([ 'ls', 'ms', 'hs' ], $event.ctrlKey || $event.shiftKey)" class="inactive"><fa icon="headphones"/></a>
 						<a href="javascript:" @click="mute(instrumentKey)" :class="playbackSettings.mute[instrumentKey] ? 'active' : 'inactive'"><fa icon="volume-mute"/></a>
 					</td>
-					<td v-for="i in pattern.length*pattern.time + pattern.upbeat" class="stroke" :class="getStrokeClass(i-1, instrumentKey)" :title="config.strokesDescription[pattern[instrumentKey][i-1]]" v-b-tooltip.hover>
-						<span v-if="readonly" class="stroke-inner" :title="config.strokesDescription[pattern[instrumentKey][i-1]]" v-b-tooltip>{{config.strokes[pattern[instrumentKey][i-1]] || ' '}}</span>
+					<td v-for="i in pattern.length*pattern.time + pattern.upbeat" class="stroke" :class="getStrokeClass(i-1, instrumentKey)" v-b-tooltip.hover="config.strokesDescription[pattern[instrumentKey][i-1]] || ''">
+						<span v-if="readonly" class="stroke-inner">{{config.strokes[pattern[instrumentKey][i-1]] || ' '}}</span>
 						<a v-if="!readonly"
 							href="javascript:" class="stroke-inner"
 							:id="`bb-pattern-editor-stroke-${instrumentKey}-${i-1}`"
