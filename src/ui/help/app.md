@@ -1,25 +1,21 @@
-On some devices, it is possible to install RoR Player as an app.
+On some devices (such as smartphones and tablets), it is possible to install RoR Player as an app. The required steps depend on your browser.
 
 ### Chrome
 
-1. Open RoR Player in Chrome
-2. Press Chrome’s menu icon (3 dots) on the top right
-3. Press “Add to Home Screen”
+1. Press Chrome’s menu icon (3 dots) on the top right
+2. Press “Add to Home Screen”
 
 ### Firefox
 
-1. Open RoR Player in Firefox
-2. Press Firefox’s menu icon (3 dots) on the top right or bottom right
-3. Press “Add to Home screen”
+1. Press Firefox’s menu icon (3 dots) on the top right or bottom right
+2. Press “Add to Home screen”
 
 ### Safari
 
-1. Open RoR Player in Safari
-2. Press Safari’s share icon (rectangle with an up arrow) at the bottom in the middle
-3. Press “Add to Home Screen”
+1. Press Safari’s share icon (rectangle with an up arrow) at the bottom in the middle
+2. Press “Add to Home Screen”
 
 ### Opera
 
-1. Open RoR Player in Opera
-2. Press Opera’s plus icon on the top left
-3. Press “Add to home screen”
+1. Press Opera’s plus icon on the top left
+2. Press “Add to home screen”
