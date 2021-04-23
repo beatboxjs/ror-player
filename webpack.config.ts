@@ -5,6 +5,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import HtmlWebpackInlineSourcePlugin from "html-webpack-inline-source-plugin";
 import CopyPlugin from "copy-webpack-plugin";
 import { compile, CompilerOptions } from "vue-template-compiler";
+import svgToMiniDataURI from "mini-svg-data-uri";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 const expose = {
@@ -47,8 +48,29 @@ export default (env: any, argv: any): Configuration => {
 					}
 				},
 				{ test: /\.ts$/, loader: "ts-loader" },
-				{ test: /\.(png|jpe?g|gif|svg)$/, type: "asset/inline" },
-				{ test: /\.html$/, loader: "html-loader" },
+				{ test: /\.(png|jpe?g|gif)$/, type: "asset/inline" },
+				{
+					test: /\.(svg)$/,
+					type: 'asset/inline',
+					generator: {
+						dataUrl: (content: any) => {
+							content = content.toString();
+							return svgToMiniDataURI(content);
+						}
+					}
+				},
+				{
+					test: /\.html$/,
+					loader: "html-loader",
+					options: {
+						sources: {
+							list: [
+								{ tag: "img", attribute: "src", type: "src" },
+								{ tag: "link", attribute: "href", type: "src", filter: (tag: any, attr: any, attrs: any) => attrs.some((a: any) => a.name == "rel" && ["icon"].includes(a.value)) },
+							]
+						}
+					}
+				},
 				{
 					test: /\.vue$/,
 					loader: "vue-template-loader",
@@ -86,7 +108,11 @@ export default (env: any, argv: any): Configuration => {
 			...(isDev ? [] : [new HtmlWebpackInlineSourcePlugin(HtmlWebpackPlugin)]),
 			new CopyPlugin({
 				patterns: [
-					{ from: `${__dirname}/src/sw.js`, to: `${__dirname}/dist/sw.js` }
+					{ from: `${__dirname}/src/sw.js`, to: `${__dirname}/dist/sw.js` },
+					{ from: `${__dirname}/assets/img/app-512.png`, to: `${__dirname}/dist/app-512.png` },
+					{ from: `${__dirname}/assets/img/app-180.png`, to: `${__dirname}/dist/app-180.png` },
+					{ from: `${__dirname}/assets/img/favicon.svg`, to: `${__dirname}/dist/favicon.svg` },
+					{ from: `${__dirname}/assets/manifest.json`, to: `${__dirname}/dist/manifest.json` }
 				]
 			}),
 			new webpack.EnvironmentPlugin({

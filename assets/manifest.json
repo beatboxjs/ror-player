@@ -1,0 +1,13 @@
+{
+    "name": "RoR Player",
+    "short_name": "RoR Player",
+    "icons": [{
+        "src": "./app-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }],
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "display": "fullscreen",
+    "start_url": "./"
+}

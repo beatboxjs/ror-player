@@ -8,3 +8,8 @@ declare module "*.vue" {
     const withRender: WithRender;
     export default withRender;
 }
+
+declare module "*.md" {
+    const html: string;
+    export default html;
+}

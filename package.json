@@ -39,6 +39,7 @@
     "imports-loader": "^2.0.0",
     "json-format": "^1.0.1",
     "markdown-loader": "^6.0.0",
+    "mini-svg-data-uri": "^1.2.3",
     "rimraf": "^2.6.2",
     "sass": "^1.32.10",
     "sass-loader": "^11.0.1",
