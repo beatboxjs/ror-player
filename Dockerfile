@@ -17,4 +17,4 @@ ENTRYPOINT [ "/usr/bin/dumb-init", "--" ]
 ENV TITLE RoR Player
 ENV DESCRIPTION A pattern-based drumming machine.
 
-CMD [ "/bin/sh", "-c", "sed -ri /usr/local/apache2/htdocs/index.html -e \"s@<title>.*</title>@<title>$TITLE</title>@\" -e \"s@(<meta name=\\\"description\\\" content=\\\").*(\\\">)@\\\\1$DESCRIPTION\\\\2@\" && httpd-foreground" ]
+CMD [ "/bin/sh", "-c", "sed -ri /usr/local/apache2/htdocs/index.html -e \"s@<title>[^<]*</title>@<title>$TITLE</title>@\" -e \"s@(<meta name=\\\"description\\\" content=\\\")[^\\\"]*(\\\">)@\\\\1$DESCRIPTION\\\\2@\" && httpd-foreground" ]
