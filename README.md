@@ -11,6 +11,8 @@ It is written in TypeScript and relies heavily on beatbox.js, Vue.js and Bootstr
 * Can be used offline. Everything is packed in a single HTML file that is cached in the browser and can easily be downloaded for offline use.
 * License: AGPL-3
 
+More information can be found in the [documentation](https://player-docs.rhythms-of-resistance.org/).
+
 Used technologies are:
 * [TypeScript](https://www.typescriptlang.org/) and [SASS](https://sass-lang.com/) for cleaner code
 * [Vue.js](https://vuejs.org/), [Bootstrap 4](https://getbootstrap.com/) and [Font Awesome](https://fontawesome.com/) for the UI
@@ -48,6 +50,8 @@ The samples are available as MP3 files in [`assets/audio`](./assets/audio).
 
 The tune descriptions can be found in [`assets/tuneDescriptions`](./assets/tuneDescriptions).
 
+More details can be found in the [documentation](https://player-docs.rhythms-of-resistance.org/guide/technical/config.html).
+
 Build it
 --------
 
@@ -65,11 +69,4 @@ see the updated player.
 Host it
 -------
 
-Uploading the generated `index.html` from the build directory to a web server is enough to make the player available to the
-public. However, you might want to upload the following files as well:
-* `sw.js` is a service worker that instructs the browser to cache the player, making it possible to open it even when offline.
-* `ror-player.js.map` is a JavaScript source map that will make error messages in the Developer Tools of the browser easier
-  to read, which makes it easier to find the source of an unexpected error.
-
-If you are using Docker, you can easily build an image using the [Dockerfile](./Dockerfile). It exposes port 80 and doesn't
-require any volumes. The official build is available as  [`beatboxjs/ror-player`](https://hub.docker.com/r/beatboxjs/ror-player).
+Information how to host RoR Player can be found in the [documentation](https://player-docs.rhythms-of-resistance.org/guide/technical/host.html).
