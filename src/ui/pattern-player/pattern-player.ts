@@ -4,7 +4,7 @@ import Component from "vue-class-component";
 import WithRender from "./pattern-player.vue";
 import config, { Instrument } from "../../config";
 import { InjectReactive, Prop, Watch } from "vue-property-decorator";
-import { BeatboxReference, createBeatbox, getPlayerById, patternToBeatbox } from "../../services/player";
+import { BeatboxReference, createBeatbox, getPlayerById, patternToBeatbox, stopAllPlayers } from "../../services/player";
 import { Pattern, patternEquals, PatternOptional, updateStroke, updatePattern } from "../../state/pattern";
 import { normalizePlaybackSettings, PlaybackSettings, updatePlaybackSettings } from "../../state/playbackSettings";
 import $ from "jquery";
@@ -138,6 +138,7 @@ export default class PatternPlayer extends Vue {
 
 	playPause() {
 		if(!this.playerInst.playing) {
+			stopAllPlayers();
 			this.playerInst.play();
 			this.updateMarkerPosition(true, true);
 		}

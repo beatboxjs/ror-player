@@ -10,8 +10,7 @@ import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 const expose = {
 	jquery: "jQuery",
-	"beatbox.js": "Beatbox",
-	howler: "howler"
+	"beatbox.js": "Beatbox"
 };
 
 export default (env: any, argv: any): Configuration => {
@@ -34,19 +33,6 @@ export default (env: any, argv: any): Configuration => {
 			rules: [
 				{ test: /\.css$/, use: [ "style-loader", "css-loader" ] },
 				{ test: /\.scss$/, use: [ "style-loader", "css-loader", "sass-loader" ]},
-				{
-					resource: { and: [ /\.js$/, [
-						__dirname + "/app/",
-						fs.realpathSync(__dirname + "/node_modules/beatbox.js/src/"),
-						fs.realpathSync(__dirname + "/node_modules/beatbox.js-export/src/")
-					] ] },
-					use: {
-						loader: "babel-loader",
-						options: {
-							presets: [ "@babel/preset-env" ]
-						}
-					}
-				},
 				{ test: /\.ts$/, loader: "ts-loader" },
 				{ test: /\.(png|jpe?g|gif)$/, type: "asset/inline" },
 				{
@@ -83,7 +69,6 @@ export default (env: any, argv: any): Configuration => {
 						}
 					}
 				},
-				{ test: /\.coffee$/, loader: "coffee-loader" },
 				{ test: /\.md$/, use: [ "html-loader", "markdown-loader" ]},
 				...Object.entries(expose).map(([key, value]) => ({
 					test: require.resolve(key),

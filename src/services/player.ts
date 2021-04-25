@@ -6,7 +6,7 @@ import { Headphones, Mute, normalizePlaybackSettings, PlaybackSettings, Whistle 
 import { normalizePattern, Pattern } from "../state/pattern";
 import { getPatternFromState, State } from "../state/state";
 import { getEffectiveSongLength, Song, SongParts } from "../state/song";
-import { encode, decode } from "base64-arraybuffer";
+import { decode } from "base64-arraybuffer";
 
 export interface BeatboxReference {
 	id: number,
@@ -19,9 +19,8 @@ export interface RawPatternWithUpbeat extends RawPattern {
 }
 
 for(const i in audioFiles) {
-
 	const decompressed = pako.inflateRaw(new Uint8Array(decode(audioFiles[i])));
-	Beatbox.registerInstrument(i.replace(/\.mp3$/i, ""), { src: [ "data:audio/mp3;base64," + encode(decompressed) ] });
+	Beatbox.registerInstrument(i.replace(/\.mp3$/i, ""), decompressed.buffer);
 }
 
 let currentNumber = 0;

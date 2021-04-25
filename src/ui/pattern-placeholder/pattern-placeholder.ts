@@ -24,7 +24,7 @@ import PatternEditorDialog from "../pattern-editor-dialog/pattern-editor-dialog"
 import { id } from "../../utils";
 import FileSaver from "file-saver";
 import Progress from "../utils/progress";
-import "beatbox.js-export";
+import { exportMP3 } from "beatbox.js-export";
 
 @WithPatternPlaceholderItemRender
 @Component({})
@@ -192,21 +192,23 @@ export default class PatternPlaceholder extends Vue {
 		if(this.player == null)
 			this.createPlayer();
 
-		const player = this.player as Beatbox;
+		const player = this.player!;
 
 		try {
+			console.log(player);
 			this.loading = 0;
 			this.exportCanceled = false;
-			const blob = await player.exportMP3((perc) => {
-				if(this.exportCanceled) {
-					this.loading = null;
-					return new Promise(() => {});
-				} else
+			const blob = await exportMP3(player, (perc) => {
+				if(this.exportCanceled)
+					return false;
+				else
 					this.loading = Math.round(perc*100);
 			});
 
 			this.loading = null;
-			FileSaver.saveAs(blob, `${this.tuneName} - ${this.patternName}.mp3`);
+
+			if (blob)
+				FileSaver.saveAs(blob, `${this.tuneName} - ${this.patternName}.mp3`);
 		} catch(err) {
 			this.loading = null;
 			console.error("Error exporting MP3", err.stack || err);

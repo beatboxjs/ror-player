@@ -15,21 +15,18 @@ import {
 	PlaybackSettingsOptional,
 	updatePlaybackSettings
 } from "../../state/playbackSettings";
-import events, { MultipleHandlers, registerMultipleHandlers } from "../../services/events";
+import { registerMultipleHandlers } from "../../services/events";
 import {
 	clearSong,
 	deleteSongPart,
 	getEffectiveSongLength,
 	setSongPart,
-	Song,
-	SongParts,
 	updateSong
 } from "../../state/song";
 import isEqual from "lodash.isequal";
 import { clone, id } from "../../utils";
-import { DragType, getDragData, PatternDragData, PatternResizeDragData, setDragData } from "../../services/draggable";
+import { DragType, getDragData, PatternResizeDragData, setDragData } from "../../services/draggable";
 import { openPromptDialog } from "../utils/prompt";
-import "beatbox.js-export";
 import PlaybackSettingsComponent from "../playback-settings/playback-settings";
 import PatternPlaceholder, { PatternPlaceholderItem } from "../pattern-placeholder/pattern-placeholder";
 import { Pattern } from "../../state/pattern";
@@ -37,6 +34,7 @@ import ImportDialog from "../import-dialog/import-dialog";
 import ShareDialog from "../share-dialog/share-dialog";
 import $ from "jquery";
 import Progress from "../utils/progress";
+import { exportMP3, exportWAV } from "beatbox.js-export";
 
 type DragOver = "trash" | { instr: Instrument | null, idx: number };
 
@@ -427,16 +425,17 @@ export default class SongPlayer extends Vue {
 		try {
 			this.loading = 0;
 			this.exportCanceled = false;
-			const blob = await this.player.exportMP3((perc) => {
-				if(this.exportCanceled) {
-					this.loading = null;
-					return new Promise(() => {});
-				} else
+			const blob = await exportMP3(this.player, (perc) => {
+				if(this.exportCanceled)
+					return false;
+				else
 					this.loading = Math.round(perc*100);
 			});
 
 			this.loading = null;
-			FileSaver.saveAs(blob, this.getSongName() + ".mp3");
+
+			if (blob)
+				FileSaver.saveAs(blob, this.getSongName() + ".mp3");
 		} catch(err) {
 			this.loading = null;
 			console.error("Error exporting MP3", err.stack || err);
@@ -448,16 +447,17 @@ export default class SongPlayer extends Vue {
 		try {
 			this.loading = 0;
 			this.exportCanceled = false;
-			const blob = await this.player.exportWAV((perc) => {
-				if(this.exportCanceled) {
-					this.loading = null;
-					return new Promise(() => {});
-				} else
+			const blob = await exportWAV(this.player, (perc) => {
+				if(this.exportCanceled)
+					return false;
+				else
 					this.loading = Math.round(perc*100);
 			});
 
 			this.loading = null;
-			FileSaver.saveAs(blob, this.getSongName() + ".wav");
+
+			if (blob)
+				FileSaver.saveAs(blob, this.getSongName() + ".wav");
 		} catch(err) {
 			this.loading = null;
 			console.error("Error exporting WAV", err.stack || err);

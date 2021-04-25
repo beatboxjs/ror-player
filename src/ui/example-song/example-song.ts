@@ -4,16 +4,16 @@ import Vue from "vue";
 import { InjectReactive, Prop, Watch } from "vue-property-decorator";
 import { getPatternFromState, State } from "../../state/state";
 import { BeatboxReference, createBeatbox, getPlayerById, songToBeatbox, stopAllPlayers } from "../../services/player";
-import { normalizePlaybackSettings, PlaybackSettings } from "../../state/playbackSettings";
+import { PlaybackSettings } from "../../state/playbackSettings";
 import Beatbox from "beatbox.js";
 import $ from "jquery";
 import config from "../../config";
-import { allInstruments, getEffectiveSongLength, Song, SongPart, SongParts } from "../../state/song";
+import { allInstruments, getEffectiveSongLength, SongParts } from "../../state/song";
 import "./example-song.scss";
 import { scrollToElement } from "../../services/utils";
 import FileSaver from "file-saver";
 import Progress from "../utils/progress";
-import "beatbox.js-export";
+import { exportMP3 } from "beatbox.js-export";
 
 @WithRender
 @Component({
@@ -56,7 +56,7 @@ export default class ExampleSong extends Vue {
 
 	createPlayer() {
 		this.playerRef = createBeatbox(false);
-		(this.player as Beatbox).on("beat", (beat: number) => {
+		this.player!.on("beat", (beat: number) => {
 			this.updateMarkerPos(true);
 		});
 		this.updatePlayer();
@@ -117,21 +117,22 @@ export default class ExampleSong extends Vue {
 		if(this.player == null)
 			this.createPlayer();
 
-		const player = this.player as Beatbox;
+		const player = this.player!;
 
 		try {
 			this.loading = 0;
 			this.exportCanceled = false;
-			const blob = await player.exportMP3((perc) => {
-				if(this.exportCanceled) {
-					this.loading = null;
-					return new Promise(() => {});
-				} else
+			const blob = await exportMP3(player, (perc) => {
+				if(this.exportCanceled)
+					return false;
+				else
 					this.loading = Math.round(perc*100);
 			});
 
 			this.loading = null;
-			FileSaver.saveAs(blob, this.tuneName + ".mp3");
+
+			if (blob)
+				FileSaver.saveAs(blob, this.tuneName + ".mp3");
 		} catch(err) {
 			this.loading = null;
 			console.error("Error exporting MP3", err.stack || err);
