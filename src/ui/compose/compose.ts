@@ -12,6 +12,7 @@ import History from "../history/history";
 import { PatternPlaceholderItem } from "../pattern-placeholder/pattern-placeholder";
 import events, { registerMultipleHandlers } from "../../services/events";
 import { scrollToElement } from "../../services/utils";
+import { ensurePersistentStorage } from "../../services/localStorage";
 
 @WithRender
 @Component({
@@ -33,6 +34,8 @@ export default class Compose extends Vue {
 				events.$emit("overview-close-pattern-list");
 			}
 		}, this);
+
+		ensurePersistentStorage();
 	}
 
 	beforeDestroy() {

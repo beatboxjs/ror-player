@@ -77,3 +77,7 @@ export function removeLocalStorageItem(key: string): void {
 	});
 	updateStore();
 }
+
+export function ensurePersistentStorage(): void {
+	navigator.storage?.persist?.();
+}
