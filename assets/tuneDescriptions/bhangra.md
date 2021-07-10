@@ -1,3 +1,5 @@
+Was chosen as a **Tune of the Year 2021** (along with Sambasso).
+
 If the players or the audience needs a rest, Bhaṅgṛā is a good tune to play.
 
 But be aware of the 6/8 rhythm. On the notation sheet, every step is divided into only 3 hits (instead of 4 in the 4/4).

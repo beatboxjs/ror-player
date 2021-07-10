@@ -31,7 +31,7 @@ export type Config = {
 		[cat in Category]: string
 	},
 	playTime: number,
-	tuneOfTheYear: string,
+	tuneOfTheYear: string | string[],
 	defaultSpeed: number
 };
 
@@ -252,7 +252,7 @@ const config: Config = {
 	// Time measurement that is used for beatbox.js. Should be able to represent all the time measurements above
 	playTime: 60,
 
-	tuneOfTheYear: "Xango",
+	tuneOfTheYear: ["Bhangra", "Sambasso"],
 
 	defaultSpeed: 100
 };

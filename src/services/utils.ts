@@ -1,4 +1,5 @@
 import $ from "jquery";
+import config from "../config";
 
 interface ScrollableElement extends HTMLElement {
 	bbParent: HTMLElement,
@@ -103,4 +104,9 @@ export function isoDate(tstamp: number): string {
 		 + pad(d.getHours())+':'
 		 + pad(d.getMinutes())+':'
 		 + pad(d.getSeconds());
+}
+
+export function getTuneOfTheYear(): string {
+	const tunes = Array.isArray(config.tuneOfTheYear) ? config.tuneOfTheYear : [config.tuneOfTheYear];
+	return tunes[Math.floor(Math.random() * tunes.length)];
 }

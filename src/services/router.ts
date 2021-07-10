@@ -7,6 +7,7 @@ import Vue from "vue";
 import { BvModalEvent } from "bootstrap-vue";
 import PatternEditorDialog from "../ui/pattern-editor-dialog/pattern-editor-dialog";
 import { match, compile, MatchFunction, PathFunction } from "path-to-regexp";
+import { getTuneOfTheYear } from "./utils";
 
 const ROUTES: { [key: string]: string } = {
 	"listen-tune": "/listen/:tuneName/",
@@ -36,7 +37,7 @@ type Params = { [key: string]: string };
 export function enableRouter(app: Vue) {
 	const HANDLERS: { [key: string]: (params: Params) => unknown } = {
 		"": () => {
-			navigate("listen-tune", { tuneName: config.tuneOfTheYear });
+			navigate("listen-tune", { tuneName: getTuneOfTheYear() });
 		},
 
 
