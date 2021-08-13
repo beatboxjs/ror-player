@@ -1110,6 +1110,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		categories: [ "standard", "uncommon", "tricky" ],
 		sheet: sheetUrl + "hafla.pdf",
 		description: require("../assets/tuneDescriptions/hafla.md").default,
+		video: "https://tube.rhythms-of-resistance.org/videos/embed/2fbb7d46-3399-4818-89aa-a5dc0b377238",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1925,6 +1926,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		categories: [ "standard", "uncommon", "new", "onesurdo", "tricky" ],
 		sheet: sheetUrl + "sambasso.pdf",
 		description: require("../assets/tuneDescriptions/sambasso.md").default,
+		video: "https://tube.rhythms-of-resistance.org/videos/embed/f75a6a4e-121a-4170-aaf4-2e96a7eed95e",
 		patterns: {
 			Tune: {
 				loop: true,
