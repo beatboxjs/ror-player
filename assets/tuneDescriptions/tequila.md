@@ -11,11 +11,13 @@ The Surdo line has an upbeat, so when entering the groove (and Break 2), the Sur
 
 ## Background
 
-Invented by RoR Berlin in 2017. Based on the song “Tequila” by The Champs ([YouTube](https://www.youtube.com/watch?v=3H6amDbAwlY)).
+**Name:** Tequila is an alcoholic drink made from blue agave in the region around the city of Tequila, Mexico. It was first made in the 16th century by Spanish colonisers, inspired by Pulque, a traditional alcoholic drink made from fermented agave.
 
-Tequila is an alcoholic drink made from blue agave in the region around the city of Tequila, Mexico. It was first made
-in the 16th century by Spanish colonisers, inspired by Pulque, a traditional alcoholic drink made from fermented agave.
-Outside of Mexico, it is common to lick salt and lemon from one’s hand before drinking Tequila, hence the tune sign.
+**Musical background:** Based on the song “Tequila” by The Champs ([YouTube](https://youtu.be/Uyl7GP_VMJY?t=20)). The Surdos make together make the melody of the saxophone in the song.
+
+**Sign:** Outside of Mexico, it is common to lick salt and lemon from one’s hand before drinking Tequila. The tune sign represents using a salt shaker.
+
+**History:** Invented by RoR Berlin in 2017.
 
 ## Difficulty
 

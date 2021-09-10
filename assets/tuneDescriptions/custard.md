@@ -10,8 +10,17 @@ out the differences and find your way to remember them.
 
 ## Background
 
-Was formerly callled “Welfare State” but was renamed because people don’t like the state. The new name was taken from
-the memory hook “I’ve got custard in my underpants.”
+**Name:** Custard is the English word for a sweet, creamy, puddingy vanilla sauce ([Wikipedia](https://en.wikipedia.org/wiki/Custard)). The name was chosen because of the memory “I’ve got custard in my underpants” for the tamborim stroke.
+
+**Musical background:** A typical Samba Reggae style tune.
+
+**Sign:** The sign used to depict a “W” for Welfare State (the former name of the tune), as can be seen in this [video](https://tube.rhythms-of-resistance.org/w/3LnZ6d58J1jd5GNzK1mQqp) by RoR London. It changed into the current sign and can also be interpreted as “holding a bowl of custard”.
+
+**History:** Part of the first set of tunes taken from Barking Bateria in 2000. Used to be called Welfare State, but was renamed because people don’t like the state.
+
+## Controversies
+
+The rhythm clearly sounds like Samba Reggae, which is a tune developed and used by the Black liberation movement in Brazil. Many people in the RoR network consider it cultural appropriation to play this tune in our mainly white European bands, and there is an ongoing debate about abolishing the tune.
 
 ## Difficulty
 

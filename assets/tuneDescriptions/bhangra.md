@@ -6,16 +6,21 @@ But be aware of the 6/8 rhythm. On the notation sheet, every step is divided int
 When playing it for the first time, you might have to concentrate in order to not get stuck in the usual 4/4 rhythm.
 This is particularly important when switching from or into a different tune.
 
-If you play breaks from other tunes which are based on 16hits in a 4/4-pattern (eg. “kalashnikov-break”, or “8up”) try
-to play 12hits in a 3/4-pattern. in the beginning it’s quite hard (because the 4/4 is stuck in your head) but after a
+If you play breaks from other tunes which are based on 16 hits in a 4/4 pattern (eg. “Karla Break”, or “8 Up”), try
+to play 12 hits in a 3/4 pattern. In the beginning it’s quite hard (because the 4/4 is stuck in your head) but after a
 while it’s great – make sure tho whole band plays like this, if some plays it differently it can get very chaotic…
 
 **Sign:** folded hands, like praying
 
 ## Background
 
-Bhaṅgṛā is a style of pop music invented by Punjabi immigrants in Great Britain and North America
-([Wikipedia](https://en.wikipedia.org/wiki/Bhangra_(music))).
+**Name:** Bhaṅgṛā is a style of pop music invented by Punjabi immigrants in Great Britain and North America. ([Wikipedia](https://en.wikipedia.org/wiki/Bhangra_(music)))
+
+**Musical background:** The tune doesn't seem to sound like Bhaṅgṛā music. *(More info needed.)*
+
+**Sign:** The sign is a common Indian dance move used by both men and women. *(More info needed.)*
+
+**History:** Part of the second round of tunes that was introduced by Barking Bateria in 2004/2005.
 
 ## Difficulty
 

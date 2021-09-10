@@ -12,12 +12,13 @@ together. But just try and find your own way!
 
 ## Background
 
-Used to be called “Kalashnikov”, but was changed between 2014 and 2015 because some bands were getting in trouble for
-showing the sign (finger pistol).
+**Name:** Based on a fictional character invented by RoR called Karla Shnikov, a Russian activist who was one of Trotzky’s secret lovers and was first a communist, but later became an anarchist. There was a big discussion about taking a fictive name, but it can be seen as our ability to create our own histories – in the end, there might have been many “Karla Snikov”s, individuals fighting for rights or liberation, that historians never wrote about since history has always been written by the powerful and the exceptional, and especially hiding the contribution of women.
 
-“Karla Shnikov” is a fictional character invented on the TNM 2014 to have a story for the new tune name. She was a lover
-of Trotzky but later became an anarchist. She was also an animal liberation activist and liberated the biggest rabbit
-farm in the Soviet Union (hence the tune sign).
+**Musical background:** *(More info needed.)*
+
+**Sign:** The fictional character Karla Shnikov was also an animal rights activist, and one of her actions was to liberate the biggest rabbit farm in Russia. The sign depicts rabbit ears.
+
+**History:** The tune was invented in London. Used to be called Kalashnikov, the sign a finger pistol, but was changed because some bands got in trouble for showing a gun, and other bands didn’t want to have a tune named after a weapon. The story of Karla Shnikov was made up by the working group thinking about a new name+sign for the tune.
 
 ## Difficulty
 

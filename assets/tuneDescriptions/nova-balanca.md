@@ -9,8 +9,14 @@ kind of three groups which are each synchronized:
 
 ## Background
 
-“Nova Balança” means “new wave” in Brazilian. It’s part of a belief that the new wave will come and bring the deported
-slaves back home.
+**Name:** “Nova balança” means ‘new wave’ in brazilian. It’s part of a belief that the new wave will come and bring the deported slaves back home.
+
+**Musical background:** *(More info needed.)*
+
+**Sign:** *(More info needed.)*
+
+**History:** From RoR Maastricht.
+
 
 ## Difficulty
 

@@ -10,7 +10,13 @@ also helpful to sing them all together (low, high, middle middle, low, high-low,
 
 ## Background
 
-Has been developed transnationally by the network between 2009 and 2010.
+**Name:** Drum&Bass is a style of electronic music that developed in the 1990s in the UK. Characteristic for it is its really fast and strong base. ([Wikipedia](https://en.wikipedia.org/wiki/Drum_and_bass))
+
+**Musical background:** The baseline of the tune somewhat resembles Drum&Bass, although Drum&Bass is usually played much faster at 165–185 bpm, while RoR Tunes are usually played at around 100–120 bpm. At this speed, the tune more sounds like Hip Hop, and a very similar base line can be heard in several hip hop songs such as this: [YouTube](https://www.youtube.com/watch?v=UePtoxDhJSw).
+
+**Sign:** The sign depicts a DJ.
+
+**History:** First mentioned in 2010 by RoR Bremen. Has been developed on a transnational basis between 2009 & 2010. Barking Bateria also mentions a tune with this name [on their website](https://web.archive.org/web/20061023061031/http://www.barkingbateria.co.uk/samba.htm) in 2006, although it is not clear whether it is the same tune.
 
 ## Difficulty
 

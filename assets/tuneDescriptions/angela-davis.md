@@ -7,12 +7,19 @@ pitched sound. Then it plays a combination of high-pitched and normal hits.
 
 ## Background
 
-The tune used to be called “James Brown” because the pattern of Break 1 (which is also used in Breaks 2&3) sounds like
-the getting-back-from-the-bridge in “sexmachine”. It was changed due to the realization that James Brown had been
-accused several times for domestic violence. The name “Angela Davis” refers to an american political activist
-([Wikipedia](https://en.wikipedia.org/wiki/Angela_Davis)). Apart from being involved in the black liberation movement,
-she is also an anti-prison activist, hence the tune sign. The former sign (showing an Afro haircut) was changed due
-to its racist connotation.
+**Name:** Angela Davis is an Afro-American activist from the USA. She experienced a lot of oppression as a university professor due to her political views and involvement in the black liberation, communist and radical feminist movement. She became a major figure of the prison abolishment movement after being imprisoned for a murder that she did not commit. ([Wikipedia](https://en.wikipedia.org/wiki/Angela_Davis), see also the documentary “Free Angela & All Political Prisoners”)
+
+**Musical background:** Break 1 sounds like from “Sex machine” by James Brown, Low Surdo is based on the drumset rhythm of this song, not sure if the rest of the tune is also based on his music.
+
+**Sign:** The sign represents prison bars, because Angela Davis is a major figure in the prison abolishment movement.
+
+**History:** Part of the first set of tunes taken from Barking Bateria in 2000. The name used to be “James Brown” (famous musician from the USA) and the sign was to depict an afro haircut. James Brown didn’t have an afro haircut for most of his life, but later got one as it became a symbol of Black pride. The tune was renamed because of domestic violence and rape accusations against James Brown, and Angela Davis was chosen because she fit the tune sign. Later the tune sign was changed. We consider both the old tune sign itself and the fact that Angela Davis was chosen because of her afro hair as racist.
+
+## Controversies
+
+There is an ongoing discussion in the RoR network whether we should play a tune that is based on the music of a rapist.
+
+Some RoR members from the Baltic States have recently raised concerns that the tune is named after Angela Davis, who was a member of the Communist Party and actively collaborating with the oppressive regime of the Soviet Union.
 
 ## Difficulty
 

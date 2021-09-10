@@ -11,6 +11,16 @@ notation). Everyone else keeps playing their normal rhythm until they are counte
 
 **Sign:** spiky fingers on the head
 
+## Background
+
+**Name:** A hedgehog is a medium-size spiky mammal. *(More info needed about why the name.)*
+
+**Musical background:** *(More info needed.)*
+
+**Sign:** The sign depicts the spikes of a hedgehog
+
+**History:** Part of the first set of tunes taken from Barking Bateria in 2000.
+
 ## Difficulty
 
 * **Low Surdo**: easy

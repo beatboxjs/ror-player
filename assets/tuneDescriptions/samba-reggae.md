@@ -12,17 +12,24 @@ demonstrations in which there are other non-RoR samba bands.
 
 ## Background
 
-Part of the first set of tunes introduced in 2000. Samba Reggae is a mix of Samba and Reggae and was invented by
-the afro-bloc black liberation movements in Brazil ([Wikipedia](https://en.wikipedia.org/wiki/Samba_reggae)).
+**Name:** Samba Reggae is the original afro-bloc rhythm, a mix of Samba and Reggae that was invented by the black liberation movement in Brazil. Samba reggae is a sub-genre of Samba, which arose in the context of afro-brazilian people fighting for their right to play samba music and partake in Carnival parades in the late 1960s. At that time only white people were allowed to play in the parades for Carnival and in Samba schools of Rio de Janeiro. Samba reggae is a Samba style, that developed because black people in Brazil wanted to have a samba style to call their own. The music of the afro blocos aimed to recreate and strengthen the afro-brazilian community. ([Wikipedia](https://en.wikipedia.org/wiki/Samba_reggae))
 
 In “real” Samba, ‘samba reggae’ is a specific sub-genre, it’s not only in terms of the rhythm, but also of the
 instruments, which are played (and how they are played), different from other kinds of Samba. For example the Repi,
 which is otherwise mostly hanging quite high and is played with a short wooden stick and the hand, is hanging really
 low and is played with two long plastic beaters.
 
-As an anecdote, RoR Samba Reggae is played with mid surdo hitting in 1 and 3 beats and low one in 2 and 4
-(mid-low-mid-low,low), while most of the samba bands used to play with low surdo in 1 and 3 and mid one in 2 and 4
-(low-mid-low-mid,mid). Sybarites of samba will tell you so. Repi and snare grooves use to be swapped too.
+**Musical background:** The tune is a mix of Samba Reggae 1 & 3. RoR Samba Reggae is played with mid surdo hitting in 1 and 3 beats and low one in 2 and 4 (mid-low-mid-low,low), while most of the samba bands used to play with low surdo in 1 and 3 and mid one in 2 and 4 (low-mid-low-mid,mid). Repi and snare grooves use to be swapped too.
+
+**Sign:** The sign depicts someone smoking a joint. Smoking joints is a main ritual in the Rastafari religion, which is closely linked to Reggae music.
+
+**History:** Part of the first set of tunes taken from Barking Bateria in 2000.
+
+## Controversies
+
+The rhythm clearly sounds like real Samba Reggae, which is a tune developed and used by the Black liberation movement in Brazil. Many people in the RoR network consider it cultural appropriation to play this tune in our mainly white European bands, and there is an ongoing debate about abolishing the tune.
+
+There is also some criticism towards the sign, which is based on a racist stereotype.
 
 ## Difficulty
 

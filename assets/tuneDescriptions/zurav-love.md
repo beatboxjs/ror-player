@@ -4,12 +4,13 @@ Was drawn as the **Tune of the Year 2018**.
 
 ## Background
 
-Was introduced by RoR Kraków and RoR Trójmiasto on the TNM 2015 in Żuravlów. The tune name is a word play on the name
-of the village.
+**Name:** A word play on Żuravlów, the village where the TNM 2015 happened.
 
-Żurav means crane (type of bird), hence the sign.
+**Musical background:** Based on the song “Truant” by British electronic musician Burial ([Surdo+Tamb+Snare](https://youtu.be/8u4D0wAc2AA?t=1m48s), [Agogô + Kick Back](https://youtu.be/8u4D0wAc2AA?t=6m27s)).
 
-The tune is based on the song “Truant” by British electronic musician Burial ([YouTube](https://youtu.be/j2Gppa-8hMA), parts with [Surdo+Tamb+Snare line](https://youtu.be/j2Gppa-8hMA?t=1m48s), part with [Agogo + Kick Back line](https://youtu.be/j2Gppa-8hMA?t=6m27s)).
+**Sign:** “Żurav” is Polish for “crane” (a type of large bird). The sign represents the beak of the bird.
+
+**History:** Introduced by RoR Kraków and Ror Trójmiasto on the TNM 2015 in Żuravlów.
 
 ## Difficulty
 

@@ -7,6 +7,16 @@ Angela Davis. Just try to combine them, especially Funk-Angela Davis sounds grea
 
 **Sign:** glasses on your eyes
 
+## Background
+
+**Name:** Funk is a style of music that was created in the 1960s by African Americans. As most/all African American music, it originates from African music traditions and has also been used heavily in black rights movements throughout history. The pioneer of Funk is James Brown. ([Wikipedia](https://en.wikipedia.org/wiki/Funk))
+
+**Musical background:** The definining characteristic of Funk seems to be a base hit on the 1 and 3 and a snare hit on the 2 and 4. It seems that the tune doesn't actually sound like Funk. *(More info needed.)*
+
+**Sign:** *(More info needed.)*
+
+**History:** Was introduced to the network at least 2008 (together with Ragga). A slightly different version called “Lego Funk” has been played by Barking Bateria: [SoundCloud](https://soundcloud.com/barking-bateria/lego-funk)
+
 ## Difficulty
 
 Good to begin with, because all instruments are quite easy:

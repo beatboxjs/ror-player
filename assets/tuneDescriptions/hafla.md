@@ -4,7 +4,13 @@ It is not the easiest to play but sounds really cool!
 
 ## Background
 
-This tune comes from the Tel Aviv Band and was introduced at the TNM 2011.
+**Name:** “Hafla” (حفلة) means “Party/Festivity” in Arabic.
+
+**Musical background:** Based on Masmoudi, one of the 6 major Middle Eastern rhythms that are typically played on hand drums such as the Dumbek ([Wikipedia](https://en.wikipedia.org/wiki/Dumbek_rhythms)).
+
+**Sign:** *(More info needed.)*
+
+**History:** Introduced by RoR Tel Aviv on TNM 2011.
 
 ## Difficulty
 

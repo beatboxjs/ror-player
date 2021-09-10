@@ -14,9 +14,19 @@ tiring for them so give them a break once in a while.
 
 ## Background
 
-Afoxê is “an Afro Brazilian genre of music” ([Wikipedia](https://en.wikipedia.org/wiki/Afox%C3%AA)).
+**Name:** Afoxé can refer to a rhythm from brazilian carnival, a certain kind of rattle from brazilian music, or a dance- and music formation in the Carnival. All three meanings developed out of Candomblé, a creol religion which evolved through slaves from West-Africa, who were forcefully brought to South-America by white slave traders. The enslaved black people in Brazil passed on the religious rites through generations. Candomblé is still practiced by some afro-brazilians today. ([Wikipedia](https://en.wikipedia.org/wiki/Afox%C3%AA))
 
-The sign comes from the name sounding similar to "After-shave" (when pronounced with an English accent).
+**Musical background:** The tune sounds very similar to some Afoxé rhythms from Brazil ([YouTube](https://youtu.be/WCah-JgDktA?t=301)).
+
+**Sign:** The sign comes from the name sounding similar to “After-shave” (when pronounced with an English accent).
+
+**History:** Part of the second round of tunes that was introduced by Barking Bateria in 2004/2005.
+
+## Controversies
+
+Since this rhythm is directly rooted in Afro-Brazilian religion, many people in the RoR network consider it cultural appropriation to play it. There is an ongoing debate on whether this tune should be abandoned, and some bands have already stopped playing it.
+
+There is also some criticism about the sign, since it ridicules the spiritual meaning of the rhythm, and shaving the armpits is a loaded topic in our patriarchal society.
 
 ## Difficulty
 

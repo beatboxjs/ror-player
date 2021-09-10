@@ -16,7 +16,13 @@ As Hedgehog is also a Tango-like-rhythm, Ragga-Hedgehog combinations use to soun
 
 ## Background
 
-*More info needed.*
+**Name:** Ragga (short for Raggamuffin) is a type of electronic Jamaican pop music based on Reggae. ([Wikipedia](https://en.wikipedia.org/wiki/Ragga))
+
+**Musical background:** The Snare and Surdo beats can be heard in many Ragga songs.
+
+**Sign:** *(More info needed.)*
+
+**History:** Was introduced to the network in 2010 or so (together with Funk, but Funk is played at least since 2008 in the network)
 
 ## Difficulty
 

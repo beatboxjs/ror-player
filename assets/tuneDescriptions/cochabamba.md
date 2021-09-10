@@ -10,11 +10,13 @@ Agogôs and Surdos are the ‘heart’ of this tune, try to have them as punctua
 
 ## Background
 
-Cochabamba is a major city in Bolivia. The 3rd PGA conference in 2001 was there. Social movements and direct action
-groups there revoked the privatization of drinking water, this reference is also given in the sign (drinking out of an
-invisible cup).
+**Name:** Cochabamba is a major city in Bolivia. The 3rd PGA conference in 2001 was there. Social movements and direct action groups there revoked the privatization of drinking water.
 
-Break 1 and the Bra Break are based on the song “Iron Lion Zion” by Bob Marley ([YouTube](https://www.youtube.com/watch?v=tBWFofJSm-c)).
+**Musical background:** Break 1 and Bra Break are based on the song “Iron Lion Zion” by Bob Marley ([YouTube](https://www.youtube.com/watch?v=tBWFofJSm-c)). *(More info needed.)*
+
+**Sign:** Symbolizes drinking out of cup, referring to the privatization of water against which the protests happened in Cochabamba
+
+**History:** *(More info needed.)*
 
 ## Difficulty
 

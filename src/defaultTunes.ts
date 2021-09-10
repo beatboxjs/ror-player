@@ -349,7 +349,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		}
 	},
 	"Afoxe": {
-		displayName: "Afoxê",
+		displayName: "Afoxé",
 		categories: [ "standard", "common", "medium", "cultural-appropriation" ],
 		sheet: sheetUrl + "afoxe.pdf",
 		description: require("../assets/tuneDescriptions/afoxe.md").default,
@@ -713,7 +713,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Break 1", "Tune", "Tune", "Bra Break (Repi)", "Tune", "Tune", "Cross Kicks", "Tune", "Tune" ]
 	},
 	'Coupe-Decale': {
-		displayName: "Coupé-Decalé",
+		displayName: "Coupé-Décalé",
 		categories: [ "proposed" ],
 		sheet: sheetUrl + "coupe-decale.pdf",
 		description: require("../assets/tuneDescriptions/coupe-decale.md").default,
@@ -2178,6 +2178,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		categories: [ "proposed" ],
 		time: 3,
 		speed: 120,
+		sheet: sheetUrl + "the-sirens-of-titan.pdf",
 		description: require("../assets/tuneDescriptions/the-sirens-of-titan.md").default,
 		patterns: {
 			Tune: {
@@ -2418,6 +2419,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	},
 	'Wolf': {
 		categories: [ "standard", "uncommon", "tricky", "new" ],
+		sheet: sheetUrl + "wolf.pdf",
 		description: require("../assets/tuneDescriptions/wolf.md").default,
 		patterns: {
 			Tune: {
@@ -2462,6 +2464,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Pat 1", "Tune", "Pat 2", "Tune", "Break 1", "Tune", "Break 2", "Tune" ]
 	},
 	'Xango': {
+		displayName: "Xangô",
 		categories: [ "standard", "uncommon", "tricky", "cultural-appropriation" ],
 		sheet: sheetUrl + "xango.pdf",
 		description: require("../assets/tuneDescriptions/xango.md").default,
