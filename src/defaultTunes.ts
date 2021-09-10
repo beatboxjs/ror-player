@@ -2143,6 +2143,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		categories: [ "standard", "uncommon", "new", "tricky", "western" ],
 		sheet: sheetUrl + "the-roof-is-on-fire.pdf",
 		description: require("../assets/tuneDescriptions/the-roof-is-on-fire.md").default,
+		video: "https://tube.rhythms-of-resistance.org/videos/embed/1c318897-e3b7-436b-b319-4608774169e0",
 		patterns: {
 			Tune: {
 				loop: true,
