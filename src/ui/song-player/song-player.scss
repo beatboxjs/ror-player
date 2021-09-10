@@ -128,17 +128,13 @@
 				border-right: 1px solid #888;
 			}
 
-			&.instruments .field,&.instrument-actions .field,&.instrument-actions .field .glyphicon {
+			&.instruments .field,&.instrument-actions .field {
 				line-height: 3.4em;
 				vertical-align: middle;
 			}
 
 			&.instrument-actions {
 				text-align: right;
-
-				.glyphicon {
-					line-height: inherit;
-				}
 			}
 
 			.field {

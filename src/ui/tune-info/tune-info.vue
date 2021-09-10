@@ -4,7 +4,7 @@
 	<div v-html="tuneDescription"></div>
 
 	<h2>Notation</h2>
-	<p><em>Click on the <span class="glyphicon glyphicon-pencil"></span> on the breaks below to see the notes.</em></p>
+	<p><em>Click on the <fa icon="pen"></fa> on the breaks below to see the notes.</em></p>
 	<p v-if="tune.sheet"><a :href="tune.sheet" target="_blank">Tune sheet (PDF)</a></p>
 
 	<div v-if="tune.video">

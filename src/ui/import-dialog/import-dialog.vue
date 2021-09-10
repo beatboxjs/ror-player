@@ -21,7 +21,7 @@
 						<b-list-group>
 							<b-list-group-item v-for="(song, idx) in songs" :key="idx" :class="{active: song.shouldImport, disabled: song.exists}" :title="song.exists ? 'Song already exists.' : ''" v-b-tooltip.bottom>
 								<a v-if="!song.exists" href="javascript:" @click="clickSong(idx)">{{song.name}}</a>
-								<span v-if="song.exists">{{song.name}} <span class="glyphicon glyphicon-ok"></span></span>
+								<span v-if="song.exists">{{song.name}} <fa icon="check"></fa></span>
 							</b-list-group-item>
 						</b-list-group>
 					</td>
