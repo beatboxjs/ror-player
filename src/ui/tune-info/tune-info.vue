@@ -19,7 +19,7 @@
 		<PlaybackSettings :playback-settings="playbackSettings" :default-speed="tune.speed" />
 	</h2>
 
-	<ExampleSong
+	<ExampleSongPlayer
 		v-if="tune.exampleSong"
 		:tune-name="tuneName"
 		:song="tune.exampleSong"

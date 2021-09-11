@@ -1,5 +1,5 @@
 import Component from "vue-class-component";
-import WithRender from "./example-song.vue";
+import WithRender from "./example-song-player.vue";
 import Vue from "vue";
 import { InjectReactive, Prop, Watch } from "vue-property-decorator";
 import { getPatternFromState, State } from "../../state/state";
@@ -9,21 +9,22 @@ import Beatbox from "beatbox.js";
 import $ from "jquery";
 import config from "../../config";
 import { allInstruments, getEffectiveSongLength, SongParts } from "../../state/song";
-import "./example-song.scss";
+import "./example-song-player.scss";
 import { scrollToElement } from "../../services/utils";
 import FileSaver from "file-saver";
 import Progress from "../utils/progress";
 import { exportMP3 } from "beatbox.js-export";
+import { ExampleSong } from "../../state/tune";
 
 @WithRender
 @Component({
 	components: { Progress }
 })
-export default class ExampleSong extends Vue {
+export default class ExampleSongPlayer extends Vue {
 	@InjectReactive() readonly state!: State;
 
 	@Prop({ type: String, required: true }) readonly tuneName!: string;
-	@Prop({ type: Array, required: true }) readonly song!: Array<string>;
+	@Prop({ type: Array, required: true }) readonly song!: ExampleSong;
 	@Prop(Object) readonly settings?: PlaybackSettings;
 
 	playerRef: BeatboxReference | null = null;
@@ -38,18 +39,32 @@ export default class ExampleSong extends Vue {
 		return this.playerRef && getPlayerById(this.playerRef.id);
 	}
 
+	get normalizedSong(): Array<Required<Exclude<ExampleSong[0], string>>> {
+		return this.song.flatMap((part) => {
+			const result = {
+				tuneName: this.tuneName,
+				...(typeof part === "string" ? { patternName: part } : part)
+			};
+			const pattern = getPatternFromState(this.state, result.tuneName, result.patternName);
+			if(!pattern)
+				return [];
+			else {
+				return [{
+					length: pattern.length,
+					...result
+				}];
+			}
+		});
+	}
+
 	get songParts(): SongParts {
 		let i = 1;
 		const result = {
 			0: allInstruments([ "General Breaks", "Whistle in" ])
 		} as SongParts;
-		for(const patternName of this.song) {
-			const pattern = getPatternFromState(this.state, this.tuneName, patternName);
-			if(!pattern)
-				continue;
-
-			result[i] = allInstruments([ this.tuneName, patternName ]);
-			i += pattern.length / 4;
+		for(const part of this.normalizedSong) {
+			result[i] = allInstruments([ part.tuneName, part.patternName ]);
+			i += part.length / 4;
 		}
 		return result;
 	}

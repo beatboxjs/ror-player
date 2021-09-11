@@ -35,8 +35,7 @@ function decrescendo(length: number): LegacyVolumeHack {
 const sheetUrl = "https://github.com/rhythms-of-resistance/sheetbook/blob/master/generated/single/";
 
 type RawTune = { [i in keyof GenericTune<CompressedPattern>]?: GenericTune<CompressedPattern>[i] } & {
-	time?: number,
-	exampleSong?: Array<string>
+	time?: number;
 };
 
 const rawTunes: {[tuneName: string]: RawTune} = {
@@ -2611,7 +2610,7 @@ for(const i in rawTunes) {
 
 	defaultTunes[i] = normalizeTune(newTune);
 
-	const unknown = (defaultTunes[i].exampleSong || []).filter((patternName) => !defaultTunes[i].patterns[patternName]);
+	const unknown = (defaultTunes[i].exampleSong || []).filter((patternName) => !defaultTunes[i].patterns[typeof patternName === 'string' ? patternName : patternName.patternName]);
 	if(unknown.length > 0)
 		console.error(`Unknown breaks in example song for ${i}: ${unknown.join(", ")}`);
 }

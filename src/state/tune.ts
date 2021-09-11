@@ -3,6 +3,8 @@ import { normalizePattern, Pattern, PatternOptional } from "./pattern";
 import { clone } from "../utils";
 import Vue from "vue";
 
+export type ExampleSong = Array<string | { tuneName?: string, patternName: string, length?: number }>;
+
 export type GenericTune<PatternType> = {
 	patterns: { [name: string]: PatternType },
 	categories: Array<Category>,
@@ -11,7 +13,7 @@ export type GenericTune<PatternType> = {
 	video?: string,
 	description?: string,
 	speed?: number,
-	exampleSong?: Array<string>
+	exampleSong?: ExampleSong
 };
 
 export type Tune = GenericTune<Pattern>;

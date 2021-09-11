@@ -11,7 +11,7 @@ import { PlaybackSettings } from "../../state/playbackSettings";
 import { clone } from "../../utils";
 import PlaybackSettingsComponent from "../playback-settings/playback-settings";
 import PatternPlaceholder, { PatternPlaceholderItem } from "../pattern-placeholder/pattern-placeholder";
-import ExampleSong from "../example-song/example-song";
+import ExampleSongPlayer from "../example-song-player/example-song-player";
 
 export function getTuneDescription(tuneName: string): string | null {
 	if(!defaultTunes[tuneName])
@@ -25,7 +25,7 @@ export function getTuneDescription(tuneName: string): string | null {
 
 @WithRender
 @Component({
-	components: { PlaybackSettings: PlaybackSettingsComponent, PatternPlaceholder, ExampleSong, PatternPlaceholderItem }
+	components: { PlaybackSettings: PlaybackSettingsComponent, PatternPlaceholder, ExampleSongPlayer, PatternPlaceholderItem }
 })
 export default class TuneInfo extends Vue {
 

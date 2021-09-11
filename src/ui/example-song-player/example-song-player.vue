@@ -6,10 +6,10 @@
 			<br>
 			<span class="pattern-name">Whistle in</span>
 		</b-card>
-		<b-card v-for="(patternName, i) in song" :key="i" :style="{ width: `${2.5 * state.tunes[tuneName].patterns[patternName].length }em` }">
-			<span class="tune-name">{{state.tunes[tuneName].displayName || tuneName}}</span>
+		<b-card v-for="(part, i) in normalizedSong" :key="i" :style="{ width: `${2.5 * part.length }em` }">
+			<span class="tune-name">{{state.tunes[part.tuneName].displayName || part.tuneName}}</span>
 			<br>
-			<span class="pattern-name">{{state.tunes[tuneName].patterns[patternName].displayName || patternName}}</span>
+			<span class="pattern-name">{{state.tunes[part.tuneName].patterns[part.patternName].displayName || part.patternName}}</span>
 		</b-card>
 	</div>
 	<ul class="actions icon-list">
