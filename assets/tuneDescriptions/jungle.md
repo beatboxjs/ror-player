@@ -2,9 +2,11 @@
 
 ## Background
 
-Invented by someone from RoR Berlin in 2005, inspired by the jungle parties in a squat in London.
+**Name:** Jungle is a genre of dance music that devloped in the UK rave scene in the 1990s. It is the main successor of Drum&Bass.
 
-Jungle is a genre of dance music that devloped in the UK rave scene in the 1990s. It is the main successor of Drum&Bass.
+**Musical background:** The tune is based on Jungle.
+
+**History:** Invented by someone from RoR Berlin in 2005, inspired by the jungle parties in a squat in London. Was only played occasionally because it was never in the official tune sheets. Was rediscovered in 2021.
 
 ## Difficulty
 
