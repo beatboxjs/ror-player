@@ -25,7 +25,7 @@ const ROUTES: { [key: string]: string } = {
 	"legacy-import": "/:importData"
 };
 
-const ROUTES_MATCH: { [key: string]: MatchFunction } = Object.keys(ROUTES).reduce((p, c) => ({ ...p, [c]: match(ROUTES[c], { decode: decodeURIComponent }) }), {});
+const ROUTES_MATCH: { [key: string]: MatchFunction } = Object.keys(ROUTES).reduce((p, c) => ({ ...p, [c]: match(ROUTES[c], { decode: decodeURIComponent, strict: true }) }), {});
 
 const ROUTES_COMPILE: { [key: string]: PathFunction } = {
 	root: () => "/",
