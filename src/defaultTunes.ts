@@ -1217,7 +1217,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	},
 	'Hip Hop': {
 		categories: [ "proposed", "tricky" ],
-		//sheet: sheetUrl + "hiphop.pdf",
+		sheet: sheetUrl + "hiphop.pdf",
 		description: require("../assets/tuneDescriptions/hiphop.md").default,
 		patterns: {
 			Tune: {
