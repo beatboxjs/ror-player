@@ -6,6 +6,8 @@
 
 **Musical background:** The tune is based on Jungle.
 
+**Sign:** The sign represents dancing to electronic music.
+
 **History:** Invented by someone from RoR Berlin in 2005, inspired by the jungle parties in a squat in London. Was only played occasionally because it was never in the official tune sheets. Was rediscovered in 2021.
 
 ## Difficulty
