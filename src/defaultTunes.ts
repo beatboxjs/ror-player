@@ -1384,6 +1384,53 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		},
 		exampleSong: [ "Tune", "Break 2", "Tune", "Break 2 Inverted", "Tune" ]
 	},
+	'March for Biodiversity': {
+		categories: [ "proposed", "tricky", "western" ],
+		description: require("../assets/tuneDescriptions/march-for-biodiversity.md").default,
+		patterns: {
+			Tune: {
+				loop: true,
+				ls: 'X X X X XXX XXX X X X X XXX XXX X X X X XXX XXX X X X X X   X   ',
+				ms: 's s s s         s s s s         s s s s         s s s s X   X   ',
+				hs: '        XXX XXX         XXX XXX         XXX XXX         X   X   ',
+				re: 'f r   rrf r  r  f r   rrf r  r  f r   rrf r  r  f r   rrf X  s  ',
+				sn: '. . X . . . X . . . X . . . X . . . X . . . X . . . X . . . X . ',
+				ta: '    X  X  X XX  X  X  X  XX XXX     X  X  X XX  X  X  X  XX XXX ',
+				ag: 'o   o   o a aa  o a aa  o   o   a   a   a o oo  o o o o o   a   ',
+				sh: '. . X . . . X . . . X . . . X . . . X . . . X . . . X . . . X . '
+			},
+			Intro: {
+				ls: 's   s   s   s   s   s   s   s   s   s   s   s   s   s   s   s   s   s   s   s   s        X X XX ',
+				ms: '                               X   X   X   X   X   X   X   X   X   X   X   X   X         X X XX ',
+				hs: '                             X   X   X   X   X   X   X   X   X   X   X   X   X   X       X X XX ',
+				re: '  zX  zX  zX  zX  zX  zX  zX  zX  zX  zX  zX  zX  zX  zX  zX  zX  zX  zX  zX  zX         X X XX ',
+				sn: '                                                         f   f   f   f   f   f   f ....X X X XX ',
+				ta: '                                                        X   X   X   X   X   X   X        X X XX ',
+				ag: '                                                aao         aao             aao          a a aa '
+			},
+			'Break 1': {
+				ls: 'rrr X XXr rrX   ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: 'rrr o oor rro a '
+			},
+			'Break 2': {
+				ls: 'X X X X X       ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: '@ls',
+				sh: '@ls',
+				ot: '          F     '
+			}
+		},
+		exampleSong: ['Intro', 'Tune', 'Tune', 'Break 1', 'Tune', 'Tune', 'Break 2', 'Tune', 'Tune']
+	},
 	'Menaiek': {
 		categories: [ "standard", "uncommon", "new", "tricky" ],
 		sheet: sheetUrl + "menaiek.pdf",
@@ -1623,6 +1670,85 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 			}
 		},
 		exampleSong: [ "Tune", "Tune", "Tune", "Tune", "Monkey break", "Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune", "Funky gibbon", "Funky gibbon", "Tune", "Tune", "Tune", "Tune" ]
+	},
+	'Pekurinen': {
+		categories: [ "proposed", "tricky", "western" ],
+		description: require("../assets/tuneDescriptions/pekurinen.md").default,
+		patterns: {
+			Tune: {
+				loop: true,
+				ls: '    X       X X     X     X     ',
+				ms: 'X       X       X       X       ',
+				hs: 'X       X       X       X     X ',
+				re: 'f XXX X XXX X XXf XXX X fXX X   ',
+				sn: 'X...X.X..X..X.X.X...X.X..X..X...',
+				ta: 'X XX  X XX  X XX  X XX   XX   X ',
+				ag: 'a  o  a   o   a a  o  a  aa o   ',
+				sh: '................................'
+			},
+			'Break 1': {
+				ls: '        X X X   ',
+				ms: '@ls',
+				hs: '@ls',
+				re: 'X XX Xf X X X   ',
+				sn: '@ls',
+				ta: '@ls',
+				ag: '        o o o a ',
+				sh: '@ls'
+			},
+			'Break 2': {
+				ls: '                        X X X   ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '  XX XX   XX XX   XX XX X X X   ',
+				sn: '@re',
+				ta: '@re',
+				ag: 'a       a       a       a a a   ',
+				sh: '@re'
+			},
+			'Break 3': {
+				ls: '                X X X X X   X   ',
+				ms: '        XXX XXX             X   ',
+				hs: '@ms',
+				re: '@ms',
+				sn: '@ms',
+				ta: 'X X X X                     X   ',
+				ag: '@ms',
+				sh: '@ms'
+			},
+			'Clave Plus': {
+				ls: 'X  X  X   XXX   ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: '@ls',
+				sh: '@ls'
+			},
+			'Disco Barricade Break': {
+				ls: '                X  X  X   XXX   ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: '@ls',
+				ag: '@ls',
+				sh: '@ls',
+				ot: 'İ Ǐ İ Ǐ Ī ĨĮ Ĳ                  '
+			},
+			'Bra Break': {
+				ls: '                        X  X X  ',
+				ms: '@ls',
+				hs: '@ls',
+				re: 'f XXXX r XXXX r X XX rr X  X X  ',
+				sn: '@ls',
+				ta: '       X      X      XX X  X X  ',
+				ag: '       a      a      aa        a',
+				sh: '@ls'
+			}
+		},
+		exampleSong: ['Tune', 'Tune', 'Tune', 'Tune', 'Break 1', 'Tune', 'Tune', 'Tune', 'Tune', 'Break 2', 'Tune', 'Tune', 'Tune', 'Tune', 'Break 3', 'Tune', 'Tune', 'Tune', 'Tune', 'Clave Plus', 'Tune', 'Tune', 'Tune', 'Tune', 'Disco Barricade Break', 'Tune', 'Tune', 'Tune', 'Tune', 'Bra Break', 'Tune', 'Tune', 'Tune', 'Tune']
 	},
 	'Ragga': {
 		categories: [ "standard", "common", "tricky" ],
