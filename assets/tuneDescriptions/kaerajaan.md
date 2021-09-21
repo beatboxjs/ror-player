@@ -2,7 +2,7 @@
 
 ## Background
 
-**Name:** Kaerajaan is an Estonian folk dance that is danced to a folk song called Kaera-Jaan ([example on YouTube](https://www.youtube.com/watch?v=5BKoS9CfQPA)).
+**Name:** Kaerajaan is an Estonian folk dance that is danced to a folk song called Kaera-Jaan ([example on YouTube](https://www.youtube.com/watch?v=5BKoS9CfQPA)). The name roughly translates to “John of Oats”. Estonians probably used to sing this song while harvesting oat crops.
 
 **Musical background:** The tune is based on the folk music that is played while dancing Kaerajaan.
 
