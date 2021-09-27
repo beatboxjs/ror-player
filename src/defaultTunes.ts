@@ -1707,12 +1707,12 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '@re'
 			},
 			'Break 3': {
-				ls: '                X X X X X   X   ',
-				ms: '        XXX XXX             X   ',
+				ls: '                                                X X X X X   X   ',
+				ms: '        XXX XXX         XXX XXX         XXX XXX             X   ',
 				hs: '@ms',
 				re: '@ms',
 				sn: '@ms',
-				ta: 'X X X X                     X   ',
+				ta: 'X X X X         X X X X         X X X X                     X   ',
 				ag: '@ms',
 				sh: '@ms'
 			},
