@@ -31,7 +31,7 @@ The Surdo line has an upbeat, so when entering the groove (and Break 2), the Sur
 
 ## Breaks
 
-* **Break 1:** Only Agogô, then everyone shouting “Tequila!”. Typically played after Break 2 or Bra Break, also sounds good
+* **Break 1:** Only Agogô, then everyone shouting “Tequila!”. Typically played after Break 2 or Call Break, also sounds good
   after other 3-bar breaks, such as the Progressive Break.
 * **Break 2:** The Surdos make the melody of the saxophone solo in the song. Typically, Break 1 is played afterwards. There
   is an upbeat of 3 strokes, so the Surdos start playing immediately after the 4th whistle.

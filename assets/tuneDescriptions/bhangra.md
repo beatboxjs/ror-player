@@ -36,6 +36,6 @@ while it’s great – make sure tho whole band plays like this, if some plays i
   Singing them together in a rehearsal is also a good idea. (btw: papadam is an indian bread)
 * Break 3: is a variation of the Agogô voice; everyone just plays the Agogô rhythm on one tone. The pause at the end
   of the normal Agogô voice is not taken into account.
-* Bra Break: where the Repi calls and everyone else answers. There’s an intermezzo, where the Surdos play something
+* Call Break: where the Repi calls and everyone else answers. There’s an intermezzo, where the Surdos play something
   similar to the Tamb-stroke and at the end everyone shouts “ey”. While it seems really hard to learn at first, you’ll
   see that the break will be stuck in your ear already after you heard it a few times.

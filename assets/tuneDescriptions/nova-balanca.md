@@ -30,4 +30,4 @@ kind of three groups which are each synchronized:
 
 * Break 1 is basically the same as Funk break 2, but to be played from soft to really, really loud!!! Try not to speed up whilst you’re playing it.
 * Break 2 is kind of a kickback break, between the surdos and everyone else; it has the same rhythm as the afoxe tamborim line
-* Bra Break is a call and response between the snare and everyone else.
+* Call Break is a call and response between the snare and everyone else.

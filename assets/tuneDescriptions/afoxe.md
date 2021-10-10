@@ -41,6 +41,6 @@ There is also some criticism about the sign, since it ridicules the spiritual me
 
 * Break 1, a call&response between Surdos and all others
 * Breaks 2 & 3 which are exchange-surdo-lines for Mid and High Surdos
-* Bra Break, a call&response between Repis and all others
+* Call Break, a call&response between Repis and all others
 * Wolf Break, a call&response between Surdos and all others which ends with a (name giving) howl. It is usually played
   in a loop. Can also be played in other tunes.

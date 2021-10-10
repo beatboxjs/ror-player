@@ -182,6 +182,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/37596e72-e93b-44f1-8770-760be8e5ce87",
 		patterns: {
 			"Call Break Oi": {
+				displayName: 'Oi Break',
 				time: 3,
 				ls: 'X  XXXX     ',
 				ms: '@ls',
@@ -194,6 +195,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ot: '         A  '
 			},
 			"Call Break Ua": {
+				displayName: 'Ua Break',
 				time: 3,
 				ls: 'X  XXXX     ',
 				ms: '@ls',
@@ -395,6 +397,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '................................'
 			},
 			"Bra Break": {
+				displayName: "Call Break",
 				ls: '        XX XX           XX XX           XX XX   X X X X XX XX X ',
 				ms: '@ls',
 				hs: '@ls',
@@ -570,6 +573,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '@ls'
 			},
 			"Bra Break": {
+				displayName: "Call Break",
 				ls: '                                                                        X XX XX XX              ',
 				ms: '@ls',
 				hs: '@ls',
@@ -674,6 +678,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				volumeHack: { 0: .2, 16: .6, 32: 1  }
 			},
 			'Bra Break (Maestra)': {
+				displayName: "Call Break (Maestra)",
 				ls: '            X X             X X             X X ',
 				ms: '@ls',
 				hs: '@ls',
@@ -685,6 +690,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ot: 'ww ww ww ww     ww ww ww ww     ww ww ww ww     '
 			},
 			'Bra Break (Repi)': {
+				displayName: "Call Break (Repi)",
 				ls: '            X X             X X             X X ',
 				ms: '@ls',
 				hs: '@ls',
@@ -695,6 +701,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '@ls'
 			},
 			'Bra Break (Snare)': {
+				displayName: "Call Break (Snare)",
 				ls: '            X X             X X             X X ',
 				ms: '@ls',
 				hs: '@ls',
@@ -1558,6 +1565,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				}
 			},
 			'Bra Break': {
+				displayName: "Call Break",
 				ls: '                        XX XX   ',
 				ms: '@ls',
 				hs: '@ls',
@@ -1665,6 +1673,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '................'
 			},
 			'Bra Break': {
+				displayName: "Call Break",
 				ls: '    X     X         X     X     ',
 				ms: '@ls',
 				hs: '@ls',
@@ -1815,6 +1824,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ot: 'İ Ǐ İ Ǐ Ī ĨĮ Ĳ                  '
 			},
 			'Bra Break': {
+				displayName: "Call Break",
 				ls: '                        X  X X  ',
 				ms: '@ls',
 				hs: '@ls',
@@ -2010,6 +2020,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '................'
 			},
 			'Bra Break': {
+				displayName: "Call Break",
 				ls: '          X X             X X             X X                                                                 X ',
 				ms: '          X X             X X             X X                                                                   ',
 				hs: '@ms',
@@ -2181,6 +2192,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: "................................"
 			},
 			"Bra Break": {
+				displayName: "Call Break",
 				ls: "          X X             X X             X X                                                                 X ",
 				ms: "          X X             X X             X X                                                                   ",
 				hs: "@ms",
@@ -2420,6 +2432,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '   XXXXXXXX        XXXXXXXX        XXXXXXXX        '
 			},
 			'Bra Break': {
+				displayName: "Call Break",
 				ls: repeat(3, '    X       X X '),
 				ms: '@ls',
 				hs: '@ls',
@@ -2455,6 +2468,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				upbeat: 2
 			},
 			'Bra Break': {
+				displayName: "Call Break",
 				ls: "                X     X X                       X     X X                       X     X X                       ",
 				ms: "@ls",
 				hs: "@ls",
@@ -2637,6 +2651,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '@ls'
 			},
 			'Bra Break': {
+				displayName: "Call Break",
 				ls: '      X           X         X     X     X X     ',
 				ms: '@ls',
 				hs: '@ls',
@@ -2835,6 +2850,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '...XX......XX......XX......XX...'
 			},
 			"Bra Break": {
+				displayName: "Call Break",
 				ls: repeat(3, '        X       ') + 'X     X X  X  X ',
 				ms: '@ls',
 				hs: '@ls',

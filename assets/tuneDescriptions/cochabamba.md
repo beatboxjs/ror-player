@@ -12,7 +12,7 @@ Agogôs and Surdos are the ‘heart’ of this tune, try to have them as punctua
 
 **Name:** Cochabamba is a major city in Bolivia. The 3rd PGA conference in 2001 was there. Social movements and direct action groups there revoked the privatization of drinking water.
 
-**Musical background:** Break 1 and Bra Break are based on the song “Iron Lion Zion” by Bob Marley ([YouTube](https://www.youtube.com/watch?v=tBWFofJSm-c)). *(More info needed.)*
+**Musical background:** Break 1 and Call Break are based on the song “Iron Lion Zion” by Bob Marley ([YouTube](https://www.youtube.com/watch?v=tBWFofJSm-c)). *(More info needed.)*
 
 **Sign:** Symbolizes drinking out of cup, referring to the privatization of water against which the protests happened in Cochabamba
 
@@ -31,7 +31,7 @@ Some breaks go for three bars (12 steps) so if one instrument plays along it’s
 
 In the Iron Lion Zion break (or break 1) everyone plays the rhythm of the Agogô with only one tone.
 
-In the Bra Break it’s the same rhythm, but this time the repi calls the four double-hits and the rest answers with two
+In the Call Break it’s the same rhythm, but this time the repi calls the four double-hits and the rest answers with two
 single-hits.
 
 There’s also the cross-kicks, a break only for the Surdos where they skip the beats in the middle of one bar. If nothing
