@@ -1,9 +1,8 @@
-import { Category } from "../config";
+import { Category, Instrument } from "../config";
 import { normalizePattern, Pattern, PatternOptional } from "./pattern";
-import { clone } from "../utils";
 import Vue from "vue";
 
-export type ExampleSong = Array<string | { tuneName?: string, patternName: string, length?: number }>;
+export type ExampleSong = Array<string | { tuneName?: string, patternName: string, length?: number, instruments?: Instrument[] }>;
 
 export type GenericTune<PatternType> = {
 	patterns: { [name: string]: PatternType },

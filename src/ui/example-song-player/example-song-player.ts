@@ -51,6 +51,7 @@ export default class ExampleSongPlayer extends Vue {
 			else {
 				return [{
 					length: pattern.length,
+					instruments: config.instrumentKeys,
 					...result
 				}];
 			}
@@ -63,7 +64,7 @@ export default class ExampleSongPlayer extends Vue {
 			0: allInstruments([ "General Breaks", "Whistle in" ])
 		} as SongParts;
 		for(const part of this.normalizedSong) {
-			result[i] = allInstruments([ part.tuneName, part.patternName ]);
+			result[i] = allInstruments([ part.tuneName, part.patternName ], part.instruments);
 			i += part.length / 4;
 		}
 		return result;

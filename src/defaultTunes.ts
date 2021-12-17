@@ -2513,6 +2513,64 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		},
 		exampleSong: [ "Tune", "Rented a Tent Break", "Tune" ]
 	},
+	'Trans-Europa-Express': {
+		categories: [ "proposed" ],
+		//sheet: sheetUrl + "trans-europa-express.pdf",
+		description: require("../assets/tuneDescriptions/trans-europa-express.md").default,
+		patterns: {
+			Tune: {
+				upbeat: 1,
+				ls: " XX      X X     XX      X X     ",
+				ms: "             X               X   ",
+				hs: "     X       X       X       X   ",
+				re: "hX rhX  hX rhX  hX rhX  hX rhX  h",
+				sn: " ....X..X....X..X....X..X....X..X",
+				ta: " X     X X X   X X               ",
+				ag: " o     o o o   o o               ",
+				sh: ".X X.X  .X X.X  .X X.X  .X X.X  ."
+			},
+			"Doppler Break": {
+				upbeat: 1,
+				ls: "                                 XXXXXXXXXXXXXXXXssssssssssssssss",
+				ms: "                             XXXXXXXXsssssssssssssssssssssssssss ",
+				hs: "                 rrrrrrrrrrrrXXXX                                ",
+				re: " rrrrrrrrrrrrrrrrrrrrrrrrrrrrXXXX                                ",
+				sn: "     rrrrrrrrrrrrrrrrrrrrrrrrXXXX                                ",
+				ta: "                             XXXX                                ",
+				sh: ".X X.X  .X X.X  .X X.X  .X X.X  .X X.X  .X X.X  .X X.X  .X X.X  ."
+			},
+			"Break 1": {
+				"upbeat": 1,
+				"ls": " X               X                                               ",
+				"ms": "         X       X               X                               ",
+				"hs": "         X               X       X               Xsssssssssss    ",
+				"re": " h                       X               r       X               ",
+				"sn": "                                         r                       ",
+				"ta": "                                         X                       ",
+				"sh": ".X X.X  .X X.X  .X X.X  .X X.X  .X X.X  .X X.X  .X X.X  .X X.X  ."
+			},
+			"Tamborim Stroke": {
+				"ls": "X     X X X   X X               ",
+				"ms": "@ls",
+				"hs": "@ls",
+				"re": "@ls",
+				"sn": "@ls",
+				"ta": "@ls",
+				"ag": "o     o o o   o o               ",
+				"sh": "@ls"
+			}
+		},
+		exampleSong: [
+			{ patternName: "Tune", instruments: ["ls", "ms", "hs", "sh"] },
+			{ patternName: "Tune", instruments: ["ls", "ms", "hs", "sh"] },
+			"Break 1",
+			"Tune", "Tune", "Tune", "Tune",
+			"Doppler Break",
+			"Tune", "Tune", "Tune", "Tune",
+			"Tamborim Stroke",
+			"Tune", "Tune", "Tune", "Tune"
+		]
+	},
 	'Van Harte Pardon': {
 		categories: [ "standard", "uncommon", "tricky" ],
 		sheet: sheetUrl + "van-harte-pardon.pdf",
@@ -2914,6 +2972,8 @@ for(const i in rawTunes) {
 		}
 
 		newPattern.length = Math.ceil(newPattern.length / (newPattern.time || 4));
+		if (newPattern.length % 4)
+			console.error(`Unusual length ${newPattern.length} for ${j} of ${i}.`);
 
 		newTune.patterns[j] = normalizePattern(newPattern);
 	}

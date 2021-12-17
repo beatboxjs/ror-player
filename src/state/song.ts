@@ -275,9 +275,9 @@ export function updateSong(song: Song, update: SongOptional) {
 	vueSetMultiple(song, update);
 }
 
-export function allInstruments(patternReference: PatternReference): SongPart {
+export function allInstruments(patternReference: PatternReference, instruments = config.instrumentKeys): SongPart {
 	const result = { } as SongPart;
-	for(const instr of config.instrumentKeys) {
+	for(const instr of instruments) {
 		result[instr] = patternReference;
 	}
 	return result;
