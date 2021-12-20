@@ -2521,7 +2521,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 			Tune: {
 				upbeat: 1,
 				ls: " XX      X X     XX      X X     ",
-				ms: "             X               X   ",
+				ms: "@ls",
 				hs: "     X       X       X       X   ",
 				re: "hX rhX  hX rhX  hX rhX  hX rhX  h",
 				sn: " ....X..X....X..X....X..X....X..X",

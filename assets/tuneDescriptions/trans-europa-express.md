@@ -1,4 +1,4 @@
-**Sign:** Move your hand from one side to the other in front of your body, like a train passing by.
+**Sign:** Wave an imaginary tissue like saying goodbye to a train.
 
 ## Background
 
