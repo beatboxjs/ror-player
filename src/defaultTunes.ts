@@ -1356,6 +1356,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		categories: [ "standard", "common", "onesurdo", "easy" ],
 		sheet: sheetUrl + "karla-shnikov.pdf",
 		description: require("../assets/tuneDescriptions/karla-shnikov.md").default,
+		video: "https://tube.rhythms-of-resistance.org/videos/embed/cc4d0222-3713-4943-bba1-cc733cb84ccc",
 		patterns: {
 			Tune: {
 				loop: true,
