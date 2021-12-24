@@ -1394,6 +1394,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	},
 	'March for Biodiversity': {
 		categories: [ "proposed", "tricky", "western" ],
+		sheet: sheetUrl + "march-for-biodiversity.pdf",
 		description: require("../assets/tuneDescriptions/march-for-biodiversity.md").default,
 		patterns: {
 			Tune: {
@@ -1581,6 +1582,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	},
 	'Norppa': {
 		categories: [ "proposed", "tricky", "western" ],
+		sheet: sheetUrl + "norppa.pdf",
 		description: require("../assets/tuneDescriptions/norppa.md").default,
 		patterns: {
 			Tune: {
@@ -1760,6 +1762,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	},
 	'Pekurinen': {
 		categories: [ "proposed", "tricky", "western" ],
+		sheet: sheetUrl + "pekurinen.pdf",
 		description: require("../assets/tuneDescriptions/pekurinen.md").default,
 		patterns: {
 			Tune: {
@@ -2516,7 +2519,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	},
 	'Trans-Europa-Express': {
 		categories: [ "proposed" ],
-		//sheet: sheetUrl + "trans-europa-express.pdf",
+		sheet: sheetUrl + "trans-europa-express.pdf",
 		description: require("../assets/tuneDescriptions/trans-europa-express.md").default,
 		patterns: {
 			Tune: {
