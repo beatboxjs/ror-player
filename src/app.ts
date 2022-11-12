@@ -11,11 +11,13 @@ import Overview from "./ui/overview/overview";
 import { registerServiceWorker } from "./services/service-worker";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCaretDown, faCheck, faClock, faCode, faCog, faCopy, faDownload, faEraser, faExclamationCircle, faInfoCircle, faFileExport, faFileImport, faHandPointRight, faHeadphones, faMobileAlt, faMusic, faPause, faPen, faPencilAlt, faPlay, faPlayCircle, faPlus, faQuestionCircle, faShare, faSlidersH, faStar, faStop, faTrash, faVolumeMute, faWindowClose } from '@fortawesome/free-solid-svg-icons'
+import { tryFindDraggableTarget } from './ui/utils/dragdrop';
 
 registerServiceWorker();
 
 polyfill({
-    dragImageTranslateOverride: scrollBehaviourDragImageTranslateOverride
+	dragImageTranslateOverride: scrollBehaviourDragImageTranslateOverride,
+	tryFindDraggableTarget: tryFindDraggableTarget
 });
 
 Vue.use(BootstrapVue);
