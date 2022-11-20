@@ -31,4 +31,5 @@ jobs:
       with:
         credentials: ${{ secrets.SERVICE_ACCOUNT_KEY }}
         path: dist
+        parent: false
         destination: playerxrrhythmsuk
