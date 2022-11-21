@@ -6,7 +6,7 @@ on:
   push:
     branches: [ "master" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "*" ]
   
 
 jobs:
@@ -29,6 +29,7 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - uses: google-github-actions/upload-cloud-storage@main
+      if: github.ref == 'refs/heads/master'
       with:
         credentials: ${{ secrets.SERVICE_ACCOUNT_KEY }}
         path: dist
