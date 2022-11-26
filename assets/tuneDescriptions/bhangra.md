@@ -7,10 +7,10 @@ When playing it for the first time, you might have to concentrate in order to no
 This is particularly important when switching from or into a different tune.
 
 If you play breaks from other tunes which are based on 16 hits in a 4/4 pattern (eg. “Karla Break”, or “8 Up”), try
-to play 12 hits in a 3/4 pattern. In the beginning it’s quite hard (because the 4/4 is stuck in your head) but after a
+to play 12 hits in a 6/8 pattern. In the beginning it’s quite hard (because the 4/4 is stuck in your head) but after a
 while it’s great – make sure tho whole band plays like this, if some plays it differently it can get very chaotic…
 
-**Sign:** folded hands, like praying
+**Sign:** wavy hands snaking up
 
 ## Background
 
