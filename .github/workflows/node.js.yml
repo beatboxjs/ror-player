@@ -28,10 +28,14 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
+    
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v1'
+      with:
+        credentials_json: '${{ secrets.SERVICE_ACCOUNT_KEY }}'    
     - uses: google-github-actions/upload-cloud-storage@v1
       if: github.ref == 'refs/heads/master'
       with:
-        credentials_json: ${{ secrets.SERVICE_ACCOUNT_KEY }}
         path: dist
         parent: false
         destination: player.xrrhythms.uk
