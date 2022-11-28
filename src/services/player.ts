@@ -70,6 +70,10 @@ function isEnabled(instr: Instrument, headphones: Headphones, mute: Mute) {
 	return true;
 }
 
+function toSoundName(instr: string, stroke: string){
+	return `${instr}_${stroke.charCodeAt(0).toString(16)}`
+}
+
 export function patternToBeatbox(pattern: Pattern, playbackSettings: PlaybackSettings): RawPatternWithUpbeat {
 	const fac = config.playTime/pattern.time;
 	const ret: RawPattern = new Array((pattern.length*pattern.time + pattern.upbeat) * fac);
@@ -90,9 +94,9 @@ export function patternToBeatbox(pattern: Pattern, playbackSettings: PlaybackSet
 		const stroke = [ ];
 
 		if(playbackSettings.whistle && i >= pattern.upbeat && (i-pattern.upbeat) % (4*pattern.time) == 0)
-			stroke.push({ instrument: playbackSettings.whistle == 2 ? "ot_y" : "ot_w", volume: playbackSettings.volume});
+			stroke.push({ instrument: playbackSettings.whistle == 2 ? toSoundName("ot", "y") : toSoundName("ot", "w"), volume: playbackSettings.volume});
 		else if(playbackSettings.whistle == 2 && i >= pattern.upbeat && (i-pattern.upbeat) % pattern.time == 0)
-			stroke.push({ instrument: "ot_w", volume: playbackSettings.volume});
+			stroke.push({ instrument: toSoundName("ot", "w"), volume: playbackSettings.volume});
 
 		for(const instr of config.instrumentKeys) {
 			if(isEnabled(instr, playbackSettings.headphones, playbackSettings.mute) && pattern[instr]) {
@@ -107,7 +111,7 @@ export function patternToBeatbox(pattern: Pattern, playbackSettings: PlaybackSet
 				}
 
 				if(strokeType && strokeType != " ")
-					stroke.push({ instrument: instr+"_"+strokeType, volume: vol[instr] * playbackSettings.volume * (playbackSettings.volumes[instr] == null ? 1 : playbackSettings.volumes[instr]) });
+					stroke.push({ instrument: toSoundName(instr, strokeType), volume: vol[instr] * playbackSettings.volume * (playbackSettings.volumes[instr] == null ? 1 : playbackSettings.volumes[instr]) });
 			}
 		}
 
