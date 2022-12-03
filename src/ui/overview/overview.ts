@@ -12,13 +12,21 @@ import { StateProvider } from "../../services/history";
 import Compatibility from "../compatibility/compatibility";
 import Help from "../help/help";
 import Update from "../update/update";
+import PatternPlayer from "../pattern-player/pattern-player";
+
+type TabContent = { 
+	type: "edit-pattern";
+	tuneName: string;
+	patternName: string;
+}
 
 @WithRender
 @Component({
-	components: { Compatibility, Compose, Listen, StateProvider, Help, Update }
+	components: { Compatibility, Compose, Listen, StateProvider, Help, Update, PatternPlayer }
 })
 export default class Overview extends Vue {
 	activeTab = 0;
+	editorTab = null as {title:string; content: TabContent } | null;
 
 	_unregisterHandlers!: () => void;
 
@@ -29,6 +37,14 @@ export default class Overview extends Vue {
 			},
 			compose() {
 				this.activeTab = 1;
+			},
+			"edit-pattern" : function(data){
+				console.log("overview handle edit-pattern")
+				this.editorTab =  { 
+					title: `${data.pattern[0]}: ${data.pattern[1]}`,
+					content: { type: "edit-pattern", tuneName: data.pattern[0], patternName: data.pattern[1] }
+				};
+				Vue.nextTick().then(() => this.activeTab = 2);
 			},
 			"overview-close-pattern-list": function() {
 				$("body").removeClass("bb-pattern-list-visible");
@@ -43,11 +59,21 @@ export default class Overview extends Vue {
 	@Watch("activeTab")
 	onActiveTabChange(activeTab: number) {
 		stopAllPlayers();
-		events.$emit(activeTab == 1 ? "overview-compose" : "overview-listen");
+		console.log("activeTab changed", activeTab)
+		if (activeTab == 0)
+			events.$emit("overview-listen");
+		else if (activeTab == 1)
+			events.$emit("overview-compose");
+		else
+			events.$emit("overview-edit-pattern", { pattern: [this.editorTab!.content.tuneName, this.editorTab!.content.patternName ], readonly: true })
 	}
 
 	togglePatternList() {
 		$("body").toggleClass("bb-pattern-list-visible");
 	}
 
+	closeTab() { 
+		this.editorTab = null;
+		this.activeTab = 0;
+	}
 }

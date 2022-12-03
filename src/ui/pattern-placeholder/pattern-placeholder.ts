@@ -58,8 +58,8 @@ export default class PatternPlaceholder extends Vue {
 		this._unregisterHandlers = registerMultipleHandlers({
 			"edit-pattern"(data) {
 				if(!data.handled && data.pattern[0] == this.tuneName && data.pattern[1] == this.patternName && data.readonly == this.readonly) {
-					data.handled = true;
-					this.editPattern();
+					//data.handled = true;
+
 				}
 			}
 		}, this);
@@ -108,11 +108,8 @@ export default class PatternPlaceholder extends Vue {
 	}
 
 	async editPattern() {
-		this.editorId = null;
-		await this.$nextTick();
-		this.editorId = `bb-pattern-editor-dialog-${id()}`;
-		await this.$nextTick();
-		this.$bvModal.show(this.editorId);
+		console.log("Button emit edit-pattern")
+		events.$emit("edit-pattern", { pattern:[this.tuneName,  this.patternName], readonly: true });
 	}
 
 	createPlayer() {

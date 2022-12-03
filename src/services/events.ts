@@ -20,6 +20,11 @@ type Event1 = {
 		readonly: boolean,
 		handled?: boolean
 	},
+	"overview-edit-pattern": {
+		pattern: PatternReference,
+		readonly: boolean,
+		handled?: boolean
+	},
 	"pattern-list-tune-opened": string,
 	"pattern-list-tune-closed": string,
 	"pattern-list-open-tune": string
