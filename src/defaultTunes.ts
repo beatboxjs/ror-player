@@ -5,30 +5,30 @@ import { GenericTune, normalizeTune, Tune } from "./state/tune";
 import { PatternReference } from "./state/state";
 
 function stretch(from: number, to: number, pattern: string): string {
-	return pattern.split("").concat([ "" ]).join(repeat((to/from)-1, " "));
+	return pattern.split("").concat([""]).join(repeat((to / from) - 1, " "));
 }
 
 function repeat(n: number, pattern: string): string {
 	let ret = "";
-	for(let i=0; i<n; i++)
+	for (let i = 0; i < n; i++)
 		ret += pattern;
 	return ret;
 }
 
 function crescendo(length: number, start: number = 0): LegacyVolumeHack {
-	const r: LegacyVolumeHack = { };
+	const r: LegacyVolumeHack = {};
 	const a = .05;
-	const b = (1-a)/(length-1);
-	for(let i=0; i<length; i++)
-		r[start+i] = a+b*i;
+	const b = (1 - a) / (length - 1);
+	for (let i = 0; i < length; i++)
+		r[start + i] = a + b * i;
 	return r;
 }
 
 function decrescendo(length: number): LegacyVolumeHack {
-	const r: LegacyVolumeHack = { };
-	const b = 0.95/(length-1);
-	for(let i=0; i<length; i++)
-		r[i] = 1-b*i;
+	const r: LegacyVolumeHack = {};
+	const b = 0.95 / (length - 1);
+	for (let i = 0; i < length; i++)
+		r[i] = 1 - b * i;
 	return r;
 }
 
@@ -38,9 +38,9 @@ type RawTune = { [i in keyof GenericTune<CompressedPattern>]?: GenericTune<Compr
 	time?: number;
 };
 
-const rawTunes: {[tuneName: string]: RawTune} = {
+const rawTunes: { [tuneName: string]: RawTune } = {
 	'General Breaks': {
-		categories: [ "standard", "common", "uncommon", "new", "proposed", "custom", "onesurdo", "easy", "medium", "tricky", "western", "cultural-appropriation" ],
+		categories: ["standard", "common", "uncommon", "new", "proposed", "custom", "onesurdo", "easy", "medium", "tricky", "western", "cultural-appropriation"],
 		sheet: sheetUrl + "breaks.pdf",
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/37596e72-e93b-44f1-8770-760be8e5ce87",
 		patterns: {
@@ -53,7 +53,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ta: '@ls',
 				ag: '@ls',
 				sh: '@ls',
-				volumeHack: { 0: .1, 16: .4, 32: .7, 48: 1  }
+				volumeHack: { 0: .1, 16: .4, 32: .7, 48: 1 }
 			},
 			"8 up": {
 				ls: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
@@ -97,7 +97,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ta: '@ls',
 				ag: '@ls',
 				sh: '@ls',
-				volumeHack: { 0: .1, 16: .4, 32: .7, 48: 1  }
+				volumeHack: { 0: .1, 16: .4, 32: .7, 48: 1 }
 			},
 			'Clave Inverted': {
 				ls: '  X X   X  X  X ',
@@ -177,7 +177,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		}
 	},
 	'Special Breaks': {
-		categories: [ "standard", "common", "onesurdo" ],
+		categories: ["standard", "common", "onesurdo"],
 		sheet: sheetUrl + "breaks.pdf",
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/37596e72-e93b-44f1-8770-760be8e5ce87",
 		patterns: {
@@ -191,20 +191,20 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: repeat(3, 'o o o o o o o ooo o o o o o o ooo o o o o o o ooo o o o oooooooo') + repeat(1, 'a a a a a a a aaa a a a a a a aaa a a a a a a aaa a a a aaaaaaaa'),
 				sh: '@re',
 				volumeHack: {
-					ls: { 66:  .3, 78:  1, 82:  .3, 94:  1, 98:  .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 },
-					ms: { 66:  .3, 78:  1, 82:  .3, 94:  1, 98:  .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 },
-					hs: { 66:  .3, 78:  1, 82:  .3, 94:  1, 98:  .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 },
-					re: { 66:  .3, 78:  1, 82:  .3, 94:  1, 98:  .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 },
-					sn: { 66:  .3, 78:  1, 82:  .3, 94:  1, 98:  .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 },
-					ta: { 66:  .3, 78:  1, 82:  .3, 94:  1, 98:  .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 },
-					sh: { 66:  .3, 78:  1, 82:  .3, 94:  1, 98:  .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 }
+					ls: { 66: .3, 78: 1, 82: .3, 94: 1, 98: .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 },
+					ms: { 66: .3, 78: 1, 82: .3, 94: 1, 98: .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 },
+					hs: { 66: .3, 78: 1, 82: .3, 94: 1, 98: .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 },
+					re: { 66: .3, 78: 1, 82: .3, 94: 1, 98: .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 },
+					sn: { 66: .3, 78: 1, 82: .3, 94: 1, 98: .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 },
+					ta: { 66: .3, 78: 1, 82: .3, 94: 1, 98: .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 },
+					sh: { 66: .3, 78: 1, 82: .3, 94: 1, 98: .3, 110: 1, 114: .3, 120: 1, 130: .6, 142: 1, 146: .6, 158: 1, 162: .6, 174: 1, 178: .6, 184: 1 }
 				}
 			}
 		}
 	},
 	"Afoxe": {
 		displayName: "Afoxé",
-		categories: [ "standard", "common", "medium", "cultural-appropriation" ],
+		categories: ["standard", "common", "medium", "cultural-appropriation"],
 		sheet: sheetUrl + "afoxe.pdf",
 		description: require("../assets/tuneDescriptions/afoxe.md").default,
 		patterns: {
@@ -271,10 +271,10 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '@ls'
 			}
 		},
-		exampleSong: [ "Tune", "Tune", "Break 1", "Tune", "Tune", "Bra Break", "Tune", "Tune", "Tamborim Stroke"]
+		exampleSong: ["Tune", "Tune", "Break 1", "Tune", "Tune", "Bra Break", "Tune", "Tune", "Tamborim Stroke"]
 	},
 	'Angela Davis': {
-		categories: [ "standard", "common", "medium" ],
+		categories: ["standard", "common", "medium"],
 		sheet: sheetUrl + "angela-davis.pdf",
 		description: require("../assets/tuneDescriptions/angela-davis.md").default,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/3a431ae3-e59b-4d31-b2d6-9abc4db3f242",
@@ -322,10 +322,10 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '@ls'
 			}
 		},
-		exampleSong: [ "Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune", "Break 3", "Break 3", "Tune", "Tune", "Tune", "Tune"]
+		exampleSong: ["Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune", "Break 3", "Break 3", "Tune", "Tune", "Tune", "Tune"]
 	},
 	'Bhangra': {
-		categories: [ "standard", "common", "onesurdo", "medium" ],
+		categories: ["standard", "common", "onesurdo", "medium"],
 		speed: 120,
 		time: 3,
 		displayName: "Bhaṅgṛā",
@@ -397,7 +397,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ta: '@ls',
 				ag: '@ls',
 				sh: '@ls',
-				volumeHack: { 0: .1, 12: .4, 24: .7, 36: 1  }
+				volumeHack: { 0: .1, 12: .4, 24: .7, 36: 1 }
 			},
 			"8 up (3⁄4)": {
 				ls: 'XXXXXXXXXXXXXXXXXXXXXXXX',
@@ -452,10 +452,10 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '@ls'
 			}
 		},
-		exampleSong: [ "Tune", "Break 1", "Tune", "Break 2", "Tune", "Break 3", "Tune", "Bra Break", "Tune" ]
+		exampleSong: ["Tune", "Break 1", "Tune", "Break 2", "Tune", "Break 3", "Tune", "Bra Break", "Tune"]
 	},
 	'Custard': {
-		categories: [ "standard", "common", "medium", "cultural-appropriation" ],
+		categories: ["standard", "common", "medium", "cultural-appropriation"],
 		sheet: sheetUrl + "custard.pdf",
 		description: require("../assets/tuneDescriptions/custard.md").default,
 		patterns: {
@@ -490,7 +490,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@ls',
 				sh: '@ls'
 			},
-			'Break 3' : {
+			'Break 3': {
 				ls: repeat(4, 'X             X X               '),
 				ms: '@ls',
 				hs: '@ls',
@@ -500,7 +500,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: '@ls',
 				sh: '@ls'
 			},
-			'Break 3 (Agogô continues)' : {
+			'Break 3 (Agogô continues)': {
 				ls: repeat(4, 'X             X X               '),
 				ms: '@ls',
 				hs: '@ls',
@@ -527,7 +527,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: ["Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune", "Break 3 (Agogô continues)", "Tune", "Tune", "Tune", "Tune", "Break 5", "Tune", "Tune", "Tune", "Tune", "Singing Break"]
 	},
 	'Drum&Bass': {
-		categories: [ "standard", "common", "medium", "western" ],
+		categories: ["standard", "common", "medium", "western"],
 		sheet: sheetUrl + "drum-bass.pdf",
 		description: require("../assets/tuneDescriptions/drum-bass.md").default,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/f5331b5e-5de7-41e9-af0f-813f874bb074",
@@ -579,10 +579,10 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '@ta'
 			}
 		},
-		exampleSong: [ "Tune", "Break 2", "Tune", "Break 3", "Break 1", "Tune", "Hip-Hop Break", "Tune" ]
+		exampleSong: ["Tune", "Break 2", "Tune", "Break 3", "Break 1", "Tune", "Hip-Hop Break", "Tune"]
 	},
 	'Funk': {
-		categories: [ "standard", "common", "onesurdo", "easy" ],
+		categories: ["standard", "common", "onesurdo", "easy"],
 		sheet: sheetUrl + "funk.pdf",
 		description: require("../assets/tuneDescriptions/funk.md").default,
 		patterns: {
@@ -638,10 +638,10 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: 'X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.'
 			}
 		},
-		exampleSong: [ "Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune" ]
+		exampleSong: ["Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune"]
 	},
 	'Hedgehog': {
-		categories: [ "standard", "uncommon", "easy" ],
+		categories: ["standard", "uncommon", "easy"],
 		sheet: sheetUrl + "hedgehog.pdf",
 		description: require("../assets/tuneDescriptions/hedgehog.md").default,
 		patterns: {
@@ -677,10 +677,10 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ot: '        R   S   '
 			}
 		},
-		exampleSong: [ "Tune", "Tune", "Break 2", "Tune", "Tune" ]
+		exampleSong: ["Tune", "Tune", "Break 2", "Tune", "Tune"]
 	},
 	'Karla': {
-		categories: [ "standard", "common", "onesurdo", "easy" ],
+		categories: ["standard", "common", "onesurdo", "easy"],
 		sheet: sheetUrl + "karla-shnikov.pdf",
 		description: require("../assets/tuneDescriptions/karla-shnikov.md").default,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/cc4d0222-3713-4943-bba1-cc733cb84ccc",
@@ -717,10 +717,10 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '@re'
 			}
 		},
-		exampleSong: [ "Tune", "Break 2", "Tune", "Break 2 Inverted", "Tune" ]
+		exampleSong: ["Tune", "Break 2", "Tune", "Break 2 Inverted", "Tune"]
 	},
 	'Samba Reggae': {
-		categories: [ "standard", "common", "medium", "cultural-appropriation" ],
+		categories: ["standard", "common", "medium", "cultural-appropriation"],
 		sheet: sheetUrl + "samba-reggae.pdf",
 		description: require("../assets/tuneDescriptions/samba-reggae.md").default,
 		patterns: {
@@ -819,10 +819,10 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '@re'
 			}
 		},
-		exampleSong: [ "Tune", "Tune", "Tune", "Tune", "Bra Break", "Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune", "Break 3", "Tune", "Tune", "Tune", "Tune", "SOS Break", "Tune", "Tune", "Tune", "Tune", "Knock On The Door Break", "Knock On The Door (Cut)", "Tune", "Tune", "Tune", "Tune", "Dancing Break", "Tune", "Tune", "Tune", "Tune" ]
+		exampleSong: ["Tune", "Tune", "Tune", "Tune", "Bra Break", "Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune", "Break 3", "Tune", "Tune", "Tune", "Tune", "SOS Break", "Tune", "Tune", "Tune", "Tune", "Knock On The Door Break", "Knock On The Door (Cut)", "Tune", "Tune", "Tune", "Tune", "Dancing Break", "Tune", "Tune", "Tune", "Tune"]
 	},
 	'Sambasso': {
-		categories: [ "standard", "common", "onesurdo", "tricky" ],
+		categories: ["standard", "common", "onesurdo", "tricky"],
 		sheet: sheetUrl + "sambasso.pdf",
 		description: require("../assets/tuneDescriptions/sambasso.md").default,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/f75a6a4e-121a-4170-aaf4-2e96a7eed95e",
@@ -858,7 +858,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ta: '@re',
 				ag: '@re',
 				sh: '@re',
-				volumeHack: { 0: .1, 16: .4, 32: .7, 48: 1  }
+				volumeHack: { 0: .1, 16: .4, 32: .7, 48: 1 }
 			},
 			'Intro': {
 				upbeat: 1,
@@ -872,34 +872,88 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '@ls'
 			}
 		},
-		exampleSong: [ "Intro", "Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune" ]
+		exampleSong: ["Intro", "Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune"]
+	},
+	"Stolen ": {
+		categories: ["standard", "common", "tricky"],
+		sheet: undefined,
+		description: require("../assets/tuneDescriptions/stolen.md").default,
+		video: undefined,
+		patterns: {
+			Tune: {
+				"ls": " X  X  X  X  X  X  X  X  X                       X  X  X  X  X  X  X  X  X                       X  X  X  X  X  X  X  X  X                       X  X  X  X  X  X  X  X  X",
+				"ms": "@ls",
+				"hs": " X           X           X        X  X     X     X           X           X        X  X     X     X           X           X        X  X     X     X           X           X        X  X     X",
+				"re": " .  .  X  .  .  .  X  .  .  .  X  .  .  X  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  X  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  X  X  .  X  .  .  X  .  .  X  .  X  .  .  X  .  .  X  .",
+				"sn": " .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .",
+				"ta": " X        X        X     X        X        X  X  X        X        X     X        X        X  X  X        X        X     X        X        X  X  X        X        X     X        X        X  X",
+				"ag": " o     a  o     a  o     o     a  o  o     a     o     a  o     a  o     o  a  a  o  o     a     o     a  o     a  o     o     a  o  o     a     o     a  o     a  o     o  a  a  o  o     a",
+				"sh": "@sn",
+				"time": 12,
+				"length": 16
+			},
+			"Break 1": {
+				"ls": "                                           X                                               X                                               X                                               X           X                 X                 X",
+				"ms": "@ls",
+				"hs": "@ls",
+				"re": " X X X X X X X X X X X X X   X     X             X X X X X X X X X X X X X   X     X             X X X X X X X X X X X X X   X     X             X X X X X X X X X X X X X   X     X           XXX               XXX               XXX",
+				"sn": " .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .",
+				"ta": "@ls",
+				"ag": "                                           o                                               o                                               o                                               o           o                 o                 o",
+				"time": 12,
+				"length": 20
+			},
+			"Intro": {
+				"ls": "                                           X",
+				"ms": "@ls",
+				"hs": "@ls",
+				"re": "zX  X     X     X     X     XX X  X  X",
+				"sn": "                                                 .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .",
+				"ta": "@ls",
+				"ag": "                                           o",
+				"time": 12,
+				"length": 20
+			},
+			"Outro": {
+				"ls": " X",
+				"ms": " X",
+				"hs": " X",
+				"re": " X",
+				"sn": " X",
+				"ta": " X",
+				"ag": " o",
+				"time": 12,
+				"length": 4
+			}
+		},
+		exampleSong: ["Intro", "Break 1", "Tune", "Tune", "Break 1", "Tune", "Tune", "Break 1", "Outro"]
 	}
 };
 
-const defaultTunes: { [tuneName: string]: Tune } = { };
+const defaultTunes: { [tuneName: string]: Tune } = {};
 
-for(const i in rawTunes) {
+for (const i in rawTunes) {
 	const tune = rawTunes[i];
 	const newTune = clone(tune) as any as Tune;
 
-	for(const j in tune.patterns) {
+	for (const j in tune.patterns) {
 		const pattern = tune.patterns[j];
 		const newPattern = clone(pattern) as any as Pattern;
-		if(!newPattern.time && tune.time)
+		if (!newPattern.time && tune.time)
 			newPattern.time = tune.time;
 
-		for(const k of config.instrumentKeys) {
+		for (const k of config.instrumentKeys) {
 			const thisPattern = pattern[k] = pattern[k] || "";
 			const m = thisPattern.match(/^@([a-z]{2})$/);
-			if(m)
+			if (m)
 				newPattern[k] = clone(newPattern[m[1] as Instrument]);
 			else {
 				newPattern[k] = thisPattern.split('');
 				newPattern.length = Math.max(newPattern.length || 0, newPattern[k].length - (pattern.upbeat || 0));
 			}
 
-			if(k == "ag")
-				newPattern[k] = newPattern[k].map(function(it) { return it == "X" ? "o" : it; });
+			if (k == "ag")
+				newPattern[k] = newPattern[k].map(function (it) { return it == "X" ? "o" : it; });
 		}
 
 		newPattern.length = Math.ceil(newPattern.length / (newPattern.time || 4));
@@ -912,25 +966,25 @@ for(const i in rawTunes) {
 	defaultTunes[i] = normalizeTune(newTune);
 
 	const unknown = (defaultTunes[i].exampleSong || []).filter((patternName) => !defaultTunes[i].patterns[typeof patternName === 'string' ? patternName : patternName.patternName]);
-	if(unknown.length > 0)
+	if (unknown.length > 0)
 		console.error(`Unknown breaks in example song for ${i}: ${unknown.join(", ")}`);
 }
 
 Object.defineProperty(defaultTunes, "getPattern", {
 	configurable: true,
-	value: function(tuneName: string | PatternReference, patternName?: string): Pattern | null {
-		if(Array.isArray(tuneName)) {
+	value: function (tuneName: string | PatternReference, patternName?: string): Pattern | null {
+		if (Array.isArray(tuneName)) {
 			patternName = tuneName[1];
 			tuneName = tuneName[0];
 		}
 
-		return this[tuneName] && this[tuneName].patterns[<string> patternName] || null;
+		return this[tuneName] && this[tuneName].patterns[<string>patternName] || null;
 	}
 });
 
 Object.defineProperty(defaultTunes, "firstInSorting", {
 	configurable: true,
-	value: [ "General Breaks", "Special Breaks", "Shouting Breaks" ]
+	value: ["General Breaks", "Special Breaks", "Shouting Breaks"]
 });
 
 interface DefaultTunesMethods {
@@ -941,4 +995,4 @@ interface DefaultTunesMethods {
 
 type DefaultTunes = TypedObject<Tune> & DefaultTunesMethods;
 
-export default <DefaultTunes> defaultTunes;
+export default <DefaultTunes>defaultTunes;
