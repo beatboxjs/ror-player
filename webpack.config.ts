@@ -7,6 +7,7 @@ import CopyPlugin from "copy-webpack-plugin";
 import { compile, CompilerOptions } from "vue-template-compiler";
 import svgToMiniDataURI from "mini-svg-data-uri";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
+const path = require("path");
 
 const expose = {
 	jquery: "jQuery",
@@ -26,7 +27,8 @@ export default (env: any, argv: any): Configuration => {
 		resolve: {
 			extensions: [ ".ts", ".js" ],
 			alias: {
-				vue: "vue/dist/vue.runtime.esm.js"
+				vue: "vue/dist/vue.runtime.esm.js",
+				"@": path.resolve(__dirname, "./src")
 			}
 		},
 		module: {

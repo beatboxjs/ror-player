@@ -1,4 +1,4 @@
-This tune is one of the RoR basics.
+This tune is one of the XR Rhythms basics.
 
 In this tune, the Low Surdo swaps one of its beaters for a plastic Repinique stick (aka a whippy stick) to get a higher
 pitched sound. Then it plays a combination of high-pitched and normal hits.
