@@ -1,9 +1,9 @@
-This tune is one of the RoR basics. It is (together with ‘Samba Reggae’) the RoR Tune which sounds most like “real” Samba.
+This tune is one of the XR Rhythms basics. It is (together with _Samba Reggae_) the tune which sounds most like “real” samba.
 
-A lot of this tune is based on the Tamborim’s voice, which can be memorized by “I’ve got custard in my underpants”.
+A lot of this tune is based on the tamborim’s voice, which can be memorized by “I’ve got custard in my underpants”.
 When learning the tune, start off there and make sure it’s burnt into everyone’s brain.
 
-If you are playing Agogô or Tamborim, don’t mix up your voice with the one from afoxe, as they are very similar. Check
+If you are playing agogô or tamborim, don’t mix up your voice with the one from Afoxé, as they are very similar. Check
 out the differences and find your way to remember them.
 
 **Sign:** making an offer to the sky

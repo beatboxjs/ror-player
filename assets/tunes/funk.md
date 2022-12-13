@@ -1,4 +1,4 @@
-This tune is one of the RoR basics.
+This tune is one of the XR Rhythms basics.
 
 This tune is played over 8 beats instead of 4, so take care when counting in.
 

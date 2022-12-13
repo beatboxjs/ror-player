@@ -1,14 +1,13 @@
-This tune is one of the RoR basics. Often simply called “Karla”.
+This tune is one of the XR Rhythms basics. Originally  called _Karla Shnikov_ but shortened to _Karla_.
 
-It sounds a bit, as the name implies, like machinegun-fire. As the Breaks have steady drum rolls in them, it’s important
+It sounds a bit, as the name implies, like machine gun fire. As the breaks have steady drum rolls in them, it’s important
 to aim for a steady even roll. Although the temptation is to play as fast as you can, you should try to be just in time
 (highlighting the first hit on every step can be helpful, to keep track).
 
-Karla Shnikov is a funk tune too, but it does not fit with the other funks (Funk and Angela Davis) as well as they do
+Karla  is a funk tune too, but it does not fit with the other funks (Funk and Angela Davis) as well as they do
 together. But just try and find your own way!
 
 **Sign:** move index+middle finger like rabbit ears and cover other fingers with other hand
-
 
 ## Background
 

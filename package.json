@@ -26,6 +26,7 @@
     "@types/vue": "^2.0.0",
     "@types/webpack-bundle-analyzer": "^4.4.0",
     "@types/webpack-dev-server": "^3.11.3",
+    "@types/webpack-env": "^1.18.0",
     "copy-webpack-plugin": "^8.1.1",
     "css-loader": "^5.2.4",
     "expose-loader": "^2.0.0",
