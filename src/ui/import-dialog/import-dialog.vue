@@ -20,7 +20,7 @@
 					<td>
 						<b-list-group>
 							<b-list-group-item v-for="(song, idx) in songs" :key="idx" :class="{active: song.shouldImport, disabled: song.exists}" :title="song.exists ? 'Song already exists.' : ''" v-b-tooltip.bottom>
-								<a v-if="!song.exists" href="javascript:" @click="clickSong(idx)">{{song.name}}</a>
+								<a v-if="!song.exists" href="javascript:" @click="clickSong(idx)" draggable="false">{{song.name}}</a>
 								<span v-if="song.exists">{{song.name}} <fa icon="check"></fa></span>
 							</b-list-group-item>
 						</b-list-group>
@@ -28,7 +28,7 @@
 					<td>
 						<b-list-group>
 							<b-list-group-item v-for="tune in tunes" :key="tune.tuneName" :class="tune.className">
-								<a href="javascript:" @click="clickTune(tune.tuneName)">{{tune.displayName}}</a>
+								<a href="javascript:" @click="clickTune(tune.tuneName)" draggable="false">{{tune.displayName}}</a>
 								<div>
 									<span
 										v-for="pattern in tune.patterns"

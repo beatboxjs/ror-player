@@ -34,6 +34,6 @@
 		:settings="playbackSettings"
 		v-slot="slotProps"
 	>
-		<PatternPlaceholderItem><a href="javascript:" title="Download as MP3" v-b-tooltip.hover @click="slotProps.downloadMp3()"><fa icon="download"/></a></PatternPlaceholderItem>
+		<PatternPlaceholderItem><a href="javascript:" title="Download as MP3" v-b-tooltip.hover @click="slotProps.downloadMp3()" draggable="false"><fa icon="download"/></a></PatternPlaceholderItem>
 	</PatternPlaceholder>
 </div>

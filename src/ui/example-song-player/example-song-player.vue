@@ -13,8 +13,8 @@
 		</b-card>
 	</div>
 	<ul class="actions icon-list">
-		<li><a href="javascript:" title="Listen" v-b-tooltip.hover @click="playStop()"><fa :icon="playerRef && playerRef.playing ? 'stop' : 'play-circle'"/></a></li>
-		<li><a href="javascript:" title="Download as MP3" v-b-tooltip.hover @click="downloadMP3()"><fa icon="download"/></a></li>
+		<li><a href="javascript:" title="Listen" v-b-tooltip.hover @click="playStop()" draggable="false"><fa :icon="playerRef && playerRef.playing ? 'stop' : 'play-circle'"/></a></li>
+		<li><a href="javascript:" title="Download as MP3" v-b-tooltip.hover @click="downloadMP3()" draggable="false"><fa icon="download"/></a></li>
 	</ul>
 	<Progress :progress="loading" @cancel="cancelExport()"/>
 </div>

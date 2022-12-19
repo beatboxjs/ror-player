@@ -39,10 +39,10 @@
 			</tr>
 			<tr class="mute">
 				<td class="master">
-					<a href="javascript:" @click="muteAll()" :class="allMuted ? 'active' : 'inactive'"><fa icon="volume-mute"/></a>
+					<a href="javascript:" @click="muteAll()" :class="allMuted ? 'active' : 'inactive'" draggable="false"><fa icon="volume-mute"/></a>
 				</td>
 				<td v-for="instrumentKey in config.instrumentKeys">
-					<a href="javascript:" @click="mute(instrumentKey)" :class="playbackSettings.mute[instrumentKey] ? 'active' : 'inactive'"><fa icon="volume-mute"/></a>
+					<a href="javascript:" @click="mute(instrumentKey)" :class="playbackSettings.mute[instrumentKey] ? 'active' : 'inactive'" draggable="false"><fa icon="volume-mute"/></a>
 				</td>
 			</tr>
 			<tr class="instrument-names">

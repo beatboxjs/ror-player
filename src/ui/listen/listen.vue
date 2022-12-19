@@ -11,6 +11,7 @@
 				:active="thisTuneName == tuneName"
 				href="javascript:"
 				@click="selectTune(thisTuneName)"
+				:link-attrs="{ draggable: 'false' }"
 			>
 				{{state.tunes[thisTuneName].displayName || thisTuneName}}
 			</b-nav-item>

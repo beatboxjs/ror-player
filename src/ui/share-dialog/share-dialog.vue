@@ -32,6 +32,7 @@
 							:active="shareSongs[idx]"
 							href="javascript:"
 							@click="$set(shareSongs, idx, !shareSongs[idx])"
+							draggable="false"
 						>
 							{{getSongName(idx)}}
 						</b-list-group-item>
@@ -40,7 +41,7 @@
 				<td>
 					<b-list-group>
 						<b-list-group-item v-for="tuneName in sortedTuneList" :key="tuneName" :class="getTuneClass(tuneName)" v-if="getModifiedPatternNames(tuneName).length > 0">
-							<a href="javascript:" @click="clickTune(tuneName)">{{state.tunes[tuneName].displayName || tuneName}}</a>
+							<a href="javascript:" @click="clickTune(tuneName)" draggable="false">{{state.tunes[tuneName].displayName || tuneName}}</a>
 							<b-badge
 								href="javascript:"
 								v-for="patternName in getModifiedPatternNames(tuneName)"
@@ -51,7 +52,7 @@
 								:title="linkPattern && linkPattern[0] == tuneName && linkPattern[1] == patternName ? 'Will be opened by default' : isUsedInSong(tuneName, patternName) ? 'Used in song, cannot be disabled' : ''"
 								v-b-tooltip.hover.bottom
 								:variant="!!shouldExportPattern(tuneName, patternName) ? 'dark' : 'light'"
-
+								draggable="false"
 							>
 								{{state.tunes[tuneName].patterns[patternName].displayName || patternName}} <fa icon="star" v-if="linkPattern && linkPattern[0] == tuneName && linkPattern[1] == patternName" />
 							</b-badge>
