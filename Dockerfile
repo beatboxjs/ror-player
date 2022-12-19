@@ -2,15 +2,18 @@ FROM httpd:2.4-alpine
 
 RUN echo "AddType text/cache-manifest .manifest" >> /usr/local/apache2/conf/httpd.conf
 
-RUN apk --no-cache update && apk --no-cache add git nodejs npm dumb-init
-
-COPY ./ /opt/ror-player/
+RUN apk --no-cache update && apk --no-cache add git nodejs yarn dumb-init
 
 RUN adduser -D -h /opt/ror-player -s /bin/sh beatbox
-
+USER beatbox
 WORKDIR /opt/ror-player/
 
-RUN chmod 777 . && chmod 666 package-lock.json && su beatbox -c 'npm install && npm run build' && mv dist/* /usr/local/apache2/htdocs && rm -rf dist node_modules
+COPY --chown=beatbox ./ ./
+
+RUN yarn install && yarn build && rm -rf node_modules
+
+USER root
+RUN mv dist/* /usr/local/apache2/htdocs/
 
 ENTRYPOINT [ "/usr/bin/dumb-init", "--" ]
 
