@@ -436,13 +436,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/howler@npm:^2.2.7":
-  version: 2.2.7
-  resolution: "@types/howler@npm:2.2.7"
-  checksum: e9d6723f946a7526c8562436c06ad64d55f63a0573bfbf08c776e3785ab520a3138da84058f280b0fe7d8a819af77af3dd62d88f873a316d3723dc2ad575aa0d
-  languageName: node
-  linkType: hard
-
 "@types/html-minifier-terser@npm:^6.0.0":
   version: 6.1.0
   resolution: "@types/html-minifier-terser@npm:6.1.0"
@@ -3748,13 +3741,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"howler@npm:^2.2.3":
-  version: 2.2.3
-  resolution: "howler@npm:2.2.3"
-  checksum: c04ce19411f4d86f8508d411a93aea943f128c2686b3df3c61383fd4ed8f5551232c4389aba3a8d4c8b0eeb34ae51df5a9c3ccd9ba48583ac53e9bf9fcbd1ecf
-  languageName: node
-  linkType: hard
-
 "hpack.js@npm:^2.1.6":
   version: 2.1.6
   resolution: "hpack.js@npm:2.1.6"
@@ -6533,7 +6519,6 @@ __metadata:
     "@types/file-saver": ^2.0.5
     "@types/gulp": ^4.0.10
     "@types/gulp-util": ^3.0.37
-    "@types/howler": ^2.2.7
     "@types/jquery": ^3.5.14
     "@types/lodash.isequal": ^4.5.6
     "@types/pako": ^2.0.0
@@ -6550,7 +6535,6 @@ __metadata:
     file-saver: ^2.0.5
     gulp: ^4.0.2
     gulp-util: ^3.0.8
-    howler: ^2.2.3
     html-loader: ^4.2.0
     html-webpack-inline-source-plugin: ^1.0.0-beta.2
     html-webpack-loader: ^0.0.5

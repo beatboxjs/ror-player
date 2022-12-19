@@ -9,13 +9,12 @@ import Listen from "../listen/listen";
 import events, { MultipleHandlers, registerMultipleHandlers } from "../../services/events";
 import "./overview.scss";
 import { StateProvider } from "../../services/history";
-import Compatibility from "../compatibility/compatibility";
 import Help from "../help/help";
 import Update from "../update/update";
 
 @WithRender
 @Component({
-	components: { Compatibility, Compose, Listen, StateProvider, Help, Update }
+	components: { Compose, Listen, StateProvider, Help, Update }
 })
 export default class Overview extends Vue {
 	activeTab = 0;

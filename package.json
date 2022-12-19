@@ -12,14 +12,14 @@
   "scripts": {
     "build": "NODE_OPTIONS='--loader ts-node/esm --experimental-import-meta-resolve' gulp",
     "clean": "rimraf dist",
-    "dev-server": "NODE_OPTIONS='--loader ts-node/esm --experimental-import-meta-resolve' webpack serve --mode development"
+    "dev-server": "NODE_OPTIONS='--loader ts-node/esm --experimental-import-meta-resolve' webpack serve --mode development",
+    "check-types": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/copy-webpack-plugin": "^10.1.0",
     "@types/file-saver": "^2.0.5",
     "@types/gulp": "^4.0.10",
     "@types/gulp-util": "^3.0.37",
-    "@types/howler": "^2.2.7",
     "@types/jquery": "^3.5.14",
     "@types/lodash.isequal": "^4.5.6",
     "@types/pako": "^2.0.0",
@@ -65,7 +65,6 @@
     "bootstrap": "^4.6.2",
     "bootstrap-vue": "^2.23.1",
     "file-saver": "^2.0.5",
-    "howler": "^2.2.3",
     "jquery": "^3.6.2",
     "lodash.isequal": "^4.5.0",
     "mobile-drag-drop": "^3.0.0-rc.0",
