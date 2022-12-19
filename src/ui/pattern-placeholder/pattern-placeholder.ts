@@ -209,7 +209,7 @@ export default class PatternPlaceholder extends Vue {
 
 			if (blob)
 				FileSaver.saveAs(blob, `${this.tuneName} - ${this.patternName}.mp3`);
-		} catch(err) {
+		} catch(err: any) {
 			this.loading = null;
 			console.error("Error exporting MP3", err.stack || err);
 			this.$bvModal.msgBoxOk("Error exporting MP3: " + err.message);

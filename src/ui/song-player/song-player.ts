@@ -436,7 +436,7 @@ export default class SongPlayer extends Vue {
 
 			if (blob)
 				FileSaver.saveAs(blob, this.getSongName() + ".mp3");
-		} catch(err) {
+		} catch(err: any) {
 			this.loading = null;
 			console.error("Error exporting MP3", err.stack || err);
 			this.$bvModal.msgBoxOk("Error exporting MP3: " + err.message);
@@ -458,7 +458,7 @@ export default class SongPlayer extends Vue {
 
 			if (blob)
 				FileSaver.saveAs(blob, this.getSongName() + ".wav");
-		} catch(err) {
+		} catch(err: any) {
 			this.loading = null;
 			console.error("Error exporting WAV", err.stack || err);
 			this.$bvModal.msgBoxOk("Error exporting WAV: " + err.message);

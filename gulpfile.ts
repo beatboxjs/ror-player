@@ -10,7 +10,7 @@ import vinyl from "vinyl";
 import zlib from "zlib";
 import webpack, { Stats } from "webpack";
 import jsonFormat from "json-format";
-import webpackConfig from "./webpack.config";
+import webpackConfig from "./webpack.config.js";
 
 function packAudioFiles(fileName: string) {
 	var binaries: Record<string, string> = {};
@@ -28,14 +28,14 @@ function packAudioFiles(fileName: string) {
 	ret._flush = async function(callback) {
 		try {
 			if(Object.keys(binaries).length > 0) {
-				const template = await fs.readFile(`${__dirname}/audioFiles.template.ts`, "utf8");
+				const template = await fs.readFile(new URL('./audioFiles.template.ts', import.meta.url), "utf8");
 				this.push(new vinyl({
 					path: fileName,
 					contents: Buffer.from(template.replace(/{\s*\/\*\s*SAMPLES\s*\*\/\s*}/gi, jsonFormat(binaries)))
 				}));
 			}
 			callback();
-		} catch (err) {
+		} catch (err: any) {
 			callback(err);
 		}
 	};
@@ -52,8 +52,9 @@ gulp.task("audiosprite", function() {
 });
 
 gulp.task("webpack", gulp.series("audiosprite", async function runWebpack() {
+	const config = await webpackConfig({}, {})
 	let stats = await new Promise<Stats>((resolve, reject) => {
-		webpack(webpackConfig({}, {})).run((err, stats) => { err ? reject(err) : resolve(stats!) });
+		webpack(config).run((err, stats) => { err ? reject(err) : resolve(stats!) });
 	});
 
 	gutil.log("[webpack]", stats.toString());

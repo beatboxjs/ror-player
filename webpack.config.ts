@@ -7,24 +7,31 @@ import CopyPlugin from "copy-webpack-plugin";
 import { compile, CompilerOptions } from "vue-template-compiler";
 import svgToMiniDataURI from "mini-svg-data-uri";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
+import "webpack-dev-server";
+import { fileURLToPath } from 'url';
 
-const expose = {
+/* const expose = {
 	jquery: "jQuery",
 	"beatbox.js": "Beatbox"
-};
+}; */
 
-export default (env: any, argv: any): Configuration => {
+export default async (env: any, argv: any): Promise<Configuration> => {
 	const isDev = argv.mode == "development";
 
 	return {
-		entry: `${__dirname}/src/app.ts`,
+		entry: fileURLToPath(new URL('./src/app.ts', import.meta.url)),
 		output: {
-			path: __dirname + "/dist/",
+			path: fileURLToPath(new URL("./dist/", import.meta.url)),
 			filename: "ror-player.js",
 			publicPath: "/" // Workaround for https://github.com/DustinJackson/html-webpack-inline-source-plugin/issues/57
 		},
 		resolve: {
 			extensions: [ ".ts", ".js" ],
+			extensionAlias: {
+				".js": [".js", ".ts"],
+				".cjs": [".cjs", ".cts"],
+				".mjs": [".mjs", ".mts"]
+			},
 			alias: {
 				vue: "vue/dist/vue.runtime.esm.js"
 			}
@@ -70,13 +77,16 @@ export default (env: any, argv: any): Configuration => {
 					}
 				},
 				{ test: /\.md$/, use: [ "html-loader", "markdown-loader" ]},
-				...Object.entries(expose).map(([key, value]) => ({
-					test: require.resolve(key),
+
+				// Currently breaks ESM imports
+				/* ...await Promise.all(Object.entries(expose).map(async ([key, value]) => ({
+					test: fileURLToPath(await import.meta.resolve!(key)),
 					loader: "expose-loader",
+					sideEffects: false,
 					options: {
 						exposes: [value]
 					}
-				}))
+				}))) */
 			],
 		},
 		plugins: [
@@ -93,11 +103,11 @@ export default (env: any, argv: any): Configuration => {
 			...(isDev ? [] : [new HtmlWebpackInlineSourcePlugin(HtmlWebpackPlugin)]),
 			new CopyPlugin({
 				patterns: [
-					{ from: `${__dirname}/src/sw.js`, to: `${__dirname}/dist/sw.js` },
-					{ from: `${__dirname}/assets/img/app-512.png`, to: `${__dirname}/dist/app-512.png` },
-					{ from: `${__dirname}/assets/img/app-180.png`, to: `${__dirname}/dist/app-180.png` },
-					{ from: `${__dirname}/assets/img/favicon.svg`, to: `${__dirname}/dist/favicon.svg` },
-					{ from: `${__dirname}/assets/manifest.json`, to: `${__dirname}/dist/manifest.json` }
+					{ from: fileURLToPath(new URL('./src/sw.js', import.meta.url)), to: fileURLToPath(new URL('./dist/sw.js', import.meta.url)) },
+					{ from: fileURLToPath(new URL('./assets/img/app-512.png', import.meta.url)), to: fileURLToPath(new URL('./dist/app-512.png', import.meta.url)) },
+					{ from: fileURLToPath(new URL('./assets/img/app-180.png', import.meta.url)), to: fileURLToPath(new URL('./dist/app-180.png', import.meta.url)) },
+					{ from: fileURLToPath(new URL('./assets/img/favicon.svg', import.meta.url)), to: fileURLToPath(new URL('./dist/favicon.svg', import.meta.url)) },
+					{ from: fileURLToPath(new URL('./assets/manifest.json', import.meta.url)), to: fileURLToPath(new URL('./dist/manifest.json', import.meta.url)) }
 				]
 			}),
 			new webpack.EnvironmentPlugin({
@@ -111,8 +121,8 @@ export default (env: any, argv: any): Configuration => {
 			hints: false
 		},
 		devServer: {
-			hotOnly: true,
-			disableHostCheck: true,
+			hot: "only",
+			allowedHosts: "all"
 		}
 	}
 };

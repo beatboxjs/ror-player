@@ -8,7 +8,7 @@ interface LocalStorageOperation {
 const localStorageOperation: LocalStorageOperation = <T>(callback: () => T, fallbackValue?: T): T | void => {
 	try {
 		return callback();
-	} catch (e) {
+	} catch (e: any) {
 		console.error(e.stack || e);
 		return fallbackValue;
 	}

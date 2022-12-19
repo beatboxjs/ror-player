@@ -51,7 +51,7 @@ export default class ImportDialog extends Vue {
 			}
 			else
 				this.error = "Unrecognised format.";
-		} catch(e) {
+		} catch(e: any) {
 			console.error(e.stack || e);
 			this.error = "Error decoding pasted data: " + (e.message || e);
 		}

@@ -16,7 +16,6 @@ More information can be found in the [documentation](https://player-docs.rhythms
 Used technologies are:
 * [TypeScript](https://www.typescriptlang.org/) and [SASS](https://sass-lang.com/) for cleaner code
 * [Vue.js](https://vuejs.org/), [Bootstrap 4](https://getbootstrap.com/) and [Font Awesome](https://fontawesome.com/) for the UI
-* [howler.js](https://howlerjs.com/) to play audio in the browser
 * [wav-encoder](https://github.com/mohayonao/wav-encoder), [Aurora.js](https://github.com/audiocogs/aurora.js/),
   [audiolib.js](https://github.com/jussi-kalliokoski/audiolib.js/) and [libmp3lame.js](https://github.com/akrennmair/libmp3lame-js)
   for MP3/WAV export

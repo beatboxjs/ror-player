@@ -5,7 +5,8 @@
 		"strict": true,
 		"sourceMap": true,
 		"moduleResolution": "node",
-		"experimentalDecorators": true
+		"experimentalDecorators": true,
+		"module": "esnext"
 	},
 	"include": ["src/**/*.ts"]
 }

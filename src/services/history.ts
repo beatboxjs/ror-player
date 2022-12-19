@@ -80,7 +80,7 @@ class History {
 			this.state = state;
 			events.$emit("new-state", state);
 			return errors;
-		} catch(e) {
+		} catch(e: any) {
 			console.error("Error decoding state", e.stack || e);
 			return [e.message || e];
 		}
