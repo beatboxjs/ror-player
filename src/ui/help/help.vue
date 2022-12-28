@@ -1,5 +1,5 @@
 <div>
-	<b-dropdown variant="link" right>
+	<b-dropdown variant="primary" right>
 		<template slot="button-content">
 			<fa icon="info-circle"/>
 		</template>

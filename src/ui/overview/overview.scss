@@ -28,6 +28,11 @@
 
 		> div > .nav {
 			padding: 1em 1em 0 1em;
+			background-color: var(--secondary);
+			font-family: 'Fucxed';
+			a.nav-link:not(.active) { 
+				color:white;
+			}
 
 			@media (max-width: 767.98px) {
 				padding: 0.5em 0.5em 0 5em;
