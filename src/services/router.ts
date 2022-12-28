@@ -220,13 +220,6 @@ export function enableRouter(app: Vue) {
 			resolve();
 	}, false);
 
-	// app.$on("bv::modal::show", (bvEvent: BvModalEvent, modalId: string) => {
-	// 	if(bvEvent.vueTarget instanceof Vue && (bvEvent.vueTarget as Vue).$parent instanceof PatternEditorDialog) {
-	// 		const dialog = (bvEvent.vueTarget as Vue).$parent as PatternEditorDialog;
-	// 		setState(dialog.$props.readonly ? "listen-pattern" : "compose-pattern", { tuneName: dialog.$props.tuneName, patternName: dialog.$props.patternName });
-	// 	}
-	// });
-
 	events.$on("overview-edit-pattern", function(data) {
 		console.log("router handle edit-pattern", data)
 	    setState(data.readonly ? "listen-pattern" : "compose-pattern", { tuneName: data.pattern[0], patternName: data.pattern[1] });

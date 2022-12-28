@@ -11,19 +11,19 @@
 			<span class="navbar-light d-inline-block d-md-none" @click="togglePatternList()">
 				<b-button class="navbar-toggler"><span class="navbar-toggler-icon" /></b-button>
 			</span>
-			<button type="button" class="btn btn-light"
+			<button type="button" class="btn btn-link"
 				:class="{active: activeTab==0}"
 				@click="activeTab=0"
 			>Listen</button> 
-			<button type="button" class="btn btn-light"
+			<button type="button" class="btn btn-link"
 				:class="{active: activeTab==1}"
 				@click="activeTab=1">Compose</button>
-			<button type="button" class="btn btn-light"
+			<button type="button" class="btn btn-link"
 				v-if="editorTab"
 				:class="{active: activeTab==2}"
 				@click="activeTab=2"
 			>{{editorTab.title}}
-			<a href="" @click="closeTab()">×</a>
+			<a href="" @click.stop.prevent="closeTab()">×</a>
 			</button>
 		</div>
 
@@ -35,12 +35,12 @@
 				<Compose />
 			</StateProvider>
 		</div>
-		<div v-if="activeTab == 2" class="flex-grow-1">
+		<div v-if="activeTab == 2 && editorTab" class="flex-grow-1">
 			<StateProvider>
 				<PatternPlayer class="m-4"
 					:tuneName="editorTab.content.tuneName" 
 					:pattern-name="editorTab.content.patternName" 
-					:readonly="true" />	
+					:readonly="editorTab.content.readonly" />	
 			</StateProvider>
 		</div>
 	</div>

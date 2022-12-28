@@ -18,6 +18,7 @@ type TabContent = {
 	type: "edit-pattern";
 	tuneName: string;
 	patternName: string;
+	readonly: boolean;
 }
 
 @WithRender
@@ -26,7 +27,7 @@ type TabContent = {
 })
 export default class Overview extends Vue {
 	activeTab = 0;
-	editorTab = null as {title:string; content: TabContent } | null;
+	editorTab = null as { title:string; content: TabContent; previous: number } | null;
 
 	_unregisterHandlers!: () => void;
 
@@ -39,12 +40,12 @@ export default class Overview extends Vue {
 				this.activeTab = 1;
 			},
 			"edit-pattern" : function(data){
-				console.log("overview handle edit-pattern")
 				this.editorTab =  { 
 					title: `${data.pattern[0]}: ${data.pattern[1]}`,
-					content: { type: "edit-pattern", tuneName: data.pattern[0], patternName: data.pattern[1] }
+					content: { type: "edit-pattern", tuneName: data.pattern[0], patternName: data.pattern[1], readonly: data.readonly},
+					previous: this.activeTab
 				};
-				Vue.nextTick().then(() => this.activeTab = 2);
+				this.activeTab = 2
 			},
 			"overview-close-pattern-list": function() {
 				$("body").removeClass("bb-pattern-list-visible");
@@ -59,7 +60,6 @@ export default class Overview extends Vue {
 	@Watch("activeTab")
 	onActiveTabChange(activeTab: number) {
 		stopAllPlayers();
-		console.log("activeTab changed", activeTab)
 		if (activeTab == 0)
 			events.$emit("overview-listen");
 		else if (activeTab == 1)
@@ -73,7 +73,7 @@ export default class Overview extends Vue {
 	}
 
 	closeTab() { 
+		this.activeTab = Math.min(1, this.editorTab!.previous)
 		this.editorTab = null;
-		this.activeTab = 0;
 	}
 }

@@ -108,8 +108,7 @@ export default class PatternPlaceholder extends Vue {
 	}
 
 	async editPattern() {
-		console.log("Button emit edit-pattern")
-		events.$emit("edit-pattern", { pattern:[this.tuneName,  this.patternName], readonly: true });
+		events.$emit("edit-pattern", { pattern:[this.tuneName,  this.patternName], readonly: this.readonly });
 	}
 
 	createPlayer() {
@@ -206,7 +205,7 @@ export default class PatternPlaceholder extends Vue {
 
 			if (blob)
 				FileSaver.saveAs(blob, `${this.tuneName} - ${this.patternName}.mp3`);
-		} catch(err) {
+		} catch(err:any) {
 			this.loading = null;
 			console.error("Error exporting MP3", err.stack || err);
 			this.$bvModal.msgBoxOk("Error exporting MP3: " + err.message);
