@@ -36,7 +36,7 @@ export default (env: any, argv: any): Configuration => {
 				{ test: /\.css$/, use: [ "style-loader", "css-loader" ] },
 				{ test: /\.scss$/, use: [ "style-loader", "css-loader", "sass-loader" ]},
 				{ test: /\.ts$/, loader: "ts-loader" },
-				{ test: /\.(png|jpe?g|gif)$/, type: "asset/inline" },
+				{ test: /\.(png|jpe?g|gif|woff2)$/, type: "asset/resource" },
 				{
 					test: /\.(svg)$/,
 					type: 'asset/inline',
@@ -98,7 +98,7 @@ export default (env: any, argv: any): Configuration => {
 					{ from: `${__dirname}/src/sw.js`, to: `${__dirname}/dist/sw.js` },
 					{ from: `${__dirname}/assets/img/app-512.png`, to: `${__dirname}/dist/app-512.png` },
 					{ from: `${__dirname}/assets/img/app-180.png`, to: `${__dirname}/dist/app-180.png` },
-					{ from: `${__dirname}/assets/img/favicon.svg`, to: `${__dirname}/dist/favicon.svg` },
+					{ from: `${__dirname}/assets/img/favicon.png`, to: `${__dirname}/dist/favicon.png` },
 					{ from: `${__dirname}/assets/manifest.json`, to: `${__dirname}/dist/manifest.json` }
 				]
 			}),

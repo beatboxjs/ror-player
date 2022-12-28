@@ -1,12 +1,12 @@
 <div class="bb-pattern-placeholder" :class="[{ dragging }, `drag-effect-${dragEffect}`]" :draggable="draggable ? 'true' : 'false'" @dragstart="handleDragStart($event)" @dragend="handleDragEnd($event)">
-	<b-card class="pattern-button">
+	<div class="pattern-button">
 		<span class="tune-name">{{state.tunes[tuneName].displayName || tuneName}}</span>
 		<br>
 		<span class="pattern-name">
 			{{state.tunes[tuneName].patterns[patternName].displayName || patternName}}
 			<fa v-if="isCustomPattern" icon="star" title="User-created break" v-b-tooltip/>
 		</span>
-	</b-card>
+	</div>
 	<ul class="actions icon-list">
 		<li><a href="javascript:" title="Listen" v-b-tooltip.hover @click="playPattern()"><fa :icon="playerRef && playerRef.playing ? 'stop' : 'play-circle'"></fa></a></li>
 		<li><a href="javascript:" :title="readonly ? 'Show notes' : 'Edit notes'" v-b-tooltip.hover @click="editPattern()"><fa icon="pen"/></a></li>
