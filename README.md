@@ -1,8 +1,8 @@
-[RoR Player](https://player.rhythms-of-resistance.org/) is a browser-based player for
-[Rhythms of Resistance tunes](https://github.com/rhythms-of-resistance/sheetbook/tree/master/generated).
+[XR Player](https://player.xrrhythms.uk/) is a browser-based player for
+[XR Rhythms tunes](https://github.com/rhythms-of-resistance/sheetbook/tree/master/generated). It is based on [Rhythms of Resistance player](https://github.com/rhythms-of-resistance/).
 It is written in TypeScript and relies heavily on beatbox.js, Vue.js and Bootstrap. The core features are:
 
-* Read and play the notes of all RoR tunes and breaks
+* Read and play the notes of all XR Rhythms tunes and breaks
 * Edit the notes, even while they are playing
 * Compose own tunes and breaks and share them as a link. The notes are stored in the hash part of the link, nothing is stored on the server.
 * Compose songs (sequences of tunes and breaks in different combinations)
@@ -41,14 +41,12 @@ Build and host it yourself
 Customise it
 ------------
 
-The tunes are configured in [`src/defaultTunes.ts`](./src/defaultTunes.ts). The format is very similar to the "Raw (uncompressed)" format that
+The tunes are configured in [`assets/tunes`](./assets/tunes), along with tune descriptions. The format is very similar to the "Raw (uncompressed)" format that
 can be generated in the Share dialog of the player.
 
 All the parameters (such as the instruments, samples, time measurements) are configured in [`src/config.ts`](./src/config.ts).
 
 The samples are available as MP3 files in [`assets/audio`](./assets/audio).
-
-The tune descriptions can be found in [`assets/tuneDescriptions`](./assets/tuneDescriptions).
 
 More details can be found in the [documentation](https://player-docs.rhythms-of-resistance.org/guide/technical/config.html).
 
@@ -69,4 +67,4 @@ see the updated player.
 Host it
 -------
 
-Information how to host RoR Player can be found in the [documentation](https://player-docs.rhythms-of-resistance.org/guide/technical/host.html).
+Information how to host XR Rhythms Player can be found in the [documentation](https://player-docs.rhythms-of-resistance.org/guide/technical/host.html).
