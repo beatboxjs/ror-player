@@ -54,7 +54,6 @@ export function enableRouter(app: Vue) {
 				events.$emit("listen", params.tuneName);
 				closeAllDialogs();
 			});
-e.log("listen-pattern", "router emit edit-pattern", )
 			events.$emit("edit-pattern", { pattern: [ params.tuneName, params.patternName ], readonly: true });
 		},
 
@@ -220,7 +219,6 @@ e.log("listen-pattern", "router emit edit-pattern", )
 	}, false);
 
 	events.$on("overview-edit-pattern", function(data) {
-		("overview-edit-pattern",  data)
 	    setState(data.readonly ? "listen-pattern" : "compose-pattern", { tuneName: data.pattern[0], patternName: data.pattern[1] });
 	})
 
