@@ -6,24 +6,23 @@
 		<Help />
 	</span>
 
-	<div class="container-fluid d-flex flex-column h-100">
-		<div class="row m-2 g-5">
+	<div class="d-flex flex-column h-100">
+		<div class="nav p-8 g-5">
 			<span class="navbar-light d-inline-block d-md-none" @click="togglePatternList()">
 				<b-button class="navbar-toggler"><span class="navbar-toggler-icon" /></b-button>
 			</span>
-			<button type="button" class="btn btn-link"
+			<button type="button" class="tab"
 				:class="{active: activeTab==0}"
-				@click="activeTab=0"
+				@click="listen()"
 			>Listen</button> 
-			<button type="button" class="btn btn-link"
+			<button type="button" class="tab"
 				:class="{active: activeTab==1}"
-				@click="activeTab=1">Compose</button>
-			<button type="button" class="btn btn-link"
+				@click="compose()">Compose</button>
+			<button type="button" class="tab"
 				v-if="editorTab"
 				:class="{active: activeTab==2}"
-				@click="activeTab=2"
+				@click="edit()"
 			>{{editorTab.title}}
-			<a href="" @click.stop.prevent="closeTab()">×</a>
 			</button>
 		</div>
 
@@ -35,9 +34,11 @@
 				<Compose />
 			</StateProvider>
 		</div>
-		<div v-if="activeTab == 2 && editorTab" class="flex-grow-1">
+		<div v-if="activeTab == 2 && editorTab" class="container-fluid flex-grow-1">
 			<StateProvider>
-				<PatternPlayer class="m-4"
+				<h1>{{editorTab.title}} 		
+				<a href="" @click.stop.prevent="closeTab()">×</a></h1>
+				<PatternPlayer 
 					:tuneName="editorTab.content.tuneName" 
 					:pattern-name="editorTab.content.patternName" 
 					:readonly="editorTab.content.readonly" />	

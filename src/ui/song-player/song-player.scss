@@ -92,6 +92,8 @@
 
 					.bb-pattern-placeholder {
 						height: 100%;
+						background-color: var(--cyan);
+						box-shadow: #0002 2px 2px 2px;
 					}
 
 					.placeholder-drag-handle {
@@ -142,9 +144,13 @@
 
 			.timeline {
 				height: 2em;
-				padding:4px 0;
+				padding-top:4px;
 				background-color:var(--blue);
 				color:white;
+				font-family:var(--heading-font);
+				.inactive {
+					color:white;
+				}
 			}
 
 			.beat {
@@ -172,6 +178,7 @@
 		.inactive {
 			color:#aaa;
 		}
+
 
 		.song-position-marker {
 			position: absolute;

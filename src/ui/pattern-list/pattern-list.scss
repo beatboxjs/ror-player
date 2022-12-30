@@ -13,6 +13,8 @@
 		text-decoration: none;
 		color: inherit;
 		position: relative;
+		background-color: white;
+		border: none;
 
 		.fa-caret-down {
 			position: absolute;
@@ -23,7 +25,8 @@
 	}
 
 	.card {
-		margin-bottom: 5px;
+		margin-bottom: 8px;
+		border:none;
 	}
 
 	.bb-pattern-placeholder {
@@ -41,20 +44,17 @@
 	hr {
 		/* https://stackoverflow.com/a/34372979/242365 */
 		margin-left: 0;
-		margin-right: calc(30px - 1.2em);
-	}
-
-	.bb-pattern-list-filter {
-		padding-right: calc(30px - 1.2em);
 	}
 
 	.bb-pattern-list-tunes {
 		overflow-y: auto;
-		padding-right: 15px;
 	}
 
 	.general-actions {
 		padding-top: 10px;
+		a { 
+			color: white;
+		}
 	}
 
 }

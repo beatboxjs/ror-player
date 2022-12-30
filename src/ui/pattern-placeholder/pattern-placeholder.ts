@@ -191,7 +191,6 @@ export default class PatternPlaceholder extends Vue {
 		const player = this.player!;
 
 		try {
-			console.log(player);
 			this.loading = 0;
 			this.exportCanceled = false;
 			const blob = await exportMP3(player, (perc) => {

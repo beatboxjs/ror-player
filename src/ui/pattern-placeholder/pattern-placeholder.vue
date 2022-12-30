@@ -1,7 +1,5 @@
 <div class="bb-pattern-placeholder" :class="[{ dragging }, `drag-effect-${dragEffect}`]" :draggable="draggable ? 'true' : 'false'" @dragstart="handleDragStart($event)" @dragend="handleDragEnd($event)">
 	<div class="pattern-button">
-		<span class="tune-name">{{state.tunes[tuneName].displayName || tuneName}}</span>
-		<br>
 		<span class="pattern-name">
 			{{state.tunes[tuneName].patterns[patternName].displayName || patternName}}
 			<fa v-if="isCustomPattern" icon="star" title="User-created break" v-b-tooltip/>

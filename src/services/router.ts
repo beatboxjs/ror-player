@@ -54,8 +54,7 @@ export function enableRouter(app: Vue) {
 				events.$emit("listen", params.tuneName);
 				closeAllDialogs();
 			});
-
-			console.log("router emit edit-pattern")
+e.log("listen-pattern", "router emit edit-pattern", )
 			events.$emit("edit-pattern", { pattern: [ params.tuneName, params.patternName ], readonly: true });
 		},
 
@@ -221,7 +220,7 @@ export function enableRouter(app: Vue) {
 	}, false);
 
 	events.$on("overview-edit-pattern", function(data) {
-		console.log("router handle edit-pattern", data)
+		("overview-edit-pattern",  data)
 	    setState(data.readonly ? "listen-pattern" : "compose-pattern", { tuneName: data.pattern[0], patternName: data.pattern[1] });
 	})
 
@@ -252,14 +251,14 @@ export function enableRouter(app: Vue) {
 	});
 
 	events.$on("overview-compose", () => {
-		let isCompose = currentState && currentState.name.match(/^compose($|-)/);
+		let isCompose = currentState && currentState.name.match(/^compose$/);
 		if(!isCompose)
 			setState("compose");
 	});
 
 	events.$on("overview-listen", () => {
-		let isCompose = currentState && currentState.name.match(/^compose($|-)/);
-		if(isCompose) {
+		let isListen = currentState && currentState.name.match(/^listen$/);
+		if(!isListen) {
 			if(lastTune)
 				navigate("listen-tune", { tuneName: lastTune });
 			else

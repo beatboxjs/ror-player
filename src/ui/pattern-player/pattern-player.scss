@@ -51,6 +51,14 @@
 		thead td {
 			border-bottom: 1px solid #aaa;
 			padding-bottom: .5ex;
+			background-color: var(--blue);
+			color:white;
+			font-family: var(--heading-font);
+			padding:2px 4px 0 0;
+		}
+
+		th { 
+			font-family: var(--heading-font);
 		}
 
 		.beat, .stroke.before-beat {

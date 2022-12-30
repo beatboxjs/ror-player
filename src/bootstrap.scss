@@ -1,7 +1,11 @@
 $btn-transition: color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out; // Delete background-color from transition
+$green:#14aa37;
 $primary:#14aa37;
 $secondary: #ed9bc4;
 $blue: #3860aa;
+$orange: #ffc11e;
+$cyan: #75d0f1;
+
 $enable-shadows: true;
 $enable-rounded: false;
 $enable-gradients: false;
@@ -33,12 +37,19 @@ $enable-gradients: false;
 }
 
 html,body {
-	font-size: 16px;
-	font-family: 'Crimson Text', serif;
+	font-size: 18px;
+	@include media-breakpoint-down(xs) {
+		font-size: 14px;
+	}
+		font-family: 'Crimson Text', serif;
 }
 
-h1,h2,h3,h4,h5, button, .hh-type {
-	font-family: Fucxed, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+body {
+	--heading-font: Fucxed, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h1,h2,h3,h4,h5, button, .heading-type {
+	font-family: var(--heading-font);
 	font-weight: 900;
 	text-transform:uppercase;
 }

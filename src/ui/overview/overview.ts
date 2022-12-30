@@ -57,16 +57,20 @@ export default class Overview extends Vue {
 		this._unregisterHandlers();
 	}
 
-	@Watch("activeTab")
-	onActiveTabChange(activeTab: number) {
+	listen() { 
 		stopAllPlayers();
-		if (activeTab == 0)
-			events.$emit("overview-listen");
-		else if (activeTab == 1)
-			events.$emit("overview-compose");
-		else
-			events.$emit("overview-edit-pattern", { pattern: [this.editorTab!.content.tuneName, this.editorTab!.content.patternName ], readonly: true })
+		events.$emit("overview-listen");
 	}
+
+	compose() { 
+		stopAllPlayers();
+		events.$emit("overview-compose");
+	}
+
+	edit() { 
+		stopAllPlayers();
+		events.$emit("overview-edit-pattern", { pattern: [this.editorTab!.content.tuneName, this.editorTab!.content.patternName ], readonly: this.editorTab!.content.readonly })
+	}	
 
 	togglePatternList() {
 		$("body").toggleClass("bb-pattern-list-visible");

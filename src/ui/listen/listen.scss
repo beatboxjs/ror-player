@@ -1,12 +1,15 @@
+$padding: 1.2em;
 .bb-listen {
 	display: flex;
 	height: 100%;
+	a { 
+		color: black; 
+	}
 
 	.bb-listen-tunes {
-		padding: 1.2em;
+		padding: $padding;
 		width: 20em;
-		background: #fff;
-		border-right: 1px solid #dee2e6;
+		background: var(--green);
 		display: flex;
 		flex-direction: column;
 
@@ -34,8 +37,14 @@
 			height: 0;
 			overflow-y: auto;
 			position: relative;
-			padding: 0 1.2em 1.2em 1.2em;
-			margin: 0 -1.2em -1.2em -1.2em;
+			margin: 0 (-$padding);
+			.nav-link { 
+				padding: 0.5rem $padding;
+				&.active { 
+					background-color: var(--orange);
+					color: black;
+				}
+			}
 		}
 	}
 

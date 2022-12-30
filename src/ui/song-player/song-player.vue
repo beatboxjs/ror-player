@@ -49,28 +49,28 @@
 	<div class="song-player-container">
 		<div class="bb-col instruments">
 			<div class="timeline"></div>
-			<div class="field hh-type" v-for="instrumentKey in config.instrumentKeys" :key="instrumentKey">
+			<div class="field heading-type" v-for="instrumentKey in config.instrumentKeys" :key="instrumentKey">
 				{{config.instruments[instrumentKey].name}}
 			</div>
-			<div class="field hh-type all-drop">All</div>
+			<div class="field heading-type all-drop">All</div>
 		</div><div class="bb-col instrument-actions">
 			<div class="timeline">
 				<a href="javascript:" @click="muteAll()" :class="allMuted ? 'active' : 'inactive'" :title="`${allMuted ? 'Unmute' : 'Mute'} all instruments`" v-b-tooltip.hover><fa icon="volume-mute"/></a>
 			</div>
-			<div class="field hh-type" v-for="instrumentKey of config.instrumentKeys" :key="instrumentKey">
+			<div class="field heading-type" v-for="instrumentKey of config.instrumentKeys" :key="instrumentKey">
 				<ul class="icon-list">
 					<li v-if="!isHiddenSurdoHeadphone(instrumentKey)"><a href="javascript:" @click="headphones([ instrumentKey ], $event.ctrlKey || $event.shiftKey)" :class="state.playbackSettings.headphones.includes(instrumentKey) ? 'active' : 'inactive'"><fa icon="headphones"/></a></li>
 					<li v-if="isHiddenSurdoHeadphone(instrumentKey) && instrumentKey == 'ms'"><a href="javascript:" @click="headphones([ 'ls', 'ms', 'hs' ], $event.ctrlKey || $event.shiftKey)" class="inactive"><fa icon="headphones"/></a></li>
 					<li><a href="javascript:" @click="mute(instrumentKey)" :class="state.playbackSettings.mute[instrumentKey] ? 'active' : 'inactive'"><fa icon="volume-mute"/></a></li>
 				</ul>
 			</div>
-			<div class="field hh-type all-drop"></div>
+			<div class="field heading-type all-drop"></div>
 		</div><div class="song-container"><div class="bb-col song" v-for="i in length">
 			<div class="timeline">
 				<span v-for="i2 in 4" class="beat" :class="'beat-i-'+((i-1)*4+i2-1)" @click="setPosition((i-1)*4+i2-1, $event)">{{(i-1)*4+i2}}</span>
 			</div>
 			<div
-				:class="`field hh-type song-field-${instrumentKey}-${i-1} ${getDragOverClass({ instr: instrumentKey, idx: i-1 })}`"
+				:class="`field song-field-${instrumentKey}-${i-1} ${getDragOverClass({ instr: instrumentKey, idx: i-1 })}`"
 				v-for="instrumentKey of config.instrumentKeys"
 				:key="instrumentKey"
 				@dragenter="handleDragEnter($event, { instr: instrumentKey, idx: i-1 })"
@@ -96,7 +96,7 @@
 				</div>
 			</div>
 			<div
-				class="field hh-type all-drop"
+				class="field heading-type all-drop"
 				:class="getDragOverClass({ idx: i-1 })"
 				@dragenter="handleDragEnter($event, { idx: i-1 })"
 				@dragover="$event.preventDefault()"

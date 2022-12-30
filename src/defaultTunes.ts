@@ -12,7 +12,6 @@ const path = require.context('../assets/tunes', false, /\.ts$/)
 
 const rawTunes : { [tuneName: string]: RawTune }  = Object.fromEntries(
 		path.keys().map(key => [key.match(/\.\/(.+)\.ts/)![1], path(key).default]))
-console.log(rawTunes)
 
 const defaultTunes: { [tuneName: string]: Tune } = {};
 

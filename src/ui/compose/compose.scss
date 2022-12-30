@@ -6,8 +6,7 @@
 		height: 100%;
 		width: 20em;
 		padding: 1.2em;
-		background: #fff;
-		border-right: 1px solid #dee2e6;
+		background-color: var(--blue);
 
 		@media (max-width: 767.98px) {
 			position: fixed;
@@ -27,9 +26,5 @@
 		flex-grow: 1;
 		height: 100%;
 		width: 0;
-	}
-
-	.bb-pattern-list-tunes {
-		margin-right: -1.2em;
 	}
 }

@@ -104,9 +104,7 @@ export default class PatternList extends Vue {
 
 		if(newPatternName) {
 			createPattern(this.state, tuneName, newPatternName);
-			this.showPatternEditor = { id: `bb-pattern-editor-dialog-${id()}`, tuneName, patternName: newPatternName };
-			await this.$nextTick();
-			this.$bvModal.show(this.showPatternEditor.id);
+			events.$emit("overview-edit-pattern", { pattern: [ tuneName, newPatternName ], readonly: false })
 		}
 	}
 
