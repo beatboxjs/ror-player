@@ -39,9 +39,9 @@ $enable-gradients: false;
 html,body {
 	font-size: 18px;
 	@include media-breakpoint-down(xs) {
-		font-size: 14px;
+		font-size: 16px;
 	}
-		font-family: 'Crimson Text', serif;
+	font-family: 'Crimson Text', serif;
 }
 
 body {
