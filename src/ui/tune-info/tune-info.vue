@@ -1,6 +1,28 @@
 <div class="bb-tune-info" v-if="tune">
-	<h1>{{tune.displayName || tuneName}}</h1>
+	<h1 v-if="tune.description || tune.sheet" class="d-flex align-items-center">
+		<span class="flex-grow-1">{{tune.displayName || tuneName}}</span>
+		<PlaybackSettings :playback-settings="playbackSettings" :default-speed="tune.speed" v-if="tune.exampleSong" />
+	</h1>
 
+<ExampleSongPlayer
+	v-if="tune.exampleSong"
+	:tune-name="tuneName"
+	:song="tune.exampleSong"
+	:settings="playbackSettings"
+/>
+<PatternPlaceholder
+	:tune-name="tuneName"
+	:pattern-name="patternName"
+	:readonly="true"
+	v-for="(pattern, patternName) in tune.patterns"
+	:key="patternName"
+	:settings="playbackSettings"
+	v-slot="slotProps"
+>
+	<PatternPlaceholderItem><a href="javascript:" title="Download as MP3" v-b-tooltip.hover @click="slotProps.downloadMp3()"><fa icon="download"/></a></PatternPlaceholderItem>
+</PatternPlaceholder>
+
+	<h2>About</h2>
 	<div v-html="tuneDescription"></div>
 
 	<h2>Notation</h2>
@@ -13,27 +35,4 @@
 			<iframe sandbox="allow-same-origin allow-scripts" :src="tune.video" frameborder="0" allowfullscreen></iframe>
 		</div>
 	</div>
-
-	<h2 v-if="tune.description || tune.sheet" class="d-flex align-items-center">
-		<span class="flex-grow-1">Sounds</span>
-		<PlaybackSettings :playback-settings="playbackSettings" :default-speed="tune.speed" />
-	</h2>
-
-	<ExampleSongPlayer
-		v-if="tune.exampleSong"
-		:tune-name="tuneName"
-		:song="tune.exampleSong"
-		:settings="playbackSettings"
-	/>
-	<PatternPlaceholder
-		:tune-name="tuneName"
-		:pattern-name="patternName"
-		:readonly="true"
-		v-for="(pattern, patternName) in tune.patterns"
-		:key="patternName"
-		:settings="playbackSettings"
-		v-slot="slotProps"
-	>
-		<PatternPlaceholderItem><a href="javascript:" title="Download as MP3" v-b-tooltip.hover @click="slotProps.downloadMp3()"><fa icon="download"/></a></PatternPlaceholderItem>
-	</PatternPlaceholder>
 </div>
