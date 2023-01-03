@@ -198,10 +198,11 @@ export function enableRouter(app: Vue) {
 		if(setStateIgnored)
 			return;
 
-		hashChangeIgnored = true;
-		setTimeout(() => {
-			hashChangeIgnored = false;
-		}, 0);
+		// no idea what this is for - just seems to fuck it on iphone: hashchange event is synchronous
+		// hashChangeIgnored = true;
+		// setTimeout(() => {
+		// 	hashChangeIgnored = false;
+		// }, 0);
 
 		if(name == "") {
 			location.hash = "#";

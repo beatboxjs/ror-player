@@ -37,7 +37,7 @@ $enable-gradients: false;
 }
 
 html,body {
-	font-size: 18px;
+	font-size: 1.425rem;
 	@include media-breakpoint-down(xs) {
 		font-size: 16px;
 	}
