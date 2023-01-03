@@ -10,6 +10,9 @@
 	:song="tune.exampleSong"
 	:settings="playbackSettings"
 />
+
+<p><em>Tap on the <fa icon="pen"></fa> on the breaks below to see the notes.</em></p>
+	
 <PatternPlaceholder
 	:tune-name="tuneName"
 	:pattern-name="patternName"
@@ -22,12 +25,11 @@
 	<PatternPlaceholderItem><a href="javascript:" title="Download as MP3" v-b-tooltip.hover @click="slotProps.downloadMp3()"><fa icon="download"/></a></PatternPlaceholderItem>
 </PatternPlaceholder>
 
+<p v-if="tune.sheet"><a :href="tune.sheet" target="_blank">Tune sheet (PDF)</a></p>
+
 	<h2>About</h2>
 	<div v-html="tuneDescription"></div>
 
-	<h2>Notation</h2>
-	<p><em>Click on the <fa icon="pen"></fa> on the breaks below to see the notes.</em></p>
-	<p v-if="tune.sheet"><a :href="tune.sheet" target="_blank">Tune sheet (PDF)</a></p>
 
 	<div v-if="tune.video">
 		<h2>Video</h2>

@@ -2,9 +2,6 @@ $padding: 1.2em;
 .bb-listen {
 	display: flex;
 	height: 100%;
-	a { 
-		color: black; 
-	}
 
 	.bb-listen-tunes {
 		padding: $padding;
@@ -12,7 +9,9 @@ $padding: 1.2em;
 		background: var(--green);
 		display: flex;
 		flex-direction: column;
-
+		a { 
+			color: black; 
+		}
 		@media (max-width: 767.98px) {
 			position: fixed;
 			top: 0;
