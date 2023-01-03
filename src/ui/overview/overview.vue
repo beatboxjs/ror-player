@@ -25,8 +25,7 @@
 			>{{editorTab.title}}
 			</button>
 		</div>
-
-		<div v-if="activeTab == 0" class="flex-grow-1">
+		<div v-show="activeTab == 0" class="flex-grow-1">
 			<Listen />
 		</div>
 		<div v-if="activeTab == 1" class="flex-grow-1">

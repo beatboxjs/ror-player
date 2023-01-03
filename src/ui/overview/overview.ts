@@ -77,7 +77,10 @@ export default class Overview extends Vue {
 	}
 
 	closeTab() { 
-		this.activeTab = Math.min(1, this.editorTab!.previous)
+		switch(this.editorTab!.previous) {
+			case 0: this.listen(); break;
+			case 1: this.compose(); break;
+		}
 		this.editorTab = null;
 	}
 }
