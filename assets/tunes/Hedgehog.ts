@@ -16,15 +16,8 @@ export default {
             ag: 'o  a  a o  a  a o  a  a o a o a ',
             sh: '................................'
         },
-        'Break 1': {
-            ls: 'X   X   X   X   ',
-            ms: '@ls',
-            hs: '@ls',
-            re: 'r  X  X r X r X ',
-            sn: 'X..X..X.X...X...',
-            ta: 'X  X    X X X   ',
-            ag: 'o  a  a o a o a ',
-            sh: 'XXXXXXXXXXXXXXXX'
+        'Alt Repi': {
+			re: '  XX XXX  XX XXX  XX XXX  XX  XX',
         },
         'Break 2': {
             ls: 'X               ',
@@ -34,7 +27,7 @@ export default {
             sn: '@ls',
             ta: '@ls',
             ag: '@ls',
-            ot: '        R   S   '
+            ot: '        )   )   '
         }
     },
     exampleSong: ["Tune", "Tune", "Break 2", "Tune", "Tune"]
