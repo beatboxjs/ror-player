@@ -3,7 +3,6 @@ export default {
     categories: ["standard", "common", "onesurdo", "medium"],
     speed: 120,
     time: 3,
-    displayName: "Bhangra",
     sheet: sheetUrl + "bhangra.pdf",
     description: require("./bhangra.md").default,
     video: "https://tube.rhythms-of-resistance.org/videos/embed/bb1e9a2e-ce51-435c-818f-d98cf95f9ed0",
@@ -14,29 +13,29 @@ export default {
             ms: '@ls',
             hs: '@ls',
             re: 'X zX zX zX zX zX zX zX zX zX zX zX zXXXX  XXXX  ',
-            sn: 'X..X..X..X..X..X..X..X..X..X..X..X..X..X..X..X..',
+            sn: 'X..X..X..X..X..X..X..X..X..X..X..X..XXXX  XXXX',
             ta: 'X XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX X',
             ag: 'aaaa  oooo              aaaa  oooo              ',
             sh: 'X..X..X..X..X..X..X..X..X..X..X..X..X..X..X..X..'
         },
         'Break 1': {
             upbeat: 4,
-            ls: 'XX  X XX X  XX  X       XX  X XX X  XX  X       XX  X XX X  XX  X       XX  X    X   X              ',
+            ls: 'XX  X XX X  XX  X       XX  X XX X  XX  X       XX  X XX X  XX  X       XX  X    X   X  XXXX  XXXX  ',
             ms: '@ls',
             hs: '@ls',
-            re: '                   X  X                    X  X                    X  X                             ',
-            sn: '                   X  X                    X  X                    X  X                 XXXX  XXXX  ',
+            re: '                   X  X                    X  X                    X  X                 XXXX  XXXX  ',
+            sn: '@re',
             ta: '@re',
             ag: '@re',
             sh: '@re'
         },
         'Break 2': {
             upbeat: 4,
-            ls: 'XX  X XX  X XX  X       XX    X  XX  X  X       XX  X XX  X XX  X       XX    X  XX  X              ',
+            ls: 'XX  X XX  X XX  X       XX    X  XX  X  X       XX  X XX  X XX  X       XX    X  XX  X  XXXX  XXXX  ',
             ms: '@ls',
             hs: '@ls',
             re: '@ls',
-            sn: 'XX  X XX  X XX  X       XX    X  XX  X  X       XX  X XX  X XX  X       XX    X  XX  X  XXXX  XXXX  ',
+            sn: '@ls',
             ta: '@ls',
             ag: '@ls',
             sh: '@ls'
@@ -63,69 +62,47 @@ export default {
             sh: '@sn',
             ot: '                                                                                             F  '
         },
-        "Karla Break (3⁄4)": {
+        '7 Break': {
+		    ls: "XXXXXXX",
+			ms: "@ls",
+			hs: "@ls",
+			re: "@ls",
+			sn: "@ls",
+			ta: "@ls",
+			ag: "ooooooo",
+			ot: "         F  "
+		},
+		'Butterfly': {
+			ls: "XXXXXXX     XXXXXXX     XXXXXXXXXX  XXXXXXX",
+			ms: "@ls",
+			hs: "@ls",
+			re: "@ls",
+			sn: "@ls",
+			ta: "@ls",
+			ag: "ooooooo     ooooooo     oooooooooo  ooooooo",
+			ot: "                                             y  "
+		},
+        "Karla Break (Bhangra)": {
             ls: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX           ',
             ms: '@ls',
             hs: '@ls',
             re: '@ls',
             sn: '@ls',
-            ta: '@ls',
-            ag: '@ls',
+            ta: 'x xx xx xx xx xx xx xx xx xx xx xx xx',
+            ag: 'o oo oo oo oo oo oo oo oo oo oo oo oo',
             sh: '@ls',
             volumeHack: { 0: .1, 12: .4, 24: .7, 36: 1 }
         },
-        "8 up (3⁄4)": {
-            ls: 'XXXXXXXXXXXXXXXXXXXXXXXX',
-            ms: '@ls',
-            hs: '@ls',
-            re: '@ls',
-            sn: '@ls',
-            ta: '@ls',
-            ag: '@ls',
-            sh: '@ls',
-            volumeHack: crescendo(24)
-        },
-        "8 down (3⁄4)": {
-            ls: 'XXXXXXXXXXXXXXXXXXXXXXXX',
-            ms: '@ls',
-            hs: '@ls',
-            re: '@ls',
-            sn: '@ls',
-            ta: '@ls',
-            ag: '@ls',
-            sh: '@ls',
-            volumeHack: decrescendo(24)
-        },
-        'Progressive (3⁄4)': {
-            ls: 'X  X  X  X  X XX XX XX XXXXXXXXXXXXX',
-            ms: '@ls',
-            hs: '@ls',
-            re: '@ls',
-            sn: '@ls',
-            ta: '@ls',
-            ag: '@ls',
-            sh: '@ls'
-        },
-        'Progressive Inverted (3⁄4)': {
-            ls: 'XXXXXXXXXXXXX XX XX XX XX  X  X  X  ',
-            ms: '@ls',
-            hs: '@ls',
-            re: '@ls',
-            sn: '@ls',
-            ta: '@ls',
-            ag: '@ls',
-            sh: '@ls'
-        },
-        'Progressive Karla (3⁄4)': {
+        'Progressive Karla (Bhangra)': {
             ls: 'X  X  X  X  X XX XX XX XXXXXXXXXXXXXX           ',
             ms: '@ls',
             hs: '@ls',
             re: '@ls',
             sn: '@ls',
-            ta: '@ls',
-            ag: '@ls',
+            ta: 'X  X  X  X  X XX XX XX XX XX XX XX XX           ',
+            ag: 'o  o  o  o  o oo oo oo oo oo oo oo oo',
             sh: '@ls'
         }
     },
-    exampleSong: ["Tune", "Break 1", "Tune", "Break 2", "Tune", "Break 3", "Tune", "Bra Break", "Tune"]
+    exampleSong: ["Tune", "Break 1", "Tune", "Break 3", "Tune", "Break 3", "7 Break", "Tune", "Bra Break", "Tune", "Butterfly"]
 }
