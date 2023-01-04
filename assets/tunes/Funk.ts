@@ -8,11 +8,11 @@ export default {
         Tune: {
             loop: true,
             ls: 'X  X  X X X     X  X  X X       ',
-            ms: '@ls',
-            hs: '@ls',
+            ms: '    X       X X     X     X X   ',
+            hs: '@ms',
             re: 'f  hf  hf  hf  hf  hf  hf  hXhrh',
             sn: '....X.......X.......X.......X...',
-            ta: '    X       X X     X     X X   ',
+            ta: '@ms',
             ag: 'o  a  o   a a a o  a  o   a a a ',
             sh: 'X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.'
         },
@@ -36,25 +36,8 @@ export default {
             ag: 'o o o o o o o o ',
             sh: '@ls'
         },
-        "Tune (Variant 1)": {
-            ls: 'X       X X   X X       X       ',
-            ms: '@ls',
-            hs: '@ls',
-            re: 'f  hf  hf  hf  hf  hf  hf  hXhrh',
-            sn: '....X.......X.......X.......X...',
-            ta: '    X       X X   XXX   X X X   ',
-            ag: 'o  a  o   a a a o  a  o   a a a ',
-            sh: 'X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.'
-        },
-        "Tune (Variant 2)": {
-            ls: 'X X     X X   X X X     X       ',
-            ms: '@ls',
-            hs: '@ls',
-            re: 'f  hf  hf  hf  hf  hf  hf  hXhrh',
-            sn: '....X.......X.......X.......X...',
-            ta: '    X       X X     X     X X   ',
-            ag: 'o  a  o   a a a o  a  o   a a a ',
-            sh: 'X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.'
+        "Alt Repi": {
+            re: '  X   X XXXXX X   X   X X XX XX '
         }
     },
     exampleSong: ["Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune"]
