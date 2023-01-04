@@ -8,14 +8,17 @@ export default {
     patterns: {
         Tune: {
             loop: true,
-            ls: 'X  tX t X  tX t X  tX t X  tX t ',
+            ls: 'X  rX r X  rX r X  rX r X  rX r ',
             ms: '@ls',
             hs: '@ls',
             re: 'X..X..X..XX..XX.X..X..X..XX..XX.',
             sn: 'X..X..X...X..X..X..X..X...X..X..',
-            ta: ' X XX X XX XX  X X XXXX X  XX   ',
+            ta: 'X X X   XX XX   X X X   XX XX   ',
             ag: 'o  aa oo a oo a o  aa oo a oo a ',
             sh: 'X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.'
+        },
+        'Alt Tam': {
+            ta: ' X XX X XX XX  X X XXXX X  XX   '
         },
         'Break 1': {
             ls: 'X  tX t XX XX   ',
@@ -51,5 +54,5 @@ export default {
             sh: '@ls'
         }
     },
-    exampleSong: ["Intro", "Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune"]
+    exampleSong: ["Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune"]
 }
