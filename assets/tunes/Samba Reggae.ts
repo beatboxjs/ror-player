@@ -28,10 +28,10 @@ export default {
             sh: '@ms'
         },
         'Break 1': {
-            ls: '                X X XX XX                       X  X  X X                                  XX                              XX                              XX                   ',
+            ls: '                X X XX XX                       X  X  X X                                  XX                              XX                              XX               XXXX',
             ms: '@ls',
-            hs: '                X X XX XX                       X  X  X X                                  XX                              XX                              XX               XXXX',
-            re: 'XX XX XXXX XX                   XX XX XXXX XX                                              XX                              XX                              XX                   ',
+            hs: '@ls',
+            re: 'XX XX XXXX XX                   XX XX XXXX XX                                              XX                              XX                              XX               XXXX',
             sn: '                X X XX XX                       X  X  X X       X..X..X.X..X..X.X..X..X.X       X..X..X.X..X..X.X..X..X.X       X..X..X.X..X..X.X..X..X.X       X  X  X   X     ',
             ta: '@ls',
             ag: '@ls',
@@ -67,38 +67,16 @@ export default {
             ag: '@re',
             sh: '@re'
         },
-        'Knock On The Door Break': {
+        'Whistle Break': {
             time: 12,
-            ls: stretch(3, 12, 'X        XXX') + stretch(4, 12, 'X               X  X  X   X X X X               '),
-            ms: '@ls',
-            hs: '@ls',
-            re: '@ls',
-            sn: repeat(4, stretch(4, 12, 'X..XX..XX..XX..X')),
-            ta: '@ls',
-            ag: '@ls',
-            sh: '@ls'
-        },
-        'Knock On The Door (Cut)': {
-            time: 12,
-            ls: stretch(3, 12, 'X        XXX') + stretch(4, 12, 'X               X  X  X   X X X X               '),
-            ms: '@ls',
-            hs: '@ls',
-            re: stretch(3, 12, 'X        XXX') + stretch(4, 12, 'X               X  X  X   X X X X X XX X X X XX '),
-            sn: repeat(4, stretch(4, 12, 'X..XX..XX..XX..X')),
-            ta: '@ls',
-            ag: '@ls',
-            sh: '@ls'
-        },
-        'Dancing Break': {
-            ls: repeat(3, 'X  X   XX   X                   ') + 'X  X   XX   X                 X ',
-            ms: repeat(4, 'X  X   XX   X                   '),
-            hs: '@ls',
-            re: repeat(4, '                X  X   XX   X   '),
-            sn: '@re',
-            ta: '@re',
-            ag: '@re',
-            sh: '@re'
-        }
+			ls: "X         X X         X X   X     X X",
+			ms: "@ls",
+			hs: "@ls",
+			re: "      X           X           X           X  ",
+		    sn: "@re",
+			ta: "@re",
+			ag: "      o           o           o           o  ",
+		}
     },
-    exampleSong: ["Tune", "Tune", "Tune", "Tune", "Bra Break", "Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune", "Break 3", "Tune", "Tune", "Tune", "Tune", "SOS Break", "Tune", "Tune", "Tune", "Tune", "Knock On The Door Break", "Knock On The Door (Cut)", "Tune", "Tune", "Tune", "Tune", "Dancing Break", "Tune", "Tune", "Tune", "Tune"]
+    exampleSong: ["Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Whistle Break", "Whistle Break", "Tune", "Tune", "Tune", "Tune", "Break 3", "Tune", "Tune", "Tune", "Tune", "SOS Break", "Tune", "Tune", "Tune", "Tune", "Bra Break", "Tune", "Tune", "Tune", "Tune"]
 }
