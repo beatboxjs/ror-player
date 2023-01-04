@@ -7,7 +7,7 @@ export default {
     patterns: {
         Tune: {
             loop: true,
-            ls: 'r r X  XrXr X   ',
+            ls: 'X X r  rXrX r   ',
             ms: 'XXXXXXXXX       ',
             hs: '            XXXX',
             re: 'f   f   f  XXX  ',
