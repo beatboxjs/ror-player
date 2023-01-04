@@ -10,18 +10,13 @@ export default {
         Tune: {
             loop: true,
             ls: 'X         X  X  X         X     X         X  X  X         X     ',
-            ms: '      XXXX            XXXX            XXXX            XXXX      ',
-            hs: '    X       X       X       X       X       X       X       X   ',
+            ms: '    X XXXX  X       X XXXX  X       X XXXX  X       X XXXX  X   ',
+            hs: '@ms',
             re: '    X  X X XX XX    X       X       X  X X XX XX    X       X   ',
             sn: '....X..X....X.......X..X....X   ....X..X....X...X.X.X.X.X.X.X.X.',
             ta: '    X     X X       X   X X X       X     X X       X   X X X   ',
             ag: 'o ao ao a       o ao ao a       o ao ao a       o ao ao a       ',
             sh: '................................................................'
-        },
-        'Break 1': {
-            displayName: 'Dance Break',
-            time: 2,
-            ot: 'TUVWY Z '
         },
         'Break 2': {
             ls: 'X  X X  X  X X  X  X X          ',
@@ -33,17 +28,7 @@ export default {
             ag: '@ta',
             sh: '@ta'
         },
-        'Break 3': {
-            ls: 'X     X   X  X  X     X   X  X  X     X   X  X  ',
-            ms: '@ls',
-            hs: '@ls',
-            re: '@ls',
-            sn: '@ls',
-            ta: '@ls',
-            ag: '@ls',
-            sh: '@ls'
-        },
-        'Hip-Hop Break': {
+        'Call Break': {
             ls: 'X  X     X X    X  X   X X X  X X  X     X X                    X  X     X X    X  X   X X X  X X  X     X X                    ',
             ms: '@ls',
             hs: '@ls',
@@ -54,5 +39,5 @@ export default {
             sh: '@ta'
         }
     },
-    exampleSong: ["Tune", "Break 2", "Tune", "Break 3", "Break 1", "Tune", "Hip-Hop Break", "Tune"]
+    exampleSong: ["Tune", "Break 2", "Tune", "Call Break", "Tune"]
 }
