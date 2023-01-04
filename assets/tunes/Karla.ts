@@ -8,9 +8,9 @@ export default {
     patterns: {
         Tune: {
             loop: true,
-            ls: 'X   0 XX    0   X   0 XX    0   X   0 XX    0   X   0 XX X XX X ',
-            ms: '@ls',
-            hs: '@ls',
+            ls: 'X     XX        X     XX        X     XX        X     XX X XX X ',
+            ms: '    X       X       X       X       X       X       X  X X XX X ',
+            hs: '@ms',
             re: 'X  XX  X X XX X X  XX  X X XX X X  XX  X X XX X X  XX  X X XX X ',
             sn: '....X.......X.......X.......X.......X.......X.......X.......X...',
             ta: '    X       X       X  X X XX       X       X       X  X X XX   ',
