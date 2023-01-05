@@ -18,6 +18,7 @@ export default {
             sh: 'X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.'
         },
         'Alt Tam': {
+            loop: true,
             ta: ' X XX X XX XX  X X XXXX X  XX   '
         },
         'Break 1': {
@@ -39,8 +40,7 @@ export default {
             sn: '@re',
             ta: '@re',
             ag: '@re',
-            sh: '@re',
-            volumeHack: { 0: .1, 16: .4, 32: .7, 48: 1 }
+            sh: '@re'
         },
         'Intro': {
             upbeat: 1,

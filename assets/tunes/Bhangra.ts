@@ -50,8 +50,7 @@ export default {
             ag: '@ls',
             sh: '@ls'
         },
-        "Bra Break": {
-            displayName: "Call Break",
+        "Call Break": {
             ls: '                                                                        X XX XX XX              ',
             ms: '@ls',
             hs: '@ls',
@@ -60,28 +59,28 @@ export default {
             ta: '@sn',
             ag: '@sn',
             sh: '@sn',
-            ot: '                                                                                             F  '
+            ot: '                                                                                             A  '
         },
         '7 Break': {
-		    ls: "XXXXXXX",
-			ms: "@ls",
-			hs: "@ls",
-			re: "@ls",
-			sn: "@ls",
-			ta: "@ls",
-			ag: "ooooooo",
-			ot: "         F  "
-		},
-		'Butterfly': {
-			ls: "XXXXXXX     XXXXXXX     XXXXXXXXXX  XXXXXXX",
-			ms: "@ls",
-			hs: "@ls",
-			re: "@ls",
-			sn: "@ls",
-			ta: "@ls",
-			ag: "ooooooo     ooooooo     oooooooooo  ooooooo",
-			ot: "                                             y  "
-		},
+            ls: "XXXXXXX",
+            ms: "@ls",
+            hs: "@ls",
+            re: "@ls",
+            sn: "@ls",
+            ta: "@ls",
+            ag: "ooooooo",
+            ot: "         A  "
+        },
+        'Butterfly Break': {
+            ls: "XXXXXXX     XXXXXXX     XXXXXXXXXX  XXXXXXX",
+            ms: "@ls",
+            hs: "@ls",
+            re: "@ls",
+            sn: "@ls",
+            ta: "@ls",
+            ag: "ooooooo     ooooooo     oooooooooo  ooooooo",
+            ot: "                                             A  "
+        },
         "Karla Break (Bhangra)": {
             ls: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX           ',
             ms: '@ls',
@@ -104,5 +103,5 @@ export default {
             sh: '@ls'
         }
     },
-    exampleSong: ["Tune", "Break 1", "Tune", "Break 3", "Tune", "Break 3", "7 Break", "Tune", "Bra Break", "Tune", "Butterfly"]
+    exampleSong: ["Tune", "Break 1", "Tune", "Break 3", "Tune", "Break 3", "7 Break", "Tune", "Call Break", "Tune", "Butterfly Break"]
 }

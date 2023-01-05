@@ -17,7 +17,8 @@ export default {
             sh: '................................'
         },
         'Alt Repi': {
-			re: '  XX XXX  XX XXX  XX XXX  XX  XX',
+            loop: true,
+            re: '  XX XXX  XX XXX  XX XXX  XX  XX'
         },
         'Break 2': {
             ls: 'X               ',
@@ -27,7 +28,7 @@ export default {
             sn: '@ls',
             ta: '@ls',
             ag: '@ls',
-            ot: '        )   )   '
+            ot: '        A   A   '
         }
     },
     exampleSong: ["Tune", "Tune", "Break 2", "Tune", "Tune"]

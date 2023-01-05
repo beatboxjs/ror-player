@@ -1,4 +1,4 @@
-import { sheetUrl } from "../../src/tuneHelper"
+import { repeat, sheetUrl } from "../../src/tuneHelper"
 export default {
     displayName: "Afoxé",
     categories: ["standard", "common", "medium", "cultural-appropriation"],
@@ -27,9 +27,9 @@ export default {
             sh: '@re'
         },
         "Break 2": {
-            ls: 's   s   s   s   s   s   X   X   ',
-            ms: '      X       X       X   XXXXX ',
-            hs: '@ms',
+            ls: '      X       X       X   XXXXX ',
+            ms: '@ls',
+            hs: '@ls',
             re: 'f  hs r f  hs r f  hs r s r s r ',
             sn: 'X...X..XX..X....X...X..XX..X....',
             ta: 'X X X X XX XX X X X X X XX XX X ',
@@ -37,17 +37,17 @@ export default {
             sh: '................................'
         },
         "Break 3": {
-            ls: 's   s   s   s   s   s   X   X   ',
-            ms: '   XXXX    XXXX    XXXX X XXXXX ',
-            hs: '@ms',
+            ls: '   XXXX    XXXX    XXXX X XXXXX ',
+            ms: '@ls',
+            hs: '@ls',
             re: 'f  hs r f  hs r f  hs r s r s r ',
             sn: 'X...X..XX..X....X...X..XX..X....',
             ta: 'X X X X XX XX X X X X X XX XX X ',
             ag: 'a a o o aa o oo a a o o aa o oo ',
             sh: '................................'
         },
-        "Bra Break": {
-            displayName: "Call Break",
+        "Call Break (short)": {
+            loop: true,
             ls: '        XX XX           XX XX           XX XX   X X X X XX XX X ',
             ms: '@ls',
             hs: '@ls',
@@ -57,7 +57,17 @@ export default {
             ag: '@ls',
             sh: '@ls'
         },
-        "Tamborim Stroke": {
+        "Call Break (long)": {
+            ls: repeat(3, repeat(2, '                                ') + '        XX XX   ') + '        XX XX           XX XX   X X X X XX XX X ',
+            ms: '@ls',
+            hs: '@ls',
+            re: repeat(3, repeat(2, 'f  hs r f  hs r f  hs r s r s r ') + 'X X X           ') + 'X X X           X X X           X X X X XX XX X ',
+            sn: '@ls',
+            ta: '@ls',
+            ag: '@ls',
+            sh: '@ls'
+        },
+        "Tam Stroke": {
             ls: 'X X X X XX XX X ',
             ms: '@ls',
             hs: '@ls',
@@ -68,5 +78,5 @@ export default {
             sh: '@ls'
         }
     },
-    exampleSong: ["Tune", "Tune", "Break 1", "Tune", "Tune", "Bra Break", "Tune", "Tune", "Tamborim Stroke"]
+    exampleSong: ["Tune", "Tune", "Break 1", "Tune", "Tune", "Call Break", "Tune", "Tune", "Tam Stroke"]
 }

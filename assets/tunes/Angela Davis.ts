@@ -38,6 +38,7 @@ export default {
             sh: '@re'
         },
         'Break 3': {
+            loop: true,
             ls: 'X     XXXX      X X X  X        X     XXXX        X  X  X      XX X X X X X X X ',
             ms: '@ls',
             hs: '@ls',

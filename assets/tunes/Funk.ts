@@ -37,6 +37,7 @@ export default {
             sh: '@ls'
         },
         "Alt Repi": {
+            loop: true,
             re: '  X   X XXXXX X   X   X X XX XX '
         }
     },

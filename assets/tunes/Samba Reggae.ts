@@ -16,8 +16,7 @@ export default {
             ag: 'o a a oo a aa o ',
             sh: '................'
         },
-        'Bra Break': {
-            displayName: "Call Break",
+        'Call Break': {
             ls: '          X X             X X             X X                                                                 X ',
             ms: '          X X             X X             X X                                                                   ',
             hs: '@ms',
@@ -68,15 +67,16 @@ export default {
             sh: '@re'
         },
         'Whistle Break': {
+            loop: true,
             time: 12,
-			ls: "X         X X         X X   X     X X",
-			ms: "@ls",
-			hs: "@ls",
-			re: "      X           X           X           X  ",
-		    sn: "@re",
-			ta: "@re",
-			ag: "      o           o           o           o  ",
-		}
+            ls: "X         X X         X X   X     X X",
+            ms: "@ls",
+            hs: "@ls",
+            re: "      X           X           X           X  ",
+            sn: "@re",
+            ta: "@re",
+            ag: "      o           o           o           o  ",
+        }
     },
-    exampleSong: ["Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Whistle Break", "Whistle Break", "Tune", "Tune", "Tune", "Tune", "Break 3", "Tune", "Tune", "Tune", "Tune", "SOS Break", "Tune", "Tune", "Tune", "Tune", "Bra Break", "Tune", "Tune", "Tune", "Tune"]
+    exampleSong: ["Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Whistle Break", "Whistle Break", "Tune", "Tune", "Tune", "Tune", "Break 3", "Tune", "Tune", "Tune", "Tune", "SOS Break", "Tune", "Tune", "Tune", "Tune", "Call Break", "Tune", "Tune", "Tune", "Tune"]
 }
