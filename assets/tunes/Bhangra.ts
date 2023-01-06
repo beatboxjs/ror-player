@@ -29,17 +29,6 @@ export default {
             ag: '@re',
             sh: '@re'
         },
-        'Break 2': {
-            upbeat: 4,
-            ls: 'XX  X XX  X XX  X       XX    X  XX  X  X       XX  X XX  X XX  X       XX    X  XX  X  XXXX  XXXX  ',
-            ms: '@ls',
-            hs: '@ls',
-            re: '@ls',
-            sn: '@ls',
-            ta: '@ls',
-            ag: '@ls',
-            sh: '@ls'
-        },
         "Break 3": {
             ls: "XXXX  XXXX  ",
             ms: '@ls',
@@ -49,17 +38,6 @@ export default {
             ta: '@ls',
             ag: '@ls',
             sh: '@ls'
-        },
-        "Call Break": {
-            ls: '                                                                        X XX XX XX              ',
-            ms: '@ls',
-            hs: '@ls',
-            re: 'XXXXXXXXXX              XXXXXXXXXX              XXXX        XXXXXXXXXX              XXXXXXX     ',
-            sn: '            XXXXXXXXXX              XXXXXXXXXX        XXXX                          XXXXXXX     ',
-            ta: '@sn',
-            ag: '@sn',
-            sh: '@sn',
-            ot: '                                                                                             A  '
         },
         '7 Break': {
             ls: "XXXXXXX",
@@ -80,6 +58,28 @@ export default {
             ta: "@ls",
             ag: "ooooooo     ooooooo     oooooooooo  ooooooo",
             ot: "                                             A  "
+        },
+        "Call Break": {
+            ls: '                                                                        X XX XX XX              ',
+            ms: '@ls',
+            hs: '@ls',
+            re: 'XXXXXXXXXX              XXXXXXXXXX              XXXX        XXXXXXXXXX              XXXXXXX     ',
+            sn: '            XXXXXXXXXX              XXXXXXXXXX        XXXX                          XXXXXXX     ',
+            ta: '@sn',
+            ag: '@sn',
+            sh: '@sn',
+            ot: '                                                                                             A  '
+        },
+        'Break 2': {
+            upbeat: 4,
+            ls: 'XX  X XX  X XX  X       XX    X  XX  X  X       XX  X XX  X XX  X       XX    X  XX  X  XXXX  XXXX  ',
+            ms: '@ls',
+            hs: '@ls',
+            re: '@ls',
+            sn: '@ls',
+            ta: '@ls',
+            ag: '@ls',
+            sh: '@ls'
         },
         "Karla Break (Bhangra)": {
             ls: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX           ',
@@ -103,5 +103,5 @@ export default {
             sh: '@ls'
         }
     },
-    exampleSong: ["Tune", "Break 1", "Tune", "Break 3", "Tune", "Break 3", "7 Break", "Tune", "Call Break", "Tune", "Butterfly Break"]
+    exampleSong: ["Tune", "Break 1", "Tune", "Break 3", "Tune", "7 Break", "Tune", "Butterfly Break", "Tune", "Call Break", "Tune", "Progressive Karla (Bhangra)", "Tune", "Break 2"]
 }

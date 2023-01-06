@@ -46,7 +46,8 @@ export default {
             ag: 'a a o o aa o oo a a o o aa o oo ',
             sh: '................................'
         },
-        "Call Break (short)": {
+        "Short call": {
+            displayName: 'Call Break (short)',
             loop: true,
             ls: '        XX XX           XX XX           XX XX   X X X X XX XX X ',
             ms: '@ls',
@@ -57,7 +58,8 @@ export default {
             ag: '@ls',
             sh: '@ls'
         },
-        "Call Break (long)": {
+        "Long call": {
+            displayName: 'Call Break (long)',
             ls: repeat(3, repeat(2, '                                ') + '        XX XX   ') + '        XX XX           XX XX   X X X X XX XX X ',
             ms: '@ls',
             hs: '@ls',
@@ -78,5 +80,5 @@ export default {
             sh: '@ls'
         }
     },
-    exampleSong: ["Tune", "Tune", "Break 1", "Tune", "Tune", "Call Break", "Tune", "Tune", "Tam Stroke"]
+    exampleSong: ["Tune", "Tune", "Break 1", "Tune", "Tune", "Long call", "Tune", "Tune", "Tam Stroke","Tune", "Tune", "Break 2","Tune", "Tune", "Break 3",]
 }

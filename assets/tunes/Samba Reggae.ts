@@ -16,16 +16,6 @@ export default {
             ag: 'o a a oo a aa o ',
             sh: '................'
         },
-        'Call Break': {
-            ls: '          X X             X X             X X                                                                 X ',
-            ms: '          X X             X X             X X                                                                   ',
-            hs: '@ms',
-            re: 'f XX XX X       f XX XX X       f XX XX X                                                                       ',
-            sn: '          X X             X X             X X                   X..X..X...X.X...X..X..X...X.X...X..X..X...X.X...',
-            ta: '          X X             X X             X X   X  X  X   X X   X  X  X   X X   X  X  X   X X   X  X  X   X X   ',
-            ag: '@ms',
-            sh: '@ms'
-        },
         'Break 1': {
             ls: '                X X XX XX                       X  X  X X                                  XX                              XX                              XX               XXXX',
             ms: '@ls',
@@ -46,26 +36,6 @@ export default {
             ag: '@ls',
             sh: '@ls'
         },
-        'Break 3': {
-            ls: '                X  XX X XX XX X                 X  XX X XX XX X                 X  XX X X       X  XX X X       X  X  X         ',
-            ms: '@ls',
-            hs: '                X  XX X XX XX X                 X  XX X XX XX X                 X  XX X X       X  XX X X       X  X  X     XXXX',
-            re: '                                X  X  X   X                     X  X  X   X              fX X X          fX X X                 ',
-            sn: 'X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...',
-            ta: '                                X  X  X   X                     X  X  X   X                 X X             X X                 ',
-            ag: '                                X  X  X   X                     X  X  X   X                 a a             a a                 ',
-            sh: '                                X  X  X   X                     X  X  X   X                                                     '
-        },
-        'SOS Break': {
-            ls: 'X       X       X       X       X       X       X       X     X ',
-            ms: 'X       X       X       X       X       X       X       X       ',
-            hs: '@ms',
-            re: '  XX XX   X X     XX XX   X X     XX XX   X X     XX XX   X X   ',
-            sn: '@re',
-            ta: '@re',
-            ag: '@re',
-            sh: '@re'
-        },
         'Whistle Break': {
             loop: true,
             time: 12,
@@ -76,7 +46,37 @@ export default {
             sn: "@re",
             ta: "@re",
             ag: "      o           o           o           o  ",
+        },
+        'Break 3': {
+            ls: '                X  XX X XX XX X                 X  XX X XX XX X                 X  XX X X       X  XX X X       X  X  X         ',
+            ms: '@ls',
+            hs: '                X  XX X XX XX X                 X  XX X XX XX X                 X  XX X X       X  XX X X       X  X  X     XXXX',
+            re: '                                X  X  X   X                     X  X  X   X              fX X X          fX X X                 ',
+            sn: 'X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...X...',
+            ta: '                                X  X  X   X                     X  X  X   X                 X X             X X                 ',
+            ag: '                                X  X  X   X                     X  X  X   X                 a a             a a                 ',
+            sh: '                                X  X  X   X                     X  X  X   X                                                     '
+        },
+        'Call Break': {
+            ls: '          X X             X X             X X                                                                 X ',
+            ms: '          X X             X X             X X                                                                   ',
+            hs: '@ms',
+            re: 'f XX XX X       f XX XX X       f XX XX X                                                                       ',
+            sn: '          X X             X X             X X                   X..X..X...X.X...X..X..X...X.X...X..X..X...X.X...',
+            ta: '          X X             X X             X X   X  X  X   X X   X  X  X   X X   X  X  X   X X   X  X  X   X X   ',
+            ag: '@ms',
+            sh: '@ms'
+        },
+        'SOS Break': {
+            ls: 'X       X       X       X       X       X       X       X     X ',
+            ms: 'X       X       X       X       X       X       X       X       ',
+            hs: '@ms',
+            re: '  XX XX   X X     XX XX   X X     XX XX   X X     XX XX   X X   ',
+            sn: '@re',
+            ta: '@re',
+            ag: '@re',
+            sh: '@re'
         }
     },
-    exampleSong: ["Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Whistle Break", "Whistle Break", "Tune", "Tune", "Tune", "Tune", "Break 3", "Tune", "Tune", "Tune", "Tune", "SOS Break", "Tune", "Tune", "Tune", "Tune", "Call Break", "Tune", "Tune", "Tune", "Tune"]
+    exampleSong: ["Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Whistle Break", "Whistle Break", "Tune", "Tune", "Tune", "Tune", "Break 3", "Tune", "Tune", "Tune", "Tune", "Call Break", "Tune", "Tune", "Tune", "Tune", "SOS Break", "Tune", "Tune", "Tune", "Tune"]
 }
