@@ -1,0 +1,19 @@
+name: Delete preview
+
+on: delete
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - id: "auth"
+        uses: "google-github-actions/auth@v1"
+        with:
+          credentials_json: "${{ secrets.SERVICE_ACCOUNT_KEY }}"
+
+      - name: "Set up Cloud SDK"
+        uses: "google-github-actions/setup-gcloud@v1"
+
+      - name: "Delete preview"
+        run: "gcloud storage rm --recursive gs://player.xrrhythms.uk/preview/${{github.ref_name}}"

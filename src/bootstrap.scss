@@ -90,3 +90,7 @@ h3 {
 .modal-footer button + button {
 	margin-left: 0.25rem;
 }
+
+.b-tooltip { 
+	pointer-events: none;
+}
