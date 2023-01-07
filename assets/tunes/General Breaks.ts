@@ -152,7 +152,7 @@ export default {
         'Little Cat': {
             loop: true,
             upbeat: 2,
-	    re: "X X     X X X X X   X X X X   X   X X X X X   X                    ",
+	    re: "X X     X X X X X   X X X X   X   X X X X X   X                   ",
             ta: "@re",
             ag: "o o     o o o o o   o o o o   o   o o o o o   o",
 	},
@@ -185,7 +185,13 @@ export default {
             ot: '                                                          E D   '
 	},
         'Whistle in': {
+            ot: 'y       y       y   y   y   y   '
+        },
+        'Whistle in (short)': {
             ot: 'y   y   y   y   '
-        }
+        },
+        'Whistle in (long)': {
+            ot: 'y               y               y       y       y   y   y   y   '
+	}
     }
 }

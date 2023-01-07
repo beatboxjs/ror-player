@@ -1,57 +1,57 @@
 export default {
     categories: ["standard", "common", "tricky"],
+    time: 12,
     sheet: undefined,
     description: require("./stolen.md").default,
     video: undefined,
     patterns: {
         Tune: {
             loop: true,
-            ls: "XXXXXXXXX",
-            ms: "  X   X   XX XX",
+            ls: "X  X  X  X  X  X  X  X  X",
+            ms: "      X           X           X  X     X  X     ",
             hs: "@ms",
-            re: "..X...X...X..XX.",
-            sn:"..X...X...X...X.",
-            ta: "X   X   X  XX X",
-            ag: "          oa ao"
+            re: ".  .  X  .  .  .  X  .  .  .  X  .  .  X  X  .",
+            sn: ".  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .",
+            ta: "X           X           X        X  X     X",
+            ag: "                              o  a     a  o"
         },
         "Break 1": {
-            time: 12,
-            ls: "                                          X                                               X                                               X                                               X           X                 X                 X ",
+            ls: "                                          X                                               X                                               X                                               X           X                 X                 X     ",
             ms: "@ls",
             hs: "@ls",
             re: "X X X X X X X X X X X X X   X     X             X X X X X X X X X X X X X   X     X             X X X X X X X X X X X X X   X     X             X X X X X X X X X X X X X   X     X           XXX               XXX               XXX",
             sn: "@ls",
             ta: "@ls",
-            ag: "                                          o                                               o                                               o                                               o           o                 o                 o "
+            ag: "                                          o                                               o                                               o                                               o           o                 o                 o     "
         },
-        "24 Break": {
-            displayName: '2/4 Break',
-            ls: "X   X   X X X X ",
+        "2/4 Break": {
+            ls: "X           X           X     X     X     X     ",
             ms: "@ls",
             hs: "@ls",
             re: "@ls",
             sn: "@ls",
             ta: "@ls",
-            ag: "o   o   o o o o "
+            ag: "o           o           o     o     o     o"
         },
         "4 Hits (Stolen)": {
-            ls: "X X X X ",
+            ls: "X     X     X     X     ",
             ms: "@ls",
             hs: "@ls",
             re: "@ls",
             sn: "@ls",
             ta: "@ls",
-            ag: "o o o o "
+            ag: "o     o     o     o "
         },
         "Progressive Karla (Stolen)": {
-            ls: "X X X X XXXXXXXXXXXXXXXXX       ",
+            ls: "X     X     X     X     X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X                       ",
             ms: "@ls",
             hs: "@ls",
-            re: "X X X X XXXXXXXXffffffffX",
+            re: "X     X     X     X     X  X  X  X  X  X  X  X  f  f  f  f  f  f  f  f  X",
             sn: "@re",
             ta: "@ls",
-            ag: "o o o o ooooooooooooooooo"
+            ag: "o     o     o     o     o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o"
         }
     },
-    exampleSong: ["24 Break", "Tune", "Tune", "4 Hits (Stolen)", "Tune", "Tune", "Break 1", "Tune", "Tune", "Progressive Karla (Stolen)", "Tune", "Tune", "24 Break"]
+    exampleSong: ["2/4 Break", "Tune", "Tune", "4 Hits (Stolen)", "Tune", "Tune", "Break 1",
+                  "Tune", "Tune", "Progressive Karla (Stolen)", "Tune", "Tune", "2/4 Break"]
 }

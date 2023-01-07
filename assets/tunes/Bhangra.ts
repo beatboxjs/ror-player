@@ -60,7 +60,7 @@ export default {
             ot: "                                             A  "
         },
         "Call Break": {
-            ls: '                                                                        X XX XX XX              ',
+            ls: '            XXXXXXXXXX              XXXXXXXXXX        XXXX              X XX XX XX  XXXXXXX     ',
             ms: '@ls',
             hs: '@ls',
             re: 'XXXXXXXXXX              XXXXXXXXXX              XXXX        XXXXXXXXXX              XXXXXXX     ',
@@ -103,5 +103,6 @@ export default {
             sh: '@ls'
         }
     },
-    exampleSong: ["Tune", "Break 1", "Tune", "Break 3", "Tune", "7 Break", "Tune", "Butterfly Break", "Tune", "Call Break", "Tune", "Progressive Karla (Bhangra)", "Tune", "Break 2"]
+    exampleSong: ["Tune", "Tune", "Break 1", "Tune", "Tune", "Break 3", "Tune", "Tune", "7 Break", "Tune", "Tune", "Butterfly Break",
+                  "Tune", "Tune", "Call Break", "Tune", "Tune", "Progressive Karla (Bhangra)", "Tune", "Tune", "Break 2"]
 }
