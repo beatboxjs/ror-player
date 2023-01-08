@@ -16,7 +16,7 @@ import PatternListFilter, { DEFAULT_FILTER, Filter, filterPatternList } from "..
 import { openPromptDialog } from "../utils/prompt";
 import defaultTunes from "../../defaultTunes";
 import PatternPlaceholder, { PatternPlaceholderItem } from "../pattern-placeholder/pattern-placeholder";
-import { clone, id } from "../../utils";
+import { clone, generateId } from "../../utils";
 import events, { MultipleHandlers, registerMultipleHandlers } from "../../services/events";
 import RenamePatternDialog from "./rename-pattern-dialog";
 import PatternEditorDialog from "../pattern-editor-dialog/pattern-editor-dialog";
@@ -71,7 +71,7 @@ export default class PatternList extends Vue {
 				patternName,
 				isCustom: this.isCustomPattern(tuneName, patternName)
 			})),
-			collapseId: `bb-pattern-list-collapse-${id()}`,
+			collapseId: `bb-pattern-list-collapse-${generateId()}`,
 			height: Object.keys(this.state.tunes[tuneName].patterns).length * 50 + 24
 		}));
 	}
@@ -104,14 +104,14 @@ export default class PatternList extends Vue {
 
 		if(newPatternName) {
 			createPattern(this.state, tuneName, newPatternName);
-			this.showPatternEditor = { id: `bb-pattern-editor-dialog-${id()}`, tuneName, patternName: newPatternName };
+			this.showPatternEditor = { id: `bb-pattern-editor-dialog-${generateId()}`, tuneName, patternName: newPatternName };
 			await this.$nextTick();
 			this.$bvModal.show(this.showPatternEditor.id);
 		}
 	}
 
 	async copyPattern(tuneName: string, patternName: string) {
-		this.showRename = { id: `bb-rename-pattern-dialog-${id()}`, tuneName, patternName };
+		this.showRename = { id: `bb-rename-pattern-dialog-${generateId()}`, tuneName, patternName };
 		await this.$nextTick();
 		this.$bvModal.show(this.showRename.id);
 	}
@@ -146,7 +146,7 @@ export default class PatternList extends Vue {
 				this.filter = { text: "", cat: "custom" };
 
 			createPattern(this.state, newTuneName, "Tune", { loop: true });
-			this.showPatternEditor = { id: `bb-pattern-editor-dialog-${id()}`, tuneName: newTuneName, patternName: "Tune" };
+			this.showPatternEditor = { id: `bb-pattern-editor-dialog-${generateId()}`, tuneName: newTuneName, patternName: "Tune" };
 			await this.$nextTick();
 			this.$bvModal.show(this.showPatternEditor.id);
 		}

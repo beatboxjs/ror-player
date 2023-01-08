@@ -1,18 +1,20 @@
-import $ from "jquery";
 import config from "../config";
 
-interface ScrollableElement extends HTMLElement {
-	bbParent: HTMLElement,
-	bbLeft: number,
-	bbScrollingDisabled: boolean
+declare global {
+	interface HTMLElement {
+		_bbScroll?: {
+			parent: HTMLElement;
+			left: number;
+			scrollingDisabled: boolean;
+		}
+	}
 }
 
-export function scrollToElement(element: HTMLElement, scrollFurther: boolean = false, force: boolean = false) {
-	const el = element as ScrollableElement;
-	if(!("bbParent" in element)) {
+export function scrollToElement(element: HTMLElement, scrollFurther: boolean = false, force: boolean = false): void {
+	if(!element._bbScroll) {
 		let left = 0;
-		let curEl: HTMLElement | null = el.offsetParent as HTMLElement;
-		function ov(el: HTMLElement) {
+		let curEl: HTMLElement | null = element.offsetParent as HTMLElement;
+		const ov = (el: HTMLElement) => {
 			const style = getComputedStyle(el);
 			return style.overflowX || style.overflow;
 		}
@@ -24,33 +26,36 @@ export function scrollToElement(element: HTMLElement, scrollFurther: boolean = f
 		if(!curEl)
 			return;
 
-		el.bbParent = curEl;
-		el.bbLeft = left;
-		el.bbScrollingDisabled = false;
-		const scrollTimeout = null;
-		$(el.bbParent).on("scroll", function() {
-			el.bbScrollingDisabled = true;
+		element._bbScroll = {
+			parent: curEl,
+			left,
+			scrollingDisabled: false
+		};
+		element._bbScroll.parent.addEventListener("scroll", () => {
+			element._bbScroll!.scrollingDisabled = true;
 		});
 	}
 
 	if(force)
-		el.bbScrollingDisabled = false;
+		element._bbScroll.scrollingDisabled = false;
 
 	const fac1 = (scrollFurther ? 0.1 : 0);
 	const fac2 = (scrollFurther ? 0.4 : 0);
 
-	const left = el.offsetLeft + el.bbLeft;
-	if(!el.bbScrollingDisabled) {
-		if(left + el.offsetWidth > el.bbParent.scrollLeft + el.bbParent.offsetWidth * (1-fac1))
-			$(el.bbParent).not(":animated").animate({ scrollLeft: left + el.offsetWidth - el.bbParent.offsetWidth * (1-fac2) }, 200);
-		else if(left < el.bbParent.scrollLeft)
-			$(el.bbParent).not(":animated").animate({ scrollLeft: left - el.bbParent.offsetWidth * fac2 }, 200);
-	} else if(left >= el.bbParent.scrollLeft && left + el.offsetWidth <= el.bbParent.scrollLeft + el.bbParent.offsetWidth)
-		el.bbScrollingDisabled = false;
+	const left = element.offsetLeft + element._bbScroll.left;
+	if(!element._bbScroll.scrollingDisabled) {
+		if(left + element.offsetWidth > element._bbScroll.parent.scrollLeft + element._bbScroll.parent.offsetWidth * (1-fac1))
+			element._bbScroll.parent.scroll({ left: left + element.offsetWidth - element._bbScroll.parent.offsetWidth * (1-fac2), behavior: 'smooth' });
+		else if(left < element._bbScroll.parent.scrollLeft)
+			element._bbScroll.parent.scroll({ left: left - element._bbScroll.parent.offsetWidth * fac2, behavior: 'smooth' });
+	} else if(left >= element._bbScroll.parent.scrollLeft && left + element.offsetWidth <= element._bbScroll.parent.scrollLeft + element._bbScroll.parent.offsetWidth)
+		element._bbScroll.scrollingDisabled = false;
 }
 
 export function makeAbsoluteUrl(url: string): string {
-	return $("<a/>").attr("href", url).prop("href");
+	const a = document.createElement('a');
+	a.setAttribute('href', url);
+	return a.getAttribute('href')!;
 }
 
 export function readableDate(tstamp: number, tstampBefore: number = 0, tstampAfter: number = 0): string {
@@ -98,12 +103,7 @@ export function readableDate(tstamp: number, tstampBefore: number = 0, tstampAft
 export function isoDate(tstamp: number): string {
 	const d = new Date(tstamp*1000);
 	const pad = (n: number) => (n<10 ? '0'+n : n);
-	return d.getFullYear()+'-'
-		 + pad(d.getMonth()+1)+'-'
-		 + pad(d.getDate())+'T'
-		 + pad(d.getHours())+':'
-		 + pad(d.getMinutes())+':'
-		 + pad(d.getSeconds());
+	return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
 }
 
 export function getTuneOfTheYear(): string {

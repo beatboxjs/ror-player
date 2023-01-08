@@ -2,7 +2,7 @@
 	<div class="control-panel">
 		<b-button :variant="playerRef.playing ? 'info' : 'success'" @click="playPause()"><fa :icon="playerRef.playing ? 'pause' : 'play'" /><span class="d-none d-sm-inline"> {{playerRef.playing ? 'Pause' : 'Play'}}</span></b-button>
 		<b-button variant="danger" @click="stop()"><fa icon="stop"/><span class="d-none d-sm-inline"> Stop</span></b-button>
-		<PlaybackSettings :playback-settings="state.playbackSettings" tooltip-placement="bottom" />
+		<PlaybackSettings v-model:playback-settings="state.playbackSettings" tooltip-placement="bottom" />
 
 		<div class="divider"></div>
 

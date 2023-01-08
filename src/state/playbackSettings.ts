@@ -1,44 +1,37 @@
-import config, { Instrument } from "../config";
-import { clone, vueSetMultiple } from "../utils";
-import Vue from "vue";
+import config, { instrumentValidator } from "../config";
+import { clone, requiredRecordValidator } from "../utils";
+import * as z from "zod";
 
-export type Headphones = Array<Instrument>;
+export type Headphones = z.infer<typeof headphonesValidator>;
+export const headphonesValidator = z.array(instrumentValidator);
 
-export type Mute = { [instr in Instrument]?: boolean };
+export type Mute = z.infer<typeof muteValidator>;
+export const muteValidator = z.record(instrumentValidator, z.boolean().optional());
 
-export type Whistle = false | 1 | 2; // 1: Whistle on one, 2: whistle on all beats
+export type Whistle = z.infer<typeof whistleValidator>; // 1: Whistle on one, 2: whistle on all beats
+export const whistleValidator = z.union([z.literal(false), z.literal(1), z.literal(2)]);
 
-export type Volumes = { [instr in Instrument]: number };
+export type Volumes = z.infer<typeof volumesValidator>;
+export const volumesValidator = requiredRecordValidator(instrumentValidator.options, z.number());
 
-export type PlaybackSettings = {
-    speed: number,
-    headphones: Headphones,
-    mute: Mute,
-    volume: number,
-    volumes: Volumes,
-    loop: boolean,
-    length?: number, // Cut off after a certain amount of beats
-    whistle: Whistle
-};
+export type PlaybackSettings = z.infer<typeof playbackSettingsValidator>;
+export const playbackSettingsValidator = z.object({
+	speed: z.number().default(config.defaultSpeed),
+	headphones: headphonesValidator.default(() => []),
+	mute: muteValidator.default(() => ({})),
+	volume: z.number().default(1),
+	volumes: volumesValidator.default(() => clone(config.volumePresets[Object.keys(config.volumePresets)[0]])),
+	loop: z.boolean().default(false),
+	length: z.number().optional(), // Cut off after a certain amount of beats
+	whistle: whistleValidator.default(false)
+}).default(() => ({}));
 
-export type PlaybackSettingsOptional = {
-	[i in keyof PlaybackSettings]?: PlaybackSettings[i]
-};
+type PlaybackSettingsOptional = z.input<typeof playbackSettingsValidator>;
 
 export function normalizePlaybackSettings(data?: PlaybackSettingsOptional): PlaybackSettings {
-	return Vue.observable({
-		speed: config.defaultSpeed,
-		headphones: [ ],
-		mute: { },
-		volume: 1,
-		volumes: clone(config.volumePresets[Object.keys(config.volumePresets)[0]]),
-		loop: false,
-		length: undefined, // Cut off after a certain amount of beats
-		whistle: false, // 1: Whistle on one, 2: whistle on all beats
-		...clone(data || { })
-	});
+	return playbackSettingsValidator.parse(data);
 }
 
-export function updatePlaybackSettings(playbackSettings: PlaybackSettings, update: PlaybackSettingsOptional) {
-	vueSetMultiple(playbackSettings, update);
+export function updatePlaybackSettings(playbackSettings: PlaybackSettings, update: PlaybackSettingsOptional): void {
+	Object.assign(playbackSettings, update);
 }

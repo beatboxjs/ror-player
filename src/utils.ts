@@ -1,23 +1,11 @@
 import { inflateRaw, deflateRaw } from "pako";
-import { Instrument } from "./config";
-import Vue from "vue";
 import { decode } from "base64-arraybuffer";
-
-export type TypedObject<Type> = {
-    [key: string]: Type
-};
-
-export type TypedNumberObject<Type> = {
-    [key: number]: Type
-};
-
-export type TypedInstrumentObject<Type> = {
-    [instr in Instrument]: Type
-};
+import * as z from "zod";
+import { AllowedComponentProps, ComponentPublicInstance, VNodeProps } from "vue";
 
 export const NUMBER_TO_STRING_CHARS = " !#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~";
 
-export function getMaxIndex(arr: TypedNumberObject<any>): number | null {
+export function getMaxIndex(arr: Record<number, any>): number | null {
     const keys = Object.keys(arr);
     let ret: number | null = null;
     for(let i=0; i<keys.length; i++) {
@@ -34,7 +22,7 @@ export function getMaxIndex(arr: TypedNumberObject<any>): number | null {
  * @param length {number?} The number of bytes to use to represent the number (optional).
  * @returns {string} The number encoded as a string.
  */
-export function numberToString(number: number, length?: number) {
+export function numberToString(number: number, length?: number): string {
     if(number < 0 || isNaN(number) || !isFinite(number))
         throw new Error("Invalid number "+number);
 
@@ -98,13 +86,8 @@ export function clone<T>(obj: T): T {
 }
 
 let idCounter = 0;
-export function id() {
+export function generateId(): number {
     return idCounter++;
-}
-
-export function vueSetMultiple(target: object, update: object) {
-    for(const i of Object.keys(update))
-        Vue.set(target, i, (update as any)[i]);
 }
 
 export async function sleep(millis: number = 0): Promise<void> {
@@ -112,3 +95,48 @@ export async function sleep(millis: number = 0): Promise<void> {
         setTimeout(resolve, millis);
     });
 }
+
+/**
+ * Transform the result of a zod scheme to another type and validates that type against another zod scheme.
+ * The result of this function basically equals inputSchema.transform((val) => outputSchema.parse(transformer(val))),
+ * but errors thrown during the transformation are handled gracefully (since at the moment, zod transformers
+ * do not natively support exceptions).
+ */
+export function transformValidator<Output, Input1, Input2, Input3>(inputSchema: z.ZodType<Input2, any, Input1>, transformer: (input: Input2) => Input3, outputSchema: z.ZodType<Output, any, Input3>): z.ZodEffects<z.ZodEffects<z.ZodType<Input2, any, Input1>, Input2>, Output> {
+    // For now we have to parse the schema twice, since transform() is not allowed to throw exceptions.
+    // See https://github.com/colinhacks/zod/pull/420
+    return inputSchema.superRefine((val, ctx) => {
+        try {
+            const result = outputSchema.safeParse(transformer(val));
+            if (!result.success) {
+                for (const issue of result.error.errors) {
+                    ctx.addIssue(issue);
+                }
+            }
+        } catch (err: any) {
+            ctx.addIssue({
+                code: z.ZodIssueCode.custom,
+                message: err.message,
+            });
+        }
+    }).transform((val) => outputSchema.parse(transformer(val)));
+}
+
+/**
+ * Returns a validator representing a Record<number, any>, picking only number keys from an object. zod does not support these
+ * out of the box, since a record key is always a string and thus cannot be validated with z.number().
+ */
+export function numberRecordValidator<Value extends z.ZodTypeAny>(valueType: Value): z.ZodRecord<z.ZodType<number, any, number>, Value> {
+    return transformValidator(z.record(z.any()), (value) => Object.fromEntries(Object.entries(value).filter(([key]) => !isNaN(Number(key)))), z.record(valueType)) as any;
+}
+
+/**
+ * Returns a validator representing a record with a fixed set of keys, with all keys being required. Zod only supports enums with optional
+ * values.
+ * Invalid keys are removed from the parsed object, missing keys and invalid values raise errors.
+ */
+export function requiredRecordValidator<T extends [string, ...string[]], Value extends z.ZodTypeAny>(keys: T, valueType: Value): z.ZodObject<Record<T[number], Value>> {
+    return z.object(Object.fromEntries(keys.map((key) => [key, valueType])) as Record<T[number], Value>);
+}
+
+export type ComponentProps<Component extends new (...args: any) => ComponentPublicInstance<any, any, any, any, any, any, any, any, any, any, any>> = Omit<InstanceType<Component>["$props"], keyof VNodeProps | keyof AllowedComponentProps>;

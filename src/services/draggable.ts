@@ -1,4 +1,4 @@
-import { PatternReference } from "../state/state";
+import { PatternReference } from "../state/song";
 import { Instrument } from "../config";
 
 export enum DragType {
@@ -23,7 +23,7 @@ export interface PatternResizeDragData {
 
 type DragData = PatternDragData | PatternResizeDragData;
 
-export function setDragData(event: DragEvent, data: DragData) {
+export function setDragData(event: DragEvent, data: DragData): void {
 	(event.dataTransfer as DataTransfer).setData("application/json", JSON.stringify({ bbData: data }));
 }
 

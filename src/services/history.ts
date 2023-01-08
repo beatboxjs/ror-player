@@ -1,23 +1,9 @@
-import {
-	compressState,
-	createSong,
-	extendState,
-	extendStateFromCompressed,
-	normalizeState,
-	State
-} from "../state/state";
+import { compressState, createSong, extendState, extendStateFromCompressed, normalizeState, State } from "../state/state";
 import { clone, objectToString, stringToObject } from "../utils";
-import { isEqual } from "lodash";
-import events, { registerMultipleHandlers } from "./events";
-import Component from "vue-class-component";
-import Vue from "vue";
-import { ProvideReactive, Watch } from "vue-property-decorator";
-import {
-	getLocalStorageItem,
-	getLocalStorageKeys,
-	getLocalStorageNumberItem,
-	removeLocalStorageItem, setLocalStorageItem, setLocalStorageItems
-} from "./localStorage";
+import { isEqual } from "lodash-es";
+import { defineComponent, h, inject, InjectionKey, provide, reactive, Ref, ref, watch } from "vue";
+import { getLocalStorageItem, getLocalStorageKeys, getLocalStorageNumberItem, removeLocalStorageItem, setLocalStorageItem, setLocalStorageItems } from "./localStorage";
+import { useEventBus } from "./events";
 
 class History {
 
@@ -25,7 +11,7 @@ class History {
 
 	_data: {
 		currentKey: number | null
-	} = Vue.observable({
+	} = reactive({
 		currentKey: null
 	});
 
@@ -37,7 +23,7 @@ class History {
 
 		this.saveCurrentState();
 
-		events.$emit("history-load-encoded-string");
+		useEventBus("history-load-encoded-string").emit();
 
 		return errs;
 	}
@@ -78,9 +64,10 @@ class History {
 				createSong(state);
 			}
 			this.state = state;
-			events.$emit("new-state", state);
+			useEventBus("new-state").emit(state);
 			return errors;
 		} catch(e: any) {
+			// eslint-disable-next-line no-console
 			console.error("Error decoding state", e.stack || e);
 			return [e.message || e];
 		}
@@ -163,32 +150,34 @@ if(legacyTunes) {
 
 export default history;
 
-@Component({
-	render: function(createElement) {
-		return createElement("div", { "class": "bb-state-provider" }, this.$slots.default);
-	}
-})
-export class StateProvider extends Vue {
+export const stateInject = Symbol() as InjectionKey<Ref<State>>;
 
-	@ProvideReactive() state = history.state;
-
-	_unregisterHandlers!: () => void;
-
-	@Watch("state", { deep: true })
-	handleStateChange() {
-		history.saveCurrentState();
-	}
-
-	created() {
-		this._unregisterHandlers = registerMultipleHandlers({
-			"new-state"(state) {
-				this.state = state;
-			}
-		}, this);
-	}
-
-	beforeDestroy() {
-		this._unregisterHandlers();
-	}
-
+export function injectStateOptional(): Ref<State> | undefined {
+	return inject(stateInject);
 }
+
+export function injectStateRequired(): Ref<State> {
+	const state = injectStateOptional();
+	if (!state) {
+		throw new Error("No state injected.");
+	}
+	return state;
+}
+
+export const StateProvider = defineComponent({
+	setup(props, context) {
+		const state = ref(history.state);
+
+		provide(stateInject, state);
+
+		watch(state, () => {
+			history.saveCurrentState();
+		}, { deep: true });
+
+		useEventBus("new-state").on((newState) => {
+			state.value = newState;
+		});
+
+		return h("div", { "class": "bb-state-provider" }, context.slots.default);
+	}
+});

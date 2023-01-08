@@ -16,7 +16,7 @@ type DiffSegment = {
  *          Bytes a+1 to a+1+b: The pattern (a string of strokes). b is the length of the segment as defined in bytes a to a+1.
  *
  */
-export function getDiffString(pattern1: string, pattern2: string): String {
+export function getDiffString(pattern1: string, pattern2: string): string {
     const segments = getDiffSegments(pattern1, pattern2);
     const numberChars = getNumberChars(pattern2.length);
     let ret = "";

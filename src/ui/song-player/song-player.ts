@@ -24,7 +24,7 @@ import {
 	updateSong
 } from "../../state/song";
 import isEqual from "lodash.isequal";
-import { clone, id } from "../../utils";
+import { clone, generateId } from "../../utils";
 import { DragType, getDragData, PatternResizeDragData, setDragData } from "../../services/draggable";
 import { openPromptDialog } from "../utils/prompt";
 import PlaybackSettingsComponent from "../playback-settings/playback-settings";
@@ -54,8 +54,8 @@ export default class SongPlayer extends Vue {
 
 	@InjectReactive() readonly state!: State;
 
-	shareDialogId = `bb-share-dialog-${id()}`;
-	importDialogId = `bb-import-dialog-${id()}`;
+	shareDialogId = `bb-share-dialog-${generateId()}`;
+	importDialogId = `bb-import-dialog-${generateId()}`;
 	playerRef: BeatboxReference = createBeatbox(false);
 	dragging: boolean = false;
 	resizing: PatternResizeDragData | null = null;

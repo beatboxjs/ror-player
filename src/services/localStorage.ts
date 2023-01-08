@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import { reactive } from 'vue';
 
 interface LocalStorageOperation {
 	<T>(callback: () => T, fallbackValue: T): T,
@@ -9,17 +9,18 @@ const localStorageOperation: LocalStorageOperation = <T>(callback: () => T, fall
 	try {
 		return callback();
 	} catch (e: any) {
+		// eslint-disable-next-line no-console
 		console.error(e.stack || e);
 		return fallbackValue;
 	}
 };
 
 const data: {
-	keys: string[], // We need to wrap this in an object, as arrays are not directly observable, see https://github.com/vuejs/vue/issues/9499
+	keys: string[];
 	store: {
-		[key: string]: string
-	}
-} = Vue.observable({ keys: [ ], store: { } });
+		[key: string]: string | null;
+	};
+} = reactive({ keys: [ ], store: { } });
 
 function updateStore() {
 	localStorageOperation(() => {
@@ -27,7 +28,7 @@ function updateStore() {
 		data.keys.push(...Object.keys(localStorage));
 
 		for(const key of Object.keys(data.store)) {
-			Vue.set(data.store, key, localStorage.getItem(key) as string);
+			data.store[key] = localStorage.getItem(key)!;
 		}
 	});
 }
@@ -37,7 +38,7 @@ window.addEventListener("storage", updateStore);
 
 export function getLocalStorageItem(key: string): string | null {
 	if(!(key in data.store)) {
-		Vue.set(data.store, key, localStorageOperation(() => localStorage.getItem(key)));
+		data.store[key] = localStorageOperation(() => localStorage.getItem(key), null);
 	}
 
 	return data.store[key];
@@ -55,7 +56,7 @@ export function getLocalStorageKeys(): string[] {
 export function setLocalStorageItem(key: string, value: string | number): void {
 	localStorageOperation(() => {
 		localStorage.setItem(key, `${value}`);
-		Vue.set(data.store, key, `${value}`);
+		data.store[key] = `${value}`;
 	});
 	updateStore();
 }
@@ -64,7 +65,7 @@ export function setLocalStorageItems(items: { [key: string]: string | number }):
 	localStorageOperation(() => {
 		for (const key in items) {
 			localStorage.setItem(key, `${items[key]}`);
-			Vue.set(data.store, key, `${items[key]}`);
+			data.store[key] = `${items[key]}`;
 		}
 	});
 	updateStore();
@@ -73,7 +74,7 @@ export function setLocalStorageItems(items: { [key: string]: string | number }):
 export function removeLocalStorageItem(key: string): void {
 	localStorageOperation(() => {
 		localStorage.removeItem(key);
-		Vue.delete(data.store, key);
+		delete data.store[key];
 	});
 	updateStore();
 }

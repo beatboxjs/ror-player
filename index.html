@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>RoR Player</title>
 		<meta name="description" content="A pattern-based drumming machine.">
-		<link rel="icon" href="./assets/img/favicon.svg">
+		<link rel="icon" href="./favicon.svg">
 		<link rel="mask-icon" href="./favicon.svg" color="#d479c6">
 		<link rel="apple-touch-icon" href="./app-180.png">
 		<link rel="manifest" href="./manifest.json">
@@ -36,11 +36,13 @@
 				to { transform: rotate(360deg); }
 			}
 		</style>
+		<script type="module" src="./src/app.ts"></script>
 	</head>
 	<body>
 		<div id="loading">
 			Loading...
 			<div id="spinner"></div>
 		</div>
+		<div id="app"></div>
 	</body>
 </html>

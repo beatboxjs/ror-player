@@ -1,11 +1,12 @@
-import events from "./events";
+import { useEventBus } from "./events";
 
 const enable = !process.env.DISABLE_SW || process.env.DISABLE_SW === "false";
 
-export function registerServiceWorker() {
+export function registerServiceWorker(): void {
 	if("serviceWorker" in navigator) {
 		if(enable) {
 			navigator.serviceWorker.register("./sw.js").catch((err) => {
+				// eslint-disable-next-line no-console
 				console.error("Error registering service worker", err.stack || err);
 			});
 
@@ -18,12 +19,13 @@ export function registerServiceWorker() {
 			});
 		}
 	} else {
+		// eslint-disable-next-line no-console
 		console.warn("Service worker not supported by browser");
 	}
 }
 
 function receiveMessage(event: MessageEvent) {
 	if(event.data === "bb-refresh") {
-		events.$emit("update-available");
+		useEventBus("update-available").emit();
 	}
 }

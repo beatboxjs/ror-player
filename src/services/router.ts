@@ -1,6 +1,3 @@
-import $ from "jquery";
-import config from "../config";
-import events from "./events";
 import history from "./history";
 import { getPatternFromState } from "../state/state";
 import Vue from "vue";
@@ -8,6 +5,7 @@ import { BvModalEvent } from "bootstrap-vue";
 import PatternEditorDialog from "../ui/pattern-editor-dialog/pattern-editor-dialog";
 import { match, compile, MatchFunction, PathFunction } from "path-to-regexp";
 import { getTuneOfTheYear } from "./utils";
+import { useEventBus } from "./events";
 
 const ROUTES: { [key: string]: string } = {
 	"listen-tune": "/listen/:tuneName/",
@@ -34,7 +32,7 @@ const ROUTES_COMPILE: { [key: string]: PathFunction } = {
 
 type Params = { [key: string]: string };
 
-export function enableRouter(app: Vue) {
+export function enableRouter(app: Vue): void {
 	const HANDLERS: { [key: string]: (params: Params) => unknown } = {
 		"": () => {
 			navigate("listen-tune", { tuneName: getTuneOfTheYear() });
@@ -46,16 +44,16 @@ export function enableRouter(app: Vue) {
 		"listen-tune": async (params) => {
 			await ignoreSetState(closeAllDialogs);
 
-			events.$emit("listen", params.tuneName);
+			useEventBus("listen").emit(params.tuneName);
 		},
 
 		"listen-pattern": async (params) => {
 			await ignoreSetState(() => {
-				events.$emit("listen", params.tuneName);
+				useEventBus("listen").emit(params.tuneName);
 				closeAllDialogs();
 			});
 
-			events.$emit("edit-pattern", { pattern: [ params.tuneName, params.patternName ], readonly: true });
+			useEventBus("edit-pattern").emit({ pattern: [ params.tuneName, params.patternName ], readonly: true });
 		},
 
 
@@ -64,7 +62,7 @@ export function enableRouter(app: Vue) {
 		"compose": async (params) => {
 			await ignoreSetState(closeAllDialogs);
 
-			events.$emit("compose");
+			useEventBus("compose").emit();
 		},
 
 		"compose-tune": async (params) => {
@@ -73,10 +71,10 @@ export function enableRouter(app: Vue) {
 
 			await ignoreSetState(() => {
 				closeAllDialogs();
-				events.$emit("compose");
+				useEventBus("compose").emit();
 			});
 
-			events.$emit("pattern-list-open-tune", params.tuneName);
+			useEventBus("pattern-list-open-tune").emit(params.tuneName);
 		},
 
 		"compose-pattern": async (params) => {
@@ -84,14 +82,14 @@ export function enableRouter(app: Vue) {
 				return navigate("compose");
 
 			await ignoreSetState(async () => {
-				events.$emit("compose");
+				useEventBus("compose").emit();
 				await Vue.nextTick();
-				events.$emit("pattern-list-open-tune", params.tuneName);
+				useEventBus("pattern-list-open-tune").emit(params.tuneName);
 
 				closeAllDialogs();
 			});
 
-			events.$emit("edit-pattern", { pattern: [ params.tuneName, params.patternName ], readonly: false });
+			useEventBus("edit-pattern").emit({ pattern: [ params.tuneName, params.patternName ], readonly: false });
 		},
 
 		"compose-importAndTune": async (params) => {

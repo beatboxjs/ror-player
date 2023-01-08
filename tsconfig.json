@@ -5,8 +5,11 @@
 		"strict": true,
 		"sourceMap": true,
 		"moduleResolution": "node",
-		"experimentalDecorators": true,
-		"module": "esnext"
+		"module": "esnext",
+		"isolatedModules": true
 	},
-	"include": ["src/**/*.ts"]
+	"include": ["src/**/*.ts", "src/**/*.vue"],
+	"vueCompilerOptions": {
+		"strictTemplates": true
+	}
 }

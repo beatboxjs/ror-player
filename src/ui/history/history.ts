@@ -3,10 +3,10 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import WithRender from "./history.vue";
 import events, { MultipleHandlers, registerMultipleHandlers } from "../../services/events";
-import history from "../../services/history";
+import history from "../../services/history.ts";
 import { isoDate, readableDate } from "../../services/utils";
 import $ from "jquery";
-import { id } from "../../utils";
+import { generateId } from "../../utils";
 
 const globalData = Vue.observable({
 	// Store this globally because History might not be rendered when link is opened
@@ -25,7 +25,7 @@ events.$on("history-load-encoded-string", () => {
 @Component({})
 export default class History extends Vue {
 
-	popoverId = `bb-history-popover-${id()}`;
+	popoverId = `bb-history-popover-${generateId()}`;
 
 	get showPopover() {
 		return globalData.showPopover;

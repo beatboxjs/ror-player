@@ -1,59 +1,66 @@
-import config, { Instrument, Stroke } from "../config";
-import isEqual from "lodash.isequal";
-import { clone, vueSetMultiple } from "../utils";
+import config, { Instrument, instrumentValidator, strokeValidator } from "../config";
+import { isEqual } from "lodash-es";
+import { clone, numberRecordValidator, requiredRecordValidator, transformValidator } from "../utils";
 import { applyDiffString, getDiffString } from "./patternDiff";
-import Vue from "vue";
+import * as z from "zod";
 
-export type Beats = { [instr in Instrument]: Array<Stroke> };
+/** The notes of a pattern: a set of strokes that each instrument plays in a certain order. It is wise to use a sparse array for the strokes. */
+export type Beats = z.infer<typeof beatsValidator>;
+export const beatsValidator = requiredRecordValidator(instrumentValidator.options, z.array(strokeValidator).default(() => []));
 
-type BeatsOptional = { [instr in Instrument]?: Array<Stroke> };
+/** The notes of a pattern, compressed using compressPattern(). */
+const beatsStringValidator = z.record(instrumentValidator, z.string().optional());
 
-type BeatsStringOptional = { [instr in Instrument]?: string }
+/**
+ * A (hacky) way to specify a separate volume for each stroke in a pattern (for example to achieve crescendo), for all instruments at once.
+ * A record where the key is the index in the stroke array and the value is the volume between 0 and 1.
+ * Setting the volume for a particular stroke will also affect the following strokes within the same pattern (until a new volume is defined).
+ */
+export type AllVolumeHack = z.infer<typeof allVolumeHackValidator>;
+export const allVolumeHackValidator = numberRecordValidator(z.number());
 
-export type LegacyVolumeHack = Record<number, number>;
+/**
+ * A (hacky) way to specify a separate volume for each stroke in a pattern (for example to achieve crescendo) for each instrument.
+ * Maps instrument keys to a record where the key is the index in the stroke array and the value is the volume between 0 and 1.
+ * Setting the volume for a particular stroke will also affect the following strokes within the same pattern (until a new volume is defined).
+ * For legacy reasons, also supports AllVolumeHack as an input type and automatically converts it.
+ */
+export type InstrumentVolumeHack = z.infer<typeof instrumentVolumeHackValidator>;
+const strictInstrumentVolumeHackValidator = z.record(instrumentValidator, allVolumeHackValidator);
+export const instrumentVolumeHackValidator = transformValidator(allVolumeHackValidator.or(strictInstrumentVolumeHackValidator), (val) => {
+	if (Object.keys(val).every((key) => key.match(/^[0-9]+$/))) {
+		// Legacy volume hack: one volume per stroke (not differentiated by instruments)
+		return Object.fromEntries(config.instrumentKeys.map((instr) => [instr, clone(val)]));
+	} else {
+		return val;
+	}
+}, strictInstrumentVolumeHackValidator);
 
-export type VolumeHack = Partial<Record<Instrument, LegacyVolumeHack>>;
+type PatternProperties = z.infer<typeof patternPropertiesValidator>;
+const patternPropertiesValidator = z.object({
+	length: z.number().default(4),
+	time: z.number().default(4),
+	speed: z.number().default(() => config.defaultSpeed),
+	upbeat: z.number().default(0),
+	loop: z.boolean().default(false),
+	displayName: z.string().optional(),
+	volumeHack: instrumentVolumeHackValidator.optional()
+});
 
-type PatternProperties = {
-	length: number,
-	time: number,
-	speed: number,
-	upbeat: number,
-	loop: boolean,
-	displayName?: string,
-	volumeHack?: VolumeHack
-}
+/**
+ * A pattern is a collection of strokes that each instruments plays in a certain order.
+ */
+export type Pattern = z.infer<typeof patternValidator>;
+export const patternValidator = patternPropertiesValidator.and(beatsValidator).default(() => ({}));
 
-type PatternPropertiesOptional = Omit<Partial<PatternProperties>, "volumeHack"> & {
-	volumeHack?: LegacyVolumeHack | VolumeHack
-};
+export type PatternOptional = z.input<typeof patternValidator>;
 
-export type Pattern = PatternProperties & Beats;
-
-export type PatternOptional = PatternPropertiesOptional & BeatsOptional;
-
-export type CompressedPattern = PatternPropertiesOptional & BeatsStringOptional;
+export type CompressedPattern = z.infer<typeof compressedPatternValidator>;
+export const compressedPatternValidator = patternPropertiesValidator.partial().and(beatsStringValidator);
 
 
 export function normalizePattern(data?: PatternOptional): Pattern {
-	const ret = {
-		length: data && data.length || 4,
-		time: data && data.time || 4,
-		speed: data && data.speed || config.defaultSpeed,
-		upbeat: data && data.upbeat || 0,
-		loop: data && data.loop || false,
-		displayName: data && data.displayName
-	} as Pattern;
-
-	if(data && data.volumeHack)
-		ret.volumeHack = normalizeVolumeHack(data.volumeHack);
-
-	for(const instr of config.instrumentKeys) {
-		const line = data && data[instr];
-		ret[instr] = line ? clone(line) : [ ];
-	}
-
-	return Vue.observable(ret);
+	return patternValidator.parse(data);
 }
 
 
@@ -132,14 +139,23 @@ export function compressPattern(pattern: Pattern, originalPattern?: Pattern, enc
 	return ret;
 }
 
+/**
+ * Represents a single beat of a pattern, as returned by splitPattern().
+ */
 export type PatternSlice = Array<string> & {
-	time: number,
-	upbeat: number
+	/** The time signature of the pattern. */
+	time: number;
+	/** For a pattern containing an upbeat, the first beat will include the upbeat with this property containing the number of upbeat strokes. */
+	upbeat: number;
 };
 
+/**
+ * Splits the given pattern into individual beats. If the pattern has an upbeat, the upbeat will be included in the first beat
+ * (with the upbeat property containing the number of strokes of the upbeat).
+ */
 export function splitPattern(pattern: Pattern, instrument: Instrument): Array<PatternSlice> {
 	const ret: Array<PatternSlice> = [ ];
-	let remaining = clone(pattern[instrument]);
+	let remaining = [...pattern[instrument]];
 
 	if(remaining.length > 0) {
 		ret.push(Object.assign(remaining.slice(0, 4*pattern.time + pattern.upbeat), {
@@ -151,8 +167,8 @@ export function splitPattern(pattern: Pattern, instrument: Instrument): Array<Pa
 
 	while(remaining.length > 0) {
 		ret.push(Object.assign(remaining.slice(0, 4*pattern.time), {
-		    time: pattern.time,
-		    upbeat: 0
+			time: pattern.time,
+			upbeat: 0
         }));
 		remaining = remaining.slice(4*pattern.time);
 	}
@@ -179,8 +195,8 @@ export function patternEquals(pattern: Pattern, pattern2: Pattern): boolean {
 }
 
 /**
- * Uncompresses a pattern object created by `bbPattern.compress()`.
- * @param encodedPatternObject A compressed pattern object as returned by `bbPattern.compress()`
+ * Uncompresses a pattern object created by `compressPattern()`.
+ * @param encodedPatternObject A compressed pattern object as returned by `compressPattern()`
  * @param originalPattern The original pattern object, if it exists
  * @returns A pattern object with an array of strokes for each instrument and a length and time property
  */
@@ -198,7 +214,7 @@ export function patternFromCompressed(encodedPatternObject: CompressedPattern, o
 	else if(!originalPattern || !ret.upbeat)
 		ret.upbeat = 0;
 	if(encodedPatternObject.volumeHack != null)
-		ret.volumeHack = normalizeVolumeHack(encodedPatternObject.volumeHack);
+		ret.volumeHack = encodedPatternObject.volumeHack;
 
 	if(ret.length == null)
 		throw new Error("No pattern length provided.");
@@ -221,10 +237,11 @@ export function patternFromCompressed(encodedPatternObject: CompressedPattern, o
 					encoded = applyDiffString(pattern2str(originalPattern[instr], originalPattern.length*originalPattern.time), encoded.substr(1), ret.length*ret.time + ret.upbeat);
 					break;
 
-				case '@':
+				case '@': {
 					const toInstr = encoded.substr(1, 2) as Instrument;
 					encoded = applyDiffString(pattern2str(ret[toInstr] || [ ], ret.length*ret.time), encoded.substr(3), ret.length*ret.time + ret.upbeat);
 					break;
+				}
 			}
 
 			ret[instr] = str2pattern(encoded);
@@ -235,6 +252,9 @@ export function patternFromCompressed(encodedPatternObject: CompressedPattern, o
 	return normalizePattern(ret);
 }
 
+/**
+ * Returns a string representation of the given strokes, with one letter per stroke.
+ */
 function pattern2str(pattern: Array<string>, length: number) {
 	// Note: Cannot use pattern.map or pattern.forEach, as it skips undefined values
 
@@ -245,20 +265,29 @@ function pattern2str(pattern: Array<string>, length: number) {
 	return ret;
 }
 
+/**
+ * Converts the string representation of the given strokes (as returned by pattern2str) back to an array of strokes.
+ */
 function str2pattern(string: string): Array<string> {
 	return string.split("");
 }
 
-export function updateStroke(pattern: Pattern, instrument: Instrument, i: number, stroke: string) {
+/**
+ * Sets the stroke at the given position in the given pattern object.
+ */
+export function updateStroke(pattern: Pattern, instrument: Instrument, i: number, stroke: string): void {
 	if(!pattern[instrument])
-		Vue.set(pattern, instrument, []);
-	Vue.set(pattern[instrument], i, stroke);
+		pattern[instrument] = [];
+	pattern[instrument][i] = stroke;
 }
 
-export function updatePattern(pattern: Pattern, update: PatternOptional) {
-	const shift = (update.upbeat || 0) - pattern.upbeat;
+/**
+ * Sets some properties on the given pattern. If the upbeat changes, the strokes are shifted to stay in position.
+ */
+export function updatePattern(pattern: Pattern, update: Partial<PatternProperties>): void {
+	const shift = (update?.upbeat || 0) - pattern.upbeat;
 
-	vueSetMultiple(pattern, update);
+	Object.assign(pattern, update);
 
 	if(shift != 0) {
 		const unshift = [];
@@ -271,20 +300,4 @@ export function updatePattern(pattern: Pattern, update: PatternOptional) {
 			pattern[instr].splice(0, splice);
 		}
 	}
-}
-
-function isLegacyVolumeHack(volumeHack: LegacyVolumeHack | VolumeHack): volumeHack is LegacyVolumeHack {
-	return Object.keys(volumeHack).every((key) => key.match(/^[0-9]+$/));
-}
-
-function normalizeVolumeHack(volumeHack: LegacyVolumeHack | VolumeHack): VolumeHack {
-	if (!isLegacyVolumeHack(volumeHack)) {
-		return volumeHack;
-	}
-
-	const result = { } as VolumeHack;
-	for (const instr of config.instrumentKeys) {
-		result[instr] = clone(volumeHack);
-	}
-	return result;
 }
