@@ -20,7 +20,7 @@ type Event1 = {
 		readonly: boolean,
 		handled?: boolean
 	},
-	"overview-edit-pattern": {
+	"edit-pattern-command": {
 		pattern: PatternReference,
 		readonly: boolean,
 		handled?: boolean

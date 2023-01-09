@@ -3,7 +3,6 @@ import { stopAllPlayers } from "../../services/player";
 import Vue from "vue";
 import Component from "vue-class-component";
 import WithRender from "./overview.vue";
-import { Watch } from "vue-property-decorator";
 import Compose from "../compose/compose";
 import Listen from "../listen/listen";
 import events, { MultipleHandlers, registerMultipleHandlers } from "../../services/events";
@@ -69,7 +68,7 @@ export default class Overview extends Vue {
 
 	edit() { 
 		stopAllPlayers();
-		events.$emit("overview-edit-pattern", { pattern: [this.editorTab!.content.tuneName, this.editorTab!.content.patternName ], readonly: this.editorTab!.content.readonly })
+		events.$emit("edit-pattern-command", { pattern: [this.editorTab!.content.tuneName, this.editorTab!.content.patternName ], readonly: this.editorTab!.content.readonly })
 	}	
 
 	togglePatternList() {

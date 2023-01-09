@@ -219,7 +219,7 @@ export function enableRouter(app: Vue) {
 			resolve();
 	}, false);
 
-	events.$on("overview-edit-pattern", function(data) {
+	events.$on("edit-pattern-command", function(data) {
 	    setState(data.readonly ? "listen-pattern" : "compose-pattern", { tuneName: data.pattern[0], patternName: data.pattern[1] });
 	})
 

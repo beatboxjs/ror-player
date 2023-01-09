@@ -104,7 +104,7 @@ export default class PatternList extends Vue {
 
 		if(newPatternName) {
 			createPattern(this.state, tuneName, newPatternName);
-			events.$emit("overview-edit-pattern", { pattern: [ tuneName, newPatternName ], readonly: false })
+			events.$emit("edit-pattern-command", { pattern: [ tuneName, newPatternName ], readonly: false })
 		}
 	}
 

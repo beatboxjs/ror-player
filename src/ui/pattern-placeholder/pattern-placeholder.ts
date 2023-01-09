@@ -108,7 +108,7 @@ export default class PatternPlaceholder extends Vue {
 	}
 
 	async editPattern() {
-		events.$emit("edit-pattern", { pattern:[this.tuneName,  this.patternName], readonly: this.readonly });
+		events.$emit("edit-pattern-command", { pattern:[this.tuneName,  this.patternName], readonly: this.readonly });
 	}
 
 	createPlayer() {
