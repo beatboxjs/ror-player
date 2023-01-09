@@ -1,4 +1,4 @@
-On some devices (such as smartphones and tablets), it is possible to install RoR Player as an app. The required steps depend on your browser.
+On some devices (such as smartphones and tablets), it is possible to install XR Rhythms Player as an app. The required steps depend on your browser.
 
 ### Chrome
 

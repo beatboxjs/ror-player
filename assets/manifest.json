@@ -1,6 +1,6 @@
 {
-    "name": "RoR Player",
-    "short_name": "RoR Player",
+    "name": "XR Player",
+    "short_name": "XR Player",
     "icons": [{
         "src": "./app-512.png",
         "sizes": "512x512",
