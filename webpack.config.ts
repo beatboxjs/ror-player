@@ -36,7 +36,7 @@ export default (env: any, argv: any): Configuration => {
 				{ test: /\.css$/, use: [ "style-loader", "css-loader" ] },
 				{ test: /\.scss$/, use: [ "style-loader", "css-loader", "sass-loader" ]},
 				{ test: /\.ts$/, loader: "ts-loader" },
-				{ test: /\.(png|jpe?g|gif|woff2)$/, type: "asset/resource" },
+				{ test: /\.(png|jpe?g|gif|woff2|pdf)$/, type: "asset/resource" },
 				{
 					test: /\.(svg)$/,
 					type: 'asset/inline',

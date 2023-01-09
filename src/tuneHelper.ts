@@ -27,5 +27,3 @@ export function decrescendo(length: number): LegacyVolumeHack {
 		r[i] = 1 - b * i;
 	return r;
 }
-
-export const sheetUrl = "https://github.com/rhythms-of-resistance/sheetbook/blob/master/generated/single/";

@@ -1,8 +1,8 @@
-import { repeat, sheetUrl, stretch } from "../../src/tuneHelper";
+import { repeat, stretch } from "../../src/tuneHelper";
 
 export default {
     categories: ["standard", "common", "medium", "cultural-appropriation"],
-    sheet: sheetUrl + "samba-reggae.pdf",
+    sheet: require("./samba-reggae.pdf"),
     description: require("./samba-reggae.md").default,
     patterns: {
         Tune: {

@@ -1,9 +1,8 @@
-import { crescendo, decrescendo, sheetUrl } from "../../src/tuneHelper"
 export default {
     categories: ["standard", "common", "onesurdo", "medium"],
     speed: 120,
     time: 3,
-    sheet: sheetUrl + "bhangra.pdf",
+    sheet: require("./bhangra.pdf"),
     description: require("./bhangra.md").default,
     video: "https://tube.rhythms-of-resistance.org/videos/embed/bb1e9a2e-ce51-435c-818f-d98cf95f9ed0",
     patterns: {

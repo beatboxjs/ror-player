@@ -1,8 +1,6 @@
-import { sheetUrl } from "../../src/tuneHelper";
-
 export default {
     categories: ["standard", "common", "onesurdo", "easy"],
-    sheet: sheetUrl + "funk.pdf",
+    sheet: require("./funk.pdf"),
     description: require("./funk.md").default,
     patterns: {
         Tune: {

@@ -1,8 +1,8 @@
-import { repeat, sheetUrl } from "../../src/tuneHelper"
+import { repeat } from "../../src/tuneHelper"
 export default {
     displayName: "Afoxé",
     categories: ["standard", "common", "medium", "cultural-appropriation"],
-    sheet: sheetUrl + "afoxe.pdf",
+    sheet: require("./afoxe.pdf"),
     description: require("./afoxe.md").default,
     patterns: {
         "Tune": {

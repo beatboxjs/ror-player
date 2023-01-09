@@ -1,7 +1,6 @@
-import { sheetUrl } from "../../src/tuneHelper"
 export default {
     categories: ["standard", "common", "medium"],
-    sheet: sheetUrl + "angela-davis.pdf",
+    sheet: require("./angela-davis.pdf"),
     description: require("./angela-davis.md").default,
     video: "https://tube.rhythms-of-resistance.org/videos/embed/3a431ae3-e59b-4d31-b2d6-9abc4db3f242",
     patterns: {

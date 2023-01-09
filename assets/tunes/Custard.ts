@@ -1,7 +1,7 @@
-import { repeat, sheetUrl } from "../../src/tuneHelper"
+import { repeat  } from "../../src/tuneHelper"
 export default {
     categories: ["standard", "common", "medium", "cultural-appropriation"],
-    sheet: sheetUrl + "custard.pdf",
+    sheet: require("./custard.pdf"),
     description: require("./custard.md").default,
     patterns: {
         Tune: {

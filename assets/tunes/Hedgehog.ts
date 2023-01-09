@@ -1,8 +1,6 @@
-import { sheetUrl } from "../../src/tuneHelper";
-
 export default {
     categories: ["standard", "uncommon", "easy"],
-    sheet: sheetUrl + "hedgehog.pdf",
+    sheet: require("./hedgehog.pdf"),
     description: require("./hedgehog.md").default,
     patterns: {
         Tune: {
