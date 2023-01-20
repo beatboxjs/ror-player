@@ -10,12 +10,11 @@
 	import { isEqual } from "lodash-es";
 	import PlaybackSettingsComponent from "../playback-settings.vue";
 	import StrokeDropdown from "./stroke-dropdown.vue";
-	import { injectStateRequired } from "../../services/history";
-	import { computed, nextTick, onBeforeUnmount, onMounted, ref, VNodeRef, watch } from "vue";
+	import { injectStateRequired } from "../../services/state";
+	import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
 	import { showConfirm } from "../utils/alert";
 	import vTooltip from "../utils/tooltip";
 	import { CustomPopover } from "../utils/popover.vue";
-import { Dropdown } from "bootstrap";
 
 	type StrokeDropdownInfo = {
 		instr: Instrument,
@@ -284,7 +283,7 @@ import { Dropdown } from "bootstrap";
 		nextTick(() => {
 			if (currentStrokeDropdown.value) {
 				//const trigger = document.getElementById();
-				strokeDropdownPopover.value = new CustomPopover(`#bb-pattern-editor-stroke-${currentStrokeDropdown.value.instr}-${currentStrokeDropdown.value.i}`, strokeDropdownRef.value!, { placement: 'bottom' });
+				strokeDropdownPopover.value = new CustomPopover(`#bb-pattern-editor-stroke-${currentStrokeDropdown.value.instr}-${currentStrokeDropdown.value.i}`, { content: strokeDropdownRef.value!, placement: 'bottom' });
 				strokeDropdownPopover.value.show();
 			}
 		});

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { onBeforeUnmount, onMounted, ref } from "vue";
-	import { generateId } from "../../utils";
+	import { nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
 	import { Popover, Tooltip } from "bootstrap";
+	import { useModal } from "./modal";
 
 	/**
 	 * Like Bootstrap Popover, but uses an existing popover element rather than creating a new one. This way, the popover
@@ -11,12 +11,12 @@
 		declare _popper: any;
 		contentEl: Element;
 
-		constructor(trigger: string | Element, contentEl: Element, options?: Partial<Popover.Options>) {
+		constructor(trigger: string | Element, options: Partial<Popover.Options> & { content: Element }) {
 			super(trigger, {
-				content: ' ',
-				...options
+				...options,
+				content: ' '
 			});
-			this.contentEl = contentEl;
+			this.contentEl = options.content;
 		}
 
 		_createTipElement(): Element {
@@ -36,56 +36,82 @@
 
 <script lang="ts" setup>
 	const props = withDefaults(defineProps<{
-		id?: string;
 		variant?: string;
 		title: string;
 		tooltip?: string;
 		customClass?: string;
 	}>(), {
-		id: () => `bb-popover-${generateId()}`,
 		variant: "secondary"
 	});
 
 	const tooltipContainer = ref<HTMLElement | null>(null);
 	const popoverButton = ref<HTMLElement | null>(null);
-	const modalButton = ref<HTMLElement | null>(null);
 	const popoverContent = ref<HTMLElement | null>(null);
+
+	const showModal = ref(false);
+	const modal = useModal({
+		show: showModal,
+		onHidden: () => {
+			showModal.value = false;
+		}
+	});
+
+	const showPopover = ref(false);
+	const renderPopover = ref(false);
+
+	watch(showPopover, async (show) => {
+		if (show) {
+			renderPopover.value = true;
+			await nextTick();
+			CustomPopover.getOrCreateInstance(popoverButton.value!, {
+				placement: 'bottom',
+				title: props.title,
+				content: popoverContent.value!,
+				trigger: 'manual'
+			}).show();
+		} else {
+			CustomPopover.getInstance(popoverButton.value!)?.hide(); // Will be destroyed by hidden.bs.popover event listener
+		}
+	}, { immediate: true });
 
 	const handleDocumentClick = (e: MouseEvent) => {
 		if (e.target instanceof Node && !popoverButton.value?.contains(e.target) && !popoverContent.value?.contains(e.target)) {
-			popover?.hide();
+			showPopover.value = false;
 		}
 	};
 
-	let popover: Popover | undefined;
 	onMounted(() => {
 		new Tooltip(tooltipContainer.value!, { placement: 'bottom' });
-		popover = new CustomPopover(popoverButton.value!, popoverContent.value!, {
-			placement: 'bottom',
-			title: props.title,
-			content: popoverContent.value!
+
+		popoverButton.value!.addEventListener('hidden.bs.popover', () => {
+			CustomPopover.getInstance(popoverButton.value!)?.dispose();
+			renderPopover.value = false;
 		});
+
 		document.addEventListener('click', handleDocumentClick, { capture: true });
 	});
 
 	onBeforeUnmount(() => {
 		document.removeEventListener('click', handleDocumentClick, { capture: true });
+
+		Tooltip.getInstance(tooltipContainer.value!)?.dispose();
+		CustomPopover.getInstance(popoverButton.value!)?.dispose();
 	});
 </script>
 
 <template>
 	<div class="bb-popover">
 		<span :title="tooltip" ref="tooltipContainer">
-			<button ref="popoverButton" type="button" class="btn d-none d-sm-inline" :class="`btn-${variant}`" :id="`${props.id}-popover-button`">
+			<button ref="popoverButton" type="button" class="btn d-none d-sm-inline" :class="`btn-${variant}`" @click="showPopover = !showPopover">
 				<slot name="button"></slot>
 			</button>
 
-			<button ref="modalButton" type="button" class="btn d-sm-none" :class="`btn-${variant}`" :id="`${props.id}-modal-button`" data-bs-toggle="modal" :data-bs-target="`#${props.id}-modal`">
+			<button type="button" class="btn d-sm-none" :class="`btn-${variant}`" @click="showModal = true">
 				<slot name="button"></slot>
 			</button>
 		</span>
 
-		<div class="popover fade bs-popover-auto" :class="customClass" ref="popoverContent">
+		<div v-if="renderPopover" class="popover fade bs-popover-auto" :class="customClass" ref="popoverContent">
 			<div class="popover-arrow"></div>
 			<h3 class="popover-header">{{title}}</h3>
 			<div class="popover-body">
@@ -93,22 +119,24 @@
 			</div>
 		</div>
 
-		<div :id="`${props.id}-modal`" class="modal fade" :class="customClass" tabindex="-1" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-scrollable">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h1 class="modal-title fs-5">{{title}}</h1>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						<slot></slot>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+		<Teleport to="body">
+			<div v-if="showModal" class="modal fade" :class="customClass" tabindex="-1" aria-hidden="true" :ref="modal.ref">
+				<div class="modal-dialog modal-dialog-scrollable">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h1 class="modal-title fs-5">{{title}}</h1>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<slot></slot>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</Teleport>
 	</div>
 </template>
 

@@ -1,5 +1,5 @@
 import { Modal } from "bootstrap";
-import { ref, Ref, watch } from "vue";
+import { onScopeDispose, ref, Ref, watch } from "vue";
 
 export interface ModalConfig {
 	emit?: {
@@ -24,6 +24,12 @@ export function useModal({ emit, show: showRef, onShow, onShown, onHide, onHidde
 	const modal = ref<Modal>();
 
 	const handleShow = (e: Event) => {
+		const zIndex = 1 + Math.max(1056, ...[...document.querySelectorAll(".modal")].map((el) => el !== modalRef.value && Number(getComputedStyle(el).zIndex) || -Infinity));
+		modalRef.value!.style.zIndex = `${zIndex}`;
+		Promise.resolve().then(() => {
+			((modal.value as any)._backdrop._element as HTMLElement).style.zIndex = `${zIndex - 1}`;
+		});
+
 		onShow?.(e as Modal.Event);
 
 		if (emit && showRef && showRef.value !== true) {
@@ -94,9 +100,19 @@ export function useModal({ emit, show: showRef, onShow, onShown, onHide, onHidde
 		modal.value.hide();
 	};
 
+	onScopeDispose(() => {
+		modal.value?.dispose();
+	});
+
 	return {
 		show,
 		hide,
 		ref: modalRef
 	};
+}
+
+export function hideAllModals(): void {
+	for(const el of [...document.querySelectorAll(".modal")]) {
+		Modal.getInstance(el)?.hide();
+	}
 }

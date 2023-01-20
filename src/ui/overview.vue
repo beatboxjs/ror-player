@@ -1,33 +1,66 @@
 <script setup lang="ts">
 	import { stopAllPlayers } from "../services/player";
-	import { ref, watch } from "vue";
-	import { useEventBus } from "../services/events";
+	import { computed, nextTick, ref, watch } from "vue";
+	import { createEventBus, provideEventBus } from "../services/events";
 	import Update from "./update.vue";
 	import Help from "./help/help.vue";
 	import Listen from "./listen.vue";
+	import { History } from "../services/history";
+	import { enableRouter } from "../services/router";
+
+	const props = withDefaults(defineProps<{
+		storage: Record<string, string>;
+		path?: string;
+	}>(), {
+		path: ""
+	});
+
+	const emit = defineEmits<{
+		(type: "update:path", path: string): void;
+	}>();
+
+	const path = computed({
+		get: () => props.path,
+		set: (path) => {
+			emit("update:path", path);
+		}
+	});
+
+	const eventBus = createEventBus();
+	provideEventBus(eventBus);
+	const history = new History(props.storage, eventBus);
+
+	nextTick(() => {
+		enableRouter(eventBus, history, path);
+	});
 
 	let activeTab = ref(0);
 
-	useEventBus("listen").on(() => {
-		activeTab.value = 0;
+	eventBus.on("listen", async (data) => {
+		if (activeTab.value !== 0) {
+			activeTab.value = 0;
+			await nextTick();
+			// Listen component is now rendering
+			await nextTick();
+			// Listen component is now rendered. Emit the event again for it to pick it up.
+			eventBus.emit("listen", data);
+		}
 	});
 
-	useEventBus("compose").on(() => {
+	eventBus.on("compose", () => {
 		activeTab.value = 1;
 	});
 
-	useEventBus("overview-close-pattern-list").on(() => {
+	eventBus.on("overview-close-pattern-list", () => {
 		document.body.classList.remove("bb-pattern-list-visible");
 	});
 
-	const overviewComposeBus = useEventBus("overview-compose");
-	const overviewListenBus = useEventBus("overview-listen");
 	watch(activeTab, () => {
 		stopAllPlayers();
 		if (activeTab.value == 1) {
-			overviewComposeBus.emit();
+			eventBus.emit("overview-compose");
 		} else {
-			overviewListenBus.emit();
+			eventBus.emit("overview-listen");
 		}
 	});
 
@@ -69,9 +102,7 @@
 				<Listen />
 			</b-tab>
 			<b-tab title="Compose">
-				<StateProvider>
-					<Compose v-if="activeTab == 1" />
-				</StateProvider>
+				<Compose v-if="activeTab == 1" />
 			</b-tab>
 		</b-tabs>
 

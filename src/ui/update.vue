@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 	import { ref } from "vue";
 	import config from "../config";
-	import { useEventBus } from "../services/events";
+	import { useEventBusListener } from "../services/events";
 
 	let show = ref(false);
 
-	useEventBus("update-available").on(() => {
+	useEventBusListener("update-available", () => {
 		show.value = true;
 	});
 </script>

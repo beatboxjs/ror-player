@@ -1,39 +1,56 @@
-import { compressState, createSong, extendState, extendStateFromCompressed, normalizeState, State } from "../state/state";
+import { compressState, createSong, extendState, extendStateFromCompressed, normalizeState } from "../state/state";
 import { clone, objectToString, stringToObject } from "../utils";
 import { isEqual } from "lodash-es";
-import { defineComponent, h, inject, InjectionKey, provide, reactive, Ref, ref, watch } from "vue";
-import { getLocalStorageItem, getLocalStorageKeys, getLocalStorageNumberItem, removeLocalStorageItem, setLocalStorageItem, setLocalStorageItems } from "./localStorage";
-import { useEventBus } from "./events";
+import { ref } from "vue";
+import { EventBus } from "./events";
 
-class History {
+export class History {
 
-	state: State = normalizeState();
+	storage: Record<string, string>;
+	eventBus: EventBus;
+	state = ref(normalizeState());
+	currentKey = ref<number>();
 
-	_data: {
-		currentKey: number | null
-	} = reactive({
-		currentKey: null
-	});
+	constructor(storage: Record<string, string>, eventBus: EventBus) {
+		this.storage = storage;
+		this.eventBus = eventBus;
 
-	loadEncodedString(encodedString: string) {
+		this.loadHistoricState();
+
+		// Legacy storage
+		if(storage.song) {
+			extendState(this.state.value, { songs: [ JSON.parse(storage.song) ] });
+			delete storage.song;
+		}
+		if(storage.myTunes) {
+			extendState(this.state.value, {
+				tunes: {
+					"My tunes": JSON.parse(storage.myTunes)
+				}
+			});
+			delete storage.myTunes;
+		}
+	}
+
+	loadEncodedString(encodedString: string): string[] {
 		this.saveCurrentState();
 		const errs = this._loadFromString(encodedString);
 
-		this._data.currentKey = null;
+		this.currentKey.value = undefined;
 
 		this.saveCurrentState();
 
-		useEventBus("history-load-encoded-string").emit();
+		this.eventBus.emit("history-load-encoded-string");
 
 		return errs;
 	}
 
-	getCurrentKey() {
-		return this._data.currentKey;
+	getCurrentKey(): number | undefined {
+		return this.currentKey.value;
 	}
 
 	getHistoricStates(): number[] {
-		return getLocalStorageKeys()
+		return Object.keys(this.storage)
 			.map((key) => key.match(/^bbState-(.*)$/))
 			.filter((m) => m)
 			.map((m) => parseInt((m as RegExpMatchArray)[1], 10))
@@ -42,13 +59,13 @@ class History {
 
 	loadHistoricState(key?: number | null): void {
 		if(key == null)
-			key = getLocalStorageNumberItem("bbState");
+			key = Number(this.storage.bbState);
 
-		if(this._data.currentKey)
+		if(this.currentKey.value)
 			this.saveCurrentState();
 
-		this._loadFromString(key && getLocalStorageItem("bbState-"+key) || "");
-		this._data.currentKey = key;
+		this._loadFromString(key && this.storage[`bbState-${key}`] || "");
+		this.currentKey.value = key;
 		this.saveCurrentState();
 	}
 
@@ -63,8 +80,7 @@ class History {
 			if(state.songs.length == 0) {
 				createSong(state);
 			}
-			this.state = state;
-			useEventBus("new-state").emit(state);
+			this.state.value = state;
 			return errors;
 		} catch(e: any) {
 			// eslint-disable-next-line no-console
@@ -78,106 +94,42 @@ class History {
 	}
 
 	saveCurrentState(): void {
-		const obj = compressState(this.state, null, null, true, true, true);
-		if(Object.keys(obj).length == 0 || (this._data.currentKey && getLocalStorageItem("bbState-"+this._data.currentKey) && isEqual(obj, stringToObject(getLocalStorageItem("bbState-"+this._data.currentKey) || ""))))
+		const obj = compressState(this.state.value, null, null, true, true, true);
+		if(Object.keys(obj).length == 0 || (this.currentKey.value && this.storage[`bbState-${this.currentKey.value}`] && isEqual(obj, stringToObject(this.storage[`bbState-${this.currentKey.value}`] || ""))))
 			return;
 
 		const newKey = this._getNowKey();
-		if(this._data.currentKey && newKey - this._data.currentKey < 3600)
-			removeLocalStorageItem("bbState-" + this._data.currentKey);
+		if(this.currentKey.value && newKey - this.currentKey.value < 3600)
+			delete this.storage[`bbState-${this.currentKey.value}`];
 
 		const sameState = this._findSameState(obj);
 		if(sameState) {
-			setLocalStorageItem("bbState", `${sameState}`);
-			this._data.currentKey = sameState;
+			this.storage.bbState = `${sameState}`;
+			this.currentKey.value = sameState;
 			return;
 		}
 
-		setLocalStorageItems({
-			["bbState-"+newKey]: objectToString(obj),
-			"bbState": newKey
-		});
-		this._data.currentKey = newKey;
+		this.storage[`bbState-${newKey}`] = objectToString(obj);
+		this.storage.bbState = `${newKey}`;
+		this.currentKey.value = newKey;
 
 		this._ensureMaxNumber();
 	}
 
 	_ensureMaxNumber(number: number = 30): void {
 		for (const key of this.getHistoricStates().slice(number)) {
-			if(key != this._data.currentKey)
-				removeLocalStorageItem("bbState-"+key);
+			if(key != this.currentKey.value)
+				delete this.storage[`bbState-${key}`];
 		}
 	}
 
-	_findSameState(obj: object): number | null {
+	_findSameState(obj: object): number | undefined {
 		const objCleared = clone(obj); // Clear it of observable stuff, otherwise isEqual will always be false
 
 		const keys = this.getHistoricStates();
 		for(let i=0; i<keys.length; i++) {
-			if(isEqual(objCleared, stringToObject(getLocalStorageItem("bbState-"+keys[i]) || "")))
+			if(isEqual(objCleared, stringToObject(this.storage[`bbState-${keys[i]}`] || "")))
 				return keys[i];
 		}
-		return null;
 	}
 }
-
-
-const history = new History();
-
-history.loadHistoricState();
-
-// Legacy storage
-
-const legacySong = getLocalStorageItem("song");
-if(legacySong) {
-	extendState(history.state, { songs: [ JSON.parse(legacySong) ] });
-	delete localStorage.song;
-
-	history.saveCurrentState();
-}
-
-const legacyTunes = getLocalStorageItem("myTunes");
-if(legacyTunes) {
-	extendState(history.state, {
-		tunes: {
-			"My tunes": JSON.parse(legacyTunes)
-		}
-	});
-	delete localStorage.myTunes;
-
-	history.saveCurrentState();
-}
-
-export default history;
-
-export const stateInject = Symbol() as InjectionKey<Ref<State>>;
-
-export function injectStateOptional(): Ref<State> | undefined {
-	return inject(stateInject);
-}
-
-export function injectStateRequired(): Ref<State> {
-	const state = injectStateOptional();
-	if (!state) {
-		throw new Error("No state injected.");
-	}
-	return state;
-}
-
-export const StateProvider = defineComponent({
-	setup(props, context) {
-		const state = ref(history.state);
-
-		provide(stateInject, state);
-
-		watch(state, () => {
-			history.saveCurrentState();
-		}, { deep: true });
-
-		useEventBus("new-state").on((newState) => {
-			state.value = newState;
-		});
-
-		return h("div", { "class": "bb-state-provider" }, context.slots.default);
-	}
-});

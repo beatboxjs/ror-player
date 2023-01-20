@@ -19,7 +19,7 @@
 	import Progress from "./utils/progress.vue";
 	import { exportMP3 } from "beatbox.js-export";
 	import { ExampleSong } from "../state/tune";
-	import { injectStateRequired } from "../services/history";
+	import { injectStateRequired } from "../services/state";
 	import vTooltip from "./utils/tooltip";
 	import { showAlert } from "./utils/alert";
 

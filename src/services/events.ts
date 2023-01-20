@@ -1,30 +1,81 @@
-import { State } from "../state/state";
-import { EventBusKey, useEventBus as origUseEventBus, UseEventBusReturn } from "@vueuse/core";
+import mitt, { Emitter, Handler } from 'mitt';
 import { PatternReference } from "../state/song";
+import { inject, InjectionKey, onScopeDispose, provide } from 'vue';
 
-const events = {
-	"history-load-encoded-string": Symbol() as EventBusKey<void>,
-	"overview-close-pattern-list": Symbol() as EventBusKey<void>,
-	"compose": Symbol() as EventBusKey<void>,
-	"overview-compose": Symbol() as EventBusKey<void>,
-	"overview-listen": Symbol() as EventBusKey<void>,
-	"pattern-placeholder-drag-start": Symbol() as EventBusKey<void>,
-	"pattern-placeholder-drag-end": Symbol() as EventBusKey<void>,
-	"update-available": Symbol() as EventBusKey<void>,
-	"new-state": Symbol() as EventBusKey<State>,
-	"listen": Symbol() as EventBusKey<string>,
-	"edit-pattern": Symbol() as EventBusKey<{
+type Events = {
+	/** Indicates that the user has switched to the "Compose" tab in the Overview component. */
+	"overview-compose": void;
+	/** Indicates that the user has switched to the "Listen" tab in the Overview component. */
+	"overview-listen": void;
+	/** Indicates that the dragging of a pattern placeholder has started. */
+	"pattern-placeholder-drag-start": void;
+	/** Indicates that the dragging of a pattern placeholder has ended. */
+	"pattern-placeholder-drag-end": void;
+	/** Indicates that the user has expanded a tune in the Pattern List component. */
+	"pattern-list-tune-opened": string;
+	/** Indicates that the user has collapsed a tune in the Pattern List component. */
+	"pattern-list-tune-closed": string;
+	/** Indicates that the user has opened the pattern editor dialog. */
+	"pattern-editor-opened": {
 		pattern: PatternReference;
 		readonly: boolean;
+	};
+	/** Indicates that the user has closed the pattern editor dialog. */
+	"pattern-editor-closed": {
+		pattern: PatternReference;
+		readonly: boolean;
+	};
+
+	/** Tells the Overview component to close the pattern list sidebar (on narrow screens). */
+	"overview-close-pattern-list": void;
+	/** Tells the Overview component to switch to the "Compose" tab. */
+	"compose": void;
+	/** Tells the Overview component to switch to the "Listen" tab. The argument is name of the tune that should be opened. */
+	"listen": string;
+	/** Tells the Pattern Placeholder component to open the Edit Pattern dialog. */
+	"edit-pattern": {
+		pattern: PatternReference;
+		readonly: boolean;
+		/** This is set to true by the component when handling the event to prevent other component instances from handling it again. */
 		handled?: boolean;
-	}>,
-	"pattern-list-tune-opened": Symbol() as EventBusKey<string>,
-	"pattern-list-tune-closed": Symbol() as EventBusKey<string>,
-	"pattern-list-open-tune": Symbol() as EventBusKey<string>
+	};
+	/** Tells the Pattern List component to expand a tune. */
+	"pattern-list-open-tune": string;
+
+	/** Indicates that an encoded string has been loaded (through the URL hash), causing a new historic state to be created. */
+	"history-load-encoded-string": void;
+	/** Indicates that the service worker has downloaded a new version of the app. */
+	"update-available": void;
 };
 
-export type EventBus<K extends keyof typeof events> = typeof events[K] extends EventBusKey<infer T> ? UseEventBusReturn<T, never> : never;
+export type EventBus = Emitter<Events>;
 
-export function useEventBus<K extends keyof typeof events>(key: K): EventBus<K> {
-	return origUseEventBus(key) as EventBus<K>;
+const eventBusInject = Symbol("eventBusInject") as InjectionKey<Emitter<Events>>;
+
+export function createEventBus(): Emitter<Events> {
+	return mitt<Events>();
+}
+
+export function provideEventBus(eventBus: EventBus): void {
+	provide(eventBusInject, eventBus);
+}
+
+export function injectEventBusOptional(): EventBus | undefined {
+	return inject(eventBusInject);
+}
+
+export function injectEventBusRequired(): EventBus {
+	const eventBus = injectEventBusOptional();
+	if (!eventBus) {
+		throw new Error("Event bus is not injected.");
+	}
+	return eventBus;
+}
+
+export function useEventBusListener<Key extends keyof Events>(type: Key, handler: Handler<Events[Key]>): void {
+	const eventBus = injectEventBusRequired();
+	eventBus.on(type, handler);
+	onScopeDispose(() => {
+		eventBus.off(type, handler);
+	});
 }

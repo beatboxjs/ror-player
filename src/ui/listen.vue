@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-	import { computed, nextTick, provide, ref, watch } from "vue";
+	import { computed, nextTick, ref, watch } from "vue";
 	import { normalizeState } from "../state/state";
 	import { Tune } from "../state/tune";
 	import { stopAllPlayers } from "../services/player";
-	import { stateInject } from "../services/history";
-	import { useEventBus } from "../services/events";
+	import { provideState } from "../services/state";
+	import { injectEventBusRequired, useEventBusListener } from "../services/events";
 	import PatternListFilter, { Filter, filterPatternList } from "./pattern-list-filter.vue";
 	import TuneInfo from "./tune-info.vue";
 
 	const state = ref(normalizeState());
-	provide(stateInject, state);
+	provideState(state);
 
 	const tunesRef = ref<HTMLElement | null>(null);
 
@@ -23,7 +23,7 @@
 
 	const tuneListRef = ref<HTMLElement | null>(null);
 
-	useEventBus("listen").on((newTuneName) => {
+	useEventBusListener("listen", (newTuneName) => {
 		if(!state.value.tunes[newTuneName] || newTuneName == tuneName.value)
 			return;
 
@@ -33,16 +33,18 @@
 		selectTune(newTuneName);
 	});
 
+	const eventBus = injectEventBusRequired();
+
 	watch(tuneName, () => {
 		if(tuneName.value)
-			useEventBus("pattern-list-tune-opened").emit(tuneName.value);
+			eventBus.emit("pattern-list-tune-opened", tuneName.value);
 	});
 
 	const selectTune = (newTuneName: string) => {
 		tuneName.value = newTuneName;
 		tune.value = state.value.tunes[newTuneName];
 
-		useEventBus("overview-close-pattern-list").emit();
+		eventBus.emit("overview-close-pattern-list");
 
 		stopAllPlayers();
 

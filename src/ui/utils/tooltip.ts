@@ -32,6 +32,12 @@ const vTooltip: Directive<Element, string> = {
 				tooltipInner.innerText = binding.value;
 			}
 		}
+	},
+
+	beforeUnmount(el) {
+		if (el._bbTooltip) {
+			el._bbTooltip.dispose();
+		}
 	}
 }
 

@@ -6,7 +6,7 @@
 	import config from "../config";
 	import defaultTunes from "../defaultTunes";
 	import { patternEquals } from "../state/pattern";
-	import { useEventBus } from "../services/events";
+	import { injectEventBusRequired, useEventBusListener } from "../services/events";
 	import { DragType, PatternDragData, setDragData } from "../services/draggable";
 	import PatternEditorDialog from "./pattern-editor-dialog.vue";
 	import { clone } from "../utils";
@@ -14,7 +14,7 @@
 	import Progress from "./utils/progress.vue";
 	import { exportMP3 } from "beatbox.js-export";
 	import { computed, defineComponent, h, ref, watch } from "vue";
-	import { injectStateRequired } from "../services/history";
+	import { injectStateRequired } from "../services/state";
 	import { showAlert, showConfirm } from "./utils/alert";
 	import vTooltip from "./utils/tooltip";
 
@@ -51,7 +51,7 @@
 	const containerRef = ref<HTMLElement>();
 	const positionMarkerRef = ref<HTMLElement>();
 
-	useEventBus("edit-pattern").on((data) => {
+	useEventBusListener("edit-pattern", (data) => {
 		if(!data.handled && data.pattern[0] == props.tuneName && data.pattern[1] == props.patternName && data.readonly == props.readonly) {
 			data.handled = true;
 			editPattern();
@@ -76,6 +76,8 @@
 	});
 
 	const isCustomPattern = computed(() => !defaultTunes.getPattern(props.tuneName, props.patternName));
+
+	const eventBus = injectEventBusRequired();
 
 	watch(() => playbackSettings.value, () => {
 		updatePlayer();
@@ -152,11 +154,11 @@
 		setTimeout(() => {
 			dragging.value = true;
 		}, 0);
-		useEventBus("pattern-placeholder-drag-start").emit();
+		eventBus.emit("pattern-placeholder-drag-start");
 	};
 
 	const handleDragEnd = (event: DragEvent) => {
-		useEventBus("pattern-placeholder-drag-end").emit();
+		eventBus.emit("pattern-placeholder-drag-end");
 		setTimeout(() => {
 			dragging.value = false;
 		}, 0);

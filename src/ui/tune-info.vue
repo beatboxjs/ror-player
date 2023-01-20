@@ -3,7 +3,7 @@
 	import config from "../config";
 	import { clone } from "../utils";
 	import { computed, ref, watch } from "vue";
-	import { injectStateRequired } from "../services/history";
+	import { injectStateRequired } from "../services/state";
 	import PlaybackSettings from "./playback-settings.vue";
 	import ExampleSongPlayer from "./example-song-player.vue";
 	import PatternPlaceholder, { PatternPlaceholderItem } from "./pattern-placeholder.vue";

@@ -4,16 +4,15 @@
 	import defaultTunes from "../defaultTunes";
 	import { patternEquals } from "../state/pattern";
 	import PatternPlayer from "./pattern-player/pattern-player.vue";
-	import ShareDialog from "./share-dialog/share-dialog";
-	import { generateId } from "../utils";
-	import { computed } from "vue";
-	import { injectStateRequired } from "../services/history";
+	import ShareDialog from "./share-dialog.vue";
+	import { computed, ref } from "vue";
+	import { injectStateRequired } from "../services/state";
 	import { useModal } from "./utils/modal";
+	import { injectEventBusRequired } from "../services/events";
 
 	const state = injectStateRequired();
 
 	const props = withDefaults(defineProps<{
-		id?: string;
 		show?: boolean;
 		tuneName: string;
 		patternName: string;
@@ -23,21 +22,23 @@
 		readonly: false
 	});
 
-	const id = generateId();
-
 	const emit = defineEmits<{
 		(type: 'update:show', show: boolean): void;
 	}>();
 
+	const eventBus = injectEventBusRequired();
+
 	const modal = useModal({
 		show: computed(() => !!props.show),
 		emit,
+		onShow: () => {
+			eventBus.emit("pattern-editor-opened", { pattern: [props.tuneName, props.patternName], readonly: props.readonly });
+		},
 		onHide: () => {
 			stopAllPlayers();
+			eventBus.emit("pattern-editor-closed", { pattern: [props.tuneName, props.patternName], readonly: props.readonly });
 		}
 	});
-
-	const shareDialogId = `bb-share-dialog-${generateId()}`;
 
 	const pattern = computed(() => getPatternFromState(state.value, props.tuneName, props.patternName)!);
 
@@ -47,29 +48,32 @@
 
 	const hasChanged = computed(() => !originalPattern.value || !patternEquals(originalPattern.value, pattern.value));
 
+	const showShareDialog = ref(false);
+
 	const share = () => {
-		// TODO
-		//this.$bvModal.show(this.shareDialogId);
+		showShareDialog.value = true;
 	};
 </script>
 
 <template>
-	<div class="modal fade bb-pattern-editor-dialog" tabindex="-1" aria-hidden="true" :ref="modal.ref" :id="id">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h1 class="modal-title fs-5">{{title}}</h1>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<PatternPlayer :tuneName="tuneName" :patternName="patternName" :readonly="readonly" :player="playerRef">
-						<button type="button" class="btn btn-info" v-if="hasChanged" @click="share()"><fa icon="share"/> Share</button>
-					</PatternPlayer>
-					<!--<ShareDialog :id="shareDialogId" :link-pattern="[tuneName, patternName]" />-->
+	<Teleport to="body">
+		<div class="modal fade bb-pattern-editor-dialog" tabindex="-1" aria-hidden="true" :ref="modal.ref">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5">{{title}}</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<PatternPlayer :tuneName="tuneName" :patternName="patternName" :readonly="readonly" :player="playerRef">
+							<button type="button" class="btn btn-info" v-if="hasChanged" @click="share()"><fa icon="share"/> Share</button>
+						</PatternPlayer>
+						<ShareDialog v-if="showShareDialog" v-model:show="showShareDialog" :link-pattern="[tuneName, patternName]" />
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</Teleport>
 </template>
 
 <style lang="scss">

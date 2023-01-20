@@ -53,9 +53,7 @@ export function scrollToElement(element: HTMLElement, scrollFurther: boolean = f
 }
 
 export function makeAbsoluteUrl(url: string): string {
-	const a = document.createElement('a');
-	a.setAttribute('href', url);
-	return a.getAttribute('href')!;
+	return new URL(url, location.href).href;
 }
 
 export function readableDate(tstamp: number, tstampBefore: number = 0, tstampAfter: number = 0): string {
