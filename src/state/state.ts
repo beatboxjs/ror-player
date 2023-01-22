@@ -201,13 +201,15 @@ export function compressState(
     return ret;
 }
 
-export function createSong(state: State, data?: Parameters<typeof normalizeSong>[0], idx?: number, select: boolean = false): void {
+export function createSong(state: State, data?: Parameters<typeof normalizeSong>[0], idx?: number, select: boolean = false): number {
     if(idx == null)
         idx = state.songs.length;
     state.songs.splice(idx, 0, normalizeSong(data));
 
     if(select)
         state.songIdx = idx;
+
+    return idx;
 }
 
 export function removeSong(state: State, idx: number): void {
@@ -291,12 +293,12 @@ export function copyPattern(state: State, fromTuneAndName: PatternReference, toT
     createPatternInTune(state.tunes[toTuneAndName[0]], toTuneAndName[1], getPatternFromState(state, fromTuneAndName) || undefined);
 }
 
-export function getSongName(state: State, songIdx?: number): string | null {
+export function getSongName(state: State, songIdx?: number): string | undefined {
     if(songIdx == null)
         songIdx = state.songIdx;
 
     if(!state.songs[songIdx])
-        return null;
+        return;
 
     if(state.songs[songIdx].name && state.songs[songIdx].name.trim())
         return state.songs[songIdx].name;

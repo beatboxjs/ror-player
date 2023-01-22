@@ -2,13 +2,13 @@
 	import { computed, ref } from 'vue';
 	import { useModal } from './modal';
 
-	export interface AlertProps {
+	export type AlertProps = {
 		title: string;
 		message: string;
 		type?: "alert" | "confirm";
 		variant?: "success" | "danger" | "warning";
 		show?: boolean;
-	}
+	};
 
 	export interface AlertResult {
 		ok: boolean;
@@ -20,6 +20,8 @@
 
 	const emit = defineEmits<{
 		(type: 'update:show', show: boolean): void;
+		(type: 'show'): void;
+		(type: 'shown'): void;
 		(type: 'hide', result: AlertResult): void;
 		(type: 'hidden', result: AlertResult): void;
 	}>();
@@ -31,6 +33,14 @@
 	const modal = useModal({
 		show: computed(() => !!props.show),
 		emit,
+		onShow: () => {
+			result.value = { ok: false };
+			formTouched.value = false;
+			emit('show');
+		},
+		onShown: () => {
+			emit('shown');
+		},
 		onHide: () => {
 			emit('hide', result.value);
 		},
@@ -38,25 +48,36 @@
 			emit('hidden', result.value);
 		}
 	});
+
+	const formRef = ref<HTMLFormElement>();
+	const formTouched = ref(false);
+	const handleSubmit = () => {
+		if (formRef.value!.checkValidity()) {
+			result.value.ok = true;
+			modal.hide();
+		} else {
+			formTouched.value = true;
+		}
+	};
 </script>
 
 <template>
 	<Teleport to="body">
 		<div class="modal fade" tabindex="-1" aria-hidden="true" :ref="modal.ref">
 			<div class="modal-dialog">
-				<div class="modal-content">
+				<form class="modal-content" :class="{ 'was-validated': formTouched }" @submit.prevent="handleSubmit()" novalidate ref="formRef">
 					<div class="modal-header">
 						<h1 class="modal-title fs-5">{{props.title}}</h1>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						{{props.message}}
+						<slot>{{props.message}}</slot>
 					</div>
 					<div class="modal-footer">
 						<button v-if="type === 'confirm'" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-						<button type="button" class="btn" :class="`btn-${props.variant ?? 'primary'}`" @click="result.ok = true; modal.hide()">OK</button>
+						<button type="submit" class="btn" :class="`btn-${props.variant ?? 'primary'}`">OK</button>
 					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 	</Teleport>

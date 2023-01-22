@@ -1,12 +1,21 @@
 <script lang="ts" setup>
-	import { ref } from "vue";
+	import { onBeforeUnmount, onMounted, ref } from "vue";
 	import config from "../config";
-	import { useEventBusListener } from "../services/events";
 
 	let show = ref(false);
 
-	useEventBusListener("update-available", () => {
-		show.value = true;
+	const handleMessage = (event: MessageEvent) => {
+		if(event.data === "bb-refresh") {
+			show.value = true;
+		}
+	};
+
+	onMounted(() => {
+		navigator.serviceWorker.addEventListener("message", handleMessage);
+	});
+
+	onBeforeUnmount(() => {
+		navigator.serviceWorker.removeEventListener("message", handleMessage);
 	});
 </script>
 

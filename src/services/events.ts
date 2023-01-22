@@ -44,8 +44,6 @@ type Events = {
 
 	/** Indicates that an encoded string has been loaded (through the URL hash), causing a new historic state to be created. */
 	"history-load-encoded-string": void;
-	/** Indicates that the service worker has downloaded a new version of the app. */
-	"update-available": void;
 };
 
 export type EventBus = Emitter<Events>;

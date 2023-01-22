@@ -3003,7 +3003,7 @@ Object.defineProperty(defaultTunes, "getPattern", {
 			tuneName = tuneName[0];
 		}
 
-		return this[tuneName] && this[tuneName].patterns[<string> patternName] || null;
+		return this[tuneName]?.patterns[<string> patternName];
 	}
 });
 
@@ -3013,9 +3013,9 @@ Object.defineProperty(defaultTunes, "firstInSorting", {
 });
 
 interface DefaultTunesMethods {
-	getPattern(tuneName: string, patternName?: string): Pattern | null,
-	getPattern(patternReference: PatternReference): Pattern | null,
-	firstInSorting: Array<string>
+	getPattern(tuneName: string, patternName?: string): Pattern | undefined;
+	getPattern(patternReference: PatternReference): Pattern | undefined;
+	firstInSorting: Array<string>;
 }
 
 type DefaultTunes = Record<string, Tune> & DefaultTunesMethods;

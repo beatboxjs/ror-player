@@ -2,9 +2,11 @@ import { Modal } from "bootstrap";
 import { onScopeDispose, ref, Ref, watch } from "vue";
 
 export interface ModalConfig {
+	/** If this is specified, it will be called with an "update:show" event when the modal is shown/hidden. */
 	emit?: {
 		(type: 'update:show', show: boolean): void;
 	};
+	/** If this is specified, it will be watched and the modal will be shown/hidden when its value changes. */
 	show?: Ref<boolean>;
 	onShow?: (event: Modal.Event) => void;
 	onShown?: (event: Modal.Event) => void;
@@ -15,9 +17,13 @@ export interface ModalConfig {
 export interface ModalActions {
 	show: () => void;
 	hide: () => void;
+	/** Apply this ref to the .modal element to enable the modal */
 	ref: Ref<HTMLElement | undefined>;
 }
 
+/**
+ * Enables a Bootstrap modal dialog on the element that is saved in the returned {@link ModalActions#ref}.
+ */
 export function useModal({ emit, show: showRef, onShow, onShown, onHide, onHidden }: ModalConfig): ModalActions {
 	const modalRef = ref<HTMLElement>();
 

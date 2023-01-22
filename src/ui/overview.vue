@@ -4,9 +4,10 @@
 	import { createEventBus, provideEventBus } from "../services/events";
 	import Update from "./update.vue";
 	import Help from "./help/help.vue";
-	import Listen from "./listen.vue";
+	import Listen from "./listen/listen.vue";
 	import { History } from "../services/history";
 	import { enableRouter } from "../services/router";
+	import Compose from "./compose/compose.vue";
 
 	const props = withDefaults(defineProps<{
 		storage: Record<string, string>;
@@ -94,19 +95,11 @@
 			</template>
 
 			<template v-if="activeTab === 1">
-				Compose
+				<Compose :history="history" />
 			</template>
 		</div>
-		<!--<b-tabs v-model="activeTab">
-			<b-tab title="Listen">
-				<Listen />
-			</b-tab>
-			<b-tab title="Compose">
-				<Compose v-if="activeTab == 1" />
-			</b-tab>
-		</b-tabs>
 
-		<div class="bb-cover" @click="togglePatternList()"></div>-->
+		<div class="bb-cover" @click="togglePatternList()"></div>
 	</div>
 </template>
 

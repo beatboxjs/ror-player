@@ -8,14 +8,11 @@
 	import { patternEquals } from "../state/pattern";
 	import { injectEventBusRequired, useEventBusListener } from "../services/events";
 	import { DragType, PatternDragData, setDragData } from "../services/draggable";
-	import PatternEditorDialog from "./pattern-editor-dialog.vue";
+	import PatternPlayerDialog from "./pattern-player/pattern-player-dialog.vue";
 	import { clone } from "../utils";
-	import FileSaver from "file-saver";
-	import Progress from "./utils/progress.vue";
-	import { exportMP3 } from "beatbox.js-export";
 	import { computed, defineComponent, h, ref, watch } from "vue";
 	import { injectStateRequired } from "../services/state";
-	import { showAlert, showConfirm } from "./utils/alert";
+	import { showConfirm } from "./utils/alert";
 	import vTooltip from "./utils/tooltip";
 
 	export const PatternPlaceholderItem = defineComponent({
@@ -45,8 +42,6 @@
 
 	const showEditorDialog = ref(false);
 	const dragging = ref(false);
-	const loading = ref<number>();
-	const exportCanceled = ref(false);
 
 	const containerRef = ref<HTMLElement>();
 	const positionMarkerRef = ref<HTMLElement>();
@@ -163,35 +158,6 @@
 			dragging.value = false;
 		}, 0);
 	};
-
-	const downloadMP3 = async () => {
-		const p = getOrCreatePlayer();
-
-		try {
-			loading.value = 0;
-			exportCanceled.value = false;
-			const blob = await exportMP3(p, (perc) => {
-				if(exportCanceled.value)
-					return false;
-				else
-					loading.value = Math.round(perc*100);
-			});
-
-			loading.value = undefined;
-
-			if (blob)
-				FileSaver.saveAs(blob, `${props.tuneName} - ${props.patternName}.mp3`);
-		} catch(err: any) {
-			loading.value = undefined;
-			// eslint-disable-next-line no-console
-			console.error("Error exporting MP3", err.stack || err);
-			showAlert({ title: "Error exporting MP3", message: err.message });
-		}
-	};
-
-	const cancelExport = () => {
-		exportCanceled.value = true;
-	};
 </script>
 
 <template>
@@ -208,11 +174,10 @@
 			<li><a href="javascript:" v-tooltip="'Listen'" @click="playPattern()" draggable="false"><fa :icon="playerRef && playerRef.playing ? 'stop' : 'play-circle'"></fa></a></li>
 			<li><a href="javascript:" v-tooltip="readonly ? 'Show notes' : 'Edit notes'" @click="editPattern()" draggable="false"><fa icon="pen"/></a></li>
 			<li v-if="hasLocalChanges"><a href="javascript:" v-tooltip="'Revert modifications'" @click="restore()" draggable="false"><fa icon="eraser"/></a></li>
-			<slot :download-mp3="downloadMP3"/>
+			<slot :getPlayer="() => { getOrCreatePlayer(); return playerRef!; }"/>
 		</ul>
 		<div class="position-marker" v-show="playerRef && playerRef.playing" ref="positionMarkerRef"></div>
-		<PatternEditorDialog v-if="showEditorDialog" v-model:show="showEditorDialog" :readonly="readonly" :tune-name="tuneName" :pattern-name="patternName" :player-ref="playerRef"/>
-		<Progress :progress="loading" @cancel="cancelExport()"/>
+		<PatternPlayerDialog v-if="showEditorDialog" v-model:show="showEditorDialog" :readonly="readonly" :tune-name="tuneName" :pattern-name="patternName" :player-ref="playerRef"/>
 	</div>
 </template>
 
