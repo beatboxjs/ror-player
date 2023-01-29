@@ -6,6 +6,7 @@
 	import { songContainsPattern } from "../../state/song";
 	import { injectStateRequired } from "../../services/state";
 	import { useModal } from "../utils/modal";
+	import vTooltip from "../utils/tooltip";
 
 	const props = defineProps<{
 		show?: boolean;
@@ -170,7 +171,7 @@
 									<tr>
 										<td>
 											<ul class="list-group">
-												<li v-for="(song, idx) in songInfo" :key="idx" class="list-group-item" :class="{active: song.shouldImport, disabled: song.exists}" :title="song.exists ? 'Song already exists.' : ''" v-b-tooltip.bottom>
+												<li v-for="(song, idx) in songInfo" :key="idx" class="list-group-item" :class="{active: song.shouldImport, disabled: song.exists}" v-tooltip="song.exists ? 'Song already exists.' : ''">
 													<a v-if="!song.exists" href="javascript:" @click="clickSong(idx)" draggable="false">{{song.name}}</a>
 													<span v-if="song.exists">{{song.name}} <fa icon="check"></fa></span>
 												</li>
@@ -184,8 +185,7 @@
 														<span
 															v-for="(pattern, patternName) in tune.patterns"
 															:key="patternName"
-															:title="pattern.exists == 2 ? 'Pattern already exists.' : pattern.isUsed ? 'Pattern is used in song, cannot be disabled.' : pattern.exists ? 'Already exists. Local version will be overridden.' : ''"
-															v-b-tooltip.hover.bottom
+															v-tooltip="pattern.exists == 2 ? 'Pattern already exists.' : pattern.isUsed ? 'Pattern is used in song, cannot be disabled.' : pattern.exists ? 'Already exists. Local version will be overridden.' : ''"
 														>
 															<button
 																type="button"

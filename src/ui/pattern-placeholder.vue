@@ -6,10 +6,10 @@
 	import config from "../config";
 	import defaultTunes from "../defaultTunes";
 	import { patternEquals } from "../state/pattern";
-	import { injectEventBusRequired, useEventBusListener } from "../services/events";
+	import { injectEventBusRequired } from "../services/events";
 	import { DragType, PatternDragData, setDragData } from "../services/draggable";
 	import PatternPlayerDialog from "./pattern-player/pattern-player-dialog.vue";
-	import { clone } from "../utils";
+	import { clone, useRefWithOverride } from "../utils";
 	import { computed, defineComponent, h, ref, watch } from "vue";
 	import { injectStateRequired } from "../services/state";
 	import { showConfirm } from "./utils/alert";
@@ -30,38 +30,36 @@
 		patternName: string;
 		readonly?: boolean;
 		settings?: PlaybackSettings;
-		draggable?: any,
-		dragEffect?: DataTransfer['dropEffect']
+		draggable?: any;
+		dragEffect?: DataTransfer['dropEffect'];
+		showEditorDialog?: boolean;
 	}>(), {
 		readonly: false,
 		dragEffect: "copy"
 	});
 
+	const emit = defineEmits<{
+		(type: "update:showEditorDialog", show: boolean): void;
+	}>();
+
 	const playerRef = ref<BeatboxReference>();
 	const player = computed(() => playerRef.value && getPlayerById(playerRef.value.id));
 
-	const showEditorDialog = ref(false);
+	const showEditorDialog = useRefWithOverride(false, () => props.showEditorDialog, (show) => emit("update:showEditorDialog", show));
 	const dragging = ref(false);
 
 	const containerRef = ref<HTMLElement>();
 	const positionMarkerRef = ref<HTMLElement>();
 
-	useEventBusListener("edit-pattern", (data) => {
-		if(!data.handled && data.pattern[0] == props.tuneName && data.pattern[1] == props.patternName && data.readonly == props.readonly) {
-			data.handled = true;
-			editPattern();
-		}
-	});
-
 	const pattern = computed(() => getPatternFromState(state.value, props.tuneName, props.patternName));
 
-	const fallbackPlaybackSettings = ref<PlaybackSettings>(null as any as PlaybackSettings);
-	watch(() => state.value.playbackSettings, () => {
-		fallbackPlaybackSettings.value = normalizePlaybackSettings(Object.assign(clone(state.value.playbackSettings), pattern.value && {
+	const fallbackPlaybackSettings = computed(() => normalizePlaybackSettings({
+		...clone(state.value.playbackSettings),
+		...(pattern.value ? {
 			speed: pattern.value.speed,
 			loop: pattern.value.loop
-		}));
-	}, { deep: true, immediate: true });
+		} : {})
+	}));
 
 	const playbackSettings = computed(() => props.settings || fallbackPlaybackSettings.value);
 
@@ -144,19 +142,18 @@
 			pattern: [ props.tuneName, props.patternName ],
 			data: props.draggable
 		};
-		(event.dataTransfer as DataTransfer).effectAllowed = props.dragEffect;
+		event.dataTransfer!.effectAllowed = props.dragEffect;
 		setDragData(event, dragData);
 		setTimeout(() => {
+			// Delay due to https://stackoverflow.com/a/19663227/242365
 			dragging.value = true;
+			eventBus.emit("pattern-placeholder-drag-start");
 		}, 0);
-		eventBus.emit("pattern-placeholder-drag-start");
 	};
 
 	const handleDragEnd = (event: DragEvent) => {
 		eventBus.emit("pattern-placeholder-drag-end");
-		setTimeout(() => {
-			dragging.value = false;
-		}, 0);
+		dragging.value = false;
 	};
 </script>
 

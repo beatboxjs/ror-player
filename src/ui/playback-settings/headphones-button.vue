@@ -22,23 +22,26 @@
 	const groupSurdos = computed(() => props.groupSurdos && !SURDOS.some((instr) => props.playbackSettings.headphones.includes(instr)));
 	const hide = computed(() => groupSurdos.value && props.instrument !== MAIN_SURDO && SURDOS.includes(props.instrument));
 	const instruments = computed(() => groupSurdos.value && props.instrument === MAIN_SURDO ? SURDOS : [props.instrument]);
-	const value = computed(() => props.playbackSettings.headphones.includes(props.instrument));
+	const isActive = computed(() => props.playbackSettings.headphones.includes(props.instrument));
+	const isOnly = computed(() => isActive.value && props.playbackSettings.headphones.length === 1);
 
 	const handleClick = ($event: MouseEvent) => {
 		const extend = $event.ctrlKey || $event.shiftKey;
 
 		emit("update:playbackSettings", {
 			...props.playbackSettings,
-			headphones: [
-				...(extend ? props.playbackSettings.headphones.filter((instr) => !instruments.value.includes(instr)) : []),
-				...(value.value ? [] : instruments.value)
-			]
+			headphones: extend ? [
+				...props.playbackSettings.headphones.filter((instr) => !instruments.value.includes(instr)),
+				...(isActive.value ? [] : instruments.value)
+			] : (
+				isOnly.value ? [] : [...instruments.value]
+			)
 		});
 	};
 </script>
 
 <template>
-	<a v-if="!hide" class="bb-headphones-button" href="javascript:" @click="handleClick" :class="value ? 'active' : 'inactive'" draggable="false"><fa icon="headphones"/></a>
+	<a v-if="!hide" class="bb-headphones-button" href="javascript:" @click="handleClick" :class="isActive ? 'active' : 'inactive'" draggable="false"><fa icon="headphones"/></a>
 </template>
 
 <style lang="scss">

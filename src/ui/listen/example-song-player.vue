@@ -18,7 +18,7 @@
 	import { ExampleSong } from "../../state/tune";
 	import { injectStateRequired } from "../../services/state";
 	import vTooltip from "../utils/tooltip";
-	import Export from "../export.vue";
+	import { download, ExportType } from "../utils/export";
 
 	const state = injectStateRequired();
 
@@ -119,6 +119,14 @@
 			scrollToElement(positionMarkerRef.value!, true);
 		}
 	};
+
+	const handleDownload = () => {
+		download({
+			type: ExportType.MP3,
+			filename: props.tuneName,
+			player: getOrCreatePlayer()
+		});
+	};
 </script>
 
 <template>
@@ -136,9 +144,7 @@
 		</div>
 		<ul class="actions icon-list">
 			<li><a href="javascript:" v-tooltip="'Listen'" @click="playStop()" draggable="false"><fa :icon="playerRef && playerRef.playing ? 'stop' : 'play-circle'"/></a></li>
-			<Export :player="() => { getOrCreatePlayer(); return playerRef!; }" :filename="tuneName" v-slot="{ downloadMP3 }">
-				<li><a href="javascript:" v-tooltip="'Download as MP3'" @click="downloadMP3()" draggable="false"><fa icon="download"/></a></li>
-			</Export>
+			<li><a href="javascript:" v-tooltip="'Download as MP3'" @click="handleDownload()" draggable="false"><fa icon="download"/></a></li>
 		</ul>
 	</div>
 </template>

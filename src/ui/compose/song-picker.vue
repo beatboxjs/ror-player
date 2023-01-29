@@ -10,9 +10,10 @@
 <script setup lang="ts">
 	import { injectStateRequired } from '../../services/state';
 	import { updateSong } from '../../state/song';
-	import { createSong, getSongName, removeSong, selectSong } from '../../state/state';
+	import { createSong, getSongName, removeSong } from '../../state/state';
 	import { clone } from '../../utils';
 	import { showConfirm, showPrompt } from '../utils/alert';
+	import vTooltip from "../utils/tooltip";
 
 	const props = defineProps<{
 		modelValue: number;
@@ -30,7 +31,6 @@
 
 		stop();
 
-		selectSong(state.value, songIdx);
 		emit("update:modelValue", songIdx);
 	};
 
@@ -74,9 +74,9 @@
 					<li class="song-name flex-grow-1">
 						<a class="dropdown-item" :class="{ active: idx == props.modelValue }" href="javascript:" @click="handleSelectSong(idx)" draggable="false">{{getSongName(state, idx)}}</a>
 					</li>
-					<li class="rename"><a class="dropdown-item" :class="{ active: idx == props.modelValue }" href="javascript:" @click="handleRenameSong(idx)" title="Rename" v-b-tooltip.hover draggable="false"><fa icon="pencil-alt"/></a></li>
-					<li class="copy"><a class="dropdown-item" :class="{ active: idx == props.modelValue }" href="javascript:" @click="handleCopySong(idx)" title="Copy" v-b-tooltip.hover draggable="false"><fa icon="copy"/></a></li>
-					<li class="remove"><a class="dropdown-item" :class="{ active: idx == props.modelValue }" href="javascript:" @click="handleRemoveSong(idx)" title="Remove" v-b-tooltip.hover draggable="false"><fa icon="trash"/></a></li>
+					<li class="rename"><a class="dropdown-item" :class="{ active: idx == props.modelValue }" href="javascript:" @click="handleRenameSong(idx)" v-tooltip="'Rename'" draggable="false"><fa icon="pencil-alt"/></a></li>
+					<li class="copy"><a class="dropdown-item" :class="{ active: idx == props.modelValue }" href="javascript:" @click="handleCopySong(idx)" v-tooltip="'Copy'" draggable="false"><fa icon="copy"/></a></li>
+					<li class="remove"><a class="dropdown-item" :class="{ active: idx == props.modelValue }" href="javascript:" @click="handleRemoveSong(idx)" v-tooltip="'Remove'" draggable="false"><fa icon="trash"/></a></li>
 				</ul>
 			</li>
 			<li><hr class="dropdown-divider"></li>

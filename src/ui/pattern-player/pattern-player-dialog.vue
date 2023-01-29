@@ -8,7 +8,6 @@
 	import { computed, ref } from "vue";
 	import { injectStateRequired } from "../../services/state";
 	import { useModal } from "./../utils/modal";
-	import { injectEventBusRequired } from "../../services/events";
 
 	const state = injectStateRequired();
 
@@ -26,17 +25,11 @@
 		(type: 'update:show', show: boolean): void;
 	}>();
 
-	const eventBus = injectEventBusRequired();
-
 	const modal = useModal({
 		show: computed(() => !!props.show),
 		emit,
-		onShow: () => {
-			eventBus.emit("pattern-editor-opened", { pattern: [props.tuneName, props.patternName], readonly: props.readonly });
-		},
 		onHide: () => {
 			stopAllPlayers();
-			eventBus.emit("pattern-editor-closed", { pattern: [props.tuneName, props.patternName], readonly: props.readonly });
 		}
 	});
 

@@ -11,7 +11,7 @@
 	import { Pattern } from "../../state/pattern";
 	import { injectStateRequired } from "../../services/state";
 	import { useEventBusListener } from "../../services/events";
-	import { computed, nextTick, onMounted, ref, watchEffect } from "vue";
+	import { computed, onMounted, ref, watchEffect } from "vue";
 	import MuteButton from "../playback-settings/mute-button.vue";
 	import HeadphonesButton from "../playback-settings/headphones-button.vue";
 	import SongPlayerToolbar from "./song-player-toolbar.vue";
@@ -207,17 +207,17 @@
 			idx
 		};
 
+		event.dataTransfer!.effectAllowed = "move";
 		setDragData(event, data);
 
-		nextTick(() => {
+		setTimeout(() => {
+			// Delay due to https://stackoverflow.com/a/19663227/242365
 			resizing.value = data;
-		});
+		}, 0);
 	};
 
 	const handleResizeDragEnd = (event: DragEvent) => {
-		nextTick(() => {
-			resizing.value = undefined;
-		});
+		resizing.value = undefined;
 	};
 
 	const handleDragEnter = (event: DragEvent, thisDragOver: DragOver) => {
@@ -329,15 +329,16 @@
 	<div :class="`bb-song-player ${dragging ? 'dragging' : ''} ${resizing ? 'resizing' : ''}`" ref="containerRef">
 		<SongPlayerToolbar :player="playerRef" v-model:songIdx="songIdx">
 			<template v-slot:after-actions>
-				<div
-					class="btn-group trash-drop"
-					:class="getDragOverClass('trash')"
-					@dragenter="handleDragEnter($event, 'trash')"
-					@dragover="$event.preventDefault()"
-					@dragleave="handleDragLeave($event, 'trash')"
-					@drop="handleDrop($event)"
-				>
-					<fa icon="trash"/>
+				<div class="trash-drop">
+					<div
+						:class="getDragOverClass('trash')"
+						@dragenter="handleDragEnter($event, 'trash')"
+						@dragover="$event.preventDefault()"
+						@dragleave="handleDragLeave($event, 'trash')"
+						@drop="handleDrop($event)"
+					>
+						<fa icon="trash"/>
+					</div>
 				</div>
 			</template>
 		</SongPlayerToolbar>
@@ -356,6 +357,7 @@
 				<div class="field" v-for="instrumentKey of config.instrumentKeys" :key="instrumentKey">
 					<ul class="icon-list">
 						<HeadphonesButton :instrument="instrumentKey" v-model:playbackSettings="state.playbackSettings" groupSurdos />
+						&nbsp;
 						<MuteButton :instrument="instrumentKey" v-model:playbackSettings="state.playbackSettings" />
 					</ul>
 				</div>
@@ -393,7 +395,7 @@
 								</div>
 							</PatternPlaceholderItem>
 							<PatternPlaceholderItem>
-								<a href="javascript:" @click="removePatternFromSong(instrumentKey, i-1)" title="Remove" v-b-tooltip.hover draggable="false"><fa icon="trash" /></a>
+								<a href="javascript:" @click="removePatternFromSong(instrumentKey, i-1)" v-tooltip="'Remove'" draggable="false"><fa icon="trash" /></a>
 							</PatternPlaceholderItem>
 						</PatternPlaceholder>
 						<span class="placeholder-drag-handle" draggable="true" @dragstart="handleResizeDragStart($event, instrumentKey, i-1)" @dragend="handleResizeDragEnd($event)"><span class="caret-se"></span></span>
@@ -422,19 +424,26 @@
 		flex-direction: column;
 
 		.trash-drop {
-			font-size: 35px;
-			line-height: 35px;
-			width: 65px;
-			height: 65px;
-			align-items: center;
-			justify-content: center;
-			position: absolute;
-			margin: -17px 0 0 25px;
-			padding: 15px;
-			border-radius: 60px;
-			background: #fff;
-			box-shadow: 0 0 10px #000;
-			z-index: 100;
+			height: 0;
+			margin: 0;
+
+			> * {
+				font-size: 35px;
+				line-height: 35px;
+				width: 65px;
+				height: 65px;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				transform: translateY(-50%);
+				margin-left: 25px;
+				padding: 15px;
+				border-radius: 60px;
+				background: #fff;
+				box-shadow: 0 0 10px #000;
+				z-index: 100;
+			}
 		}
 
 		.trash-drop, .all-drop {

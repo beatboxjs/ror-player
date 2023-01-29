@@ -1,7 +1,7 @@
 import { compressState, createSong, extendState, extendStateFromCompressed, normalizeState } from "../state/state";
 import { clone, objectToString, stringToObject } from "../utils";
 import { isEqual } from "lodash-es";
-import { ref } from "vue";
+import { nextTick, ref, watch } from "vue";
 import { EventBus } from "./events";
 
 export class History {
@@ -10,12 +10,21 @@ export class History {
 	eventBus: EventBus;
 	state = ref(normalizeState());
 	currentKey = ref<number>();
+	onDestroy: Array<() => void> = [];
 
 	constructor(storage: Record<string, string>, eventBus: EventBus) {
 		this.storage = storage;
 		this.eventBus = eventBus;
 
-		this.loadHistoricState();
+		this.onDestroy.push(watch(storage, () => {
+			this.loadHistoricState();
+		}, { deep: true, immediate: true }));
+
+		watch(this.state, () => {
+			nextTick(() => {
+				this.saveCurrentState();
+			});
+		}, { deep: true, immediate: true });
 
 		// Legacy storage
 		if(storage.song) {
@@ -32,13 +41,14 @@ export class History {
 		}
 	}
 
+	destroy(): void {
+		this.onDestroy.forEach((callback) => callback());
+	}
+
 	loadEncodedString(encodedString: string): string[] {
-		this.saveCurrentState();
 		const errs = this._loadFromString(encodedString);
 
 		this.currentKey.value = undefined;
-
-		this.saveCurrentState();
 
 		this.eventBus.emit("history-load-encoded-string");
 
@@ -57,16 +67,12 @@ export class History {
 			.sort().reverse();
 	}
 
-	loadHistoricState(key?: number | null): void {
+	loadHistoricState(key?: number | null, loadSettings = false): void {
 		if(key == null)
 			key = Number(this.storage.bbState);
 
-		if(this.currentKey.value)
-			this.saveCurrentState();
-
 		this._loadFromString(key && this.storage[`bbState-${key}`] || "");
 		this.currentKey.value = key;
-		this.saveCurrentState();
 	}
 
 	clear(): void {

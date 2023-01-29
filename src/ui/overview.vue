@@ -1,68 +1,38 @@
 <script setup lang="ts">
 	import { stopAllPlayers } from "../services/player";
-	import { computed, nextTick, ref, watch } from "vue";
+	import { watch } from "vue";
 	import { createEventBus, provideEventBus } from "../services/events";
 	import Update from "./update.vue";
 	import Help from "./help/help.vue";
 	import Listen from "./listen/listen.vue";
 	import { History } from "../services/history";
-	import { enableRouter } from "../services/router";
+	import { useRouter } from "../services/router";
 	import Compose from "./compose/compose.vue";
+	import { useRefWithOverride } from "../utils";
 
-	const props = withDefaults(defineProps<{
+	const props = defineProps<{
 		storage: Record<string, string>;
 		path?: string;
-	}>(), {
-		path: ""
-	});
+	}>();
 
 	const emit = defineEmits<{
 		(type: "update:path", path: string): void;
 	}>();
 
-	const path = computed({
-		get: () => props.path,
-		set: (path) => {
-			emit("update:path", path);
-		}
-	});
+	const path = useRefWithOverride("", () => props.path, (path) => emit("update:path", path));
+
+	const route = useRouter(path);
 
 	const eventBus = createEventBus();
 	provideEventBus(eventBus);
 	const history = new History(props.storage, eventBus);
 
-	nextTick(() => {
-		enableRouter(eventBus, history, path);
-	});
-
-	let activeTab = ref(0);
-
-	eventBus.on("listen", async (data) => {
-		if (activeTab.value !== 0) {
-			activeTab.value = 0;
-			await nextTick();
-			// Listen component is now rendering
-			await nextTick();
-			// Listen component is now rendered. Emit the event again for it to pick it up.
-			eventBus.emit("listen", data);
-		}
-	});
-
-	eventBus.on("compose", () => {
-		activeTab.value = 1;
-	});
-
 	eventBus.on("overview-close-pattern-list", () => {
 		document.body.classList.remove("bb-pattern-list-visible");
 	});
 
-	watch(activeTab, () => {
+	watch(() => route.value?.tab, () => {
 		stopAllPlayers();
-		if (activeTab.value == 1) {
-			eventBus.emit("overview-compose");
-		} else {
-			eventBus.emit("overview-listen");
-		}
 	});
 
 	function togglePatternList() {
@@ -85,17 +55,17 @@
 		</span>
 
 		<ul class="nav nav-tabs">
-			<li class="nav-item"><a class="nav-link" :class="{ active: activeTab === 0 }" href="javascript:" @click="activeTab = 0">Listen</a></li>
-			<li class="nav-item"><a class="nav-link" :class="{ active: activeTab === 1 }" href="javascript:" @click="activeTab = 1">Compose</a></li>
+			<li class="nav-item"><a class="nav-link" :class="{ active: route.tab === 'listen' }" href="javascript:" @click="route.tab = 'listen'">Listen</a></li>
+			<li class="nav-item"><a class="nav-link" :class="{ active: route.tab === 'compose' }" href="javascript:" @click="route.tab = 'compose'">Compose</a></li>
 		</ul>
 
 		<div class="bb-overview-content">
-			<template v-if="activeTab === 0">
-				<Listen />
+			<template v-if="route.tab === 'listen'">
+				<Listen :tuneName="route.tuneName ?? null" @update:tuneName="route.tuneName = $event ?? undefined" v-model:editPattern="route.patternName" />
 			</template>
 
-			<template v-if="activeTab === 1">
-				<Compose :history="history" />
+			<template v-if="route.tab === 'compose'">
+				<Compose :history="history" v-model:expandTune="route.tuneName" v-model:editPattern="route.patternName" v-model:importData="route.importData" />
 			</template>
 		</div>
 
@@ -120,10 +90,6 @@
 			position: absolute;
 			top: 0.5em;
 			right: 1em;
-		}
-
-		.bb-state-provider {
-			height: 100%;
 		}
 
 		> .nav {

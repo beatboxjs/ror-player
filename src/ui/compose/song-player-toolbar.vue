@@ -1,6 +1,6 @@
 <script setup lang="ts">
 	import { getSongName } from "../../state/state";
-	import { BeatboxReference } from "../../services/player";
+	import { BeatboxReference, getPlayerById } from "../../services/player";
 	import { clearSong } from "../../state/song";
 	import { showConfirm } from "../utils/alert";
 	import PlaybackSettingsPicker from "../playback-settings/playback-settings-picker.vue";
@@ -10,7 +10,7 @@
 	import { computed, ref } from "vue";
 	import SongPicker from "./song-picker.vue";
 	import PlayPauseStopButton from "../play-pause-stop-button.vue";
-	import Export from "../export.vue";
+	import { download, ExportType } from "../utils/export";
 
 	const props = defineProps<{
 		player: BeatboxReference;
@@ -41,11 +41,17 @@
 		}
 	};
 
-	const songName = computed(() => getSongName(state.value, songIdx.value)!);
+	const handleDownload = (type: ExportType) => {
+		download({
+			type,
+			filename: getSongName(state.value, songIdx.value)!,
+			player: getPlayerById(props.player.id)
+		});
+	};
 </script>
 
 <template>
-	<div class="control-panel bb-song-player-toolbar">
+	<div class="bb-song-player-toolbar">
 		<PlayPauseStopButton :player="props.player" />
 		<PlaybackSettingsPicker v-model="state.playbackSettings" tooltip-placement="bottom" />
 
@@ -59,10 +65,8 @@
 			</button>
 			<ul class="dropdown-menu">
 				<li><a class="dropdown-item" href="javascript:" @click="handleClearSong()" draggable="false"><fa icon="trash" fixed-width/> Clear song</a></li>
-				<Export :player="props.player" :filename="songName" v-slot="{ downloadMP3, downloadWAV }">
-					<li><a class="dropdown-item" href="javascript:" @click="downloadMP3()" draggable="false"><fa icon="file-export" fixed-width/> Export MP3</a></li>
-						<li><a class="dropdown-item" href="javascript:" @click="downloadWAV()" draggable="false"><fa icon="file-export" fixed-width/> Export WAV</a></li>
-				</Export>
+				<li><a class="dropdown-item" href="javascript:" @click="handleDownload(ExportType.MP3)" draggable="false"><fa icon="file-export" fixed-width/> Export MP3</a></li>
+				<li><a class="dropdown-item" href="javascript:" @click="handleDownload(ExportType.WAV)" draggable="false"><fa icon="file-export" fixed-width/> Export WAV</a></li>
 				<li><a class="dropdown-item" href="javascript:" @click="showShareDialog = true" draggable="false"><fa icon="share" fixed-width/> Share</a></li>
 				<li><a class="dropdown-item" href="javascript:" @click="showImportDialog = true" draggable="false"><fa icon="file-import" fixed-width/> Import</a></li>
 			</ul>

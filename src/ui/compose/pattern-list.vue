@@ -3,43 +3,61 @@
 	import PatternListFilter, { DEFAULT_FILTER, Filter, filterPatternList } from "../pattern-list-filter.vue";
 	import defaultTunes from "../../defaultTunes";
 	import PatternPlaceholder, { PatternPlaceholderItem } from "../pattern-placeholder.vue";
-	import { clone } from "../../utils";
+	import { useRefWithOverride } from "../../utils";
 	import RenamePatternDialog from "./rename-pattern-dialog.vue";
 	import PatternPlayerDialog from "../pattern-player/pattern-player-dialog.vue";
 	import Collapse from "../utils/collapse.vue";
 	import { computed, ref, watch } from "vue";
 	import { injectStateRequired } from "../../services/state";
-	import { injectEventBusRequired, useEventBusListener } from "../../services/events";
 	import { showConfirm, showPrompt } from "../utils/alert";
 	import vTooltip from "../utils/tooltip";
+
+	const props = defineProps<{
+		expandTune?: string;
+		editPattern?: string;
+	}>();
+
+	const emit = defineEmits<{
+		(type: "update:expandTune", tuneName: string | undefined): void;
+		(type: "update:editPattern", patternName: string | undefined): void;
+	}>();
+	const expandTune = useRefWithOverride(undefined, () => props.expandTune, (tuneName) => emit("update:expandTune", tuneName));
+	const editPattern = useRefWithOverride(undefined, () => props.editPattern, (patternName) => emit("update:editPattern", patternName));
 
 	type Opened = {
 		[tuneName: string]: boolean
 	}
 
 	const state = injectStateRequired();
-	const eventBus = injectEventBusRequired();
 
 	const filter = ref<Filter>(DEFAULT_FILTER);
 	const isOpened = ref<Opened>({});
-	const previousIsOpened = ref<Opened>({});
 	const showPatternEditor = ref<{ tuneName: string; patternName: string }>();
 	const showRename = ref<{ tuneName: string; patternName: string }>();
 
-	watch(isOpened, () => {
-		for(const i in isOpened.value) {
-			if(!!isOpened.value[i] != !!previousIsOpened.value[i]) {
-				eventBus.emit(isOpened.value[i] ? "pattern-list-tune-opened" : "pattern-list-tune-closed", i);
-			}
+	const isCustomPattern = (tuneName: string, patternName: string) => {
+		return !defaultTunes.getPattern(tuneName, patternName);
+	};
+
+	const isCustomTune = (tuneName: string) => {
+		return defaultTunes[tuneName] == null;
+	};
+
+	watch(expandTune, () => {
+		if (expandTune.value) {
+			isOpened.value[expandTune.value] = true;
+
+			if(!filterPatternList(state.value, filter.value).includes(expandTune.value))
+				filter.value = { text: "", cat: "all" };
 		}
-		previousIsOpened.value = clone(isOpened.value);
-	}, { deep: true });
+	}, { immediate: true });
 
 	watch(filter, () => {
 		const visibleTunes = filterPatternList(state.value, filter.value);
 		for(const i in isOpened.value) {
-			if(isOpened.value[i] && visibleTunes.indexOf(i) == -1)
-				eventBus.emit("pattern-list-tune-closed", i);
+			if(isOpened.value[i] && !visibleTunes.includes(i)) {
+				toggleTune(i, false);
+			}
 		}
 	}, { deep: true });
 
@@ -53,16 +71,6 @@
 		})),
 		height: Object.keys(state.value.tunes[tuneName].patterns).length * 50 + 24
 	})));
-
-	useEventBusListener("pattern-list-open-tune", (tuneName: string) => {
-		if(!state.value.tunes[tuneName])
-			return;
-
-		isOpened.value[tuneName] = true;
-
-		if(!filterPatternList(state.value, filter.value).includes(tuneName))
-			filter.value = { text: "", cat: isCustomTune(tuneName) ? "custom" : (state.value.tunes[tuneName].categories[0] || "all") };
-	});
 
 	const createPatternInTune = async (tuneName: string) => {
 		const newPatternName = await showPrompt({
@@ -89,14 +97,6 @@
 		if (await showConfirm({ title: "Remove break", message: `Do you really want to remove ${patternName} (${tuneName})?`, variant: 'danger' })) {
 			removePattern(state.value, tuneName, patternName);
 		}
-	};
-
-	const isCustomPattern = (tuneName: string, patternName: string) => {
-		return !defaultTunes.getPattern(tuneName, patternName);
-	};
-
-	const isCustomTune = (tuneName: string) => {
-		return defaultTunes[tuneName] == null;
 	};
 
 	const handleCreateTune = async () => {
@@ -162,8 +162,23 @@
 		}
 	};
 
-	const toggleTune = async (tuneName: string) => {
-		isOpened.value[tuneName] = !isOpened.value[tuneName];
+	const toggleTune = (tuneName: string, show = !isOpened.value[tuneName]) => {
+		isOpened.value[tuneName] = show;
+
+		if (show) {
+			expandTune.value = tuneName;
+		} else if (expandTune.value === tuneName) {
+			expandTune.value = undefined;
+		}
+	};
+
+	const handleEditorDialog = (tuneName: string, patternName: string, show: boolean) => {
+		if (show) {
+			expandTune.value = tuneName;
+			editPattern.value = patternName;
+		} else if (expandTune.value === tuneName && editPattern.value === patternName) {
+			editPattern.value = undefined;
+		}
 	};
 </script>
 
@@ -184,9 +199,17 @@
 						</button>
 					</div>
 				</div>
-				<Collapse v-model:show="isOpened[tune.tuneName]" :height="tune.height">
+				<Collapse :show="isOpened[tune.tuneName]" :height="tune.height">
 					<div class="card-body">
-						<PatternPlaceholder v-for="pattern in tune.patterns" :key="pattern.patternName" :tune-name="tune.tuneName" :pattern-name="pattern.patternName" :draggable="true">
+						<PatternPlaceholder
+							v-for="pattern in tune.patterns"
+							:key="pattern.patternName"
+							:tune-name="tune.tuneName"
+							:pattern-name="pattern.patternName"
+							:draggable="true"
+							:showEditorDialog="expandTune === tune.tuneName && editPattern === pattern.patternName"
+							@update:showEditorDialog="handleEditorDialog(tune.tuneName, pattern.patternName, $event)"
+						>
 							<PatternPlaceholderItem><a href="javascript:" v-tooltip="`Copy${pattern.isCustom ? '/Move/Rename' : ''} break`" @click="copyPattern(tune.tuneName, pattern.patternName)" draggable="false"><fa icon="copy"/></a></PatternPlaceholderItem>
 							<PatternPlaceholderItem v-if="pattern.isCustom"><a href="javascript:" v-tooltip="'Remove'" @click="removePatternFromTune(tune.tuneName, pattern.patternName)" draggable="false"><fa icon="trash"/></a></PatternPlaceholderItem>
 							<slot :tuneName="tune.tuneName" :patternName="pattern.patternName"/>
@@ -216,7 +239,7 @@
 
 		display: flex;
 		flex-direction: column;
-		height: 100%;
+		min-height: 0;
 
 		.card-header, .card-body {
 			padding: 0;

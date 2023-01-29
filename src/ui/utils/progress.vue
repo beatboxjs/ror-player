@@ -2,6 +2,10 @@
 	const props = defineProps<{
 		progress?: number;
 	}>();
+
+	const emit = defineEmits<{
+		(type: "cancel"): void;
+	}>();
 </script>
 
 <template>
@@ -10,7 +14,7 @@
 			<div class="progress">
 				<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" :style="{ width: `${props.progress}%` }">{{props.progress}}&#x202f;%</div>
 			</div>
-			<a href="javascript:" @click="$emit('cancel')" draggable="false"><fa icon="window-close"/></a>
+			<a href="javascript:" @click="emit('cancel')" draggable="false"><fa icon="window-close"/></a>
 		</div>
 	</Teleport>
 </template>

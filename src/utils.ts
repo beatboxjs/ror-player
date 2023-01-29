@@ -1,7 +1,7 @@
 import { inflateRaw, deflateRaw } from "pako";
 import { decode } from "base64-arraybuffer";
 import * as z from "zod";
-import { AllowedComponentProps, ComponentPublicInstance, VNodeProps } from "vue";
+import { AllowedComponentProps, ComponentPublicInstance, computed, Ref, ref, VNodeProps } from "vue";
 
 export const NUMBER_TO_STRING_CHARS = " !#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~";
 
@@ -140,3 +140,17 @@ export function requiredRecordValidator<T extends [string, ...string[]], Value e
 }
 
 export type ComponentProps<Component extends new (...args: any) => ComponentPublicInstance<any, any, any, any, any, any, any, any, any, any, any>> = Omit<InstanceType<Component>["$props"], keyof VNodeProps | keyof AllowedComponentProps>;
+
+export function useRefWithOverride<Value>(fallbackValue: Value, getProp: () => Value | undefined, onUpdate: (newValue: Value) => void): Ref<Value> {
+    const internalValue = ref(getProp() ?? fallbackValue);
+    return computed({
+        get: (): Value => {
+            const propValue = getProp();
+            return propValue !== undefined ? propValue : internalValue.value as Value;
+        },
+        set: (val: Value) => {
+            internalValue.value = val as any;
+            onUpdate(val);
+        }
+    });
+}

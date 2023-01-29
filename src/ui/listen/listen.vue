@@ -1,20 +1,33 @@
 <script lang="ts" setup>
 	import { computed, nextTick, ref, watch } from "vue";
 	import { normalizeState } from "../../state/state";
-	import { Tune } from "../../state/tune";
 	import { stopAllPlayers } from "../../services/player";
 	import { provideState } from "../../services/state";
-	import { injectEventBusRequired, useEventBusListener } from "../../services/events";
+	import { injectEventBusRequired } from "../../services/events";
 	import PatternListFilter, { Filter, filterPatternList } from "../pattern-list-filter.vue";
 	import TuneInfo from "./tune-info.vue";
+	import { useRefWithOverride } from "../../utils";
+	import { getTuneOfTheYear } from "../../services/utils";
+
+	const props = defineProps<{
+		/** null means to forward to the tune of the year */
+		tuneName?: string | null;
+		editPattern?: string;
+	}>();
+
+	const emit = defineEmits<{
+		(type: "update:tuneName", tuneName: string | null | undefined): void;
+		(type: "update:editPattern", patternName: string | undefined): void;
+	}>();
+
+	const tuneName = useRefWithOverride(undefined, () => props.tuneName, (tuneName) => emit("update:tuneName", tuneName));
+	const editPattern = useRefWithOverride(undefined, () => props.editPattern, (patternName) => emit("update:editPattern", patternName));
 
 	const state = ref(normalizeState());
 	provideState(state);
 
 	const tunesRef = ref<HTMLElement | null>(null);
 
-	const tuneName = ref<string | null>(null);
-	const tune = ref<Tune | null>(null);
 	const filter = ref<Filter | undefined>(undefined);
 
 	const touchStartX = ref<number | null>(null);
@@ -23,35 +36,23 @@
 
 	const tuneListRef = ref<HTMLElement | null>(null);
 
-	useEventBusListener("listen", (newTuneName) => {
-		if(!state.value.tunes[newTuneName] || newTuneName == tuneName.value)
-			return;
-
-		if(!filterPatternList(state.value, filter.value).includes(newTuneName))
-			filter.value = { text: "", cat: state.value.tunes[newTuneName].categories[0] || "all" };
-
-		selectTune(newTuneName);
-	});
-
 	const eventBus = injectEventBusRequired();
 
 	watch(tuneName, () => {
-		if(tuneName.value)
-			eventBus.emit("pattern-list-tune-opened", tuneName.value);
-	});
-
-	const selectTune = (newTuneName: string) => {
-		tuneName.value = newTuneName;
-		tune.value = state.value.tunes[newTuneName];
-
 		eventBus.emit("overview-close-pattern-list");
-
 		stopAllPlayers();
 
-		nextTick(() => {
-			scrollToTune();
-		});
-	};
+		if (tuneName.value) {
+			if(!filterPatternList(state.value, filter.value).includes(tuneName.value))
+				filter.value = { text: "", cat: "all" };
+
+			nextTick(() => {
+				scrollToTune();
+			});
+		} else {
+			tuneName.value = getTuneOfTheYear();
+		}
+	}, { immediate: true });
 
 	const scrollToTune = () => {
 		tuneListRef.value?.querySelector('.nav-link.active')?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
@@ -96,7 +97,7 @@
 
 			<ul class="nav nav-pills flex-column flex-nowrap" ref="tuneListRef">
 				<li v-for="thisTuneName in tuneList" :key="thisTuneName" class="nav-item">
-					<a class="nav-link" :class="{ active: thisTuneName == tuneName }" href="javascript:" @click="selectTune(thisTuneName)" draggable="false">
+					<a class="nav-link" :class="{ active: thisTuneName == tuneName }" href="javascript:" @click="tuneName = thisTuneName" draggable="false">
 						{{state.tunes[thisTuneName].displayName || thisTuneName}}
 					</a>
 				</li>
@@ -104,7 +105,7 @@
 		</div>
 
 		<div class="bb-listen-info">
-			<TuneInfo v-if="tuneName" :tune-name="tuneName" />
+			<TuneInfo v-if="tuneName" :tuneName="tuneName" v-model:editPattern="editPattern" />
 		</div>
 	</div>
 </template>

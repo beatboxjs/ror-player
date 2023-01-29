@@ -1,6 +1,6 @@
 <script setup lang="ts">
 	import { Collapse } from 'bootstrap';
-import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
+	import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
 
 	const props = withDefaults(defineProps<{
 		height?: number;

@@ -247,8 +247,7 @@
 
 		nextTick(() => {
 			if (currentStrokeDropdown.value) {
-				//const trigger = document.getElementById();
-				strokeDropdownPopover.value = new CustomPopover(`#bb-pattern-editor-stroke-${currentStrokeDropdown.value.instr}-${currentStrokeDropdown.value.i}`, { content: strokeDropdownRef.value!, placement: 'bottom' });
+				strokeDropdownPopover.value = new CustomPopover(`#bb-pattern-player-stroke-${currentStrokeDropdown.value.instr}-${currentStrokeDropdown.value.i}`, { content: strokeDropdownRef.value!, placement: 'bottom' });
 				strokeDropdownPopover.value.show();
 			}
 		});
@@ -269,8 +268,8 @@
 			<button v-if="hasLocalChanges" type="button" class="btn btn-warning" @click="reset()"><fa icon="eraser"/> Restore original</button>
 		</PatternPlayerToolbar>
 
-		<div class="bb-pattern-editor-container" ref="containerRef">
-			<table class="pattern-editor" :class="'time-'+pattern.time">
+		<div class="bb-pattern-player-container" ref="containerRef">
+			<table class="bb-pattern-player" :class="`time-${pattern.time}`">
 				<thead>
 					<tr>
 						<td colspan="2" class="instrument-operations">
@@ -291,7 +290,7 @@
 							<span v-if="readonly" class="stroke-inner">{{config.strokes[pattern[instrumentKey][i-1]] || '\xa0'}}</span>
 							<a v-if="!readonly"
 								href="javascript:" class="stroke-inner"
-								:id="`bb-pattern-editor-stroke-${instrumentKey}-${i-1}`"
+								:id="`bb-pattern-player-stroke-${instrumentKey}-${i-1}`"
 								@click="clickStroke(instrumentKey, i-1)"
 								draggable="false"
 							>
@@ -313,13 +312,13 @@
 </template>
 
 <style lang="scss">
-	.bb-pattern-editor-container {
+	.bb-pattern-player-container {
 		width: 100%;
 		overflow-x: auto;
 		padding: 1em 0;
 		position: relative;
 
-		.pattern-editor {
+		.bb-pattern-player {
 			table-layout: fixed;
 
 			.stroke {

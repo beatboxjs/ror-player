@@ -12,10 +12,25 @@
 	import { selectSong } from "../../state/state";
 	import HistoryPicker from "./history-picker.vue";
 	import SongPlayer from "./song-player.vue";
+	import { clone, useRefWithOverride } from "../../utils";
 
 	const props = defineProps<{
 		history: History;
+		expandTune?: string;
+		editPattern?: string;
+		importData?: string;
 	}>();
+
+	const emit = defineEmits<{
+		(type: "update:expandTune", tuneName: string | undefined): void;
+		(type: "update:editPattern", patternName: string | undefined): void;
+		(type: "update:importData", importData: string | undefined): void;
+	}>();
+
+	const expandTune = useRefWithOverride(undefined, () => props.expandTune, (tuneName) => emit("update:expandTune", tuneName));
+	const editPattern = useRefWithOverride(undefined, () => props.editPattern, (patternName) => emit("update:editPattern", patternName));
+	const importData = useRefWithOverride(undefined, () => props.importData, (importData) => emit("update:importData", importData));
+	// TODO: Handle importData
 
 	provideState(props.history.state);
 
@@ -26,6 +41,7 @@
 	const tunesRef = ref<HTMLElement>();
 	const touchStartX = ref<number>();
 	const songIdx = ref(state.value.songIdx);
+	const playbackSettings = ref(clone(state.value.playbackSettings));
 
 	useEventBusListener("pattern-placeholder-drag-start", () => {
 		eventBus.emit("overview-close-pattern-list");
@@ -41,6 +57,14 @@
 			selectSong(state.value, songIdx.value);
 		}
 	}, { immediate: true });
+
+	watch(songIdx, () => {
+		selectSong(state.value, songIdx.value);
+	});
+
+	watch(playbackSettings, () => {
+		state.value.playbackSettings = clone(playbackSettings.value);
+	}, { deep: true });
 
 	const patternClick = async (tuneName: string, patternName: string) => {
 		const song = state.value.songs[songIdx.value];
@@ -86,7 +110,7 @@
 <template>
 	<div class="bb-compose" ref="containerRef">
 		<div class="bb-compose-tunes" v-touch:start="handleTouchStart" v-touch:moving="handleTouchMove" v-touch:end="handleTouchEnd" ref="tunesRef">
-			<PatternList v-slot="slotProps">
+			<PatternList v-slot="slotProps" v-model:expandTune="expandTune" v-model:editPattern="editPattern">
 				<PatternPlaceholderItem><a href="javascript:" v-tooltip="`Add to song`" @click="patternClick(slotProps.tuneName, slotProps.patternName)" draggable="false"><fa icon="plus"/></a></PatternPlaceholderItem>
 			</PatternList>
 		</div>
@@ -101,10 +125,13 @@
 <style lang="scss">
 	.bb-compose {
 		display: flex;
-		height: 100%;
+		flex-grow: 1;
+		min-height: 0;
 
 		.bb-compose-tunes {
-			height: 100%;
+			display: flex;
+			flex-direction: column;
+			min-height: 0;
 			width: 20em;
 			padding: 1.2em;
 			background: #fff;
@@ -126,7 +153,7 @@
 
 		.bb-compose-song-player {
 			flex-grow: 1;
-			height: 100%;
+			min-height: 0;
 			width: 0;
 		}
 

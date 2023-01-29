@@ -1,14 +1,15 @@
 <script lang="ts">
 	import defaultTunes from "../../defaultTunes";
 	import config from "../../config";
-	import { clone } from "../../utils";
+	import { clone, useRefWithOverride } from "../../utils";
 	import { computed, ref, watch } from "vue";
 	import { injectStateRequired } from "../../services/state";
 	import PlaybackSettingsPicker from "../playback-settings/playback-settings-picker.vue";
 	import ExampleSongPlayer from "./example-song-player.vue";
 	import PatternPlaceholder, { PatternPlaceholderItem } from "../pattern-placeholder.vue";
 	import vTooltip from "../utils/tooltip";
-	import Export from "../export.vue";
+	import { download, ExportType } from "../utils/export";
+	import { BeatboxReference, getPlayerById } from "../../services/player";
 
 	export function getTuneDescriptionHtml(tuneName: string): string | null {
 		if(!defaultTunes[tuneName])
@@ -28,8 +29,15 @@
 	const state = injectStateRequired();
 
 	const props = defineProps<{
-		tuneName: string
+		tuneName: string;
+		editPattern?: string;
 	}>();
+
+	const emit = defineEmits<{
+		(type: "update:editPattern", patternName: string | undefined): void;
+	}>();
+
+	const editPattern = useRefWithOverride(undefined, () => props.editPattern, (patternName) => emit("update:editPattern", patternName));
 
 	const tune = computed(() => props.tuneName && state.value.tunes[props.tuneName]);
 	const tuneDescriptionHtml = computed(() => getTuneDescriptionHtml(props.tuneName));
@@ -45,6 +53,22 @@
 				playbackSettings.value.speed = tune.value.speed || config.defaultSpeed;
 		}
 	});
+
+	const handleDownload = (patternName: string, playerRef: BeatboxReference) => {
+		download({
+			type: ExportType.MP3,
+			player: getPlayerById(playerRef.id),
+			filename: `${props.tuneName} - ${patternName}`
+		});
+	};
+
+	const handleEditorDialog = (patternName: string, show: boolean) => {
+		if (show) {
+			editPattern.value = patternName;
+		} else if (editPattern.value === patternName) {
+			editPattern.value = undefined;
+		}
+	};
 </script>
 
 <template>
@@ -76,17 +100,17 @@
 			:settings="playbackSettings"
 		/>
 		<PatternPlaceholder
+			v-for="(pattern, patternName) in tune.patterns"
 			:tune-name="tuneName"
 			:pattern-name="patternName"
 			:readonly="true"
-			v-for="(pattern, patternName) in tune.patterns"
 			:key="patternName"
 			:settings="playbackSettings"
 			v-slot="{ getPlayer }"
+			:showEditorDialog="editPattern === patternName"
+			@update:showEditorDialog="handleEditorDialog(patternName, $event)"
 		>
-			<Export :player="getPlayer" :filename="`${tuneName} - ${patternName}`" v-slot="{ downloadMP3 }">
-				<PatternPlaceholderItem><a href="javascript:" v-tooltip="'Download as MP3'" @click="downloadMP3()" draggable="false"><fa icon="download"/></a></PatternPlaceholderItem>
-			</Export>
+			<PatternPlaceholderItem><a href="javascript:" v-tooltip="'Download as MP3'" @click="handleDownload(patternName, getPlayer())" draggable="false"><fa icon="download"/></a></PatternPlaceholderItem>
 		</PatternPlaceholder>
 	</div>
 </template>

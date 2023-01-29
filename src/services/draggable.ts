@@ -27,12 +27,11 @@ export function setDragData(event: DragEvent, data: DragData): void {
 	(event.dataTransfer as DataTransfer).setData("application/json", JSON.stringify({ bbData: data }));
 }
 
-export function getDragData(event: DragEvent): DragData | null {
+export function getDragData(event: DragEvent): DragData | undefined {
 	const data = (event.dataTransfer as DataTransfer).getData("application/json");
 	if(data) {
 		const obj = JSON.parse(data);
 		if(obj.bbData)
 			return obj.bbData as DragData;
 	}
-	return null;
 }
