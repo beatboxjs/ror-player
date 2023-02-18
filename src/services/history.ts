@@ -2,19 +2,16 @@ import { compressState, createSong, extendState, extendStateFromCompressed, norm
 import { clone, objectToString, stringToObject } from "../utils";
 import { isEqual } from "lodash-es";
 import { nextTick, ref, watch } from "vue";
-import { EventBus } from "./events";
 
 export class History {
 
 	storage: Record<string, string>;
-	eventBus: EventBus;
 	state = ref(normalizeState());
 	currentKey = ref<number>();
 	onDestroy: Array<() => void> = [];
 
-	constructor(storage: Record<string, string>, eventBus: EventBus) {
+	constructor(storage: Record<string, string>) {
 		this.storage = storage;
-		this.eventBus = eventBus;
 
 		this.onDestroy.push(watch(storage, () => {
 			this.loadHistoricState();
@@ -49,8 +46,6 @@ export class History {
 		const errs = this._loadFromString(encodedString);
 
 		this.currentKey.value = undefined;
-
-		this.eventBus.emit("history-load-encoded-string");
 
 		return errs;
 	}

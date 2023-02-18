@@ -56,7 +56,7 @@ export async function showPrompt({ initialValue = "", validate, ...props }: Omit
 		message: '',
 		type: 'confirm',
 		getContent: () => h('div', {
-			class: `row${touched.value ? ' was-validated' : ''}`
+			class: touched.value ? 'was-validated' : ''
 		}, [
 			withDirectives(h('input', {
 				type: "text",

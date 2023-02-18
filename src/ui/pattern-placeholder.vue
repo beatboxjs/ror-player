@@ -6,7 +6,6 @@
 	import config from "../config";
 	import defaultTunes from "../defaultTunes";
 	import { patternEquals } from "../state/pattern";
-	import { injectEventBusRequired } from "../services/events";
 	import { DragType, PatternDragData, setDragData } from "../services/draggable";
 	import PatternPlayerDialog from "./pattern-player/pattern-player-dialog.vue";
 	import { clone, useRefWithOverride } from "../utils";
@@ -40,6 +39,8 @@
 
 	const emit = defineEmits<{
 		(type: "update:showEditorDialog", show: boolean): void;
+		(type: "dragStart"): void;
+		(type: "dragEnd"): void;
 	}>();
 
 	const playerRef = ref<BeatboxReference>();
@@ -69,8 +70,6 @@
 	});
 
 	const isCustomPattern = computed(() => !defaultTunes.getPattern(props.tuneName, props.patternName));
-
-	const eventBus = injectEventBusRequired();
 
 	watch(() => playbackSettings.value, () => {
 		updatePlayer();
@@ -147,12 +146,12 @@
 		setTimeout(() => {
 			// Delay due to https://stackoverflow.com/a/19663227/242365
 			dragging.value = true;
-			eventBus.emit("pattern-placeholder-drag-start");
+			emit("dragStart");
 		}, 0);
 	};
 
 	const handleDragEnd = (event: DragEvent) => {
-		eventBus.emit("pattern-placeholder-drag-end");
+		emit("dragEnd");
 		dragging.value = false;
 	};
 </script>

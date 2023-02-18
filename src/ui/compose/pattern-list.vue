@@ -15,14 +15,17 @@
 	const props = defineProps<{
 		expandTune?: string;
 		editPattern?: string;
+		isDraggingPattern?: boolean;
 	}>();
 
 	const emit = defineEmits<{
 		(type: "update:expandTune", tuneName: string | undefined): void;
 		(type: "update:editPattern", patternName: string | undefined): void;
+		(type: "update:isDraggingPattern", isDraggingPattern: boolean): void;
 	}>();
 	const expandTune = useRefWithOverride(undefined, () => props.expandTune, (tuneName) => emit("update:expandTune", tuneName));
 	const editPattern = useRefWithOverride(undefined, () => props.editPattern, (patternName) => emit("update:editPattern", patternName));
+	const isDraggingPattern = useRefWithOverride(false, () => props.isDraggingPattern, (isDraggingPattern) => emit("update:isDraggingPattern", isDraggingPattern));
 
 	type Opened = {
 		[tuneName: string]: boolean
@@ -209,6 +212,8 @@
 							:draggable="true"
 							:showEditorDialog="expandTune === tune.tuneName && editPattern === pattern.patternName"
 							@update:showEditorDialog="handleEditorDialog(tune.tuneName, pattern.patternName, $event)"
+							@dragStart="isDraggingPattern = true"
+							@dragEnd="isDraggingPattern = false"
 						>
 							<PatternPlaceholderItem><a href="javascript:" v-tooltip="`Copy${pattern.isCustom ? '/Move/Rename' : ''} break`" @click="copyPattern(tune.tuneName, pattern.patternName)" draggable="false"><fa icon="copy"/></a></PatternPlaceholderItem>
 							<PatternPlaceholderItem v-if="pattern.isCustom"><a href="javascript:" v-tooltip="'Remove'" @click="removePatternFromTune(tune.tuneName, pattern.patternName)" draggable="false"><fa icon="trash"/></a></PatternPlaceholderItem>
@@ -226,7 +231,7 @@
 		</div>
 
 		<div class="general-actions">
-			<a href="javascript:" @click="handleCreateTune()" draggable="false"><fa icon="plus"/> New tune</a>
+			<button type="button" class="btn btn-link" @click="handleCreateTune()"><fa icon="plus"/> New tune</button>
 		</div>
 
 		<PatternPlayerDialog v-if="showPatternEditor" show :tune-name="showPatternEditor.tuneName" :pattern-name="showPatternEditor.patternName" @update:show="showPatternEditor = $event ? showPatternEditor : undefined"/>
@@ -292,6 +297,10 @@
 
 		.general-actions {
 			padding-top: 10px;
+
+			button {
+				text-decoration: none;
+			}
 		}
 
 	}

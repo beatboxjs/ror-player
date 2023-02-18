@@ -201,7 +201,7 @@
 												<span
 													v-for="({ enabled }, patternName) in patterns"
 													:key="patternName"
-													v-tooltip="props.linkPattern && props.linkPattern[0] == tuneName && props.linkPattern[1] == patternName ? 'Will be opened by default' : enabled === 2 ? 'Used in song, cannot be disabled' : ''"
+													v-tooltip.bottom="props.linkPattern && props.linkPattern[0] == tuneName && props.linkPattern[1] == patternName ? 'Will be opened by default' : enabled === 2 ? 'Used in song, cannot be disabled' : ''"
 												>
 													<button
 														type="button"

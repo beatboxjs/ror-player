@@ -17,7 +17,7 @@ declare module "bootstrap" {
 const vTooltip: Directive<Element, string> = {
 	mounted(el, binding) {
 		el._bbTooltip = new Tooltip(el, {
-			placement: 'bottom',
+			placement: binding.modifiers.bottom ? 'bottom' : 'top',
 			title: binding.value ?? '',
 			trigger: 'hover'
 		});

@@ -1,37 +1,36 @@
 <script setup lang="ts">
-	import { computed, ref } from "vue";
-	import { useEventBusListener } from "../../services/events";
+	import { computed, ref, watch } from "vue";
 	import { isoDate, readableDate } from "../../services/utils";
 	import Popover from "../utils/popover.vue";
 	import vTooltip from "../utils/tooltip";
 	import { History } from "../../services/history";
-	import { showConfirm } from "../utils/alert";
-
-	// TODO
-	/*const globalData = Vue.observable({
-		// Store this globally because History might not be rendered when link is opened
-		showPopover: false
-	});
-
-	events.$on("history-load-encoded-string", () => {
-		globalData.showPopover = true;
-
-		$(document).one("click", () => {
-			globalData.showPopover = false;
-		});
-	});*/
+	import { showAlert, showConfirm } from "../utils/alert";
+	import { useRefWithOverride } from "../../utils";
 
 	const props = defineProps<{
 		history: History;
+		importData?: string;
 	}>();
+
+	const emit = defineEmits<{
+		(type: "update:importData", importData: string | undefined): void;
+	}>();
+
+	const importData = useRefWithOverride(undefined, () => props.importData, (importData) => emit("update:importData", importData));
 
 	const dropdownRef = ref<HTMLElement>();
 
 	const showPopover = ref(false);
 
-	useEventBusListener("history-load-encoded-string", () => {
-		showPopover.value = true;
-	});
+	watch(importData, () => {
+		if (importData.value) {
+			const errs = props.history.loadEncodedString(importData.value);
+			if(errs.length > 0)
+				showAlert({ title: 'Errors while loading data', message: errs.join("\n"), variant: 'warning' });
+			showPopover.value = true;
+			importData.value = undefined;
+		}
+	}, { immediate: true });
 
 	const historicStates = computed(() => {
 		const states = props.history.getHistoricStates();
@@ -57,7 +56,7 @@
 
 <template>
 	<div v-if="historicStates.length > 1" class="dropdown bb-history" ref="dropdownRef">
-		<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+		<button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
 			<fa icon="clock"/><span class="d-none d-sm-inline"> History</span>
 		</button>
 		<ul class="dropdown-menu dropdown-menu-end">

@@ -171,7 +171,7 @@
 									<tr>
 										<td>
 											<ul class="list-group">
-												<li v-for="(song, idx) in songInfo" :key="idx" class="list-group-item" :class="{active: song.shouldImport, disabled: song.exists}" v-tooltip="song.exists ? 'Song already exists.' : ''">
+												<li v-for="(song, idx) in songInfo" :key="idx" class="list-group-item" :class="{active: song.shouldImport, disabled: song.exists}" v-tooltip.bottom="song.exists ? 'Song already exists.' : ''">
 													<a v-if="!song.exists" href="javascript:" @click="clickSong(idx)" draggable="false">{{song.name}}</a>
 													<span v-if="song.exists">{{song.name}} <fa icon="check"></fa></span>
 												</li>
@@ -207,7 +207,7 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" @click="modal.hide()">Cancel</button>
+						<button type="button" class="btn btn-light" @click="modal.hide()">Cancel</button>
 						<button type="button" class="btn btn-primary" @click="doImport()" :disabled="!parsed.state">Import</button>
 					</div>
 				</div>

@@ -1,4 +1,4 @@
-import { computed, ref } from "vue";
+import { computed, Ref, ref } from "vue";
 
 const breakpointMinWidth = {
 	// See https://getbootstrap.com/docs/5.3/layout/breakpoints/#available-breakpoints
@@ -28,3 +28,17 @@ export const reactiveBreakpoint = computed(() => {
 	update.value;
 	return [...breakpoints].reverse().find((breakpoint) => mediaQueries[breakpoint].matches) ?? 'xs';
 });
+
+/**
+ * Returns a reactive boolean that is true if the current breakpoint is the specified one or smaller.
+ */
+export function useMaxBreakpoint(breakpoint: Breakpoint): Ref<boolean> {
+	return computed(() => breakpoints.indexOf(reactiveBreakpoint.value) <= breakpoints.indexOf(breakpoint));
+}
+
+/**
+ * Returns a reactive boolean that is true if the current breakpoint is the specified one or larger.
+ */
+export function useMinBreakpoint(breakpoint: Breakpoint): Ref<boolean> {
+	return computed(() => breakpoints.indexOf(reactiveBreakpoint.value) >= breakpoints.indexOf(breakpoint));
+}

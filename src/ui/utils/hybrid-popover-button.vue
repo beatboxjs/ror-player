@@ -6,9 +6,9 @@
 </script>
 
 <script setup lang="ts">
-	import { computed, ref } from "vue";
+	import { ref } from "vue";
 	import { useModal } from "./modal";
-	import { breakpoints, reactiveBreakpoint } from "../../services/bootstrap";
+	import { useMaxBreakpoint } from "../../services/bootstrap";
 	import vTooltip from "./tooltip";
 	import Popover from "./popover.vue";
 
@@ -22,7 +22,7 @@
 		forcePopover: false
 	});
 
-	const shouldUseModal = computed(() => breakpoints.indexOf(reactiveBreakpoint.value) < breakpoints.indexOf("sm"));
+	const shouldUseModal = useMaxBreakpoint("xs");
 
 	const button = ref<HTMLElement>();
 

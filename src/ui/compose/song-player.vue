@@ -10,12 +10,12 @@
 	import PatternPlaceholder, { PatternPlaceholderItem } from "../pattern-placeholder.vue";
 	import { Pattern } from "../../state/pattern";
 	import { injectStateRequired } from "../../services/state";
-	import { useEventBusListener } from "../../services/events";
 	import { computed, onMounted, ref, watchEffect } from "vue";
 	import MuteButton from "../playback-settings/mute-button.vue";
 	import HeadphonesButton from "../playback-settings/headphones-button.vue";
 	import SongPlayerToolbar from "./song-player-toolbar.vue";
 	import vTooltip from "../utils/tooltip";
+	import { useRefWithOverride } from "../../utils";
 
 	type DragOver = "trash" | { instr?: Instrument; idx: number };
 </script>
@@ -23,10 +23,12 @@
 <script setup lang="ts">
 	const props = defineProps<{
 		songIdx: number;
+		isDraggingPattern?: boolean;
 	}>();
 
 	const emit = defineEmits<{
 		(type: "update:songIdx", songIdx: number): void;
+		(type: "update:isDraggingPattern", isDraggingPattern: boolean): void;
 	}>();
 
 	const state = injectStateRequired();
@@ -39,7 +41,6 @@
 	});
 
 	const playerRef = ref(createBeatbox(false));
-	const dragging = ref(false);
 	const resizing = ref<PatternResizeDragData>();
 	const dragOver = ref<DragOver>();
 	const dragOverCount = ref(0);
@@ -47,13 +48,7 @@
 	const containerRef = ref<HTMLElement>();
 	const songPositionMarkerRef = ref<HTMLElement>();
 
-	useEventBusListener("pattern-placeholder-drag-start", () => {
-		dragging.value = true;
-	});
-
-	useEventBusListener("pattern-placeholder-drag-end", () => {
-		dragging.value = false;
-	});
+	const isDraggingPattern = useRefWithOverride(false, () => props.isDraggingPattern, (isDraggingPattern) => emit("update:isDraggingPattern", isDraggingPattern));
 
 	const player = computed(() => getPlayerById(playerRef.value.id));
 	const song = computed(() => state.value.songs[songIdx.value]);
@@ -98,7 +93,7 @@
 	};
 
 	watchEffect(() => {
-		const songBeatbox = songToBeatbox(state.value.songs[songIdx.value], state.value, state.value.playbackSettings);
+		const songBeatbox = songToBeatbox(state.value.songs[songIdx.value] ?? {}, state.value, state.value.playbackSettings);
 		player.value.setPattern(songBeatbox);
 		player.value.setUpbeat(songBeatbox.upbeat);
 		player.value.setBeatLength(60000/state.value.playbackSettings.speed/config.playTime);
@@ -107,7 +102,7 @@
 
 	const length = computed(() => {
 		let length = getEffectiveSongLength(song.value, state.value);
-		if(dragging.value)
+		if(isDraggingPattern.value)
 			length++;
 		if(dragOver.value && typeof dragOver.value === 'object')
 			length = Math.max(length, dragOver.value.idx+2);
@@ -326,7 +321,7 @@
 </script>
 
 <template>
-	<div :class="`bb-song-player ${dragging ? 'dragging' : ''} ${resizing ? 'resizing' : ''}`" ref="containerRef">
+	<div class="bb-song-player" :class="{ dragging: isDraggingPattern, resizing }" ref="containerRef">
 		<SongPlayerToolbar :player="playerRef" v-model:songIdx="songIdx">
 			<template v-slot:after-actions>
 				<div class="trash-drop">
@@ -340,6 +335,10 @@
 						<fa icon="trash"/>
 					</div>
 				</div>
+			</template>
+
+			<template v-slot:right>
+				<slot name="toolbar-right"/>
 			</template>
 		</SongPlayerToolbar>
 
@@ -376,7 +375,15 @@
 					@drop="handleDrop($event)"
 				>
 					<div :class="`pattern-container colspan-${getColSpan(instrumentKey, i-1)} rowspan-${getRowSpan(instrumentKey, i-1)}`" v-if="song[i-1] && song[i-1][instrumentKey] && shouldDisplay(instrumentKey, i-1)">
-						<PatternPlaceholder :tune-name="song[i-1][instrumentKey]![0]" :pattern-name="song[i-1][instrumentKey]![1]" :draggable="{ instr: instrumentKey, idx: i-1 }" dragEffect="move" :settings="getPreviewPlaybackSettings(instrumentKey, i-1)">
+						<PatternPlaceholder
+							:tune-name="song[i-1][instrumentKey]![0]"
+							:pattern-name="song[i-1][instrumentKey]![1]"
+							:draggable="{ instr: instrumentKey, idx: i-1 }"
+							dragEffect="move"
+							:settings="getPreviewPlaybackSettings(instrumentKey, i-1)"
+							@dragStart="isDraggingPattern = true"
+							@dragEnd="isDraggingPattern = false"
+						>
 							<PatternPlaceholderItem>
 								<div class="dropdown">
 									<a href="javascript" data-bs-toggle="dropdown">

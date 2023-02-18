@@ -4,7 +4,7 @@ import { plugin as mdPlugin, Mode } from 'vite-plugin-markdown';
 
 export default defineConfig(({ mode }) => ({
     define: {
-        'provess.env.DISABLE_SW': mode === 'development'
+        'process.env.DISABLE_SW': mode === 'development'
     },
     plugins: [
         vue2Plugin(),
