@@ -8,23 +8,23 @@
 
 <script setup lang="ts">
 	import config, { Instrument } from "../../config";
-	import { BeatboxReference, createBeatbox, getPlayerById, patternToBeatbox } from "../../services/player";
+	import { BeatboxReference, createBeatbox, patternToBeatbox } from "../../services/player";
 	import { patternEquals, updateStroke } from "../../state/pattern";
 	import { normalizePlaybackSettings, PlaybackSettings, updatePlaybackSettings } from "../../state/playbackSettings";
-	import { scrollToElement } from "../../services/utils";
 	import { createPattern, getPatternFromState } from "../../state/state";
 	import { clone } from "../../utils";
 	import defaultTunes from "../../defaultTunes";
 	import { isEqual } from "lodash-es";
 	import StrokeDropdown from "./stroke-dropdown.vue";
 	import { injectStateRequired } from "../../services/state";
-	import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch, watchEffect } from "vue";
+	import { computed, nextTick, ref, watch } from "vue";
 	import { showConfirm } from "../utils/alert";
 	import vTooltip from "../utils/tooltip";
 	import { CustomPopover } from "../utils/popover.vue";
 	import PatternPlayerToolbar from "./pattern-player-toolbar.vue";
 	import MuteButton from "../playback-settings/mute-button.vue";
 	import HeadphonesButton from "../playback-settings/headphones-button.vue";
+	import AbstractPlayer, { PositionData } from "../utils/abstract-player.vue";
 
 	type StrokeDropdownInfo = {
 		instr: Instrument,
@@ -53,39 +53,12 @@
 	});
 	const currentStrokeDropdown = ref<StrokeDropdownInfo>();
 
-	const player = computed(() => getPlayerById(playerRef.value.id));
-
 	const originalPattern = computed(() => defaultTunes.getPattern(props.tuneName, props.patternName));
 
 	const upbeatBeats = computed(() => Math.ceil(pattern.value.upbeat / pattern.value.time));
 
 	const containerRef = ref<HTMLElement>();
-	const positionMarkerRef = ref<HTMLElement>();
-
-	const handlePlay = () => {
-		updateMarkerPosition(true, true);
-	};
-
-	const handleBeat = () => {
-		updateMarkerPosition(true);
-	};
-
-	const handleStop = () => {
-		updateMarkerPosition(false);
-	};
-
-	onMounted(() => {
-		player.value.on("play", handlePlay);
-		player.value.on("beat", handleBeat);
-		player.value.on("stop", handleStop);
-		updateMarkerPosition(false);
-	});
-
-	onBeforeUnmount(() => {
-		player.value.off("play", handlePlay);
-		player.value.off("beat", handleBeat);
-		player.value.off("stop", handleStop);
-	});
+	const abstractPlayerRef = ref<InstanceType<typeof AbstractPlayer>>();
 
 	watch([
 		() => playbackSettings.value.volume,
@@ -109,43 +82,28 @@
 		}
 	}, { deep: true });
 
-	watchEffect(() => {
-		let beatboxPattern = patternToBeatbox(pattern.value, playbackSettings.value);
-		player.value.setPattern(beatboxPattern);
-		player.value.setUpbeat(beatboxPattern.upbeat);
-		player.value.setBeatLength(60000/playbackSettings.value.speed/config.playTime);
-		player.value.setRepeat(playbackSettings.value.loop);
-	});
+	const rawPattern = computed(() => patternToBeatbox(pattern.value, playbackSettings.value));
 
-	const updateMarkerPosition = (scrollFurther: boolean = false, force: boolean = false) => {
-		const position = player.value.getPosition();
-
-		if(!player.value.playing && position == 0) {
+	const handlePosition = ({ beat }: PositionData) => {
+		if(beat == null) {
 			containerRef.value!.querySelector(".beat.active")?.classList.remove("active");
-			positionMarkerRef.value!.style.display = 'none';
 		} else {
-			const i = (position * pattern.value.time / config.playTime) - pattern.value.upbeat;
-
-			const strokeIdx = Math.floor(i);
-
-			const stroke = containerRef.value!.querySelector<HTMLElement>(".stroke-i-"+strokeIdx);
-			if(stroke) {
-				Object.assign(positionMarkerRef.value!.style, {
-					display: '',
-					left: `${stroke.offsetLeft + stroke.offsetWidth * (i - strokeIdx)}px`
-				});
-				scrollToElement(positionMarkerRef.value!, scrollFurther, force);
-			}
-
 			const activeBeat = containerRef.value!.querySelector(".beat.active");
-			const beat = containerRef.value!.querySelector(".beat-i-" + Math.floor(i / pattern.value.time));
-			if (activeBeat && activeBeat !== beat) {
+			const beatEl = containerRef.value!.querySelector(`.beat-i-${Math.floor(beat)}`);
+			if (activeBeat && activeBeat !== beatEl) {
 				activeBeat.classList.remove("active");
 			}
-			if (beat && beat !== activeBeat) {
-				beat.classList.add("active");
+			if (beatEl && beatEl !== activeBeat) {
+				beatEl.classList.add("active");
 			}
 		}
+	};
+
+	const getPositionMarkerLeft = ({ beat }: PositionData<false>) => {
+		const stroke = beat * pattern.value.time;
+		const strokeIdx = Math.floor(stroke);
+		const strokeEl = containerRef.value!.querySelector<HTMLElement>(".stroke-i-"+strokeIdx);
+		return strokeEl ? (strokeEl.offsetLeft + strokeEl.offsetWidth * (stroke - strokeIdx)) : 0;
 	};
 
 	const getBeatClass = (i: number) => {
@@ -192,9 +150,7 @@
 			const trRect = tr.getBoundingClientRect();
 			const beatRect = firstBeat.getBoundingClientRect();
 			let pos = Math.floor(patternLength * (event.clientX - beatRect.left) / (tr.offsetWidth - beatRect.left + trRect.left));
-
-			player.value.setPosition(pos);
-			updateMarkerPosition(false);
+			abstractPlayerRef.value!.setPosition(pos);
 		}
 	};
 
@@ -275,7 +231,7 @@
 						<td colspan="2" class="instrument-operations">
 							<MuteButton instrument="all" v-model:playbackSettings="playbackSettings"/>
 						</td>
-						<td v-for="i in upbeatBeats" :key="i" :colspan="i == 1 ? (pattern.upbeat-1) % pattern.time + 1 : pattern.time" class="beat" :class="getBeatClass(i - upbeatBeats)" @click="setPosition($event)"><span>{{i - upbeatBeats}}</span></td>
+						<td v-for="i in upbeatBeats" :key="i" :colspan="i == 1 ? (pattern.upbeat-1) % pattern.time + 1 : pattern.time" class="beat" :class="getBeatClass(i-1 - upbeatBeats)" @click="setPosition($event)"><span>{{i - upbeatBeats}}</span></td>
 						<td v-for="i in pattern.length" :key="i" :colspan="pattern.time" class="beat" :class="getBeatClass(i-1)" @click="setPosition($event)"><span>{{i}}</span></td>
 					</tr>
 				</thead>
@@ -300,7 +256,16 @@
 					</tr>
 				</tbody>
 			</table>
-			<div class="position-marker" ref="positionMarkerRef"></div>
+
+			<AbstractPlayer
+				:player="playerRef"
+				:rawPattern="rawPattern"
+				:playbackSettings="playbackSettings"
+				:getLeft="getPositionMarkerLeft"
+				@position="handlePosition"
+				ref="abstractPlayerRef"
+			/>
+
 			<div v-if="currentStrokeDropdown" class="popover bs-popover-auto fade" ref="strokeDropdownRef">
 				<div class="popover-arrow"></div>
 				<div class="popover-body">
@@ -412,15 +377,6 @@
 					border-right: none;
 				}
 			}
-		}
-
-		.position-marker {
-			position: absolute;
-			top: 0;
-			height: 100%;
-			border-left: 1px solid #000;
-			transition: left 0.1s linear;
-			pointer-events: none;
 		}
 	}
 </style>

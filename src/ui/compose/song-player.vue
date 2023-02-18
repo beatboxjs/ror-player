@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { getPatternFromState } from "../../state/state";
-	import { createBeatbox, getPlayerById, songToBeatbox } from "../../services/player";
-	import { scrollToElement } from "../../services/utils";
+	import { createBeatbox, songToBeatbox } from "../../services/player";
 	import config, { Instrument } from "../../config";
 	import { normalizePlaybackSettings } from "../../state/playbackSettings";
 	import { deleteSongPart, getEffectiveSongLength, PatternReference, setSongPart } from "../../state/song";
@@ -10,12 +9,13 @@
 	import PatternPlaceholder, { PatternPlaceholderItem } from "../pattern-placeholder.vue";
 	import { Pattern } from "../../state/pattern";
 	import { injectStateRequired } from "../../services/state";
-	import { computed, onMounted, ref, watchEffect } from "vue";
+	import { computed, ref } from "vue";
 	import MuteButton from "../playback-settings/mute-button.vue";
 	import HeadphonesButton from "../playback-settings/headphones-button.vue";
 	import SongPlayerToolbar from "./song-player-toolbar.vue";
 	import vTooltip from "../utils/tooltip";
 	import { useRefWithOverride } from "../../utils";
+	import AbstractPlayer, { PositionData } from "../utils/abstract-player.vue";
 
 	type DragOver = "trash" | { instr?: Instrument; idx: number };
 </script>
@@ -46,59 +46,39 @@
 	const dragOverCount = ref(0);
 
 	const containerRef = ref<HTMLElement>();
-	const songPositionMarkerRef = ref<HTMLElement>();
+	const abstractPlayerRef = ref<InstanceType<typeof AbstractPlayer>>();
 
 	const isDraggingPattern = useRefWithOverride(false, () => props.isDraggingPattern, (isDraggingPattern) => emit("update:isDraggingPattern", isDraggingPattern));
 
-	const player = computed(() => getPlayerById(playerRef.value.id));
 	const song = computed(() => state.value.songs[songIdx.value]);
 
-	onMounted(() => {
-		player.value.on("play", () => {
-			updateMarkerPos(true, true);
-		}),
-		player.value.on("beat", () => {
-			updateMarkerPos(true);
-		});
-		player.value.on("stop", () => {
-			updateMarkerPos(false);
-		});
-		updateMarkerPos(false);
-	});
+	const rawPattern = computed(() => songToBeatbox(song.value ?? {}, state.value, state.value.playbackSettings));
 
-	const updateMarkerPos = (scrollFurther: boolean, force: boolean = false) => {
-		if(!player.value.playing && player.value.getPosition() == 0) {
+	const handlePosition = ({ beat }: PositionData) => {
+		if(beat == null) {
 			[...containerRef.value!.querySelectorAll(".beat.active")].forEach((el) => el.classList.remove("active"));
-			songPositionMarkerRef.value!.style.display = "none";
 		} else {
-			const i = Math.max(0, (player.value.getPosition() - player.value._upbeat)/config.playTime);
-			const beatIdx = Math.floor(i);
+			const beatIdx = Math.floor(Math.max(0, beat));
 
-			const beat = containerRef.value!.querySelector<HTMLElement>(".beat-i-"+beatIdx);
+			const beatEl = containerRef.value!.querySelector<HTMLElement>(".beat-i-"+beatIdx);
 			for (const el of containerRef.value!.querySelectorAll(".beat.active")) {
-				if (el !== beat) {
+				if (el !== beatEl) {
 					el.classList.remove("active");
 				}
 			}
 
-			if (beat) {
-				beat?.classList.add("active");
-				Object.assign(songPositionMarkerRef.value!.style, {
-					display: "",
-					left: `${beat.offsetLeft + (i-beatIdx) * beat.offsetWidth}px`
-				});
-				scrollToElement(songPositionMarkerRef.value!, scrollFurther, force);
+			if (beatEl) {
+				beatEl?.classList.add("active");
 			}
 		}
 	};
 
-	watchEffect(() => {
-		const songBeatbox = songToBeatbox(state.value.songs[songIdx.value] ?? {}, state.value, state.value.playbackSettings);
-		player.value.setPattern(songBeatbox);
-		player.value.setUpbeat(songBeatbox.upbeat);
-		player.value.setBeatLength(60000/state.value.playbackSettings.speed/config.playTime);
-		player.value.setRepeat(state.value.playbackSettings.loop);
-	});
+	const getPositionMarkerLeft = ({ beat }: PositionData<false>) => {
+		const beatWithoutUpbeat = Math.max(0, beat);
+		const i = Math.floor(beatWithoutUpbeat);
+		const beatEl = containerRef.value!.querySelector<HTMLElement>(`.beat-i-${i}`);
+		return beatEl ? (beatEl.offsetLeft + (beatWithoutUpbeat - i) * beatEl.offsetWidth) : 0;
+	};
 
 	const length = computed(() => {
 		let length = getEffectiveSongLength(song.value, state.value);
@@ -191,8 +171,7 @@
 	const setPosition = (idx: number, $event: MouseEvent) => {
 		const beatRect = ($event.target as Element).closest(".beat")!.getBoundingClientRect();
 		const add = ($event.clientX - beatRect.left) / beatRect.width;
-		player.value.setPosition(Math.floor((idx+add)*config.playTime+player.value._upbeat));
-		updateMarkerPos(false);
+		abstractPlayerRef.value!.setBeat(idx + add);
 	};
 
 	const handleResizeDragStart = (event: DragEvent, instr: Instrument, idx: number) => {
@@ -419,7 +398,15 @@
 					(All)
 				</div>
 			</div></div>
-			<div class="song-position-marker" ref="songPositionMarkerRef"></div>
+
+			<AbstractPlayer
+				:player="playerRef"
+				:rawPattern="rawPattern"
+				:playbackSettings="state.playbackSettings"
+				:getLeft="getPositionMarkerLeft"
+				@position="handlePosition"
+				ref="abstractPlayerRef"
+			/>
 		</div>
 	</div>
 </template>
@@ -600,15 +587,6 @@
 					vertical-align: center;
 					border-bottom: 1px solid #888;
 				}
-			}
-
-			.song-position-marker {
-				position: absolute;
-				top: 0;
-				height: 100%;
-				border-left: 1px solid #000;
-				transition: left 0.1s linear;
-				pointer-events: none;
 			}
 		}
 

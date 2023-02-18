@@ -37,7 +37,8 @@
 	const handleCreateSong = () => {
 		stop();
 
-		createSong(state.value, undefined, undefined, true);
+		const idx = createSong(state.value, undefined, undefined, true);
+		handleSelectSong(idx);
 	};
 
 	const handleRenameSong = async (songIdx: number) => {

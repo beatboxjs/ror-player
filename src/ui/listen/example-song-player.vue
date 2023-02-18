@@ -7,18 +7,17 @@
 </script>
 
 <script lang="ts" setup>
-	import { computed, ref, watch } from "vue";
+	import { computed, ref } from "vue";
 	import { getPatternFromState } from "../../state/state";
-	import { BeatboxReference, createBeatbox, getPlayerById, songToBeatbox, stopAllPlayers } from "../../services/player";
+	import { songToBeatbox, stopAllPlayers } from "../../services/player";
 	import { PlaybackSettings } from "../../state/playbackSettings";
-	import Beatbox from "beatbox.js";
 	import config from "../../config";
 	import { allInstruments, getEffectiveSongLength, SongParts } from "../../state/song";
-	import { scrollToElement } from "../../services/utils";
 	import { ExampleSong } from "../../state/tune";
 	import { injectStateRequired } from "../../services/state";
 	import vTooltip from "../utils/tooltip";
 	import { download, ExportType } from "../utils/export";
+	import AbstractPlayer, { PositionData } from "../utils/abstract-player.vue";
 
 	const state = injectStateRequired();
 
@@ -30,11 +29,8 @@
 
 	const playbackSettings = computed(() => props.settings || state.value.playbackSettings);
 
-	const playerRef = ref<BeatboxReference>();
-	const player = computed(() => playerRef.value && getPlayerById(playerRef.value.id));
-
 	const songRef = ref<HTMLElement | null>(null);
-	const positionMarkerRef = ref<HTMLElement | null>(null);
+	const abstractPlayerRef = ref<InstanceType<typeof AbstractPlayer>>();
 
 	const normalizedSong = computed((): Array<Required<Exclude<ExampleSong[0], string>>> => props.song.flatMap((part) => {
 		const result = {
@@ -65,34 +61,10 @@
 		return result;
 	});
 
-	const getOrCreatePlayer = (): Beatbox => {
-		if (!playerRef.value) {
-			playerRef.value = createBeatbox(false);
-			player.value!.on("beat", (beat: number) => {
-				updateMarkerPos(true);
-			});
-			updatePlayer();
-		}
-		return player.value!;
-	};
-
-	const updatePlayer = () => {
-		if(!player.value)
-			return;
-
-		let songBeatbox = songToBeatbox(songParts.value, state.value, playbackSettings.value);
-		player.value.setPattern(songBeatbox);
-		player.value.setUpbeat(songBeatbox.upbeat);
-		player.value.setBeatLength(60000/playbackSettings.value.speed/config.playTime);
-		player.value.setRepeat(playbackSettings.value.loop);
-	};
-
-	watch(() => props.song, updatePlayer, { deep: true });
-	watch(playbackSettings, updatePlayer, { deep: true });
-	watch(() => state.value.tunes, updatePlayer, { deep: true });
+	const rawPattern = computed(() => songToBeatbox(songParts.value, state.value, playbackSettings.value));
 
 	const playStop = () => {
-		const p = getOrCreatePlayer();
+		const p = abstractPlayerRef.value!.getOrCreatePlayer();
 		if(!p.playing) {
 			stopAllPlayers();
 			p.play();
@@ -103,28 +75,20 @@
 	};
 
 	const setPosition = ($event: MouseEvent) => {
-		const p = getOrCreatePlayer();
-		const length = 4 * getEffectiveSongLength(songParts.value, state.value) * config.playTime + p._upbeat;
+		const length = 4 * getEffectiveSongLength(songParts.value, state.value);
 		const el = songRef.value!;
 		const rect = el.getBoundingClientRect();
 		const percent = (el.scrollLeft + $event.clientX - rect.left) / el.scrollWidth;
-		p.setPosition(Math.floor(percent * length));
-		updateMarkerPos(false);
+		abstractPlayerRef.value!.setBeat(percent * length);
 	};
 
-	const updateMarkerPos = (scroll: boolean) => {
-		const p = getOrCreatePlayer();
-		positionMarkerRef.value!.style.left = `${(p.getPosition() / p._pattern.length) * songRef.value!.scrollWidth}px`;
-		if (scroll) {
-			scrollToElement(positionMarkerRef.value!, true);
-		}
-	};
+	const getPositionMarkerLeft = ({ position, player }: PositionData<false>) => (position / player._pattern.length) * songRef.value!.scrollWidth;
 
 	const handleDownload = () => {
 		download({
 			type: ExportType.MP3,
 			filename: props.tuneName,
-			player: getOrCreatePlayer()
+			player: abstractPlayerRef.value!.getOrCreatePlayer()
 		});
 	};
 </script>
@@ -132,7 +96,6 @@
 <template>
 	<div class="bb-example-song">
 		<div class="song" @click="setPosition($event)" ref="songRef">
-			<div class="position-marker" v-show="playerRef && playerRef.customPosition" ref="positionMarkerRef"></div>
 			<div class="card" style="width: 10em;">
 				<span class="tune-name">General Breaks</span>
 				<span class="pattern-name">Whistle in</span>
@@ -141,9 +104,16 @@
 				<span class="tune-name">{{state.tunes[part.tuneName].displayName || part.tuneName}}</span>
 				<span class="pattern-name">{{state.tunes[part.tuneName].patterns[part.patternName].displayName || part.patternName}}</span>
 			</div>
+
+			<AbstractPlayer
+				:rawPattern="rawPattern"
+				:playbackSettings="playbackSettings"
+				:getLeft="getPositionMarkerLeft"
+				ref="abstractPlayerRef"
+			/>
 		</div>
 		<ul class="actions icon-list">
-			<li><a href="javascript:" v-tooltip="'Listen'" @click="playStop()" draggable="false"><fa :icon="playerRef && playerRef.playing ? 'stop' : 'play-circle'"/></a></li>
+			<li><a href="javascript:" v-tooltip="'Listen'" @click="playStop()" draggable="false"><fa :icon="abstractPlayerRef?.playerRef?.playing ? 'stop' : 'play-circle'"/></a></li>
 			<li><a href="javascript:" v-tooltip="'Download as MP3'" @click="handleDownload()" draggable="false"><fa icon="download"/></a></li>
 		</ul>
 	</div>
@@ -172,16 +142,6 @@
 				.tune-name {
 					font-weight: bold;
 				}
-			}
-
-			.position-marker {
-				position: absolute;
-				top: 0;
-				height: 100%;
-				border-left: 1px solid #000;
-				transition: left 0.1s linear;
-				pointer-events: none;
-				z-index: 1;
 			}
 		}
 

@@ -1,7 +1,6 @@
 <script lang="ts">
-	import Beatbox from "beatbox.js";
 	import { createPattern, getPatternFromState } from "../state/state";
-	import { BeatboxReference, createBeatbox, getPlayerById, patternToBeatbox, stopAllPlayers } from "../services/player";
+	import { patternToBeatbox, RawPatternWithUpbeat, stopAllPlayers } from "../services/player";
 	import { normalizePlaybackSettings, PlaybackSettings } from "../state/playbackSettings";
 	import config from "../config";
 	import defaultTunes from "../defaultTunes";
@@ -9,10 +8,11 @@
 	import { DragType, PatternDragData, setDragData } from "../services/draggable";
 	import PatternPlayerDialog from "./pattern-player/pattern-player-dialog.vue";
 	import { clone, useRefWithOverride } from "../utils";
-	import { computed, defineComponent, h, ref, watch } from "vue";
+	import { computed, defineComponent, h, onBeforeUnmount, ref } from "vue";
 	import { injectStateRequired } from "../services/state";
 	import { showConfirm } from "./utils/alert";
 	import vTooltip from "./utils/tooltip";
+	import AbstractPlayer, { PositionData } from "./utils/abstract-player.vue";
 
 	export const PatternPlaceholderItem = defineComponent({
 		setup(props, { slots }) {
@@ -31,10 +31,11 @@
 		settings?: PlaybackSettings;
 		draggable?: any;
 		dragEffect?: DataTransfer['dropEffect'];
-		showEditorDialog?: boolean;
+		showEditorDialog?: boolean | undefined;
 	}>(), {
 		readonly: false,
-		dragEffect: "copy"
+		dragEffect: "copy",
+		showEditorDialog: undefined
 	});
 
 	const emit = defineEmits<{
@@ -43,14 +44,11 @@
 		(type: "dragEnd"): void;
 	}>();
 
-	const playerRef = ref<BeatboxReference>();
-	const player = computed(() => playerRef.value && getPlayerById(playerRef.value.id));
-
 	const showEditorDialog = useRefWithOverride(false, () => props.showEditorDialog, (show) => emit("update:showEditorDialog", show));
 	const dragging = ref(false);
 
 	const containerRef = ref<HTMLElement>();
-	const positionMarkerRef = ref<HTMLElement>();
+	const abstractPlayerRef = ref<InstanceType<typeof AbstractPlayer>>();
 
 	const pattern = computed(() => getPatternFromState(state.value, props.tuneName, props.patternName));
 
@@ -71,53 +69,34 @@
 
 	const isCustomPattern = computed(() => !defaultTunes.getPattern(props.tuneName, props.patternName));
 
-	watch(() => playbackSettings.value, () => {
-		updatePlayer();
-	}, { deep: true });
-
-	watch(() => pattern.value, () => {
-		updatePlayer();
-	}, { deep: true });
-
 	const editPattern = () => {
 		showEditorDialog.value = true;
 	};
 
-	const getOrCreatePlayer = (): Beatbox => {
-		if (!playerRef.value) {
-			playerRef.value = createBeatbox(false);
-			player.value!.on("beat", (beat: number) => {
-				if (containerRef.value && positionMarkerRef.value) {
-					positionMarkerRef.value.style.left = `${(beat / player.value!._pattern.length) * containerRef.value.offsetWidth}px`;
-				}
-			});
-			updatePlayer();
+	const playerPlaybackSettings = computed(() => ({
+		...playbackSettings.value,
+		loop: pattern.value?.loop || playbackSettings.value.loop
+	}));
+
+	const rawPattern = computed<RawPatternWithUpbeat>(() => {
+		if (!pattern.value) {
+			return Object.assign([], { upbeat: 0 });
 		}
-		return player.value!;
-	};
 
-	const updatePlayer = () => {
-		if(!player.value)
-			return;
+		const result = patternToBeatbox(pattern.value ?? {}, playerPlaybackSettings.value);
+		if (playerPlaybackSettings.value.length) {
+			return Object.assign(result.slice(0, playerPlaybackSettings.value.length * config.playTime + pattern.value.upbeat), { upbeat: result.upbeat });
+		} else {
+			return result;
+		}
+	});
 
-		if(!pattern.value)
-			return;
-
-		const settings = {
-			...playbackSettings.value,
-			loop: pattern.value.loop || playbackSettings.value.loop
-		};
-
-		const rawPattern = patternToBeatbox(pattern.value, settings);
-
-		player.value.setPattern(settings.length ? rawPattern.slice(0, settings.length * config.playTime + pattern.value.upbeat) : rawPattern);
-		player.value.setUpbeat(rawPattern.upbeat);
-		player.value.setBeatLength(60000 / settings.speed / config.playTime);
-		player.value.setRepeat(settings.loop);
+	const getPositionMarkerLeft = ({ position, player }: PositionData<false>) => {
+		return (position / player._pattern.length) * containerRef.value!.offsetWidth;
 	};
 
 	const playPattern = () => {
-		const p = getOrCreatePlayer();
+		const p = abstractPlayerRef.value!.getOrCreatePlayer();
 
 		if(!p.playing) {
 			stopAllPlayers();
@@ -154,6 +133,12 @@
 		emit("dragEnd");
 		dragging.value = false;
 	};
+
+	onBeforeUnmount(() => {
+		if (dragging.value) {
+			emit("dragEnd");
+		}
+	});
 </script>
 
 <template>
@@ -167,13 +152,20 @@
 			</span>
 		</div>
 		<ul class="actions icon-list">
-			<li><a href="javascript:" v-tooltip="'Listen'" @click="playPattern()" draggable="false"><fa :icon="playerRef && playerRef.playing ? 'stop' : 'play-circle'"></fa></a></li>
+			<li><a href="javascript:" v-tooltip="'Listen'" @click="playPattern()" draggable="false"><fa :icon="abstractPlayerRef?.playerRef?.playing ? 'stop' : 'play-circle'"></fa></a></li>
 			<li><a href="javascript:" v-tooltip="readonly ? 'Show notes' : 'Edit notes'" @click="editPattern()" draggable="false"><fa icon="pen"/></a></li>
 			<li v-if="hasLocalChanges"><a href="javascript:" v-tooltip="'Revert modifications'" @click="restore()" draggable="false"><fa icon="eraser"/></a></li>
-			<slot :getPlayer="() => { getOrCreatePlayer(); return playerRef!; }"/>
+			<slot :getPlayer="() => { abstractPlayerRef!.getOrCreatePlayer(); return abstractPlayerRef!.playerRef!; }"/>
 		</ul>
-		<div class="position-marker" v-show="playerRef && playerRef.playing" ref="positionMarkerRef"></div>
-		<PatternPlayerDialog v-if="showEditorDialog" v-model:show="showEditorDialog" :readonly="readonly" :tune-name="tuneName" :pattern-name="patternName" :player-ref="playerRef"/>
+
+		<AbstractPlayer
+			:rawPattern="rawPattern"
+			:playbackSettings="playerPlaybackSettings"
+			:getLeft="getPositionMarkerLeft"
+			ref="abstractPlayerRef"
+		/>
+
+		<PatternPlayerDialog v-if="showEditorDialog" v-model:show="showEditorDialog" :readonly="readonly" :tune-name="tuneName" :pattern-name="patternName" :player-ref="abstractPlayerRef?.playerRef"/>
 	</div>
 </template>
 
