@@ -232,13 +232,13 @@ const config: Config = {
 	},
 
 	times: {
-		2: "2⁄4",
-		3: "6⁄8",
-		4: "4⁄4",
-		5: "5⁄8",
-		6: "3⁄4",
-		12: "4⁄4 with triplets",
-		20: "4⁄4 with quintuplets"
+		2: "2 sub-beats",
+		3: "3 sub-beats",
+		4: "4 sub-beats",
+		5: "5 sub-beats",
+		6: "6 sub-beats",
+		12: "4 and then 3 sub-beats",
+		20: "4 and then 5 sub-beats"
 	},
 
 	filterCats: {

@@ -100,7 +100,14 @@ export default {
         },
         'Capped Karla': {
             loop: true,
-            sn: 'XXXXXXXXXXXXXXXXX               '
+            ls: 'XXXXXXXXXXXXXXXXX               ',
+            ms: '@ls',
+            hs: '@ls',
+            re: '@ls',
+            sn: '@ls',
+            ta: 'X X X X X X X X X',
+            ag: 'o o o o o o o o o',
+            volumeHack: { 0: .1, 4: .4, 8: .7, 12: 1 }
         },
         'X Break': {
             ls: "X       X       X X X X X       X       X       X X X X X       X       X       X X X X X       X       X       X X X X X",

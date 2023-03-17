@@ -48,7 +48,6 @@ export default {
         },
         "Short call": {
             displayName: 'Call Break (short)',
-            loop: true,
             ls: '        XX XX           XX XX           XX XX   X X X X XX XX X ',
             ms: '@ls',
             hs: '@ls',
@@ -80,5 +79,5 @@ export default {
             sh: '@ls'
         }
     },
-    exampleSong: ["Tune", "Tune", "Break 1", "Tune", "Tune", "Long call", "Tune", "Tune", "Tam Stroke","Tune", "Tune", "Break 2","Tune", "Tune", "Break 3",]
+    exampleSong: ["Tune", "Tune", "Break 1", "Tune", "Tune", "Long call", "Tune", "Tune", "Tam Stroke", "Tune", "Tune", "Break 2", "Tune", "Tune", "Break 3"]
 }

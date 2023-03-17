@@ -1,3 +1,5 @@
+import { repeat } from "../../src/tuneHelper";
+
 export default {
     categories: ["standard", "common", "tricky"],
     time: 12,
@@ -34,14 +36,24 @@ export default {
             ag: "o           o           o     o     o     o"
         },
         "4 Hits (Stolen)": {
-            ls: "X     X     X     X     ",
+            ls: repeat(4, "X     "),
             ms: "@ls",
             hs: "@ls",
             re: "@ls",
             sn: "@ls",
             ta: "@ls",
-            ag: "o     o     o     o "
+            ag: repeat(4, "o     ")
         },
+        "8 Hits (Stolen)": {
+            ls: repeat(8, "X     "),
+            ms: "@ls",
+            hs: "@ls",
+            re: "@ls",
+            sn: "@ls",
+            ta: "@ls",
+            ag: repeat(8, "o     ")
+        },
+
         "Progressive Karla (Stolen)": {
             ls: "X     X     X     X     X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X                       ",
             ms: "@ls",
@@ -52,6 +64,6 @@ export default {
             ag: "o     o     o     o     o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o"
         }
     },
-    exampleSong: ["2/4 Break", "Tune", "Tune", "4 Hits (Stolen)", "Tune", "Tune", "Break 1",
-                  "Tune", "Tune", "Progressive Karla (Stolen)", "Tune", "Tune", "2/4 Break"]
+    exampleSong: ["2/4 Break", "Tune", "Tune", "Tune", "Tune", "8 Hits (Stolen)", "Tune", "Tune", "Tune", "Tune", "Break 1",
+                  "Tune", "Tune", "Tune", "Tune", "Progressive Karla (Stolen)", "Tune", "Tune", "Tune", "Tune", "2/4 Break"]
 }

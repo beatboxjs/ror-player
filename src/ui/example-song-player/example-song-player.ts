@@ -59,7 +59,7 @@ export default class ExampleSongPlayer extends Vue {
 	}
 
 	get songParts(): SongParts {
-		let i = 1;
+		let i = 2;
 		const result = {
 			0: allInstruments([ "General Breaks", "Whistle in" ])
 		} as SongParts;

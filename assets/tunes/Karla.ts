@@ -1,5 +1,5 @@
 export default {
-    categories: ["standard", "common", "onesurdo", "easy"],
+    categories: ["standard", "common", "easy"],
     sheet: require("./karla.pdf"),
     description: require("./karla-shnikov.md").default,
     video: "https://tube.rhythms-of-resistance.org/videos/embed/cc4d0222-3713-4943-bba1-cc733cb84ccc",
@@ -15,6 +15,16 @@ export default {
             ag: 'o  oa o o  oa o o  oa o o  oa o o  oa o o  oa o o  oa o o  oa o ',
             sh: '................................................................'
         },
+        'Karla Break (Karla)': {
+            ls: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX               ',
+            ms: '@ls',
+            hs: '@ls',
+            re: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  XX  X X XX X ',
+            sn: '@ls',
+            ta: "X X X X X X X X X X X X X X X X X X X X X X X X X",
+            ag: "o o o o o o o o o o o o o o o o o o o o o o o o o",
+            volumeHack: { 0: .1, 16: .4, 32: .7, 48: 1 }
+        },            
         'Break 2': {
             ls: 'XXXXXXXXXXXXXXXXX   X   X   X   X X    X X      X X    X X      ',
             ms: '@ls',
@@ -36,5 +46,5 @@ export default {
             sh: '@re'
         }
     },
-    exampleSong: ["Tune", "Break 2", "Tune", "Break 2 Inverted", "Tune"]
+    exampleSong: ["Tune", "Karla Break (Karla)", "Tune", "Break 2", "Tune", "Break 2 Inverted", "Tune"]
 }
