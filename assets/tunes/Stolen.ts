@@ -1,7 +1,7 @@
 import { repeat } from "../../src/tuneHelper";
 
 export default {
-    categories: ["standard", "common", "tricky"],
+    categories: ["common", "tricky"],
     time: 12,
     sheet: require("./stolen.pdf"),
     description: require("./stolen.md").default,

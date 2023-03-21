@@ -1,7 +1,7 @@
 import { repeat } from "../../src/tuneHelper"
 export default {
     displayName: "Afoxé",
-    categories: ["standard", "common", "medium", "cultural-appropriation"],
+    categories: ["common", "medium"],
     sheet: require("./afoxe.pdf"),
     description: require("./afoxe.md").default,
     patterns: {
@@ -58,7 +58,7 @@ export default {
             sh: '@ls'
         },
         "Long call": {
-            displayName: 'Call Break (long)',
+            displayName: 'Call Break (long, example)',
             ls: repeat(3, repeat(2, '                                ') + '        XX XX   ') + '        XX XX           XX XX   X X X X XX XX X ',
             ms: '@ls',
             hs: '@ls',

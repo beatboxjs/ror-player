@@ -1,7 +1,7 @@
 import { repeat } from "../../src/tuneHelper";
 
 export default {
-    categories: ["standard", "common", "onesurdo", "tricky"],
+    categories: ["common", "onesurdo", "tricky"],
     sheet: require("./sambasso.pdf"),
     description: require("./sambasso.md").default,
     video: "https://tube.rhythms-of-resistance.org/videos/embed/f75a6a4e-121a-4170-aaf4-2e96a7eed95e",
@@ -22,12 +22,12 @@ export default {
             ta: ' X XX X XX XX  X X XXXX X  XX   '
         },
         'Break 1': {
-            ls: 'X  tX t XX XX   ',
+            ls: 'X  rX r XX XX   ',
             ms: '@ls',
             hs: '@ls',
             re: 'X..X..X.XX XX   ',
             sn: 'X..X..X.XX XX   ',
-            ta: ' X XX X XX XX   ',
+            ta: 'X X X   XX XX   ',
             ag: 'o  aa ooXX XX   ',
             sh: 'X X X X XX XX   ',
             ot: 'y w w           '

@@ -1,5 +1,5 @@
 export default {
-    categories: ["standard", "common", "medium", "western"],
+    categories: ["new", "medium"],
     sheet: require("./drum-bass.pdf"),
     displayName: "Drum & Bass",
     description: require("./drum-bass.md").default,

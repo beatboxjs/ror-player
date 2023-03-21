@@ -1,36 +1,30 @@
-This tune is one of the XR Rhythms basics.
+This is one of our core tunes, and often the first one new bands learn.
 
-This tune is played over 8 beats instead of 4, so take care when counting in.
+It doesn't sound much like funk, which is something of a theme with RoR tunes.
 
-Although is the only tune called Funk, is not the only that sounds “funky”. There are two other, Karla Shnikov and
-Angela Davis. Just try to combine them, especially Funk-Angela Davis sounds great.
-
-**Sign:** glasses on your eyes
+**Sign:** two OK signs above your head looking like funky glasses
 
 ## Background
 
-**Name:** Funk is a style of music that was created in the 1960s by African Americans. As most/all African American music, it originates from African music traditions and has also been used heavily in black rights movements throughout history. The pioneer of Funk is James Brown. ([Wikipedia](https://en.wikipedia.org/wiki/Funk))
+**Name:** Funk is a style of music that was created in the 1960s by African Americans. It originates from African musical traditions and has also been used heavily in Black liberation movements throughout history. The pioneer of funk is James Brown. ([Wikipedia](https://en.wikipedia.org/wiki/Funk))
 
-**Musical background:** The definining characteristic of Funk seems to be a base hit on the 1 and 3 and a snare hit on the 2 and 4. It seems that the tune doesn't actually sound like Funk. *(More info needed.)*
+**Musical background:** Probably based on the Brazilian samba reggae interpretation of funk rather than the James Brown version.
 
-**Sign:** *(More info needed.)*
+**Sign:** Based on the funky glasses that the pioneering funk bassist Bootsy Collins used to wear ([for example](https://media.npr.org/assets/artslife/arts/2009/10/bootsy-fa-0a236a00a27e682eed7c121e1f0454d4be5adee0-s600-c85.webp))
 
-**History:** Was introduced to the network at least 2008 (together with Ragga). A slightly different version called “Lego Funk” has been played by Barking Bateria: [SoundCloud](https://soundcloud.com/barking-bateria/lego-funk)
+**History:** Was introduced to the network at least 2008. A slightly different version called “Lego Funk” has been played by Barking Bateria: [SoundCloud](https://soundcloud.com/barking-bateria/lego-funk)
 
 ## Difficulty
 
-Good to begin with, because all instruments are quite easy:
-
-* **Surdos**: easy (all surdos play the same line and there are tons of memoryhook-phrases)
-* **Repi**: medium (the repi is not that easy, but anyway it’s a good tune to begin with, because you find different repi-hits)
+* **Low Surdo**: easy
+* **Mid/high Surdo and Tam**: easy
+* **Repi**: medium. There are two repi parts, one harder one for playing with one stick and one easier (but longer) one for two sticks
 * **Snare**: easy
-* **Tamborim**: easy
-* **Agogô**: easy (because they can look at the surdos for almost any hit they play)
+* **Agogô**: easy
 
 ## Breaks
 
-* Break 1, which is a call & response-break between Surdos and all others
-* Break 2, where everyone plays one bar of eighth-notes
-* Call Break, two breaks wich are played the same way (five hits in the beginning) but end with a shout of either “oi!”
-  or “uah!”. They can be used in almost any tune, not just this one. Some bands play around with the shouting break by
-  using other shouts in the end. This way it’s also possible to connect a political output to this breaks.
+* **Break 1**, a relatively involved call and response between surdos and everyone else _\[uncommon nationally\]_
+* **Break 2**, where everyone plays one bar of eighth-notes _\[uncommon nationally\]_
+* **General breaks** that work well: Conga, Little Cat, Flappy mouth
+* Some bands use Angela Davis breaks with Funk instead

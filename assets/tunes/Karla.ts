@@ -1,5 +1,5 @@
 export default {
-    categories: ["standard", "common", "easy"],
+    categories: ["core", "common", "easy"],
     sheet: require("./karla.pdf"),
     description: require("./karla-shnikov.md").default,
     video: "https://tube.rhythms-of-resistance.org/videos/embed/cc4d0222-3713-4943-bba1-cc733cb84ccc",

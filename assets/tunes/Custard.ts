@@ -1,6 +1,6 @@
 import { repeat  } from "../../src/tuneHelper"
 export default {
-    categories: ["standard", "common", "medium", "cultural-appropriation"],
+    categories: ["common", "medium"],
     sheet: require("./custard.pdf"),
     description: require("./custard.md").default,
     patterns: {

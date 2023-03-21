@@ -1,5 +1,5 @@
 export default {
-    categories: ["standard", "uncommon", "easy"],
+    categories: ["core", "common", "easy"],
     sheet: require("./hedgehog.pdf"),
     description: require("./hedgehog.md").default,
     patterns: {

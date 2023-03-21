@@ -1,15 +1,6 @@
-This tune is in a tango rhythm which goes along for 8 steps/two bars. Nearly every instrument plays parts of the same
-rhythm. Therefore it’s easy to learn.
+This is one of our core tunes and often one of the first ones new bands learn. It helps that everyone is playing pretty much the same rhythm.
 
-Hedgehog sounds great when it is played combined with ragga (a Tango-rhythm too). As an example, just try introducing
-Ragga kick-backs or Zorro break playing the groove pattern. Try continuing playing this break until a Hedgehog break
-or similar is called.
-
-Both the Hedgehog call and Break 1 are stretched over 8 beats but the notes/shouts only happen in the last 2 or 4 beats.
-It is important for the mestre to count from the start of the 8 beats to get the timing right (marked with ">" on the
-notation). Everyone else keeps playing their normal rhythm until they are counted in - don’t stop!
-
-**Sign:** spiky fingers on the head
+**Sign:** spiky fingers on your head
 
 ## Background
 
@@ -26,17 +17,12 @@ notation). Everyone else keeps playing their normal rhythm until they are counte
 * **Low Surdo**: easy
 * **Mid Surdo**: easy
 * **High Surdo**: easy
-* **Repi**: medium
+* **Repi**: easy. There are two parts, one for one stick and one for two sticks that's a bit busier 
 * **Snare**: medium
-* **Tamb**: easy
+* **Tam**: easy
 * **Agogô**: medium
 
 ## Breaks
 
-It has only two breaks, which are (in contrast to every other break) both meant to be counted in in the beginning of
-the 8 steps, so the groove is really interrupted by the breaks.
-
-In Break 1 only the Surdos play four hits (one on every step) while everyone else continues.
-
-The Hedgehog Break is just one hit on the first step and the shout “hedge-hog!” with the syllables on the third and
-fourth step. (it can also be replaced by a political message, eg. “stop g8”)
+* The only break we have for this song (involving shouting “Act now!” or whatever slogan) can be signed as **Break 1 or Break 2** – perhaps better as Break 2 since there's an RoR Hedgehog Break 1. Either way, there's only one.
+* **General breaks** that work well: 4 hits surdos with everyone else carrying on

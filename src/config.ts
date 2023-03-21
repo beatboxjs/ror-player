@@ -2,7 +2,7 @@ export type Instrument = "ls" | "ms" | "hs" | "re" | "sn" | "ta" | "ag" | "sh" |
 
 export type Stroke = string;
 
-export type Category = "standard" | "common" | "uncommon" | "new" | "proposed" | "custom" | "onesurdo" | "easy" | "medium" | "tricky" | "western" | "cultural-appropriation" | "all";
+export type Category = "core" | "common" | "new" | "onesurdo" | "easy" | "medium" | "tricky" | "custom" | "all";
 
 export type Config = {
 	appName: string,
@@ -41,15 +41,15 @@ const config: Config = {
 	instruments: {
 		ls: {
 			name: "Low Surdo",
-			strokes: [ "X", "0", "s", "t", "r" ]
+			strokes: [ "X", "0", "s", "r" ]
 		},
 		ms: {
 			name: "Mid Surdo",
-			strokes: [ "X", "0", "s", "t", "r" ]
+			strokes: [ "X", "0", "s", "r" ]
 		},
 		hs: {
 			name: "High Surdo",
-			strokes: [ "X", "0", "s", "t", "r" ]
+			strokes: [ "X", "0", "s", "r" ]
 		},
 		re: {
 			name: "Repi",
@@ -60,7 +60,7 @@ const config: Config = {
 			strokes: [ ".", "X", "r", "f" ]
 		},
 		ta: {
-			name: "Tamborim",
+			name: "Tam",
 			strokes: [ "X", "r", "f" ]
 		},
 		ag: {
@@ -73,7 +73,7 @@ const config: Config = {
 		},
 		ot: {
 			name: "Shouting",
-			strokes: [ "w", "y", "A", "B", "D", "E", "F", "G", "J", "K", "L", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "Y", "Z", "9", "8", "7", "6", "5", "b", "c", "d", "e", "g", "q", "j", "k", "m", "n", "u", "v", "x", "i", "l", "p", "$", "%", "&", "'", "(", ")", "*", ",", "-", "?", ":", ";", "<", "=", ">", "K", "[", "\\", "^", "_", "`", "{", "|", "}", "~", "À", "Á", "Â", "Ã", "Ä", "Å", "Æ", "Ç", "È", "É", "Ê", "Ë", "Ì", "Í", "Î", "Ï", "İ", "Ǐ", "Ī", "Ĩ", "Į", "Ĳ" ]
+			strokes: [ "w", "y", "A", "D", "E"]
 		}
 	},
 
@@ -81,129 +81,32 @@ const config: Config = {
 
 	strokes: {
 		"X": "X",
-		"h": "hd",
+		"h": "0",
 		"0": "0",
 		"s": "sil",
-		"f": "fl",
-		"r": "rim",
+		"f": "z",
+		"r": "ri",
 		"o": "l",
 		"a": "h",
-		"t": "w", // Whippy stick (tamborim stick)
 		".": ".",
 		"w" : "Wh",
 		"y" : "Wh2", // Long whistle
 		"z": "s", // Soft flare
 		"A" : "Oi!",
-		"B" : "Ua!",
 		"D" : "Oo",
-		"E" : "Ah",
-		"F" : "Hey!",
-		"G" : "Ook!",
-		"J" : "Groo",
-		"L" : "ve",
-		"N" : "Oh",
-		"O" : "Shit",
-		"P" : "Fuck",
-		"Q" : "Off",
-		"R": "Hedge",
-		"S": "Hog",
-		"T" : "E",
-		"U" : "very",
-		"V" : "bo",
-		"W" : "dy",
-		"Y" : "dance",
-		"Z" : "now",
-		"9" : "Kein",
-		"8" : "Cent",
-		"7" : "für",
-		"6" : "Ax",
-		"5" : "el",
-		"4" : "I’ve",
-		"3" : "got",
-		"2" : "cus",
-		"1" : "tard",
-		"C" : "in",
-		"H" : "my",
-		"I" : "un",
-		"M" : "der",
-		"#" : "pants",
-		"b" : "Tout",
-		"c" : "le",
-		"d" : "monde",
-		"e" : "dé",
-		"g" : "tes",
-		"q" : "te",
-		"j" : "la",
-		"k" : "po",
-		"m" : "li",
-		"n" : "ce",
-		"u" : "Te",
-		"v" : "qui",
-		"x" : "la",
-		"i": "The",
-		"l": "roof",
-		"p": "is",
-		"$": "on",
-		"%": "fi",
-		"&": "re",
-		"'": "Burn!",
-		"(": "Uh",
-		")": "Ah",
-		"*": "This",
-		",": "is",
-		"-": "what",
-		"?": "de",
-		":": "mo",
-		";": "cra",
-		"<": "cy",
-		"=": "looks",
-		">": "like",
-		"K": "wir",
-		"[": "sind",
-		"\\": "hier",
-		"^": "laut",
-		"_": "weil",
-		"`": "ihr",
-		"{": "uns",
-		"|": "die",
-		"}": "Zu",
-		"~": "kunft",
-		"À": "klaut",
-		"Á": "Keep",
-		"Â": "it",
-		"Ã": "in",
-		"Ä": "the",
-		"Å": "ground",
-		"Æ": "I",
-		"Ç": "say",
-		"È": "Kei",
-		"É": "ne",
-		"Ê": "Pro",
-		"Ë": "fi",
-		"Ì": "te",
-		"Í": "mit",
-		"Î": "der",
-		"Ï": "Mie",
-		"İ": "dis",
-		"Ǐ": "co",
-		"Ī": "barr",
-		"Ĩ": "ri",
-		"Į": "ca",
-		"Ĳ": "do"
+		"E" : "Ah"
 		// ]
 	},
 
 	strokesDescription: {
-		"h": "Hand",
-		"i": "Slap with hand",
+		"h": "Slap with hand",
 		"0": "Damp with hand",
-		"s": "Silent stroke",
-		"f": "Flare",
-		"t": "Whippy (tamborim) stick",
-		".": "Silent stroke",
+		"s": "Hit while damping with hand",
+		"f": "Flare/buzz",
+		".": "Quiet hit",
 		"w" : "Whistle",
 		"y" : "Long whistle",
-		"z": "Soft flare"
+		"z": "Soft flare/buzz"
 	},
 
 	volumePresets: {
@@ -240,21 +143,17 @@ const config: Config = {
 		12: "4 and then 3 sub-beats",
 		20: "4 and then 5 sub-beats"
 	},
-
+	
 	filterCats: {
-		standard: "Standard tunes",
-		all: "All tunes",
+		core: "Core tunes",
 		common: "Common tunes",
-		uncommon: "Uncommon tunes",
 		new: "New tunes",
-		proposed: "Proposed tunes",
-		custom: "Custom tunes",
-		onesurdo: "One Surdo",
+		onesurdo: "One surdo",
 		easy: "Easy",
 		medium: "Medium",
 		tricky: "Tricky",
-		western: "Western music",
-		"cultural-appropriation": "Cultural appropriation"
+		custom: "Custom tunes",
+		all: "All tunes"
 	},
 
 	// Time measurement that is used for beatbox.js. Should be able to represent all the time measurements above
