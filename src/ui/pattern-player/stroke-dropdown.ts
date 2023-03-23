@@ -57,42 +57,25 @@ export default class StrokeDropdown extends Vue {
 		if(e.ctrlKey || e.altKey || e.metaKey)
 			return;
 
-		if(e.key == "Backspace") {
-			e.preventDefault();
-			this.$emit("change-prev", " ");
-			this.$emit("prev");
-		} else if(e.key == "ArrowLeft") {
-			e.preventDefault();
-			this.$emit("prev");
-		} else if(e.key == "ArrowRight") {
-			e.preventDefault();
-			this.$emit("next");
-		} else if(e.key == "Tab") {
-			e.preventDefault();
-			this.$emit(e.shiftKey ? "prev" : "next");
-		} else if(e.key == "Escape") {
+		 if(e.key == "Escape") {
 			e.preventDefault();
 			e.stopImmediatePropagation();
 			this.$emit("close");
 		} else if(e.key == " ") {
 			e.preventDefault();
 			this.$emit("change", " ");
-			this.$emit("next");
 		}
 	}
 
 	handleClick(e: MouseEvent) {
-		const el = $(e.target as any);
-		if(el.closest(".stroke-inner").length == 0) {
+		const el = e.target as HTMLElement;
+		if(el.closest(".stroke-inner, .popover") == null) {
 			e.preventDefault();
 			this.$emit("close");
 		}
 	}
 
 	handleKeyPress(e: KeyboardEvent) {
-		if(e.ctrlKey || e.altKey || e.metaKey)
-			return;
-
 		if(this.keySequenceTimeout)
 			clearTimeout(this.keySequenceTimeout);
 
@@ -101,19 +84,14 @@ export default class StrokeDropdown extends Vue {
 		let options = this.getCurrentStrokeSequenceOptions();
 		if(options.length == 1) {
 			this.$emit("change", options[0]);
-			this.$emit("next");
 			this.sequence = null;
 			return false;
 		}
 
 		this.keySequenceTimeout = window.setTimeout(() => { this.sequence = null; }, 1000);
-
-		return false;
 	}
 
 	handleSelect(stroke: string) {
 		this.$emit("change", stroke);
-		this.$emit("close");
 	}
-
 }

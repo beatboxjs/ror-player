@@ -47,17 +47,18 @@
 						<a v-if="isHiddenSurdoHeadphone(instrumentKey) && instrumentKey == 'ms'" href="javascript:" @click="headphones([ 'ls', 'ms', 'hs' ], $event.ctrlKey || $event.shiftKey)" class="inactive"><fa icon="headphones"/></a>
 						<a href="javascript:" @click="mute(instrumentKey)" :class="playbackSettings.mute[instrumentKey] ? 'active' : 'inactive'"><fa icon="volume-mute"/></a>
 					</td>
-					<td v-for="i in pattern.length*pattern.time + pattern.upbeat" class="stroke" :class="getStrokeClass(i-1, instrumentKey)" v-b-tooltip.hover="config.strokesDescription[pattern[instrumentKey][i-1]] || ''">
+					<td v-for="i in pattern.length*pattern.time + pattern.upbeat" class="stroke" 
+						:id="`bb-pattern-editor-stroke-${instrumentKey}-${i-1}`"
+						:class="getStrokeClass(i-1, instrumentKey)" v-b-tooltip.hover="config.strokesDescription[pattern[instrumentKey][i-1]] || ''">
 						<span v-if="readonly" class="stroke-inner">{{config.strokes[pattern[instrumentKey][i-1]] || ' '}}</span>
 						<a v-if="!readonly"
 							href="javascript:" class="stroke-inner"
-							:id="`bb-pattern-editor-stroke-${instrumentKey}-${i-1}`"
 							@click="clickStroke(instrumentKey, i-1)"
 						>
 							{{config.strokes[pattern[instrumentKey][i-1]] || ' '}}
 						</a>
 						<b-popover v-if="currentStrokeDropdown && currentStrokeDropdown.instr == instrumentKey && currentStrokeDropdown.i == i-1" :target="`bb-pattern-editor-stroke-${instrumentKey}-${i-1}`" placement="bottom" show triggers="manual">
-							<StrokeDropdown :instrument="instrumentKey" :value="pattern[instrumentKey][i-1] || ' '" @change="onStrokeChange($event, false)" @change-prev="onStrokeChange($event, true)" @prev="onStrokePrevNext(true)" @next="onStrokePrevNext(false)" @close="onStrokeClose()" />
+							<StrokeDropdown :instrument="instrumentKey" :value="pattern[instrumentKey][i-1] || ' '" @change="onStrokeChange($event, false)" @close="onStrokeClose()" />
 						</b-popover>
 					</td>
 				</tr>

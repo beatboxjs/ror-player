@@ -80,6 +80,16 @@ export default class PatternPlayer extends Vue {
 			this.updateMarkerPosition(false);
 		});
 		this.updateMarkerPosition(false);
+
+		$(document).on({
+			keydown: this.handleKeyDown
+		});
+	}
+
+	beforeDestroy() {
+		$(document).off({
+			keypress: this.handleKeyDown
+		});
 	}
 
 	@Watch("playbackSettings.volume")
@@ -185,6 +195,9 @@ export default class PatternPlayer extends Vue {
 		if(this.originalPattern && (this.originalPattern[instrumentKey][realI] || "").trim() != (this.pattern[instrumentKey][realI] || "").trim())
 			ret.push("has-changes");
 
+		if(this.currentStrokeDropdown?.i == realI && this.currentStrokeDropdown?.instr == instrumentKey)
+			ret.push("current");
+			
 		return ret;
 	}
 
@@ -251,9 +264,44 @@ export default class PatternPlayer extends Vue {
 		}
 	}
 
+	handleKeyDown(e: KeyboardEvent){
+		if(e.ctrlKey || e.altKey || e.metaKey)
+			return;
+
+		let handled = true;
+		switch(e.key) {
+			case "Backspace":
+				this.onStrokeChange(" ", true)
+				break
+			case "Delete":
+				this.onStrokeChange(" ", false)
+				break				
+			case  "ArrowLeft":
+				this.onStrokePrevNext(true)
+				break
+			case "ArrowRight":
+				this.onStrokePrevNext()
+				break
+			case "ArrowUp":
+				this.changeInstr(-1)
+				break
+			case "ArrowDown":
+				this.changeInstr(1)
+				break
+			case "Tab":
+				this.onStrokePrevNext(e.shiftKey)
+				break
+			default: handled = false
+		}
+
+		if(handled) e.preventDefault()
+	}
+
 	onStrokeChange(newStroke: string, prev: boolean) {
-		if(this.currentStrokeDropdown && (!prev || this.currentStrokeDropdown.i > 0))
+		if(this.currentStrokeDropdown && (!prev || this.currentStrokeDropdown.i > 0)) {
 			updateStroke(this.pattern, this.currentStrokeDropdown.instr, this.currentStrokeDropdown.i - (prev ? 1 : 0), newStroke);
+			this.onStrokePrevNext(prev)
+		}
 	}
 
 	onStrokePrevNext(previous: boolean = false) {
@@ -264,6 +312,16 @@ export default class PatternPlayer extends Vue {
 			instr: this.currentStrokeDropdown.instr,
 			i: this.currentStrokeDropdown.i + (previous ? -1 : 1)
 		});
+	}
+
+	changeInstr(offset: number) {
+		if(!this.currentStrokeDropdown) return
+		const index = config.instrumentKeys.indexOf(this.currentStrokeDropdown.instr) + offset;
+		if(index < 0 || index >= config.instrumentKeys.length) return;
+		this.openStrokeDropdown({
+			i: this.currentStrokeDropdown.i,
+			instr: config.instrumentKeys[index]
+		})
 	}
 
 	onStrokeClose() {
