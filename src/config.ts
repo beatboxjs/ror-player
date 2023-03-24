@@ -80,7 +80,7 @@ const config: Config = {
 	instrumentKeys: [ "ls", "ms", "hs", "re", "sn", "ta", "ag", "sh", "ot" ],
 
 	strokes: {
-		"X": "X",
+		"X": "x",
 		"h": "0",
 		"0": "0",
 		"s": "sil",
@@ -99,10 +99,14 @@ const config: Config = {
 	},
 
 	strokesDescription: {
+		"X": "Hit",
 		"h": "Slap with hand",
 		"0": "Damp with hand",
 		"s": "Hit while damping with hand",
 		"f": "Flare/buzz",
+		"r": "Hit on rim or side",
+		"o": "Low bell",
+		"a": "High bell",
 		".": "Quiet hit",
 		"w" : "Whistle",
 		"y" : "Long whistle",
@@ -121,7 +125,7 @@ const config: Config = {
 			sh: 0.5,
 			ot: 1
 		},
-		"Shitty speakers": {
+		"Rubbish speakers": {
 			ls: 1,
 			ms: 1,
 			hs: 1.1,

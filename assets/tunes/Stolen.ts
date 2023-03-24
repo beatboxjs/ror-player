@@ -15,7 +15,43 @@ export default {
             re: ".  .  X  .  .  .  X  .  .  .  X  .  .  X  X  .",
             sn: ".  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .",
             ta: "X           X           X        X  X     X",
-            ag: "                              o  a     a  o"
+            ag: "                              o  a     a  o",
+            sh: "@sn"
+        },
+        "   Low Surdo": {
+            loop: true,
+            ls: "X  X  X  X  X  X  X  X  X",
+            sh: 'X     .     .     .     X     .     .     .     '
+        },
+        "   Mid/High Surdo": {
+            loop: true,
+            ms: "      X           X           X  X     X  X     ",
+            hs: '@ms',
+            sh: 'X     .     .     .     X     .     .     .     '
+        },
+        "   Repi": {
+            loop: true,
+            re: ".  .  X  .  .  .  X  .  .  .  X  .  .  X  X  .",
+            sh: 'X     .     .     .     X     .     .     .     '
+        },
+        "   Snare": {
+            loop: true,
+            sn: ".  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .",
+            sh: 'X     .     .     .     X     .     .     .     '
+        },
+        "   Tam": {
+            loop: true,
+            ta: "X           X           X        X  X     X",
+            sh: 'X     .     .     .     X     .     .     .     '
+        },
+        "   Agogo": {
+            displayName: '   Agogô',
+            loop: true,
+            ag: "                              o  a     a  o",
+            sh: 'X     .     .     .     X     .     .     .     '
+        },
+        "Whistle in (Stolen)": {
+            ot: 'y           y           y     y     y     y     '
         },
         "Break 1": {
             ls: "                                          X                                               X                                               X                                               X           X                 X                 X     ",
@@ -53,7 +89,6 @@ export default {
             ta: "@ls",
             ag: repeat(8, "o     ")
         },
-
         "Progressive Karla (Stolen)": {
             ls: "X     X     X     X     X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X                       ",
             ms: "@ls",
