@@ -15,6 +15,38 @@ export default {
             ag: 'o  oa o o  oa o o  oa o o  oa o o  oa o o  oa o o  oa o o  oa o ',
             sh: '................................................................'
         },
+        "   Low Surdo": {
+            loop: true,
+            ls: 'X     XX        X     XX        X     XX        X     XX X XX X ',
+            sh: 'X   .   .   .   X   .   .   .   X   .   .   .   X   .   .   .   '
+        },
+        "   Mid/High Surdo": {
+            loop: true,
+            ms: '    X       X       X       X       X       X       X  X X XX X ',
+            hs: '@ms',
+            sh: 'X   .   .   .   X   .   .   .   X   .   .   .   X   .   .   .   '
+        },
+        "   Repi": {
+            loop: true,
+            re: 'X  XX  X X XX X ',
+            sh: 'X   .   .   .'
+        },
+        "   Snare": {
+            loop: true,
+            sn: '....X.......X...',
+            sh: 'X   .   .   .   '
+        },
+        "   Tam": {
+            loop: true,
+            ta: '    X       X       X  X X XX   ',
+            sh: 'X   .   .   .   X   .   .   .   '
+        },
+        "   Agogo": {
+            displayName: '   Agogô',
+            loop: true,
+            ag: 'o  oa o o  oa o ',
+            sh: 'X   .   .   .   '
+        },
         'Karla Break (Karla)': {
             ls: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX               ',
             ms: '@ls',
@@ -23,7 +55,7 @@ export default {
             sn: '@ls',
             ta: "X X X X X X X X X X X X X X X X X X X X X X X X X",
             ag: "o o o o o o o o o o o o o o o o o o o o o o o o o",
-            volumeHack: { 0: .1, 16: .4, 32: .7, 48: 1 }
+            volumeHack: { 0: .2, 16: .4, 32: .7, 48: 1 }
         },            
         'Break 2': {
             ls: 'XXXXXXXXXXXXXXXXX   X   X   X   X X    X X      X X    X X      ',

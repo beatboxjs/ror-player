@@ -8,18 +8,47 @@ export default {
     patterns: {
         Tune: {
             loop: true,
-            ls: 'X  rX r X  rX r X  rX r X  rX r ',
+            ls: 'X  rX r X  rX r ',
             ms: '@ls',
             hs: '@ls',
-            re: 'X..X..X..XX..XX.X..X..X..XX..XX.',
-            sn: 'X..X..X...X..X..X..X..X...X..X..',
-            ta: 'X X X   XX XX   X X X   XX XX   ',
-            ag: 'o  aa oo a oo a o  aa oo a oo a ',
-            sh: 'X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.'
+            re: 'X..X..X..XX..XX.',
+            sn: 'X..X..X...X..X..',
+            ta: 'X X X   XX XX   ',
+            ag: 'o  aa oo a oo a ',
+            sh: 'X.X.X.X.X.X.X.X.'
         },
-        'Alt Tam': {
+        "   All Surdos": {
             loop: true,
-            ta: ' X XX X XX XX  X X XXXX X  XX   '
+            ls: 'X  rX r X  rX r ',
+            ms: '@ls',
+            hs: '@ls',
+            sh: 'X   .   .   .   '
+        },
+        "   Repi": {
+            loop: true,
+            re: 'X..X..X..XX..XX.',
+            sh: 'X   .   .   .'
+        },
+        "   Snare": {
+            loop: true,
+            sn: 'X..X..X...X..X..',
+            sh: 'X   .   .   .   '
+        },
+        "   Tam": {
+            loop: true,
+            ta: 'X X X   XX XX   ',
+            sh: 'X   .   .   .   '
+        },
+        '   Alt Tam': {
+            loop: true,
+            ta: ' X XX X XX XX  X X XXXX X  XX   ',
+            sh: 'X   .   .   .   X   .   .   .   '
+        },
+        "   Agogo": {
+            displayName: '   Agogô',
+            loop: true,
+            ag: 'o  aa oo a oo a ',
+            sh: 'X   .   .   .   '
         },
         'Break 1': {
             ls: 'X  rX r XX XX   ',
@@ -42,7 +71,7 @@ export default {
             ag: '@re',
             sh: '@re'
         },
-        'Intro': {
+        'Call Break (Intro)': {
             upbeat: 1,
             ls: '         XX XX           XX XX           XX XX           XX XX                       X X X X XX X    X X   X X   X                   X X X X XX X    X X   X X   X                   X X X X XX X    X X   X X   X                   X X X X XX X    X X   X X   ',
             ms: '@ls',
@@ -54,5 +83,5 @@ export default {
             sh: '@ls'
         }
     },
-    exampleSong: ["Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune"]
+    exampleSong: ["Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune", "Call Break (Intro)"]
 }
