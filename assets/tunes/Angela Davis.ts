@@ -15,38 +15,38 @@ export default {
             ag: '  o a   oa  a   ',
             sh: '................'
         },
-        "   Low Surdo": {
+        ">  Low Surdo": {
             loop: true,
             ls: 'X X r  rXrX r   ',
             sh: 'X   .   .   .   '
         },
-        "   Mid Surdo": {
+        ">  Mid Surdo": {
             loop: true,
             ms: 'XXXXXXXXX       ',
             sh: 'X   .   .   .   '
         },
-        "   High Surdo": {
+        ">  High Surdo": {
             loop: true,
             hs: '            XXXX',
             sh: 'X   .   .   .   '
         },
-        "   Repi": {
+        ">  Repi": {
             loop: true,
             re: 'f   f   f  XXX  ',
             sh: 'X   .   .   .'
         },
-        "   Snare": {
+        ">  Snare": {
             loop: true,
             sn: '....X.......X...',
             sh: 'X   .   .   .   '
         },
-        "   Tam": {
+        ">  Tam": {
             loop: true,
             ta: 'X   X  XXX  X   ',
             sh: 'X   .   .   .   '
         },
-        "   Agogo": {
-            displayName: '   Agogô',
+        ">  Agogo": {
+            displayName: '>  Agogô',
             loop: true,
             ag: '  o a   oa  a   ',
             sh: 'X   .   .   .   '

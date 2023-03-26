@@ -14,35 +14,35 @@ export default {
             ag: 'o  a  o   a a a o  a  o   a a a ',
             sh: 'X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.'
         },
-        "   Low Surdo": {
+        ">  Low Surdo": {
             loop: true,
             ls: 'X  X  X X X     X  X  X X       ',
             sh: 'X   .   .   .   X   .   .   .   '
         },
-        "   Mid/High Surdo, Tam": {
+        ">  Mid/High Surdo, Tam": {
             loop: true,
             ms: '    X       X X     X     X X   ',
             hs: '@ms',
             ta: '@ms',
             sh: 'X   .   .   .   X   .   .   .   '
         },
-        "   Repi": {
+        ">  Repi": {
             loop: true,
             re: 'f  hf  hf  hf  hf  hf  hf  hXhrh',
             sh: 'X   .   .   .   X   .   .   .   '
         },
-        "   Alt Repi": {
+        ">  Alt Repi": {
             loop: true,
             re: '  X   X XXXXX X   X   X X XX XX ',
             sh: 'X   .   .   .   X   .   .   .   '
         },
-        "   Snare": {
+        ">  Snare": {
             loop: true,
             sn: '....X.......X...',
             sh: 'X   .   .   .   '
         },
-        "   Agogo": {
-            displayName: '   Agogô',
+        ">  Agogo": {
+            displayName: '>  Agogô',
             loop: true,
             ag: 'o  a  o   a a a ',
             sh: 'X   .   .   .   '
@@ -64,7 +64,7 @@ export default {
             re: '@ls',
             sn: '@ls',
             ta: '@ls',
-            ag: 'o o o o o o o o ',
+            ag: '@ls',
             sh: '@ls'
         }
     },

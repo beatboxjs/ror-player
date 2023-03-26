@@ -17,30 +17,30 @@ export default {
             ag: 'aaaa  oooo              aaaa  oooo              ',
             sh: 'X..X..X..X..X..X..X..X..X..X..X..X..X..X..X..X..'
         },
-        "   All Surdos": {
+        ">  All Surdos": {
             loop: true,
             ls: 'X       XX  X       XX  X       XX  X    X   X  ',
             ms: '@ls',
             hs: '@ls',
             sh: 'X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .'
         },
-        "   Repi": {
+        ">  Repi": {
             loop: true,
             re: 'X zX zX zX zX zX zX zX zX zX zX zX zXXXX  XXXX  ',
             sh: 'X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .'
         },
-        "   Snare": {
+        ">  Snare": {
             loop: true,
             sn: 'X..X..X..X..X..X..X..X..X..X..X..X..XXXX  XXXX  ',
             sh: 'X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .'
         },
-        "   Tam": {
+        ">  Tam": {
             loop: true,
             ta: 'X XX XX XX X',
             sh: 'X  .  .  .  '
         },
-        "   Agogo": {
-            displayName: '   Agogô',
+        ">  Agogo": {
+            displayName: '>  Agogô',
             loop: true,
             ag: 'aaaa  oooo              aaaa  oooo              ',
             sh: 'X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  '
@@ -73,7 +73,7 @@ export default {
             re: "@ls",
             sn: "@ls",
             ta: "@ls",
-            ag: "ooooooo",
+            ag: "@ls",
             ot: "         A  "
         },
         'Butterfly Break': {
@@ -83,7 +83,7 @@ export default {
             re: "@ls",
             sn: "@ls",
             ta: "@ls",
-            ag: "ooooooo     ooooooo     oooooooooo  ooooooo",
+            ag: "@ls",
             ot: "                                             A  "
         },
         "Call Break": {
@@ -114,8 +114,8 @@ export default {
             hs: '@ls',
             re: '@ls',
             sn: '@ls',
-            ta: 'x xx xx xx xx xx xx xx xx xx xx xx xx',
-            ag: 'o oo oo oo oo oo oo oo oo oo oo oo oo',
+            ta: 'X XX XX XX XX XX XX XX XX XX XX XX XX',
+            ag: '@ta',
             sh: '@ls',
             volumeHack: { 0: .1, 12: .4, 24: .7, 36: 1 }
         },
@@ -126,7 +126,7 @@ export default {
             re: '@ls',
             sn: '@ls',
             ta: 'X  X  X  X  X XX XX XX XX XX XX XX XX           ',
-            ag: 'o  o  o  o  o oo oo oo oo oo oo oo oo',
+            ag: '@ta',
             sh: '@ls'
         }
     },
