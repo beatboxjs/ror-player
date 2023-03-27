@@ -18,34 +18,34 @@ export default {
             ag: "                              o  a     a  o",
             sh: "@sn"
         },
-        "   Low Surdo": {
+        ">  Low Surdo": {
             loop: true,
             ls: "X  X  X  X  X  X  X  X  X",
             sh: 'X     .     .     .     X     .     .     .     '
         },
-        "   Mid/High Surdo": {
+        ">  Mid/High Surdo": {
             loop: true,
             ms: "      X           X           X  X     X  X     ",
             hs: '@ms',
             sh: 'X     .     .     .     X     .     .     .     '
         },
-        "   Repi": {
+        ">  Repi": {
             loop: true,
             re: ".  .  X  .  .  .  X  .  .  .  X  .  .  X  X  .",
             sh: 'X     .     .     .     X     .     .     .     '
         },
-        "   Snare": {
+        ">  Snare": {
             loop: true,
             sn: ".  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .",
             sh: 'X     .     .     .     X     .     .     .     '
         },
-        "   Tam": {
+        ">  Tam": {
             loop: true,
             ta: "X           X           X        X  X     X",
             sh: 'X     .     .     .     X     .     .     .     '
         },
-        "   Agogo": {
-            displayName: '   Agogô',
+        ">  Agogo": {
+            displayName: '>  Agogô',
             loop: true,
             ag: "                              o  a     a  o",
             sh: 'X     .     .     .     X     .     .     .     '
@@ -60,7 +60,7 @@ export default {
             re: "X X X X X X X X X X X X X   X     X             X X X X X X X X X X X X X   X     X             X X X X X X X X X X X X X   X     X             X X X X X X X X X X X X X   X     X           XXX               XXX               XXX",
             sn: "@ls",
             ta: "@ls",
-            ag: "                                          o                                               o                                               o                                               o           o                 o                 o     "
+            ag: "@ls"
         },
         "2/4 Break": {
             ls: "X           X           X     X     X     X     ",
@@ -69,7 +69,7 @@ export default {
             re: "@ls",
             sn: "@ls",
             ta: "@ls",
-            ag: "o           o           o     o     o     o"
+            ag: "@ls"
         },
         "4 Hits (Stolen)": {
             ls: repeat(4, "X     "),
@@ -78,7 +78,7 @@ export default {
             re: "@ls",
             sn: "@ls",
             ta: "@ls",
-            ag: repeat(4, "o     ")
+            ag: "@ls"
         },
         "8 Hits (Stolen)": {
             ls: repeat(8, "X     "),
@@ -87,7 +87,7 @@ export default {
             re: "@ls",
             sn: "@ls",
             ta: "@ls",
-            ag: repeat(8, "o     ")
+            ag: "@ls"
         },
         "Progressive Karla (Stolen)": {
             ls: "X     X     X     X     X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X                       ",
@@ -96,7 +96,7 @@ export default {
             re: "X     X     X     X     X  X  X  X  X  X  X  X  f  f  f  f  f  f  f  f  X",
             sn: "@re",
             ta: "@ls",
-            ag: "o     o     o     o     o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o"
+            ag: "@ls"
         }
     },
     exampleSong: ["2/4 Break", "Tune", "Tune", "Tune", "Tune", "8 Hits (Stolen)", "Tune", "Tune", "Tune", "Tune", "Break 1",

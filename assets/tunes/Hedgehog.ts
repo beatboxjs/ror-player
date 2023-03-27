@@ -14,46 +14,46 @@ export default {
             ag: 'o  a  a o  a  a o  a  a o a o a ',
             sh: '................................'
         },
-        "   Low Surdo": {
+        ">  Low Surdo": {
             loop: true,
             ls: 's  X    s  X    s  X    X X X X ',
-            sh: 'X   .   .   .   X   .   .   .    '
+            sh: 'X   .   .   .   X   .   .   .   '
         },
-        "   Mid Surdo": {
+        ">  Mid Surdo": {
             loop: true,
             ms: '      XX      XX      XX      XX',
-            sh: 'X   .   .   .   X   .   .   .    '
+            sh: 'X   .   .   .   X   .   .   .   '
         },
-        "   High Surdo": {
+        ">  High Surdo": {
             loop: true,
             hs: '   X  X    X  X    X  X   X   X ',
-            sh: 'X   .   .   .   X   .   .   .    '
+            sh: 'X   .   .   .   X   .   .   .   '
         },
-        "   Repi": {
+        ">  Repi": {
             loop: true,
             re: 'r  X  X r  X  X r  X  X r X r X ',
-            sh: 'X   .   .   .   X   .   .   .    '
+            sh: 'X   .   .   .   X   .   .   .   '
         },
-        '   Alt Repi': {
+        '>  Alt Repi': {
             loop: true,
             re: '  XX XXX  XX XXX  XX XXX  XX  XX',
-            sh: 'X   .   .   .   X   .   .   .    '
+            sh: 'X   .   .   .   X   .   .   .   '
         },
-        "   Snare": {
+        ">  Snare": {
             loop: true,
             sn: 'X..X..X.X..X..X.X..X..X.X...X...',
-            sh: 'X   .   .   .   X   .   .   .    '
+            sh: 'X   .   .   .   X   .   .   .   '
         },
-        "   Tam": {
+        ">  Tam": {
             loop: true,
             ta: 'X  X    X  X    X  X    X X X   ',
             sh: 'X   .   .   .   X   .   .   .    '
         },
-        "   Agogo": {
-            displayName: '   Agogô',
+        ">  Agogo": {
+            displayName: '>  Agogô',
             loop: true,
             ag: 'o  a  a o  a  a o  a  a o a o a ',
-            sh: 'X   .   .   .   X   .   .   .    '
+            sh: 'X   .   .   .   X   .   .   .   '
         },
         'Break 2': {
             ls: 'X               ',

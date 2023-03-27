@@ -25,22 +25,22 @@ export default {
             ls: repeat(64, ' ')
         },
 	'4 Hits': {
-            ls: "X   X   X   X   ",
+            ls: repeat(4, 'X   '),
             ms: "@ls",
             hs: "@ls",
             re: "@ls",
             sn: "@ls",
             ta: "@ls",
-            ag: "o   o   o   o"
+            ag: "@ls"
 	},
 	'8 Hits': {
-            ls: "X   X   X   X   X   X   X   X   ",
+            ls: repeat(8, 'X   '),
             ms: "@ls",
             hs: "@ls",
             re: "@ls",
             sn: "@ls",
             ta: "@ls",
-            ag: "o   o   o   o   o   o   o   o"
+            ag: "@ls"
 	},
 	'Broccoli': {
             ls: "            X   ",
@@ -49,7 +49,7 @@ export default {
             re: "@ls",
             sn: "@ls",
             ta: "@ls",
-            ag: "            o"
+            ag: "@ls"
 	},
         'Boom Break': {
             ls: 'X               ',
@@ -70,7 +70,7 @@ export default {
             ag: '@ls'
         },
         "Clave 2x": {
-            ls: 'X  X  X   X X   X  X  X   X X   ',
+            ls: repeat(2, 'X  X  X   X X   '),
             ms: '@ls',
             hs: '@ls',
             re: '@ls',
@@ -80,7 +80,7 @@ export default {
         },
         "Clave 4x": {
             displayName: "Clave 4x soft to loud",
-            ls: 'X  X  X   X X   X  X  X   X X   X  X  X   X X   X  X  X   X X   ',
+            ls: repeat(4, 'X  X  X   X X   '),
             ms: '@ls',
             hs: '@ls',
             re: '@ls',
@@ -90,13 +90,13 @@ export default {
             volumeHack: { 0: .2, 16: .4, 32: .7, 48: 1 }
         },
         'Karla Break': {
-            ls: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX               ',
+            ls: repeat(12, 'XXXX') + 'X   ' + repeat(3, ' '),
             ms: '@ls',
             hs: '@ls',
             re: '@ls',
             sn: '@ls',
-            ta: "X X X X X X X X X X X X X X X X X X X X X X X X X",
-            ag: "o o o o o o o o o o o o o o o o o o o o o o o o o",
+            ta: repeat(12, 'X X ') + 'X',
+            ag: "@ta",
             volumeHack: { 0: .2, 16: .4, 32: .7, 48: 1 }
         },
         'Progressive Karla': {
@@ -106,16 +106,16 @@ export default {
             re: '@ls',
             sn: '@ls',
             ta: 'X   X   X   X   X X X X X X X X X X X X X X X X X',
-            ag: 'o   o   o   o   o o o o o o o o o o o o o o o o o'
+            ag: '@ta'
         },
 	'e.g. Karla + Clave': {
-            ls: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  X  X   X X   ',
+            ls: repeat(12, 'XXXX') + 'X  X  X   X X   ',
             ms: '@ls',
             hs: '@ls',
             re: '@ls',
             sn: '@ls',
-            ta: "X X X X X X X X X X X X X X X X X X X X X X X X X  X  X   X X",
-            ag: "o o o o o o o o o o o o o o o o o o o o o o o o o  o  o   o o",
+            ta: repeat(12, 'X X ') + 'X  X  X   X X',
+            ag: "@ta",
             volumeHack: { 0: .2, 16: .4, 32: .7, 48: 1 }
         },
         'Capped Karla': {
@@ -126,18 +126,18 @@ export default {
             re: '@ls',
             sn: '@ls',
             ta: 'X X X X X X X X X',
-            ag: 'o o o o o o o o o',
+            ag: '@ta',
             volumeHack: { 0: .2, 4: .4, 8: .7, 12: 1 }
         },
         'X Break': {
-            ls: "X       X       X X X X X       X       X       X X X X X       X       X       X X X X X       X       X       X X X X X",
+            ls: repeat(4, "X       X       X X X X X       "),
             ms: "@ls",
             hs: "@ls",
             re: "@ls",
             sn: "@ls",
             ta: "@ls",
-            ag: "o       o       o o o o o       o       o       o o o o o       o       o       o o o o o       o       o       o o o o o",
-            ot: "  A A A   A A A             A     A A A   A A A             A     A A A   A A A             A     A A A   A A A             A   "
+            ag: "@ls",
+            ot: repeat(4, "  A A A   A A A             A   ")
 	},
 	'Flappy Mouth': {
             time: 3,
@@ -172,20 +172,20 @@ export default {
             upbeat: 2,
 	    re: "X X     X X X X X   X X X X   X   X X X X X   X                   ",
             ta: "@re",
-            ag: "o o     o o o o o   o o o o   o   o o o o o   o",
+            ag: "@re",
 	},
 	'Little Cat (Alt Repi)': {
             loop: true,
 	    re: "f   X X r r X X "
 	},
         'Bunny Ears': {
-            ls: "                X X X X X  XX                   X X X X X  XX           X X X           X X X       X X     X X     XX XX X X   ",
+            ls: repeat(2, "                X X X X X  XX   ") + repeat(2, "        X X X   ") + "    X X     X X     XX XX X X   ",
             ms: "@ls",
             hs: "@ls",
-            re: "X X X X X  XX                   X X X X X  XX                   XX XX           XX XX           X X     X X     X X XX XX X X",
+            re: repeat(2, "X X X X X  XX                   ") + repeat(2, "XX XX           ") + "X X     X X     X X XX XX X X",
             sn: "@ls",
             ta: "@ls",
-            ag: "                o o o o o  oo                   o o o o o  oo           o o o           o o o       o o     o o     oo oo o o"
+            ag: "@ls"
 	},
         'Wolf Break': {
             ls: 'X X   XXX X    XX X    XX X     X X   XXX X    XX X X X X       ',
