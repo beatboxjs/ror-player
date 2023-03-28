@@ -66,5 +66,5 @@ export default {
             ot: '        A   A   '
         }
     },
-    exampleSong: ["Tune", "Tune", "Break 2", "Tune", "Tune"]
+    exampleSong: [ { tuneName: "General Breaks", patternName: "Whistle in" }, "Tune", "Tune", "Break 2", "Tune", "Tune"]
 }

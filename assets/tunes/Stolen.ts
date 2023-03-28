@@ -2,68 +2,75 @@ import { repeat } from "../../src/tuneHelper";
 
 export default {
     categories: ["common", "tricky"],
-    time: 12,
     sheet: require("./stolen.pdf"),
     description: require("./stolen.md").default,
     video: undefined,
     patterns: {
         Tune: {
             loop: true,
-            ls: "X  X  X  X  X  X  X  X  X",
-            ms: "      X           X           X  X     X  X     ",
+            ls: "XXXXXXXXX",
+            ms: "  X   X   XX XX",
             hs: "@ms",
-            re: ".  .  X  .  .  .  X  .  .  .  X  .  .  X  X  .",
-            sn: ".  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .",
-            ta: "X           X           X        X  X     X",
-            ag: "                              o  a     a  o",
+            re: "..X...X...X..XX.",
+            sn: "..X...X...X...X.",
+            ta: "X   X   X  XX X",
+            ag: "          oa ao ",
             sh: "@sn"
         },
         ">  Low Surdo": {
             loop: true,
-            ls: "X  X  X  X  X  X  X  X  X",
-            sh: 'X     .     .     .     X     .     .     .     '
+            ls: "XXXXXXXXX",
+            sh: 'X . . . X . . . '
         },
         ">  Mid/High Surdo": {
             loop: true,
-            ms: "      X           X           X  X     X  X     ",
+            ms: "  X   X   XX XX",
             hs: '@ms',
-            sh: 'X     .     .     .     X     .     .     .     '
+            sh: 'X . . . X . . . '
         },
         ">  Repi": {
             loop: true,
-            re: ".  .  X  .  .  .  X  .  .  .  X  .  .  X  X  .",
-            sh: 'X     .     .     .     X     .     .     .     '
+            re: "..X...X...X..XX.",
+            sh: 'X . . . X . . . '
         },
         ">  Snare": {
             loop: true,
-            sn: ".  .  X  .  .  .  X  .  .  .  X  .  .  .  X  .",
-            sh: 'X     .     .     .     X     .     .     .     '
+            sn: "..X...X...X...X.",
+            sh: 'X . . . X . . . '
         },
         ">  Tam": {
             loop: true,
-            ta: "X           X           X        X  X     X",
-            sh: 'X     .     .     .     X     .     .     .     '
+            ta: "X   X   X  XX X",
+            sh: 'X . . . X . . . '
         },
         ">  Agogo": {
             displayName: '>  Agogô',
             loop: true,
-            ag: "                              o  a     a  o",
-            sh: 'X     .     .     .     X     .     .     .     '
+            ag: "          oa ao ",
+            sh: 'X . . . X . . . '
         },
+        ">  Alt Agogo": {
+            displayName: '>  Alt Agogô',
+            loop: true,
+            ag: "o ao  a  oaoo a ",
+            sh: 'X . . . X . . . '
+        },
+
         "Whistle in (Stolen)": {
-            ot: 'y           y           y     y     y     y     '
+            ot: 'y   y   y y y y '
         },
         "Break 1": {
-            ls: "                                          X                                               X                                               X                                               X           X                 X                 X     ",
+            time: 6,
+            ls: repeat(3, "                     X  ") + "                     X     X        X        X  ",
             ms: "@ls",
             hs: "@ls",
-            re: "X X X X X X X X X X X X X   X     X             X X X X X X X X X X X X X   X     X             X X X X X X X X X X X X X   X     X             X X X X X X X X X X X X X   X     X           XXX               XXX               XXX",
+            re: repeat(3, "XXXXXXXXXXXXX X  X      ") + "XXXXXXXXXXXXX X  X     fX       fX       fX     ",
             sn: "@ls",
             ta: "@ls",
             ag: "@ls"
         },
         "2/4 Break": {
-            ls: "X           X           X     X     X     X     ",
+            ls: "X   X   X X X X ",
             ms: "@ls",
             hs: "@ls",
             re: "@ls",
@@ -71,8 +78,17 @@ export default {
             ta: "@ls",
             ag: "@ls"
         },
+        "Break 3 (proposed)": {
+            ls: repeat(3, "X  X XX  X XX X ") + "X          XX X ",
+            ms: "@ls",
+            hs: "@ls",
+            re: "@ls",
+            sn: repeat(3, "X..X.XX..X.XX.X.") + "X          XX X ",
+            ta: "@ls",
+            ag: "@ls"
+        },
         "4 Hits (Stolen)": {
-            ls: repeat(4, "X     "),
+            ls: repeat(4, "X "),
             ms: "@ls",
             hs: "@ls",
             re: "@ls",
@@ -81,7 +97,7 @@ export default {
             ag: "@ls"
         },
         "8 Hits (Stolen)": {
-            ls: repeat(8, "X     "),
+            ls: repeat(8, "X "),
             ms: "@ls",
             hs: "@ls",
             re: "@ls",
@@ -90,15 +106,15 @@ export default {
             ag: "@ls"
         },
         "Progressive Karla (Stolen)": {
-            ls: "X     X     X     X     X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X  X                       ",
+            ls: "X X X X XXXXXXXXXXXXXXXXX       ",
             ms: "@ls",
             hs: "@ls",
-            re: "X     X     X     X     X  X  X  X  X  X  X  X  f  f  f  f  f  f  f  f  X",
+            re: "X X X X XXXXXXXXffffffffX",
             sn: "@re",
             ta: "@ls",
             ag: "@ls"
         }
     },
-    exampleSong: ["2/4 Break", "Tune", "Tune", "Tune", "Tune", "8 Hits (Stolen)", "Tune", "Tune", "Tune", "Tune", "Break 1",
+    exampleSong: ["Whistle in (Stolen)", "2/4 Break", "Tune", "Tune", "Tune", "Tune", "8 Hits (Stolen)", "Tune", "Tune", "Tune", "Tune", "Break 1",
                   "Tune", "Tune", "Tune", "Tune", "Progressive Karla (Stolen)", "Tune", "Tune", "Tune", "Tune", "2/4 Break"]
 }

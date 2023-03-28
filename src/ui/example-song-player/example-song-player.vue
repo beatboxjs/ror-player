@@ -1,11 +1,7 @@
 <div class="bb-example-song">
 	<div class="song" @click="setPosition($event)">
 		<div class="position-marker" v-show="playerRef && playerRef.customPosition"></div>
-		<b-card style="width: 20em;">
-			<span class="tune-name">General Breaks</span>
-			<br>
-			<span class="pattern-name">Whistle in</span>
-		</b-card>
+
 		<b-card v-for="(part, i) in normalizedSong" :key="i" :style="{ width: `${2.5 * part.length }em` }">
 			<span class="tune-name">{{state.tunes[part.tuneName].displayName || part.tuneName}}</span>
 			<br>

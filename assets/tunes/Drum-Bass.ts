@@ -69,5 +69,5 @@ export default {
             sh: '@ta'
         }
     },
-    exampleSong: ["Tune", "Break 2", "Tune", "Call Break", "Tune"]
+    exampleSong: [ { tuneName: "General Breaks", patternName: "Whistle in" }, "Tune", "Break 2", "Tune", "Call Break", "Tune"]
 }

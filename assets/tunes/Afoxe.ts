@@ -111,5 +111,5 @@ export default {
             sh: '@ls'
         }
     },
-    exampleSong: ["Tune", "Tune", "Break 1", "Tune", "Tune", "Long call", "Tune", "Tune", "Tam Stroke", "Tune", "Tune", "Break 2", "Tune", "Tune", "Break 3"]
+    exampleSong: [ { tuneName: "General Breaks", patternName: "Whistle in" }, "Tune", "Tune", "Break 1", "Tune", "Tune", "Long call", "Tune", "Tune", "Tam Stroke", "Tune", "Tune", "Break 2", "Tune", "Tune", "Break 3"]
 }
