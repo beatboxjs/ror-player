@@ -4,7 +4,7 @@ export default {
     categories: ["core", "common", "new", "onesurdo", "easy", "medium", "tricky"],
     sheet: require("./general-breaks.pdf"),
     description: require("./general-breaks.md").default,
-    video: "https://tube.rhythms-of-resistance.org/videos/embed/37596e72-e93b-44f1-8770-760be8e5ce87",
+    video: undefined,
     patterns: {
         'Whistle in': {
             ot: 'y       y       y   y   y   y   '

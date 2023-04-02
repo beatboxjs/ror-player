@@ -3,7 +3,6 @@ export default {
     sheet: require("./drum-bass.pdf"),
     displayName: "Drum & Bass",
     description: require("./drum-bass.md").default,
-    video: "https://tube.rhythms-of-resistance.org/videos/embed/f5331b5e-5de7-41e9-af0f-813f874bb074",
     patterns: {
         Tune: {
             loop: true,

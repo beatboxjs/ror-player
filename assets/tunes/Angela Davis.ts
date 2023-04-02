@@ -2,7 +2,7 @@ export default {
     categories: ["common", "medium"],
     sheet: require("./angela-davis.pdf"),
     description: require("./angela-davis.md").default,
-    video: "https://tube.rhythms-of-resistance.org/videos/embed/3a431ae3-e59b-4d31-b2d6-9abc4db3f242",
+    video: undefined,
     patterns: {
         Tune: {
             loop: true,
