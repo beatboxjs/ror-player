@@ -12,6 +12,7 @@ import Compatibility from "../compatibility/compatibility";
 import Help from "../help/help";
 import Update from "../update/update";
 import PatternPlayer from "../pattern-player/pattern-player";
+import About from "./about";
 
 type TabContent = { 
 	type: "edit-pattern";
@@ -22,7 +23,7 @@ type TabContent = {
 
 @WithRender
 @Component({
-	components: { Compatibility, Compose, Listen, StateProvider, Help, Update, PatternPlayer }
+	components: { About, Compatibility, Compose, Listen, StateProvider, Help, Update, PatternPlayer }
 })
 export default class Overview extends Vue {
 	activeTab = 0;
@@ -32,11 +33,14 @@ export default class Overview extends Vue {
 
 	created() {
 		this._unregisterHandlers = registerMultipleHandlers({
-			listen() {
+			home() {
 				this.activeTab = 0;
 			},
-			compose() {
+			listen() {
 				this.activeTab = 1;
+			},
+			compose() {
+				this.activeTab = 2;
 			},
 			"edit-pattern" : function(data){
 				this.editorTab =  { 
@@ -44,7 +48,7 @@ export default class Overview extends Vue {
 					content: { type: "edit-pattern", tuneName: data.pattern[0], patternName: data.pattern[1], readonly: data.readonly},
 					previous: this.activeTab
 				};
-				this.activeTab = 2
+				this.activeTab = 3
 			},
 			"overview-close-pattern-list": function() {
 				$("body").removeClass("bb-pattern-list-visible");
@@ -56,6 +60,11 @@ export default class Overview extends Vue {
 		this._unregisterHandlers();
 	}
 
+	home() { 
+		stopAllPlayers();
+		events.$emit("home");
+	}	
+	
 	listen() { 
 		stopAllPlayers();
 		events.$emit("overview-listen");
@@ -77,8 +86,8 @@ export default class Overview extends Vue {
 
 	closeTab() { 
 		switch(this.editorTab!.previous) {
-			case 0: this.listen(); break;
-			case 1: this.compose(); break;
+			case 1: this.listen(); break;
+			case 2: this.compose(); break;
 		}
 		this.editorTab = null;
 	}

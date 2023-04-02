@@ -1,5 +1,5 @@
 import $ from "jquery";
-import config from "../config";
+import defaultTunes from "../defaultTunes";
 import events from "./events";
 import history from "./history";
 import { getPatternFromState } from "../state/state";
@@ -7,9 +7,10 @@ import Vue from "vue";
 import { BvModalEvent } from "bootstrap-vue";
 import PatternEditorDialog from "../ui/pattern-editor-dialog/pattern-editor-dialog";
 import { match, compile, MatchFunction, PathFunction } from "path-to-regexp";
-import { getTuneOfTheYear } from "./utils";
 
 const ROUTES: { [key: string]: string } = {
+	"home": "",
+	"listen": "/listen/",
 	"listen-tune": "/listen/:tuneName/",
 	"listen-pattern": "/listen/:tuneName/:patternName",
 	"compose": "/compose/",
@@ -36,10 +37,9 @@ type Params = { [key: string]: string };
 
 export function enableRouter(app: Vue) {
 	const HANDLERS: { [key: string]: (params: Params) => unknown } = {
-		"": () => {
-			navigate("listen-tune", { tuneName: getTuneOfTheYear() });
-		},
+		"": () => events.$emit("home"),
 
+		"listen": () => navigate("listen-tune", { tuneName: "General Breaks" }),
 
 		/* Listen */
 
@@ -233,6 +233,7 @@ export function enableRouter(app: Vue) {
 		}
 	});
 
+	events.$on("home", () => { console.log("on home"); setState("home") })
 	events.$on("pattern-list-tune-opened", function(tuneName) {
 		lastTune = tuneName;
 
@@ -261,7 +262,7 @@ export function enableRouter(app: Vue) {
 			if(lastTune)
 				navigate("listen-tune", { tuneName: lastTune });
 			else
-				navigate("root");
+				navigate("listen", {tuneName: "General Breaks"});
 		}
 	});
 

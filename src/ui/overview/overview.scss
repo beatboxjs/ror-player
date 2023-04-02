@@ -1,9 +1,4 @@
 .bb-overview {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
 
 	.bb-overview-toggle-patternList {
 		position: absolute;
@@ -21,24 +16,36 @@
 		height: 100%;
 	}
 
-
-	> div > .nav {
-		padding: 1.5em 1.5em 0 1.5em;
+	.header-nav { 
+		display:flex;
+		gap:16px;
+		align-items: center;
 		background-color: var(--secondary);
-		font-family: var(--heading-font);
-		a.nav-link:not(.active) { 
-			color:white;
+		padding: 1.5em 2em;
+
+		.logo img { 
+				max-height:80px;
 		}
+		.heading { 
+			flex-grow: 1;
+			img {
+				max-height:30px;
+			}
+		}
+		a { 
+			color: black;
+		}
+		font-weight:bold;
 
 		.tab { 
-			padding:0 1em 1em 1em;
-			color:black;
-			background:none;
-			border:none;
-			border-bottom: 4px solid transparent;
+			a { 
+				border-bottom: 2px solid transparent; 
+			}
 			&.active, &:hover {
-				color: white;
-				border-color: black;
+				a {
+					border-color: black;
+					text-decoration:none;
+				}
 			}
 		}
 	}

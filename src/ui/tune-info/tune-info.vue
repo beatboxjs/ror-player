@@ -30,7 +30,6 @@
 	<h2>About</h2>
 	<div v-html="tuneDescription"></div>
 
-
 	<div v-if="tune.video">
 		<h2>Video</h2>
 		<div class="bb-tune-info-video">

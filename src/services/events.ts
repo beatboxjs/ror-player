@@ -2,6 +2,7 @@ import Vue from "vue";
 import { PatternReference, State } from "../state/state";
 
 type Event0 = {
+	"home": void,
 	"history-load-encoded-string": void,
 	"overview-close-pattern-list": void,
 	"compose": void,
