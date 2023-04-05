@@ -149,8 +149,8 @@ export default class ExampleSongPlayer extends Vue {
 				FileSaver.saveAs(blob, this.tuneName + ".mp3");
 		} catch(err) {
 			this.loading = null;
-			console.error("Error exporting MP3", err.stack || err);
-			this.$bvModal.msgBoxOk("Error exporting MP3: " + err.message);
+			console.error("Error exporting MP3", (err as Error).stack || err);
+			this.$bvModal.msgBoxOk("Error exporting MP3: " + (err as Error).message);
 		}
 	}
 

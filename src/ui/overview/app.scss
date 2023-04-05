@@ -1,0 +1,83 @@
+.bb-overview {
+	.h-100 {
+		min-height: 100vh;
+	}
+	
+	.bb-overview-toggle-patternList {
+		position: absolute;
+		top: 0.5em;
+		left: 0.5em;
+	}
+
+	.bb-overview-help {
+		position: absolute;
+		top: 0.5em;
+		right: 1em;
+	}
+
+	.bb-state-provider {
+		height: 100%;
+	}
+
+	.header-nav { 
+		display:flex;
+		gap:16px;
+		align-items: center;
+		background-color: var(--secondary);
+		padding: 1.5em 2em;
+
+		.logo img { 
+				max-height:80px;
+		}
+		.heading { 
+			flex-grow: 1;
+			img {
+				max-height:30px;
+			}
+		}
+		a { 
+			color: black;
+		}
+		font-weight:bold;
+
+		.tab { 
+			a { 
+				border-bottom: 2px solid transparent; 
+			}
+			.router-link-active.with-child-links, .router-link-exact-active, &:hover a {
+				border-color: black;
+				text-decoration:none;
+			}
+		}
+	}
+
+	> .tab-content {
+		height: 0;
+		flex-grow: 1;
+		position: relative;
+
+		> .tab-pane {
+			height: 100%;
+		}
+	}
+
+	.bb-cover {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 998; /* Under modal dialog (1050) */
+		background: rgba(0, 0, 0, 0.4);
+		visibility: hidden;
+		transition: left .3s;
+
+		@media (max-width: 767.98px) {
+			body.bb-pattern-list-visible & {
+				visibility: visible;
+			}
+		}
+	}
+
+
+}

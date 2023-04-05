@@ -1,13 +1,17 @@
 <div class="bb-pattern-placeholder" :class="[{ dragging }, `drag-effect-${dragEffect}`]" :draggable="draggable ? 'true' : 'false'" @dragstart="handleDragStart($event)" @dragend="handleDragEnd($event)">
 	<div class="pattern-button">
-		<span class="pattern-name">
+		<router-link class="pattern-name"
+			:to="{ name: 'listen pattern', params: { tuneName, patternName } }">
 			{{state.tunes[tuneName].patterns[patternName].displayName || patternName}}
 			<fa v-if="isCustomPattern" icon="star" title="User-created break" v-b-tooltip/>
-		</span>
+		</router-link>
 	</div>
 	<ul class="actions icon-list">
 		<li><a href="javascript:" title="Listen" v-b-tooltip.hover @click="playPattern()"><fa :icon="playerRef && playerRef.playing ? 'stop' : 'play-circle'"></fa></a></li>
-		<li><a href="javascript:" :title="readonly ? 'Show notes' : 'Edit notes'" v-b-tooltip.hover @click="editPattern()"><fa icon="pen"/></a></li>
+		<li><router-link
+			:to="{ name: 'listen pattern', params: { tuneName, patternName } }"
+			:title="readonly ? 'Show notes' : 'Edit notes'" v-b-tooltip.hover><fa icon="pen"/></router-link>
+		</li>
 		<li v-if="hasLocalChanges"><a href="javascript:" title="Revert modifications" v-b-tooltip.hover @click="restore()"><fa icon="eraser"/></a></li>
 		<slot :download-mp3="this.downloadMP3"/>
 	</ul>

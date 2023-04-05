@@ -151,7 +151,7 @@ export function extendStateFromCompressed(
                 try {
                     tunes[tuneName].patterns[patternName] = patternFromCompressed(object.patterns[tuneName][patternName], defaultTunes.getPattern(tuneName, patternName) || undefined);
                 } catch(e) {
-                    errors.push("Error importing " + patternName + " (" + tuneName + "): " + e.message);
+                    errors.push("Error importing " + patternName + " (" + tuneName + "): " + (e as Error).message);
                     console.error("Error importing " + patternName + " (" + tuneName + "): ", e);
                 }
             }
