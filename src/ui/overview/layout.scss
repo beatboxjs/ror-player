@@ -3,6 +3,12 @@
 		height: 100vh !important;
 	}
 
+	.navbar-toggler { 
+		border:none;
+		padding:0;
+		margin-left:-16px;
+	}
+
 	.bb-overview-toggle-patternList {
 		position: absolute;
 		top: 0.5em;

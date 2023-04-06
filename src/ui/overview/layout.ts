@@ -11,4 +11,7 @@ import Compatibility from "../compatibility/compatibility";
 @WithRender
 @Component({components: { Compatibility, Update, Help  }})
 export default class extends Vue {
+	togglePatternList() {
+		$("body").toggleClass("bb-pattern-list-visible");
+	}
 }
