@@ -11,7 +11,7 @@
 	:settings="playbackSettings"
 />
 
-<p><em>Tap on the <fa icon="pen"></fa> below to see the notes.</em></p>
+<p><em>Tap on the pattern names below to see the notes.</em></p>
 	
 <PatternPlaceholder
 	:tune-name="tuneName"
