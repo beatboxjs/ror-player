@@ -9,7 +9,7 @@ const localStorageOperation: LocalStorageOperation = <T>(callback: () => T, fall
 	try {
 		return callback();
 	} catch (e) {
-		console.error(e.stack || e);
+		console.error((e as Error).stack || e);
 		return fallbackValue;
 	}
 };

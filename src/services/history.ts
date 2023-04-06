@@ -81,8 +81,8 @@ class History {
 			events.$emit("new-state", state);
 			return errors;
 		} catch(e) {
-			console.error("Error decoding state", e.stack || e);
-			return [e.message || e];
+			console.error("Error decoding state", (e as Error).stack || e);
+			throw e
 		}
 	}
 

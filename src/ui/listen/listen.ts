@@ -13,6 +13,7 @@ import $ from "jquery";
 
 @WithRender
 @Component({
+	props: { tuneName: String },
 	components: { PatternListFilter, TuneInfo },
 	data: () => ({ filter: undefined })
 })
@@ -21,7 +22,6 @@ export default class Listen extends Vue {
 
 	@Ref() tunes!: HTMLElement;
 
-	tuneName: string | null = null;
 	tune: Tune | null = null;
 	filter?: Filter = undefined;
 
@@ -36,7 +36,7 @@ export default class Listen extends Vue {
 	created() {
 		this._unregisterHandlers = registerMultipleHandlers({
 			listen(tuneName: string) {
-				if(!this.state.tunes[tuneName] || tuneName == this.tuneName)
+				if(!this.state.tunes[tuneName] || tuneName == this.$props.tuneName)
 					return;
 
 				if(!filterPatternList(this.state, this.filter).includes(tuneName))
@@ -58,7 +58,7 @@ export default class Listen extends Vue {
 	}
 
 	selectTune(tuneName: string) {
-		this.tuneName = tuneName;
+		this.$props.tuneName = tuneName;
 		this.tune = this.state.tunes[tuneName];
 
 		events.$emit("overview-close-pattern-list");

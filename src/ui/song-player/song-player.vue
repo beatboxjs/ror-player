@@ -43,7 +43,9 @@
 
 		<div class="flex-grow-1"></div>
 
-		<slot />
+		<slot>
+			<History/>
+		</slot>
 	</div>
 
 	<div class="song-player-container">

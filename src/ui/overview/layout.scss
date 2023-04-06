@@ -1,4 +1,13 @@
 .bb-overview {
+	.h-100 {
+		height: 100vh !important;
+	}
+
+	.navbar-toggler { 
+		border:none;
+		padding:0;
+		margin-left:-16px;
+	}
 
 	.bb-overview-toggle-patternList {
 		position: absolute;
@@ -41,11 +50,9 @@
 			a { 
 				border-bottom: 2px solid transparent; 
 			}
-			&.active, &:hover {
-				a {
-					border-color: black;
-					text-decoration:none;
-				}
+			.router-link-active.with-child-links, .router-link-exact-active, &:hover a {
+				border-color: black;
+				text-decoration:none;
 			}
 		}
 	}

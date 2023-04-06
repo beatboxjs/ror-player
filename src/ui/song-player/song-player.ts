@@ -32,6 +32,7 @@ import PatternPlaceholder, { PatternPlaceholderItem } from "../pattern-placehold
 import { Pattern } from "../../state/pattern";
 import ImportDialog from "../import-dialog/import-dialog";
 import ShareDialog from "../share-dialog/share-dialog";
+import History from "../history/history";
 import $ from "jquery";
 import Progress from "../utils/progress";
 import { exportMP3, exportWAV } from "beatbox.js-export";
@@ -47,7 +48,8 @@ type DragOver = "trash" | { instr: Instrument | null, idx: number };
 		PatternPlaceholderItem,
 		ShareDialog,
 		ImportDialog,
-		Progress
+		Progress,
+		History
 	}
 })
 export default class SongPlayer extends Vue {
@@ -438,8 +440,9 @@ export default class SongPlayer extends Vue {
 				FileSaver.saveAs(blob, this.getSongName() + ".mp3");
 		} catch(err) {
 			this.loading = null;
-			console.error("Error exporting MP3", err.stack || err);
-			this.$bvModal.msgBoxOk("Error exporting MP3: " + err.message);
+			const error = err as Error
+			console.error("Error exporting MP3", error.stack || err);
+			this.$bvModal.msgBoxOk("Error exporting MP3: " + error.message);
 		}
 	}
 
@@ -460,8 +463,9 @@ export default class SongPlayer extends Vue {
 				FileSaver.saveAs(blob, this.getSongName() + ".wav");
 		} catch(err) {
 			this.loading = null;
-			console.error("Error exporting WAV", err.stack || err);
-			this.$bvModal.msgBoxOk("Error exporting WAV: " + err.message);
+			const error = err as Error;
+			console.error("Error exporting WAV", error.stack || err);
+			this.$bvModal.msgBoxOk("Error exporting WAV: " + error.message);
 		}
 	}
 

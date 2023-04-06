@@ -36,7 +36,7 @@ function packAudioFiles(fileName: string) {
 			}
 			callback();
 		} catch (err) {
-			callback(err);
+			callback(err as Error);
 		}
 	};
 

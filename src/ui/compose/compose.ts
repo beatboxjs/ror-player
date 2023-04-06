@@ -13,10 +13,11 @@ import { PatternPlaceholderItem } from "../pattern-placeholder/pattern-placehold
 import events, { registerMultipleHandlers } from "../../services/events";
 import { scrollToElement } from "../../services/utils";
 import { ensurePersistentStorage } from "../../services/localStorage";
+import { StateProvider } from "../../services/history";
 
 @WithRender
 @Component({
-	components: { PatternList, PatternPlaceholderItem, SongPlayer, History }
+	components: { PatternList, PatternPlaceholderItem, SongPlayer, History, StateProvider }
 })
 export default class Compose extends Vue {
 
