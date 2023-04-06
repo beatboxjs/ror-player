@@ -1,9 +1,9 @@
 
 import Vue from "vue";
 import Component from "vue-class-component";
-import WithRender from "./app.vue";
-import "./app.scss";
-import './app'
+import WithRender from "./layout.vue";
+import "./layout.scss";
+import './layout'
 import Help from "../help/help";
 import Update from "../update/update";
 import Compatibility from "../compatibility/compatibility";

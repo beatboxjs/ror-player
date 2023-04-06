@@ -59,7 +59,6 @@
 		white-space: nowrap;
 		margin-top: 1em;
 		overflow: auto;
-		padding: 0 1.2em 1.2em 1.2em;
 
 		.song-container {
 			display: inline-block;
@@ -92,6 +91,7 @@
 
 					.bb-pattern-placeholder {
 						height: 100%;
+						padding:4px;
 						background-color: var(--cyan);
 						box-shadow: #0002 2px 2px 2px;
 					}
@@ -216,7 +216,6 @@
 	}
 
 	.control-panel {
-		padding: 0.75rem 1.25rem 0 1.25rem;
 		display: flex;
 		align-items: center;
 		flex-wrap: wrap;

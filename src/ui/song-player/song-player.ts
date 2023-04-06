@@ -32,6 +32,7 @@ import PatternPlaceholder, { PatternPlaceholderItem } from "../pattern-placehold
 import { Pattern } from "../../state/pattern";
 import ImportDialog from "../import-dialog/import-dialog";
 import ShareDialog from "../share-dialog/share-dialog";
+import History from "../history/history";
 import $ from "jquery";
 import Progress from "../utils/progress";
 import { exportMP3, exportWAV } from "beatbox.js-export";
@@ -47,7 +48,8 @@ type DragOver = "trash" | { instr: Instrument | null, idx: number };
 		PatternPlaceholderItem,
 		ShareDialog,
 		ImportDialog,
-		Progress
+		Progress,
+		History
 	}
 })
 export default class SongPlayer extends Vue {

@@ -1,8 +1,6 @@
 <div>
 	<h1>
-		<router-link :to="{ name: 'listen', params: { tuneName }}">
-			{{state.tunes[tuneName].displayName || tuneName }}
-		</router-link>	
+		<router-link :to="{ name: 'listen', params: { tuneName }}">{{state.tunes[tuneName].displayName || tuneName }}</router-link>	
 		{{state.tunes[tuneName].patterns[patternName].displayName || patternName }}
 	</h1>
 	<div class="bb-pattern-editor-toolbar">

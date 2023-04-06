@@ -4,8 +4,11 @@
 	flex-direction: column;
 	height: 100%;
 
-	.card-header, .card-body {
-		padding: 0;
+	.card-body {
+		padding:0 8px;
+	}
+	.card-header {
+		padding:0;
 		.btn { 
 			font-size: 1.425rem;
 		}
