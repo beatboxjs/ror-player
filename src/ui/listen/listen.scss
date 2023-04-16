@@ -50,10 +50,10 @@ $padding: 1.2em;
 	.bb-listen-info {
 		width: 0;
 		flex-grow: 1;
-		padding: 1.2em;
 		overflow: auto;
 
 		.bb-tune-info {
+			padding: 1.2em;
 			max-width: 740px;
 			margin: 0 auto;
 		}

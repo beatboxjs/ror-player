@@ -12,9 +12,13 @@ import { stopAllPlayers } from './player'
 
 const routes : RouteConfig[] = [
     {
-      name: 'about',
       path: '/',
-      component: About
+      component: Listen, 
+      children: [ {
+        name: 'about',
+        path: '',
+        component: About
+    }]
     },
     {
         path: '/listen',
