@@ -1,4 +1,4 @@
-<div>
+<div class="bb-pattern-player">
 	<h1>
 		<router-link :to="{ name: 'listen', params: { tuneName }}">{{state.tunes[tuneName].displayName || tuneName }}</router-link>	
 		{{state.tunes[tuneName].patterns[patternName].displayName || patternName }}

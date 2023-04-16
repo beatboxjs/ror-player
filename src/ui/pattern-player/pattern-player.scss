@@ -1,158 +1,161 @@
-.bb-pattern-editor-toolbar {
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-	margin-top: -0.5rem;
+.bb-pattern-player { 
+	padding: 1.2em;
+	.bb-pattern-editor-toolbar {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		margin-top: -0.5rem;
 
-	> * {
-		flex-shrink: 0;
-		margin-top: 0.5rem;
-		margin-right: 0.25rem;
+		> * {
+			flex-shrink: 0;
+			margin-top: 0.5rem;
+			margin-right: 0.25rem;
+		}
+
+		.divider {
+			margin-left: 0.75rem;
+			margin-right: 0.5rem;
+			height: 34px;
+			border-left: 1px solid #dee2e6;
+		}
+
+		button.has-changes {
+			background: linear-gradient(to bottom, #fdf4e8 0%, #f7d3a1 100%);
+			border-color: #f7d3a1;
+		}
 	}
 
-	.divider {
-		margin-left: 0.75rem;
-		margin-right: 0.5rem;
-		height: 34px;
-		border-left: 1px solid #dee2e6;
-	}
+	.bb-pattern-editor-container {
+		width: 100%;
+		overflow-x: auto;
+		padding: 1em 0;
+		position: relative;
 
-	button.has-changes {
-		background: linear-gradient(to bottom, #fdf4e8 0%, #f7d3a1 100%);
-		border-color: #f7d3a1;
-	}
-}
+		.pattern-editor {
+			table-layout: fixed;
 
-.bb-pattern-editor-container {
-	width: 100%;
-	overflow-x: auto;
-	padding: 1em 0;
-	position: relative;
+			.stroke {
+				border-right: 1px solid #ddd;
+				text-align: center;
+				position: relative;
 
-	.pattern-editor {
-		table-layout: fixed;
-
-		.stroke {
-			border-right: 1px solid #ddd;
-			text-align: center;
-			position: relative;
-
-			&.has-changes {
-				background-color: #fbe8d0;
-			}
-
-			&.current { 
-				outline: 2px solid var(--blue);
-				animation: blinker 1s linear infinite;
-			  }
-			  
-			  @keyframes blinker {
-				50% {
-				  outline-color:transparent;
+				&.has-changes {
+					background-color: #fbe8d0;
 				}
-			  }
-		}
 
-		.stroke-inner {
-			display: inline-block;
-			min-width: 2.7ex;
-			min-height: 1em;
-		}
-
-		thead td {
-			border-bottom: 1px solid #aaa;
-			padding-bottom: .5ex;
-			background-color: var(--blue);
-			color:white;
-			font-family: var(--heading-font);
-			padding:2px 4px 0 0;
-		}
-
-		th { 
-			font-family: var(--heading-font);
-		}
-
-		.beat, .stroke.before-beat {
-			border-right: 1px solid #aaa;
-		}
-
-		.instrument-operations, .stroke.before-bar, .beat.before-bar {
-			border-right: 2px solid #888;
-		}
-
-		.instrument-operations {
-			text-align: right;
-
-			a + a {
-				margin-left: 0.25rem;
+				&.current { 
+					outline: 2px solid var(--blue);
+					animation: blinker 1s linear infinite;
+				}
+				
+				@keyframes blinker {
+					50% {
+					outline-color:transparent;
+					}
+				}
 			}
-		}
 
-		.beat {
-			cursor: pointer;
-		}
-
-		.beat span {
-			display: inline-block;
-			padding: 0 .5ex;
-			border-radius: 10px;
-			transition: background-color 1s, color 1s;
-		}
-
-		.beat.active span {
-			background-color: #3a94a5;
-			color: #fff;
-			transition: none;
-		}
-
-		tbody th {
-			padding-right: 1ex;
-		}
-
-		tbody th, td.instrument-operations {
-			white-space: nowrap;
-		}
-
-		.instrument-operations .inactive {
-			color: #bbb;
-		}
-
-		&.time-2 {
 			.stroke-inner {
-				min-width: 5.4ex;
+				display: inline-block;
+				min-width: 2.7ex;
+				min-height: 1em;
+			}
+
+			thead td {
+				border-bottom: 1px solid #aaa;
+				padding-bottom: .5ex;
+				background-color: var(--blue);
+				color:white;
+				font-family: var(--heading-font);
+				padding:2px 4px 0 0;
+			}
+
+			th { 
+				font-family: var(--heading-font);
+			}
+
+			.beat, .stroke.before-beat {
+				border-right: 1px solid #aaa;
+			}
+
+			.instrument-operations, .stroke.before-bar, .beat.before-bar {
+				border-right: 2px solid #888;
+			}
+
+			.instrument-operations {
+				text-align: right;
+
+				a + a {
+					margin-left: 0.25rem;
+				}
+			}
+
+			.beat {
+				cursor: pointer;
+			}
+
+			.beat span {
+				display: inline-block;
+				padding: 0 .5ex;
+				border-radius: 10px;
+				transition: background-color 1s, color 1s;
+			}
+
+			.beat.active span {
+				background-color: #3a94a5;
+				color: #fff;
+				transition: none;
+			}
+
+			tbody th {
+				padding-right: 1ex;
+			}
+
+			tbody th, td.instrument-operations {
+				white-space: nowrap;
+			}
+
+			.instrument-operations .inactive {
+				color: #bbb;
+			}
+
+			&.time-2 {
+				.stroke-inner {
+					min-width: 5.4ex;
+				}
+			}
+
+			&.time-12 {
+				.stroke-inner {
+					min-width: 1ex;
+				}
+
+				.stroke-0, .stroke-1, .stroke-3, .stroke-4, .stroke-6, .stroke-7, .stroke-9, .stroke-10 {
+					border-right: none;
+				}
+			}
+
+			&.time-20 {
+				.stroke-inner {
+					min-width: 1ex;
+				}
+
+				.stroke-0, .stroke-1, .stroke-2, .stroke-3,
+				.stroke-5, .stroke-6, .stroke-7, .stroke-8,
+				.stroke-10,.stroke-11,.stroke-12,.stroke-13,
+				.stroke-15,.stroke-16,.stroke-17,.stroke-18 {
+					border-right: none;
+				}
 			}
 		}
 
-		&.time-12 {
-			.stroke-inner {
-				min-width: 1ex;
-			}
-
-			.stroke-0, .stroke-1, .stroke-3, .stroke-4, .stroke-6, .stroke-7, .stroke-9, .stroke-10 {
-				border-right: none;
-			}
+		.position-marker {
+			position: absolute;
+			top: 0;
+			height: 100%;
+			border-left: 1px solid #000;
+			transition: left 0.1s linear;
+			pointer-events: none;
 		}
-
-		&.time-20 {
-			.stroke-inner {
-				min-width: 1ex;
-			}
-
-			.stroke-0, .stroke-1, .stroke-2, .stroke-3,
-			.stroke-5, .stroke-6, .stroke-7, .stroke-8,
-			.stroke-10,.stroke-11,.stroke-12,.stroke-13,
-			.stroke-15,.stroke-16,.stroke-17,.stroke-18 {
-				border-right: none;
-			}
-		}
-	}
-
-	.position-marker {
-		position: absolute;
-		top: 0;
-		height: 100%;
-		border-left: 1px solid #000;
-		transition: left 0.1s linear;
-		pointer-events: none;
 	}
 }
