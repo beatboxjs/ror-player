@@ -15,14 +15,15 @@ const routes : RouteConfig[] = [
       path: '/',
       component: Listen, 
       children: [ {
-        name: 'about',
-        path: '',
-        component: About
-    }]
-    },
-    {
-        path: '/listen',
-        redirect: 'listen/General Breaks'
+            name: 'about',
+            path: '',
+            component: About
+        }, {
+            path:'listen',
+            component: TuneInfo,
+            meta: { showNav: true },
+            props: { tuneName: 'General Breaks' }
+        }]
     },
     {
         path: '/listen/:tuneName',
