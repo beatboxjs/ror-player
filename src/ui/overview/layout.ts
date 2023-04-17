@@ -19,6 +19,8 @@ export default class extends Vue {
 
     @Watch('$route')
     showHidePatternList(route: Route) {
-		$("body").toggleClass("bb-pattern-list-visible", !!route.meta?.showNav);
+        setTimeout(() =>
+		    $("body").toggleClass("bb-pattern-list-visible", !!route.meta?.showNav)
+        , 1)
     }
 }

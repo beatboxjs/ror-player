@@ -13,17 +13,18 @@ import { stopAllPlayers } from './player'
 const routes : RouteConfig[] = [
     {
       path: '/',
-      component: Listen, 
-      children: [ {
-            name: 'about',
-            path: '',
-            component: About
-        }, {
-            path:'listen',
+      component: About, 
+      name: 'about'
+    },
+    { 
+        path: '/listen', 
+        component: Listen,
+        children: [ {
+            path:'',
             component: TuneInfo,
             meta: { showNav: true },
             props: { tuneName: 'General Breaks' }
-        }]
+        } ]
     },
     {
         path: '/listen/:tuneName',
