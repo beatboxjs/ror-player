@@ -97,7 +97,6 @@ export default (env: any, argv: any): Configuration => {
 				patterns: [
 					{ from: `${__dirname}/src/sw.js`, to: `${__dirname}/dist/sw.js` },
 					{ from: `${__dirname}/assets/img/app-512.png`, to: `${__dirname}/dist/app-512.png` },
-				        { from: `${__dirname}/assets/img`, to: `${__dirname}/dist/img` },
 					{ from: `${__dirname}/assets/img/app-180.png`, to: `${__dirname}/dist/app-180.png` },
 					{ from: `${__dirname}/assets/manifest.json`, to: `${__dirname}/dist/manifest.json` }
 				]
