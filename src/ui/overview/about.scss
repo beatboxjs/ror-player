@@ -14,3 +14,50 @@
 	max-width: 80rem;
 	margin:0 auto;
 }
+
+.styled-links {
+	display: grid;
+	gap: 1em;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	a { 
+		padding: 4px 8px;
+		color:white;
+		font-family: Fucxed;
+		font-size:30px;
+		height:6rem;  
+		display: flex;
+		align-items: end;
+		justify-content: end;
+		background-size:cover;
+		background-position: center center;
+		transition: .2s linear all;
+	}
+	a:hover { 
+		transform:scale(1.1)
+	}
+	a:nth-child(6n+0) { 
+		counter-increment: index;
+		background-image:url(../../../assets/img/bg/0.png);
+	}
+	a:nth-child(6n+1) { 
+		background-image:url(../../../assets/img/bg/1.png);
+	}
+	a:nth-child(6n+2) { 
+		background-image:url(../../../assets/img/bg/2.png);
+	}
+	a:nth-child(6n+3) { 
+		background-image:url(../../../assets/img/bg/3.png);
+	}
+	a:nth-child(6n+4) { 
+		background-image:url(../../../assets/img/bg/4.png);
+	}
+	a:nth-child(6n+5) { 
+		background-image:url(../../../assets/img/bg/5.png);
+	}
+	a:nth-child(n+7) { 
+		filter:hue-rotate(60deg);
+	}
+	a:nth-child(n+13) { 
+		filter:hue-rotate(120deg);
+	}
+}

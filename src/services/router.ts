@@ -65,6 +65,7 @@ const routes : RouteConfig[] = [
   const router = new VueRouter({
     routes,
     mode: 'hash',
+    scrollBehavior: () => ({ x: 0, y: 0 })
 })
 
 router.beforeEach((from, to, next) => { 
