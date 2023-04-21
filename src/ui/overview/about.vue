@@ -7,6 +7,7 @@
             <router-link 
                 v-for="(tuneName, i) in tuneList"
                 :to="{name: 'listen', params: { tuneName }}"
+                draggable="false"
                 :key="tuneName">
                 {{state.tunes[tuneName].displayName || tuneName}}
             </router-link>
