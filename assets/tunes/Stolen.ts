@@ -17,45 +17,12 @@ export default {
             ag: "          oa ao ",
             sh: "@sn"
         },
-        ">  Low Surdo": {
-            loop: true,
-            ls: "XXXXXXXXX",
-            sh: 'X . . . X . . . '
-        },
-        ">  Mid/High Surdo": {
-            loop: true,
-            ms: "  X   X   XX XX",
-            hs: '@ms',
-            sh: 'X . . . X . . . '
-        },
-        ">  Repi": {
-            loop: true,
-            re: "..X...X...X..XX.",
-            sh: 'X . . . X . . . '
-        },
-        ">  Snare": {
-            loop: true,
-            sn: "..X...X...X...X.",
-            sh: 'X . . . X . . . '
-        },
-        ">  Tam": {
-            loop: true,
-            ta: "X   X   X  XX X",
-            sh: 'X . . . X . . . '
-        },
-        ">  Agogo": {
-            displayName: '>  Agogô',
-            loop: true,
-            ag: "          oa ao ",
-            sh: 'X . . . X . . . '
-        },
-        ">  Alt Agogo": {
-            displayName: '>  Alt Agogô',
+        "Alt Agogo": {
+            displayName: 'Alt Agogô',
             loop: true,
             ag: "o ao  a  oaoo a ",
             sh: 'X . . . X . . . '
         },
-
         "Whistle in (Stolen)": {
             ot: 'y   y   y y y y '
         },

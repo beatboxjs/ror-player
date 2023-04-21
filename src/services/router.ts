@@ -5,9 +5,6 @@ import PatternPlayer from '../ui/pattern-player/pattern-player'
 import TuneInfo from '../ui/tune-info/tune-info'
 import Compose from '../ui/compose/compose'
 import SongPlayer from '../ui/song-player/song-player'
-import History from '../ui/history/history'
-import { CreateElement } from 'vue'
-import { StateProvider } from './history'
 import { stopAllPlayers } from './player'
 
 const routes : RouteConfig[] = [

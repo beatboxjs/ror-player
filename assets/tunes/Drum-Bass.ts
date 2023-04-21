@@ -15,38 +15,6 @@ export default {
             ag: 'o ao ao a       o ao ao a       o ao ao a       o ao ao a       ',
             sh: '................................................................'
         },
-        ">  Low Surdo": {
-            loop: true,
-            ls: 'X         X  X  X         X     ',
-            sh: 'X   .   .   .   X   .   .   .   '
-        },
-        ">  Mid/High Surdo": {
-            loop: true,
-            ms: '    X XXXX  X       X XXXX  X   ',
-            hs: '@ms',
-            sh: 'X   .   .   .   X   .   .   .   '
-        },
-        ">  Repi": {
-            loop: true,
-            re: '    X  X X XX XX    X       X   ',
-            sh: 'X   .   .   .   X   .   .   .   '
-        },
-        ">  Snare": {
-            loop: true,
-            sn: '....X..X....X.......X..X....X   ....X..X....X...X.X.X.X.X.X.X.X.',
-            sh: 'X   .   .   .   X   .   .   .   X   .   .   .   X   .   .   .   '
-        },
-        ">  Tam": {
-            loop: true,
-            ta: '    X     X X       X   X X X   ',
-            sh: 'X   .   .   .   X   .   .   .   '
-        },
-        ">  Agogo": {
-            displayName: '>  Agogô',
-            loop: true,
-            ag: 'o ao ao a       ',
-            sh: 'X   .   .   .   '
-        },
         'Break 2': {
             ls: 'X  X X  X  X X  X  X X          ',
             ms: '@ls',

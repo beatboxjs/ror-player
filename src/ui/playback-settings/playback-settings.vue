@@ -1,6 +1,6 @@
 <Popover custom-class="bb-playback-settings" variant="secondary">
 	<template #button>
-		<fa icon="sliders-h"/> <fa icon="caret-down"/>
+		<nobr><fa icon="sliders-h"/> <fa icon="caret-down"/></nobr>
 	</template>
 
 	<b-form-group label="Speed" label-cols="3">
@@ -15,11 +15,11 @@
 		<b-form-checkbox @change="update({ loop: $event })" :checked="playbackSettings.loop" class="my-auto" />
 	</b-form-group>
 
-	<b-form-group label="Whistle" label-cols="3">
+	<b-form-group label="Click" label-cols="3">
 		<b-button-group class="my-auto">
-			<b-button size="sm" @click="update({ whistle: false })" :pressed="playbackSettings.whistle == false" variant="secondary">No</b-button>
-			<b-button size="sm" @click="update({ whistle: 1 })" :pressed="playbackSettings.whistle == 1" variant="secondary">On one</b-button>
-			<b-button size="sm" @click="update({ whistle: 2 })" :pressed="playbackSettings.whistle == 2" variant="secondary">On all</b-button>
+			<b-button size="sm" @click="update({ metronome: false })" :pressed="playbackSettings.metronome == false" variant="secondary">No</b-button>
+			<b-button size="sm" @click="update({ metronome: 1 })" :pressed="playbackSettings.metronome == 1" variant="secondary">On one</b-button>
+			<b-button size="sm" @click="update({ metronome: 2 })" :pressed="playbackSettings.metronome == 2" variant="secondary">On all</b-button>
 		</b-button-group>
 	</b-form-group>
 

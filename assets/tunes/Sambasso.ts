@@ -17,38 +17,10 @@ export default {
             ag: 'o  aa oo a oo a ',
             sh: 'X.X.X.X.X.X.X.X.'
         },
-        ">  All Surdos": {
-            loop: true,
-            ls: 'X  rX r X  rX r ',
-            ms: '@ls',
-            hs: '@ls',
-            sh: 'X   .   .   .   '
-        },
-        ">  Repi": {
-            loop: true,
-            re: 'X..X..X..XX..XX.',
-            sh: 'X   .   .   .'
-        },
-        ">  Snare": {
-            loop: true,
-            sn: 'X..X..X...X..X..',
-            sh: 'X   .   .   .   '
-        },
-        ">  Tam": {
-            loop: true,
-            ta: 'X X X   XX XX   ',
-            sh: 'X   .   .   .   '
-        },
-        '>  Alt Tam': {
+        'Alt Tam': {
             loop: true,
             ta: ' X XX X XX XX  X X XXXX X  XX   ',
             sh: 'X   .   .   .   X   .   .   .   '
-        },
-        ">  Agogo": {
-            displayName: '>  Agogô',
-            loop: true,
-            ag: 'o  aa oo a oo a ',
-            sh: 'X   .   .   .   '
         },
         'Break 1': {
             ls: 'X  rX r XX XX   ',

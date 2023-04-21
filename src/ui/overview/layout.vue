@@ -15,16 +15,18 @@
 				<img src="../../../assets/img/XRR-header.webp" class="d-none d-md-inline">
 			</a>
 			</span>
-			<span class="tab"">
-				<router-link to="/">About</router-link>
+			<span class="d-flex flex-row flex-grow-1 gap-2">
+				<span class="tab">
+					<router-link to="/">About</router-link>
+				</span>
+				<span class="tab">
+					<router-link to="/listen" class="with-child-links">Listen</router-link>
+				</span>
+				<span class="tab">
+					<router-link to="/compose" class="with-child-links">Compose</router-link>
+				</span>
+				<Help />
 			</span>
-			<span class="tab">
-				<router-link to="/listen" class="with-child-links">Listen</router-link>
-			</span>
-			<span class="tab">
-				<router-link to="/compose" class="with-child-links">Compose</router-link>
-			</span>
-			<Help />
 		</div>
 
 		<router-view class="flex-grow-1" />
