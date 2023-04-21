@@ -17,34 +17,6 @@ export default {
             ag: 'aaaa  oooo              aaaa  oooo              ',
             sh: 'X..X..X..X..X..X..X..X..X..X..X..X..X..X..X..X..'
         },
-        ">  All Surdos": {
-            loop: true,
-            ls: 'X       XX  X       XX  X       XX  X    X   X  ',
-            ms: '@ls',
-            hs: '@ls',
-            sh: 'X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .'
-        },
-        ">  Repi": {
-            loop: true,
-            re: 'X zX zX zX zX zX zX zX zX zX zX zX zXXXX  XXXX  ',
-            sh: 'X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .'
-        },
-        ">  Snare": {
-            loop: true,
-            sn: 'X..X..X..X..X..X..X..X..X..X..X..X..XXXX  XXXX  ',
-            sh: 'X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .'
-        },
-        ">  Tam": {
-            loop: true,
-            ta: 'X XX XX XX X',
-            sh: 'X  .  .  .  '
-        },
-        ">  Agogo": {
-            displayName: '>  Agogô',
-            loop: true,
-            ag: 'aaaa  oooo              aaaa  oooo              ',
-            sh: 'X  .  .  .  X  .  .  .  X  .  .  .  X  .  .  .  '
-        },
         'Break 1': {
             upbeat: 4,
             ls: 'XX  X XX X  XX  X       XX  X XX X  XX  X       XX  X XX X  XX  X       XX  X    X   X  XXXX  XXXX  ',
