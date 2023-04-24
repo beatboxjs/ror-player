@@ -4,7 +4,7 @@ $padding: 1.2em;
 
 	.bb-listen-tunes {
 		padding: $padding;
-		width: 12em;
+		flex: 0 1 20rem;
 		background: var(--green);
 		display: flex;
 		flex-direction: column;
@@ -48,8 +48,7 @@ $padding: 1.2em;
 
 	.bb-listen-info {
 
-		flex-grow: 1;
-		padding: 1.2em;
+		flex: 1 0 0;
 		overflow: auto;
 
 		.bb-tune-info {

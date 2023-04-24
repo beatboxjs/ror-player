@@ -15,7 +15,7 @@
 				<img src="../../../assets/img/XRR-header.webp" class="d-none d-md-inline">
 			</a>
 			</span>
-			<span class="d-flex flex-row flex-grow-1 gap-2">
+			<span class="d-flex flex-row gap-2">
 				<span class="tab">
 					<router-link to="/">About</router-link>
 				</span>
