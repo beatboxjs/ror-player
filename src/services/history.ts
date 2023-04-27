@@ -9,9 +9,8 @@ import {
 import { clone, objectToString, stringToObject } from "../utils";
 import { isEqual } from "lodash";
 import events, { registerMultipleHandlers } from "./events";
-import Component from "vue-class-component";
-import Vue from "vue";
-import { ProvideReactive, Watch } from "vue-property-decorator";
+import Vue, { Component as ComponentType, CreateElement } from "vue";
+import { Component, ProvideReactive, Watch } from "vue-property-decorator";
 import {
 	getLocalStorageItem,
 	getLocalStorageKeys,
@@ -191,4 +190,10 @@ export class StateProvider extends Vue {
 		this._unregisterHandlers();
 	}
 
+}
+
+export function withStateProvider(inner: ComponentType) { 
+	return { 
+		render: (h:CreateElement) => h(StateProvider, {}, [h(inner)])
+	}
 }

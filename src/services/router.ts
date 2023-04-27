@@ -6,6 +6,7 @@ import TuneInfo from '../ui/tune-info/tune-info'
 import Compose from '../ui/compose/compose'
 import SongPlayer from '../ui/song-player/song-player'
 import { stopAllPlayers } from './player'
+import { withStateProvider } from './history'
 
 const routes : RouteConfig[] = [
     {
@@ -43,7 +44,7 @@ const routes : RouteConfig[] = [
     },
     {
         path: '/compose',
-        component: Compose,
+        component: withStateProvider(Compose),
         children: [
             {
                 name: 'compose',
