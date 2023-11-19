@@ -15,8 +15,8 @@
 	}>();
 
 	const emit = defineEmits<{
-		(type: "update:path", path: string): void;
-		(type: "update:route", route: Route): void;
+		"update:path": [path: string];
+		"update:route": [route: Route];
 	}>();
 
 	const path = useRefWithOverride("", () => props.path, (path) => emit("update:path", path));

@@ -17,8 +17,8 @@
 	}>();
 
 	const emit = defineEmits<{
-		(type: "update:tuneName", tuneName: string | null | undefined): void;
-		(type: "update:editPattern", patternName: string | undefined): void;
+		"update:tuneName": [tuneName: string | null | undefined];
+		"update:editPattern": [patternName: string | undefined];
 	}>();
 
 	const tuneName = useRefWithOverride(undefined, () => props.tuneName, (tuneName) => emit("update:tuneName", tuneName));
@@ -45,7 +45,7 @@
 			<TuneList v-model:tuneName="tuneName" />
 
 			<template v-slot:toggle>
-				<button type="button" class="btn btn-light" @click="isSidebarExpanded = !isSidebarExpanded">
+				<button type="button" class="btn btn-secondary" @click="isSidebarExpanded = !isSidebarExpanded">
 					<fa icon="bars" />
 				</button>
 			</template>

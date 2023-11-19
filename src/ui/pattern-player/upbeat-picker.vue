@@ -10,7 +10,7 @@
 	}>();
 
 	const emit = defineEmits<{
-		(type: "update:modelValue", value: Value): void;
+		"update:modelValue": [value: Value];
 	}>();
 
 	const handleUpdate = (value: Value) => {
@@ -20,7 +20,7 @@
 
 <template>
 	<div class="dropdown">
-		<button class="btn btn-light dropdown-toggle" :class="buttonClass" data-bs-toggle="dropdown">Upbeat: {{props.modelValue}}</button>
+		<button class="btn btn-secondary dropdown-toggle" :class="buttonClass" data-bs-toggle="dropdown">Upbeat: {{props.modelValue}}</button>
 		<ul class="dropdown-menu">
 			<li v-for="i in props.time * 4 + 1" :key="i"><a class="dropdown-item" :class="{ active: props.modelValue == i - 1 }" href="javascript:" @click="handleUpdate(i - 1)" draggable="false">Upbeat: {{i - 1}}</a></li>
 		</ul>

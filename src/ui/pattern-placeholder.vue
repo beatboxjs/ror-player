@@ -7,7 +7,7 @@
 	import { patternEquals } from "../state/pattern";
 	import { DragType, PatternDragData, setDragData } from "../services/draggable";
 	import PatternPlayerDialog from "./pattern-player/pattern-player-dialog.vue";
-	import { clone, useRefWithOverride } from "../utils";
+	import { clone, generateId, useRefWithOverride } from "../utils";
 	import { computed, defineComponent, h, onBeforeUnmount, ref } from "vue";
 	import { injectStateRequired } from "../services/state";
 	import { showConfirm } from "./utils/alert";
@@ -39,9 +39,9 @@
 	});
 
 	const emit = defineEmits<{
-		(type: "update:showEditorDialog", show: boolean): void;
-		(type: "dragStart"): void;
-		(type: "dragEnd"): void;
+		"update:showEditorDialog": [show: boolean];
+		"dragStart": [];
+		"dragEnd": [];
 	}>();
 
 	const showEditorDialog = useRefWithOverride(false, () => props.showEditorDialog, (show) => emit("update:showEditorDialog", show));
@@ -165,7 +165,14 @@
 			ref="abstractPlayerRef"
 		/>
 
-		<PatternPlayerDialog v-if="showEditorDialog" v-model:show="showEditorDialog" :readonly="readonly" :tune-name="tuneName" :pattern-name="patternName" :player-ref="abstractPlayerRef?.playerRef"/>
+		<PatternPlayerDialog
+			v-if="showEditorDialog"
+			@hidden="showEditorDialog = false"
+			:readonly="readonly"
+			:tune-name="tuneName"
+			:pattern-name="patternName"
+			:player-ref="abstractPlayerRef?.playerRef"
+		/>
 	</div>
 </template>
 

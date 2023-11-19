@@ -1,27 +1,44 @@
 import { compressState, createSong, extendState, extendStateFromCompressed, normalizeState } from "../state/state";
-import { clone, objectToString, stringToObject } from "../utils";
+import { objectToString, stringToObject } from "../utils";
 import { isEqual } from "lodash-es";
-import { nextTick, ref, watch } from "vue";
+import { effectScope, nextTick, ref, toRaw, watch } from "vue";
+
+const storageKeyPrefix = "bbState-";
 
 export class History {
 
 	storage: Record<string, string>;
+	_stringToObjectCache: Record<string, object> = {};
 	state = ref(normalizeState());
+	_stateCompressed = ref<object>();
 	currentKey = ref<number>();
-	onDestroy: Array<() => void> = [];
+	_scope = effectScope();
 
 	constructor(storage: Record<string, string>) {
 		this.storage = storage;
 
-		this.onDestroy.push(watch(storage, () => {
-			this.loadHistoricState();
-		}, { deep: true, immediate: true }));
+		this._scope.run(() => {
+			watch(this.state, () => {
+				this._stateCompressed.value = compressState(this.state.value, null, null, true, true, true);
+			}, { deep: true, immediate: true });
 
-		watch(this.state, () => {
-			nextTick(() => {
-				this.saveCurrentState();
-			});
-		}, { deep: true, immediate: true });
+			watch(storage, () => {
+				this.loadHistoricState();
+
+				const storageValues = Object.values(this.storage);
+				for (const k of Object.keys(this._stringToObjectCache)) {
+					if (!storageValues.includes(k)) {
+						delete this._stringToObjectCache[k];
+					}
+				}
+			}, { deep: true, immediate: true });
+
+			watch(this.state, () => {
+				nextTick(() => {
+					this.saveCurrentState();
+				});
+			}, { deep: true, immediate: true });
+		});
 
 		// Legacy storage
 		if(storage.song) {
@@ -39,7 +56,7 @@ export class History {
 	}
 
 	destroy(): void {
-		this.onDestroy.forEach((callback) => callback());
+		this._scope.stop();
 	}
 
 	loadEncodedString(encodedString: string): string[] {
@@ -56,13 +73,11 @@ export class History {
 
 	getHistoricStates(): number[] {
 		return Object.keys(this.storage)
-			.map((key) => key.match(/^bbState-(.*)$/))
-			.filter((m) => m)
-			.map((m) => parseInt((m as RegExpMatchArray)[1], 10))
+			.flatMap((k) => (k.startsWith(storageKeyPrefix) ? [parseInt(k.slice(storageKeyPrefix.length), 10)]: []))
 			.sort().reverse();
 	}
 
-	loadHistoricState(key?: number | null, loadSettings = false): void {
+	loadHistoricState(key?: number | null): void {
 		if(key == null)
 			key = Number(this.storage.bbState);
 
@@ -74,10 +89,19 @@ export class History {
 		this._ensureMaxNumber(1);
 	}
 
+	_cachedStringToObject(str: string): object {
+		return this._stringToObjectCache[str] = this._stringToObjectCache[str] ?? stringToObject(str);
+	}
+
 	_loadFromString(encodedString: string | null): string[] {
 		try {
+			const obj = encodedString ? this._cachedStringToObject(encodedString) : {};
+			if (isEqual(obj, this._stateCompressed.value)) {
+				return [];
+			}
+
 			const state = normalizeState();
-			const errors = extendStateFromCompressed(state, encodedString ? stringToObject(encodedString) : { }, null, null, true, true, true);
+			const errors = extendStateFromCompressed(state, obj, null, null, true, true, true);
 			if(state.songs.length == 0) {
 				createSong(state);
 			}
@@ -96,7 +120,7 @@ export class History {
 
 	saveCurrentState(): void {
 		const obj = compressState(this.state.value, null, null, true, true, true);
-		if(Object.keys(obj).length == 0 || (this.currentKey.value && this.storage[`bbState-${this.currentKey.value}`] && isEqual(obj, stringToObject(this.storage[`bbState-${this.currentKey.value}`] || ""))))
+		if(Object.keys(obj).length == 0 || (this.currentKey.value && this.storage[`bbState-${this.currentKey.value}`] && isEqual(obj, this._cachedStringToObject(this.storage[`bbState-${this.currentKey.value}`] || ""))))
 			return;
 
 		const newKey = this._getNowKey();
@@ -125,11 +149,11 @@ export class History {
 	}
 
 	_findSameState(obj: object): number | undefined {
-		const objCleared = clone(obj); // Clear it of observable stuff, otherwise isEqual will always be false
+		const rawObj = toRaw(obj); // Clear it of observable stuff, otherwise isEqual will always be false
 
 		const keys = this.getHistoricStates();
 		for(let i=0; i<keys.length; i++) {
-			if(isEqual(objCleared, stringToObject(this.storage[`bbState-${keys[i]}`] || "")))
+			if(isEqual(rawObj, stringToObject(this.storage[`bbState-${keys[i]}`] || "")))
 				return keys[i];
 		}
 	}

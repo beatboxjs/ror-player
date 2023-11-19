@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
-	import { Popover } from "bootstrap";
+	import Popover from "bootstrap/js/dist/popover";
 
 	/**
 	 * Like Bootstrap Popover, but uses an existing popover element rather than creating a new one. This way, the popover
@@ -41,7 +41,7 @@
 	}>();
 
 	const emit = defineEmits<{
-		(type: "update:show", show: boolean): void;
+		"update:show": [show: boolean];
 	}>();
 
 	const popoverContent = ref<HTMLElement | null>(null);

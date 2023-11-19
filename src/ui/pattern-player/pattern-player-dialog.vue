@@ -12,7 +12,6 @@
 	const state = injectStateRequired();
 
 	const props = withDefaults(defineProps<{
-		show?: boolean;
 		tuneName: string;
 		patternName: string;
 		readonly?: boolean;
@@ -22,14 +21,16 @@
 	});
 
 	const emit = defineEmits<{
-		(type: 'update:show', show: boolean): void;
+		hidden: [];
 	}>();
 
-	const modal = useModal({
-		show: computed(() => !!props.show),
-		emit,
+	const modalRef = ref<HTMLElement>();
+	useModal(modalRef, {
 		onHide: () => {
 			stopAllPlayers();
+		},
+		onHidden: () => {
+			emit("hidden");
 		}
 	});
 
@@ -50,7 +51,7 @@
 
 <template>
 	<Teleport to="body">
-		<div class="modal fade bb-pattern-editor-dialog" tabindex="-1" aria-hidden="true" :ref="modal.ref">
+		<div class="modal fade bb-pattern-editor-dialog" tabindex="-1" aria-hidden="true" ref="modalRef">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -61,7 +62,7 @@
 						<PatternPlayer :tuneName="tuneName" :patternName="patternName" :readonly="readonly" :player="playerRef">
 							<button type="button" class="btn btn-info" v-if="hasChanged" @click="share()"><fa icon="share"/> Share</button>
 						</PatternPlayer>
-						<ShareDialog v-if="showShareDialog" v-model:show="showShareDialog" :link-pattern="[tuneName, patternName]" />
+						<ShareDialog v-if="showShareDialog" @hidden="showShareDialog = false" :link-pattern="[tuneName, patternName]" />
 					</div>
 				</div>
 			</div>

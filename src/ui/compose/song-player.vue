@@ -27,8 +27,8 @@
 	}>();
 
 	const emit = defineEmits<{
-		(type: "update:songIdx", songIdx: number): void;
-		(type: "update:isDraggingPattern", isDraggingPattern: boolean): void;
+		"update:songIdx": [songIdx: number];
+		"update:isDraggingPattern": [isDraggingPattern: boolean];
 	}>();
 
 	const state = injectStateRequired();

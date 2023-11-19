@@ -17,7 +17,7 @@
 	}>();
 
 	const emit = defineEmits<{
-		(type: "update:isExpanded", isVisible: boolean): void;
+		"update:isExpanded": [isVisible: boolean];
 	}>();
 
 	const shouldUseExpand = useMaxBreakpoint("sm");

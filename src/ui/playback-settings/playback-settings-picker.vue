@@ -16,7 +16,7 @@
 	});
 
 	const emit = defineEmits<{
-		(e: 'update:modelValue', playbackSettings: PlaybackSettings): void;
+		"update:modelValue": [playbackSettings: PlaybackSettings];
 	}>();
 
 	const id = `bb-playback-settings-${generateId()}`;
@@ -99,7 +99,7 @@
 			<label :for="`${id}-speed`" class="col-sm-3 col-form-label">Speed</label>
 			<div class="col-sm-9 d-flex align-items-center">
 				<input :id="`${id}-speed`" type="range" class="form-range" v-model.number="speed" min="30" max="180" v-tooltip="`${speed}`"/>
-				<button type="button" class="btn btn-light btn-sm ms-2" @click="speed = defaultSpeed">Reset</button>
+				<button type="button" class="btn btn-secondary btn-sm ms-2" @click="speed = defaultSpeed">Reset</button>
 			</div>
 		</div>
 
@@ -114,9 +114,9 @@
 			<label :for="`${id}-whistle`" class="col-sm-3 col-form-label">Whistle</label>
 			<div class="col-sm-9 d-flex align-items-center">
 				<div class="btn-group">
-					<button type="button" class="btn btn-light btn-sm" :class="{ active: whistle === false }" @click="whistle = false">No</button>
-					<button type="button" class="btn btn-light btn-sm" :class="{ active: whistle === 1 }" @click="whistle = 1">On one</button>
-					<button type="button" class="btn btn-light btn-sm" :class="{ active: whistle === 2 }" @click="whistle = 2">On all</button>
+					<button type="button" class="btn btn-secondary btn-sm" :class="{ active: whistle === false }" @click="whistle = false">No</button>
+					<button type="button" class="btn btn-secondary btn-sm" :class="{ active: whistle === 1 }" @click="whistle = 1">On one</button>
+					<button type="button" class="btn btn-secondary btn-sm" :class="{ active: whistle === 2 }" @click="whistle = 2">On all</button>
 				</div>
 			</div>
 		</div>
@@ -156,7 +156,7 @@
 
 		<div class="row">
 			<div class="btn-group">
-				<button v-for="preset in Object.keys(config.volumePresets)" :key="preset" type="button" class="btn btn-light" :class="{ active: preset === activePreset }" @click="activePreset = preset">{{preset}}</button>
+				<button v-for="preset in Object.keys(config.volumePresets)" :key="preset" type="button" class="btn btn-secondary" :class="{ active: preset === activePreset }" @click="activePreset = preset">{{preset}}</button>
 			</div>
 		</div>
 	</HybridPopoverButton>

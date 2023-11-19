@@ -13,42 +13,24 @@
 
 	const props = defineProps<{
 		linkPattern?: PatternReference;
-		show?: boolean;
 		songIdx?: number;
 	}>();
 
 	const emit = defineEmits<{
-		(type: 'update:show', show: boolean): void;
+		hidden: [];
 	}>();
 
 	const state = injectStateRequired();
 
-	const shareSongs = ref<Record<number, boolean>>({});
-	const sharePatterns = ref<Record<string, Record<string, boolean>>>({});
+	const shareSongs = ref<Record<number, boolean>>(!props.linkPattern && props.songIdx != null ? { [props.songIdx]: true } : {});
+	const sharePatterns = ref<Record<string, Record<string, boolean>>>(props.linkPattern ? { [props.linkPattern[0]]: { [props.linkPattern[1]]: true } } : {});
 
-	const modal = useModal({
-		show: computed(() => !!props.show),
-		emit,
-		onShow: () => {
-			resetSelection();
+	const modalRef = ref<HTMLElement>();
+	const modal = useModal(modalRef, {
+		onHidden: () => {
+			emit("hidden");
 		}
 	});
-
-	const resetSelection = () => {
-		if(props.linkPattern) {
-			shareSongs.value = { };
-			sharePatterns.value = {
-				[props.linkPattern[0]]: {
-					[props.linkPattern[1]]: true
-				}
-			};
-		} else {
-			shareSongs.value = props.songIdx != null ? {
-				[props.songIdx]: true
-			} : {};
-			sharePatterns.value = { };
-		}
-	};
 
 	const tunes = computed(() => getSortedTuneList(state.value).flatMap((tuneName) => {
 		const patterns = Object.keys(state.value.tunes[tuneName].patterns).filter((patternName) => {
@@ -137,7 +119,7 @@
 
 <template>
 	<Teleport to="body">
-		<div class="modal fade bb-share-dialog" tabindex="-1" aria-hidden="true" :ref="modal.ref">
+		<div class="modal fade bb-share-dialog" tabindex="-1" aria-hidden="true" ref="modalRef">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -206,7 +188,7 @@
 													<button
 														type="button"
 														class="btn bb-inline-list-group-item"
-														:class="enabled ? 'btn-dark' : 'btn-light'"
+														:class="enabled ? 'btn-dark' : 'btn-secondary'"
 														:disabled="enabled === 2"
 														@click="togglePattern(tuneName as string, patternName as string)"
 													>

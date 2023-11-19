@@ -8,7 +8,7 @@
 	}>();
 
 	const emit = defineEmits<{
-		(type: "update:tuneName", tuneName: string | null | undefined): void;
+		"update:tuneName": [tuneName: string | null | undefined];
 	}>();
 
 	const tuneName = computed({

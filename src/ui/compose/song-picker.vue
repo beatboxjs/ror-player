@@ -20,7 +20,7 @@
 	}>();
 
 	const emit = defineEmits<{
-		(type: "update:modelValue", modelValue: number): void;
+		"update:modelValue": [modelValue: number];
 	}>();
 
 	const state = injectStateRequired();
@@ -66,7 +66,7 @@
 
 <template>
 	<div class="dropdown bb-song-picker">
-		<button class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown">
+		<button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
 			<fa icon="music"/><span class="d-none d-sm-inline">{{' '}}{{getSongName(state, props.modelValue)}}</span>
 		</button>
 		<ul class="dropdown-menu">

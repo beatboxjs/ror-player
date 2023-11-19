@@ -1,47 +1,28 @@
-import { Modal } from "bootstrap";
-import { onScopeDispose, ref, Ref, watch } from "vue";
+import Modal from "bootstrap/js/dist/modal";
+import { type Ref, shallowRef, watch, watchEffect, reactive, readonly } from "vue";
 
 export interface ModalConfig {
-	/** If this is specified, it will be called with an "update:show" event when the modal is shown/hidden. */
-	emit?: {
-		(type: 'update:show', show: boolean): void;
-	};
-	/** If this is specified, it will be watched and the modal will be shown/hidden when its value changes. */
-	show?: Ref<boolean>;
-	onShow?: (event: Modal.Event) => void;
+	/** Will be called when the fade-in animation has finished. */
 	onShown?: (event: Modal.Event) => void;
+	/** Will be called before the fade-out animation when the modal is closed. */
 	onHide?: (event: Modal.Event) => void;
+	/** Will be called after the fade-out animation when the modal is closed. */
 	onHidden?: (event: Modal.Event) => void;
+	/** If true, the modal can not be closed by clicking the backdrop. */
+	static?: Ref<boolean>;
+	/** If true, the modal can not be closed by pressing Escape. */
+	noEscape?: Ref<boolean>;
 }
 
 export interface ModalActions {
-	show: () => void;
 	hide: () => void;
-	/** Apply this ref to the .modal element to enable the modal */
-	ref: Ref<HTMLElement | undefined>;
 }
 
 /**
  * Enables a Bootstrap modal dialog on the element that is saved in the returned {@link ModalActions#ref}.
  */
-export function useModal({ emit, show: showRef, onShow, onShown, onHide, onHidden }: ModalConfig): ModalActions {
-	const modalRef = ref<HTMLElement>();
-
-	const modal = ref<Modal>();
-
-	const handleShow = (e: Event) => {
-		const zIndex = 1 + Math.max(1056, ...[...document.querySelectorAll(".modal")].map((el) => el !== modalRef.value && Number(getComputedStyle(el).zIndex) || -Infinity));
-		modalRef.value!.style.zIndex = `${zIndex}`;
-		Promise.resolve().then(() => {
-			((modal.value as any)._backdrop._element as HTMLElement).style.zIndex = `${zIndex - 1}`;
-		});
-
-		onShow?.(e as Modal.Event);
-
-		if (emit && showRef && showRef.value !== true) {
-			emit('update:show', true);
-		}
-	};
+export function useModal(modalRef: Ref<HTMLElement | undefined>, { onShown, onHide, onHidden, static: isStatic, noEscape }: ModalConfig): Readonly<ModalActions> {
+	const modal = shallowRef<Modal>();
 
 	const handleShown = (e: Event) => {
 		onShown?.(e as Modal.Event);
@@ -53,68 +34,58 @@ export function useModal({ emit, show: showRef, onShow, onShown, onHide, onHidde
 
 	const handleHidden = (e: Event) => {
 		onHidden?.(e as Modal.Event);
-
-		if (emit && showRef && showRef.value !== false) {
-			emit('update:show', false);
-		}
 	};
 
-	watch(() => showRef?.value, () => {
-		if (modal.value && showRef) {
-			showRef.value ? show() : hide();
+	const result = reactive<ModalActions>({
+		hide: () => {
+			if (!modal.value) {
+				throw new Error('Modal is not initialized.');
+			}
+			modal.value.hide();
 		}
 	});
 
-	watch(modalRef, (newRef, oldRef) => {
-		if (modal.value) {
-			modal.value.dispose();
-			modal.value = undefined;
-
-		}
-
-		if (oldRef) {
-			oldRef.removeEventListener('show.bs.modal', handleShow);
-			oldRef.removeEventListener('shown.bs.modal', handleShown);
-			oldRef.removeEventListener('hide.bs.modal', handleHide);
-			oldRef.removeEventListener('hidden.bs.modal', handleHidden);
-		}
+	watch(modalRef, (newRef, oldRef, onCleanup) => {
+		onCleanup(() => {}); // TODO: Delete me https://github.com/vuejs/core/issues/5151#issuecomment-1515613484
 
 		if (newRef) {
 			modal.value = new Modal(newRef);
-			newRef.addEventListener('show.bs.modal', handleShow);
+			modal.value.show();
+
+			const existingModals = [...document.querySelectorAll(".modal")].filter((el) => el !== newRef);
+			const zIndex = 1 + Math.max(1056, ...existingModals.map((el) => Number(getComputedStyle(el).zIndex) || -Infinity));
+			newRef.style.zIndex = `${zIndex}`;
+			((modal.value as any)._backdrop._element as HTMLElement).style.zIndex = `${zIndex - 1}`;
+
+			const stackLevel = existingModals.length;
+			const content = newRef.querySelector<HTMLElement>(".modal-dialog");
+			if (content) {
+				content.style.padding = `${20*stackLevel}px ${40*stackLevel}px`;
+			}
+
 			newRef.addEventListener('shown.bs.modal', handleShown);
 			newRef.addEventListener('hide.bs.modal', handleHide);
 			newRef.addEventListener('hidden.bs.modal', handleHidden);
 
-			if (showRef?.value) {
-				show();
-			}
+			onCleanup(() => {
+				modal.value!.dispose();
+				modal.value = undefined;
+				newRef.removeEventListener('shown.bs.modal', handleShown);
+				newRef.removeEventListener('hide.bs.modal', handleHide);
+				newRef.removeEventListener('hidden.bs.modal', handleHidden);
+			});
 		}
-	}, { immediate: true });
-
-	const show = () => {
-		if (!modal.value) {
-			throw new Error('Modal is not initialized.');
-		}
-		modal.value.show();
-	};
-
-	const hide = () => {
-		if (!modal.value) {
-			throw new Error('Modal is not initialized.');
-		}
-		modal.value.hide();
-	};
-
-	onScopeDispose(() => {
-		modal.value?.dispose();
 	});
 
-	return {
-		show,
-		hide,
-		ref: modalRef
-	};
+	watchEffect(() => {
+		if (modal.value) {
+			const config = (modal.value as any)._config as Modal.Options;
+			config.backdrop = isStatic?.value ? "static" : true;
+			config.keyboard = !noEscape?.value;
+		}
+	});
+
+	return readonly(result);
 }
 
 export function hideAllModals(): void {

@@ -13,7 +13,7 @@
 	}>();
 
 	const emit = defineEmits<{
-		(type: "update:importData", importData: string | undefined): void;
+		"update:importData": [importData: string | undefined];
 	}>();
 
 	const importData = useRefWithOverride(undefined, () => props.importData, (importData) => emit("update:importData", importData));
@@ -56,7 +56,7 @@
 
 <template>
 	<div v-if="historicStates.length > 1" class="dropdown bb-history" ref="dropdownRef">
-		<button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+		<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
 			<fa icon="clock"/><span class="d-none d-sm-inline"> History</span>
 		</button>
 		<ul class="dropdown-menu dropdown-menu-end">

@@ -8,12 +8,8 @@
 	import { useModal } from "../utils/modal";
 	import vTooltip from "../utils/tooltip";
 
-	const props = defineProps<{
-		show?: boolean;
-	}>();
-
 	const emit = defineEmits<{
-		(type: "update:show", show: boolean): void;
+		hidden: [];
 	}>();
 
 	const state = injectStateRequired();
@@ -23,13 +19,10 @@
 
 	const pasted = ref("");
 
-	const modal = useModal({
-		show: computed(() => !!props.show),
-		emit,
-		onShow: () => {
-			importSongs.value = {};
-			importPatterns.value = {};
-			pasted.value = "";
+	const modalRef = ref<HTMLElement>();
+	const modal = useModal(modalRef, {
+		onHidden: () => {
+			emit("hidden");
 		}
 	});
 
@@ -136,7 +129,7 @@
 
 <template>
 	<Teleport to="body">
-		<div class="modal fade bb-import-dialog" tabindex="-1" aria-hidden="true" :ref="modal.ref">
+		<div class="modal fade bb-import-dialog" tabindex="-1" aria-hidden="true" ref="modalRef">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -191,7 +184,7 @@
 																type="button"
 																class="btn bb-inline-list-group-item"
 																:disabled="!pattern.clickable"
-																:class="pattern.shouldImport ? 'btn-dark' : 'btn-light'"
+																:class="pattern.shouldImport ? 'btn-dark' : 'btn-secondary'"
 																@click="pattern.clickable && clickPattern(tuneName as string, patternName as string)"
 															>
 																{{patternName}} <fa v-if="pattern.exists" :icon="pattern.exists == 2 ? 'check' : 'exclamation-circle'"></fa>
@@ -207,7 +200,7 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-light" @click="modal.hide()">Cancel</button>
+						<button type="button" class="btn btn-secondary" @click="modal.hide()">Cancel</button>
 						<button type="button" class="btn btn-primary" @click="doImport()" :disabled="!parsed.state">Import</button>
 					</div>
 				</div>

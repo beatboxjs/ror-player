@@ -12,7 +12,12 @@
 	import { html as appDescriptionHtml } from "./app.md";
 
 	const showAppModal = ref(false);
-	const appModal = useModal({ show: showAppModal });
+	const appModalRef = ref<HTMLElement>();
+	useModal(appModalRef, {
+		onHidden: () => {
+			showAppModal.value = false;
+		}
+	});
 
 	const downloadFilename = config.appName.toLowerCase().replace(/[-_ ]+/g, "-") + '.html';
 </script>
@@ -33,7 +38,7 @@
 		</div>
 
 		<Teleport to="body">
-			<div v-if="showAppModal" class="modal fade" tabindex="-1" aria-hidden="true" :ref="appModal.ref">
+			<div v-if="showAppModal" class="modal fade" tabindex="-1" aria-hidden="true" ref="appModalRef">
 				<div class="modal-dialog modal-dialog-scrollable">
 					<div class="modal-content">
 						<div class="modal-header">

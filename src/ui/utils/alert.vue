@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-	import { computed, ref } from 'vue';
+	import { ref } from 'vue';
 	import { useModal } from './modal';
 
 	export type AlertProps = {
@@ -7,7 +7,6 @@
 		message: string;
 		type?: "alert" | "confirm";
 		variant?: "success" | "danger" | "warning";
-		show?: boolean;
 	};
 
 	export interface AlertResult {
@@ -19,25 +18,17 @@
 	});
 
 	const emit = defineEmits<{
-		(type: 'update:show', show: boolean): void;
-		(type: 'show'): void;
-		(type: 'shown'): void;
-		(type: 'hide', result: AlertResult): void;
-		(type: 'hidden', result: AlertResult): void;
+		shown: [];
+		hide: [result: AlertResult];
+		hidden: [result: AlertResult];
 	}>();
 
 	const result = ref<AlertResult>({
 		ok: false
 	});
 
-	const modal = useModal({
-		show: computed(() => !!props.show),
-		emit,
-		onShow: () => {
-			result.value = { ok: false };
-			formTouched.value = false;
-			emit('show');
-		},
+	const modalRef = ref<HTMLElement>();
+	const modal = useModal(modalRef, {
 		onShown: () => {
 			emit('shown');
 		},
@@ -63,7 +54,7 @@
 
 <template>
 	<Teleport to="body">
-		<div class="modal fade" tabindex="-1" aria-hidden="true" :ref="modal.ref">
+		<div class="modal fade" tabindex="-1" aria-hidden="true" ref="modalRef">
 			<div class="modal-dialog">
 				<form class="modal-content" :class="{ 'was-validated': formTouched }" @submit.prevent="handleSubmit()" novalidate ref="formRef">
 					<div class="modal-header">
@@ -74,7 +65,7 @@
 						<slot>{{props.message}}</slot>
 					</div>
 					<div class="modal-footer">
-						<button v-if="type === 'confirm'" type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+						<button v-if="type === 'confirm'" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
 						<button type="submit" class="btn" :class="`btn-${props.variant ?? 'primary'}`">OK</button>
 					</div>
 				</form>

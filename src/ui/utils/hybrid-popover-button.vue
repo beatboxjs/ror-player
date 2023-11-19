@@ -27,8 +27,8 @@
 	const button = ref<HTMLElement>();
 
 	const showModal = ref(false);
-	const modal = useModal({
-		show: showModal,
+	const modalRef = ref<HTMLElement>();
+	useModal(modalRef, {
 		onHidden: () => {
 			showModal.value = false;
 		}
@@ -61,7 +61,7 @@
 		</Popover>
 
 		<Teleport to="body">
-			<div v-if="showModal" class="modal fade" :class="props.customClass" tabindex="-1" aria-hidden="true" :ref="modal.ref">
+			<div v-if="showModal" class="modal fade" :class="props.customClass" tabindex="-1" aria-hidden="true" ref="modalRef">
 				<div class="modal-dialog modal-dialog-scrollable">
 					<div class="modal-content">
 						<div class="modal-header">

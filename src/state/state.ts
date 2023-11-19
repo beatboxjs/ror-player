@@ -116,7 +116,12 @@ export function extendStateFromCompressed(
     if(object.songs) {
         const songs = uncompressSongs(object.songs);
 
-        for (const song of songs) {
+        for (let songIdx = 0; songIdx < songs.length; songIdx++) {
+            if (selectSong && !selectSong(songIdx)) {
+                continue;
+            }
+
+            const song = songs[songIdx];
             const missing: Array<string> = [ ];
             for(let beatIdx = 0, length = getSongLength(song); beatIdx < length; beatIdx++) {
                 if(!song[beatIdx])

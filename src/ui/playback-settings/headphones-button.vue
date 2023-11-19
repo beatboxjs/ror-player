@@ -16,7 +16,7 @@
 	}>();
 
 	const emit = defineEmits<{
-		(type: "update:playbackSettings", playbackSettings: PlaybackSettings): void;
+		"update:playbackSettings": [playbackSettings: PlaybackSettings];
 	}>();
 
 	const groupSurdos = computed(() => props.groupSurdos && !SURDOS.some((instr) => props.playbackSettings.headphones.includes(instr)));

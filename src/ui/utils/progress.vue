@@ -4,7 +4,7 @@
 	}>();
 
 	const emit = defineEmits<{
-		(type: "cancel"): void;
+		cancel: [];
 	}>();
 </script>
 

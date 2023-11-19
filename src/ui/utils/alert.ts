@@ -13,7 +13,6 @@ async function renderAlert({ getContent, onShown, ...props }: AlertProps & {
 			setup() {
 				return () => h(Alert, {
 					...props,
-					show: true,
 					onShown: () => {
 						onShown?.();
 					},

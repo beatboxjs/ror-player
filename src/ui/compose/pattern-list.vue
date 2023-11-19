@@ -19,9 +19,9 @@
 	}>();
 
 	const emit = defineEmits<{
-		(type: "update:expandTune", tuneName: string | undefined): void;
-		(type: "update:editPattern", patternName: string | undefined): void;
-		(type: "update:isDraggingPattern", isDraggingPattern: boolean): void;
+		"update:expandTune": [tuneName: string | undefined];
+		"update:editPattern": [patternName: string | undefined];
+		"update:isDraggingPattern": [isDraggingPattern: boolean];
 	}>();
 	const expandTune = useRefWithOverride(undefined, () => props.expandTune, (tuneName) => emit("update:expandTune", tuneName));
 	const editPattern = useRefWithOverride(undefined, () => props.editPattern, (patternName) => emit("update:editPattern", patternName));
@@ -234,8 +234,18 @@
 			<button type="button" class="btn btn-link" @click="handleCreateTune()"><fa icon="plus"/> New tune</button>
 		</div>
 
-		<PatternPlayerDialog v-if="showPatternEditor" show :tune-name="showPatternEditor.tuneName" :pattern-name="showPatternEditor.patternName" @update:show="showPatternEditor = $event ? showPatternEditor : undefined"/>
-		<RenamePatternDialog v-if="showRename" show :tune-name="showRename.tuneName" :pattern-name="showRename.patternName" @update:show="showRename = $event ? showRename : undefined"/>
+		<PatternPlayerDialog
+			v-if="showPatternEditor"
+			:tune-name="showPatternEditor.tuneName"
+			:pattern-name="showPatternEditor.patternName"
+			@hidden="showPatternEditor = undefined"
+		/>
+		<RenamePatternDialog
+			v-if="showRename"
+			:tune-name="showRename.tuneName"
+			:pattern-name="showRename.patternName"
+			@hidden="showRename = undefined"
+		/>
 	</div>
 </template>
 

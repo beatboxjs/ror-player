@@ -1,6 +1,6 @@
 import pako from "pako";
 import Beatbox, { InstrumentReferenceObject, Pattern as RawPattern } from "beatbox.js";
-import audioFiles from "../../dist/audioFiles";
+import audioFiles from "virtual:audioFiles";
 import config, { Instrument } from "../config";
 import { Headphones, Mute, normalizePlaybackSettings, PlaybackSettings, Whistle } from "../state/playbackSettings";
 import { normalizePattern, Pattern } from "../state/pattern";

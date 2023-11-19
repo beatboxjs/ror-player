@@ -9,9 +9,12 @@
 	}>();
 
 	const emit = defineEmits<{
-		(type: 'update:modelValue', value: string): void;
-		(type: 'change-prev' | 'change', value: string): void;
-		(type: 'prev' | 'next' | 'close'): void;
+		"update:modelValue": [value: string];
+		"change-prev": [value: string];
+		change: [value: string];
+		prev: [];
+		next: [];
+		close: [];
 	}>();
 
 	const value = computed({
@@ -65,7 +68,11 @@
 			emit("next");
 		} else if(e.key == "Tab") {
 			e.preventDefault();
-			emit(e.shiftKey ? "prev" : "next");
+			if (e.shiftKey) {
+				emit("prev");
+			} else {
+				emit("next");
+			}
 		} else if(e.key == "Escape") {
 			e.preventDefault();
 			e.stopImmediatePropagation();

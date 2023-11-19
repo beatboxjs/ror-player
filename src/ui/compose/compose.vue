@@ -22,9 +22,9 @@
 	}>();
 
 	const emit = defineEmits<{
-		(type: "update:expandTune", tuneName: string | undefined): void;
-		(type: "update:editPattern", patternName: string | undefined): void;
-		(type: "update:importData", importData: string | undefined): void;
+		"update:expandTune": [tuneName: string | undefined];
+		"update:editPattern": [patternName: string | undefined];
+		"update:importData": [importData: string | undefined];
 	}>();
 
 	const expandTune = useRefWithOverride(undefined, () => props.expandTune, (tuneName) => emit("update:expandTune", tuneName));
@@ -88,7 +88,7 @@
 			</PatternList>
 
 			<template v-slot:toggle>
-				<button type="button" class="btn btn-light" @click="isSidebarExpanded = !isSidebarExpanded">
+				<button type="button" class="btn btn-secondary" @click="isSidebarExpanded = !isSidebarExpanded">
 					<fa icon="bars" />
 				</button>
 			</template>

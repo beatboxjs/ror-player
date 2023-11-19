@@ -20,7 +20,7 @@
 	}>();
 
 	const emit = defineEmits<{
-		(type: "position", data: PositionData): void;
+		position: [data: PositionData];
 	}>();
 
 	const positionMarkerRef = ref<HTMLElement>();

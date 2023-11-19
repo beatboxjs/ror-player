@@ -12,17 +12,16 @@
 	const props = defineProps<{
 		tuneName: string;
 		patternName: string;
-		show?: boolean;
 	}>();
 
 	const emit = defineEmits<{
-		(type: "update:show", show: boolean): void;
+		hidden: [];
 	}>();
 
 	const id = `bb-rename-pattern-dialog-${generateId()}`;
 
-	const newTuneName = ref("");
-	const newPatternName = ref("");
+	const newTuneName = ref(props.tuneName);
+	const newPatternName = ref(props.patternName);
 	const copy = ref(true);
 
 	const formRef = ref<HTMLFormElement>();
@@ -41,16 +40,10 @@
 		}
 	});
 
-	const modal = useModal({
-		show: computed(() => !!props.show),
-		emit,
-		onShow: () => {
-			newTuneName.value = props.tuneName;
-			newPatternName.value = props.patternName;
-			copy.value = true;
-			formTouched.value = false;
-			formSubmitted.value = false;
-			nameTouched.value = false;
+	const modalRef = ref<HTMLElement>();
+	const modal = useModal(modalRef, {
+		onHidden: () => {
+			emit("hidden");
 		}
 	});
 
@@ -82,7 +75,7 @@
 
 <template>
 	<Teleport to="body">
-		<div class="modal fade bb-pattern-editor-dialog" tabindex="-1" aria-hidden="true" :ref="modal.ref">
+		<div class="modal fade bb-pattern-editor-dialog" tabindex="-1" aria-hidden="true" ref="modalRef">
 			<div class="modal-dialog">
 				<form class="modal-content" @submit.prevent="submit()" novalidate ref="formRef" :class="{ 'was-validated': formTouched }">
 					<div class="modal-header">
@@ -120,7 +113,7 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-light" @click="modal.hide()">Cancel</button>
+						<button type="button" class="btn btn-secondary" @click="modal.hide()">Cancel</button>
 						<button type="submit" class="btn btn-primary" @click="submit()">OK</button>
 					</div>
 				</form>

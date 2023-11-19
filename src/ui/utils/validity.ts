@@ -1,6 +1,6 @@
 import { Directive } from "vue";
 
-const vValidity: Directive<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement, string> = {
+const vValidity: Directive<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement, string | undefined> = {
 	mounted(el, binding) {
 		el.setCustomValidity(binding.value ?? "");
 	},

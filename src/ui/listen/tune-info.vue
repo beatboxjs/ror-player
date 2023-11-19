@@ -34,7 +34,7 @@
 	}>();
 
 	const emit = defineEmits<{
-		(type: "update:editPattern", patternName: string | undefined): void;
+		"update:editPattern": [patternName: string | undefined];
 	}>();
 
 	const editPattern = useRefWithOverride(undefined, () => props.editPattern, (patternName) => emit("update:editPattern", patternName));

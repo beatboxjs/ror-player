@@ -18,7 +18,7 @@
 	}>();
 
 	const emit = defineEmits<{
-		(type: "update:songIdx", songIdx: number): void;
+		"update:songIdx": [songIdx: number];
 	}>();
 
 	const state = injectStateRequired();
@@ -60,7 +60,7 @@
 		<SongPicker v-model="songIdx"/>
 
 		<div class="dropdown">
-			<button class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown">
+			<button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
 				<fa icon="cog"/><span class="d-none d-sm-inline"> Tools</span>
 			</button>
 			<ul class="dropdown-menu">
@@ -78,8 +78,8 @@
 
 		<slot name="right" />
 
-		<ShareDialog v-model:show="showShareDialog"/>
-		<ImportDialog v-model:show="showImportDialog"/>
+		<ShareDialog v-if="showShareDialog" @hidden="showShareDialog = false"/>
+		<ImportDialog v-if="showImportDialog" @hidden="showImportDialog = false"/>
 	</div>
 </template>
 

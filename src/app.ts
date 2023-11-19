@@ -1,6 +1,6 @@
 import { createApp, defineComponent, h, ref } from "vue";
 import "./bootstrap.scss";
-import "bootstrap";
+import "./bootstrap";
 import "./app.scss";
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import Overview from "./ui/overview.vue";
@@ -35,7 +35,7 @@ const Root = defineComponent({
 	}
 });
 
-createApp(Root)
+createApp(Root, { config: { performance: true } })
 	.use(Vue3TouchEvents)
 	.component('fa', FontAwesomeIcon)
 	.mount('#app');

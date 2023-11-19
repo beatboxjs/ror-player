@@ -11,7 +11,7 @@
 	}>();
 
 	const emit = defineEmits<{
-		(type: "click"): void;
+		click: [];
 	}>();
 </script>
 
