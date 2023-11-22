@@ -45,7 +45,7 @@ can be generated in the Share dialog of the player.
 
 All the parameters (such as the instruments, samples, time measurements) are configured in [`src/config.ts`](./src/config.ts).
 
-The samples are available as MP3 files in [`assets/audio`](./assets/audio).
+The samples are available as MP3 files in [`assets/audio`](./assets/audio). Their file names have the format `${instrumentKey}_${strokeHex}.mp3`, where `strokeHex` is the stroke key char code in hex.
 
 The tune descriptions can be found in [`assets/tuneDescriptions`](./assets/tuneDescriptions).
 
