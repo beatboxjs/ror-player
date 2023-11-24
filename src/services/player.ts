@@ -20,8 +20,14 @@ export interface RawPatternWithUpbeat extends RawPattern {
 }
 
 for(const i in audioFiles) {
+	const m = i.match(/^(.*?)_([a-f0-9]+)\.mp3$/i);
+	if (!m) {
+		console.warn(`Unexpected audio file name: ${i}`);
+		continue;
+	}
+
 	const decompressed = pako.inflateRaw(new Uint8Array(decode(audioFiles[i])));
-	Beatbox.registerInstrument(i.replace(/\.mp3$/i, ""), decompressed.buffer);
+	Beatbox.registerInstrument(`${m[1]}_${String.fromCodePoint(parseInt(m[2], 16))}`, decompressed.buffer);
 }
 
 let currentNumber = 0;
