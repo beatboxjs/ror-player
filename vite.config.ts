@@ -1,16 +1,20 @@
 import { defineConfig } from 'vite';
-import vue2Plugin from '@vitejs/plugin-vue';
+import vuePlugin from '@vitejs/plugin-vue';
 import { plugin as mdPlugin, Mode } from 'vite-plugin-markdown';
 import audioFilesPlugin from './rollup-audio-files';
+import { viteSingleFile } from "vite-plugin-singlefile";
+import tuneDescriptionsPlugin from './rollup-tune-descriptions';
 
 export default defineConfig(({ mode }) => ({
 	define: {
 		'process.env.DISABLE_SW': mode === 'development'
 	},
 	plugins: [
-		vue2Plugin(),
+		vuePlugin(),
 		mdPlugin({ mode: [Mode.HTML] }),
-		audioFilesPlugin()
+		audioFilesPlugin(),
+		viteSingleFile(),
+		tuneDescriptionsPlugin()
 	],
 	build: {
 		sourcemap: true,

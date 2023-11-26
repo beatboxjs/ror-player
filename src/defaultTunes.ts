@@ -4,6 +4,7 @@ import { AllVolumeHack, normalizePattern, Pattern, compressedPatternValidator } 
 import { normalizeTune, Tune } from "./state/tune";
 import * as z from "zod";
 import { PatternReference } from "./state/song";
+import tuneDescriptionsHtml from "virtual:tuneDescriptionsHtml";
 
 function stretch(from: number, to: number, pattern: string): string {
 	return pattern.split("").concat([ "" ]).join(repeat((to/from)-1, " "));
@@ -355,7 +356,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		displayName: "Afoxé",
 		categories: [ "standard", "common", "medium", "cultural-appropriation" ],
 		sheet: sheetUrl + "afoxe.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/afoxe.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.afoxe,
 		patterns: {
 			"Tune": {
 				loop: true,
@@ -425,7 +426,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Angela Davis': {
 		categories: [ "standard", "common", "medium" ],
 		sheet: sheetUrl + "angela-davis.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/angela-davis.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.angelaDavis,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/3a431ae3-e59b-4d31-b2d6-9abc4db3f242",
 		patterns: {
 			Tune: {
@@ -476,7 +477,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Angry Dwarfs': {
 		categories: [ "uncommon" ],
 		sheet: sheetUrl + "angry-dwarfs.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/angry-dwarfs.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.angryDwarfs,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -528,7 +529,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		time: 3,
 		displayName: "Bhaṅgṛā",
 		sheet: sheetUrl + "bhangra.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/bhangra.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.bhangra,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/bb1e9a2e-ce51-435c-818f-d98cf95f9ed0",
 		patterns: {
 			Tune: {
@@ -655,7 +656,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Cochabamba' : {
 		categories: [ "standard", "uncommon", "tricky" ],
 		sheet: sheetUrl + "cochabamba.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/cochabamba.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.cochabamba,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -724,7 +725,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		displayName: "Coupé-Décalé",
 		categories: [ "proposed" ],
 		sheet: sheetUrl + "coupe-decale.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/coupe-decale.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.coupeDecale,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -808,7 +809,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Crazy Monkey': {
 		categories: [ "standard", "uncommon", "tricky" ],
 		sheet: sheetUrl + "crazy-monkey.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/crazy-monkey.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.crazyMonkey,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -882,7 +883,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Custard': {
 		categories: [ "standard", "common", "medium", "cultural-appropriation" ],
 		sheet: sheetUrl + "custard.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/custard.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.custard,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -954,7 +955,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Drum&Bass': {
 		categories: [ "standard", "common", "medium", "western" ],
 		sheet: sheetUrl + "drum-bass.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/drum-bass.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.drumBass,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/f5331b5e-5de7-41e9-af0f-813f874bb074",
 		patterns: {
 			Tune: {
@@ -1009,7 +1010,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Drunken Sailor': {
 		categories: [ "standard", "uncommon", "medium", "western" ],
 		sheet: sheetUrl + "drunken-sailor.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/drunken-sailor.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.drunkenSailor,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/00dd3ac1-a872-49ea-aec1-8c8ebc8f334e",
 		patterns: {
 			Tune: {
@@ -1057,7 +1058,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Funk': {
 		categories: [ "standard", "common", "onesurdo", "easy" ],
 		sheet: sheetUrl + "funk.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/funk.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.funk,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1116,7 +1117,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Hafla': {
 		categories: [ "standard", "common", "tricky" ],
 		sheet: sheetUrl + "hafla.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/hafla.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.hafla,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/2fbb7d46-3399-4818-89aa-a5dc0b377238",
 		patterns: {
 			Tune: {
@@ -1188,7 +1189,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Hedgehog': {
 		categories: [ "standard", "uncommon", "easy" ],
 		sheet: sheetUrl + "hedgehog.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/hedgehog.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.hedgehog,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1227,7 +1228,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Hip Hop': {
 		categories: [ "proposed", "tricky" ],
 		sheet: sheetUrl + "hiphop.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/hiphop.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.hiphop,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1278,7 +1279,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Jungle': {
 		categories: [ "proposed", "tricky", "western" ],
 		sheet: sheetUrl + "jungle.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/jungle.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.jungle,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1317,7 +1318,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Kaerajaan': {
 		categories: [ "proposed", "medium", "onesurdo", "western" ],
 		sheet: sheetUrl + "kaerajaan.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/kaerajaan.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.kaerajaan,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1357,7 +1358,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Karla Shnikov': {
 		categories: [ "standard", "common", "onesurdo", "easy" ],
 		sheet: sheetUrl + "karla-shnikov.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/karla-shnikov.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.karlaShnikov,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/cc4d0222-3713-4943-bba1-cc733cb84ccc",
 		patterns: {
 			Tune: {
@@ -1397,7 +1398,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'March for Biodiversity': {
 		categories: [ "proposed", "tricky", "western" ],
 		sheet: sheetUrl + "march-for-biodiversity.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/march-for-biodiversity.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.marchForBiodiversity,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1445,7 +1446,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Menaiek': {
 		categories: [ "standard", "uncommon", "new", "tricky" ],
 		sheet: sheetUrl + "menaiek.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/menaiek.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.menaiek,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1518,7 +1519,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'No Border Bossa': {
 		categories: [ "standard", "uncommon", "onesurdo", "medium" ],
 		sheet: sheetUrl + "no-border-bossa.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/no-border-bossa.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.noBorderBossa,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1585,7 +1586,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Norppa': {
 		categories: [ "proposed", "tricky", "western" ],
 		sheet: sheetUrl + "norppa.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/norppa.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.norppa,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1664,7 +1665,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		displayName: "Nova Balança",
 		categories: [ "standard", "uncommon", "medium" ],
 		sheet: sheetUrl + "nova-balanca.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/nova-balanca.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.novaBalanca,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1715,7 +1716,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Orangutan': {
 		categories: [ "standard", "uncommon", "tricky" ],
 		sheet: sheetUrl + "orangutan.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/orangutan.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.orangutan,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1765,7 +1766,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Pekurinen': {
 		categories: [ "proposed", "tricky", "western" ],
 		sheet: sheetUrl + "pekurinen.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/pekurinen.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.pekurinen,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1846,7 +1847,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Ragga': {
 		categories: [ "standard", "common", "tricky" ],
 		sheet: sheetUrl + "ragga.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/ragga.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.ragga,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/bb2a4cd6-021b-4596-9917-f53bed8363a8",
 		patterns: {
 			Tune: {
@@ -1913,7 +1914,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Rope Skipping': {
 		categories: [ "standard", "uncommon", "tricky" ],
 		sheet: sheetUrl + "rope-skipping.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/rope-skipping.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.ropeSkipping,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2012,7 +2013,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Samba Reggae': {
 		categories: [ "standard", "common", "medium", "cultural-appropriation" ],
 		sheet: sheetUrl + "samba-reggae.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/samba-reggae.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.sambaReggae,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2113,7 +2114,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	},
 	"Samba Reggae High": {
 		categories: [ "proposed", "cultural-appropriation" ],
-		descriptionHtml: (await import("../assets/tuneDescriptions/samba-reggae-high.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.sambaReggaeHigh,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2184,7 +2185,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	},
 	"Samba Reggae Low": {
 		categories: [ "proposed", "cultural-appropriation" ],
-		descriptionHtml: (await import("../assets/tuneDescriptions/samba-reggae-low.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.sambaReggaeLow,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2274,7 +2275,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Sambasso': {
 		categories: [ "standard", "common", "onesurdo", "tricky" ],
 		sheet: sheetUrl + "sambasso.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/sambasso.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.sambasso,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/f75a6a4e-121a-4170-aaf4-2e96a7eed95e",
 		patterns: {
 			Tune: {
@@ -2327,7 +2328,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Sheffield Samba Reggae': {
 		categories: [ "standard", "uncommon", "medium", "cultural-appropriation" ],
 		sheet: sheetUrl + "sheffield-samba-reggae.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/sheffield-samba-reggae.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.sheffieldSambaReggae,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2409,7 +2410,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Tequila': {
 		categories: [ "standard", "uncommon", "new", "medium", "western" ],
 		sheet: sheetUrl + "tequila.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/tequila.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.tequila,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2454,7 +2455,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'The Roof Is on Fire': {
 		categories: [ "standard", "uncommon", "new", "tricky", "western" ],
 		sheet: sheetUrl + "the-roof-is-on-fire.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/the-roof-is-on-fire.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.theRoofIsOnFire,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/1c318897-e3b7-436b-b319-4608774169e0",
 		patterns: {
 			Tune: {
@@ -2493,7 +2494,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		time: 3,
 		speed: 120,
 		sheet: sheetUrl + "the-sirens-of-titan.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/the-sirens-of-titan.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.theSirensOfTitan,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2522,7 +2523,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Trans-Europa-Express': {
 		categories: [ "proposed" ],
 		sheet: sheetUrl + "trans-europa-express.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/trans-europa-express.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.transEuropaExpress,
 		patterns: {
 			Tune: {
 				upbeat: 1,
@@ -2580,7 +2581,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Van Harte Pardon': {
 		categories: [ "standard", "uncommon", "tricky" ],
 		sheet: sheetUrl + "van-harte-pardon.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/van-harte-pardon.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.vanHartePardon,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2640,7 +2641,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Voodoo': {
 		categories: [ "standard", "uncommon", "easy", "cultural-appropriation" ],
 		sheet: sheetUrl + "voodoo.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/voodoo.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.voodoo,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2671,7 +2672,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		time: 6,
 		speed: 60,
 		sheet: sheetUrl + "walc.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/walc.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.walc,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2793,7 +2794,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Wolf': {
 		categories: [ "standard", "uncommon", "tricky", "new" ],
 		sheet: sheetUrl + "wolf.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/wolf.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.wolf,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2840,7 +2841,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		displayName: "Xangô",
 		categories: [ "standard", "uncommon", "tricky", "cultural-appropriation" ],
 		sheet: sheetUrl + "xango.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/xango.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.xango,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/ae1fe3a3-dd7e-4670-9415-b47ee60a54b0",
 		patterns: {
 			Tune: {
@@ -2900,7 +2901,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		displayName: "Żurav Love",
 		categories: [ "standard", "uncommon", "tricky", "western" ],
 		sheet: sheetUrl + "zurav-love.pdf",
-		descriptionHtml: (await import("../assets/tuneDescriptions/zurav-love.md")).html,
+		descriptionHtml: tuneDescriptionsHtml.zuravLove,
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2955,6 +2956,11 @@ const defaultTunes: { [tuneName: string]: Tune } = { };
 
 for(const i in rawTunes) {
 	const tune = rawTunes[i];
+
+	if ("descriptionHtml" in tune && tune.descriptionHtml == null) {
+		console.error(`Tune description for ${i} not found.`);
+	}
+
 	const newTune = clone(tune) as any as Tune;
 
 	for(const j in tune.patterns) {
