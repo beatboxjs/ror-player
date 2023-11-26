@@ -157,7 +157,12 @@
 	const hasLocalChanges = computed(() => originalPattern.value && !patternEquals(originalPattern.value, pattern.value));
 
 	const reset = async () => {
-		if(await showConfirm({ title: "Restore original", message: "Are you sure that you want to revert your modifications and restore the original break?" }))
+		if(await showConfirm({
+			title: "Restore original",
+			message: "Are you sure that you want to revert your modifications and restore the original break?",
+			variant: "warning",
+			okLabel: "Restore"
+		}))
 			createPattern(state.value, props.tuneName, props.patternName, originalPattern.value || undefined);
 	};
 

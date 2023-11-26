@@ -36,7 +36,12 @@
 	const showImportDialog = ref(false);
 
 	const handleClearSong = async () => {
-		if(await showConfirm({ title: "Clear song", message: "Do you really want to clear the current song?", variant: "danger" })) {
+		if(await showConfirm({
+			title: "Clear song",
+			message: "Do you really want to clear the current song?",
+			variant: "danger",
+			okLabel: "Clear"
+		})) {
 			clearSong(song.value);
 		}
 	};

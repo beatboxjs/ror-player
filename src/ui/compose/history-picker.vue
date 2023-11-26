@@ -47,7 +47,8 @@
 		if (await showConfirm({
 			title: "Clear history",
 			message: "Are you sure that you want to clear your history? If you have recently opened a shared link, this might lose any custom tunes/breaks/songs that you had previously created.",
-			variant: "danger"
+			variant: "danger",
+			okLabel: "Clear"
 		})) {
 			props.history.clear()
 		}

@@ -43,7 +43,11 @@
 
 	const handleRenameSong = async (songIdx: number) => {
 		const song = state.value.songs[songIdx];
-		const newName = await showPrompt({ title: "Enter song name", initialValue: song.name });
+		const newName = await showPrompt({
+			title: "Enter song name",
+			initialValue: song.name,
+			okLabel: "Rename"
+		});
 		if(newName) {
 			updateSong(song, { name: newName });
 		}
@@ -59,7 +63,12 @@
 	};
 
 	const handleRemoveSong = async (songIdx: number) => {
-		if(await showConfirm({ title: "Remove song", message: `Do you really want to remove the song ${getSongName(state.value, songIdx)}?`, variant: "danger" }))
+		if(await showConfirm({
+			title: "Remove song",
+			message: `Do you really want to remove the song ${getSongName(state.value, songIdx)}?`,
+			variant: "danger",
+			okLabel: "Remove"
+		}))
 			removeSong(state.value, songIdx);
 	};
 </script>

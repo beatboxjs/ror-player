@@ -7,6 +7,7 @@
 		message: string;
 		type?: "alert" | "confirm";
 		variant?: "success" | "danger" | "warning";
+		okLabel?: string;
 	};
 
 	export interface AlertResult {
@@ -14,7 +15,8 @@
 	}
 
 	const props = withDefaults(defineProps<AlertProps>(), {
-		type: "alert"
+		type: "alert",
+		okLabel: "OK"
 	});
 
 	const emit = defineEmits<{
@@ -66,7 +68,7 @@
 					</div>
 					<div class="modal-footer">
 						<button v-if="type === 'confirm'" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-						<button type="submit" class="btn" :class="`btn-${props.variant ?? 'primary'}`">OK</button>
+						<button type="submit" class="btn" :class="`btn-${props.variant ?? 'primary'}`">{{props.okLabel}}</button>
 					</div>
 				</form>
 			</div>

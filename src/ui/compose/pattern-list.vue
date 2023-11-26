@@ -77,13 +77,14 @@
 
 	const createPatternInTune = async (tuneName: string) => {
 		const newPatternName = await showPrompt({
-			title: "New break",
+			title: "Create break",
 			validate: (newPatternName) => {
 				if(newPatternName.trim().length == 0)
 					return "Please enter a name for the new break.";
 				if(getPatternFromState(state.value, tuneName, newPatternName))
 					return "This name is already taken. Please enter a different one.";
-			}
+			},
+			okLabel: "Create"
 		});
 
 		if(newPatternName) {
@@ -97,7 +98,12 @@
 	};
 
 	const removePatternFromTune = async (tuneName: string, patternName: string) => {
-		if (await showConfirm({ title: "Remove break", message: `Do you really want to remove ${patternName} (${tuneName})?`, variant: 'danger' })) {
+		if (await showConfirm({
+			title: "Remove break",
+			message: `Do you really want to remove ${patternName} (${tuneName})?`,
+			variant: 'danger',
+			okLabel: "Remove"
+		})) {
 			removePattern(state.value, tuneName, patternName);
 		}
 	};
@@ -110,7 +116,8 @@
 					return "Please enter a name for the new tune.";
 				if(state.value.tunes[newTuneName])
 					return "This name is already taken. Please enter a different one.";
-			}
+			},
+			okLabel: "Create"
 		});
 
 		if(newTuneName) {
@@ -134,7 +141,8 @@
 					return "Please enter a new name for the tune.";
 				if(state.value.tunes[newTuneName])
 					return "This name is already taken. Please enter a different one.";
-			}
+			},
+			okLabel: "Rename"
 		});
 
 		if(newTuneName) {
@@ -151,7 +159,8 @@
 					return "Please enter a new name for the tune.";
 				if(state.value.tunes[newTuneName])
 					return "This name is already taken. Please enter a different one.";
-			}
+			},
+			okLabel: "Copy"
 		});
 
 		if(newTuneName) {
@@ -160,7 +169,12 @@
 	};
 
 	const handleRemoveTune = async (tuneName: string) => {
-		if (await showConfirm({ title: "Remove tune", message: `Do you really want to remove the tune ${tuneName}?`, variant: 'danger' })) {
+		if (await showConfirm({
+			title: "Remove tune",
+			message: `Do you really want to remove the tune ${tuneName}?`,
+			variant: 'danger',
+			okLabel: "Remove"
+		})) {
 			removeTune(state.value, tuneName);
 		}
 	};

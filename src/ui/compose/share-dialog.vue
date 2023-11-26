@@ -26,7 +26,7 @@
 	const sharePatterns = ref<Record<string, Record<string, boolean>>>(props.linkPattern ? { [props.linkPattern[0]]: { [props.linkPattern[1]]: true } } : {});
 
 	const modalRef = ref<HTMLElement>();
-	const modal = useModal(modalRef, {
+	useModal(modalRef, {
 		onHidden: () => {
 			emit("hidden");
 		}

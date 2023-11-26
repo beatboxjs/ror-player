@@ -7,7 +7,7 @@
 	import { patternEquals } from "../state/pattern";
 	import { DragType, PatternDragData, setDragData } from "../services/draggable";
 	import PatternPlayerDialog from "./pattern-player/pattern-player-dialog.vue";
-	import { clone, generateId, useRefWithOverride } from "../utils";
+	import { clone, useRefWithOverride } from "../utils";
 	import { computed, defineComponent, h, onBeforeUnmount, ref } from "vue";
 	import { injectStateRequired } from "../services/state";
 	import { showConfirm } from "./utils/alert";
@@ -109,7 +109,12 @@
 	};
 
 	const restore = async () => {
-		if(await showConfirm({ title: 'Revert modifications', message: `Are you sure that you want to revert your modifications to ${props.patternName} (${props.tuneName})?` })) {
+		if(await showConfirm({
+			title: "Restore original",
+			message: `Are you sure that you want to revert your modifications to ${props.patternName} (${props.tuneName}) and restore the original break?`,
+			variant: "warning",
+			okLabel: "Restore"
+		})) {
 			createPattern(state.value, props.tuneName, props.patternName, defaultTunes.getPattern(props.tuneName, props.patternName) || undefined);
 		}
 	};
@@ -154,7 +159,7 @@
 		<ul class="actions icon-list">
 			<li><a href="javascript:" v-tooltip="'Listen'" @click="playPattern()" draggable="false"><fa :icon="abstractPlayerRef?.playerRef?.playing ? 'stop' : 'play-circle'"></fa></a></li>
 			<li><a href="javascript:" v-tooltip="readonly ? 'Show notes' : 'Edit notes'" @click="editPattern()" draggable="false"><fa icon="pen"/></a></li>
-			<li v-if="hasLocalChanges"><a href="javascript:" v-tooltip="'Revert modifications'" @click="restore()" draggable="false"><fa icon="eraser"/></a></li>
+			<li v-if="hasLocalChanges"><a href="javascript:" v-tooltip="'Restore original'" @click="restore()" draggable="false"><fa icon="eraser"/></a></li>
 			<slot :getPlayer="() => { abstractPlayerRef!.getOrCreatePlayer(); return abstractPlayerRef!.playerRef!; }"/>
 		</ul>
 
