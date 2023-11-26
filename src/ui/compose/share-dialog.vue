@@ -187,8 +187,8 @@
 												>
 													<button
 														type="button"
-														class="btn bb-inline-list-group-item"
-														:class="enabled ? 'btn-dark' : 'btn-secondary'"
+														class="btn btn-sm bb-inline-list-group-item"
+														:class="[enabled ? 'btn-outline-dark' : 'btn-outline-secondary', { active: enabled }]"
 														:disabled="enabled === 2"
 														@click="togglePattern(tuneName as string, patternName as string)"
 													>

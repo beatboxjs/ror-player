@@ -182,9 +182,9 @@
 														>
 															<button
 																type="button"
-																class="btn bb-inline-list-group-item"
+																class="btn btn-sm bb-inline-list-group-item"
 																:disabled="!pattern.clickable"
-																:class="pattern.shouldImport ? 'btn-dark' : 'btn-secondary'"
+																:class="[pattern.shouldImport ? 'btn-outline-dark' : 'btn-outline-secondary', { active: pattern.shouldImport }]"
 																@click="pattern.clickable && clickPattern(tuneName as string, patternName as string)"
 															>
 																{{patternName}} <fa v-if="pattern.exists" :icon="pattern.exists == 2 ? 'check' : 'exclamation-circle'"></fa>
