@@ -1,5 +1,5 @@
 import { normalizePlaybackSettings, playbackSettingsValidator } from "./playbackSettings";
-import { compressedSongsValidator, compressedSongValidator, compressSongs, getSongLength, normalizeSong, PatternReference, replacePatternInSong, Song, songContainsPattern, songEquals, songValidator, uncompressSongs } from "./song";
+import { CompressedSong, CompressedSongs, compressedSongsValidator, compressedSongValidator, compressSongs, getSongLength, normalizeSong, PatternReference, replacePatternInSong, Song, songContainsPattern, songEquals, songValidator, uncompressSongs } from "./song";
 import { createPatternInTune, extendTune, normalizeTune, removePatternFromTune, renamePatternInTune, Tune, tuneValidator } from "./tune";
 import { clone } from "../utils";
 import defaultTunes from "../defaultTunes";
@@ -163,6 +163,33 @@ export function getPatternFromState(state: State, tuneName: string|PatternRefere
     return state.tunes[tuneName] && state.tunes[tuneName].patterns[patternName!];
 }
 
+export function compressSongsAndTunes(
+    state: State,
+    songs: CompressedSongs | CompressedSong[],
+    patterns: Record<string, Record<string, CompressedPattern>>,
+    keepEmptyTunes?: boolean,
+    saveOptions?: boolean
+): CompressedState {
+    const ret: CompressedState = {
+        patterns: Object.fromEntries(Object.entries(patterns).flatMap(([tuneName, tunePatterns]) => {
+            const tune = Object.fromEntries(Object.entries(tunePatterns).filter(([patternName, pattern]) => Object.keys(pattern).length > 0));
+            if (keepEmptyTunes || Object.keys(tune).length > 0) {
+                return [[tuneName, tune]];
+            } else {
+                return [];
+            }
+        })),
+        ...(("songs" in songs ? songs.songs : songs).length > 0 ? { songs } : {})
+    };
+
+    if(saveOptions) {
+        ret.songIdx = state.songIdx;
+        ret.playbackSettings = state.playbackSettings;
+    }
+
+    return ret;
+}
+
 export function compressState(
     state: State,
     selectSong?: ((idx: number) => boolean) | null,
@@ -171,39 +198,20 @@ export function compressState(
     keepEmptyTunes?: boolean,
     saveOptions?: boolean
 ): CompressedState {
-    const ret: CompressedState = { patterns: { } };
-
     const songs = selectSong ? state.songs.filter((song, songIdx) => selectSong(songIdx)) : state.songs;
-    if(songs.length > 0)
-        ret.songs = compressSongs(songs, !!encode);
+    const compressedSongs = compressSongs(songs, !!encode);
+    const compressedTunes = Object.fromEntries(Object.entries(state.tunes).map(([tuneName, tune]) => {
+        return [tuneName, Object.fromEntries(Object.entries(tune.patterns).flatMap(([patternName, pattern]) => {
+            if (selectPattern && !selectPattern(tuneName, patternName) && !songs.some((song) => songContainsPattern(song, tuneName, patternName))) {
+                return [];
+            } else {
+                const originalPattern = defaultTunes.getPattern(tuneName, patternName);
+                return [[patternName, compressPattern(pattern, originalPattern, encode)]];
+            }
+        }))];
+    }));
 
-    for(const tuneName in state.tunes) {
-        const encodedPatterns: { [patternName: string]: CompressedPattern } = { };
-        for(const patternName in state.tunes[tuneName].patterns) {
-            if(selectPattern && !selectPattern(tuneName, patternName) && !songs.some((song) => songContainsPattern(song, tuneName, patternName)))
-                continue;
-
-            const originalPattern = defaultTunes.getPattern(tuneName, patternName);
-            const encodedPattern = compressPattern(state.tunes[tuneName].patterns[patternName], originalPattern || undefined, encode);
-            if(Object.keys(encodedPattern).length > 0)
-                encodedPatterns[patternName] = encodedPattern;
-        }
-        if(keepEmptyTunes || Object.keys(encodedPatterns).length > 0) {
-            // @ts-ignore ret.patterns cannot be null
-            ret.patterns[tuneName] = encodedPatterns;
-        }
-    }
-
-    // @ts-ignore ret.patterns cannot be null
-    if(Object.keys(ret.patterns).length == 0)
-        delete ret.patterns;
-
-    if(saveOptions) {
-        ret.songIdx = state.songIdx;
-        ret.playbackSettings = state.playbackSettings;
-    }
-
-    return ret;
+    return compressSongsAndTunes(state, compressedSongs, compressedTunes, keepEmptyTunes, saveOptions);
 }
 
 export function createSong(state: State, data?: Parameters<typeof normalizeSong>[0], idx?: number, select: boolean = false): number {

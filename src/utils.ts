@@ -1,7 +1,9 @@
 import { inflateRaw, deflateRaw } from "pako";
 import { decode } from "base64-arraybuffer";
 import * as z from "zod";
-import { AllowedComponentProps, ComponentPublicInstance, computed, Ref, ref, VNodeProps } from "vue";
+import { AllowedComponentProps, ComponentPublicInstance, computed, effectScope, EffectScope, reactive, Ref, ref, shallowReadonly, toRef, VNodeProps, watch } from "vue";
+
+export type AnyRef<T> = T | Ref<T> | (() => T);
 
 export const NUMBER_TO_STRING_CHARS = " !#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~";
 
@@ -153,4 +155,32 @@ export function useRefWithOverride<Value>(fallbackValue: Value, getProp: () => V
             onUpdate(val);
         }
     });
+}
+
+export function computedProperties<K extends keyof any, VIn, VOut>(object: AnyRef<Record<K, VIn>>, getter: (value: VIn, key: K) => VOut): Readonly<Record<K, VOut>> {
+    const objectRef = toRef(object);
+    const result = reactive({} as Record<K, VOut>);
+    const effectScopes = {} as Record<K, EffectScope>;
+    watch(() => Object.keys(objectRef.value) as K[], (newKeys) => {
+        const oldKeys = Object.keys(result) as K[];
+        for (const key of oldKeys) {
+            if (!newKeys.includes(key)) {
+                effectScopes[key].stop();
+                delete result[key];
+                delete effectScopes[key];
+            }
+        }
+
+        for (const key of newKeys) {
+            if (!oldKeys.includes(key)) {
+                effectScopes[key] = effectScope();
+                effectScopes[key].run(() => {
+                    result[key] = computed(() => {
+                        return getter(objectRef.value[key], key);
+                    }) as any;
+                });
+            }
+        }
+    }, { immediate: true, flush: "sync" });
+    return shallowReadonly(result) as Readonly<Record<K, VOut>>;
 }

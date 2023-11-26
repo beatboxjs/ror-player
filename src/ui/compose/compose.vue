@@ -36,7 +36,12 @@
 	const state = computed(() => props.history.state.value);
 
 	const containerRef = ref<HTMLElement>();
-	const songIdx = ref(state.value.songIdx);
+	const songIdx = computed({
+		get: () => state.value.songIdx,
+		set: (value) => {
+			state.value.songIdx = value;
+		}
+	});
 	const playbackSettings = ref(clone(state.value.playbackSettings));
 	const isSidebarExpanded = ref(false);
 	const isDraggingPattern = ref(false);

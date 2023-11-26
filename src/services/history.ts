@@ -1,42 +1,58 @@
-import { compressState, createSong, extendState, extendStateFromCompressed, normalizeState } from "../state/state";
-import { objectToString, stringToObject } from "../utils";
+import { CompressedPattern, compressPattern } from "../state/pattern";
+import { CompressedSongs, compressSongs } from "../state/song";
+import { CompressedState, compressSongsAndTunes, createSong, extendState, extendStateFromCompressed, normalizeState } from "../state/state";
+import { computedProperties, objectToString, stringToObject } from "../utils";
 import { isEqual } from "lodash-es";
-import { effectScope, nextTick, ref, toRaw, watch } from "vue";
+import { computed, Ref, effectScope, ref, toRaw, watch } from "vue";
+import defaultTunes from "../defaultTunes";
 
 const storageKeyPrefix = "bbState-";
 
 export class History {
 
-	storage: Record<string, string>;
-	_stringToObjectCache: Record<string, object> = {};
+	_storage!: Record<string, string>;
+	_storageDecoded!: Readonly<Record<string, object | undefined>>;
 	state = ref(normalizeState());
-	_stateCompressed = ref<object>();
+	_compressedSongs!: Ref<CompressedSongs>;
+	_compressedTunes!: Record<string, Record<string, CompressedPattern>>;
+	_compressedState = ref<object>();
 	currentKey = ref<number>();
 	_scope = effectScope();
 
 	constructor(storage: Record<string, string>) {
-		this.storage = storage;
-
 		this._scope.run(() => {
-			watch(this.state, () => {
-				this._stateCompressed.value = compressState(this.state.value, null, null, true, true, true);
-			}, { deep: true, immediate: true });
-
-			watch(storage, () => {
-				this.loadHistoricState();
-
-				const storageValues = Object.values(this.storage);
-				for (const k of Object.keys(this._stringToObjectCache)) {
-					if (!storageValues.includes(k)) {
-						delete this._stringToObjectCache[k];
-					}
+			this._storage = storage;
+			this._storageDecoded = computedProperties(storage, (v, k) => {
+				if (k.startsWith(storageKeyPrefix)) {
+					return stringToObject(v);
 				}
+			});
+
+			this._compressedSongs = computed(() => {
+				return compressSongs(this.state.value.songs, true);
+			});
+
+			this._compressedTunes = computedProperties(() => this.state.value.tunes, (tune, tuneName) => {
+				return computedProperties(() => tune.patterns, (pattern, patternName) => {
+					const originalPattern = defaultTunes.getPattern(tuneName, patternName);
+					return compressPattern(pattern, originalPattern, true);
+				});
+			});
+
+			this._compressedState = computed(() => compressSongsAndTunes(
+				this.state.value,
+				this._compressedSongs.value,
+				this._compressedTunes,
+				true,
+				true
+			));
+
+			watch(() => Number(this._storage.bbState) && this._storage[`bbState-${this._storage.bbState}`], () => {
+				this.loadHistoricState(Number(this._storage.bbState));
 			}, { deep: true, immediate: true });
 
-			watch(this.state, () => {
-				nextTick(() => {
-					this.saveCurrentState();
-				});
+			watch(this._compressedState, () => {
+				this.saveCurrentState();
 			}, { deep: true, immediate: true });
 		});
 
@@ -60,7 +76,7 @@ export class History {
 	}
 
 	loadEncodedString(encodedString: string): string[] {
-		const errs = this._loadFromString(encodedString);
+		const errs = this._loadFromCompressed(encodedString ? stringToObject(encodedString) : {});
 
 		this.currentKey.value = undefined;
 
@@ -72,36 +88,29 @@ export class History {
 	}
 
 	getHistoricStates(): number[] {
-		return Object.keys(this.storage)
+		return Object.keys(this._storage)
 			.flatMap((k) => (k.startsWith(storageKeyPrefix) ? [parseInt(k.slice(storageKeyPrefix.length), 10)]: []))
 			.sort().reverse();
 	}
 
-	loadHistoricState(key?: number | null): void {
-		if(key == null)
-			key = Number(this.storage.bbState);
-
-		this._loadFromString(key && this.storage[`bbState-${key}`] || "");
+	loadHistoricState(key: number): void {
 		this.currentKey.value = key;
+		this._storage.bbState = `${key}`;
+		this._loadFromCompressed(this._storageDecoded[`bbState-${key}`] ?? {});
 	}
 
 	clear(): void {
 		this._ensureMaxNumber(1);
 	}
 
-	_cachedStringToObject(str: string): object {
-		return this._stringToObjectCache[str] = this._stringToObjectCache[str] ?? stringToObject(str);
-	}
-
-	_loadFromString(encodedString: string | null): string[] {
+	_loadFromCompressed(compressed: CompressedState): string[] {
 		try {
-			const obj = encodedString ? this._cachedStringToObject(encodedString) : {};
-			if (isEqual(obj, this._stateCompressed.value)) {
+			if (isEqual(toRaw(compressed), toRaw(this._compressedState.value))) {
 				return [];
 			}
 
 			const state = normalizeState();
-			const errors = extendStateFromCompressed(state, obj, null, null, true, true, true);
+			const errors = extendStateFromCompressed(state, compressed, null, null, true, true, true);
 			if(state.songs.length == 0) {
 				createSong(state);
 			}
@@ -119,23 +128,23 @@ export class History {
 	}
 
 	saveCurrentState(): void {
-		const obj = compressState(this.state.value, null, null, true, true, true);
-		if(Object.keys(obj).length == 0 || (this.currentKey.value && this.storage[`bbState-${this.currentKey.value}`] && isEqual(obj, this._cachedStringToObject(this.storage[`bbState-${this.currentKey.value}`] || ""))))
+		const obj = toRaw(this._compressedState.value!);
+		if(Object.keys(obj).length == 0 || (this.currentKey.value && this._storageDecoded[`bbState-${this.currentKey.value}`] && isEqual(obj, toRaw(this._storageDecoded[`bbState-${this.currentKey.value}`]) || {})))
 			return;
 
 		const newKey = this._getNowKey();
 		if(this.currentKey.value && newKey - this.currentKey.value < 3600)
-			delete this.storage[`bbState-${this.currentKey.value}`];
+			delete this._storage[`bbState-${this.currentKey.value}`];
 
 		const sameState = this._findSameState(obj);
 		if(sameState) {
-			this.storage.bbState = `${sameState}`;
+			this._storage.bbState = `${sameState}`;
 			this.currentKey.value = sameState;
 			return;
 		}
 
-		this.storage[`bbState-${newKey}`] = objectToString(obj);
-		this.storage.bbState = `${newKey}`;
+		this._storage[`bbState-${newKey}`] = objectToString(obj);
+		this._storage.bbState = `${newKey}`;
 		this.currentKey.value = newKey;
 
 		this._ensureMaxNumber();
@@ -144,7 +153,7 @@ export class History {
 	_ensureMaxNumber(number: number = 30): void {
 		for (const key of this.getHistoricStates().slice(number)) {
 			if(key != this.currentKey.value)
-				delete this.storage[`bbState-${key}`];
+				delete this._storage[`bbState-${key}`];
 		}
 	}
 
@@ -153,7 +162,7 @@ export class History {
 
 		const keys = this.getHistoricStates();
 		for(let i=0; i<keys.length; i++) {
-			if(isEqual(rawObj, stringToObject(this.storage[`bbState-${keys[i]}`] || "")))
+			if(isEqual(rawObj, toRaw(this._storageDecoded[`bbState-${keys[i]}`]) || {}))
 				return keys[i];
 		}
 	}
