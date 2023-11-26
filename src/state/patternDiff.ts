@@ -1,8 +1,8 @@
 import { NUMBER_TO_STRING_CHARS, numberToString, stringToNumber } from "../utils";
 
 type DiffSegment = {
-    start: number,
-    data: string
+	start: number,
+	data: string
 };
 
 /**
@@ -17,13 +17,13 @@ type DiffSegment = {
  *
  */
 export function getDiffString(pattern1: string, pattern2: string): string {
-    const segments = getDiffSegments(pattern1, pattern2);
-    const numberChars = getNumberChars(pattern2.length);
-    let ret = "";
-    for(let i=0; i<segments.length; i++) {
-        ret += numberToString(segments[i].start, numberChars) + numberToString(segments[i].data.length, 1) + segments[i].data;
-    }
-    return ret;
+	const segments = getDiffSegments(pattern1, pattern2);
+	const numberChars = getNumberChars(pattern2.length);
+	let ret = "";
+	for(let i=0; i<segments.length; i++) {
+		ret += numberToString(segments[i].start, numberChars) + numberToString(segments[i].data.length, 1) + segments[i].data;
+	}
+	return ret;
 }
 
 /**
@@ -35,7 +35,7 @@ export function getDiffString(pattern1: string, pattern2: string): string {
  * @returns The modified pattern, a sequence of strokes
  */
 export function applyDiffString(pattern: string, diffString: string, patternLength: number): string {
-    return applyDiffSegments(pattern, getDiffSegmentsFromString(diffString, patternLength == null ? pattern.length : patternLength));
+	return applyDiffSegments(pattern, getDiffSegmentsFromString(diffString, patternLength == null ? pattern.length : patternLength));
 }
 
 /**
@@ -46,7 +46,7 @@ export function applyDiffString(pattern: string, diffString: string, patternLeng
  * @returns The number of bytes necessary to encode stroke positions
  */
 function getNumberChars(length: number): number {
-    return numberToString(Math.max(0, length-1)).length;
+	return numberToString(Math.max(0, length-1)).length;
 }
 
 /**
@@ -63,33 +63,33 @@ function getNumberChars(length: number): number {
  *                    _getDiffSegments('AAAAA', 'AAA') == []
  */
 function getDiffSegments(pattern1: string, pattern2: string): Array<DiffSegment> {
-    const maxSegmentLength = NUMBER_TO_STRING_CHARS.length-1;
-    const segments: Array<DiffSegment> = [ ];
-    let currentSegment: DiffSegment | null = null;
-    const numberChars = numberToString(pattern2.length).length;
-    for(let i=0; i<pattern2.length; i++) {
-        if(pattern1.charAt(i) != pattern2.charAt(i) && !(pattern2.charAt(i) == " " && pattern1.charAt(i) == "")) {
-            // If the characters since the last segment are few, it will produce less data to connect the segments
-            if(currentSegment == null && segments.length > 0 && i - (segments[segments.length-1].start + segments[segments.length-1].data.length) <= numberChars && i - segments[segments.length-1].start < maxSegmentLength) {
-                currentSegment = segments[segments.length-1];
-                currentSegment.data += pattern2.substring(currentSegment.start + currentSegment.data.length, i);
-            }
+	const maxSegmentLength = NUMBER_TO_STRING_CHARS.length-1;
+	const segments: Array<DiffSegment> = [ ];
+	let currentSegment: DiffSegment | null = null;
+	const numberChars = numberToString(pattern2.length).length;
+	for(let i=0; i<pattern2.length; i++) {
+		if(pattern1.charAt(i) != pattern2.charAt(i) && !(pattern2.charAt(i) == " " && pattern1.charAt(i) == "")) {
+			// If the characters since the last segment are few, it will produce less data to connect the segments
+			if(currentSegment == null && segments.length > 0 && i - (segments[segments.length-1].start + segments[segments.length-1].data.length) <= numberChars && i - segments[segments.length-1].start < maxSegmentLength) {
+				currentSegment = segments[segments.length-1];
+				currentSegment.data += pattern2.substring(currentSegment.start + currentSegment.data.length, i);
+			}
 
-            if(currentSegment != null && currentSegment.data.length < maxSegmentLength) {
-                currentSegment.data += pattern2.charAt(i);
-            } else {
-                currentSegment = {
-                    start: i,
-                    data: pattern2.charAt(i)
-                };
-                segments.push(currentSegment);
-            }
-        } else {
-            currentSegment = null;
-        }
-    }
+			if(currentSegment != null && currentSegment.data.length < maxSegmentLength) {
+				currentSegment.data += pattern2.charAt(i);
+			} else {
+				currentSegment = {
+					start: i,
+					data: pattern2.charAt(i)
+				};
+				segments.push(currentSegment);
+			}
+		} else {
+			currentSegment = null;
+		}
+	}
 
-    return segments;
+	return segments;
 }
 
 /**
@@ -100,18 +100,18 @@ function getDiffSegments(pattern1: string, pattern2: string): Array<DiffSegment>
  * @returns An array of stroke segments as returned by _getDiffSegments()
  */
 function getDiffSegmentsFromString(diffString: string, patternLength: number): Array<DiffSegment> {
-    const numberChars = getNumberChars(patternLength);
-    const segments: Array<DiffSegment> = [ ];
-    let i = 0;
-    while(i<diffString.length) {
-        const segmentLength = stringToNumber(diffString.substr(i+numberChars, 1));
-        segments.push({
-            start: stringToNumber(diffString.substr(i, numberChars)),
-            data: diffString.substr(i+numberChars+1, segmentLength)
-        });
-        i += numberChars + segmentLength + 1;
-    }
-    return segments;
+	const numberChars = getNumberChars(patternLength);
+	const segments: Array<DiffSegment> = [ ];
+	let i = 0;
+	while(i<diffString.length) {
+		const segmentLength = stringToNumber(diffString.substr(i+numberChars, 1));
+		segments.push({
+			start: stringToNumber(diffString.substr(i, numberChars)),
+			data: diffString.substr(i+numberChars+1, segmentLength)
+		});
+		i += numberChars + segmentLength + 1;
+	}
+	return segments;
 }
 
 /**
@@ -121,15 +121,15 @@ function getDiffSegmentsFromString(diffString: string, patternLength: number): A
  * @returns The modified pattern
  */
 function applyDiffSegments(pattern: string, segments: Array<DiffSegment>) {
-    const substr = function(str: string, start: number, length: number): string {
-        let ret = str.substr(start, length);
-        while(ret.length < length)
-            ret += " ";
-        return ret;
-    };
+	const substr = function(str: string, start: number, length: number): string {
+		let ret = str.substr(start, length);
+		while(ret.length < length)
+			ret += " ";
+		return ret;
+	};
 
-    for(let i=0; i<segments.length; i++) {
-        pattern = substr(pattern, 0, segments[i].start) + segments[i].data + pattern.substr(segments[i].start + segments[i].data.length);
-    }
-    return pattern;
+	for(let i=0; i<segments.length; i++) {
+		pattern = substr(pattern, 0, segments[i].start) + segments[i].data + pattern.substr(segments[i].start + segments[i].data.length);
+	}
+	return pattern;
 }

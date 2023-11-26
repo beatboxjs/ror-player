@@ -169,7 +169,7 @@ export function splitPattern(pattern: Pattern, instrument: Instrument): Array<Pa
 		ret.push(Object.assign(remaining.slice(0, 4*pattern.time), {
 			time: pattern.time,
 			upbeat: 0
-        }));
+		}));
 		remaining = remaining.slice(4*pattern.time);
 	}
 
