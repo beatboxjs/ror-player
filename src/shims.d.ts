@@ -3,7 +3,7 @@ declare module "virtual:audioFiles" {
 	export default samples;
 }
 
-declare module "virtual:tuneDescriptions" {
+declare module "virtual:tuneDescriptionsHtml" {
 	const tuneDescriptionsHtml: Record<string, string>;
 	export default tuneDescriptionsHtml;
 }
