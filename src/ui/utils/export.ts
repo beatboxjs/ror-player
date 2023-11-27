@@ -12,7 +12,7 @@ export type ExportArgs = { type: ExportType; player: Beatbox; filename: string }
 
 export async function download({ type, player, filename }: ExportArgs): Promise<void> {
 	const progress = ref(0);
-	const canceled = ref(false);
+	const abort = new AbortController();
 
 	const progressEl = document.createElement('div');
 	document.body.appendChild(progressEl);
@@ -20,7 +20,7 @@ export async function download({ type, player, filename }: ExportArgs): Promise<
 		setup: () => () => h(Progress, {
 			progress: progress.value,
 			onCancel: () => {
-				canceled.value = true;
+				abort.abort();
 			}
 		})
 	})).component('fa', FontAwesomeIcon);
@@ -28,16 +28,19 @@ export async function download({ type, player, filename }: ExportArgs): Promise<
 
 	try {
 		const exportFunc = type === ExportType.MP3 ? exportMP3 : exportWAV;
-		const blob = await exportFunc(player, (perc) => {
-			if(canceled.value)
-				return false;
-			else
-				progress.value = Math.round(perc*100);
+		const blob = await exportFunc(player, {
+			onProgress: (perc) => {
+				progress.value = perc*100;
+			},
+			signal: abort.signal
 		});
 
-		if (blob)
-			FileSaver.saveAs(blob, `${filename}.${type}`);
+		FileSaver.saveAs(blob, `${filename}.${type}`);
 	} catch(err: any) {
+		if (err instanceof DOMException && err.name === "AbortError") {
+			return;
+		}
+
 		// eslint-disable-next-line no-console
 		console.error(`Error exporting ${type.toUpperCase()}`, err.stack || err);
 		showAlert({ title: `Error exporting ${type.toUpperCase()}`, message: err.message, variant: "danger" });

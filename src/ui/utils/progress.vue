@@ -12,7 +12,7 @@
 	<Teleport to="body">
 		<div class="bb-progress" v-if="props.progress != null">
 			<div class="progress">
-				<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" :style="{ width: `${props.progress}%` }">{{props.progress}}&#x202f;%</div>
+				<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" :style="{ width: `${props.progress}%` }">{{Math.round(props.progress)}}&#x202f;%</div>
 			</div>
 			<a href="javascript:" @click="emit('cancel')" draggable="false"><fa icon="window-close"/></a>
 		</div>

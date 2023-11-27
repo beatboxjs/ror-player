@@ -44,6 +44,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.12.5":
+  version: 7.23.4
+  resolution: "@babel/runtime@npm:7.23.4"
+  dependencies:
+    regenerator-runtime: ^0.14.0
+  checksum: 8eb6a6b2367f7d60e7f7dd83f477cc2e2fdb169e5460694d7614ce5c730e83324bcf29251b70940068e757ad1ee56ff8073a372260d90cad55f18a825caf97cd
+  languageName: node
+  linkType: hard
+
 "@babel/types@npm:^7.8.3":
   version: 7.20.5
   resolution: "@babel/types@npm:7.20.5"
@@ -600,10 +609,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/events@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@types/events@npm:3.0.0"
-  checksum: 9a424c2da210957d5636e0763e8c9fc3aaeee35bf411284ddec62a56a6abe31de9c7c2e713dabdd8a76ff98b47db2bd52f61310be6609641d6234cc842ecbbe3
+"@types/events@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "@types/events@npm:3.0.3"
+  checksum: 50af9312fab001fd6bd4bb3ff65830f940877e6778de140a92481a0d9bf5f4853d44ec758a8800ef60e0598ac43ed1b5688116a3c65906ae54e989278d6c7c82
   languageName: node
   linkType: hard
 
@@ -1426,24 +1435,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"beatbox.js-export@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "beatbox.js-export@npm:3.0.0"
+"beatbox.js-export@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "beatbox.js-export@npm:4.0.0"
   dependencies:
-    beatbox.js: ^3.0.1
-    lamejs: "https://github.com/zhuker/lamejs.git"
+    beatbox.js: ^4.0.0
+    wasm-media-encoders: ^0.6.4
     wav-encoder: ^1.3.0
-  checksum: 122b506fae06d4619fa87f6529e3e4eacad495131f4e2b32eb541bd4b1f12a437446e54dbded16d0c11cc01b7b4bab1ab8bae6f8f510e8a2eccd1de29095ee40
+  checksum: bed2e0f25b70556c5903ed8d2dfe4fbcc86023c1a977de50914018c4ddb8d71f3a509b1c22c431433700741f8cd3293d61cda5beefb4cfb2776026d8c5bc4e11
   languageName: node
   linkType: hard
 
-"beatbox.js@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "beatbox.js@npm:3.0.1"
+"beatbox.js@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "beatbox.js@npm:4.0.0"
   dependencies:
-    "@types/events": ^3.0.0
+    "@types/events": ^3.0.3
     events: ^3.3.0
-  checksum: 570ff0bf5b12c02e31f75cfdf5f1a1e273da50d1c066e4258f2c12b3792da04b610f1e303ff3a43becbbb1da3493a66b4319bc3be2bc48b1f21c6f8613c64074
+  checksum: 81d52633d02c44de9edb0d4d56558073bc4bc6943d374447d36b10fa255e45ba8fed9e634117a5b7f0eb04e12fff7ed81feea2444a7639398dcd054335b56c3c
   languageName: node
   linkType: hard
 
@@ -3240,15 +3249,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lamejs@https://github.com/zhuker/lamejs.git":
-  version: 1.2.1
-  resolution: "lamejs@https://github.com/zhuker/lamejs.git#commit=582bbba6a12f981b984d8fb9e1874499fed85675"
-  dependencies:
-    use-strict: 1.0.1
-  checksum: fa829e0c170a65573e653b4d908a44aaf06a50e1bbade3b1217a300a03ccd59a537e294e2d924a584f9d70c7726a12d4c3af9c675436d48d08be5fb94b5eb400
-  languageName: node
-  linkType: hard
-
 "levn@npm:^0.4.1":
   version: 0.4.1
   resolution: "levn@npm:0.4.1"
@@ -4035,6 +4035,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"regenerator-runtime@npm:^0.14.0":
+  version: 0.14.0
+  resolution: "regenerator-runtime@npm:0.14.0"
+  checksum: 1c977ad82a82a4412e4f639d65d22be376d3ebdd30da2c003eeafdaaacd03fc00c2320f18120007ee700900979284fc78a9f00da7fb593f6e6eeebc673fba9a3
+  languageName: node
+  linkType: hard
+
 "regexp.prototype.flags@npm:^1.5.1":
   version: 1.5.1
   resolution: "regexp.prototype.flags@npm:1.5.1"
@@ -4182,8 +4189,8 @@ __metadata:
     "@typescript-eslint/parser": ^6.11.0
     "@vitejs/plugin-vue": ^4.5.0
     base64-arraybuffer: ^1.0.2
-    beatbox.js: ^3.0.1
-    beatbox.js-export: ^3.0.0
+    beatbox.js: ^4.0.0
+    beatbox.js-export: ^4.0.0
     bootstrap: ^5.3.2
     eslint: ^8.54.0
     eslint-plugin-import: ^2.29.0
@@ -4845,13 +4852,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-strict@npm:1.0.1":
-  version: 1.0.1
-  resolution: "use-strict@npm:1.0.1"
-  checksum: e2798c587b8dc95483ac376e1b9b13fbab179bbd498ed7bd55cba2ef72792569621ba25d9aa5df21f884a161d28624d39165070a690fc5f088bf903e097fc267
-  languageName: node
-  linkType: hard
-
 "util-deprecate@npm:^1.0.1, util-deprecate@npm:^1.0.2":
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
@@ -5084,6 +5084,15 @@ __metadata:
     typescript:
       optional: true
   checksum: 560c18aa37f3f2351de8245f7844611409e7b7cbaabaae0993bdacd6090bb5ca81d89366e324babfdc7063f2312de5b62b56fe8b4dadc586baef8e0968eb6e14
+  languageName: node
+  linkType: hard
+
+"wasm-media-encoders@npm:^0.6.4":
+  version: 0.6.4
+  resolution: "wasm-media-encoders@npm:0.6.4"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+  checksum: a3e2cddf36e121084a02cd1e156734794ad58cf42d6a18a007352fc2b577c1905a191458a866d06e59a37e75136b0f81e3b892857162b07954e0bac4c07ca365
   languageName: node
   linkType: hard
 
