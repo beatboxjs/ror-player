@@ -3,7 +3,7 @@ On some devices (such as smartphones and tablets), it is possible to install RoR
 ### Chrome
 
 1. Press Chrome’s menu icon (3 dots) on the top right
-2. Press “Add to Home Screen”
+2. Press “Install app” (or “Add to Home Screen”)
 
 ### Firefox
 
@@ -18,4 +18,4 @@ On some devices (such as smartphones and tablets), it is possible to install RoR
 ### Opera
 
 1. Press Opera’s plus icon on the top left
-2. Press “Add to home screen”
+2. Press “Add to…” → “Home screen”
