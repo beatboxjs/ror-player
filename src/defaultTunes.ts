@@ -1844,6 +1844,51 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		},
 		exampleSong: ['Tune', 'Tune', 'Tune', 'Tune', 'Break 1', 'Tune', 'Tune', 'Tune', 'Tune', 'Break 2', 'Tune', 'Tune', 'Tune', 'Tune', 'Break 3', 'Tune', 'Tune', 'Tune', 'Tune', 'Clave Plus', 'Tune', 'Tune', 'Tune', 'Tune', 'Disco Barricade Break', 'Tune', 'Tune', 'Tune', 'Tune', 'Bra Break', 'Tune', 'Tune', 'Tune', 'Tune']
 	},
+	'Police': {
+		displayName: "Police",
+		categories: [ "proposed", "easy" ],
+		description: require("../assets/tuneDescriptions/police.md").default,
+		patterns: {
+			Intro: {
+				ls: "@ms",
+				ms: "      XXXXXXX         XXX XXX",
+				hs: "@ms",
+				ot: "D  D            D  D",
+			},
+			Tune: {
+				loop: true,
+				ls: "X  X    X   X   X  X    X   X",
+				ms: "      XXXXXXX         XXX XXX",
+				hs: "@ms",
+				re: "f hf hXhf h Xhrhf hf hXhf h Xhrh",
+				sn: "X..X........X...X..X........X...",
+				ta: "  XX  XX  XX  XX  XX  XX  XX  XX",
+				ag: "a  a  a o a o   a  a  a o a o",
+				ot: "D  D            D  D",
+
+			},
+			"Break 1": {
+				ls: "@ms",
+				ms: "      XXXXXXX         XXX XXX",
+				hs: "@ms",
+				re: "@ms",
+				sn: "@ms",
+				ta: "@ms",
+				ag: "a  a            a  a         ",
+				ot: "D  D            D  D",
+			},
+			"Break 1 Inverted": {
+				ls: "X  X            X  X",
+				ms: "@ls",
+				hs: "@ls",
+				re: "@ls",
+				sn: "@ls",
+				ta: "@ls",
+				ag: "      aaaaaaa         aaa aaa",
+			}
+		},
+		exampleSong: ["Intro", "Tune", "Tune", "Tune", "Tune", "Break 1", "Break 1 Inverted"]
+	},
 	'Ragga': {
 		categories: [ "standard", "common", "tricky" ],
 		sheet: sheetUrl + "ragga.pdf",
