@@ -85,9 +85,9 @@
 					<div class="modal-body">
 						<div class="row mb-3" :class="{ 'was-validated': nameTouched }">
 							<label :for="`${id}-name`" class="col-sm-4 col-form-label">New name</label>
-							<div class="col-sm-8">
+							<div class="col-sm-8 position-relative">
 								<input :id="`${id}-name`" class="form-control" type="text" v-model="newPatternName" autofocus v-validity="nameError" @input="nameTouched = true" @blur="nameTouched = true">
-								<div v-if="nameError" class="invalid-feedback">
+								<div v-if="nameError" class="invalid-tooltip">
 									{{nameError}}
 								</div>
 							</div>

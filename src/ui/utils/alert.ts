@@ -55,7 +55,7 @@ export async function showPrompt({ initialValue = "", validate, ...props }: Omit
 		message: '',
 		type: 'confirm',
 		getContent: () => h('div', {
-			class: touched.value ? 'was-validated' : ''
+			class: `position-relative${touched.value ? ' was-validated' : ''}`
 		}, [
 			withDirectives(h('input', {
 				type: "text",
@@ -74,7 +74,7 @@ export async function showPrompt({ initialValue = "", validate, ...props }: Omit
 				[vValidity, validationError.value]
 			]),
 			...(validationError.value ? [h('div', {
-				class: "invalid-feedback"
+				class: "invalid-tooltip"
 			}, validationError.value)] : [])
 		]),
 		onShown: () => {
