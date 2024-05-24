@@ -1847,12 +1847,12 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Police': {
 		displayName: "Police",
 		categories: [ "proposed", "easy" ],
-		description: require("../assets/tuneDescriptions/police.md").default,
+		descriptionHtml: tuneDescriptionsHtml.police,
 		patterns: {
 			Intro: {
-				ls: "@ms",
-				ms: "      XXXXXXX         XXX XXX",
-				hs: "@ms",
+				ls: "      XXXXXXX         XXX XXX",
+				ms: "@ls",
+				hs: "@ls",
 				ot: "D  D            D  D",
 			},
 			Tune: {
@@ -1868,12 +1868,12 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 
 			},
 			"Break 1": {
-				ls: "@ms",
-				ms: "      XXXXXXX         XXX XXX",
-				hs: "@ms",
-				re: "@ms",
-				sn: "@ms",
-				ta: "@ms",
+				ls: "      XXXXXXX         XXX XXX",
+				ms: "@ls",
+				hs: "@ls",
+				re: "@ls",
+				sn: "@ls",
+				ta: "@ls",
 				ag: "a  a            a  a         ",
 				ot: "D  D            D  D",
 			},
