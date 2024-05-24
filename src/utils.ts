@@ -1,7 +1,7 @@
 import { inflateRaw, deflateRaw } from "pako";
 import { decode } from "base64-arraybuffer";
 import * as z from "zod";
-import { AllowedComponentProps, ComponentPublicInstance, computed, effectScope, EffectScope, reactive, Ref, ref, shallowReadonly, toRef, VNodeProps, watch } from "vue";
+import { AllowedComponentProps, ComponentPublicInstance, computed, ComputedRef, Ref, ref, toRef, VNodeProps, watch } from "vue";
 
 export type AnyRef<T> = T | Ref<T> | (() => T);
 
@@ -157,30 +157,77 @@ export function useRefWithOverride<Value>(fallbackValue: Value, getProp: () => V
 	});
 }
 
+/**
+ * Returns a proxy for the specified object, where each object value is mapped using the specified getter function, with the
+ * result memoized using a Vue computed property.
+ */
 export function computedProperties<K extends keyof any, VIn, VOut>(object: AnyRef<Record<K, VIn>>, getter: (value: VIn, key: K) => VOut): Readonly<Record<K, VOut>> {
 	const objectRef = toRef(object);
-	const result = reactive({} as Record<K, VOut>);
-	const effectScopes = {} as Record<K, EffectScope>;
-	watch(() => Object.keys(objectRef.value) as K[], (newKeys) => {
-		const oldKeys = Object.keys(result) as K[];
-		for (const key of oldKeys) {
-			if (!newKeys.includes(key)) {
-				effectScopes[key].stop();
-				delete result[key];
-				delete effectScopes[key];
+	const properties: Record<any, ComputedRef<VOut>> = {};
+
+	watch(() => Object.keys(objectRef.value), (newKeys) => {
+		for (const k of Object.keys(properties)) {
+			if (!newKeys.includes(k)) {
+				properties[k].effect.stop();
+				delete properties[k];
 			}
+		}
+	});
+
+	const readonlyError = () => {
+		throw new Error("Cannot modify computed object.");
+	};
+
+	const has = (p: any) => Object.prototype.hasOwnProperty.call(objectRef.value, p);
+
+	const get = (p: any) => {
+		if (!has(p)) {
+			return undefined;
 		}
 
-		for (const key of newKeys) {
-			if (!oldKeys.includes(key)) {
-				effectScopes[key] = effectScope();
-				effectScopes[key].run(() => {
-					result[key] = computed(() => {
-						return getter(objectRef.value[key], key);
-					}) as any;
-				});
-			}
+		if (!properties[p as any]) {
+			properties[p as any] = computed(() => getter(objectRef.value[p], p));
 		}
-	}, { immediate: true, flush: "sync" });
-	return shallowReadonly(result) as Readonly<Record<K, VOut>>;
+
+		return properties[p as any].value;
+	};
+
+	return new Proxy<Record<K, VOut>>({} as any, {
+		isExtensible() {
+			return false;
+		},
+
+		preventExtensions() {
+			return true;
+		},
+
+		getOwnPropertyDescriptor(target, p) {
+			if (!has(p)) {
+				return undefined;
+			}
+
+			return {
+				configurable: true, // https://stackoverflow.com/a/40922077/242365
+				enumerable: true,
+				getter: () => get(p)
+			};
+		},
+
+		has(target, p) {
+			return has(p);
+		},
+
+		get(target, p) {
+			return get(p);
+		},
+
+		ownKeys(target) {
+			return Object.keys(objectRef.value);
+		},
+
+		setPrototypeOf: readonlyError,
+		defineProperty: readonlyError,
+		set: readonlyError,
+		deleteProperty: readonlyError,
+	});
 }
