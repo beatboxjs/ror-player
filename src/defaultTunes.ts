@@ -2958,6 +2958,7 @@ for(const i in rawTunes) {
 	const tune = rawTunes[i];
 
 	if ("descriptionHtml" in tune && tune.descriptionHtml == null) {
+		// eslint-disable-next-line no-console
 		console.error(`Tune description for ${i} not found.`);
 	}
 

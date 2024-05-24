@@ -57,8 +57,6 @@ export function useModal(modalRef: Ref<HTMLElement | undefined>, { onShown, onHi
 	});
 
 	watch(modalRef, (newRef, oldRef, onCleanup) => {
-		onCleanup(() => {}); // TODO: Delete me https://github.com/vuejs/core/issues/5151#issuecomment-1515613484
-
 		if (newRef) {
 			if (!lastFocusedEl) {
 				lastFocusedEl = document.activeElement ?? undefined;

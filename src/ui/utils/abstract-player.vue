@@ -26,7 +26,7 @@
 	const positionMarkerRef = ref<HTMLElement>();
 
 	const playerRef = ref<BeatboxReference>();
-	const player = computed(() => playerRef.value && getPlayerById(playerRef.value.id));
+	const playerInst = computed(() => playerRef.value && getPlayerById(playerRef.value.id));
 
 	const updatePosition = (scroll: boolean, force = false) => {
 		const player = getOrCreatePlayer();
@@ -66,7 +66,7 @@
 
 	watchSyncEffect((onCleanup) => {
 		if (playerRef.value) {
-			const p = player.value!;
+			const p = playerInst.value!;
 			p!.on("play", handlePlay);
 			p!.on("beat", handleBeat);
 			p!.on("stop", handleStop);
@@ -85,25 +85,25 @@
 		if (!playerRef.value) {
 			playerRef.value = createBeatbox(false);
 		}
-		return player.value!;
+		return playerInst.value!;
 	};
 
 	onBeforeUnmount(() => {
-		if (player.value) {
+		if (playerInst.value) {
 			// Unregister event handlers in case we used an existing player
-			player.value.off("play", handlePlay);
-			player.value.off("beat", handleBeat);
-			player.value.off("stop", handleStop);
-			player.value.off("setPosition", handleSetPosition);
+			playerInst.value.off("play", handlePlay);
+			playerInst.value.off("beat", handleBeat);
+			playerInst.value.off("stop", handleStop);
+			playerInst.value.off("setPosition", handleSetPosition);
 		}
 	});
 
 	watchSyncEffect(() => {
-		if (player.value) {
-			player.value.setPattern(props.rawPattern);
-			player.value.setUpbeat(props.rawPattern.upbeat);
-			player.value.setBeatLength(60000/props.playbackSettings.speed/config.playTime);
-			player.value.setRepeat(props.playbackSettings.loop);
+		if (playerInst.value) {
+			playerInst.value.setPattern(props.rawPattern);
+			playerInst.value.setUpbeat(props.rawPattern.upbeat);
+			playerInst.value.setBeatLength(60000/props.playbackSettings.speed/config.playTime);
+			playerInst.value.setRepeat(props.playbackSettings.loop);
 		}
 	});
 

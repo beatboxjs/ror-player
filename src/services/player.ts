@@ -22,6 +22,7 @@ export interface RawPatternWithUpbeat extends RawPattern {
 for(const i in audioFiles) {
 	const m = i.match(/^(.*?)_([a-f0-9]+)\.mp3$/i);
 	if (!m) {
+		// eslint-disable-next-line no-console
 		console.warn(`Unexpected audio file name: ${i}`);
 		continue;
 	}

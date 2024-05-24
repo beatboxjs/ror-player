@@ -7,7 +7,7 @@ import tuneDescriptionsPlugin from './rollup-tune-descriptions';
 
 export default defineConfig(({ mode }) => ({
 	define: {
-		'process.env.DISABLE_SW': mode === 'development'
+		'process.env.DISABLE_SW': String(mode === 'development')
 	},
 	plugins: [
 		vuePlugin(),

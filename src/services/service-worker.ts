@@ -1,4 +1,4 @@
-const enable = !process.env.DISABLE_SW || process.env.DISABLE_SW === "false";
+const enable = !process?.env?.DISABLE_SW || process.env.DISABLE_SW === "false";
 
 export function registerServiceWorker(): void {
 	if("serviceWorker" in navigator) {

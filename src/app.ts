@@ -7,7 +7,7 @@ import Overview from "./ui/overview.vue";
 import { registerServiceWorker } from "./services/service-worker";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faBars, faCaretDown, faCheck, faClock, faCode, faCog, faCopy, faDownload, faEraser, faExclamationCircle, faInfoCircle, faFileExport, faFileImport, faHandPointRight, faHeadphones, faMobileAlt, faMusic, faPause, faPen, faPencilAlt, faPlay, faPlayCircle, faPlus, faQuestionCircle, faShare, faSlidersH, faStar, faStop, faTrash, faVolumeMute, faWindowClose } from '@fortawesome/free-solid-svg-icons'
-import Vue3TouchEvents from "vue3-touch-events";
+import Vue3TouchEvents, { Vue3TouchEventsOptions } from "vue3-touch-events";
 import { ensurePersistentStorage, reactiveLocalStorage } from "./services/localStorage";
 import { reactiveLocationHash } from "./services/router";
 
@@ -36,7 +36,7 @@ const Root = defineComponent({
 });
 
 createApp(Root, { config: { performance: true } })
-	.use(Vue3TouchEvents)
+	.use<Vue3TouchEventsOptions>(Vue3TouchEvents, {})
 	.component('fa', FontAwesomeIcon)
 	.mount('#app');
 
