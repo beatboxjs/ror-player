@@ -1,24 +1,82 @@
-<div class="bb-listen">
-	<div class="bb-listen-tunes" v-touch:start="handleTouchStart" v-touch:moving="handleTouchMove" v-touch:end="handleTouchEnd" ref="tunes">
-		<PatternListFilter v-model="filter" :show-custom="false" />
+<script lang="ts" setup>
+	import { ref, TeleportProps, watch } from "vue";
+	import { normalizeState } from "../../state/state";
+	import { stopAllPlayers } from "../../services/player";
+	import { provideState } from "../../services/state";
+	import TuneInfo from "./tune-info.vue";
+	import { useRefWithOverride } from "../../utils";
+	import { getTuneOfTheYear } from "../../services/utils";
+	import TuneList from "./tune-list.vue";
+	import HybridSidebar from "../utils/hybrid-sidebar.vue";
 
-		<hr />
+	const props = defineProps<{
+		/** null means to forward to the tune of the year */
+		tuneName?: string | null;
+		editPattern?: string;
+		sidebarToggleContainer?: TeleportProps['to'];
+	}>();
 
-		<b-nav vertical pills class="flex-nowrap">
-			<b-nav-item
-				v-for="thisTuneName in tuneList"
-				:key="thisTuneName"
-				:active="thisTuneName == tuneName"
-				href="javascript:"
-				@click="selectTune(thisTuneName)"
-				:link-attrs="{ draggable: 'false' }"
-			>
-				{{state.tunes[thisTuneName].displayName || thisTuneName}}
-			</b-nav-item>
-		</b-nav>
+	const emit = defineEmits<{
+		"update:tuneName": [tuneName: string | null | undefined];
+		"update:editPattern": [patternName: string | undefined];
+	}>();
+
+	const tuneName = useRefWithOverride(undefined, () => props.tuneName, (tuneName) => emit("update:tuneName", tuneName));
+	const editPattern = useRefWithOverride(undefined, () => props.editPattern, (patternName) => emit("update:editPattern", patternName));
+
+	const state = ref(normalizeState());
+	provideState(state);
+
+	const isSidebarExpanded = ref(false);
+
+	watch(tuneName, () => {
+		isSidebarExpanded.value = false;
+		stopAllPlayers();
+
+		if (!tuneName.value) {
+			tuneName.value = getTuneOfTheYear();
+		}
+	}, { immediate: true });
+</script>
+
+<template>
+	<div class="bb-listen">
+		<HybridSidebar v-model:isExpanded="isSidebarExpanded" :toggleContainer="sidebarToggleContainer">
+			<TuneList v-model:tuneName="tuneName" />
+
+			<template v-slot:toggle>
+				<button type="button" class="btn btn-secondary" @click="isSidebarExpanded = !isSidebarExpanded">
+					<fa icon="bars" />
+				</button>
+			</template>
+		</HybridSidebar>
+
+		<div class="bb-listen-info">
+			<TuneInfo v-if="tuneName" :tuneName="tuneName" v-model:editPattern="editPattern" />
+		</div>
 	</div>
+</template>
 
-	<div class="bb-listen-info">
-		<TuneInfo v-if="tuneName" :tune-name="tuneName" />
-	</div>
-</div>
+<style lang="scss">
+	.bb-listen {
+		display: flex;
+		flex-grow: 1;
+		min-height: 0;
+
+		.bb-tune-list {
+			flex-grow: 1;
+		}
+
+		.bb-listen-info {
+			width: 0;
+			flex-grow: 1;
+			padding: 1.2em;
+			overflow: auto;
+
+			.bb-tune-info {
+				max-width: 740px;
+				margin: 0 auto;
+			}
+		}
+	}
+</style>

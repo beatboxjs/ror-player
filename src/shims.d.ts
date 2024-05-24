@@ -1,15 +1,9 @@
-declare module "*.vue" {
-    import Vue, { ComponentOptions, FunctionalComponentOptions } from 'vue';
-
-    interface WithRender {
-        <V extends Vue, U extends ComponentOptions<V> | FunctionalComponentOptions>(options: U): U
-        <V extends typeof Vue>(component: V): V
-    }
-    const withRender: WithRender;
-    export default withRender;
+declare module "virtual:audioFiles" {
+	const samples: Record<string, string>;
+	export default samples;
 }
 
-declare module "*.md" {
-    const html: string;
-    export default html;
+declare module "virtual:tuneDescriptionsHtml" {
+	const tuneDescriptionsHtml: Record<string, string>;
+	export default tuneDescriptionsHtml;
 }

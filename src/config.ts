@@ -1,42 +1,72 @@
-export type Instrument = "ls" | "ms" | "hs" | "re" | "sn" | "ta" | "ag" | "sh" | "ot";
+import * as z from "zod";
 
-export type Stroke = string;
+const instrumentKeys = ["ls", "ms", "hs", "re", "sn", "ta", "ag", "sh", "ot"] as const;
+export const instrumentValidator = z.enum(instrumentKeys);
+export type Instrument = z.infer<typeof instrumentValidator>;
 
-export type Category = "standard" | "common" | "uncommon" | "new" | "proposed" | "custom" | "onesurdo" | "easy" | "medium" | "tricky" | "western" | "cultural-appropriation" | "all";
+export const strokeValidator = z.string();
+/** A stroke is a single sound that an instrument makes. It is identified by a single letter, corresponding to the file name of the audio file in assets/audio/. */
+export type Stroke = z.infer<typeof strokeValidator>;
+
+const categoryKeys = ["standard", "common", "uncommon", "new", "proposed", "custom", "onesurdo", "easy", "medium", "tricky", "western", "cultural-appropriation", "all"] as const;
+export const categoryValidator = z.enum(categoryKeys);
+/** Categories by which the tune list can be filtered. Each tune can be part of any number of categories. */
+export type Category = z.infer<typeof categoryValidator>;
 
 export type Config = {
-	appName: string,
-	instruments: {
-		[instr in Instrument]: {
-			name: string,
-			strokes: Array<Stroke>
-		}
-	},
-	instrumentKeys: Array<Instrument>,
-	strokes: {
-		[stroke in Stroke]: string
-	},
-	strokesDescription: {
-		[stroke in Stroke]?: string
-	},
-	volumePresets: {
-		[name: string]: {
-			[instr in Instrument]: number
-		}
-	},
-	times: {
-		[idx: number]: string
-	},
-	filterCats: {
-		[cat in Category]: string
-	},
-	playTime: number,
-	tuneOfTheYear: string | string[],
-	defaultSpeed: number
+	/** The name of the app as it should be shown throughout the UI, such as “RoR Player” */
+	appName: string;
+
+	/** An array listing the keys of all available instruments. */
+	instrumentKeys: Instrument[];
+
+	instruments: Record<Instrument, {
+		name: string;
+		/** The strokes that this instrument can play. Defines what options the stroke picker will display. */
+		strokes: Array<Stroke>;
+	}>;
+
+	/** Mapping each stroke to its representation in the notes as displayed to the user. */
+	strokes: Record<Stroke, string>;
+
+	/** Optionally defining a tooltip that will describe a particular stroke further. */
+	strokesDescription: Partial<Record<Stroke, string>>;
+
+	/** Presets for the values of the instrument volume sliders, by preset name. */
+	volumePresets: Record<string, Record<Instrument, number>>;
+
+	/**
+	 * The available time signatures. The key is the number of strokes per beat (the number of beats per bar is fixed to 4), the value is
+	 * the name of the time measurement as it should be shown in the UI.
+	 */
+	times: Record<number, string>;
+
+	/**
+	 * The stroke resolution that will be used throughout the app, in number of strokes per beat (the number of beats per bar is fixed to 4).
+	 * This has to be the least common multiple of the available time signatures. For example, to allow for both rhythms that use 4 strokes
+	 * per beat and rhythms that use 3 strokes per beat, the stroke resolution needs to be 12 (or a multiple thereof).
+	 */
+	playTime: number;
+
+	/** The available tune filter categories mapped to their display name. */
+	filterCats: Record<Category, string>;
+
+	/**
+	 * The current tune of the year. It will be opened by default when the app is opened. If multiple tunes are specified, one of them will be
+	 * randomly picked each time.
+	 */
+	tuneOfTheYear: string | string[];
+
+	/**
+	 * The default speed to use for tunes that don't specify a separate default speed, in beats per minute.
+	 */
+	defaultSpeed: number;
 };
 
 const config: Config = {
 	appName: document.title,
+
+	instrumentKeys: [...instrumentKeys],
 
 	instruments: {
 		ls: {
@@ -76,8 +106,6 @@ const config: Config = {
 			strokes: [ "w", "y", "A", "B", "D", "E", "F", "G", "J", "K", "L", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "Y", "Z", "9", "8", "7", "6", "5", "b", "c", "d", "e", "g", "q", "j", "k", "m", "n", "u", "v", "x", "i", "l", "p", "$", "%", "&", "'", "(", ")", "*", ",", "-", "?", ":", ";", "<", "=", ">", "K", "[", "\\", "^", "_", "`", "{", "|", "}", "~", "À", "Á", "Â", "Ã", "Ä", "Å", "Æ", "Ç", "È", "É", "Ê", "Ë", "Ì", "Í", "Î", "Ï", "İ", "Ǐ", "Ī", "Ĩ", "Į", "Ĳ" ]
 		}
 	},
-
-	instrumentKeys: [ "ls", "ms", "hs", "re", "sn", "ta", "ag", "sh", "ot" ],
 
 	strokes: {
 		"X": "X",
@@ -241,6 +269,9 @@ const config: Config = {
 		20: "4⁄4 with quintuplets"
 	},
 
+	// Time measurement that is used for beatbox.js. Should be able to represent all the time measurements above
+	playTime: 60,
+
 	filterCats: {
 		standard: "Standard tunes",
 		all: "All tunes",
@@ -257,22 +288,19 @@ const config: Config = {
 		"cultural-appropriation": "Cultural appropriation"
 	},
 
-	// Time measurement that is used for beatbox.js. Should be able to represent all the time measurements above
-	playTime: 60,
-
 	tuneOfTheYear: ["Bhangra", "Sambasso"],
 
 	defaultSpeed: 100
 };
 
 // Check some requirements for export so that we don't forget them at some point in the future
-for(const stroke in config.strokes) {
+for(const stroke of Object.keys(config.strokes)) {
 	if(stroke.length != 1)
 		throw new Error("Stroke key must be one character for `" + stroke + "`.");
 	if(stroke == "+" || stroke == "@")
 		throw new Error("Stroke must not be `+` or `@` as it would conflict with pattern encoder.");
 }
-for(const instr in config.instruments) {
+for(const instr of Object.keys(config.instruments)) {
 	if(instr.length != 2)
 		throw new Error("Instrument key must be 2 characters long for `" + instr + "` due to pattern encoder.");
 }

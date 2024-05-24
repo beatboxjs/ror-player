@@ -1,8 +1,12 @@
-@import "bootstrap-vue/dist/bootstrap-vue.css";
-@import "mobile-drag-drop/default.css";
-
 html {
 	font-size: 14px;
+	min-height: 100%;
+}
+
+html,body,#app {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
 }
 
 h1,h2,h3,h4,h5,h6,.popover-header {

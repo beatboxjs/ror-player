@@ -1,17 +1,18 @@
 import pako from "pako";
 import Beatbox, { InstrumentReferenceObject, Pattern as RawPattern } from "beatbox.js";
-import audioFiles from "../../dist/audioFiles";
+import audioFiles from "virtual:audioFiles";
 import config, { Instrument } from "../config";
 import { Headphones, Mute, normalizePlaybackSettings, PlaybackSettings, Whistle } from "../state/playbackSettings";
 import { normalizePattern, Pattern } from "../state/pattern";
 import { getPatternFromState, State } from "../state/state";
-import { getEffectiveSongLength, Song, SongParts } from "../state/song";
+import { getEffectiveSongLength, SongParts } from "../state/song";
 import { decode } from "base64-arraybuffer";
+import { reactive } from "vue";
 
 export interface BeatboxReference {
-	id: number,
-	playing: boolean,
-	customPosition: boolean
+	id: number;
+	playing: boolean;
+	customPosition: boolean;
 }
 
 export interface RawPatternWithUpbeat extends RawPattern {
@@ -21,6 +22,7 @@ export interface RawPatternWithUpbeat extends RawPattern {
 for(const i in audioFiles) {
 	const m = i.match(/^(.*?)_([a-f0-9]+)\.mp3$/i);
 	if (!m) {
+		// eslint-disable-next-line no-console
 		console.warn(`Unexpected audio file name: ${i}`);
 		continue;
 	}
@@ -43,11 +45,11 @@ class CustomBeatbox extends Beatbox {
 }
 
 export function createBeatbox(repeat: boolean): BeatboxReference {
-	const reference: BeatboxReference = {
+	const reference: BeatboxReference = reactive({
 		id: currentNumber++,
 		playing: false,
 		customPosition: false
-	};
+	});
 
 	const player = new CustomBeatbox([ ], 1, repeat);
 	player.on("play", () => {

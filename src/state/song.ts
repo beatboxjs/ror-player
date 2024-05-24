@@ -1,50 +1,49 @@
-import { getPatternFromState, PatternOrTuneReference, PatternReference, State } from "./state";
-import config, {Instrument} from "../config";
-import { clone, getMaxIndex, numberToString, TypedInstrumentObject, TypedNumberObject, vueSetMultiple } from "../utils";
-import isEqual from "lodash.isequal";
-import Vue from "vue";
+import { getPatternFromState, PatternOrTuneReference, State } from "./state";
+import config, {Instrument, instrumentValidator} from "../config";
+import { getMaxIndex, numberRecordValidator, numberToString, requiredRecordValidator } from "../utils";
+import { isEqual } from "lodash-es";
+import * as z from "zod";
 
-type SongProperties = {
-    name: string
-};
+export type PatternReference = z.infer<typeof patternReferenceValidator>;
+export const patternReferenceValidator = z.tuple([z.string(), z.string()]);
 
-type SongPropertiesOptional = {
-	[i in keyof SongProperties]?: SongProperties[i]
-};
+export type SongPart = z.infer<typeof songPartValidator>;
+export const songPartValidator = z.record(instrumentValidator, patternReferenceValidator.optional());
 
-export type SongPart = {
-	[instr in Instrument]?: PatternReference;
-};
+export type SongParts = z.infer<typeof songPartsValidator>;
+export const songPartsValidator = numberRecordValidator(songPartValidator);
 
-export type SongParts = {
-    [idx: number]: SongPart;
-}
+export type Song = z.infer<typeof songValidator>;
+export const songValidator = songPartsValidator.and(z.object({
+	name: z.string().default("")
+})).default(() => ({}))
 
-export type Song = SongProperties & SongParts;
+/**
+ * A single beat in a compressed song. Can be a pattern index from the pattern key index (see PatternIndexKeys below) or a full pattern reference,
+ * for all instruments at once or by instrument key.
+ */
+type CompressedSongBeat = z.infer<typeof compressedSongBeatValidator>;
+const compressedSongBeatValidator = z.union([z.string(), patternReferenceValidator, requiredRecordValidator(instrumentValidator.options, z.string().or(patternReferenceValidator))]);
 
-export type SongOptional = SongPropertiesOptional & SongParts;
+export type CompressedSong = z.infer<typeof compressedSongValidator>;
+export const compressedSongValidator = z.object({
+	name: z.string(),
+	beats: z.array(compressedSongBeatValidator).or(numberRecordValidator(compressedSongBeatValidator))
+});
 
-type CompressedSongBeat = string | PatternReference | TypedInstrumentObject<string | PatternReference>;
+/** Maps a key to a pattern reference. The (short) key can be used in the compressed song instead of the full pattern reference. */
+type PatternIndexKeys = z.infer<typeof patternIndexKeysValidator>;
+const patternIndexKeysValidator = z.record(z.string(), patternReferenceValidator.or(z.null()));
 
-export type CompressedSong = {
-	name: string,
-	beats: Array<CompressedSongBeat> | TypedNumberObject<CompressedSongBeat>
-};
+/** An array of compressed songs, using a common pattern key index. */
+export type CompressedSongs = z.infer<typeof compressedSongsValidator>;
+export const compressedSongsValidator = z.object({
+	keys: patternIndexKeysValidator.optional(),
+	songs: z.array(compressedSongValidator)
+});
 
-type PatternIndexKeys = {
-	[key: string]: PatternReference | null
-};
-
-export type CompressedSongs = {
-	keys?: PatternIndexKeys,
-	songs: Array<CompressedSong>
-};
-
-export function normalizeSong(data?: SongOptional): Song {
-	return Vue.observable({
-		name: "",
-		...clone(data || {})
-	});
+export function normalizeSong(data?: z.input<typeof songValidator>): Song {
+	return songValidator.parse(data);
 }
 
 export function getSongLength(song: SongParts): number {
@@ -52,9 +51,9 @@ export function getSongLength(song: SongParts): number {
 	return maxIndex == null ? 0 : maxIndex+1;
 }
 
-export function clearSong(song: Song) {
+export function clearSong(song: Song): void {
 	for(const i of Object.keys(song).filter((i) => !["name"].includes(i)))
-		Vue.delete(song, i);
+		delete song[i as any];
 }
 
 export function songContainsPattern(song: Song, tuneName: string, patternName: string): boolean {
@@ -87,7 +86,7 @@ export function getEffectiveSongLength(song: SongParts, state: State): number {
 	return maxIndex + length;
 }
 
-export function replacePatternInSong(song: Song, fromTuneAndName: PatternOrTuneReference, toTuneAndName: PatternOrTuneReference | null) {
+export function replacePatternInSong(song: Song, fromTuneAndName: PatternOrTuneReference, toTuneAndName: PatternOrTuneReference | null): void {
 	for(let i=0, length = getSongLength(song); i<length; i++) {
 		if(!song[i])
 			continue;
@@ -96,21 +95,21 @@ export function replacePatternInSong(song: Song, fromTuneAndName: PatternOrTuneR
 			const ref = song[i][instr];
 			if(ref && ref[0] == fromTuneAndName[0] && (fromTuneAndName[1] == null || ref[1] == fromTuneAndName[1])) {
 				if(toTuneAndName == null)
-					Vue.delete(song[i], instr);
+					delete song[i][instr];
 				else {
-					Vue.set(ref, 0, toTuneAndName[0]);
+					ref[0] = toTuneAndName[0];
 					if(toTuneAndName[1] != null)
-						Vue.set(ref, 1, toTuneAndName[1]);
+						ref[1] = toTuneAndName[1];
 				}
 			}
 		}
 
 		if(Object.keys(song[i]).length == 0)
-			Vue.delete(song, i);
+			delete song[i];
 	}
 }
 
-export function songEquals(song: Song, song2: Song, checkName?: boolean) {
+export function songEquals(song: Song, song2: Song, checkName?: boolean): boolean {
 	if(checkName && song.name != song2.name)
 		return false;
 
@@ -147,7 +146,6 @@ type PatternIndex = {
 function makePatternIndex(songs: Song[]): PatternIndex {
 	let number = 0;
 	const numberIndex: PatternIndexPatterns<number> = { };
-	const emptyExists = false;
 	for(let songIdx=0; songIdx<songs.length; songIdx++) {
 		for(let beatIdx=0,length=getSongLength(songs[songIdx]); beatIdx<length; beatIdx++) {
 			for(const inst of config.instrumentKeys) {
@@ -185,9 +183,9 @@ export function compressSongs(songs: Array<Song>, encode: boolean): CompressedSo
 	for(let songIdx=0; songIdx<songs.length; songIdx++) {
 		const length = getSongLength(songs[songIdx]);
 		const beatsArr: Array<CompressedSongBeat> = new Array(length);
-		const beatsObj: TypedNumberObject<CompressedSongBeat> = { };
+		const beatsObj: Record<number, CompressedSongBeat> = { };
 		for(let beatIdx=0; beatIdx<length; beatIdx++) {
-			const patterns: TypedInstrumentObject<string | PatternReference> = { } as any;
+			const patterns: Record<Instrument, string | PatternReference> = { } as any;
 			let allSame: any = null;
 			for(const instr of config.instrumentKeys) {
 				const p = songs[songIdx][beatIdx] && songs[songIdx][beatIdx][instr] || [ "", "" ];
@@ -254,25 +252,25 @@ export function uncompressSongs(encodedSongs: CompressedSongs | Array<Compressed
 	return songs;
 }
 
-export function appendSongPart(song: Song, songPart: SongPart, state: State) {
+export function appendSongPart(song: Song, songPart: SongPart, state: State): void {
 	const newIdx = getEffectiveSongLength(song, state);
-	Vue.set(song, newIdx, songPart);
+	song[newIdx] = songPart;
 }
 
-export function deleteSongPart(song: Song, idx: number, instr: Instrument) {
-	Vue.delete(song[idx], instr);
+export function deleteSongPart(song: Song, idx: number, instr: Instrument): void {
+	delete song[idx][instr];
 	if(Object.keys(song[idx]).length == 0)
-		Vue.delete(song, idx);
+		delete song[idx];
 }
 
-export function setSongPart(song: Song, idx: number, instr: Instrument, pattern: PatternReference) {
+export function setSongPart(song: Song, idx: number, instr: Instrument, pattern: PatternReference): void {
 	if(!song[idx])
-		Vue.set(song, idx, {});
-	Vue.set(song[idx], instr, pattern);
+		song[idx] = {};
+	song[idx][instr] = pattern;
 }
 
-export function updateSong(song: Song, update: SongOptional) {
-	vueSetMultiple(song, update);
+export function updateSong(song: Song, update: Partial<Song>): void {
+	Object.assign(song, update);
 }
 
 export function allInstruments(patternReference: PatternReference, instruments = config.instrumentKeys): SongPart {
