@@ -3,7 +3,11 @@ Was drawn as the **Tune of the Year 2019**.
 Start the tune with the intro break (without surdos), then count in the Surdos for the "Surdo intro part". Come out of
 the intro and into the groove using the Boum Shakla Break.
 
-**Sign:** rain trickling down, with 10 fingers
+## Sign
+
+![Rain trickling down, with 10 fingers](/assets/images/signes/xango_tune.jpg "Xangô Tune Sign")
+
+Rain trickling down, with 10 fingers
 
 ## Background
 

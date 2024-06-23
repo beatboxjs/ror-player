@@ -7,6 +7,12 @@ kind of three groups which are each synchronized:
 
 **Sign:** fists before breast, open hands and arms
 
+## Sign
+
+![Fists before breast, open hands and arms](/assets/images/signes/novabalanca_tune.jpg "Nova balança Tune Sign")
+
+Fists before breast, open hands and arms
+
 ## Background
 
 **Name:** “Nova balança” means ‘new wave’ in brazilian. It’s part of a belief that the new wave will come and bring the deported slaves back home.
@@ -16,7 +22,6 @@ kind of three groups which are each synchronized:
 **Sign:** *(More info needed.)*
 
 **History:** From RoR Maastricht.
-
 
 ## Difficulty
 

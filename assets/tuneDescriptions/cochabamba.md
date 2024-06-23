@@ -6,7 +6,11 @@ files until it really sticks in your head.
 
 Agogôs and Surdos are the ‘heart’ of this tune, try to have them as punctual as possible.
 
-**Sign:** drink from a cup formed with one hand
+## Sign
+
+![Drink from a cup formed with one hand](/assets/images/signes/cochabamba_tune.jpg "Cochabamba Tune Sign")
+
+Drink from a cup formed with one hand
 
 ## Background
 

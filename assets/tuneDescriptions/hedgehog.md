@@ -9,7 +9,11 @@ Both the Hedgehog call and Break 1 are stretched over 8 beats but the notes/shou
 It is important for the mestre to count from the start of the 8 beats to get the timing right (marked with ">" on the
 notation). Everyone else keeps playing their normal rhythm until they are counted in - don’t stop!
 
-**Sign:** spiky fingers on the head
+## Sign
+
+![Spiky fingers on the head](/assets/images/signes/hedgehog_tune.jpg "Hedgehog Tune Sign")
+
+Spiky fingers on the head
 
 ## Background
 
