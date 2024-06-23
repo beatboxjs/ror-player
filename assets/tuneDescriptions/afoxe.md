@@ -10,7 +10,11 @@ The tamb part can be remembered by “1 2 3 4 What Are We Here For”. Be carefu
 concentrating to slip into the tam part of Custard. If you maestre, think about the tamb players. This song can be very
 tiring for them so give them a break once in a while.
 
-**Sign:** Shaving the armpit
+## Sign
+
+![Shaving the armpit](/assets/images/signes/afoxe_tune.jpg "Afoxé Tune Sign")
+
+Shaving the armpit
 
 ## Background
 
