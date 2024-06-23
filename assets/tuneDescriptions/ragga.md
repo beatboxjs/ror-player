@@ -12,7 +12,11 @@ normal version.
 
 As Hedgehog is also a Tango-like-rhythm, Ragga-Hedgehog combinations use to sound nice.
 
-**Sign:** fists together, thumbs to the left and to the right
+## Sign
+
+![Fists together, thumbs to the left and to the right](/assets/images/signes/novabalanca_tune.jpg "Ragga Tune Sign")
+
+Fists together, thumbs to the left and to the right
 
 ## Background
 
