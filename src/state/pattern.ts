@@ -39,7 +39,7 @@ export const instrumentVolumeHackValidator = transformValidator(allVolumeHackVal
 type PatternProperties = z.infer<typeof patternPropertiesValidator>;
 const patternPropertiesValidator = z.object({
 	length: z.number().default(4),
-	time: z.number().default(4),
+	time: z.coerce.number().finite().default(4), // For some reason, in some old patterns this is a string, see https://github.com/beatboxjs/ror-player/issues/46
 	speed: z.number().default(() => config.defaultSpeed),
 	upbeat: z.number().default(0),
 	loop: z.boolean().default(false),
