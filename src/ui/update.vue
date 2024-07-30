@@ -20,7 +20,7 @@
 </script>
 
 <template>
-	<div class="bb-update">
+	<div class="bb-update" :class="{ show }">
 		<div class="alert alert-warning alert-dismissible fade" :class="{ show }" role="alert">
 			A new version of {{config.appName}} is available.<br />
 			<a href="javascript:location.reload()" draggable="false">Refresh the page</a> to update.
@@ -35,5 +35,9 @@
 		bottom: 20px;
 		right: 30px;
 		z-index: 1;
+
+		&:not(.show) {
+			pointer-events: none;
+		}
 	}
 </style>
