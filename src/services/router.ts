@@ -29,7 +29,7 @@ const ROUTES = {
 	"legacy-import": "/:importData"
 } satisfies Record<string, string>;
 
-const ROUTES_MATCH = Object.fromEntries(Object.entries(ROUTES).map(([name, pattern]) => [name, match(pattern, { decode: decodeURIComponent, strict: true })]));
+const ROUTES_MATCH = Object.fromEntries(Object.entries(ROUTES).map(([name, pattern]) => [name, match(pattern, { decode: decodeURIComponent, trailing: false })]));
 
 const ROUTES_COMPILE = Object.fromEntries(Object.entries(ROUTES).map(([name, pattern]) => [name, compile(pattern, { encode: encodeURIComponent })]));
 
