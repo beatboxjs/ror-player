@@ -1395,6 +1395,36 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		},
 		exampleSong: [ "Tune", "Break 2", "Tune", "Break 2 Inverted", "Tune" ]
 	},
+	'Malkhas Akhber': {
+		categories: [ "new", "tricky" ],
+		sheet: sheetUrl + "malkhas-akhber.pdf",
+		descriptionHtml: tuneDescriptionsHtml.malkhasAkhber,
+		patterns: {
+			Tune: {
+				loop: true,
+				"ls": "X       X       X       X       ",
+				"ms": "   XX X    XX X    XX X    XX X ",
+				"hs": "@ms",
+				"re": "                  Xr Xr   rXrh  ",
+				"sn": "ff.X..X.ff.X..X.ff.X..X.ff.X..X.",
+				"ta": "                        X X X X ",
+				"ag": "  ooo o aoaoaoa                 "
+			},
+			"Hey Break": {
+				displayName: "Hey! Break",
+				"ls": "XX  r           ",
+				"ms": "@ls",
+				"hs": "@ls",
+				"re": "@ls",
+				"sn": "@ls",
+				"ta": "@ls",
+				"ag": "oo  r           ",
+				"sh": "XX              ",
+				"ot": "        F       "
+			}
+		},
+		exampleSong: ["Tune", "Tune", "Hey Break", "Tune", "Tune"]
+	},
 	'March for Biodiversity': {
 		categories: [ "proposed", "tricky", "western" ],
 		sheet: sheetUrl + "march-for-biodiversity.pdf",
