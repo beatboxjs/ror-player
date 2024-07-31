@@ -23,6 +23,12 @@ Used technologies are:
 * [Vite](https://vitejs.dev/) for building and [Vitest](https://vitest.dev/) for testing.
 
 
+Contribute new tunes
+====================
+
+Please see the [contribution guide](https://player-docs.rhythms-of-resistance.org/guide/contribution/tunes.html) for instructions how to add new tunes to the player.
+
+
 Technical notes
 ===============
 
