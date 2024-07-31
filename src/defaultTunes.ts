@@ -43,7 +43,7 @@ type RawTune = Partial<Omit<Tune, 'patterns'>> & {
 
 const rawTunes: {[tuneName: string]: RawTune} = {
 	'General Breaks': {
-		categories: [ "standard", "common", "uncommon", "new", "proposed", "custom", "onesurdo", "easy", "medium", "tricky", "western", "cultural-appropriation" ],
+		categories: [ "common", "uncommon", "new", "proposed", "custom", "onesurdo", "easy", "medium", "tricky", "western", "cultural-appropriation" ],
 		sheet: sheetUrl + "breaks.pdf",
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/37596e72-e93b-44f1-8770-760be8e5ce87",
 		patterns: {
@@ -180,7 +180,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		}
 	},
 	'Special Breaks': {
-		categories: [ "standard", "common", "onesurdo" ],
+		categories: [ "common", "onesurdo" ],
 		sheet: sheetUrl + "breaks.pdf",
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/37596e72-e93b-44f1-8770-760be8e5ce87",
 		patterns: {
@@ -285,7 +285,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		}
 	},
 	"Shouting Breaks": {
-		categories: [ "standard", "common", "onesurdo" ],
+		categories: [ "common", "onesurdo" ],
 		sheet: sheetUrl + "breaks.pdf",
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/37596e72-e93b-44f1-8770-760be8e5ce87",
 		patterns: {
@@ -354,7 +354,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	},
 	"Afoxe": {
 		displayName: "Afoxé",
-		categories: [ "standard", "common", "medium", "cultural-appropriation" ],
+		categories: [ "common", "medium", "cultural-appropriation" ],
 		sheet: sheetUrl + "afoxe.pdf",
 		descriptionHtml: tuneDescriptionsHtml.afoxe,
 		patterns: {
@@ -424,7 +424,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Break 1", "Tune", "Tune", "Bra Break", "Tune", "Tune", "Tamborim Stroke"]
 	},
 	'Angela Davis': {
-		categories: [ "standard", "common", "medium" ],
+		categories: [ "common", "medium" ],
 		sheet: sheetUrl + "angela-davis.pdf",
 		descriptionHtml: tuneDescriptionsHtml.angelaDavis,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/3a431ae3-e59b-4d31-b2d6-9abc4db3f242",
@@ -524,7 +524,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Intro", "Tune", "Tune", "Tune", "Tune", "No-Cent-For-Axel-Break", "Tune", "Tune", "Tune", "Tune", "Tension Break", "Tune", "Tune", "Tune", "Tune" ]
 	},
 	'Bhangra': {
-		categories: [ "standard", "common", "onesurdo", "medium" ],
+		categories: [ "common", "onesurdo", "medium" ],
 		speed: 120,
 		time: 3,
 		displayName: "Bhaṅgṛā",
@@ -654,7 +654,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Break 1", "Tune", "Break 2", "Tune", "Break 3", "Tune", "Bra Break", "Tune" ]
 	},
 	'Cochabamba' : {
-		categories: [ "standard", "uncommon", "tricky" ],
+		categories: [ "uncommon", "tricky" ],
 		sheet: sheetUrl + "cochabamba.pdf",
 		descriptionHtml: tuneDescriptionsHtml.cochabamba,
 		patterns: {
@@ -723,7 +723,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	},
 	'Coupe-Decale': {
 		displayName: "Coupé-Décalé",
-		categories: [ "proposed" ],
+		categories: [ "medium", "uncommon" ],
 		sheet: sheetUrl + "coupe-decale.pdf",
 		descriptionHtml: tuneDescriptionsHtml.coupeDecale,
 		patterns: {
@@ -807,7 +807,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Intro", "Tune", "Break 1", "Tune", "Break 2", "Intro (6/8)", "Tune (6/8)", "Crest Break (6/8)", "Tune (6/8)", "Break 2", "Tune", "Break 1" ]
 	},
 	'Crazy Monkey': {
-		categories: [ "standard", "uncommon", "tricky" ],
+		categories: [ "uncommon", "tricky" ],
 		sheet: sheetUrl + "crazy-monkey.pdf",
 		descriptionHtml: tuneDescriptionsHtml.crazyMonkey,
 		patterns: {
@@ -881,7 +881,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune", "Break 3", "Tune", "Tune", "Bongo Break 1", "Bongo Break 1", "Bongo Break 2", "Bongo Break 2", "Monkey Break", "Tune", "Tune"]
 	},
 	'Custard': {
-		categories: [ "standard", "common", "medium", "cultural-appropriation" ],
+		categories: [ "common", "medium", "cultural-appropriation" ],
 		sheet: sheetUrl + "custard.pdf",
 		descriptionHtml: tuneDescriptionsHtml.custard,
 		patterns: {
@@ -953,7 +953,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: ["Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune", "Break 3 (Agogô continues)", "Tune", "Tune", "Tune", "Tune", "Break 5", "Tune", "Tune", "Tune", "Tune", "Singing Break"]
 	},
 	'Drum&Bass': {
-		categories: [ "standard", "common", "medium", "western" ],
+		categories: [ "common", "medium", "western" ],
 		sheet: sheetUrl + "drum-bass.pdf",
 		descriptionHtml: tuneDescriptionsHtml.drumBass,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/f5331b5e-5de7-41e9-af0f-813f874bb074",
@@ -1008,7 +1008,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Break 2", "Tune", "Break 3", "Break 1", "Tune", "Hip-Hop Break", "Tune" ]
 	},
 	'Drunken Sailor': {
-		categories: [ "standard", "uncommon", "medium", "western" ],
+		categories: [ "uncommon", "medium", "western" ],
 		sheet: sheetUrl + "drunken-sailor.pdf",
 		descriptionHtml: tuneDescriptionsHtml.drunkenSailor,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/00dd3ac1-a872-49ea-aec1-8c8ebc8f334e",
@@ -1056,7 +1056,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Break 1", "Tune", "Break 2", "Tune", "White Shark", "Tune" ]
 	},
 	'Funk': {
-		categories: [ "standard", "common", "onesurdo", "easy" ],
+		categories: [ "common", "onesurdo", "easy" ],
 		sheet: sheetUrl + "funk.pdf",
 		descriptionHtml: tuneDescriptionsHtml.funk,
 		patterns: {
@@ -1115,7 +1115,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune" ]
 	},
 	'Hafla': {
-		categories: [ "standard", "common", "tricky" ],
+		categories: [ "common", "tricky" ],
 		sheet: sheetUrl + "hafla.pdf",
 		descriptionHtml: tuneDescriptionsHtml.hafla,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/2fbb7d46-3399-4818-89aa-a5dc0b377238",
@@ -1187,7 +1187,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Yala Break", "Tune", "Tune", "Break 3", "Tune", "Tune", "Hook Break", "Tune", "Tune", "Kick Back 1", "Kick Back 1", "Tune", "Tune", "Kick Back 2", "Kick Back 2", "Tune", "Tune" ]
 	},
 	'Hedgehog': {
-		categories: [ "standard", "uncommon", "easy" ],
+		categories: [ "uncommon", "easy" ],
 		sheet: sheetUrl + "hedgehog.pdf",
 		descriptionHtml: tuneDescriptionsHtml.hedgehog,
 		patterns: {
@@ -1226,7 +1226,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Break 2", "Tune", "Tune" ]
 	},
 	'Hip Hop': {
-		categories: [ "proposed", "tricky" ],
+		categories: [ "uncommon", "tricky" ],
 		sheet: sheetUrl + "hiphop.pdf",
 		descriptionHtml: tuneDescriptionsHtml.hiphop,
 		patterns: {
@@ -1277,7 +1277,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Kick Back 1", "Kick Back 1", "Kick Back 1", "Kick Back 1", "Kick Back 2", "Kick Back 2", "Kick Back 2", "Kick Back 2", "Tune", { patternName: "Tune", length: 4 }, "Break 1", "Tune", "Tune" ]
 	},
 	'Jungle': {
-		categories: [ "proposed", "tricky", "western" ],
+		categories: [ "uncommon", "tricky", "western" ],
 		sheet: sheetUrl + "jungle.pdf",
 		descriptionHtml: tuneDescriptionsHtml.jungle,
 		patterns: {
@@ -1316,7 +1316,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune" ]
 	},
 	'Kaerajaan': {
-		categories: [ "proposed", "medium", "onesurdo", "western" ],
+		categories: [ "new", "uncommon", "medium", "onesurdo", "western" ],
 		sheet: sheetUrl + "kaerajaan.pdf",
 		descriptionHtml: tuneDescriptionsHtml.kaerajaan,
 		patterns: {
@@ -1356,7 +1356,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune" ]
 	},
 	'Karla Shnikov': {
-		categories: [ "standard", "common", "onesurdo", "easy" ],
+		categories: [ "common", "onesurdo", "easy" ],
 		sheet: sheetUrl + "karla-shnikov.pdf",
 		descriptionHtml: tuneDescriptionsHtml.karlaShnikov,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/cc4d0222-3713-4943-bba1-cc733cb84ccc",
@@ -1396,7 +1396,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Break 2", "Tune", "Break 2 Inverted", "Tune" ]
 	},
 	'Malkhas Akhber': {
-		categories: [ "new", "tricky" ],
+		categories: [ "new", "uncommon", "tricky" ],
 		sheet: sheetUrl + "malkhas-akhber.pdf",
 		descriptionHtml: tuneDescriptionsHtml.malkhasAkhber,
 		patterns: {
@@ -1426,7 +1426,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: ["Tune", "Tune", "Hey Break", "Tune", "Tune"]
 	},
 	'March for Biodiversity': {
-		categories: [ "proposed", "tricky", "western" ],
+		categories: [ "uncommon", "tricky", "western" ],
 		sheet: sheetUrl + "march-for-biodiversity.pdf",
 		descriptionHtml: tuneDescriptionsHtml.marchForBiodiversity,
 		patterns: {
@@ -1474,7 +1474,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: ['Intro', 'Tune', 'Tune', 'Break 1', 'Tune', 'Tune', 'Break 2', 'Tune', 'Tune']
 	},
 	'Menaiek': {
-		categories: [ "standard", "uncommon", "new", "tricky" ],
+		categories: [ "uncommon", "tricky" ],
 		sheet: sheetUrl + "menaiek.pdf",
 		descriptionHtml: tuneDescriptionsHtml.menaiek,
 		patterns: {
@@ -1547,7 +1547,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune", "Double Break", "Tune", "Tune", "Mozambique Break", "Tune", "Tune", "Kick Back 1", "Kick Back 1", "Kick Back 1", "Kick Back 1", "Tune", "Tune" ]
 	},
 	'No Border Bossa': {
-		categories: [ "standard", "uncommon", "onesurdo", "medium" ],
+		categories: [ "uncommon", "onesurdo", "medium" ],
 		sheet: sheetUrl + "no-border-bossa.pdf",
 		descriptionHtml: tuneDescriptionsHtml.noBorderBossa,
 		patterns: {
@@ -1614,7 +1614,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Break 1", "Tune", "Bra Break", "Tune" ]
 	},
 	'Norppa': {
-		categories: [ "proposed", "tricky", "western" ],
+		categories: [ "new", "uncommon", "tricky", "western" ],
 		sheet: sheetUrl + "norppa.pdf",
 		descriptionHtml: tuneDescriptionsHtml.norppa,
 		patterns: {
@@ -1693,7 +1693,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	},
 	'Nova Balanca': {
 		displayName: "Nova Balança",
-		categories: [ "standard", "uncommon", "medium" ],
+		categories: [ "uncommon", "medium" ],
 		sheet: sheetUrl + "nova-balanca.pdf",
 		descriptionHtml: tuneDescriptionsHtml.novaBalanca,
 		patterns: {
@@ -1744,7 +1744,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Tune", "Tune", "Bra Break", "Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune" ]
 	},
 	'Orangutan': {
-		categories: [ "standard", "uncommon", "tricky" ],
+		categories: [ "uncommon", "tricky" ],
 		sheet: sheetUrl + "orangutan.pdf",
 		descriptionHtml: tuneDescriptionsHtml.orangutan,
 		patterns: {
@@ -1794,7 +1794,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Tune", "Tune", "Monkey break", "Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune", "Funky gibbon", "Funky gibbon", "Tune", "Tune", "Tune", "Tune" ]
 	},
 	'Pekurinen': {
-		categories: [ "proposed", "tricky", "western" ],
+		categories: [ "uncommon", "tricky", "western" ],
 		sheet: sheetUrl + "pekurinen.pdf",
 		descriptionHtml: tuneDescriptionsHtml.pekurinen,
 		patterns: {
@@ -1876,7 +1876,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	},
 	'Police': {
 		displayName: "Police",
-		categories: [ "proposed", "easy" ],
+		categories: [ "new", "uncommon", "easy" ],
 		descriptionHtml: tuneDescriptionsHtml.police,
 		patterns: {
 			Intro: {
@@ -1920,7 +1920,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: ["Intro", "Tune", "Tune", "Tune", "Tune", "Break 1", "Break 1 Inverted"]
 	},
 	'Ragga': {
-		categories: [ "standard", "common", "tricky" ],
+		categories: [ "common", "tricky" ],
 		sheet: sheetUrl + "ragga.pdf",
 		descriptionHtml: tuneDescriptionsHtml.ragga,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/bb2a4cd6-021b-4596-9917-f53bed8363a8",
@@ -1987,7 +1987,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Break 2", "Tune", "Tune", "Break 3", "Tune", "Tune", "Kick Back 1", "Kick Back 1", "Kick Back 2", "Kick Back 2", "Tune", "Tune", "Zorro-Break", "Zorro-Break", "Tune", "Tune" ]
 	},
 	'Rope Skipping': {
-		categories: [ "standard", "uncommon", "tricky" ],
+		categories: [ "uncommon", "tricky" ],
 		sheet: sheetUrl + "rope-skipping.pdf",
 		descriptionHtml: tuneDescriptionsHtml.ropeSkipping,
 		patterns: {
@@ -2086,7 +2086,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Oh Shit", "Tune", "Tune", "Fuck Off", "Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune", "Break 3", "Tune", "Tune", "Küsel Break", "Küsel Break", "Tune", "Tune", "Skipping Agogo", "Tune", "Tune", "I like to move it", "Tune", "Tune", "Eye of the tiger", "Tune", "Tune" ]
 	},
 	'Samba Reggae': {
-		categories: [ "standard", "common", "medium", "cultural-appropriation" ],
+		categories: [ "common", "medium", "cultural-appropriation" ],
 		sheet: sheetUrl + "samba-reggae.pdf",
 		descriptionHtml: tuneDescriptionsHtml.sambaReggae,
 		patterns: {
@@ -2348,7 +2348,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Tune", "Tune", "Bra Break", "Tune", "Tune", "Tune", "Tune", "SOS Break", "Tune", "Tune", "Tune", "Tune", "Knock On The Door Break", "Knock On The Door (Cut)", "Tune", "Tune", "Tune", "Tune", "Dancing Break", "Tune", "Tune", "Tune", "Tune", "Stop on 1" ]
 	},
 	'Sambasso': {
-		categories: [ "standard", "common", "onesurdo", "tricky" ],
+		categories: [ "common", "onesurdo", "tricky" ],
 		sheet: sheetUrl + "sambasso.pdf",
 		descriptionHtml: tuneDescriptionsHtml.sambasso,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/f75a6a4e-121a-4170-aaf4-2e96a7eed95e",
@@ -2401,7 +2401,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Intro", "Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune" ]
 	},
 	'Sheffield Samba Reggae': {
-		categories: [ "standard", "uncommon", "medium", "cultural-appropriation" ],
+		categories: [ "uncommon", "medium", "cultural-appropriation" ],
 		sheet: sheetUrl + "sheffield-samba-reggae.pdf",
 		descriptionHtml: tuneDescriptionsHtml.sheffieldSambaReggae,
 		patterns: {
@@ -2483,7 +2483,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Intro", "Tune", "Break 1", "Tune", "Break 2", "Tune", "Break 3", "Tune", "Whistle Break", "Tune", "Outro" ]
 	},
 	'Tequila': {
-		categories: [ "standard", "uncommon", "new", "medium", "western" ],
+		categories: [ "uncommon", "medium", "western" ],
 		sheet: sheetUrl + "tequila.pdf",
 		descriptionHtml: tuneDescriptionsHtml.tequila,
 		patterns: {
@@ -2528,7 +2528,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Break 2", "Break 1", "Tune", "Tune", "Bra Break", "Break 1", "Tune", "Tune" ]
 	},
 	'The Roof Is on Fire': {
-		categories: [ "standard", "uncommon", "new", "tricky", "western" ],
+		categories: [ "uncommon", "tricky", "western" ],
 		sheet: sheetUrl + "the-roof-is-on-fire.pdf",
 		descriptionHtml: tuneDescriptionsHtml.theRoofIsOnFire,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/1c318897-e3b7-436b-b319-4608774169e0",
@@ -2565,7 +2565,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Break 1", "Tune", "Tune", "Bra Break", "Tune", "Tune" ]
 	},
 	'The Sirens of Titan': {
-		categories: [ "proposed" ],
+		categories: [ "uncommon", "medium" ],
 		time: 3,
 		speed: 120,
 		sheet: sheetUrl + "the-sirens-of-titan.pdf",
@@ -2596,12 +2596,13 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Rented a Tent Break", "Tune" ]
 	},
 	'Trans-Europa-Express': {
-		categories: [ "proposed" ],
+		categories: [ "new", "uncommon", "medium" ],
 		sheet: sheetUrl + "trans-europa-express.pdf",
 		descriptionHtml: tuneDescriptionsHtml.transEuropaExpress,
 		patterns: {
 			Tune: {
 				upbeat: 1,
+				loop: true,
 				ls: " XX      X X     XX      X X     ",
 				ms: "@ls",
 				hs: "     X       X       X       X   ",
@@ -2654,7 +2655,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		]
 	},
 	'Van Harte Pardon': {
-		categories: [ "standard", "uncommon", "tricky" ],
+		categories: [ "uncommon", "tricky" ],
 		sheet: sheetUrl + "van-harte-pardon.pdf",
 		descriptionHtml: tuneDescriptionsHtml.vanHartePardon,
 		patterns: {
@@ -2714,7 +2715,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Break 1", "Tune", "Tune", "Silence Break", "Tune", "Tune", "Break 2", "Break 2 (Cut)", "Tune", "Tune", "Cross Break", "Tune", "Tune", "Cross Eight Break", "Tune", "Tune" ]
 	},
 	'Voodoo': {
-		categories: [ "standard", "uncommon", "easy", "cultural-appropriation" ],
+		categories: [ "uncommon", "easy", "cultural-appropriation" ],
 		sheet: sheetUrl + "voodoo.pdf",
 		descriptionHtml: tuneDescriptionsHtml.voodoo,
 		patterns: {
@@ -2743,7 +2744,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Scissor Break", "Tune", "Tune" ]
 	},
 	'Walc(z)': {
-		categories: [ "standard", "uncommon", "new", "easy", "western" ],
+		categories: [ "uncommon", "easy", "western" ],
 		time: 6,
 		speed: 60,
 		sheet: sheetUrl + "walc.pdf",
@@ -2867,7 +2868,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Break 2", "Tune", "Tune", "Break 3", "Tune", "Tune", "Break 5", "Tune", "Tune", "Bra Break", "Tune", "Tune", "Cut-throat Break", "Tune", "Tune" ]
 	},
 	'Wolf': {
-		categories: [ "standard", "uncommon", "tricky", "new" ],
+		categories: [ "uncommon", "tricky" ],
 		sheet: sheetUrl + "wolf.pdf",
 		descriptionHtml: tuneDescriptionsHtml.wolf,
 		patterns: {
@@ -2914,7 +2915,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	},
 	'Xango': {
 		displayName: "Xangô",
-		categories: [ "standard", "uncommon", "tricky", "cultural-appropriation" ],
+		categories: [ "uncommon", "tricky", "cultural-appropriation" ],
 		sheet: sheetUrl + "xango.pdf",
 		descriptionHtml: tuneDescriptionsHtml.xango,
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/ae1fe3a3-dd7e-4670-9415-b47ee60a54b0",
@@ -2974,7 +2975,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	},
 	'Zurav Love / Truant': {
 		displayName: "Żurav Love",
-		categories: [ "standard", "uncommon", "tricky", "western" ],
+		categories: [ "uncommon", "tricky", "western" ],
 		sheet: sheetUrl + "zurav-love.pdf",
 		descriptionHtml: tuneDescriptionsHtml.zuravLove,
 		patterns: {
