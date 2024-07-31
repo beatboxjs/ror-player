@@ -1953,7 +1953,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	},
 	'Police': {
 		displayName: "Police",
-		categories: [ "new", "uncommon", "easy" ],
+		categories: [ "new", "uncommon", "medium" ],
+		sheet: sheetUrl + "sound-of-da-police.pdf",
 		descriptionHtml: tuneDescriptionsHtml.police,
 		patterns: {
 			Intro: {
@@ -2558,6 +2559,65 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 			}
 		},
 		exampleSong: [ "Intro", "Tune", "Break 1", "Tune", "Break 2", "Tune", "Break 3", "Tune", "Whistle Break", "Tune", "Outro" ]
+	},
+	'Sound of da Police': {
+		categories: [ "new", "uncommon", "medium" ],
+		sheet: sheetUrl + "sound-of-da-police.pdf",
+		descriptionHtml: tuneDescriptionsHtml.soundOfDaPolice,
+		patterns: {
+			Tune: {
+				loop: true,
+				ls: "X  X    X   X   X  X    X   X   ",
+				ms: "      XXXXXXX         XXX XXX   ",
+				hs: "@ms",
+				re: "f hf hXhf h Xhrhf hf hXhf h Xhrh",
+				sn: "X..X........X...X..X........X...",
+				ta: "  XX  XX  XX  XX  XX  XX  XX  XX",
+				ag: "a  a  a o a o   a  a  a o a o   ",
+				ot: "D  D            D  D            ",
+			},
+			"Break 1": {
+				ls: "X X X X X X X X ",
+				ms: "@ls",
+				hs: "@ls",
+				re: "@ls",
+				sn: "@ls",
+				ta: "@ls",
+				ag: "o o o o o o o o ",
+				sh: "@ls"
+			},
+			"Break 2": {
+				ls: "X  X            X  X            ",
+				ms: "@ls",
+				hs: "@ls",
+				re: "@ls",
+				sn: "@ls",
+				ta: "@ls",
+				ag: "a  a            a  a            ",
+				ot: "D  D            D  D            ",
+			},
+			"Beast Break": {
+				ls: "X  X            X  X            ",
+				ms: "@ls",
+				hs: "@ls",
+				re: "      XXXXXXX         XXX XXX   ",
+				sn: "@ls",
+				ta: "@ls",
+				ag: "      aaaaaaa         aaa aaa   ",
+				ot: "D  D            D  D            ",
+			},
+			"Beast Break Inverted": {
+				ls: "      XXXXXXX         XXX XXX   ",
+				ms: "@ls",
+				hs: "@ls",
+				re: "@ls",
+				sn: "@ls",
+				ta: "@ls",
+				ag: "a  a            a  a            ",
+				ot: "D  D            D  D            ",
+			},
+		},
+		exampleSong: ["Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune", "Beast Break", "Tune", "Tune", "Beast Break Inverted",]
 	},
 	'Tequila': {
 		categories: [ "uncommon", "medium", "western" ],
