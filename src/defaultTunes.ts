@@ -686,6 +686,46 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		},
 		exampleSong: [ "Tune", "Break 1", "Tune", "Break 2", "Tune", "Break 3", "Tune", "Bra Break", "Tune" ]
 	},
+	'Bomba': {
+		categories: ["new", "uncommon", "tricky"],
+		sheet: sheetUrl + "bomba.pdf",
+		descriptionHtml: tuneDescriptionsHtml.bomba,
+		patterns: {
+			Tune: {
+				loop: true,
+				ls: "X  X     X X  X X  X     X X  X ",
+				ms: "    X       X       X       X   ",
+				hs: "      XX     XXX      XX     XXX",
+				re: "X X  X X   X  X X X  X X        ",
+				sn: "..XX..X...XX..X...XX..X...XX..X.",
+				ta: "    X    X X        X    f XX XX",
+				ag: "o ooao o o oa   o ooao o        ",
+				sh: "..XX..XX..XX..XX..XX..XX..XX..XX"
+			},
+			"Break 1": {
+				ls: "X     X",
+				ms: "@ls",
+				hs: "@ls",
+				re: "          XXX X X X   X X   X   ",
+				time: 8
+			},
+			"Break 2": {
+				ls: "XX  XX  XX  XX  ",
+				ms: "@ls",
+				hs: "  XX  XX  XX  XX",
+				re: "@hs",
+				sn: "..XX..XX..XX..XX"
+			},
+			"Call Break": {
+				ls: "X     X                         ",
+				ms: "@ls",
+				hs: "@ls",
+				re: "          XX  X X     XX  X   X ",
+				time: 8
+			}
+		},
+		exampleSong: ["Break 1", "Call Break", "Break 1", "Break 2", "Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune"]
+	},
 	'Chichita': {
 		categories: ["uncommon", "new"],
 		descriptionHtml: tuneDescriptionsHtml.chichita,
