@@ -1,6 +1,4 @@
-**Sign:** screwing and unscrewing a light bulb with your right hand
-
-Note that there are two tunes based on the same song (Police and Sound of Da Police).
+**Sign:** hold one hand inside up and turn it left and right like the blue ligths of a police car
 
 ## Background
 
@@ -14,3 +12,10 @@ Note that there are two tunes based on the same song (Police and Sound of Da Pol
 * **Snare**: easy
 * **Tamb**: medium
 * **Agogô**: easy
+
+## Breaks
+
+* **Beast Break** handsignal: evil claws going down (hand inside down, moving from up to down)
+* **Beast Break inverted** handsignal: evil claws going up (hand inside up, moving from down to up)
+
+* **Shouting** Oo is pronounced as Whoop!
