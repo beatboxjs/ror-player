@@ -287,7 +287,7 @@ const config: Config = {
 		"cultural-appropriation": "Cultural appropriation"
 	},
 
-	tuneOfTheYear: ["Bhangra", "Sambasso"],
+	tuneOfTheYear: "The Roof Is on Fire",
 
 	defaultSpeed: 100
 };
