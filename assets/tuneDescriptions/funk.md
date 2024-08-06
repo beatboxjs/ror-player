@@ -5,7 +5,11 @@ This tune is played over 8 beats instead of 4, so take care when counting in.
 Although is the only tune called Funk, is not the only that sounds “funky”. There are two other, Karla Shnikov and
 Angela Davis. Just try to combine them, especially Funk-Angela Davis sounds great.
 
-**Sign:** glasses on your eyes
+## Sign
+
+![Glasses on your eyes](/assets/images/signes/funk_tune.jpg "Funk Tune")
+
+Glasses on your eyes
 
 ## Background
 

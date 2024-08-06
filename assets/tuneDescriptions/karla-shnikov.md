@@ -7,8 +7,11 @@ to aim for a steady even roll. Although the temptation is to play as fast as you
 Karla Shnikov is a funk tune too, but it does not fit with the other funks (Funk and Angela Davis) as well as they do
 together. But just try and find your own way!
 
-**Sign:** move index+middle finger like rabbit ears and cover other fingers with other hand
+## Sign
 
+![Move index+middle finger like rabbit ears and cover other fingers with other hand](/assets/images/signes/kalashnikov_tune.jpg "Karla Shnikov Tune Sign")
+
+Move index+middle finger like rabbit ears and cover other fingers with other hand
 
 ## Background
 
