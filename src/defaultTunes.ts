@@ -695,7 +695,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				loop: true,
 				ls: "X  X     X X  X X  X     X X  X ",
 				ms: "    X       X       X       X   ",
-				hs: "      XX     XXX      XX     XXX",
+				hs: "      XX     XX       XX     XX ",
 				re: "X X  X X   X  X X X  X X        ",
 				sn: "..XX..X...XX..X...XX..X...XX..X.",
 				ta: "    X    X X        X    f XX XX",
@@ -703,7 +703,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: "..XX..XX..XX..XX..XX..XX..XX..XX"
 			},
 			"Break 1": {
-				ls: "X     X",
+				ls: "X     X                         ",
 				ms: "@ls",
 				hs: "@ls",
 				re: "          XXX X X X   X X   X   ",
@@ -714,17 +714,22 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ms: "@ls",
 				hs: "  XX  XX  XX  XX",
 				re: "@hs",
-				sn: "..XX..XX..XX..XX"
+				sn: "..XX..XX..XX..XX",
+				ta: "@hs",
+				ag: "ooaaooaaooaaooaa"
 			},
 			"Call Break": {
-				ls: "X     X                         ",
+				ls: "X     X                         X     X                         X     X                         X X     X X     X X     X X    ",
 				ms: "@ls",
-				hs: "@ls",
-				re: "          XX  X X     XX  X   X ",
+				hs: "X     X                         X     X                         X     X                             X X     X X     X X     X X",
+				re: "          XXX X X X   X X   X             XXX X X X   X X   X             XXX X X X   X X   X       X X     X X     X X     X X",
+				sn: "X     X                         X     X                         X     X                         . . X X . . X X . . X X . . X X",
+				ta: "@hs",
+				ag: "o     o                         o     o                         o     o                         o o a a o o a a o o a a o o a a",
 				time: 8
 			}
 		},
-		exampleSong: ["Break 1", "Call Break", "Break 1", "Break 2", "Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune"]
+		exampleSong: ["Call Break", "Tune", "Tune", "Tune", "Tune", "Break 1", "Tune", "Tune", "Tune", "Tune", "Break 2", "Tune", "Tune", "Tune", "Tune"]
 	},
 	'Chichita': {
 		categories: ["uncommon", "new"],

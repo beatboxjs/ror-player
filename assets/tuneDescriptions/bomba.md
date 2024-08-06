@@ -1,3 +1,5 @@
+**Sign:** throw a grenade
+
 ## Difficulty
 
 * **Low Surdo:** medium
