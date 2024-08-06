@@ -4,7 +4,7 @@ Was drawn as a **Tune of the Year 2024**.
 
 ## Background
 
-**Name:** “The roof if on fire” is part of the chorus in the song “Fire Water Burn” by the Bloodhound Gang ([YouTube](https://www.youtube.com/watch?v=Adgx9wt63NY)), which covers the chorus of the song “The Roof Is on Fire” by Rock Master Scott & the Dynamic Three ([YouTube](https://youtu.be/-Vv_LwwwpmU?t=263)). Also, the roof of the sauna was literally on fire during the TNM 2019 in Lithuania.
+**Name:** “The roof is on fire” is part of the chorus in the song “Fire Water Burn” by the Bloodhound Gang ([YouTube](https://www.youtube.com/watch?v=Adgx9wt63NY)), which covers the chorus of the song “The Roof Is on Fire” by Rock Master Scott & the Dynamic Three ([YouTube](https://youtu.be/-Vv_LwwwpmU?t=263)). Also, the roof of the sauna was literally on fire during the TNM 2019 in Lithuania.
 
 **Musical background:** Based on the song “Fire Water Burn” by the Bloodhound Gang, which covers the chorus of the song “The Roof Is on Fire” by Rock Master Scott & the Dynamic Three.
 
