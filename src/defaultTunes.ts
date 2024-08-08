@@ -523,6 +523,55 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		},
 		exampleSong: [ "Intro", "Tune", "Tune", "Tune", "Tune", "No-Cent-For-Axel-Break", "Tune", "Tune", "Tune", "Tune", "Tension Break", "Tune", "Tune", "Tune", "Tune" ]
 	},
+	'Antitek': {
+		categories: ["uncommon", "new", "easy", "onesurdo"],
+		sheet: sheetUrl + "antitek.pdf",
+		descriptionHtml: tuneDescriptionsHtml.antitek,
+		patterns: {
+			Tune: {
+				loop: true,
+				ls: "X   X   X   X   X   X   X   X   ",
+				ms: "@ls",
+				hs: "@ls",
+				re: "r X r X r X r X r X r X r XXr X ",
+				sn: "....X.......X.......X.......X...",
+				ta: "X  X  X  X        XX            ",
+				ag: "o  a  a o  a  a o  a  a o   a   ",
+				sh: "................................"
+			},
+			"Break 1": {
+				ls: "X       X  X  X ",
+				ms: "@ls",
+				hs: "@ls",
+				re: "@ls",
+				sn: "@ls",
+				ta: "@ls",
+				ag: "@ls",
+				sh: "@ls"
+			},
+			"Break 2": {
+				ls: "XXX XXX XXX XXX ",
+				ms: "@ls",
+				hs: "@ls",
+				re: "@ls",
+				sn: "@ls",
+				ta: "@ls",
+				ag: "@ls",
+				sh: "@ls"
+			},
+			"Call Break": {
+				ls: "                X X X X X X XXX X   X   X   X   X           XXX ",
+				ms: "@ls",
+				hs: "@ls",
+				re: "X X X X X X XXX X   X   X   X   X   X   X   X   X           XXX ",
+				sn: "                                X X X X X X XXX X           XXX ",
+				ta: "                                                X           XXX ",
+				ag: "                                                X           XXX ",
+				sh: "                                                X           XXX "
+			}
+		},
+		exampleSong: ["Tune", "Tune", "Break 1", "Tune", "Tune", "Break 2", "Tune", "Tune", "Call Break", "Tune", "Tune"]
+	},
 	'Bella Ciao': {
 		categories: ["uncommon", "new", "medium"],
 		sheet: sheetUrl + "bella-ciao.pdf",
