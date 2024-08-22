@@ -27,7 +27,7 @@ export const allVolumeHackValidator = numberRecordValidator(z.number());
  */
 export type InstrumentVolumeHack = z.infer<typeof instrumentVolumeHackValidator>;
 const strictInstrumentVolumeHackValidator = z.record(instrumentValidator, allVolumeHackValidator);
-export const instrumentVolumeHackValidator = transformValidator(allVolumeHackValidator.or(strictInstrumentVolumeHackValidator), (val) => {
+export const instrumentVolumeHackValidator = transformValidator(strictInstrumentVolumeHackValidator.or(allVolumeHackValidator), (val) => {
 	if (Object.keys(val).every((key) => key.match(/^[0-9]+$/))) {
 		// Legacy volume hack: one volume per stroke (not differentiated by instruments)
 		return Object.fromEntries(config.instrumentKeys.map((instr) => [instr, clone(val)]));
