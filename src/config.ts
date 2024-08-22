@@ -265,12 +265,13 @@ const config: Config = {
 		4: "4⁄4",
 		5: "5⁄8",
 		6: "3⁄4",
+		8: "8⁄8",
 		12: "4⁄4 with triplets",
 		20: "4⁄4 with quintuplets"
 	},
 
 	// Time measurement that is used for beatbox.js. Should be able to represent all the time measurements above
-	playTime: 60,
+	playTime: 120,
 
 	filterCats: {
 		all: "All tunes",
