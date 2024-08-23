@@ -243,7 +243,6 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ot: '                                                          E D   '
 			},
 			'Hardcore Break': {
-				displayName: "Hardcore Break",
 				ls: repeat(2, '              XXX             XXX             XXX       XXXXXXXX') +
 					repeat(1, 'X   X   X   X XXX   X   X   X XXX   X   X   X XXX   X   XXXXXXXX') +
 					repeat(1, 'X X X X X X X XXX X X X X X X XXX X X X X X X XXX X X X XXXXXXXX'),
