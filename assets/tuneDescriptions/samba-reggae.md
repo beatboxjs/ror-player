@@ -10,9 +10,7 @@ demonstrations in which there are other non-RoR samba bands.
 
 ## Sign
 
-![Smoking a cigar/joint](/assets/images/signes/sambareggae_tune.jpg "Samba Reggae Tune Sign")
-
-Smoking a cigar/joint
+An S formed with two hands
 
 ## Background
 
