@@ -8,7 +8,9 @@ the break until the next break is called.
 Since practically every samba band can play a version of samba reggae, it is a good tune to play together in
 demonstrations in which there are other non-RoR samba bands.
 
-**Sign:** smoking a cigar/joint
+## Sign
+
+An S formed with two hands
 
 ## Background
 

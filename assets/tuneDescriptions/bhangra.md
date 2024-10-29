@@ -10,7 +10,11 @@ If you play breaks from other tunes which are based on 16 hits in a 4/4 pattern 
 to play 12 hits in a 3/4 pattern. In the beginning it’s quite hard (because the 4/4 is stuck in your head) but after a
 while it’s great – make sure tho whole band plays like this, if some plays it differently it can get very chaotic…
 
-**Sign:** folded hands, like praying
+## Sign
+
+![Folded hands, like praying](/assets/images/signes/bhangra_tune.jpg "Bhaṅgṛā Tune Sign")
+
+Folded hands, like praying
 
 ## Background
 

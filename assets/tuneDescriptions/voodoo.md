@@ -1,7 +1,11 @@
 Unfortunately rarely played tune. Great to play for a long time, it has a kind of hypnotising effect, especially when
 you start slowly and gradually speed up.
 
-**Sign:** aureole – make a circle around head with your index finger down
+## Sign
+
+![Aureole – make a circle around head with your index finger down](/assets/images/signes/voodoo_tune.jpg "Voodoo Tune Sign")
+
+Aureole – make a circle around head with your index finger down
 
 ## Background
 

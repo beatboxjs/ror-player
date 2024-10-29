@@ -1,4 +1,8 @@
-**Sign:** scratch your head and your armpit at the same time like a monkey
+## Sign
+
+![Scratch your head and your armpit at the same time like a monkey](/assets/images/signes/crazymonkey_tune.jpg "Crazy Monkey Tune Sign")
+
+Scratch your head and your armpit at the same time like a monkey
 
 ## Background
 
