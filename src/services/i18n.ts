@@ -37,7 +37,14 @@ i18n.init({
 	}
 });
 
-export const i18nResourceChangeCounter = ref(0);
+const TUNE_DESCRIPTIONS_NS = "tune-descriptions";
+
+for (const [filename, module] of Object.entries(import.meta.glob('../../assets/tuneDescriptions/*/*.md', { eager: true }))) {
+	const m = filename.match(/([^/\\]+)[/\\]([^/\\]+)\.md/)!;
+	i18n.addResource(m[2], TUNE_DESCRIPTIONS_NS, m[1], (module as any).html);
+}
+
+const i18nResourceChangeCounter = ref(0);
 const onI18nResourceChange = () => {
 	i18nResourceChangeCounter.value++;
 };
@@ -77,4 +84,8 @@ export function getI18n(): {
 
 export function useI18n(): ReturnType<typeof getI18n> {
 	return getI18n();
+}
+
+export function getTuneDescriptionHtml(tuneName: string): string {
+	return i18n.t(tuneName, { ns: TUNE_DESCRIPTIONS_NS, defaultValue: "" });
 }

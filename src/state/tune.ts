@@ -17,7 +17,7 @@ export const tuneValidator = z.object({
 	displayName: z.string().optional(),
 	sheet: z.string().optional(),
 	video: z.string().optional(),
-	descriptionHtml: z.string().optional(),
+	descriptionFilename: z.string().optional(),
 	speed: z.number().optional(),
 	exampleSong: exampleSongValidator.optional()
 }).default(() => ({}));

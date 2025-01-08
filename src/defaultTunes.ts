@@ -4,7 +4,6 @@ import { AllVolumeHack, normalizePattern, Pattern, compressedPatternValidator } 
 import { normalizeTune, Tune } from "./state/tune";
 import * as z from "zod";
 import { PatternReference } from "./state/song";
-import tuneDescriptionsHtml from "virtual:tuneDescriptionsHtml";
 
 function stretch(from: number, to: number, pattern: string): string {
 	return pattern.split("").concat([ "" ]).join(repeat((to/from)-1, " "));
@@ -248,12 +247,12 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 					repeat(1, 'X X X X X X X XXX X X X X X X XXX X X X X X X XXX X X X XXXXXXXX'),
 				ms: '@ls',
 				hs: '@ls',
-				re: repeat(1, '              XXX             XXX             XXX       XXXXXXXX') + 
+				re: repeat(1, '              XXX             XXX             XXX       XXXXXXXX') +
 					repeat(1, 'X   X   X   X XXX   X   X   X XXX   X   X   X XXX   X   XXXXXXXX') +
 					repeat(2, 'X X X X X X X XXX X X X X X X XXX X X X X X X XXX X X X XXXXXXXX'),
 				sn: '@re',
 				ta: '@re',
-				ag: repeat(3, 'o o o o o o o ooo o o o o o o ooo o o o o o o ooo o o o oooooooo') + 
+				ag: repeat(3, 'o o o o o o o ooo o o o o o o ooo o o o o o o ooo o o o oooooooo') +
 					repeat(1, 'a a a a a a a aaa a a a a a a aaa a a a a a a aaa a a a aaaaaaaa'),
 				sh: '@re',
 			},
@@ -372,7 +371,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		displayName: "Afoxé",
 		categories: [ "common", "medium", "cultural-appropriation" ],
 		sheet: sheetUrl + "afoxe.pdf",
-		descriptionHtml: tuneDescriptionsHtml.afoxe,
+		descriptionFilename: "afoxe",
 		patterns: {
 			"Tune": {
 				loop: true,
@@ -442,7 +441,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Angela Davis': {
 		categories: [ "common", "medium" ],
 		sheet: sheetUrl + "angela-davis.pdf",
-		descriptionHtml: tuneDescriptionsHtml.angelaDavis,
+		descriptionFilename: "angela-davis",
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/3a431ae3-e59b-4d31-b2d6-9abc4db3f242",
 		patterns: {
 			Tune: {
@@ -493,7 +492,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Angry Dwarfs': {
 		categories: [ "uncommon" ],
 		sheet: sheetUrl + "angry-dwarfs.pdf",
-		descriptionHtml: tuneDescriptionsHtml.angryDwarfs,
+		descriptionFilename: "angry-dwarfs",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -542,7 +541,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Antitek': {
 		categories: ["uncommon", "new", "easy", "onesurdo"],
 		sheet: sheetUrl + "antitek.pdf",
-		descriptionHtml: tuneDescriptionsHtml.antitek,
+		descriptionFilename: "antitek",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -591,7 +590,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Bella Ciao': {
 		categories: ["uncommon", "new", "medium"],
 		sheet: sheetUrl + "bella-ciao.pdf",
-		descriptionHtml: tuneDescriptionsHtml.bellaCiao,
+		descriptionFilename: "bella-ciao",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -627,7 +626,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		time: 3,
 		displayName: "Bhaṅgṛā",
 		sheet: sheetUrl + "bhangra.pdf",
-		descriptionHtml: tuneDescriptionsHtml.bhangra,
+		descriptionFilename: "bhangra",
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/bb1e9a2e-ce51-435c-818f-d98cf95f9ed0",
 		patterns: {
 			Tune: {
@@ -754,7 +753,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Bomba': {
 		categories: ["new", "uncommon", "tricky"],
 		sheet: sheetUrl + "bomba.pdf",
-		descriptionHtml: tuneDescriptionsHtml.bomba,
+		descriptionFilename: "bomba",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -798,7 +797,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	},
 	'Chichita': {
 		categories: ["uncommon", "new"],
-		descriptionHtml: tuneDescriptionsHtml.chichita,
+		descriptionFilename: "chichita",
 		sheet: sheetUrl + "chichita.pdf",
 		patterns: {
 			Tune: {
@@ -843,7 +842,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Cochabamba' : {
 		categories: [ "uncommon", "tricky" ],
 		sheet: sheetUrl + "cochabamba.pdf",
-		descriptionHtml: tuneDescriptionsHtml.cochabamba,
+		descriptionFilename: "cochabamba",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -912,7 +911,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		displayName: "Coupé-Décalé",
 		categories: [ "medium", "uncommon" ],
 		sheet: sheetUrl + "coupe-decale.pdf",
-		descriptionHtml: tuneDescriptionsHtml.coupeDecale,
+		descriptionFilename: "coupe-decale",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -996,7 +995,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Crazy Monkey': {
 		categories: [ "uncommon", "tricky" ],
 		sheet: sheetUrl + "crazy-monkey.pdf",
-		descriptionHtml: tuneDescriptionsHtml.crazyMonkey,
+		descriptionFilename: "crazy-monkey",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1070,7 +1069,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Custard': {
 		categories: [ "common", "medium", "cultural-appropriation" ],
 		sheet: sheetUrl + "custard.pdf",
-		descriptionHtml: tuneDescriptionsHtml.custard,
+		descriptionFilename: "custard",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1142,7 +1141,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Drum&Bass': {
 		categories: [ "common", "medium", "western" ],
 		sheet: sheetUrl + "drum-bass.pdf",
-		descriptionHtml: tuneDescriptionsHtml.drumBass,
+		descriptionFilename: "drum-bass",
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/f5331b5e-5de7-41e9-af0f-813f874bb074",
 		patterns: {
 			Tune: {
@@ -1197,7 +1196,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Drunken Sailor': {
 		categories: [ "uncommon", "medium", "western" ],
 		sheet: sheetUrl + "drunken-sailor.pdf",
-		descriptionHtml: tuneDescriptionsHtml.drunkenSailor,
+		descriptionFilename: "drunken-sailor",
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/00dd3ac1-a872-49ea-aec1-8c8ebc8f334e",
 		patterns: {
 			Tune: {
@@ -1245,7 +1244,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Funk': {
 		categories: [ "common", "onesurdo", "easy" ],
 		sheet: sheetUrl + "funk.pdf",
-		descriptionHtml: tuneDescriptionsHtml.funk,
+		descriptionFilename: "funk",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1304,7 +1303,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Hafla': {
 		categories: [ "common", "tricky" ],
 		sheet: sheetUrl + "hafla.pdf",
-		descriptionHtml: tuneDescriptionsHtml.hafla,
+		descriptionFilename: "hafla",
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/2fbb7d46-3399-4818-89aa-a5dc0b377238",
 		patterns: {
 			Tune: {
@@ -1376,7 +1375,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Hedgehog': {
 		categories: [ "uncommon", "easy" ],
 		sheet: sheetUrl + "hedgehog.pdf",
-		descriptionHtml: tuneDescriptionsHtml.hedgehog,
+		descriptionFilename: "hedgehog",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1415,7 +1414,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Hip Hop': {
 		categories: [ "uncommon", "tricky" ],
 		sheet: sheetUrl + "hiphop.pdf",
-		descriptionHtml: tuneDescriptionsHtml.hiphop,
+		descriptionFilename: "hiphop",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1466,7 +1465,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Jungle': {
 		categories: [ "uncommon", "tricky", "western" ],
 		sheet: sheetUrl + "jungle.pdf",
-		descriptionHtml: tuneDescriptionsHtml.jungle,
+		descriptionFilename: "jungle",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1505,7 +1504,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Kaerajaan': {
 		categories: [ "new", "uncommon", "medium", "onesurdo", "western" ],
 		sheet: sheetUrl + "kaerajaan.pdf",
-		descriptionHtml: tuneDescriptionsHtml.kaerajaan,
+		descriptionFilename: "kaerajaan",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1545,7 +1544,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Karla Shnikov': {
 		categories: [ "common", "onesurdo", "easy" ],
 		sheet: sheetUrl + "karla-shnikov.pdf",
-		descriptionHtml: tuneDescriptionsHtml.karlaShnikov,
+		descriptionFilename: "karla-shnikov",
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/cc4d0222-3713-4943-bba1-cc733cb84ccc",
 		patterns: {
 			Tune: {
@@ -1585,7 +1584,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Malkhas Akhber': {
 		categories: [ "new", "uncommon", "tricky" ],
 		sheet: sheetUrl + "malkhas-akhber.pdf",
-		descriptionHtml: tuneDescriptionsHtml.malkhasAkhber,
+		descriptionFilename: "malkhas-akhber",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1615,7 +1614,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'March for Biodiversity': {
 		categories: [ "uncommon", "tricky", "western" ],
 		sheet: sheetUrl + "march-for-biodiversity.pdf",
-		descriptionHtml: tuneDescriptionsHtml.marchForBiodiversity,
+		descriptionFilename: "march-for-biodiversity",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1663,7 +1662,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Menaiek': {
 		categories: [ "uncommon", "tricky" ],
 		sheet: sheetUrl + "menaiek.pdf",
-		descriptionHtml: tuneDescriptionsHtml.menaiek,
+		descriptionFilename: "menaiek",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1736,7 +1735,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'No Border Bossa': {
 		categories: [ "uncommon", "onesurdo", "medium" ],
 		sheet: sheetUrl + "no-border-bossa.pdf",
-		descriptionHtml: tuneDescriptionsHtml.noBorderBossa,
+		descriptionFilename: "no-border-bossa",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1803,7 +1802,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Norppa': {
 		categories: [ "new", "uncommon", "tricky", "western" ],
 		sheet: sheetUrl + "norppa.pdf",
-		descriptionHtml: tuneDescriptionsHtml.norppa,
+		descriptionFilename: "norppa",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1882,7 +1881,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		displayName: "Nova Balança",
 		categories: [ "uncommon", "medium" ],
 		sheet: sheetUrl + "nova-balanca.pdf",
-		descriptionHtml: tuneDescriptionsHtml.novaBalanca,
+		descriptionFilename: "nova-balanca",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1933,7 +1932,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Orangutan': {
 		categories: [ "uncommon", "tricky" ],
 		sheet: sheetUrl + "orangutan.pdf",
-		descriptionHtml: tuneDescriptionsHtml.orangutan,
+		descriptionFilename: "orangutan",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1983,7 +1982,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Pekurinen': {
 		categories: [ "uncommon", "tricky", "western" ],
 		sheet: sheetUrl + "pekurinen.pdf",
-		descriptionHtml: tuneDescriptionsHtml.pekurinen,
+		descriptionFilename: "pekurinen",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2065,7 +2064,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		displayName: "Sound of da Police",
 		categories: [ "new", "uncommon", "medium" ],
 		sheet: sheetUrl + "sound-of-da-police.pdf",
-		descriptionHtml: tuneDescriptionsHtml.police,
+		descriptionFilename: "police",
 		patterns: {
 			Intro: {
 				ls: "      XXXXXXX         XXX XXX   ",
@@ -2129,7 +2128,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Ragga': {
 		categories: [ "common", "tricky" ],
 		sheet: sheetUrl + "ragga.pdf",
-		descriptionHtml: tuneDescriptionsHtml.ragga,
+		descriptionFilename: "ragga",
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/bb2a4cd6-021b-4596-9917-f53bed8363a8",
 		patterns: {
 			Tune: {
@@ -2196,7 +2195,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Rope Skipping': {
 		categories: [ "uncommon", "tricky" ],
 		sheet: sheetUrl + "rope-skipping.pdf",
-		descriptionHtml: tuneDescriptionsHtml.ropeSkipping,
+		descriptionFilename: "rope-skipping",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2295,7 +2294,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Samba Reggae': {
 		categories: [ "common", "medium", "cultural-appropriation" ],
 		sheet: sheetUrl + "samba-reggae.pdf",
-		descriptionHtml: tuneDescriptionsHtml.sambaReggae,
+		descriptionFilename: "samba-reggae",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2396,7 +2395,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	},
 	"Samba Reggae High": {
 		categories: [ "proposed", "cultural-appropriation" ],
-		descriptionHtml: tuneDescriptionsHtml.sambaReggaeHigh,
+		descriptionFilename: "samba-reggae-high",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2467,7 +2466,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	},
 	"Samba Reggae Low": {
 		categories: [ "proposed", "cultural-appropriation" ],
-		descriptionHtml: tuneDescriptionsHtml.sambaReggaeLow,
+		descriptionFilename: "samba-reggae-low",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2557,7 +2556,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Sambasso': {
 		categories: [ "common", "onesurdo", "tricky" ],
 		sheet: sheetUrl + "sambasso.pdf",
-		descriptionHtml: tuneDescriptionsHtml.sambasso,
+		descriptionFilename: "sambasso",
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/f75a6a4e-121a-4170-aaf4-2e96a7eed95e",
 		patterns: {
 			Tune: {
@@ -2610,7 +2609,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Sheffield Samba Reggae': {
 		categories: [ "uncommon", "medium", "cultural-appropriation" ],
 		sheet: sheetUrl + "sheffield-samba-reggae.pdf",
-		descriptionHtml: tuneDescriptionsHtml.sheffieldSambaReggae,
+		descriptionFilename: "sheffield-samba-reggae",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2692,7 +2691,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Tequila': {
 		categories: [ "uncommon", "medium", "western" ],
 		sheet: sheetUrl + "tequila.pdf",
-		descriptionHtml: tuneDescriptionsHtml.tequila,
+		descriptionFilename: "tequila",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2737,7 +2736,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'The Roof Is on Fire': {
 		categories: [ "uncommon", "tricky", "western" ],
 		sheet: sheetUrl + "the-roof-is-on-fire.pdf",
-		descriptionHtml: tuneDescriptionsHtml.theRoofIsOnFire,
+		descriptionFilename: "the-roof-is-on-fire",
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/1c318897-e3b7-436b-b319-4608774169e0",
 		patterns: {
 			Tune: {
@@ -2776,7 +2775,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		time: 3,
 		speed: 120,
 		sheet: sheetUrl + "the-sirens-of-titan.pdf",
-		descriptionHtml: tuneDescriptionsHtml.theSirensOfTitan,
+		descriptionFilename: "the-sirens-of-titan",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2805,7 +2804,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Trans-Europa-Express': {
 		categories: [ "new", "uncommon", "medium" ],
 		sheet: sheetUrl + "trans-europa-express.pdf",
-		descriptionHtml: tuneDescriptionsHtml.transEuropaExpress,
+		descriptionFilename: "trans-europa-express",
 		patterns: {
 			Tune: {
 				upbeat: 1,
@@ -2864,7 +2863,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Van Harte Pardon': {
 		categories: [ "uncommon", "tricky" ],
 		sheet: sheetUrl + "van-harte-pardon.pdf",
-		descriptionHtml: tuneDescriptionsHtml.vanHartePardon,
+		descriptionFilename: "van-harte-pardon",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2924,7 +2923,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Voodoo': {
 		categories: [ "uncommon", "easy", "cultural-appropriation" ],
 		sheet: sheetUrl + "voodoo.pdf",
-		descriptionHtml: tuneDescriptionsHtml.voodoo,
+		descriptionFilename: "voodoo",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2955,7 +2954,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		time: 6,
 		speed: 60,
 		sheet: sheetUrl + "walc.pdf",
-		descriptionHtml: tuneDescriptionsHtml.walc,
+		descriptionFilename: "walc",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -3077,7 +3076,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	'Wolf': {
 		categories: [ "uncommon", "tricky" ],
 		sheet: sheetUrl + "wolf.pdf",
-		descriptionHtml: tuneDescriptionsHtml.wolf,
+		descriptionFilename: "wolf",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -3124,7 +3123,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		displayName: "Xangô",
 		categories: [ "uncommon", "tricky", "cultural-appropriation" ],
 		sheet: sheetUrl + "xango.pdf",
-		descriptionHtml: tuneDescriptionsHtml.xango,
+		descriptionFilename: "xango",
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/ae1fe3a3-dd7e-4670-9415-b47ee60a54b0",
 		patterns: {
 			Tune: {
@@ -3184,7 +3183,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		displayName: "Żurav Love",
 		categories: [ "uncommon", "tricky", "western" ],
 		sheet: sheetUrl + "zurav-love.pdf",
-		descriptionHtml: tuneDescriptionsHtml.zuravLove,
+		descriptionFilename: "zurav-love",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -3240,7 +3239,7 @@ const defaultTunes: { [tuneName: string]: Tune } = { };
 for(const i in rawTunes) {
 	const tune = rawTunes[i];
 
-	if ("descriptionHtml" in tune && tune.descriptionHtml == null) {
+	if ("descriptionHtml" in tune && (typeof tune.descriptionHtml === "function" ? tune.descriptionHtml() : tune.descriptionHtml) == null) {
 		// eslint-disable-next-line no-console
 		console.error(`Tune description for ${i} not found.`);
 	}

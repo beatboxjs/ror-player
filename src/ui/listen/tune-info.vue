@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang="ts" setup>
 	import defaultTunes from "../../defaultTunes";
 	import config from "../../config";
 	import { clone, useRefWithOverride } from "../../utils";
@@ -10,22 +10,8 @@
 	import vTooltip from "../utils/tooltip";
 	import { download, ExportType } from "../utils/export";
 	import { BeatboxReference, getPlayerById } from "../../services/player";
+	import { getTuneDescriptionHtml } from "../../services/i18n";
 
-	export function getTuneDescriptionHtml(tuneName: string): string | null {
-		if(!defaultTunes[tuneName])
-			return null;
-
-		// Use HTML from default tunes to avoid script injection through bbHistory
-		const el = document.createElement("div");
-		el.innerHTML = defaultTunes[tuneName].descriptionHtml || "";
-		for (const link of el.querySelectorAll("a")) {
-			link.setAttribute("target", "_blank");
-		}
-		return el.innerHTML;
-	}
-</script>
-
-<script lang="ts" setup>
 	const state = injectStateRequired();
 
 	const props = defineProps<{
@@ -40,7 +26,17 @@
 	const editPattern = useRefWithOverride(undefined, () => props.editPattern, (patternName) => emit("update:editPattern", patternName));
 
 	const tune = computed(() => props.tuneName && state.value.tunes[props.tuneName]);
-	const tuneDescriptionHtml = computed(() => getTuneDescriptionHtml(props.tuneName));
+	const tuneDescriptionHtml = computed(() => {
+		if(!defaultTunes[props.tuneName]?.descriptionFilename)
+			return null;
+
+		const el = document.createElement("div");
+		el.innerHTML = getTuneDescriptionHtml(defaultTunes[props.tuneName].descriptionFilename!);
+		for (const link of el.querySelectorAll("a")) {
+			link.setAttribute("target", "_blank");
+		}
+		return el.innerHTML;
+	});
 
 	const playbackSettings = ref(clone(state.value.playbackSettings));
 
