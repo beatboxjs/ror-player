@@ -1,6 +1,18 @@
 {
-	"overview": {
-		"listen": "Anhören",
-		"compose": "Komponieren"
-	}
+    "overview": {
+        "listen": "Anhören",
+        "compose": "Komponieren"
+    },
+    "compose": {
+        "add-to-song-tooltip": "Zum Stück hinzufügen"
+    },
+    "history-picker": {
+        "import-error-title": "Fehler beim Laden der Daten",
+        "clear-title": "Verlauf löschen",
+        "clear-message": "Wollen Sie den Verlauf löschen? Falls Sie vor kurzem einen geteilten Link geöffnet haben, kann dies zum Verlust all Ihrer selbst komponierten Tunes/Breaks/Stücke führen.",
+        "history-alt": "Verlauf",
+        "clear": "Verlauf löschen",
+        "clear-ok": "Löschen",
+        "shared-view": "Sie haben einen geteilten Link geöffnet. Ihre eigenen Stücke und Tunes können hier wieder hergestellt werden."
+    }
 }
