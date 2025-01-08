@@ -2,7 +2,13 @@ import { computed, createApp, defineComponent, h, ref, VNode, VNodeArrayChildren
 import Alert, { AlertProps, AlertResult } from "./alert.vue";
 import vValidity from './validity';
 
-async function renderAlert({ getContent, onShown, ...props }: AlertProps & {
+type ReactiveAlertProps = Omit<AlertProps, "title" | "message" | "okLabel"> & {
+	title: AlertProps["title"] | (() => AlertProps["title"]);
+	message: AlertProps["message"] | (() => AlertProps["message"]);
+	okLabel?: AlertProps["okLabel"] | (() => AlertProps["okLabel"]);
+};
+
+async function renderAlert({ getContent, onShown, ...props }: ReactiveAlertProps & {
 	getContent?: () => string | VNode | VNodeArrayChildren;
 	onShown?: () => void;
 }): Promise<AlertResult> {
@@ -13,6 +19,9 @@ async function renderAlert({ getContent, onShown, ...props }: AlertProps & {
 			setup() {
 				return () => h(Alert, {
 					...props,
+					title: typeof props.title === "function" ? props.title() : props.title,
+					message: typeof props.message === "function" ? props.message() : props.message,
+					okLabel: typeof props.okLabel === "function" ? props.okLabel() : props.okLabel,
 					onShown: () => {
 						onShown?.();
 					},
@@ -30,16 +39,16 @@ async function renderAlert({ getContent, onShown, ...props }: AlertProps & {
 	});
 }
 
-export async function showAlert(props: Omit<AlertProps, 'type' | 'show'>): Promise<void> {
+export async function showAlert(props: Omit<ReactiveAlertProps, 'type' | 'show'>): Promise<void> {
 	await renderAlert({ ...props, type: 'alert' });
 }
 
-export async function showConfirm(props: Omit<AlertProps, 'type' | 'show'>): Promise<boolean> {
+export async function showConfirm(props: Omit<ReactiveAlertProps, 'type' | 'show'>): Promise<boolean> {
 	const result = await renderAlert({ ...props, type: 'confirm' });
 	return result.ok;
 }
 
-export async function showPrompt({ initialValue = "", validate, ...props }: Omit<AlertProps, 'type' | 'show' | 'message'> & {
+export async function showPrompt({ initialValue = "", validate, ...props }: Omit<ReactiveAlertProps, 'type' | 'show' | 'message'> & {
 	initialValue?: string;
 	/** Validate the value. Return an empty string or undefined to indicate validity. */
 	validate?: (value: string) => string | undefined;

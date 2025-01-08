@@ -47,6 +47,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.23.2":
+  version: 7.26.0
+  resolution: "@babel/runtime@npm:7.26.0"
+  dependencies:
+    regenerator-runtime: "npm:^0.14.0"
+  checksum: 10/9f4ea1c1d566c497c052d505587554e782e021e6ccd302c2ad7ae8291c8e16e3f19d4a7726fb64469e057779ea2081c28b7dbefec6d813a22f08a35712c0f699
+  languageName: node
+  linkType: hard
+
 "@babel/types@npm:^7.8.3":
   version: 7.25.2
   resolution: "@babel/types@npm:7.25.2"
@@ -2650,6 +2659,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"i18next-browser-languagedetector@npm:^8.0.2":
+  version: 8.0.2
+  resolution: "i18next-browser-languagedetector@npm:8.0.2"
+  dependencies:
+    "@babel/runtime": "npm:^7.23.2"
+  checksum: 10/2d994fbec7d106da7592d3b22a058f03be59a67e0ef7436bc1b5500dca778dc5eb77df34b4e0a054123d5538ef5f8b5c19cd1d7b862dc3403c4571b48c9cabe8
+  languageName: node
+  linkType: hard
+
+"i18next@npm:^24.2.1":
+  version: 24.2.1
+  resolution: "i18next@npm:24.2.1"
+  dependencies:
+    "@babel/runtime": "npm:^7.23.2"
+  peerDependencies:
+    typescript: ^5
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 10/74836c3ca3365155906f95162bf75461f8f82a86034b03fc8efc670e10f610299dc5b51923acc1ab9d52ec7e7e717e44fb95b91ff1560ff45c6bad0c383517af
+  languageName: node
+  linkType: hard
+
 "iconv-lite@npm:^0.6.2":
   version: 0.6.3
   resolution: "iconv-lite@npm:0.6.3"
@@ -3947,6 +3979,8 @@ __metadata:
     eslint-plugin-vue: "npm:^9.27.0"
     file-saver: "npm:^2.0.5"
     happy-dom: "npm:^14.12.3"
+    i18next: "npm:^24.2.1"
+    i18next-browser-languagedetector: "npm:^8.0.2"
     json-format: "npm:^1.0.1"
     lodash-es: "npm:^4.17.21"
     mitt: "npm:^3.0.1"

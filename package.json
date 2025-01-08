@@ -52,6 +52,8 @@
     "beatbox.js-export": "^4.0.1",
     "bootstrap": "^5.3.3",
     "file-saver": "^2.0.5",
+    "i18next": "^24.2.1",
+    "i18next-browser-languagedetector": "^8.0.2",
     "json-format": "^1.0.1",
     "lodash-es": "^4.17.21",
     "mitt": "^3.0.1",

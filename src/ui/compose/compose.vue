@@ -12,6 +12,7 @@
 	import SongPlayer from "./song-player.vue";
 	import { clone, useRefWithOverride } from "../../utils";
 	import HybridSidebar from "../utils/hybrid-sidebar.vue";
+	import { useI18n } from "../../services/i18n";
 
 	const props = defineProps<{
 		history: History;
@@ -26,6 +27,8 @@
 		"update:editPattern": [patternName: string | undefined];
 		"update:importData": [importData: string | undefined];
 	}>();
+
+	const i18n = useI18n();
 
 	const expandTune = useRefWithOverride(undefined, () => props.expandTune, (tuneName) => emit("update:expandTune", tuneName));
 	const editPattern = useRefWithOverride(undefined, () => props.editPattern, (patternName) => emit("update:editPattern", patternName));
@@ -89,7 +92,7 @@
 				v-model:editPattern="editPattern"
 				v-model:isDraggingPattern="isDraggingPattern"
 			>
-				<PatternPlaceholderItem><a href="javascript:" v-tooltip="`Add to song`" @click="patternClick(slotProps.tuneName, slotProps.patternName)" draggable="false"><fa icon="plus"/></a></PatternPlaceholderItem>
+				<PatternPlaceholderItem><a href="javascript:" v-tooltip="i18n.t('compose.add-to-song-tooltip')" @click="patternClick(slotProps.tuneName, slotProps.patternName)" draggable="false"><fa icon="plus"/></a></PatternPlaceholderItem>
 			</PatternList>
 
 			<template v-slot:toggle>

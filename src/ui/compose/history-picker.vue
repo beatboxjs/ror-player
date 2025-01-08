@@ -6,6 +6,7 @@
 	import { History } from "../../services/history";
 	import { showAlert, showConfirm } from "../utils/alert";
 	import { useRefWithOverride } from "../../utils";
+	import { useI18n } from "../../services/i18n";
 
 	const props = defineProps<{
 		history: History;
@@ -15,6 +16,8 @@
 	const emit = defineEmits<{
 		"update:importData": [importData: string | undefined];
 	}>();
+
+	const i18n = useI18n();
 
 	const importData = useRefWithOverride(undefined, () => props.importData, (importData) => emit("update:importData", importData));
 
@@ -26,7 +29,7 @@
 		if (importData.value) {
 			const errs = props.history.loadEncodedString(importData.value);
 			if(errs.length > 0)
-				showAlert({ title: 'Errors while loading data', message: errs.join("\n"), variant: 'warning' });
+				showAlert({ title: () => i18n.t("history-picker.import-error-title"), message: errs.join("\n"), variant: 'warning' });
 			showPopover.value = true;
 			importData.value = undefined;
 		}
@@ -45,10 +48,10 @@
 
 	const handleClear = async () => {
 		if (await showConfirm({
-			title: "Clear history",
-			message: "Are you sure that you want to clear your history? If you have recently opened a shared link, this might lose any custom tunes/breaks/songs that you had previously created.",
+			title: () => i18n.t("history-picker.clear-title"),
+			message: () => i18n.t("history-picker.clear-message"),
 			variant: "danger",
-			okLabel: "Clear"
+			okLabel: () => i18n.t("history-picker.clear-ok")
 		})) {
 			props.history.clear()
 		}
@@ -58,7 +61,7 @@
 <template>
 	<div v-if="historicStates.length > 1" class="dropdown bb-history" ref="dropdownRef">
 		<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-			<fa icon="clock"/><span class="d-none d-sm-inline"> History</span>
+			<fa icon="clock"/><span class="d-none d-sm-inline"> {{i18n.t("history-picker.history-alt")}}</span>
 		</button>
 		<ul class="dropdown-menu dropdown-menu-end">
 			<li v-for="historicState in historicStates" :key="historicState.key">
@@ -78,13 +81,13 @@
 					href="javascript:"
 					@click="handleClear()"
 					draggable="false"
-				>Clear</a>
+				>{{i18n.t("history-picker.clear")}}</a>
 			</li>
 		</ul>
 	</div>
 
 	<Popover :element="dropdownRef" v-model:show="showPopover" hide-on-outside-click>
-		You have opened a shared view. Your previous songs and tunes can be restored here.
+		{{i18n.t("history-picker.shared-view")}}
 	</Popover>
 </template>
 

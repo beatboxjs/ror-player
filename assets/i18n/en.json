@@ -1,0 +1,18 @@
+{
+	"compose": {
+		"add-to-song-tooltip": "Add to song"
+	},
+	"history-picker": {
+		"import-error-title": "Errors while loading data",
+		"clear-title": "Clear history",
+		"clear-message": "Are you sure that you want to clear your history? If you have recently opened a shared link, this might lose any custom tunes/breaks/songs that you had previously created.",
+		"clear-ok": "Clear",
+		"history-alt": "History",
+		"clear": "Clear",
+		"shared-view": "You have opened a shared view. Your previous songs and tunes can be restored here."
+	},
+	"overview": {
+		"listen": "Listen",
+		"compose": "Compose"
+	}
+}

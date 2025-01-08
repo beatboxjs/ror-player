@@ -8,6 +8,7 @@
 	import { Route, useRouter } from "../services/router";
 	import Compose from "./compose/compose.vue";
 	import { useRefWithOverride } from "../utils";
+	import { useI18n } from "../services/i18n";
 
 	const props = defineProps<{
 		storage: Record<string, string>;
@@ -18,6 +19,8 @@
 		"update:path": [path: string];
 		"update:route": [route: Route];
 	}>();
+
+	const i18n = useI18n();
 
 	const path = useRefWithOverride("", () => props.path, (path) => emit("update:path", path));
 
@@ -46,8 +49,8 @@
 
 		<div class="nav nav-tabs">
 			<span class="bb-sidebar-toggle-container" ref="sidebarToggleContainer"></span>
-			<span class="nav-item"><a class="nav-link" :class="{ active: route.tab === 'listen' }" href="javascript:" @click="route.tab = 'listen'">Listen</a></span>
-			<span class="nav-item"><a class="nav-link" :class="{ active: route.tab === 'compose' }" href="javascript:" @click="route.tab = 'compose'">Compose</a></span>
+			<span class="nav-item"><a class="nav-link" :class="{ active: route.tab === 'listen' }" href="javascript:" @click="route.tab = 'listen'">{{i18n.t('overview.listen')}}</a></span>
+			<span class="nav-item"><a class="nav-link" :class="{ active: route.tab === 'compose' }" href="javascript:" @click="route.tab = 'compose'">{{i18n.t('overview.compose')}}</a></span>
 		</div>
 
 		<div class="bb-overview-content">
