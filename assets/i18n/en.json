@@ -2,7 +2,8 @@
 	"general": {
 		"untitled-song": "Untitled song",
 		"dialog-close": "Close",
-		"dialog-cancel": "Cancel"
+		"dialog-cancel": "Cancel",
+		"dialog-ok": "OK"
 	},
 	"compose": {
 		"add-to-song-tooltip": "Add to song"
@@ -62,6 +63,20 @@
 		"copy-tune": "Copy tune",
 		"remove-tune": "Remove tune",
 		"create-tune": "New tune"
+	},
+	"rename-pattern-dialog": {
+		"empty-name-error": "Please enter a new name for the break.",
+		"duplicate-name-error": "This name is already taken. Please type in a different name.",
+		"title-copy": "Copy break",
+		"title-rename": "Rename break",
+		"title-move": "Move break",
+		"new-name": "New name",
+		"different-tune-copy": "Copy to different tune?",
+		"different-tune-move": "Move to different tune?",
+		"mode": "Mode",
+		"mode-rename": "Rename",
+		"mode-move": "Move",
+		"mode-copy": "Copy"
 	},
 	"overview": {
 		"listen": "Listen",
