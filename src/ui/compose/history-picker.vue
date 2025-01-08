@@ -61,7 +61,7 @@
 <template>
 	<div v-if="historicStates.length > 1" class="dropdown bb-history" ref="dropdownRef">
 		<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-			<fa icon="clock"/><span class="d-none d-sm-inline"> {{i18n.t("history-picker.history-alt")}}</span>
+			<fa icon="clock"/><span class="d-none d-sm-inline">{{" "}}{{i18n.t("history-picker.history-alt")}}</span>
 		</button>
 		<ul class="dropdown-menu dropdown-menu-end">
 			<li v-for="historicState in historicStates" :key="historicState.key">
@@ -87,7 +87,7 @@
 	</div>
 
 	<Popover :element="dropdownRef" v-model:show="showPopover" hide-on-outside-click>
-		{{i18n.t("history-picker.shared-view")}}
+		{{i18n.t("history-picker.shared-link")}}
 	</Popover>
 </template>
 

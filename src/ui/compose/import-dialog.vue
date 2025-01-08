@@ -7,12 +7,15 @@
 	import { injectStateRequired } from "../../services/state";
 	import { useModal } from "../utils/modal";
 	import vTooltip from "../utils/tooltip";
+	import { useI18n } from "../../services/i18n";
 
 	const emit = defineEmits<{
 		hidden: [];
 	}>();
 
 	const state = injectStateRequired();
+
+	const i18n = useI18n();
 
 	const importSongs = ref<Record<number, boolean>>({});
 	const importPatterns = ref<Record<string, Record<string, boolean>>>({});
@@ -42,11 +45,11 @@
 				result.state = state;
 			}
 			else
-				result.error = "Unrecognised format.";
+				result.error = i18n.t("import-dialog.unrecognized-format-error");
 		} catch(e: any) {
 			// eslint-disable-next-line no-console
 			console.error(e.stack || e);
-			result.error = "Error decoding pasted data: " + (e.message || e);
+			result.error = i18n.t("import-dialog.decoding-error", { message: `${e.message || e}` });
 		}
 
 		return result;
@@ -60,7 +63,7 @@
 			return {
 				shouldImport: !songExists(state.value, song) && (importSongs.value[songIdx] ?? true),
 				exists: songExists(state.value, song),
-				name: song.name || 'Untitled song'
+				name: song.name || i18n.t("general.untitled-song")
 			};
 		});
 	});
@@ -133,15 +136,15 @@
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h1 class="modal-title fs-5">Import</h1>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<h1 class="modal-title fs-5">{{i18n.t("import-dialog.title")}}</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" :aria-label="i18n.t('general.dialog-close')"></button>
 					</div>
 					<div class="modal-body">
 						<textarea
 							class="form-control"
 							:class="parsed.error ? 'is-invalid' : pasted.length > 0 ? 'is-valid' : undefined"
 							v-model="pasted"
-							placeholder="Paste link or raw data object…"
+							:placeholder="i18n.t('import-dialog.paste-placeholder')"
 						/>
 						<div v-if="parsed.error" class="invalid-feedback">
 							{{parsed.error}}
@@ -152,19 +155,19 @@
 
 						<div v-if="parsed.state">
 							<hr />
-							<h3>Customise selection</h3>
+							<h3>{{i18n.t("import-dialog.customize-selection")}}</h3>
 							<table class="table table-sm">
 								<thead>
 									<tr>
-										<th>Songs</th>
-										<th>Tunes/Breaks</th>
+										<th>{{i18n.t("import-dialog.songs")}}</th>
+										<th>{{i18n.t("import-dialog.tunes-breaks")}}</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td>
 											<ul class="list-group">
-												<li v-for="(song, idx) in songInfo" :key="idx" class="list-group-item" :class="{active: song.shouldImport, disabled: song.exists}" v-tooltip.bottom="song.exists ? 'Song already exists.' : ''">
+												<li v-for="(song, idx) in songInfo" :key="idx" class="list-group-item" :class="{active: song.shouldImport, disabled: song.exists}" v-tooltip.bottom="song.exists ? i18n.t('import-dialog.song-exists') : ''">
 													<a v-if="!song.exists" href="javascript:" @click="clickSong(idx)" draggable="false">{{song.name}}</a>
 													<span v-if="song.exists">{{song.name}} <fa icon="check"></fa></span>
 												</li>
@@ -178,7 +181,7 @@
 														<span
 															v-for="(pattern, patternName) in tune.patterns"
 															:key="patternName"
-															v-tooltip="pattern.exists == 2 ? 'Pattern already exists.' : pattern.isUsed ? 'Pattern is used in song, cannot be disabled.' : pattern.exists ? 'Already exists. Local version will be overridden.' : ''"
+															v-tooltip="pattern.exists == 2 ? i18n.t('import-dialog.break-exists-identical') : pattern.isUsed ? i18n.t('import-dialog.break-used') : pattern.exists ? i18n.t('import-dialog.break-exists-different') : ''"
 														>
 															<button
 																type="button"
@@ -188,7 +191,7 @@
 																@click="pattern.clickable && clickPattern(tuneName as string, patternName as string)"
 															>
 																{{patternName}} <fa v-if="pattern.exists" :icon="pattern.exists == 2 ? 'check' : 'exclamation-circle'"></fa>
-													</button>
+															</button>
 														</span>
 													</div>
 												</li>
@@ -200,8 +203,8 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" @click="modal.hide()">Cancel</button>
-						<button type="button" class="btn btn-primary" @click="doImport()" :disabled="!parsed.state">Import</button>
+						<button type="button" class="btn btn-secondary" @click="modal.hide()">{{i18n.t("general.dialog-cancel")}}</button>
+						<button type="button" class="btn btn-primary" @click="doImport()" :disabled="!parsed.state">{{i18n.t("import-dialog.import-button")}}</button>
 					</div>
 				</div>
 			</div>

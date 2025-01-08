@@ -11,6 +11,7 @@
 	import { injectStateRequired } from "../../services/state";
 	import { showConfirm, showPrompt } from "../utils/alert";
 	import vTooltip from "../utils/tooltip";
+	import { useI18n } from "../../services/i18n";
 
 	const props = defineProps<{
 		expandTune?: string;
@@ -26,6 +27,8 @@
 	const expandTune = useRefWithOverride(undefined, () => props.expandTune, (tuneName) => emit("update:expandTune", tuneName));
 	const editPattern = useRefWithOverride(undefined, () => props.editPattern, (patternName) => emit("update:editPattern", patternName));
 	const isDraggingPattern = useRefWithOverride(false, () => props.isDraggingPattern, (isDraggingPattern) => emit("update:isDraggingPattern", isDraggingPattern));
+
+	const i18n = useI18n();
 
 	type Opened = {
 		[tuneName: string]: boolean
@@ -77,14 +80,14 @@
 
 	const createPatternInTune = async (tuneName: string) => {
 		const newPatternName = await showPrompt({
-			title: "Create break",
+			title: () => i18n.t("pattern-list.create-pattern-title"),
 			validate: (newPatternName) => {
 				if(newPatternName.trim().length == 0)
-					return "Please enter a name for the new break.";
+					return i18n.t("pattern-list.create-pattern-empty-name-error");
 				if(getPatternFromState(state.value, tuneName, newPatternName))
-					return "This name is already taken. Please enter a different one.";
+					return i18n.t("pattern-list.create-pattern-duplicate-name-error");
 			},
-			okLabel: "Create"
+			okLabel: () => i18n.t("pattern-list.create-pattern-ok")
 		});
 
 		if(newPatternName) {
@@ -99,10 +102,10 @@
 
 	const removePatternFromTune = async (tuneName: string, patternName: string) => {
 		if (await showConfirm({
-			title: "Remove break",
-			message: `Do you really want to remove ${patternName} (${tuneName})?`,
+			title: () => i18n.t("pattern-list.remove-pattern-title"),
+			message: () => i18n.t("pattern-list.remove-pattern-message", { tuneName, patternName }),
 			variant: 'danger',
-			okLabel: "Remove"
+			okLabel: () => i18n.t("pattern-list.remove-pattern-ok")
 		})) {
 			removePattern(state.value, tuneName, patternName);
 		}
@@ -110,14 +113,14 @@
 
 	const handleCreateTune = async () => {
 		const newTuneName = await showPrompt({
-			title: "Create tune",
+			title: () => i18n.t("pattern-list.create-tune-title"),
 			validate: (newTuneName) => {
 				if(newTuneName.trim().length == 0)
-					return "Please enter a name for the new tune.";
+					return i18n.t("pattern-list.create-tune-empty-name-error");
 				if(state.value.tunes[newTuneName])
-					return "This name is already taken. Please enter a different one.";
+					return i18n.t("pattern-list.create-tune-duplicate-name-error");
 			},
-			okLabel: "Create"
+			okLabel: () => i18n.t("pattern-list.create-tune-ok")
 		});
 
 		if(newTuneName) {
@@ -134,15 +137,15 @@
 
 	const handleRenameTune = async (tuneName: string) => {
 		const newTuneName = await showPrompt({
-			title: "Rename tune",
+			title: () => i18n.t("pattern-list.rename-tune-title"),
 			initialValue: tuneName,
 			validate: (newTuneName) => {
 				if(newTuneName.trim().length == 0 || newTuneName == tuneName)
-					return "Please enter a new name for the tune.";
+					return i18n.t("pattern-list.rename-tune-empty-name-error");
 				if(state.value.tunes[newTuneName])
-					return "This name is already taken. Please enter a different one.";
+					return i18n.t("pattern-list.rename-tune-duplicate-name-error");
 			},
-			okLabel: "Rename"
+			okLabel: () => i18n.t("pattern-list.rename-tune-ok")
 		});
 
 		if(newTuneName) {
@@ -152,15 +155,15 @@
 
 	const handleCopyTune = async (tuneName: string) => {
 		const newTuneName = await showPrompt({
-			title: "Copy tune",
+			title: () => i18n.t("pattern-list.copy-tune-title"),
 			initialValue: tuneName,
 			validate: (newTuneName) => {
 				if(newTuneName.trim().length == 0 || newTuneName == tuneName)
-					return "Please enter a new name for the tune.";
+					return i18n.t("pattern-list.copy-tune-empty-name-error");
 				if(state.value.tunes[newTuneName])
-					return "This name is already taken. Please enter a different one.";
+					return i18n.t("pattern-list.copy-tune-duplicate-name-error");
 			},
-			okLabel: "Copy"
+			okLabel: () => i18n.t("pattern-list.copy-tune-ok")
 		});
 
 		if(newTuneName) {
@@ -170,10 +173,10 @@
 
 	const handleRemoveTune = async (tuneName: string) => {
 		if (await showConfirm({
-			title: "Remove tune",
-			message: `Do you really want to remove the tune ${tuneName}?`,
+			title: () => i18n.t("pattern-list.remove-tune-title"),
+			message: () => i18n.t("pattern-list.remove-tune-message", { tuneName }),
 			variant: 'danger',
-			okLabel: "Remove"
+			okLabel: () => i18n.t("pattern-list.remove-tune-ok")
 		})) {
 			removeTune(state.value, tuneName);
 		}
@@ -211,7 +214,7 @@
 					<div class="d-grid">
 						<button type="button" class="btn btn-link" @click="toggleTune(tune.tuneName)">
 							{{tune.displayName}}
-							<fa v-if="tune.isCustom" icon="star" v-tooltip="'User-created tune'"/>
+							<fa v-if="tune.isCustom" icon="star" v-tooltip="i18n.t('pattern-list.user-created-tune')"/>
 							<fa icon="caret-down"/>
 						</button>
 					</div>
@@ -229,15 +232,15 @@
 							@dragStart="isDraggingPattern = true"
 							@dragEnd="isDraggingPattern = false"
 						>
-							<PatternPlaceholderItem><a href="javascript:" v-tooltip="`Copy${pattern.isCustom ? '/Move/Rename' : ''} break`" @click="copyPattern(tune.tuneName, pattern.patternName)" draggable="false"><fa icon="copy"/></a></PatternPlaceholderItem>
-							<PatternPlaceholderItem v-if="pattern.isCustom"><a href="javascript:" v-tooltip="'Remove'" @click="removePatternFromTune(tune.tuneName, pattern.patternName)" draggable="false"><fa icon="trash"/></a></PatternPlaceholderItem>
+							<PatternPlaceholderItem><a href="javascript:" v-tooltip="pattern.isCustom ? i18n.t('pattern-list.copy-move-rename-break') : i18n.t('pattern-list.copy-break')" @click="copyPattern(tune.tuneName, pattern.patternName)" draggable="false"><fa icon="copy"/></a></PatternPlaceholderItem>
+							<PatternPlaceholderItem v-if="pattern.isCustom"><a href="javascript:" v-tooltip="i18n.t('pattern-list.remove-break')" @click="removePatternFromTune(tune.tuneName, pattern.patternName)" draggable="false"><fa icon="trash"/></a></PatternPlaceholderItem>
 							<slot :tuneName="tune.tuneName" :patternName="pattern.patternName"/>
 						</PatternPlaceholder>
 						<div class="tune-actions">
-							<a href="javascript:" @click="createPatternInTune(tune.tuneName)" v-tooltip="'New break'" draggable="false"><fa icon="plus"/></a>
-							<a v-if="tune.isCustom" href="javascript:" @click="handleRenameTune(tune.tuneName)" v-tooltip="'Rename tune'" draggable="false"><fa icon="pen"/></a>
-							<a href="javascript:" @click="handleCopyTune(tune.tuneName)" v-tooltip="'Copy tune'" draggable="false"><fa icon="copy"/></a>
-							<a v-if="tune.isCustom" href="javascript:" @click="handleRemoveTune(tune.tuneName)" v-tooltip="'Remove tune'" draggable="false"><fa icon="trash"/></a>
+							<a href="javascript:" @click="createPatternInTune(tune.tuneName)" v-tooltip="i18n.t('pattern-list.create-break')" draggable="false"><fa icon="plus"/></a>
+							<a v-if="tune.isCustom" href="javascript:" @click="handleRenameTune(tune.tuneName)" v-tooltip="i18n.t('pattern-list.rename-tune')" draggable="false"><fa icon="pen"/></a>
+							<a href="javascript:" @click="handleCopyTune(tune.tuneName)" v-tooltip="i18n.t('pattern-list.copy-tune')" draggable="false"><fa icon="copy"/></a>
+							<a v-if="tune.isCustom" href="javascript:" @click="handleRemoveTune(tune.tuneName)" v-tooltip="i18n.t('pattern-list.remove-tune')" draggable="false"><fa icon="trash"/></a>
 						</div>
 					</div>
 				</Collapse>
@@ -245,7 +248,7 @@
 		</div>
 
 		<div class="general-actions">
-			<button type="button" class="btn btn-link" @click="handleCreateTune()"><fa icon="plus"/> New tune</button>
+			<button type="button" class="btn btn-link" @click="handleCreateTune()"><fa icon="plus"/> {{i18n.t("pattern-list.create-tune")}}</button>
 		</div>
 
 		<PatternPlayerDialog

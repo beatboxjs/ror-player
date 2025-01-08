@@ -1,4 +1,9 @@
 {
+	"general": {
+		"untitled-song": "Untitled song",
+		"dialog-close": "Close",
+		"dialog-cancel": "Cancel"
+	},
 	"compose": {
 		"add-to-song-tooltip": "Add to song"
 	},
@@ -9,7 +14,54 @@
 		"clear-ok": "Clear",
 		"history-alt": "History",
 		"clear": "Clear",
-		"shared-view": "You have opened a shared view. Your previous songs and tunes can be restored here."
+		"shared-link": "You have opened a shared link. Your previous songs and tunes can be restored here."
+	},
+	"import-dialog": {
+		"unrecognized-format-error": "Unrecognised format.",
+		"decoding-error": "Error decoding pasted data: {{message}}",
+		"title": "Import",
+		"paste-placeholder": "Paste link or raw data object…",
+		"customize-selection": "Customise selection",
+		"songs": "Songs",
+		"tunes-breaks": "Tunes/Breaks",
+		"song-exists": "Song already exists.",
+		"break-exists-identical": "Break already exists.",
+		"break-used": "Pattern is used in song, cannot be disabled.",
+		"break-exists-different": "Already exists. Local version will be overridden.",
+		"import-button": "Import"
+	},
+	"pattern-list": {
+		"create-pattern-title": "Create break",
+		"create-pattern-empty-name-error": "Please enter a name for the new break.",
+		"create-pattern-duplicate-name-error": "This name is already taken. Please enter a different one.",
+		"create-pattern-ok": "Create",
+		"remove-pattern-title": "Remove break",
+		"remove-pattern-message": "Do you really want to remove {{patternName}} ({{tuneName}})?",
+		"remove-pattern-ok": "Remove",
+		"create-tune-title": "Create tune",
+		"create-tune-empty-name-error": "Please enter a name for the new tune.",
+		"create-tune-duplicate-name-error": "This name is already taken. Please enter a different one.",
+		"create-tune-ok": "Create",
+		"rename-tune-title": "Rename tune",
+		"rename-tune-empty-name-error": "Please enter a new name for the tune.",
+		"rename-tune-duplicate-name-error": "This name is already taken. Please enter a different one.",
+		"rename-tune-ok": "Rename",
+		"copy-tune-title": "Copy tune",
+		"copy-tune-empty-name-error": "Please enter a new name for the tune.",
+		"copy-tune-duplicate-name-error": "This name is already taken. Please enter a different one.",
+		"copy-tune-ok": "Copy",
+		"remove-tune-title": "Remove tune",
+		"remove-tune-message": "Do you really want to remove the tune {{tuneName}}?",
+		"remove-tune-ok": "Remove",
+		"user-created-tune": "User-created tune",
+		"copy-move-rename-break": "Copy/Move/Rename break",
+		"copy-break": "Copy break",
+		"remove-break": "Remove",
+		"create-break": "New break",
+		"rename-tune": "Rename tune",
+		"copy-tune": "Copy tune",
+		"remove-tune": "Remove tune",
+		"create-tune": "New tune"
 	},
 	"overview": {
 		"listen": "Listen",
