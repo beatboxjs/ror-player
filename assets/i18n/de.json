@@ -13,6 +13,234 @@
         "history-alt": "Verlauf",
         "clear": "Verlauf löschen",
         "clear-ok": "Löschen",
-        "shared-view": "Sie haben einen geteilten Link geöffnet. Ihre eigenen Stücke und Tunes können hier wieder hergestellt werden."
+        "shared-view": "Sie haben einen geteilten Link geöffnet. Ihre eigenen Stücke und Tunes können hier wieder hergestellt werden.",
+        "shared-link": "Ein geteilter Link wurde geöffnet. Die selbst komponierten Stücke und Tunes können hier wieder hergestellt werden."
+    },
+    "import-dialog": {
+        "song-exists": "Stück existiert bereits.",
+        "break-exists-identical": "Break existiert bereits.",
+        "unrecognized-format-error": "Ungültiges Format.",
+        "decoding-error": "Fehler beim Lesen der Daten: {{message}}",
+        "title": "Importieren",
+        "paste-placeholder": "Link oder Rohdaten einfügen…",
+        "customize-selection": "Auswahl anpassen",
+        "songs": "Stücke",
+        "tunes-breaks": "Tunes/Breaks",
+        "break-used": "Break wird im Stück verwendet und kann deshalb nicht deaktiviert werden.",
+        "break-exists-different": "Existiert bereits. Lokale Version wird überschrieben.",
+        "import-button": "Importieren"
+    },
+    "general": {
+        "untitled-song": "Unbenanntes Stück",
+        "dialog-close": "Schließen",
+        "dialog-cancel": "Abbrechen",
+        "dialog-ok": "OK"
+    },
+    "pattern-list": {
+        "create-tune-ok": "Erstellen",
+        "rename-tune-title": "Tune umbenennen",
+        "rename-tune-empty-name-error": "Bitte einen neuen Namen für den Tune eingeben.",
+        "copy-tune-ok": "Kopieren",
+        "user-created-tune": "Selbst komponiertes Stück",
+        "copy-move-rename-break": "Break kopieren/verschieben/umbenennen",
+        "copy-break": "Break kopieren",
+        "rename-tune": "Tune umbenennen",
+        "remove-tune": "Tune löschen",
+        "create-pattern-ok": "Erstellen",
+        "copy-tune-title": "Tune kopieren",
+        "create-tune-duplicate-name-error": "Dieser Name ist bereits vergeben.",
+        "remove-tune-title": "Tune löschen",
+        "remove-pattern-message": "Soll der Break {{patternName}} ({{tuneName}}) wirklich gelöscht werden?",
+        "remove-pattern-ok": "Löschen",
+        "remove-pattern-title": "Break löschen",
+        "create-tune-title": "Tune erstellen",
+        "remove-tune-message": "Soll der Tune {{tuneName}} wirklich gelöscht werden?",
+        "rename-tune-duplicate-name-error": "Dieser Name ist bereits vergeben.",
+        "copy-tune-empty-name-error": "Bitte einen neuen Namen für den Tune eingeben.",
+        "copy-tune": "Tune kopieren",
+        "create-tune": "Tune erstellen",
+        "create-tune-empty-name-error": "Bitte einen Namen für den neuen Tune eingeben.",
+        "rename-tune-ok": "Umbenennen",
+        "copy-tune-duplicate-name-error": "Dieser Name ist bereits vergeben.",
+        "remove-tune-ok": "Löschen",
+        "remove-break": "Löschen",
+        "create-break": "Break erstellen",
+        "create-pattern-title": "Break erstellen",
+        "create-pattern-empty-name-error": "Bitte einen Namen für den neuen Break eingeben.",
+        "create-pattern-duplicate-name-error": "Dieser Name ist bereits vergeben."
+    },
+    "rename-pattern-dialog": {
+        "duplicate-name-error": "Dieser Name ist bereits vergeben.",
+        "title-copy": "Break kopieren",
+        "title-move": "Break verschieben",
+        "different-tune-copy": "In einen anderen Tune kopieren?",
+        "mode-copy": "Kopieren",
+        "different-tune-move": "In einen anderen Tune verschieben?",
+        "mode-rename": "Umbenennen",
+        "empty-name-error": "Bitte einen neuen Namen für den Break eingeben.",
+        "title-rename": "Break umbenennen",
+        "new-name": "Neuer Name",
+        "mode": "Aktion",
+        "mode-move": "Verschieben"
+    },
+    "share-dialog": {
+        "title": "Teilen",
+        "link": "Link",
+        "customize-songs": "Stücke",
+        "customize-tunes-breaks": "Tunes/Breaks",
+        "customize-tooltip-default": "Wird direkt geöffnet",
+        "customize-tooltip-used": "Wird im Stück verwendet und kann deshalb nicht deaktiviert werden",
+        "raw-uncompressed": "Rohdaten (unkomprimiert)",
+        "raw-compressed": "Rohdaten (komprimiert)",
+        "raw-description": "Die Rohdaten können im „Importieren“-Dialog eingefügt werden, um die unten ausgewählten Stücke/Tunes/Breaks in den Player zu importieren.",
+        "link-description": "Wenn dieser Link geöffnet wird, werden alle unten ausgewählten Stücke, Tunes und Breaks importiert.",
+        "customize-heading": "Auswahl anpassen"
+    },
+    "song-picker": {
+        "rename-ok": "Umbenennen",
+        "rename-title": "Stück umbenennen",
+        "remove-message": "Soll das Stück {{name}} wirklich gelöscht werden?",
+        "remove-ok": "Löschen",
+        "rename-tooltip": "Umbenennen",
+        "copy-tooltip": "Kopieren",
+        "remove-tooltip": "Löschen",
+        "new-song": "Stück erstellen",
+        "copy-of-song-name": "Kopie von {{name}}",
+        "remove-title": "Stück löschen",
+        "copy-song-name": "Kopie"
+    },
+    "help": {
+        "language": "Sprache",
+        "user-manual": "Bedienungsanleitung",
+        "download": "{{appName}} herunterladen",
+        "app": "{{appName}} als App",
+        "source-code": "Quellcode auf GitHub",
+        "report-problem": "Fehler melden"
+    },
+    "tune-info": {
+        "notation": "Noten",
+        "notation-info": "Die Noten können durch Klick auf den {{pen}} geöffnet werden.",
+        "sounds": "Anhören",
+        "download-mp3": "Als MP3 herunterladen",
+        "tune-sheet-pdf": "Notenheft (PDF)",
+        "video": "Video"
+    },
+    "song-player": {
+        "all-instruments": "Alle",
+        "all-instruments-drop": "(Alle)",
+        "pick-intruments-tooltip": "Instrumente auswählen",
+        "remove-tooltip": "Entfernen"
+    },
+    "playback-settings-picker": {
+        "whistle-one": "Auf 1",
+        "title": "Wiedergabe-Einstellungen",
+        "speed": "Tempo",
+        "speed-reset": "Zurücksetzen",
+        "loop": "Wiederholen",
+        "whistle": "Trillerpfeife",
+        "whistle-all": "Auf allen",
+        "volume-master": "Master",
+        "whistle-off": "Aus"
+    },
+    "song-player-toolbar": {
+        "export-mp3": "Als MP3 exportieren",
+        "clear-song-title": "Stück zurücksetzen",
+        "clear-song-message": "Soll das Stück wirklich leer gemacht werden?",
+        "tools": "Werkzeuge",
+        "clear-song-ok": "Zurücksetzen",
+        "import": "Importieren",
+        "export-wav": "Als WAV exportieren",
+        "clear-song": "Stück zurücksetzen",
+        "share": "Teilen"
+    },
+    "pattern-placeholder": {
+        "show-notes-tooltip": "Noten anzeigen",
+        "restore-ok": "Wiederherstellen",
+        "listen-tooltip": "Abspielen",
+        "user-created-tooltip": "Selbst komponiert",
+        "restore-tooltip": "Original wiederherstellen",
+        "restore-title": "Original wiederherstellen",
+        "restore-message": "Sollen die selbst komponierten Änderungen am Break {{patternName}} ({{tuneName}}) wirklich zurück gesetzt und das Original wieder hergestellt werden?",
+        "edit-notes-tooltip": "Noten bearbeiten"
+    },
+    "example-song-player": {
+        "listen": "Abspielen",
+        "download-mp3": "Als MP3 herunterladen"
+    },
+    "pattern-length-picker": {
+        "length": "Länge: {{length}}"
+    },
+    "pattern-player-dialog": {
+        "share": "Teilen"
+    },
+    "pattern-player": {
+        "restore-title": "Original wiederherstellen",
+        "restore-message": "Sollen die selbst komponierten Änderungen wirklich zurück gesetzt under originale Break wieder hergestellt werden?",
+        "restore": "Original wiederherstellen",
+        "restore-ok": "Wiederherstellen"
+    },
+    "upbeat-picker": {
+        "upbeat": "Auftakt: {{upbeat}}"
+    },
+    "export": {
+        "error-title": "Fehler beim Exportieren als {{type}}"
+    },
+    "pattern-list-filter": {
+        "filter-placeholder": "Filter: {{category}}"
+    },
+    "play-pause-stop-button": {
+        "pause": "Pause",
+        "play": "Abspielen",
+        "stop": "Stopp"
+    },
+    "update": {
+        "new-version": "Eine neue Version vom {{appName}} ist verfügbar.",
+        "refresh": "{{refresh}}, um die neue Version zu öffnen.",
+        "refresh-refresh": "Seite neu laden"
+    },
+    "config": {
+        "instruments-ls": "Tiefe Surdo",
+        "instruments-ms": "Mittlere Surdo",
+        "instruments-hs": "Hohe Surdo",
+        "instruments-re": "Repi",
+        "instruments-ag": "Agogô",
+        "instruments-sh": "Shaker",
+        "instruments-ot": "Sprechchor",
+        "stroke-description-hd": "Mit der Hand schlagen",
+        "stroke-description-0": "Mit der Hand dämpfen",
+        "stroke-description-sil": "Gedämpfter Schlag",
+        "stroke-description-fl": "Flare",
+        "stroke-description-w": "Tamborim-Stick",
+        "stroke-description-.": "Unbetonter Schlag",
+        "category-common": "Häufige Tunes",
+        "category-new": "Neue Tunes",
+        "category-proposed": "Vorgeschlagene Tunes",
+        "category-custom": "Selbst komponierte Tunes",
+        "category-easy": "Einfach",
+        "category-medium": "Mittel",
+        "category-tricky": "Schwer",
+        "category-wester": "Westliche Musik",
+        "category-cultural-appropriation": "Kulturelle Aneignung",
+        "stroke-description-wh": "Trillerpfeife",
+        "instruments-ta": "Tamborim",
+        "time-with-triplets": "{{time}} mit Triolen",
+        "category-uncommon": "Seltene Tunes",
+        "stroke-description-s": "Kurzer Flare",
+        "time-with-quintuplets": "{{time}} mit Quintolen",
+        "category-all": "Alle Tunes",
+        "category-onesurdo": "Eine Surdo",
+        "instruments-sn": "Snare",
+        "stroke-description-wh2": "Langer Pfiff"
+    },
+    "default-tunes": {
+        "general-breaks": "Allgemeine Breaks",
+        "special-breaks": "Spezielle Breaks"
+    },
+    "mute-button": {
+        "unmute-all": "Alle Instrumente laut schalten",
+        "mute-all": "Alle Instrumente stumm schalten"
+    },
+    "time-signature-picker": {
+        "time-signature": "Takt: {{time}}"
     }
 }
