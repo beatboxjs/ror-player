@@ -10,6 +10,10 @@
 	import config from "../../config";
 	import { useModal } from "../utils/modal";
 	import { html as appDescriptionHtml } from "./app.md";
+	import { LANGUAGES, useI18n } from "../../services/i18n";
+	import { reactiveLocalStorage } from "../../services/localStorage";
+
+	const i18n = useI18n();
 
 	const showAppModal = ref(false);
 	const appModalRef = ref<HTMLElement>();
@@ -20,10 +24,15 @@
 	});
 
 	const downloadFilename = config.appName.toLowerCase().replace(/[-_ ]+/g, "-") + '.html';
+
+	function selectLanguage(lang: string) {
+		i18n.changeLanguage(lang);
+		reactiveLocalStorage.lang = lang;
+	}
 </script>
 
 <template>
-	<div>
+	<div class="bb-help">
 		<div class="dropdown">
 			<button class="btn btn-link dropdown-toggle" type="button" data-bs-toggle="dropdown">
 				<fa icon="info-circle"/>
@@ -34,6 +43,18 @@
 				<li><a class="dropdown-item" href="?" :download="downloadFilename"><fa icon="download" fixed-width/> Download {{config.appName}}</a></li>
 				<li><a class="dropdown-item" href="javascript:" @click="showAppModal = true"><fa icon="mobile-alt" fixed-width/> {{config.appName}} app</a></li>
 				<li><a class="dropdown-item" href="https://github.com/beatboxjs/ror-player" target="_blank"><fa icon="code" fixed-width/> Source code on GitHub</a></li>
+				<li><hr class="dropdown-divider"></li>
+				<li><h6 class="dropdown-header">Language</h6></li>
+				<li class="bb-language-picker">
+					<a
+						v-for="lang in LANGUAGES"
+						:key="lang"
+						class="dropdown-item"
+						:class="{ active: lang === i18n.currentLanguage }"
+						href="javascript:"
+						@click="selectLanguage(lang)"
+					>{{lang}}</a>
+				</li>
 			</ul>
 		</div>
 
@@ -55,3 +76,16 @@
 		</Teleport>
 	</div>
 </template>
+
+<style lang="scss">
+	.bb-help {
+		.bb-language-picker {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, 50px);
+
+			> .dropdown-item {
+				text-align: center;
+			}
+		}
+	}
+</style>

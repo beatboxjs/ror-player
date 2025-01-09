@@ -1,10 +1,12 @@
+/// <reference types="vite/client"/>
+
 import { createInstance } from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { ref } from "vue";
 
 const DEFAULT_LANGUAGE = "en";
 
-const LANG_COOKIE = "lang";
+const LANG_LOCAL_STORAGE = "lang";
 const LANG_QUERY = "lang";
 
 const resources = Object.fromEntries(Object.entries(import.meta.glob('../../assets/i18n/*.json', { eager: true })).map(([filename, module]) => {
@@ -22,6 +24,8 @@ const resources = Object.fromEntries(Object.entries(import.meta.glob('../../asse
 	return [lang, { translation: (module as any).default }];
 }));
 
+export const LANGUAGES = Object.keys(resources);
+
 const i18n = createInstance();
 i18n.use(LanguageDetector);
 i18n.init({
@@ -32,7 +36,7 @@ i18n.init({
 	detection: {
 		order: ['querystring', 'localStorage', 'navigator'],
 		lookupQuerystring: LANG_QUERY,
-		lookupCookie: LANG_COOKIE,
+		lookupLocalStorage: LANG_LOCAL_STORAGE,
 		caches: []
 	}
 });
