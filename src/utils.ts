@@ -1,7 +1,7 @@
 import { inflateRaw, deflateRaw } from "pako";
 import { decode } from "base64-arraybuffer";
 import * as z from "zod";
-import { AllowedComponentProps, ComponentPublicInstance, computed, ComputedRef, Ref, ref, toRef, VNodeProps, watch } from "vue";
+import { AllowedComponentProps, ComponentPublicInstance, computed, ComputedRef, EffectScope, effectScope, Ref, ref, toRef, VNodeProps, watch } from "vue";
 
 export type AnyRef<T> = T | Ref<T> | (() => T);
 
@@ -164,12 +164,14 @@ export function useRefWithOverride<Value>(fallbackValue: Value, getProp: () => V
 export function computedProperties<K extends keyof any, VIn, VOut>(object: AnyRef<Record<K, VIn>>, getter: (value: VIn, key: K) => VOut): Readonly<Record<K, VOut>> {
 	const objectRef = toRef(object);
 	const properties: Record<any, ComputedRef<VOut>> = {};
+	const propertyScopes: Record<any, EffectScope> = {};
 
 	watch(() => Object.keys(objectRef.value), (newKeys) => {
 		for (const k of Object.keys(properties)) {
 			if (!newKeys.includes(k)) {
-				properties[k].effect.stop();
 				delete properties[k];
+				propertyScopes[k].stop();
+				delete propertyScopes[k];
 			}
 		}
 	});
@@ -186,7 +188,10 @@ export function computedProperties<K extends keyof any, VIn, VOut>(object: AnyRe
 		}
 
 		if (!properties[p as any]) {
-			properties[p as any] = computed(() => getter(objectRef.value[p], p));
+			propertyScopes[p as any] = effectScope();
+			propertyScopes[p as any].run(() => {
+				properties[p as any] = computed(() => getter(objectRef.value[p], p));
+			});
 		}
 
 		return properties[p as any].value;

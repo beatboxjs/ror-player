@@ -26,25 +26,25 @@
     "@types/vue": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
-    "@vitejs/plugin-vue": "^5.1.1",
+    "@vitejs/plugin-vue": "^5.2.1",
     "eslint": "8",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-vue": "^9.27.0",
-    "happy-dom": "^14.12.3",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-vue": "^9.32.0",
+    "happy-dom": "^16.5.3",
     "rimraf": "^6.0.1",
-    "sass": "^1.77.8",
+    "sass": "^1.83.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.4",
-    "vite": "^5.3.5",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7",
     "vite-plugin-markdown": "^2.2.0",
-    "vite-plugin-singlefile": "^2.0.2",
-    "vitest": "^2.0.4",
-    "vue-tsc": "^2.0.29"
+    "vite-plugin-singlefile": "^2.1.0",
+    "vitest": "^2.1.8",
+    "vue-tsc": "^2.2.0"
   },
   "author": "Candid Dauth",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.6.0",
-    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "@popperjs/core": "^2.11.8",
     "base64-arraybuffer": "^1.0.2",
@@ -58,10 +58,10 @@
     "lodash-es": "^4.17.21",
     "mitt": "^3.0.1",
     "pako": "^2.1.0",
-    "path-to-regexp": "^7.1.0",
-    "vue": "^3.4.34",
-    "vue3-touch-events": "^4.1.8",
-    "zod": "^3.23.8"
+    "path-to-regexp": "^8.2.0",
+    "vue": "^3.5.13",
+    "vue3-touch-events": "^4.2.0",
+    "zod": "^3.24.1"
   },
-  "packageManager": "yarn@4.2.2"
+  "packageManager": "yarn@4.6.0"
 }

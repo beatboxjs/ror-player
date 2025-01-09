@@ -1,4 +1,4 @@
-import pako from "pako";
+import { inflateRaw } from "pako";
 import Beatbox, { InstrumentReferenceObject, Pattern as RawPattern } from "beatbox.js";
 import audioFiles from "virtual:audioFiles";
 import config, { Instrument } from "../config";
@@ -27,7 +27,7 @@ for(const i in audioFiles) {
 		continue;
 	}
 
-	const decompressed = pako.inflateRaw(new Uint8Array(decode(audioFiles[i])));
+	const decompressed = inflateRaw(new Uint8Array(decode(audioFiles[i])));
 	Beatbox.registerInstrument(`${m[1]}_${String.fromCodePoint(parseInt(m[2], 16))}`, decompressed.buffer);
 }
 
