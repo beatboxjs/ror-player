@@ -13,6 +13,24 @@
         "history-alt": "Verlauf",
         "clear": "Verlauf löschen",
         "clear-ok": "Löschen",
-        "shared-view": "Sie haben einen geteilten Link geöffnet. Ihre eigenen Stücke und Tunes können hier wieder hergestellt werden."
+        "shared-view": "Sie haben einen geteilten Link geöffnet. Ihre eigenen Stücke und Tunes können hier wieder hergestellt werden.",
+        "shared-link": "Ein geteilter Link wurde geöffnet. Die selbst komponierten Stücke und Tunes können hier wieder hergestellt werden."
+    },
+    "import-dialog": {
+        "song-exists": "Stück existiert bereits.",
+        "break-exists-identical": "Break existiert bereits.",
+        "unrecognized-format-error": "Ungültiges Format.",
+        "decoding-error": "Fehler beim Lesen der Daten: {{message}}",
+        "title": "Importieren",
+        "paste-placeholder": "Link oder Rohdaten einfügen…",
+        "customize-selection": "Auswahl anpassen",
+        "songs": "Stücke",
+        "tunes-breaks": "Tunes/Breaks"
+    },
+    "general": {
+        "untitled-song": "Unbenanntes Stück",
+        "dialog-close": "Schließen",
+        "dialog-cancel": "Abbrechen",
+        "dialog-ok": "OK"
     }
 }
