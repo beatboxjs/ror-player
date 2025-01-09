@@ -25,6 +25,7 @@
 	import MuteButton from "../playback-settings/mute-button.vue";
 	import HeadphonesButton from "../playback-settings/headphones-button.vue";
 	import AbstractPlayer, { PositionData } from "../utils/abstract-player.vue";
+	import { useI18n } from "../../services/i18n";
 
 	type StrokeDropdownInfo = {
 		instr: Instrument,
@@ -42,6 +43,8 @@
 	}>(), {
 		readonly: false
 	});
+
+	const i18n = useI18n();
 
 	const pattern = computed(() => getPatternFromState(state.value, props.tuneName, props.patternName)!);
 
@@ -158,10 +161,10 @@
 
 	const reset = async () => {
 		if(await showConfirm({
-			title: "Restore original",
-			message: "Are you sure that you want to revert your modifications and restore the original break?",
+			title: () => i18n.t("pattern-player.restore-title"),
+			message: () => i18n.t("pattern-player.restore-message"),
 			variant: "warning",
-			okLabel: "Restore"
+			okLabel: () => i18n.t("pattern-player.restore-ok")
 		}))
 			createPattern(state.value, props.tuneName, props.patternName, originalPattern.value || undefined);
 	};
@@ -226,7 +229,7 @@
 		>
 			<slot />
 
-			<button v-if="hasLocalChanges" type="button" class="btn btn-warning" @click="reset()"><fa icon="eraser"/> Restore original</button>
+			<button v-if="hasLocalChanges" type="button" class="btn btn-warning" @click="reset()"><fa icon="eraser"/>{{" "}}{{i18n.t("pattern-player.restore")}}</button>
 		</PatternPlayerToolbar>
 
 		<div class="bb-pattern-player-container" ref="containerRef">

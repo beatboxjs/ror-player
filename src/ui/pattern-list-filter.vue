@@ -3,6 +3,7 @@
 	import { tuneIsInCategory } from "../state/tune";
 	import config, { Category } from "../config";
 	import { computed } from "vue";
+	import { useI18n } from "../services/i18n";
 
 	export interface Filter {
 		text: string;
@@ -38,6 +39,8 @@
 		"update:modelValue": [value: Filter];
 	}>();
 
+	const i18n = useI18n();
+
 	const value = computed({
 		get: () => props.modelValue,
 		set: (value) => emit('update:modelValue', value)
@@ -53,7 +56,7 @@
 
 <template>
 	<div class="input-group bb-pattern-list-filter">
-		<input type="text" class="form-control" :value="value.text" @input="value = { ...value, text: ($event.currentTarget as HTMLInputElement).value }" :placeholder="`Filter: ${filterCats[value.cat]}`" autofocus />
+		<input type="text" class="form-control" :value="value.text" @input="value = { ...value, text: ($event.currentTarget as HTMLInputElement).value }" :placeholder="i18n.t('pattern-list-filter.filter-placeholder', { category: filterCats[value.cat] })" autofocus />
 		<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
 		<ul class="dropdown-menu dropdown-menu-end">
 			<li v-for="(val, key) in filterCats" :key="key">

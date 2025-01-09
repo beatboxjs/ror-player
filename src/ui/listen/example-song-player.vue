@@ -18,6 +18,7 @@
 	import vTooltip from "../utils/tooltip";
 	import { download, ExportType } from "../utils/export";
 	import AbstractPlayer, { PositionData } from "../utils/abstract-player.vue";
+	import { useI18n } from "../../services/i18n";
 
 	const state = injectStateRequired();
 
@@ -26,6 +27,8 @@
 		song: ExampleSong;
 		settings?: PlaybackSettings;
 	}>();
+
+	const i18n = useI18n();
 
 	const playbackSettings = computed(() => props.settings || state.value.playbackSettings);
 
@@ -97,8 +100,8 @@
 	<div class="bb-example-song">
 		<div class="song" @click="setPosition($event)" ref="songRef">
 			<div class="card" style="width: 10em;">
-				<span class="tune-name">General Breaks</span>
-				<span class="pattern-name">Whistle in</span>
+				<span class="tune-name">{{state.tunes["General Breaks"].displayName || "General Breaks"}}</span>
+				<span class="pattern-name">{{state.tunes["General Breaks"].patterns["Whistle in"].displayName || "Whistle in"}}</span>
 			</div>
 			<div v-for="(part, i) in normalizedSong" :key="i" class="card" :style="{ width: `${2.5 * part.length }em` }">
 				<span class="tune-name">{{state.tunes[part.tuneName].displayName || part.tuneName}}</span>
@@ -113,8 +116,8 @@
 			/>
 		</div>
 		<ul class="actions icon-list">
-			<li><a href="javascript:" v-tooltip="'Listen'" @click="playStop()" draggable="false"><fa :icon="abstractPlayerRef?.playerRef?.playing ? 'stop' : 'play-circle'"/></a></li>
-			<li><a href="javascript:" v-tooltip="'Download as MP3'" @click="handleDownload()" draggable="false"><fa icon="download"/></a></li>
+			<li><a href="javascript:" v-tooltip="i18n.t('example-song-player.listen')" @click="playStop()" draggable="false"><fa :icon="abstractPlayerRef?.playerRef?.playing ? 'stop' : 'play-circle'"/></a></li>
+			<li><a href="javascript:" v-tooltip="i18n.t('example-song-player.download-mp3')" @click="handleDownload()" draggable="false"><fa icon="download"/></a></li>
 		</ul>
 	</div>
 </template>

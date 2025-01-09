@@ -8,6 +8,7 @@
 	import { computed, ref } from "vue";
 	import { injectStateRequired } from "../../services/state";
 	import { useModal } from "./../utils/modal";
+	import { useI18n } from "../../services/i18n";
 
 	const state = injectStateRequired();
 
@@ -23,6 +24,8 @@
 	const emit = defineEmits<{
 		hidden: [];
 	}>();
+
+	const i18n = useI18n();
 
 	const modalRef = ref<HTMLElement>();
 	useModal(modalRef, {
@@ -56,11 +59,11 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<h1 class="modal-title fs-5">{{title}}</h1>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" :aria-label="i18n.t('general.dialog-close')"></button>
 					</div>
 					<div class="modal-body">
 						<PatternPlayer :tuneName="tuneName" :patternName="patternName" :readonly="readonly" :player="playerRef">
-							<button type="button" class="btn btn-info" v-if="hasChanged" @click="share()"><fa icon="share"/> Share</button>
+							<button type="button" class="btn btn-info" v-if="hasChanged" @click="share()"><fa icon="share"/>{{" "}}{{i18n.t("pattern-player-dialog.share")}}</button>
 						</PatternPlayer>
 						<ShareDialog v-if="showShareDialog" @hidden="showShareDialog = false" :link-pattern="[tuneName, patternName]" />
 					</div>

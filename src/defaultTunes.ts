@@ -4,6 +4,7 @@ import { AllVolumeHack, normalizePattern, Pattern, compressedPatternValidator } 
 import { normalizeTune, Tune } from "./state/tune";
 import * as z from "zod";
 import { PatternReference } from "./state/song";
+import { getI18n } from "./services/i18n";
 
 function stretch(from: number, to: number, pattern: string): string {
 	return pattern.split("").concat([ "" ]).join(repeat((to/from)-1, " "));
@@ -42,6 +43,9 @@ type RawTune = Partial<Omit<Tune, 'patterns'>> & {
 
 const rawTunes: {[tuneName: string]: RawTune} = {
 	'General Breaks': {
+		get displayName() {
+			return getI18n().t("default-tunes.general-breaks");
+		},
 		categories: [ "common", "uncommon", "new", "proposed", "custom", "onesurdo", "easy", "medium", "tricky", "western", "cultural-appropriation" ],
 		sheet: sheetUrl + "breaks.pdf",
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/37596e72-e93b-44f1-8770-760be8e5ce87",
@@ -179,6 +183,9 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		}
 	},
 	'Special Breaks': {
+		get displayName() {
+			return getI18n().t("default-tunes.special-breaks");
+		},
 		categories: [ "common", "onesurdo" ],
 		sheet: sheetUrl + "breaks.pdf",
 		video: "https://tube.rhythms-of-resistance.org/videos/embed/37596e72-e93b-44f1-8770-760be8e5ce87",
@@ -3238,11 +3245,6 @@ const defaultTunes: { [tuneName: string]: Tune } = { };
 
 for(const i in rawTunes) {
 	const tune = rawTunes[i];
-
-	if ("descriptionHtml" in tune && (typeof tune.descriptionHtml === "function" ? tune.descriptionHtml() : tune.descriptionHtml) == null) {
-		// eslint-disable-next-line no-console
-		console.error(`Tune description for ${i} not found.`);
-	}
 
 	const newTune = clone(tune) as any as Tune;
 

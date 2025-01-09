@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 	import { ref } from 'vue';
 	import { useModal } from './modal';
+	import { useI18n } from '../../services/i18n';
 
 	export type AlertProps = {
 		title: string;
@@ -15,8 +16,7 @@
 	}
 
 	const props = withDefaults(defineProps<AlertProps>(), {
-		type: "alert",
-		okLabel: "OK"
+		type: "alert"
 	});
 
 	const emit = defineEmits<{
@@ -24,6 +24,8 @@
 		hide: [result: AlertResult];
 		hidden: [result: AlertResult];
 	}>();
+
+	const i18n = useI18n();
 
 	const result = ref<AlertResult>({
 		ok: false
@@ -67,8 +69,8 @@
 						<slot>{{props.message}}</slot>
 					</div>
 					<div class="modal-footer">
-						<button v-if="type === 'confirm'" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-						<button type="submit" class="btn" :class="`btn-${props.variant ?? 'primary'}`">{{props.okLabel}}</button>
+						<button v-if="type === 'confirm'" type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{i18n.t("general.dialog-cancel")}}</button>
+						<button type="submit" class="btn" :class="`btn-${props.variant ?? 'primary'}`">{{props.okLabel ?? i18n.t("general.dialog-ok")}}</button>
 					</div>
 				</form>
 			</div>

@@ -5,6 +5,7 @@ import FileSaver from 'file-saver';
 import { createApp, defineComponent, h, ref } from 'vue';
 import { showAlert } from './alert';
 import Progress from "./progress.vue";
+import { getI18n } from '../../services/i18n';
 
 export enum ExportType { WAV = "wav", MP3 = "mp3" };
 
@@ -43,7 +44,7 @@ export async function download({ type, player, filename }: ExportArgs): Promise<
 
 		// eslint-disable-next-line no-console
 		console.error(`Error exporting ${type.toUpperCase()}`, err.stack || err);
-		showAlert({ title: `Error exporting ${type.toUpperCase()}`, message: err.message, variant: "danger" });
+		showAlert({ title: () => getI18n().t("export.error-title", { type: type.toUpperCase() }), message: err.message, variant: "danger" });
 	} finally {
 		progressApp.unmount();
 		progressEl.remove();

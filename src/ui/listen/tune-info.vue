@@ -10,7 +10,7 @@
 	import vTooltip from "../utils/tooltip";
 	import { download, ExportType } from "../utils/export";
 	import { BeatboxReference, getPlayerById } from "../../services/player";
-	import { getTuneDescriptionHtml } from "../../services/i18n";
+	import { getTuneDescriptionHtml, T, useI18n } from "../../services/i18n";
 
 	const state = injectStateRequired();
 
@@ -22,6 +22,8 @@
 	const emit = defineEmits<{
 		"update:editPattern": [patternName: string | undefined];
 	}>();
+
+	const i18n = useI18n();
 
 	const editPattern = useRefWithOverride(undefined, () => props.editPattern, (patternName) => emit("update:editPattern", patternName));
 
@@ -73,19 +75,27 @@
 
 		<div v-html="tuneDescriptionHtml"></div>
 
-		<h2>Notation</h2>
-		<p><em>Click on the <fa icon="pen"></fa> on the breaks below to see the notes.</em></p>
-		<p v-if="tune.sheet"><a :href="tune.sheet" target="_blank">Tune sheet (PDF)</a></p>
+		<h2>{{i18n.t("tune-info.notation")}}</h2>
+		<p>
+			<em>
+				<T k="tune-info.notation-info">
+					<template #pen>
+						<fa icon="pen"></fa>
+					</template>
+				</T>
+			</em>
+		</p>
+		<p v-if="tune.sheet"><a :href="tune.sheet" target="_blank">{{i18n.t("tune-info.tune-sheet-pdf")}}</a></p>
 
 		<div v-if="tune.video">
-			<h2>Video</h2>
+			<h2>{{i18n.t("tune-info.video")}}</h2>
 			<div class="bb-tune-info-video">
 				<iframe sandbox="allow-same-origin allow-scripts" :src="tune.video" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>
 
-		<h2 v-if="tune.descriptionHtml || tune.sheet" class="d-flex align-items-center">
-			<span class="flex-grow-1">Sounds</span>
+		<h2 v-if="tuneDescriptionHtml || tune.sheet" class="d-flex align-items-center">
+			<span class="flex-grow-1">{{i18n.t("tune-info.sounds")}}</span>
 			<PlaybackSettingsPicker v-model="playbackSettings" :default-speed="tune.speed" />
 		</h2>
 
@@ -106,7 +116,7 @@
 			:showEditorDialog="editPattern === patternName"
 			@update:showEditorDialog="handleEditorDialog(patternName, $event)"
 		>
-			<PatternPlaceholderItem><a href="javascript:" v-tooltip="'Download as MP3'" @click="handleDownload(patternName, getPlayer())" draggable="false"><fa icon="download"/></a></PatternPlaceholderItem>
+			<PatternPlaceholderItem><a href="javascript:" v-tooltip="i18n.t('tune-info.download-mp3')" @click="handleDownload(patternName, getPlayer())" draggable="false"><fa icon="download"/></a></PatternPlaceholderItem>
 		</PatternPlaceholder>
 	</div>
 </template>

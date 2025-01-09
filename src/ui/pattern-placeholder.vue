@@ -13,6 +13,7 @@
 	import { showConfirm } from "./utils/alert";
 	import vTooltip from "./utils/tooltip";
 	import AbstractPlayer, { PositionData } from "./utils/abstract-player.vue";
+	import { useI18n } from "../services/i18n";
 
 	export const PatternPlaceholderItem = defineComponent({
 		setup(props, { slots }) {
@@ -43,6 +44,8 @@
 		"dragStart": [];
 		"dragEnd": [];
 	}>();
+
+	const i18n = useI18n();
 
 	const showEditorDialog = useRefWithOverride(false, () => props.showEditorDialog, (show) => emit("update:showEditorDialog", show));
 	const dragging = ref(false);
@@ -110,10 +113,10 @@
 
 	const restore = async () => {
 		if(await showConfirm({
-			title: "Restore original",
-			message: `Are you sure that you want to revert your modifications to ${props.patternName} (${props.tuneName}) and restore the original break?`,
+			title: () => i18n.t("pattern-placeholder.restore-title"),
+			message: () => i18n.t("pattern-placeholder.restore-message", { tuneName: props.tuneName, patternName: props.patternName }),
 			variant: "warning",
-			okLabel: "Restore"
+			okLabel: () => i18n.t("pattern-placeholder.restore-ok")
 		})) {
 			createPattern(state.value, props.tuneName, props.patternName, defaultTunes.getPattern(props.tuneName, props.patternName) || undefined);
 		}
@@ -153,13 +156,13 @@
 			<br>
 			<span class="pattern-name">
 				{{state.tunes[tuneName].patterns[patternName].displayName || patternName}}
-				<fa v-if="isCustomPattern" icon="star" v-tooltip="'User-created break'"/>
+				<fa v-if="isCustomPattern" icon="star" v-tooltip="i18n.t('pattern-placeholder.user-created-tooltip')"/>
 			</span>
 		</div>
 		<ul class="actions icon-list">
-			<li><a href="javascript:" v-tooltip="'Listen'" @click="playPattern()" draggable="false"><fa :icon="abstractPlayerRef?.playerRef?.playing ? 'stop' : 'play-circle'"></fa></a></li>
-			<li><a href="javascript:" v-tooltip="readonly ? 'Show notes' : 'Edit notes'" @click="editPattern()" draggable="false"><fa icon="pen"/></a></li>
-			<li v-if="hasLocalChanges"><a href="javascript:" v-tooltip="'Restore original'" @click="restore()" draggable="false"><fa icon="eraser"/></a></li>
+			<li><a href="javascript:" v-tooltip="i18n.t('pattern-placeholder.listen-tooltip')" @click="playPattern()" draggable="false"><fa :icon="abstractPlayerRef?.playerRef?.playing ? 'stop' : 'play-circle'"></fa></a></li>
+			<li><a href="javascript:" v-tooltip="readonly ? i18n.t('pattern-placeholder.show-notes-tooltip') : i18n.t('pattern-placeholder.edit-notes-tooltip')" @click="editPattern()" draggable="false"><fa icon="pen"/></a></li>
+			<li v-if="hasLocalChanges"><a href="javascript:" v-tooltip="i18n.t('pattern-placeholder.restore-tooltip')" @click="restore()" draggable="false"><fa icon="eraser"/></a></li>
 			<slot :getPlayer="() => { abstractPlayerRef!.getOrCreatePlayer(); return abstractPlayerRef!.playerRef!; }"/>
 		</ul>
 

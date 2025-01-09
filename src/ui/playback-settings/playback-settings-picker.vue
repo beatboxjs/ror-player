@@ -6,6 +6,7 @@
 	import { clone, generateId } from "../../utils";
 	import { computed } from "vue";
 	import vTooltip from "../utils/tooltip";
+	import { useI18n } from "../../services/i18n";
 
 	const props = withDefaults(defineProps<{
 		modelValue: PlaybackSettings;
@@ -18,6 +19,8 @@
 	const emit = defineEmits<{
 		"update:modelValue": [playbackSettings: PlaybackSettings];
 	}>();
+
+	const i18n = useI18n();
 
 	const id = `bb-playback-settings-${generateId()}`;
 
@@ -90,33 +93,33 @@
 </script>
 
 <template>
-	<HybridPopoverButton custom-class="bb-playback-settings" variant="light" title="Playback settings">
+	<HybridPopoverButton custom-class="bb-playback-settings" variant="light" :title="i18n.t('playback-settings-picker.title')">
 		<template #button>
 			<fa icon="sliders-h"/> <fa icon="caret-down"/>
 		</template>
 
 		<div class="row">
-			<label :for="`${id}-speed`" class="col-sm-3 col-form-label">Speed</label>
+			<label :for="`${id}-speed`" class="col-sm-3 col-form-label">{{i18n.t("playback-settings-picker.speed")}}</label>
 			<div class="col-sm-9 d-flex align-items-center">
 				<input :id="`${id}-speed`" type="range" class="form-range" v-model.number="speed" min="30" max="180" v-tooltip="`${speed}`"/>
-				<button type="button" class="btn btn-secondary btn-sm ms-2" @click="speed = defaultSpeed">Reset</button>
+				<button type="button" class="btn btn-secondary btn-sm ms-2" @click="speed = defaultSpeed">{{i18n.t("playback-settings-picker.speed-reset")}}</button>
 			</div>
 		</div>
 
 		<div class="row">
-			<label :for="`${id}-loop`" class="col-sm-3 col-form-label">Loop</label>
+			<label :for="`${id}-loop`" class="col-sm-3 col-form-label">{{i18n.t("playback-settings-picker.loop")}}</label>
 			<div class="col-sm-9 d-flex align-items-center">
 				<input :id="`${id}-loop`" type="checkbox" class="form-check-input mt-0" v-model="loop"/>
 			</div>
 		</div>
 
 		<div class="row">
-			<label :for="`${id}-whistle`" class="col-sm-3 col-form-label">Whistle</label>
+			<label :for="`${id}-whistle`" class="col-sm-3 col-form-label">{{i18n.t("playback-settings-picker.whistle")}}</label>
 			<div class="col-sm-9 d-flex align-items-center">
 				<div class="btn-group">
-					<button type="button" class="btn btn-secondary btn-sm" :class="{ active: whistle === false }" @click="whistle = false">No</button>
-					<button type="button" class="btn btn-secondary btn-sm" :class="{ active: whistle === 1 }" @click="whistle = 1">On one</button>
-					<button type="button" class="btn btn-secondary btn-sm" :class="{ active: whistle === 2 }" @click="whistle = 2">On all</button>
+					<button type="button" class="btn btn-secondary btn-sm" :class="{ active: whistle === false }" @click="whistle = false">{{i18n.t("playback-settings-picker.whistle-off")}}</button>
+					<button type="button" class="btn btn-secondary btn-sm" :class="{ active: whistle === 1 }" @click="whistle = 1">{{i18n.t("playback-settings-picker.whistle-one")}}</button>
+					<button type="button" class="btn btn-secondary btn-sm" :class="{ active: whistle === 2 }" @click="whistle = 2">{{i18n.t("playback-settings-picker.whistle-all")}}</button>
 				</div>
 			</div>
 		</div>
@@ -143,7 +146,7 @@
 				</tr>
 				<tr class="instrument-names">
 					<td class="master">
-						<strong>Master</strong>
+						<strong>{{i18n.t("playback-settings-picker.volume-master")}}</strong>
 					</td>
 					<td v-for="instrumentKey in config.instrumentKeys" :key="instrumentKey">
 						<span>{{config.instruments[instrumentKey].name()}}</span>

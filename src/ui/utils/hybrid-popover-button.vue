@@ -11,6 +11,7 @@
 	import { useMaxBreakpoint } from "../../services/bootstrap";
 	import vTooltip from "./tooltip";
 	import Popover from "./popover.vue";
+	import { useI18n } from "../../services/i18n";
 
 	const props = withDefaults(defineProps<{
 		variant?: string;
@@ -21,6 +22,8 @@
 		variant: "secondary",
 		forcePopover: false
 	});
+
+	const i18n = useI18n();
 
 	const shouldUseModal = useMaxBreakpoint("xs");
 
@@ -66,13 +69,13 @@
 					<div class="modal-content">
 						<div class="modal-header">
 							<h1 class="modal-title fs-5">{{props.title}}</h1>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" :aria-label="i18n.t('general.dialog-close')"></button>
 						</div>
 						<div class="modal-body">
 							<slot></slot>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+							<button type="button" class="btn btn-primary" data-bs-dismiss="modal">{{i18n.t("general.dialog-ok")}}</button>
 						</div>
 					</div>
 				</div>

@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 	import { onBeforeUnmount, onMounted, ref } from "vue";
 	import config from "../config";
+	import { T, useI18n } from "../services/i18n";
+
+	const i18n = useI18n();
 
 	let show = ref(false);
 
@@ -22,9 +25,13 @@
 <template>
 	<div class="bb-update" :class="{ show }">
 		<div class="alert alert-warning alert-dismissible fade" :class="{ show }" role="alert">
-			A new version of {{config.appName}} is available.<br />
-			<a href="javascript:location.reload()" draggable="false">Refresh the page</a> to update.
-			<button type="button" class="btn-close" aria-label="Close" @click="show = false"></button>
+			{{i18n.t("update.new-version", { appName: config.appName })}}<br />
+			<T k="update.refresh">
+				<template #refresh>
+					<a href="javascript:location.reload()" draggable="false">{{i18n.t("update.refresh-refresh")}}</a>
+				</template>
+			</T>
+			<button type="button" class="btn-close" :aria-label="i18n.t('general.dialog-close')" @click="show = false"></button>
 		</div>
 	</div>
 </template>

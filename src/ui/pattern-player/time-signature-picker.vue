@@ -1,5 +1,6 @@
 <script setup lang="ts">
 	import config from '../../config';
+	import { useI18n } from '../../services/i18n';
 	import { Pattern } from '../../state/pattern';
 
 	type Value = Pattern['time'];
@@ -13,6 +14,8 @@
 		"update:modelValue": [value: Value];
 	}>();
 
+	const i18n = useI18n();
+
 	const handleUpdate = (value: Value) => {
 		emit("update:modelValue", value);
 	};
@@ -22,7 +25,7 @@
 	<div class="dropdown">
 		<button class="btn btn-secondary dropdown-toggle" :class="buttonClass" data-bs-toggle="dropdown">{{config.times[props.modelValue]?.() || `${props.modelValue}⁄4`}}</button>
 		<ul class="dropdown-menu">
-			<li v-for="(desc, ti) in config.times" :key="ti"><a class="dropdown-item" :class="{ active: props.modelValue == ti }" href="javascript:" @click="handleUpdate(ti)" draggable="false">Time signature: {{desc()}}</a></li>
+			<li v-for="(desc, ti) in config.times" :key="ti"><a class="dropdown-item" :class="{ active: props.modelValue == ti }" href="javascript:" @click="handleUpdate(ti)" draggable="false">{{i18n.t("time-signature-picker.time-signature", { time: desc() })}}</a></li>
 		</ul>
 	</div>
 </template>

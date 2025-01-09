@@ -129,9 +129,80 @@
 		"source-code": "Source code on GitHub",
 		"language": "Language"
 	},
+	"example-song-player": {
+		"listen": "Listen",
+		"download-mp3": "Download as MP3"
+	},
+	"tune-info": {
+		"notation": "Notation",
+		"notation-info": "Click on the {{pen}} on the breaks below to see the notes.",
+		"tune-sheet-pdf": "Tune sheet (PDF)",
+		"video": "Video",
+		"sounds": "Sounds",
+		"download-mp3": "Download as MP3"
+	},
+	"pattern-length-picker": {
+		"length": "Length: {{length}}"
+	},
+	"pattern-player-dialog": {
+		"share": "Share"
+	},
+	"pattern-player": {
+		"restore-title": "Restore original",
+		"restore-message": "Are you sure that you want to revert your modifications and restore the original break?",
+		"restore-ok": "Restore",
+		"restore": "Restore original"
+	},
+	"time-signature-picker": {
+		"time-signature": "Time signature: {{time}}"
+	},
+	"upbeat-picker": {
+		"upbeat": "Upbeat: {{upbeat}}"
+	},
+	"mute-button": {
+		"mute-all": "Mute all instruments",
+		"unmute-all": "Unmute all instruments"
+	},
+	"playback-settings-picker": {
+		"title": "Playback settings",
+		"speed": "Speed",
+		"speed-reset": "Reset",
+		"loop": "Loop",
+		"whistle": "Whistle",
+		"whistle-off": "No",
+		"whistle-one": "On one",
+		"whistle-all": "On all",
+		"volume-master": "Master"
+	},
+	"export": {
+		"error-title": "Error exporting {{type}}"
+	},
 	"overview": {
 		"listen": "Listen",
 		"compose": "Compose"
+	},
+	"pattern-list-filter": {
+		"filter-placeholder": "Filter: {{category}}"
+	},
+	"pattern-placeholder": {
+		"restore-title": "Restore original",
+		"restore-message": "Are you sure that you want to revert your modifications to {{patternName}} ({{tuneName}}) and restore the original break?",
+		"restore-ok": "Restore",
+		"user-created-tooltip": "User-created break",
+		"listen-tooltip": "Listen",
+		"show-notes-tooltip": "Show notes",
+		"edit-notes-tooltip": "Edit notes",
+		"restore-tooltip": "Restore original"
+	},
+	"play-pause-stop-button": {
+		"pause": "Pause",
+		"play": "Play",
+		"stop": "Stop"
+	},
+	"update": {
+		"new-version": "A new version of {{appName}} is available.",
+		"refresh": "{{refresh}} to update.",
+		"refresh-refresh": "Refresh the page"
 	},
 	"config": {
 		"instruments-ls": "Low Surdo",
@@ -166,5 +237,9 @@
 		"category-tricky": "Tricky",
 		"category-wester": "Western music",
 		"category-cultural-appropriation": "Cultural appropriation"
+	},
+	"default-tunes": {
+		"general-breaks": "General Breaks",
+		"special-breaks": "Special Breaks"
 	}
 }

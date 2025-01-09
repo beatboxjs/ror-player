@@ -3,6 +3,7 @@
 	import config, { Instrument } from '../../config';
 	import { PlaybackSettings } from '../../state/playbackSettings';
 	import vTooltip from "../utils/tooltip";
+	import { useI18n } from '../../services/i18n';
 
 	const props = defineProps<{
 		instrument: Instrument | "all";
@@ -12,6 +13,8 @@
 	const emit = defineEmits<{
 		"update:playbackSettings": [playbackSettings: PlaybackSettings];
 	}>();
+
+	const i18n = useI18n();
 
 	const value = computed(() => {
 		if (props.instrument === "all") {
@@ -33,7 +36,7 @@
 		});
 	};
 
-	const tooltip = computed(() => props.instrument === "all" ? `${value.value ? 'Unmute' : 'Mute'} all instruments` : undefined);
+	const tooltip = computed(() => props.instrument === "all" ? value.value ? i18n.t("mute-button.unmute-all") : i18n.t("mute-button.mute-all") : undefined);
 </script>
 
 <template>

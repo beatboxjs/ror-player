@@ -2,7 +2,7 @@
 
 import { createInstance } from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
-import { ref } from "vue";
+import { defineComponent, ref } from "vue";
 
 const DEFAULT_LANGUAGE = "en";
 
@@ -103,3 +103,30 @@ export function getTuneDescriptionHtml(tuneName: string): string {
 export function getAppInstructionsHtml(): string {
 	return i18n.t(APP_INSTRUCTIONS_KEY, { ns: APP_INSTRUCTIONS_NS });
 }
+
+/**
+ * Renders a translated message. Each interpolation variable needs to be specified as a slot, making it possible to interpolate
+ * components and rich text.
+ */
+export const T = defineComponent({
+	props: {
+		k: { type: String, required: true }
+	},
+	setup(props, { slots }) {
+		const i18n = useI18n();
+
+		return () => {
+			const mappedSlots = Object.entries(slots).map(([name, slot], i) => ({ name, placeholder: `%___SLOT_${i}___%`, slot }));
+			const placeholderByName = Object.fromEntries(mappedSlots.map(({ name, placeholder }) => [name, placeholder]));
+			const slotByPlaceholder = Object.fromEntries(mappedSlots.map(({ placeholder, slot }) => [placeholder, slot]));
+			const message = i18n.t(props.k, placeholderByName);
+			return message.split(/(%___SLOT_\d+___%)/g).map((v, i) => {
+				if (i % 2 === 0) {
+					return v;
+				} else {
+					return slotByPlaceholder[v]!();
+				}
+			});
+		};
+	}
+});
