@@ -119,7 +119,7 @@
     },
     "tune-info": {
         "notation": "Noten",
-        "notation-info": "Die Noten können durch Klick auf den {{pen}} geöffnet werden.",
+        "notation-info": "Die Noten können durch Klick auf das {{pen}}-Symbol geöffnet werden.",
         "sounds": "Anhören",
         "download-mp3": "Als MP3 herunterladen",
         "tune-sheet-pdf": "Notenheft (PDF)",
