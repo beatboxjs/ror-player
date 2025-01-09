@@ -3,7 +3,6 @@ import vuePlugin from '@vitejs/plugin-vue';
 import { plugin as mdPlugin, Mode } from 'vite-plugin-markdown';
 import audioFilesPlugin from './rollup-audio-files';
 import { viteSingleFile } from "vite-plugin-singlefile";
-import tuneDescriptionsPlugin from './rollup-tune-descriptions';
 
 export default defineConfig(({ mode }) => ({
 	define: {
@@ -13,8 +12,7 @@ export default defineConfig(({ mode }) => ({
 		vuePlugin(),
 		mdPlugin({ mode: [Mode.HTML] }),
 		audioFilesPlugin(),
-		viteSingleFile(),
-		tuneDescriptionsPlugin()
+		viteSingleFile()
 	],
 	build: {
 		sourcemap: true,
