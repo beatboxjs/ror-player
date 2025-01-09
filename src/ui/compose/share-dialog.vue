@@ -10,6 +10,7 @@
 	import { computed, ref } from 'vue';
 	import { useModal } from '../utils/modal';
 	import vTooltip from "../utils/tooltip";
+	import { useI18n } from '../../services/i18n';
 
 	const props = defineProps<{
 		linkPattern?: PatternReference;
@@ -19,6 +20,8 @@
 	const emit = defineEmits<{
 		hidden: [];
 	}>();
+
+	const i18n = useI18n();
 
 	const state = injectStateRequired();
 
@@ -123,37 +126,37 @@
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h1 class="modal-title fs-5">Share</h1>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<h1 class="modal-title fs-5">{{i18n.t("share-dialog.title")}}</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" :aria-label="i18n.t('general.dialog-close')"></button>
 					</div>
 					<div class="modal-body">
 						<ul class="nav nav-tabs">
-							<li class="nav-item"><a class="nav-link" :class="{ active: activeTab === 0 }" href="javascript:" @click="activeTab = 0">Link</a></li>
-							<li class="nav-item"><a class="nav-link" :class="{ active: activeTab === 1 }" href="javascript:" @click="activeTab = 1">Raw (compressed)</a></li>
-							<li class="nav-item"><a class="nav-link" :class="{ active: activeTab === 2 }" href="javascript:" @click="activeTab = 2">Raw (uncompressed)</a></li>
+							<li class="nav-item"><a class="nav-link" :class="{ active: activeTab === 0 }" href="javascript:" @click="activeTab = 0">{{i18n.t("share-dialog.link")}}</a></li>
+							<li class="nav-item"><a class="nav-link" :class="{ active: activeTab === 1 }" href="javascript:" @click="activeTab = 1">{{i18n.t("share-dialog.raw-compressed")}}</a></li>
+							<li class="nav-item"><a class="nav-link" :class="{ active: activeTab === 2 }" href="javascript:" @click="activeTab = 2">{{i18n.t("share-dialog.raw-uncompressed")}}</a></li>
 						</ul>
 
 						<div v-if="activeTab === 0">
 							<textarea readonly class="form-control" rows="5" :value="url"></textarea>
-							<p><em>Opening this URL will open the songs selected below and have the selected tunes/breaks available in the list.</em></p>
+							<p><em>{{i18n.t("share-dialog.link-description")}}</em></p>
 						</div>
 						<div v-else-if="activeTab === 1">
 							<textarea readonly class="form-control" rows="10" :value="rawStringCompressed"></textarea>
-							<p><em>Copy this data into the “Import” menu to make the songs and tunes/breaks selected below available in the player.</em></p>
+							<p><em>{{i18n.t("share-dialog.raw-description")}}</em></p>
 						</div>
 						<div v-else-if="activeTab === 2">
 							<textarea readonly class="form-control" rows="10" :value="rawStringUncompressed"></textarea>
-							<p><em>Copy this data into the “Import” menu to make the songs and tunes/breaks selected below available in the player.</em></p>
+							<p><em>{{i18n.t("share-dialog.raw-description")}}</em></p>
 						</div>
 
 						<hr />
 
-						<h3>Customise selection</h3>
+						<h3>{{i18n.t("share-dialog.customize-heading")}}</h3>
 						<table class="table table-sm">
 							<thead>
 								<tr>
-									<th>Songs</th>
-									<th>Tunes/Breaks</th>
+									<th>{{i18n.t("share-dialog.customize-songs")}}</th>
+									<th>{{i18n.t("share-dialog.customize-tunes-breaks")}}</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -183,7 +186,7 @@
 												<span
 													v-for="({ enabled }, patternName) in patterns"
 													:key="patternName"
-													v-tooltip.bottom="props.linkPattern && props.linkPattern[0] == tuneName && props.linkPattern[1] == patternName ? 'Will be opened by default' : enabled === 2 ? 'Used in song, cannot be disabled' : ''"
+													v-tooltip.bottom="props.linkPattern && props.linkPattern[0] == tuneName && props.linkPattern[1] == patternName ? i18n.t('share-dialog.customize-tooltip-default') : enabled === 2 ? i18n.t('share-dialog.customize-tooltip-used') : ''"
 												>
 													<button
 														type="button"

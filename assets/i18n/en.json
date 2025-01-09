@@ -78,6 +78,32 @@
 		"mode-move": "Move",
 		"mode-copy": "Copy"
 	},
+	"share-dialog": {
+		"title": "Share",
+		"link": "Link",
+		"raw-compressed": "Raw (compressed)",
+		"raw-uncompressed": "Raw (uncompressed)",
+		"link-description": "Opening this URL will open the songs selected below and have the selected tunes/breaks available in the list.",
+		"raw-description": "Copy this data into the “Import” menu to make the songs and tunes/breaks selected below available in the player.",
+		"customize-heading": "Customise selection",
+		"customize-songs": "Songs",
+		"customize-tunes-breaks": "Tunes/Breaks",
+		"customize-tooltip-default": "Will be opened by default",
+		"customize-tooltip-used": "Used in song, cannot be disabled"
+	},
+	"song-picker": {
+		"rename-title": "Enter song name",
+		"rename-ok": "Rename",
+		"copy-of-song-name": "Copy of {{name}}",
+		"copy-song-name": "Copy",
+		"remove-title": "Remove song",
+		"remove-message": "Do you really want to remove the song {{name}}?",
+		"remove-ok": "Remove",
+		"rename-tooltip": "Rename",
+		"copy-tooltip": "Copy",
+		"remove-tooltip": "Remove",
+		"new-song": "New song"
+	},
 	"overview": {
 		"listen": "Listen",
 		"compose": "Compose"
