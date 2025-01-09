@@ -27,7 +27,7 @@
 		"tunes-breaks": "Tunes/Breaks",
 		"song-exists": "Song already exists.",
 		"break-exists-identical": "Break already exists.",
-		"break-used": "Pattern is used in song, cannot be disabled.",
+		"break-used": "Break is used in song, cannot be disabled.",
 		"break-exists-different": "Already exists. Local version will be overridden.",
 		"import-button": "Import"
 	},

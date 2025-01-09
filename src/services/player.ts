@@ -28,7 +28,7 @@ for(const i in audioFiles) {
 	}
 
 	const decompressed = inflateRaw(new Uint8Array(decode(audioFiles[i])));
-	Beatbox.registerInstrument(`${m[1]}_${String.fromCodePoint(parseInt(m[2], 16))}`, decompressed.buffer);
+	Beatbox.registerInstrument(`${m[1]}_${String.fromCodePoint(parseInt(m[2], 16))}`, decompressed.buffer as ArrayBuffer);
 }
 
 let currentNumber = 0;
