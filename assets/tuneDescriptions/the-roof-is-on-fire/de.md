@@ -1,30 +1,30 @@
-Was drawn as a **Tune of the Year 2024**.
+Wurde als **Tune des Jahres 2024** ausgelost.
 
-**Sign:** Form a roof with your hands, interlace the fingers and wiggle them
-like flames.
+**Handzeichen:** Mit den Händen ein Dach formen, die Finger verschränken und mit
+diesen wackeln wie züngelnde Flammen.
 
-## Background
+## Hintergrund
 
-**Name:** “The roof is on fire” is part of the chorus in the song “Fire Water
-Burn” by the Bloodhound Gang
-([YouTube](https://www.youtube.com/watch?v=Adgx9wt63NY)), which covers the
-chorus of the song “The Roof Is on Fire” by Rock Master Scott & the Dynamic
-Three ([YouTube](https://youtu.be/-Vv_LwwwpmU?t=263)). Also, the roof of the
-sauna was literally on fire during the TNM 2019 in Lithuania.
+**Name:** “The roof is on fire” („das Dach brennt“) ist ein Teil des Refrains
+des Liedes “Fire Water Burn” von der Bloodhound Gang
+([YouTube](https://www.youtube.com/watch?v=Adgx9wt63NY)), welches wiederum den
+Refrain des Liedes “The Roof Is on Fire” von Rock Master Scott & the Dynamic
+Three ([YouTube](https://youtu.be/-Vv_LwwwpmU?t=263)) covert. Darüber hinaus hat
+auf dem TNM 2019 in Litauen das Dach der Sauna wortwörtlich gebrannt.
 
-**Musical background:** Based on the song “Fire Water Burn” by the Bloodhound
-Gang, which covers the chorus of the song “The Roof Is on Fire” by Rock Master
-Scott & the Dynamic Three.
+**Musikalischer Hintergrund:** Basiert auf dem Lied “Fire Water Burn” von der
+Bloodhound Gang, welches den Refrain des Lieds “The Roof Is on Fire” von Rock
+Master Scott & the Dynamic Three covert.
 
-**Sign:** The sign represents a roof in flames.
+**Handzeichen:** Das Handzeichen stellt ein Dach in Flammen dar.
 
-**History:** Spontaneously invented by RoR Kaunas during the TNM 2019 after the
-roof of the sauna caught fire.
+**Geschichte:** Wurde auf dem TNM 2019 spontan von RoR Kaunas erfunden, nachdem
+das Dach der Sauna brannte.
 
-## Difficulty
+## Schwierigkeit
 
-* **Surdos:** tricky
-* **Repi:** medium
-* **Snare:** medium
-* **Tamborim:** tricky
-* **Agogô:** easy
+* **Surdos:** schwierig
+* **Repi:** mittel
+* **Snare:** mittel
+* **Tamborim:** schwierig
+* **Agogô:** einfach
