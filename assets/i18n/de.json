@@ -242,5 +242,12 @@
     },
     "time-signature-picker": {
         "time-signature": "Takt: {{time}}"
+    },
+    "i18n": {
+        "special-breaks": "Spezielle Breaks",
+        "whistle-in": "Einpfeifen",
+        "general-breaks": "Allgemeine Breaks",
+        "tune": "Tune",
+        "silence": "{{beats}} Schläge Pause"
     }
 }
