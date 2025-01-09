@@ -8,7 +8,7 @@
 	import { computed, ref } from "vue";
 	import { injectStateRequired } from "../../services/state";
 	import { useModal } from "./../utils/modal";
-	import { useI18n } from "../../services/i18n";
+	import { getLocalizedDisplayName, useI18n } from "../../services/i18n";
 
 	const state = injectStateRequired();
 
@@ -41,7 +41,7 @@
 
 	const originalPattern = computed(() => defaultTunes.getPattern(props.tuneName, props.patternName));
 
-	const title = computed(() => `${state.value.tunes[props.tuneName].displayName || props.tuneName} – ${state.value.tunes[props.tuneName].patterns[props.patternName].displayName || props.patternName}`);
+	const title = computed(() => `${getLocalizedDisplayName(state.value.tunes[props.tuneName].displayName || props.tuneName)} – ${getLocalizedDisplayName(state.value.tunes[props.tuneName].patterns[props.patternName].displayName || props.patternName)}`);
 
 	const hasChanged = computed(() => !originalPattern.value || !patternEquals(originalPattern.value, pattern.value));
 

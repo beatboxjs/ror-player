@@ -10,7 +10,7 @@
 	import { computed, ref } from 'vue';
 	import { useModal } from '../utils/modal';
 	import vTooltip from "../utils/tooltip";
-	import { useI18n } from '../../services/i18n';
+	import { getLocalizedDisplayName, useI18n } from '../../services/i18n';
 
 	const props = defineProps<{
 		linkPattern?: PatternReference;
@@ -182,7 +182,7 @@
 												class="list-group-item"
 												:class="className"
 											>
-												<a href="javascript:" @click="toggleTune(tuneName as string)" draggable="false">{{state.tunes[tuneName].displayName || tuneName}}</a>
+												<a href="javascript:" @click="toggleTune(tuneName as string)" draggable="false">{{getLocalizedDisplayName(state.tunes[tuneName].displayName || tuneName as string)}}</a>
 												<span
 													v-for="({ enabled }, patternName) in patterns"
 													:key="patternName"
@@ -195,7 +195,7 @@
 														:disabled="enabled === 2"
 														@click="togglePattern(tuneName as string, patternName as string)"
 													>
-														{{state.tunes[tuneName].patterns[patternName].displayName || patternName}} <fa icon="star" v-if="linkPattern && linkPattern[0] == tuneName && linkPattern[1] == patternName" />
+														{{getLocalizedDisplayName(state.tunes[tuneName].patterns[patternName].displayName || patternName as string)}} <fa icon="star" v-if="linkPattern && linkPattern[0] == tuneName && linkPattern[1] == patternName" />
 													</button>
 												</span>
 											</li>

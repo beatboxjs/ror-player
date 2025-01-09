@@ -10,7 +10,7 @@
 	import vTooltip from "../utils/tooltip";
 	import { download, ExportType } from "../utils/export";
 	import { BeatboxReference, getPlayerById } from "../../services/player";
-	import { getTuneDescriptionHtml, T, useI18n } from "../../services/i18n";
+	import { getLocalizedDisplayName, getTuneDescriptionHtml, T, useI18n } from "../../services/i18n";
 
 	const state = injectStateRequired();
 
@@ -71,7 +71,7 @@
 
 <template>
 	<div class="bb-tune-info" v-if="tune">
-		<h1>{{tune.displayName || tuneName}}</h1>
+		<h1>{{getLocalizedDisplayName(tune.displayName || tuneName)}}</h1>
 
 		<div v-html="tuneDescriptionHtml"></div>
 

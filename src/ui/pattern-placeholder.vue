@@ -13,7 +13,7 @@
 	import { showConfirm } from "./utils/alert";
 	import vTooltip from "./utils/tooltip";
 	import AbstractPlayer, { PositionData } from "./utils/abstract-player.vue";
-	import { useI18n } from "../services/i18n";
+	import { getLocalizedDisplayName, useI18n } from "../services/i18n";
 
 	export const PatternPlaceholderItem = defineComponent({
 		setup(props, { slots }) {
@@ -152,10 +152,10 @@
 <template>
 	<div class="bb-pattern-placeholder" :class="[{ dragging }, `drag-effect-${dragEffect}`]" :draggable="draggable ? 'true' : 'false'" @dragstart="handleDragStart($event)" @dragend="handleDragEnd($event)" ref="containerRef">
 		<div class="card pattern-button">
-			<span class="tune-name">{{state.tunes[tuneName].displayName || tuneName}}</span>
+			<span class="tune-name">{{getLocalizedDisplayName(state.tunes[tuneName].displayName || tuneName)}}</span>
 			<br>
 			<span class="pattern-name">
-				{{state.tunes[tuneName].patterns[patternName].displayName || patternName}}
+				{{getLocalizedDisplayName(state.tunes[tuneName].patterns[patternName].displayName || patternName)}}
 				<fa v-if="isCustomPattern" icon="star" v-tooltip="i18n.t('pattern-placeholder.user-created-tooltip')"/>
 			</span>
 		</div>

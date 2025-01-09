@@ -2,6 +2,7 @@
 	import { computed, nextTick, ref, watch } from "vue";
 	import { injectStateRequired } from "../../services/state";
 	import PatternListFilter, { Filter, filterPatternList } from "../pattern-list-filter.vue";
+	import { getLocalizedDisplayName } from "../../services/i18n";
 
 	const props = defineProps<{
 		tuneName: string | null | undefined;
@@ -51,7 +52,7 @@
 		<ul class="nav nav-pills flex-column flex-nowrap" ref="tuneListRef">
 			<li v-for="thisTuneName in tuneList" :key="thisTuneName" class="nav-item">
 				<a class="nav-link" :class="{ active: thisTuneName == tuneName }" href="javascript:" @click="tuneName = thisTuneName" draggable="false">
-					{{state.tunes[thisTuneName].displayName || thisTuneName}}
+					{{getLocalizedDisplayName(state.tunes[thisTuneName].displayName || thisTuneName)}}
 				</a>
 			</li>
 		</ul>

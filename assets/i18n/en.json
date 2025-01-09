@@ -5,6 +5,13 @@
 		"dialog-cancel": "Cancel",
 		"dialog-ok": "OK"
 	},
+	"i18n": {
+		"general-breaks": "General Breaks",
+		"special-breaks": "Special Breaks",
+		"tune": "Tune",
+		"silence": "{{beats}} Silence",
+		"whistle-in": "Whistle in"
+	},
 	"compose": {
 		"add-to-song-tooltip": "Add to song"
 	},
@@ -237,9 +244,5 @@
 		"category-tricky": "Tricky",
 		"category-wester": "Western music",
 		"category-cultural-appropriation": "Cultural appropriation"
-	},
-	"default-tunes": {
-		"general-breaks": "General Breaks",
-		"special-breaks": "Special Breaks"
 	}
 }

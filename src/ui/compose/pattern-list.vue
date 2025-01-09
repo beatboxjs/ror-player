@@ -11,7 +11,7 @@
 	import { injectStateRequired } from "../../services/state";
 	import { showConfirm, showPrompt } from "../utils/alert";
 	import vTooltip from "../utils/tooltip";
-	import { useI18n } from "../../services/i18n";
+	import { getLocalizedDisplayName, useI18n } from "../../services/i18n";
 
 	const props = defineProps<{
 		expandTune?: string;
@@ -213,7 +213,7 @@
 				<div class="card-header">
 					<div class="d-grid">
 						<button type="button" class="btn btn-link" @click="toggleTune(tune.tuneName)">
-							{{tune.displayName}}
+							{{getLocalizedDisplayName(tune.displayName)}}
 							<fa v-if="tune.isCustom" icon="star" v-tooltip="i18n.t('pattern-list.user-created-tune')"/>
 							<fa icon="caret-down"/>
 						</button>

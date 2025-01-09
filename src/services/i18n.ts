@@ -104,6 +104,29 @@ export function getAppInstructionsHtml(): string {
 	return i18n.t(APP_INSTRUCTIONS_KEY, { ns: APP_INSTRUCTIONS_NS });
 }
 
+export function getLocalizedDisplayName(name: string): string {
+	switch (name) {
+		case "General Breaks":
+			return getI18n().t("i18n.general-breaks");
+		case "Special Breaks":
+			return getI18n().t("i18n.special-breaks");
+		case "Tune":
+			return getI18n().t("i18n.tune");
+		case "4 Silence":
+			return getI18n().t("i18n.silence", { beats: 4 });
+		case "8 Silence":
+			return getI18n().t("i18n.silence", { beats: 8 });
+		case "12 Silence":
+			return getI18n().t("i18n.silence", { beats: 12 });
+		case "16 Silence":
+			return getI18n().t("i18n.silence", { beats: 16 });
+		case "Whistle in":
+			return getI18n().t("i18n.whistle-in");
+		default:
+			return name;
+	}
+}
+
 /**
  * Renders a translated message. Each interpolation variable needs to be specified as a slot, making it possible to interpolate
  * components and rich text.

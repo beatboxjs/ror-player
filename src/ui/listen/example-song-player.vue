@@ -18,7 +18,7 @@
 	import vTooltip from "../utils/tooltip";
 	import { download, ExportType } from "../utils/export";
 	import AbstractPlayer, { PositionData } from "../utils/abstract-player.vue";
-	import { useI18n } from "../../services/i18n";
+	import { getLocalizedDisplayName, useI18n } from "../../services/i18n";
 
 	const state = injectStateRequired();
 
@@ -100,12 +100,12 @@
 	<div class="bb-example-song">
 		<div class="song" @click="setPosition($event)" ref="songRef">
 			<div class="card" style="width: 10em;">
-				<span class="tune-name">{{state.tunes["General Breaks"].displayName || "General Breaks"}}</span>
-				<span class="pattern-name">{{state.tunes["General Breaks"].patterns["Whistle in"].displayName || "Whistle in"}}</span>
+				<span class="tune-name">{{getLocalizedDisplayName("General Breaks")}}</span>
+				<span class="pattern-name">{{getLocalizedDisplayName("Whistle in")}}</span>
 			</div>
 			<div v-for="(part, i) in normalizedSong" :key="i" class="card" :style="{ width: `${2.5 * part.length }em` }">
-				<span class="tune-name">{{state.tunes[part.tuneName].displayName || part.tuneName}}</span>
-				<span class="pattern-name">{{state.tunes[part.tuneName].patterns[part.patternName].displayName || part.patternName}}</span>
+				<span class="tune-name">{{getLocalizedDisplayName(state.tunes[part.tuneName].displayName || part.tuneName)}}</span>
+				<span class="pattern-name">{{getLocalizedDisplayName(state.tunes[part.tuneName].patterns[part.patternName].displayName || part.patternName)}}</span>
 			</div>
 
 			<AbstractPlayer

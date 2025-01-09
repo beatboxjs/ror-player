@@ -7,7 +7,7 @@
 	import { injectStateRequired } from "../../services/state";
 	import { useModal } from "../utils/modal";
 	import vTooltip from "../utils/tooltip";
-	import { useI18n } from "../../services/i18n";
+	import { getLocalizedDisplayName, useI18n } from "../../services/i18n";
 
 	const emit = defineEmits<{
 		hidden: [];
@@ -176,7 +176,7 @@
 										<td>
 											<ul class="list-group">
 												<li v-for="(tune, tuneName) in tuneInfo" :key="tuneName" class="list-group-item" :class="tune.className">
-													<a href="javascript:" @click="clickTune(tuneName as string)" draggable="false">{{tune.displayName}}</a>
+													<a href="javascript:" @click="clickTune(tuneName as string)" draggable="false">{{getLocalizedDisplayName(tune.displayName)}}</a>
 													<div>
 														<span
 															v-for="(pattern, patternName) in tune.patterns"
