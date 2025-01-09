@@ -11,6 +11,7 @@
 	import SongPicker from "./song-picker.vue";
 	import PlayPauseStopButton from "../play-pause-stop-button.vue";
 	import { download, ExportType } from "../utils/export";
+	import { useI18n } from "../../services/i18n";
 
 	const props = defineProps<{
 		player: BeatboxReference;
@@ -20,6 +21,8 @@
 	const emit = defineEmits<{
 		"update:songIdx": [songIdx: number];
 	}>();
+
+	const i18n = useI18n();
 
 	const state = injectStateRequired();
 
@@ -37,10 +40,10 @@
 
 	const handleClearSong = async () => {
 		if(await showConfirm({
-			title: "Clear song",
-			message: "Do you really want to clear the current song?",
+			title: i18n.t("song-player-toolbar.clear-song-title"),
+			message: i18n.t("song-player-toolbar.clear-song-message"),
 			variant: "danger",
-			okLabel: "Clear"
+			okLabel: i18n.t("song-player-toolbar.clear-song-ok")
 		})) {
 			clearSong(song.value);
 		}
@@ -66,14 +69,14 @@
 
 		<div class="dropdown">
 			<button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
-				<fa icon="cog"/><span class="d-none d-sm-inline"> Tools</span>
+				<fa icon="cog"/><span class="d-none d-sm-inline">{{" "}}{{i18n.t("song-player-toolbar.tools")}}</span>
 			</button>
 			<ul class="dropdown-menu">
-				<li><a class="dropdown-item" href="javascript:" @click="handleClearSong()" draggable="false"><fa icon="trash" fixed-width/> Clear song</a></li>
-				<li><a class="dropdown-item" href="javascript:" @click="handleDownload(ExportType.MP3)" draggable="false"><fa icon="file-export" fixed-width/> Export MP3</a></li>
-				<li><a class="dropdown-item" href="javascript:" @click="handleDownload(ExportType.WAV)" draggable="false"><fa icon="file-export" fixed-width/> Export WAV</a></li>
-				<li><a class="dropdown-item" href="javascript:" @click="showShareDialog = true" draggable="false"><fa icon="share" fixed-width/> Share</a></li>
-				<li><a class="dropdown-item" href="javascript:" @click="showImportDialog = true" draggable="false"><fa icon="file-import" fixed-width/> Import</a></li>
+				<li><a class="dropdown-item" href="javascript:" @click="handleClearSong()" draggable="false"><fa icon="trash" fixed-width/>{{" "}}{{i18n.t("song-player-toolbar.clear-song")}}</a></li>
+				<li><a class="dropdown-item" href="javascript:" @click="handleDownload(ExportType.MP3)" draggable="false"><fa icon="file-export" fixed-width/>{{" "}}{{i18n.t("song-player-toolbar.export-mp3")}}</a></li>
+				<li><a class="dropdown-item" href="javascript:" @click="handleDownload(ExportType.WAV)" draggable="false"><fa icon="file-export" fixed-width/>{{" "}}{{i18n.t("song-player-toolbar.export-wav")}}</a></li>
+				<li><a class="dropdown-item" href="javascript:" @click="showShareDialog = true" draggable="false"><fa icon="share" fixed-width/>{{" "}}{{i18n.t("song-player-toolbar.share")}}</a></li>
+				<li><a class="dropdown-item" href="javascript:" @click="showImportDialog = true" draggable="false"><fa icon="file-import" fixed-width/>{{" "}}{{i18n.t("song-player-toolbar.import")}}</a></li>
 			</ul>
 		</div>
 

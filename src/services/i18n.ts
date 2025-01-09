@@ -42,10 +42,16 @@ i18n.init({
 });
 
 const TUNE_DESCRIPTIONS_NS = "tune-descriptions";
-
 for (const [filename, module] of Object.entries(import.meta.glob('../../assets/tuneDescriptions/*/*.md', { eager: true }))) {
 	const m = filename.match(/([^/\\]+)[/\\]([^/\\]+)\.md/)!;
 	i18n.addResource(m[2], TUNE_DESCRIPTIONS_NS, m[1], (module as any).html);
+}
+
+const APP_INSTRUCTIONS_NS = "app-instructions";
+const APP_INSTRUCTIONS_KEY = "app-instructions";
+for (const [filename, module] of Object.entries(import.meta.glob('../../assets/appInstructions/*.md', { eager: true }))) {
+	const m = filename.match(/([^/\\]+)\.md/)!;
+	i18n.addResource(m[1], APP_INSTRUCTIONS_NS, APP_INSTRUCTIONS_KEY, (module as any).html);
 }
 
 const i18nResourceChangeCounter = ref(0);
@@ -92,4 +98,8 @@ export function useI18n(): ReturnType<typeof getI18n> {
 
 export function getTuneDescriptionHtml(tuneName: string): string {
 	return i18n.t(tuneName, { ns: TUNE_DESCRIPTIONS_NS, defaultValue: "" });
+}
+
+export function getAppInstructionsHtml(): string {
+	return i18n.t(APP_INSTRUCTIONS_KEY, { ns: APP_INSTRUCTIONS_NS });
 }

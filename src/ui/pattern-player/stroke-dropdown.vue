@@ -128,7 +128,7 @@
 			:class="{ active: sequence ? getCurrentStrokeSequenceOptions().includes(stroke) : value == stroke }"
 			href="javascript:"
 			@click="handleSelect(stroke)"
-			v-tooltip="config.strokesDescription[stroke]"
+			v-tooltip="config.strokesDescription[stroke]?.()"
 			draggable="false"
 		>
 			{{config.strokes[stroke]}}

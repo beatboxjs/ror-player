@@ -6,11 +6,10 @@
 </script>
 
 <script lang="ts" setup>
-	import { ref } from "vue";
+	import { computed, ref } from "vue";
 	import config from "../../config";
 	import { useModal } from "../utils/modal";
-	import { html as appDescriptionHtml } from "./app.md";
-	import { LANGUAGES, useI18n } from "../../services/i18n";
+	import { getAppInstructionsHtml, LANGUAGES, useI18n } from "../../services/i18n";
 	import { reactiveLocalStorage } from "../../services/localStorage";
 
 	const i18n = useI18n();
@@ -29,6 +28,8 @@
 		i18n.changeLanguage(lang);
 		reactiveLocalStorage.lang = lang;
 	}
+
+	const appInstructionsHtml = computed(() => getAppInstructionsHtml());
 </script>
 
 <template>
@@ -38,13 +39,13 @@
 				<fa icon="info-circle"/>
 			</button>
 			<ul class="dropdown-menu dropdown-menu-end">
-				<li><a class="dropdown-item" href="https://player-docs.rhythms-of-resistance.org/" target="_blank"><fa icon="question-circle" fixed-width/> User manual</a></li>
-				<li><a class="dropdown-item" href="https://github.com/beatboxjs/ror-player/issues" target="_blank"><fa icon="exclamation-circle" fixed-width/> Report a problem</a></li>
-				<li><a class="dropdown-item" href="?" :download="downloadFilename"><fa icon="download" fixed-width/> Download {{config.appName}}</a></li>
-				<li><a class="dropdown-item" href="javascript:" @click="showAppModal = true"><fa icon="mobile-alt" fixed-width/> {{config.appName}} app</a></li>
-				<li><a class="dropdown-item" href="https://github.com/beatboxjs/ror-player" target="_blank"><fa icon="code" fixed-width/> Source code on GitHub</a></li>
+				<li><a class="dropdown-item" href="https://player-docs.rhythms-of-resistance.org/" target="_blank"><fa icon="question-circle" fixed-width/> {{i18n.t("help.user-manual")}}</a></li>
+				<li><a class="dropdown-item" href="https://github.com/beatboxjs/ror-player/issues" target="_blank"><fa icon="exclamation-circle" fixed-width/> {{i18n.t("help.report-problem")}}</a></li>
+				<li><a class="dropdown-item" href="?" :download="downloadFilename"><fa icon="download" fixed-width/> {{i18n.t("help.download", { appName: config.appName })}}</a></li>
+				<li><a class="dropdown-item" href="javascript:" @click="showAppModal = true"><fa icon="mobile-alt" fixed-width/> {{i18n.t("help.app", { appName: config.appName })}}</a></li>
+				<li><a class="dropdown-item" href="https://github.com/beatboxjs/ror-player" target="_blank"><fa icon="code" fixed-width/> {{i18n.t("help.source-code")}}</a></li>
 				<li><hr class="dropdown-divider"></li>
-				<li><h6 class="dropdown-header">Language</h6></li>
+				<li><h6 class="dropdown-header">{{i18n.t("help.language")}}</h6></li>
 				<li class="bb-language-picker">
 					<a
 						v-for="lang in LANGUAGES"
@@ -52,7 +53,7 @@
 						class="dropdown-item"
 						:class="{ active: lang === i18n.currentLanguage }"
 						href="javascript:"
-						@click="selectLanguage(lang)"
+						@click.stop="selectLanguage(lang)"
 					>{{lang}}</a>
 				</li>
 			</ul>
@@ -63,12 +64,12 @@
 				<div class="modal-dialog modal-dialog-scrollable">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h1 class="modal-title fs-5">{{config.appName}} app</h1>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							<h1 class="modal-title fs-5">{{i18n.t("help.app", { appName: config.appName })}}</h1>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" :aria-label="i18n.t('general.dialog-close')"></button>
 						</div>
-						<div class="modal-body" v-html="appDescriptionHtml"></div>
+						<div class="modal-body" v-html="appInstructionsHtml"></div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+							<button type="button" class="btn btn-primary" data-bs-dismiss="modal">{{i18n.t("general.dialog-ok")}}</button>
 						</div>
 					</div>
 				</div>

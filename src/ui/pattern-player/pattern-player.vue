@@ -242,12 +242,12 @@
 				</thead>
 				<tbody>
 					<tr v-for="instrumentKey in config.instrumentKeys" :key="instrumentKey">
-						<th>{{config.instruments[instrumentKey].name}}</th>
+						<th>{{config.instruments[instrumentKey].name()}}</th>
 						<td class="instrument-operations">
 							<HeadphonesButton :instrument="instrumentKey" v-model:playbackSettings="playbackSettings" groupSurdos />
 							<MuteButton :instrument="instrumentKey" v-model:playbackSettings="playbackSettings" />
 						</td>
-						<td v-for="i in pattern.length*pattern.time + pattern.upbeat" :key="i" class="stroke" :class="getStrokeClass(i-1, instrumentKey)" v-tooltip="config.strokesDescription[pattern[instrumentKey][i-1]] || ''">
+						<td v-for="i in pattern.length*pattern.time + pattern.upbeat" :key="i" class="stroke" :class="getStrokeClass(i-1, instrumentKey)" v-tooltip="config.strokesDescription[pattern[instrumentKey][i-1]]?.() || ''">
 							<span v-if="readonly" class="stroke-inner">{{config.strokes[pattern[instrumentKey][i-1]] || '\xa0'}}</span>
 							<a v-if="!readonly"
 								href="javascript:" class="stroke-inner"

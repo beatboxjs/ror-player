@@ -16,6 +16,7 @@
 	import vTooltip from "../utils/tooltip";
 	import { useRefWithOverride } from "../../utils";
 	import AbstractPlayer, { PositionData } from "../utils/abstract-player.vue";
+	import { useI18n } from "../../services/i18n";
 
 	type DragOver = "trash" | { instr?: Instrument; idx: number };
 </script>
@@ -30,6 +31,8 @@
 		"update:songIdx": [songIdx: number];
 		"update:isDraggingPattern": [isDraggingPattern: boolean];
 	}>();
+
+	const i18n = useI18n();
 
 	const state = injectStateRequired();
 
@@ -325,9 +328,9 @@
 			<div class="bb-col instruments">
 				<div class="timeline"></div>
 				<div class="field" v-for="instrumentKey in config.instrumentKeys" :key="instrumentKey">
-					{{config.instruments[instrumentKey].name}}
+					{{config.instruments[instrumentKey].name()}}
 				</div>
-				<div class="field all-drop">All</div>
+				<div class="field all-drop">{{i18n.t("song-player.all-instruments")}}</div>
 			</div><div class="bb-col instrument-actions">
 				<div class="timeline">
 					<MuteButton instrument="all" v-model:playbackSettings="state.playbackSettings"/>
@@ -366,7 +369,7 @@
 							<PatternPlaceholderItem>
 								<div class="dropdown">
 									<a href="javascript" data-bs-toggle="dropdown">
-										<fa icon="hand-point-right" v-tooltip="'Pick instruments'"/>
+										<fa icon="hand-point-right" v-tooltip="i18n.t('song-player.pick-intruments-tooltip')"/>
 									</a>
 									<ul class="dropdown-menu">
 										<li v-for="instrumentKey2 in config.instrumentKeys" :key="instrumentKey2">
@@ -375,13 +378,13 @@
 												href="javascript:"
 												@click="toggleInstrument(instrumentKey2, i-1, song[i-1][instrumentKey]!)"
 												draggable="false"
-											><fa icon="check" :style="{visibility: isEqual(song[i-1][instrumentKey2], song[i-1][instrumentKey]) ? 'visible' : 'hidden'}"></fa> {{config.instruments[instrumentKey2].name}}</a>
+											><fa icon="check" :style="{visibility: isEqual(song[i-1][instrumentKey2], song[i-1][instrumentKey]) ? 'visible' : 'hidden'}"></fa> {{config.instruments[instrumentKey2].name()}}</a>
 										</li>
 									</ul>
 								</div>
 							</PatternPlaceholderItem>
 							<PatternPlaceholderItem>
-								<a href="javascript:" @click="removePatternFromSong(instrumentKey, i-1)" v-tooltip="'Remove'" draggable="false"><fa icon="trash" /></a>
+								<a href="javascript:" @click="removePatternFromSong(instrumentKey, i-1)" v-tooltip="i18n.t('song-player.remove-tooltip')" draggable="false"><fa icon="trash" /></a>
 							</PatternPlaceholderItem>
 						</PatternPlaceholder>
 						<span class="placeholder-drag-handle" draggable="true" @dragstart="handleResizeDragStart($event, instrumentKey, i-1)" @dragend="handleResizeDragEnd($event)"><span class="caret-se"></span></span>
@@ -395,7 +398,7 @@
 					@dragleave="handleDragLeave($event, { idx: i-1 })"
 					@drop="handleDrop($event)"
 				>
-					(All)
+					{{i18n.t("song-player.all-instruments-drop")}}
 				</div>
 			</div></div>
 

@@ -146,7 +146,7 @@
 						<strong>Master</strong>
 					</td>
 					<td v-for="instrumentKey in config.instrumentKeys" :key="instrumentKey">
-						<span>{{config.instruments[instrumentKey].name}}</span>
+						<span>{{config.instruments[instrumentKey].name()}}</span>
 					</td>
 				</tr>
 			</tbody>

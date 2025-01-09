@@ -104,8 +104,67 @@
 		"remove-tooltip": "Remove",
 		"new-song": "New song"
 	},
+	"song-player-toolbar": {
+		"clear-song-title": "Clear song",
+		"clear-song-message": "Do you really want to clear the current song?",
+		"clear-song-ok": "Clear",
+		"tools": "Tools",
+		"clear-song": "Clear song",
+		"export-mp3": "Export MP3",
+		"export-wav": "Export WAV",
+		"share": "Share",
+		"import": "Import"
+	},
+	"song-player": {
+		"all-instruments": "All",
+		"pick-intruments-tooltip": "Pick instruments",
+		"remove-tooltip": "Remove",
+		"all-instruments-drop": "(All)"
+	},
+	"help": {
+		"user-manual": "User manual",
+		"report-problem": "Report a problem",
+		"download": "Download {{appName}}",
+		"app": "{{appName}} app",
+		"source-code": "Source code on GitHub",
+		"language": "Language"
+	},
 	"overview": {
 		"listen": "Listen",
 		"compose": "Compose"
+	},
+	"config": {
+		"instruments-ls": "Low Surdo",
+		"instruments-ms": "Mid Surdo",
+		"instruments-hs": "High Surdo",
+		"instruments-re": "Repi",
+		"instruments-sn": "Snare",
+		"instruments-ta": "Tamborim",
+		"instruments-ag": "Agogô",
+		"instruments-sh": "Shaker",
+		"instruments-ot": "Shouting",
+		"stroke-description-hd": "Slap with hand",
+		"stroke-description-0": "Damp with hand",
+		"stroke-description-sil": "Silent stroke",
+		"stroke-description-fl": "Flare",
+		"stroke-description-w": "Whippy (tamborim) stick",
+		"stroke-description-.": "Silent stroke",
+		"stroke-description-wh": "Whistle",
+		"stroke-description-wh2": "Long whistle",
+		"stroke-description-s": "Soft flare",
+		"time-with-triplets": "{{time}} with triplets",
+		"time-with-quintuplets": "{{time}} with quintuplets",
+		"category-all": "All tunes",
+		"category-common": "Common tunes",
+		"category-uncommon": "Uncommon tunes",
+		"category-new": "New tunes",
+		"category-proposed": "Proposed tunes",
+		"category-custom": "Custom tunes",
+		"category-onesurdo": "One Surdo",
+		"category-easy": "Easy",
+		"category-medium": "Medium",
+		"category-tricky": "Tricky",
+		"category-wester": "Western music",
+		"category-cultural-appropriation": "Cultural appropriation"
 	}
 }

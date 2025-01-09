@@ -44,7 +44,7 @@
 	});
 
 	const filterCats = computed(() => {
-		const cats: Partial<Record<Category, string>> = { ...config.filterCats };
+		const cats: Partial<Record<Category, string>> = Object.fromEntries(Object.entries(config.filterCats).map(([cat, desc]) => [cat, desc()]));
 		if (!props.showCustom)
 			delete cats.custom;
 		return cats;

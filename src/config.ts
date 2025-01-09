@@ -1,4 +1,5 @@
 import * as z from "zod";
+import { getI18n } from "./services/i18n";
 
 const instrumentKeys = ["ls", "ms", "hs", "re", "sn", "ta", "ag", "sh", "ot"] as const;
 export const instrumentValidator = z.enum(instrumentKeys);
@@ -21,7 +22,7 @@ export type Config = {
 	instrumentKeys: Instrument[];
 
 	instruments: Record<Instrument, {
-		name: string;
+		name: () => string;
 		/** The strokes that this instrument can play. Defines what options the stroke picker will display. */
 		strokes: Array<Stroke>;
 	}>;
@@ -30,7 +31,7 @@ export type Config = {
 	strokes: Record<Stroke, string>;
 
 	/** Optionally defining a tooltip that will describe a particular stroke further. */
-	strokesDescription: Partial<Record<Stroke, string>>;
+	strokesDescription: Partial<Record<Stroke, () => string>>;
 
 	/** Presets for the values of the instrument volume sliders, by preset name. */
 	volumePresets: Record<string, Record<Instrument, number>>;
@@ -39,7 +40,7 @@ export type Config = {
 	 * The available time signatures. The key is the number of strokes per beat (the number of beats per bar is fixed to 4), the value is
 	 * the name of the time measurement as it should be shown in the UI.
 	 */
-	times: Record<number, string>;
+	times: Record<number, () => string>;
 
 	/**
 	 * The stroke resolution that will be used throughout the app, in number of strokes per beat (the number of beats per bar is fixed to 4).
@@ -49,7 +50,7 @@ export type Config = {
 	playTime: number;
 
 	/** The available tune filter categories mapped to their display name. */
-	filterCats: Record<Category, string>;
+	filterCats: Record<Category, () => string>;
 
 	/**
 	 * The current tune of the year. It will be opened by default when the app is opened. If multiple tunes are specified, one of them will be
@@ -70,39 +71,39 @@ const config: Config = {
 
 	instruments: {
 		ls: {
-			name: "Low Surdo",
+			name: () => getI18n().t("config.instruments-ls"),
 			strokes: [ "X", "0", "s", "t", "r" ]
 		},
 		ms: {
-			name: "Mid Surdo",
+			name: () => getI18n().t("config.instruments-ms"),
 			strokes: [ "X", "0", "s", "t", "r" ]
 		},
 		hs: {
-			name: "High Surdo",
+			name: () => getI18n().t("config.instruments-hs"),
 			strokes: [ "X", "0", "s", "t", "r" ]
 		},
 		re: {
-			name: "Repi",
+			name: () => getI18n().t("config.instruments-re"),
 			strokes: [ "X", "f", "r", "h", ".", "z", "s" ]
 		},
 		sn: {
-			name: "Snare",
+			name: () => getI18n().t("config.instruments-sn"),
 			strokes: [ ".", "X", "r", "f" ]
 		},
 		ta: {
-			name: "Tamborim",
+			name: () => getI18n().t("config.instruments-ta"),
 			strokes: [ "X", "r", "f" ]
 		},
 		ag: {
-			name: "Agogô",
+			name: () => getI18n().t("config.instruments-ag"),
 			strokes: [ "o", "a", "r", "." ]
 		},
 		sh: {
-			name: "Shaker",
+			name: () => getI18n().t("config.instruments-sh"),
 			strokes: [ "X", "." ]
 		},
 		ot: {
-			name: "Shouting",
+			name: () => getI18n().t("config.instruments-ot"),
 			strokes: [ "w", "y", "A", "B", "D", "E", "F", "G", "J", "K", "L", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "Y", "Z", "9", "8", "7", "6", "5", "b", "c", "d", "e", "g", "q", "j", "k", "m", "n", "u", "v", "x", "i", "l", "p", "$", "%", "&", "'", "(", ")", "*", ",", "-", "?", ":", ";", "<", "=", ">", "K", "[", "\\", "^", "_", "`", "{", "|", "}", "~", "À", "Á", "Â", "Ã", "Ä", "Å", "Æ", "Ç", "È", "É", "Ê", "Ë", "Ì", "Í", "Î", "Ï", "İ", "Ǐ", "Ī", "Ĩ", "Į", "Ĳ", "Ð", "Ñ", "Ò", "Ó", "Ô" ]
 		}
 	},
@@ -227,16 +228,15 @@ const config: Config = {
 	},
 
 	strokesDescription: {
-		"h": "Hand",
-		"i": "Slap with hand",
-		"0": "Damp with hand",
-		"s": "Silent stroke",
-		"f": "Flare",
-		"t": "Whippy (tamborim) stick",
-		".": "Silent stroke",
-		"w" : "Whistle",
-		"y" : "Long whistle",
-		"z": "Soft flare"
+		"h": () => getI18n().t("config.stroke-description-hd"),
+		"0": () => getI18n().t("config.stroke-description-0"),
+		"s": () => getI18n().t("config.stroke-description-sil"),
+		"f": () => getI18n().t("config.stroke-description-fl"),
+		"t": () => getI18n().t("config.stroke-description-w"),
+		".": () => getI18n().t("config.stroke-description-."),
+		"w" :() => getI18n().t("config.stroke-description-wh"),
+		"y" :() => getI18n().t("config.stroke-description-wh2"),
+		"z": () => getI18n().t("config.stroke-description-s")
 	},
 
 	volumePresets: {
@@ -265,32 +265,32 @@ const config: Config = {
 	},
 
 	times: {
-		2: "2⁄4",
-		3: "6⁄8",
-		4: "4⁄4",
-		5: "5⁄8",
-		6: "3⁄4",
-		8: "8⁄8",
-		12: "4⁄4 with triplets",
-		20: "4⁄4 with quintuplets"
+		2: () => "2⁄4",
+		3: () => "6⁄8",
+		4: () => "4⁄4",
+		5: () => "5⁄8",
+		6: () => "3⁄4",
+		8: () => "8⁄8",
+		12: () => getI18n().t("config.time-with-triplets", { time: "4⁄4" }),
+		20: () => getI18n().t("config.time-with-quintuplets", { time: "4⁄4" })
 	},
 
 	// Time measurement that is used for beatbox.js. Should be able to represent all the time measurements above
 	playTime: 120,
 
 	filterCats: {
-		all: "All tunes",
-		common: "Common tunes",
-		uncommon: "Uncommon tunes",
-		new: "New tunes",
-		proposed: "Proposed tunes",
-		custom: "Custom tunes",
-		onesurdo: "One Surdo",
-		easy: "Easy",
-		medium: "Medium",
-		tricky: "Tricky",
-		western: "Western music",
-		"cultural-appropriation": "Cultural appropriation"
+		all: () => getI18n().t("config.category-all"),
+		common: () => getI18n().t("config.category-common"),
+		uncommon: () => getI18n().t("config.category-uncommon"),
+		new: () => getI18n().t("config.category-new"),
+		proposed: () => getI18n().t("config.category-proposed"),
+		custom: () => getI18n().t("config.category-custom"),
+		onesurdo: () => getI18n().t("config.category-onesurdo"),
+		easy: () => getI18n().t("config.category-easy"),
+		medium: () => getI18n().t("config.category-medium"),
+		tricky: () => getI18n().t("config.category-tricky"),
+		western: () => getI18n().t("config.category-western"),
+		"cultural-appropriation": () => getI18n().t("config.category-cultural-appropriation")
 	},
 
 	tuneOfTheYear: "The Roof Is on Fire",
