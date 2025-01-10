@@ -4,7 +4,7 @@
 
 **Musical background:** The tune bases its sounds in a popular local music genre called “chicha”, which combines Andean “huayno” and tropical “cumbia”.
 
-**History:** Composed by the Peruvian Lima-based collective Tamboras Resistencia and shared with us in 2024.
+**History:** Composed by the Peruvian Lima-based collective Tamboras Resistencia and shared on the TNM 2024 by RoR Zürich.
 
 ## Difficulty
 
