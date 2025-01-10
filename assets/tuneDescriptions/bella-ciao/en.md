@@ -4,7 +4,7 @@
 
 **Musical background:** The song is based on the song [Bella Ciao](https://en.wikipedia.org/wiki/Bella_ciao), a song used by the Italian partisans who resisted against Nazi Germany. The Repi line, Break 1 and the Intro resemble the rhythm of the song.
 
-**History:** Introduced by RoR Zürich in 2024.
+**History:** Introduced by RoR Zürich in 2024, shared and extended (yay!) on the TNM 2024.
 
 ## Difficulty
 
@@ -13,3 +13,5 @@
 * **Repi:** medium
 * **Snare:** hard
 * **Tamborim:** medium
+* **Agogô:** easy
+* **Shaker:** medium

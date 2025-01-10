@@ -597,12 +597,20 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ls: repeat(4, "X  XX X X  XX X "),
 				ms: repeat(4, "          XXXX  "),
 				re: "f X       X X X f X       X X X f   X X f   X X f   f   f X X X ",
-				sn: repeat(4, "...X..X..X.X..X."),
-				ta: repeat(4, "    XXX   X X X ")
+				sn: repeat(2, "...X..X....X..X....X..X..X.X..X."),
+				ta: repeat(4, "    XXX   X X X "),
+				ag: "    o o o           a a a       o       o       a   a   a       ",
+				sh: repeat(4, "...X..X....X....")
 			},
 			"Break 1": {
 				ls: "X   X X X   X X X   X   X       ",
-				ms: "@ls"
+				ms: "@ls",
+				hs: "@ls",
+				re: "@ls",
+				sn: "@ls",
+				ta: "@ls",
+				ag: "@ls",
+				sh: "@ls"
 			},
 			"Break 2": {
 				ls: "X X             X X             X X             XXX XXX X X X X ",
