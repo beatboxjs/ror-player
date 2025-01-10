@@ -10,8 +10,8 @@ drehen, als ob rein- und rausgezoomt wird.
 
 ## Schwierigkeit
 
-* **Surdos:** easy
-* **Repi:** easy
+* **Surdos:** enfach
+* **Repi:** einfach
 * **Snare:** easy
 * **Tamborim:** medium
 * **Agogô:** easy
