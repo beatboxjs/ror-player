@@ -12,7 +12,8 @@ Sign: move flat hands like stepping
 
 ## Difficulty
 
-* **Surdos:** medium/tricky
+* **Low Surdo**: easy
+* **Mid/High Surdo:** tricky
 * **Repi:** medium
 * **Snare:** tricky
 * **Tamborim:** medium
