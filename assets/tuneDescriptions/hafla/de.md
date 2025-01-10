@@ -2,7 +2,7 @@ It is not the easiest to play but sounds really cool!
 
 **Sign:** spread arms and shake your shoulders and hips
 
-## Background
+## Hintergrund
 
 **Name:** “Hafla” (حفلة) means “Party/Festivity” in Arabic.
 
@@ -14,7 +14,7 @@ rhythms that are typically played on hand drums such as the Dumbek
 
 **History:** Introduced by RoR Tel Aviv on TNM 2011.
 
-## Difficulty
+## Schwierigkeit
 
 * **Low Surdo**: easy
 * **Mid Surdo**: medium
