@@ -1,7 +1,7 @@
 **Sign:** tune sign: Put one fist on top of the other, as if you were holding a
 paddle, and start paddling.
 
-## Background
+## Hintergrund
 
 **Musical background:** Based on the song with the same name by Arto
 Tunçboyacıyan, an artist part of the Armenian minority in Turkey, and his band
@@ -11,7 +11,7 @@ Armenian Navy Band ([YouTube](https://www.youtube.com/watch?v=OCgrJFbIAcw)).
 
 ## Difficulty
 
-* **Low Surdo:** easy
+* **Tiefe Surdo:** einfach
 * **Mid/High Surdo:** medium
 * **Repi:** hard
 * **Snare:** hard
