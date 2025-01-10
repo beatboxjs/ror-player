@@ -1,25 +1,26 @@
-**Sign:** interlock your hands like a fence and then open it.
+**Handzeichen:** die Hände wie einen Zaun verschränken und dann öffnen.
 
-## Background
+## Hintergrund
 
-**Name:** Bossa Nova is a Brazilian style of music that developed out of Samba,
-which usually involves a guitar and a singer on top of the characteristic Bossa
-Nova beat.
+**Name:** Bossa Nova ist eine brasilianische Musikrichtung, die sich aus Samba
+heraus entwickelt hat und bei der üblicherweise zum charakteristischen
+Bossa-Nova-Rhythmus gesungen und Gitarre gespielt wird.
 
-**Musical background:** The Surdo line is very similar to the Bossa Nova beat.
-The Bossa clave is the clave that we use at RoR. See
-[YouTube](https://www.youtube.com/watch?v=mZ_mEmaJu98).
+**Musikalischer Hintergrund:** Die Surdo klingt sehr ähnlich wie der
+Bossa-Nova-Rhythmus. Die Bossa-Clave ist Clave, die bei RoR gespielt wird. Siehe
+auf [YouTube](https://www.youtube.com/watch?v=mZ_mEmaJu98).
 
-**Sign:** The sign probably depicts a border fence that is opened.
+**Handzeichen:** Das Handzeichen stellt vermutlich einen Grenzzaun dar, der
+geöffnet wird.
 
-**History:** From RoR Maastricht. “A former Amsterdam band member was cleaning
-her room and found an old notation of a ‘no border bossa’. The paper points to
-Maastricht.”
+**Geschichte:** Von RoR Maastricht. „Ein ehemaliges Mitglied der Amsterdamer
+Band mistete ihr Zimmer aus und fand dabei alte Noten eines ‚No Border Bossa‘.
+Der Zettel verwies auf Maastricht.“
 
-## Difficulty
+## Schwierigkeit
 
-* **Surdos**: Medium
-* **Repi**: Difficult
-* **Snare**: Medium
-* **Tamborim**: Medium
-* **Agogô**: Medium
+* **Surdos**: mittel
+* **Repi:** schwierig
+* **Snare:** mittel
+* **Tamborim:** mittel
+* **Agogô:** mittel
