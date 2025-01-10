@@ -1,6 +1,6 @@
 **Sign:** draw a big “V” in the air with both hands (from up to down).
 
-## Background
+## Hintergrund
 
 **Name:** A wolf is a large mammal native to Eurasia and North America and the
 ancestor of domestic dogs.
