@@ -12,7 +12,7 @@ low, high…).
 **Sign:** With one hand in your ear lift the other and move it front and back
 (like a DJ).
 
-## Background
+## Hintergrund
 
 **Name:** Drum&Bass is a style of electronic music that developed in the 1990s
 in the UK. Characteristic for it is its really fast and strong base.
@@ -32,7 +32,7 @@ with this name [on their
 website](https://web.archive.org/web/20061023061031/http://www.barkingbateria.co.uk/samba.htm)
 in 2006, although it is not clear whether it is the same tune.
 
-## Difficulty
+## Schwierigkeit
 
 * **Low Surdo:** hard
 * **Mid Surdo:** easy
