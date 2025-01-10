@@ -1657,7 +1657,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Break 2", "Tune", "Break 2 Inverted", "Tune" ]
 	},
 	"Keep Moving": {
-		categories: ["new", "tricky"],
+		categories: ["new", "uncommon", "tricky"],
 		descriptionFilename: "keep-moving",
 		patterns: {
 			Tune: {
