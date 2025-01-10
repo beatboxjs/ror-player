@@ -1,10 +1,10 @@
 Dieser Tune ist sehr leicht zu lernen und trotzdem groovy. Er kann sehr schnell
 gespielt werden.
 
-**Sign:** place your hands as if you were holding a telescope over one eye and
-rotate your hands as if to zoom in and out.
+**Handzeichen:** die Hände vors Auge halten, als ob sie ein Teleskop halten, und
+drehen, als ob rein- und rausgezoomt wird.
 
-## Background
+## Hintergrund
 
 *To be written.*
 
