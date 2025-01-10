@@ -20,13 +20,20 @@ Used technologies are:
 * [wav-encoder](https://github.com/mohayonao/wav-encoder) and [wasm-media-encoders](https://github.com/arseneyr/wasm-media-encoders)
   for encoding exported songs to WAV/MP3
 * [pako](https://github.com/nodeca/pako) to compress shared links
-* [Vite](https://vitejs.dev/) for building and [Vitest](https://vitest.dev/) for testing.
+* [Vite](https://vitejs.dev/) for building and [Vitest](https://vitest.dev/) for testing
+* [i18next](https://www.i18next.com/) for internationalization and [Weblate](https://weblate.org/) to manage translations.
 
 
 Contribute new tunes
 ====================
 
 Please see the [contribution guide](https://player-docs.rhythms-of-resistance.org/guide/contribution/tunes.html) for instructions how to add new tunes to the player.
+
+
+Contribute translations
+=======================
+
+Translations are managed on [Weblate](https://hosted.weblate.org/projects/ror-player/#information). Register there to start contributing.
 
 
 Technical notes
