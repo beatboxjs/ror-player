@@ -2,7 +2,7 @@ This tune exists in two variations, one in 4/4 and one in 6/8. Usually, the 4/4
 variation is played, sometimes switching to the 3/4 for a moment while
 increasing the speed.
 
-## Background
+## Hintergrund
 
 **Name:** Coupé-Décalé is a type of club dance music popular in Côte d’Ivoire.
 It was developed in Paris by Ivorian DJs and eventually brought back to Côte
@@ -22,9 +22,9 @@ Coupé-Décalé. It does not seem to sound the same as Coupé-Décalé though.
 
 **History:** The tune was invented by RoR Montpellier in 2018.
 
-## Difficulty
+## Schwierigkeit
 
-* **Low Surdo:** easy
+* **Tiefe Surdo:** einfach
 * **Mid/High Surdo**: medium
 * **Repi/Snare**: hard (they play the same)
 * **Tamb**: hard
