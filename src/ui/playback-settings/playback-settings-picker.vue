@@ -83,10 +83,10 @@
 	})]));
 
 	const activePreset = computed({
-		get: () => Object.keys(config.volumePresets).find((preset) => isEqual(config.volumePresets[preset], playbackSettings.value.volumes)),
+		get: () => Object.keys(config.volumePresets).find((preset) => isEqual(config.volumePresets[preset].volumes, playbackSettings.value.volumes)),
 		set: (preset) => {
 			if (preset) {
-				playbackSettings.value = { ...playbackSettings.value, volumes: clone(config.volumePresets[preset]) };
+				playbackSettings.value = { ...playbackSettings.value, volumes: clone(config.volumePresets[preset].volumes) };
 			}
 		}
 	});
@@ -99,23 +99,23 @@
 		</template>
 
 		<div class="row">
-			<label :for="`${id}-speed`" class="col-sm-3 col-form-label">{{i18n.t("playback-settings-picker.speed")}}</label>
-			<div class="col-sm-9 d-flex align-items-center">
+			<label :for="`${id}-speed`" class="col-sm-4 col-form-label">{{i18n.t("playback-settings-picker.speed")}}</label>
+			<div class="col-sm-8 d-flex align-items-center">
 				<input :id="`${id}-speed`" type="range" class="form-range" v-model.number="speed" min="30" max="180" v-tooltip="`${speed}`"/>
 				<button type="button" class="btn btn-secondary btn-sm ms-2" @click="speed = defaultSpeed">{{i18n.t("playback-settings-picker.speed-reset")}}</button>
 			</div>
 		</div>
 
 		<div class="row">
-			<label :for="`${id}-loop`" class="col-sm-3 col-form-label">{{i18n.t("playback-settings-picker.loop")}}</label>
-			<div class="col-sm-9 d-flex align-items-center">
+			<label :for="`${id}-loop`" class="col-sm-4 col-form-label">{{i18n.t("playback-settings-picker.loop")}}</label>
+			<div class="col-sm-8 d-flex align-items-center">
 				<input :id="`${id}-loop`" type="checkbox" class="form-check-input mt-0" v-model="loop"/>
 			</div>
 		</div>
 
 		<div class="row">
-			<label :for="`${id}-whistle`" class="col-sm-3 col-form-label">{{i18n.t("playback-settings-picker.whistle")}}</label>
-			<div class="col-sm-9 d-flex align-items-center">
+			<label :for="`${id}-whistle`" class="col-sm-4 col-form-label">{{i18n.t("playback-settings-picker.whistle")}}</label>
+			<div class="col-sm-8 d-flex align-items-center">
 				<div class="btn-group">
 					<button type="button" class="btn btn-secondary btn-sm" :class="{ active: whistle === false }" @click="whistle = false">{{i18n.t("playback-settings-picker.whistle-off")}}</button>
 					<button type="button" class="btn btn-secondary btn-sm" :class="{ active: whistle === 1 }" @click="whistle = 1">{{i18n.t("playback-settings-picker.whistle-one")}}</button>
@@ -159,7 +159,7 @@
 
 		<div class="row">
 			<div class="btn-group">
-				<button v-for="preset in Object.keys(config.volumePresets)" :key="preset" type="button" class="btn btn-secondary" :class="{ active: preset === activePreset }" @click="activePreset = preset">{{preset}}</button>
+				<button v-for="(preset, key) in config.volumePresets" :key="key" type="button" class="btn btn-secondary" :class="{ active: key === activePreset }" @click="activePreset = key">{{preset.displayName()}}</button>
 			</div>
 		</div>
 	</HybridPopoverButton>

@@ -110,6 +110,8 @@ export function getLocalizedDisplayName(name: string): string {
 			return getI18n().t("i18n.general-breaks");
 		case "Special Breaks":
 			return getI18n().t("i18n.special-breaks");
+		case "Shouting Breaks":
+			return getI18n().t("i18n.shouting-breaks");
 		case "Tune":
 			return getI18n().t("i18n.tune");
 		case "4 Silence":

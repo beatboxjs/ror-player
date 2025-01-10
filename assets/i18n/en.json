@@ -8,9 +8,40 @@
 	"i18n": {
 		"general-breaks": "General Breaks",
 		"special-breaks": "Special Breaks",
+		"shouting-breaks": "Shouting Breaks",
 		"tune": "Tune",
 		"silence": "{{beats}} Silence",
 		"whistle-in": "Whistle in"
+	},
+	"utils": {
+		"time-day-and-time": "{{day}} {{time}}",
+		"time-today": "Today",
+		"time-yesterday": "Yesterday",
+		"time-days-ago_one": "{{count}} day ago",
+		"time-days-ago_other": "{{count}} days ago",
+		"time-weeks-ago_one": "{{count}} week ago",
+		"time-weeks-ago_other": "{{count}} weeks ago",
+		"time-months-ago_one": "{{count}} month ago",
+		"time-months-ago_other": "{{count}} months ago",
+		"time-years-ago_one": "{{count}} year ago",
+		"time-years-ago_other": "{{count}} years ago",
+		"time-month-jan": "Jan",
+		"time-month-feb": "Feb",
+		"time-month-mar": "Mar",
+		"time-month-apr": "Apr",
+		"time-month-may": "May",
+		"time-month-jun": "Jun",
+		"time-month-jul": "Jul",
+		"time-month-aug": "Aug",
+		"time-month-sep": "Sep",
+		"time-month-oct": "Oct",
+		"time-month-nov": "Nov",
+		"time-month-dec": "Dec",
+		"time-day-with-year": "{{day}} {{month}} {{year}}",
+		"time-day-without-year": "{{day}} {{month}}"
+	},
+	"state": {
+		"untitled-song": "Untitled song {{no}}"
 	},
 	"compose": {
 		"add-to-song-tooltip": "Add to song"
@@ -242,7 +273,9 @@
 		"category-easy": "Easy",
 		"category-medium": "Medium",
 		"category-tricky": "Tricky",
-		"category-wester": "Western music",
-		"category-cultural-appropriation": "Cultural appropriation"
+		"category-western": "Western music",
+		"category-cultural-appropriation": "Cultural appropriation",
+		"stroke-volume-defaults": "Defaults",
+		"stroke-volume-shitty": "Shitty speakers"
 	}
 }

@@ -117,7 +117,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" @click="modal.hide()">{{i18n.t("general.dialog-cancel")}}</button>
-						<button type="submit" class="btn btn-primary" @click="submit()">{{i18n.t("general-dialog-ok")}}</button>
+						<button type="submit" class="btn btn-primary" @click="submit()">{{i18n.t("general.dialog-ok")}}</button>
 					</div>
 				</form>
 			</div>

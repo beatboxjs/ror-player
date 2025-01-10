@@ -219,7 +219,7 @@
         "category-easy": "Einfach",
         "category-medium": "Mittel",
         "category-tricky": "Schwer",
-        "category-wester": "Westliche Musik",
+        "category-western": "Westliche Musik",
         "category-cultural-appropriation": "Kulturelle Aneignung",
         "stroke-description-wh": "Trillerpfeife",
         "instruments-ta": "Tamborim",
@@ -230,11 +230,9 @@
         "category-all": "Alle Tunes",
         "category-onesurdo": "Eine Surdo",
         "instruments-sn": "Snare",
-        "stroke-description-wh2": "Langer Pfiff"
-    },
-    "default-tunes": {
-        "general-breaks": "Allgemeine Breaks",
-        "special-breaks": "Spezielle Breaks"
+        "stroke-description-wh2": "Langer Pfiff",
+        "stroke-volume-defaults": "Voreinstellungen",
+        "stroke-volume-shitty": "Schlechte Lautsprecher"
     },
     "mute-button": {
         "unmute-all": "Alle Instrumente laut schalten",
@@ -247,7 +245,38 @@
         "special-breaks": "Spezielle Breaks",
         "whistle-in": "Einpfeifen",
         "general-breaks": "Allgemeine Breaks",
+        "shouting-breaks": "Sprechchor-Breaks",
         "tune": "Tune",
         "silence": "{{beats}} Schläge Pause"
+    },
+    "utils": {
+        "time-day-and-time": "{{day}} {{time}}",
+        "time-today": "Heute",
+        "time-yesterday": "Gestern",
+        "time-days-ago_one": "Vor {{count}} Tag",
+        "time-days-ago_other": "Vor {{count}} Tagen",
+        "time-weeks-ago_one": "Vor {{count}} Woche",
+        "time-weeks-ago_other": "Vor {{count}} Wochen",
+        "time-months-ago_one": "Vor {{count}} Monat",
+        "time-months-ago_other": "Vor {{count}} Monaten",
+        "time-years-ago_one": "Vor {{count}} Jahr",
+        "time-years-ago_other": "Vor {{count}} Jahren",
+        "time-month-jan": "Jan",
+        "time-month-feb": "Feb",
+        "time-month-mar": "Mär",
+        "time-month-apr": "Apr",
+        "time-month-may": "Mai",
+        "time-month-jun": "Jun",
+        "time-month-jul": "Jul",
+        "time-month-aug": "Aug",
+        "time-month-sep": "Sep",
+        "time-month-oct": "Okt",
+        "time-month-nov": "Nov",
+        "time-month-dec": "Dez",
+        "time-day-with-year": "{{day}} {{month}} {{year}}",
+        "time-day-without-year": "{{day}} {{month}}"
+    },
+    "state": {
+        "untitled-song": "Unbenanntes Stück {{no}}"
     }
 }

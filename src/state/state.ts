@@ -6,6 +6,7 @@ import defaultTunes from "../defaultTunes";
 import { CompressedPattern, compressedPatternValidator, compressPattern, Pattern, patternFromCompressed, PatternOptional } from "./pattern";
 import config from "../config";
 import * as z from "zod";
+import { getI18n } from "../services/i18n";
 
 export type State = z.infer<typeof stateValidator>;
 export const stateValidator = z.object({
@@ -322,7 +323,7 @@ export function getSongName(state: State, songIdx?: number): string | undefined 
 			no++;
 	}
 
-	return "Untitled song "+no;
+	return getI18n().t("state.untitled-song", { no });
 }
 
 export function getSortedTuneList(state: State): Array<string> {

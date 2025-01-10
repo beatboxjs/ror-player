@@ -34,7 +34,10 @@ export type Config = {
 	strokesDescription: Partial<Record<Stroke, () => string>>;
 
 	/** Presets for the values of the instrument volume sliders, by preset name. */
-	volumePresets: Record<string, Record<Instrument, number>>;
+	volumePresets: Record<string, {
+		displayName: () => string;
+		volumes: Record<Instrument, number>;
+	}>;
 
 	/**
 	 * The available time signatures. The key is the number of strokes per beat (the number of beats per bar is fixed to 4), the value is
@@ -241,26 +244,32 @@ const config: Config = {
 
 	volumePresets: {
 		"Defaults": {
-			ls: 0.7,
-			ms: 0.7,
-			hs: 0.7,
-			re: 1.6,
-			sn: 1.2,
-			ta: 1.4,
-			ag: 1,
-			sh: 0.5,
-			ot: 1
+			displayName: () => getI18n().t("config.stroke-volume-defaults"),
+			volumes: {
+				ls: 0.7,
+				ms: 0.7,
+				hs: 0.7,
+				re: 1.6,
+				sn: 1.2,
+				ta: 1.4,
+				ag: 1,
+				sh: 0.5,
+				ot: 1
+			}
 		},
 		"Shitty speakers": {
-			ls: 1,
-			ms: 1,
-			hs: 1.1,
-			re: 1.5,
-			sn: 1.3,
-			ta: 1.2,
-			ag: 1,
-			sh: 0.45,
-			ot: 1
+			displayName: () => getI18n().t("config.stroke-volume-shitty"),
+			volumes: {
+				ls: 1,
+				ms: 1,
+				hs: 1.1,
+				re: 1.5,
+				sn: 1.3,
+				ta: 1.2,
+				ag: 1,
+				sh: 0.45,
+				ot: 1
+			}
 		}
 	},
 

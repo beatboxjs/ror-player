@@ -20,7 +20,7 @@ export const playbackSettingsValidator = z.object({
 	headphones: headphonesValidator.default(() => []),
 	mute: muteValidator.default(() => ({})),
 	volume: z.number().default(1),
-	volumes: volumesValidator.default(() => clone(config.volumePresets[Object.keys(config.volumePresets)[0]])),
+	volumes: volumesValidator.default(() => clone(config.volumePresets[Object.keys(config.volumePresets)[0]].volumes)),
 	loop: z.boolean().default(false),
 	length: z.number().optional(), // Cut off after a certain amount of beats
 	whistle: whistleValidator.default(false)
