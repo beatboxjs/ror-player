@@ -11,11 +11,11 @@ Since practically every samba band can play a version of samba reggae, it is a
 good tune to play together in demonstrations in which there are other non-RoR
 samba bands.
 
-## Sign
+## Handzeichen
 
 An S formed with two hands
 
-## Background
+## Hintergrund
 
 **Name:** Samba Reggae is the original afro-bloc rhythm, a mix of Samba and
 Reggae that was invented by the black liberation movement in Brazil. Samba
@@ -45,7 +45,7 @@ ritual in the Rastafari religion, which is closely linked to Reggae music.
 
 **History:** Part of the first set of tunes taken from Barking Bateria in 2000.
 
-## Controversies
+## Kontroversen
 
 The rhythm clearly sounds like real Samba Reggae, which is a tune developed and
 used by the Black liberation movement in Brazil. Many people in the RoR network
