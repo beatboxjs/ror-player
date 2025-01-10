@@ -12,6 +12,6 @@ drehen, als ob rein- und rausgezoomt wird.
 
 * **Surdos:** enfach
 * **Repi:** einfach
-* **Snare:** easy
-* **Tamborim:** medium
+* **Snare:** einfach
+* **Tamborim:** mittel
 * **Agogô:** easy
