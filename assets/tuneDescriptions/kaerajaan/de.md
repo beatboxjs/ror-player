@@ -1,7 +1,7 @@
 **Sign:** Place forearms on top of each other in front of you, fingertips
 aligned with elbows (like in the Estonian folk dance).
 
-## Background
+## Hintergrund
 
 **Name:** Kaerajaan is an Estonian folk dance that is danced to a folk song
 called Kaera-Jaan ([example on
