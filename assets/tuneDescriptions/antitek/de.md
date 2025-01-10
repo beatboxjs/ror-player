@@ -6,9 +6,9 @@ drehen, als ob rein- und rausgezoomt wird.
 
 ## Hintergrund
 
-*To be written.*
+*Muss noch geschrieben werden.*
 
-## Difficulty
+## Schwierigkeit
 
 * **Surdos:** easy
 * **Repi:** easy
