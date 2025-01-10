@@ -14,4 +14,4 @@ drehen, als ob rein- und rausgezoomt wird.
 * **Repi:** einfach
 * **Snare:** einfach
 * **Tamborim:** mittel
-* **Agogô:** easy
+* **Agogô:** einfach
