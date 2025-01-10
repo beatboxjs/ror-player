@@ -1632,7 +1632,8 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ag: "o   o       a  ao   o          oo   o       a  ao   o   a      a",
 				sh: "@re"
 			}
-		}
+		},
+		exampleSong: ["Tune", "Break 1", "Tune", "Break 2", "Tune", "Washing Machine Break", "Tune"]
 	},
 	'Malkhas Akhber': {
 		categories: [ "new", "uncommon", "tricky" ],
