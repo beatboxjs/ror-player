@@ -5,7 +5,7 @@ morning”).
 
 **Sign:** tune sign: build an eyepatch with one hand in front of your eye
 
-## Background
+## Hintergrund
 
 **Name:** “What shall we do with the drunken sailor” is a traditional sea
 shanty, probably originating from the US in the 1800s. The song is probably
@@ -23,7 +23,7 @@ plays the “early in the morning”.
 **History:** Introduced as a tune by someone from RoR Köln/Cologne in 2010.
 
 
-## Difficulty
+## Schwierigkeit
 
 * **Low/Mid Surdo**: Easy
 * **High Surdo**: Medium
