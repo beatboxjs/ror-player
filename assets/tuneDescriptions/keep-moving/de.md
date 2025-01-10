@@ -1,6 +1,6 @@
 **Sign:** “Walk” with two fingers on the other hand.
 
-## Background
+## Hintergrund
 
 **History:** This tune was developed in 2024 by a member of Extinction
 Rebellion.
@@ -29,7 +29,7 @@ moments to reflect and (natural) silence.
 
 ## Difficulty
 
-* **Low Surdo:** easy
+* **Tiefe Surdo:** einfach
 * **Mid Surdo:** medium
 * **High Surdo:** hard
 * **Repi:** hard
