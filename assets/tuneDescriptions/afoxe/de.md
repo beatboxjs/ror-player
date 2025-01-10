@@ -1,6 +1,6 @@
-This tune is really going forward: The Low Surdo is pushing with techno-like
-damped hits, while the Repinique and Snare voices are one of the most fancy –
-and also most difficult – ones in the RoR repertoire.
+Dieser Tune fetzt wirklich: Die tiefe Surdo treibt mit technoartigen gedämpften
+Schlägen voran, während die Repinique und Snare zu den ausgefallensten – und
+schwierigsten – Rhythmen im RoR-Repertoire gehören.
 
 One thing to note is that while most of the instruments have parts that are
 played over 4 beats, the Surdos and Repi have a pattern played over 8. It is
@@ -21,7 +21,7 @@ tiring for them so give them a break once in a while.
 
 Shaving the armpit
 
-## Background
+## Hintergrund
 
 **Name:** Afoxé can refer to a rhythm from brazilian carnival, a certain kind of
 rattle from brazilian music, or a dance- and music formation in the Carnival.
@@ -51,7 +51,7 @@ There is also some criticism about the sign, since it ridicules the spiritual
 meaning of the rhythm, and shaving the armpits is a loaded topic in our
 patriarchal society.
 
-## Difficulty
+## Schwierigkeit
 
 * **Low Surdo:** easy
 * **Mid/High Surdo:** medium (they play the same…)
