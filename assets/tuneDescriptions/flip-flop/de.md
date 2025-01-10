@@ -1,6 +1,6 @@
 Sign: move flat hands like stepping
 
-## Background
+## Hintergrund
 
 **Name:** _More info needed._
 
@@ -11,11 +11,11 @@ KRS One ([YouTube](https://www.youtube.com/watch?v=iaYDe3gu1go)).
 
 **History:** Introduced by RoR Leipzig in 2022.
 
-## Difficulty
+## Schwierigkeit
 
 * **Low Surdo**: easy
 * **Mid/High Surdo:** tricky
 * **Repi:** medium
 * **Snare:** tricky
-* **Tamborim:** medium
+* **Tamborim:** mittel
 * **Agogô:** medium
