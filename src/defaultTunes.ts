@@ -2065,6 +2065,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		categories: [ "new", "uncommon", "medium" ],
 		sheet: sheetUrl + "sound-of-da-police.pdf",
 		descriptionFilename: "police",
+		video: "https://tube.rhythms-of-resistance.org/videos/embed/a8253384-c3bb-4b9f-a50c-aa954288bb37",
 		patterns: {
 			Intro: {
 				ls: "      XXXXXXX         XXX XXX   ",
