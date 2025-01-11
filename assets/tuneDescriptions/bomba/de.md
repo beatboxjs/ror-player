@@ -1,24 +1,25 @@
-**Sign:** throw a grenade
+**Handzeichen:** eine Granate werfen
 
 ## Hintergrund
 
-**Name:** “Bomba” is the name of a commercial song from artist King Africa. The
-Call Break is inspired on the chorus of this song.
+**Name:** „Bomba“ ist der Name eines kommerziellen Liedes des Künstlers King
+Africa. Der Call Break ist von dessen Refrain inspiriert.
 
-**Musical background:** The main tune is inspired in song “Queremos Marcha” by
-Spanish artist Rosario ([YouTube](https://www.youtube.com/watch?v=aC6XTOwNBO8))
-and the breaks inspired in song “Bomba” by King Africa
+**Musikalischer Hintergrund:** Der Tune selbst ist inspiriert vom Lied „Queremos
+Marcha“ des spanischen Künstlers Rosario
+([YouTube](https://www.youtube.com/watch?v=aC6XTOwNBO8)) und die Breaks vom Lied
+„Bomba“ von King Africa
 ([YouTube](https://www.youtube.com/watch?v=QlPS16NeBO0)).
 
-**History:** Invented by a member of a former band in Valencia called Mandala
-around 2014
+**Geschichte:** Um 2014 von einem Mitglied einer ehemaligen Band in Valencia
+namens Mandala komponiert
 
 ## Schwierigkeit
 
-* **Low Surdo:** medium
-* **Mid Surdo:** easy
-* **High Surdo:** medium
-* **Repi:** medium
-* **Snare:** medium
-* **Tamb:** hard
-* **Agogô:** medium
+* **Tiefe Surdo:** mittel
+* **Mittlere Surdo:** einfach
+* **Hohe Surdo:** mittel
+* **Repi:** mittel
+* **Snare:** mittel
+* **Tamborim:** schwierig
+* **Agogô:** mittel
