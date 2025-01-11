@@ -1,6 +1,6 @@
 **Sign:** smoke a joint like a cup of tea (with thumb and index finger)
 
-## Background
+## Hintergrund
 
 **Name:** See Samba Reggae. Sheffield is a city in the UK that used to have a
 very active RoR band.
@@ -15,7 +15,7 @@ is closely linked to Reggae music.
 **History:** Introduced to the network by RoR London in 2012, was probably
 played there before?
 
-## Controversies
+## Kontroversen
 
 The rhythm clearly sounds like real Samba Reggae, which is a tune developed and
 used by the Black liberation movement in Brazil. Many people in the RoR network

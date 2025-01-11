@@ -1,7 +1,7 @@
 **Sign:** looking angry, forming an A with hands over your head (as a pointed
 cap).
 
-## Background
+## Hintergrund
 
 **Name:** The original name of this tune was German „Wütende Heinzelmenschen“,
 which has been translated as “angry dwarfs”. „Heinzelmenschen“ (officially but

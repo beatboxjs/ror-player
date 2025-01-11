@@ -6,7 +6,7 @@ combination of high-pitched and normal hits.
 
 **Sign:** pull two prison bars apart in front of your face
 
-## Background
+## Hintergrund
 
 **Name:** Angela Davis is an Afro-American activist from the USA. She
 experienced a lot of oppression as a university professor due to her political
@@ -32,7 +32,7 @@ Brown, and Angela Davis was chosen because she fit the tune sign. Later the tune
 sign was changed. We consider both the old tune sign itself and the fact that
 Angela Davis was chosen because of her afro hair as racist.
 
-## Controversies
+## Kontroversen
 
 There is an ongoing discussion in the RoR network whether we should play a tune
 that is based on the music of a rapist.
@@ -41,13 +41,13 @@ Some RoR members from the Baltic States have recently raised concerns that the
 tune is named after Angela Davis, who was a member of the Communist Party and
 actively collaborating with the oppressive regime of the Soviet Union.
 
-## Difficulty
+## Schwierigkeit
 
 * **Low Surdo:** hard
 * **Mid Surdo:** easy to remember, but hard to play it without beeing to fast
   nor to slow
 * **High Surdo:** medium
-* **Repi:** easy
+* **Repi:** einfach
 * **Snare:** easy (there are some variations)
 * **Tamborim:** easy
 * **Agogô:** medium

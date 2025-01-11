@@ -1,7 +1,7 @@
 **Sign:** Swing your fist above your head and share your body, like dancing to
 techno music.
 
-## Background
+## Hintergrund
 
 **Name:** Jungle is a genre of dance music that devloped in the UK rave scene in
 the 1990s. It is the main successor of Drum&Bass.
@@ -16,7 +16,7 @@ in the official tune sheets. Was rediscovered in 2021.
 
 ## Difficulty
 
-* **Low Surdo:** easy
+* **Tiefe Surdo:** einfach
 * **Mid Surdo:** medium
 * **High Surdo:** hard
 * **Repi:** hard
