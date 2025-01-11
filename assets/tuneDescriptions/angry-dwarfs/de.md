@@ -1,21 +1,21 @@
-**Sign:** looking angry, forming an A with hands over your head (as a pointed
-cap).
+**Handzeichen:** wütend schauen und dabei ein A mit den Händen über dem Kopf
+formen (wie eine Zipfelmütze).
 
 ## Hintergrund
 
-**Name:** The original name of this tune was German „Wütende Heinzelmenschen“,
-which has been translated as “angry dwarfs”. „Heinzelmenschen“ (officially but
-gendered: „Heinzelmännchen“) are small human creatures in a local tale in
-Cologne, who, according to the tale, secretly did all the work for the people of
-Cologne at night, so that the people could be lazy during the day. One day,
-someone got curious to see them and set up a trap, so they got really angry and
-left. From that day on the people had to do all the work themselves.
+**Name:** Der ursprüngliche Name dieses Tunes war „Wütende Heinzelmenschen“, was
+dann als “Angry Dwarfs” übersetzt wurde. Heinzelmenschen (ursprünglich aber
+nicht geschlechsneutral Heinzelmännchen) sind kleine menschliche Kreaturen aus
+einer Kölner Sage, die heimlich nachts die Arbeit der Kölner_innen erledigen,
+sodass diese tagsüber faul sein können. Eines Tages hat ihnen jemand aus Neugier
+sie zu sehen eine Falle gestellt, und sie waren darüber so erbost, dass sie die
+Stadt verließen. Seitdem müssen die Kölner_innen selbst arbeiten.
 ([Wikipedia](https://en.wikipedia.org/wiki/Heinzelm%C3%A4nnchen))
 
-**Sign:** The hand signal refers to the pointed cap that Heinzelmenschen are
-wearing on their heads.
+**Handzeichen:** Das Handzeichen repräsentiert die Zipfelmütze der
+Heinzelmenschen.
 
-**Musical background:** *(More info needed.)*
+**Musikalischer Hintergrund:** *(Mehr Informationen notwendig.)*
 
-**History:** Local tune from RoR Cologne, published in 2006. Was removed from
-the tune sheet in 2012.
+**Geschichte:** Lokaler Tune von RoR Köln, veröffentlicht 2006. Wurde 2012 aus
+dem Tunesheet entfernt.
