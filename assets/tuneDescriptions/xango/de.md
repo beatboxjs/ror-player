@@ -57,28 +57,31 @@ Bateria übernommen wurden.
 
 ### Elemente des Christentums in Candomblé, Shango und anderen afrikanischen Religionen
 
-During colonization, enslaved people recognized that some of the Catholic saints
-shared symbols and characteristics with their orixas. They began to identify
-some of the orixas with these saints, as a method to secretly worship their
-actual gods while pretending to embrace the faith of their masters. Depending on
-the region, orixas correspond to different saints. Xangô corresponds to Saint
-Barbara (she is also associated with lightning and thunder) or Saint Jerome.
+Während des Kolonialismus haben versklavte Menschen gewisse Ähnlichkeiten in der
+Symbolik und den Eigenschaften zwischen einigen katholischen Heiligen und den
+Orixas festgestellt. Sie fingen an, Orishas mit diesen Heiligen zu verknüpfen,
+um ihre eigentlichen Götter weiterhin zu verehren und gleichzeitig ihren Herren
+vorzutäuschen, deren Glauben anzunehmen. In unterschiedlichen Regionen wurden
+Orishas mit unterschiedlichen Heiligen in Verbindung gebracht. Xangô entspricht
+der Heiligen Barbara (welche auch mit Blitz und Donner in Verbindung steht) oder
+dem Heiligen Hieronymus.
 
-In 1983, there was a conference on the orixa tradition and culture in Salvador
-(Bahia), when some Candomblé priest*esses proposed to do away with the Catholic
-elements in Candomblé (especially imagery of saints). Today it’s hotly debated
-whether to do this or not.
+1983 fand eine Konferenz über die Orixa-Tradition und -Kultur in Salvador
+(Bahia) statt, auf welcher einige Candomblé-Priester_innen vorschlugen,
+katholische Elemente (insbesondere Bilder von Heiligen) aus der
+Candomblé-Religion zu entfernen. Heutzutage gibt es große Diskussionen über
+diese Frage.
 
 ## Kontroversen
 
-Since this tune is directly rooted in Afro-Brazilian religion, many people in
-the RoR network consider it cultural appropriation to play it. There is an
-ongoing debate on whether this tune should be abandoned.
+Da der Tune direkt in afro-brasilianischer Religion verwurzelt ist, sehen es
+viele Mitglieder des RoR-Netzwerks als kulturelle Aneignung ihn zu spielen. Es
+gibt laufende Diskussionen darüber, ob er entfernt werden sollte.
 
 ## Schwierigkeit
 
-* **Surdos**: easy
-* **Repi**: medium
-* **Snare**: hard
-* **Tamborim**: easy
-* **Agogô**: medium
+* **Surdos:** einfach
+* **Repi:** mittel
+* **Snare:** schwierig
+* **Tamborim:** einfach
+* **Agogô:** mittel
