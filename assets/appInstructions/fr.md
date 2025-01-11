@@ -1,9 +1,10 @@
-On some devices (such as smartphones and tablets), it is possible to install RoR
-Player as an app. The required steps depend on your browser.
+Sur certains appareils (par exemple smartphone ou tablette), il est possible
+d'installer le Lecteur RoR en tant qu'appli. Les étapes à suivre dépendent de
+votre navigateur.
 
 ### Chrome
 
-1. Press Chrome’s menu icon (3 dots) on the top right
+1. Appuyez sur l'icône de menu de Chrome (3 points) en haut à droite
 2. Press “Install app” (or “Add to Home Screen”)
 
 ### Firefox
