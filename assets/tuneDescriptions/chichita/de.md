@@ -1,18 +1,20 @@
-**Sign:** make two fists and rub middle joints against each other
+**Handzeichen:** mit beiden Händen Fäuste formen und die Mittelgelenke der
+Finger aneinander reiben
 
 ## Hintergrund
 
-**Musical background:** The tune bases its sounds in a popular local music genre
-called “chicha”, which combines Andean “huayno” and tropical “cumbia”.
+**Musikalischer Hintergrund:** Der Rhythmus basiert auf einer beliebten
+regionalen Musikrichtung namens „Chicha“, welche „Huayno“ aus den Anden und
+„Cumbia“ aus den Tropen kombiniert.
 
-**History:** Composed by the Peruvian Lima-based collective Tamboras Resistencia
-and shared on the TNM 2024 by RoR Zürich.
+**Geschichte:** Komponiert vom peruanischen Kollektiv Tamboras Resistencia aus
+Lima und auf dem TNM 2024 durch RoR Zürich vorgestellt.
 
 ## Schwierigkeit
 
 * **Tiefe Surdo:** einfach
-* **Mid Surdo:** easy
-* **Repi:** medium
-* **Snare 1:** tricky
-* **Snare 2:** tricky
-* **Agogô:** medium
+* **Mittlere Surdo:** einfach
+* **Repi:** mittel
+* **Snare 1:** schwierig
+* **Snare 2:** schwierig
+* **Agogô:** mittel
