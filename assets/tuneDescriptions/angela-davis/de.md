@@ -1,68 +1,74 @@
-This tune is one of the RoR basics.
+Dieser Tune ist Teil des Basis-Repertoires von RoR.
 
-In this tune, the Low Surdo swaps one of its beaters for a plastic Repinique
-stick (aka a whippy stick) to get a higher pitched sound. Then it plays a
-combination of high-pitched and normal hits.
+In diesem Tune tauscht die tiefe Surdo einen der beiden Sticks gegen einen
+Repistick aus Plastik, um einen helleren Ton zu erzeugen. Sie spielt dann eine
+Kombination aus helleren und normalen Schlägen.
 
-**Sign:** pull two prison bars apart in front of your face
+**Handzeichen:** vor dem Gesicht zwei Gitterstäbe eines Gefängnisses auseinander
+ziehen
 
 ## Hintergrund
 
-**Name:** Angela Davis is an Afro-American activist from the USA. She
-experienced a lot of oppression as a university professor due to her political
-views and involvement in the black liberation, communist and radical feminist
-movement. She became a major figure of the prison abolishment movement after
-being imprisoned for a murder that she did not commit.
-([Wikipedia](https://en.wikipedia.org/wiki/Angela_Davis), see also the
-documentary “Free Angela & All Political Prisoners”)
+**Name:** Angela Davis ist eine afroamerikanische Aktivistin aus den USA. Als
+Professorin an einer Universität erfuhr sie große Repressionen wegen ihrer
+politischen Ansichten und ihre Beteiligung an Schwarzen Befreiungs-,
+kommunistischen und radikalfeministischen Bewegungen. Nachdem sie für einen Mord
+ins Gefängnis kam, den sie nicht begangen hatte, wurde sie eine der Hauptfiguren
+der Bewegung zur Abschaffung von Gefängnissen.
+([Wikipedia](https://en.wikipedia.org/wiki/Angela_Davis), siehe auch die
+Dokumentation “Free Angela & All Political Prisoners”)
 
-**Musical background:** Break 1 sounds like from “Sex machine” by James Brown,
-Low Surdo is based on the drumset rhythm of this song, not sure if the rest of
-the tune is also based on his music.
+**Musikalischer Hintergrund:** Break 1 klingt wie “Sex machine” von James Brown.
+Im Tune klingt die tiefe Surdo wie das Schlagzeug dieses Liedes, es ist jedoch
+unklar, ob der restliche Tune auch darauf basiert.
 
-**Sign:** The sign represents prison bars, because Angela Davis is a major
-figure in the prison abolishment movement.
+**Handzeichen:** Das Handzeichen steht für die Gitterstreben eines Gefängnisses,
+da Angela Davis eine wichtige Figur in der Bewegung zur Abschaffung von
+Gefängnissen ist.
 
-**History:** Part of the first set of tunes taken from Barking Bateria in 2000.
-The name used to be “James Brown” (famous musician from the USA) and the sign
-was to depict an afro haircut. James Brown didn’t have an afro haircut for most
-of his life, but later got one as it became a symbol of Black pride. The tune
-was renamed because of domestic violence and rape accusations against James
-Brown, and Angela Davis was chosen because she fit the tune sign. Later the tune
-sign was changed. We consider both the old tune sign itself and the fact that
-Angela Davis was chosen because of her afro hair as racist.
+**Geschichte:** Teil der ersten Tunes, die 2000 von der Barking Bateria
+übernommen wurden. Der Name des Tunes war ursprünglich “James Brown” (nach einem
+berühmten Musiker aus den USA) and das Handzeichen stellte eine Afro-Frisur dar.
+James Brown hatte die meiste Zeit seines Lebens keinen Afro, trug aber im
+späteren Leben einen als Symbol Schwarzen Stolzes (black pride). Der Tune wurde
+aufgrund von Vorwürfen gegen James Brown über häusliche und sexualisierte Gewalt
+umbenannt, und Angela Davis wurde ausgewählt, weil sie zu dem Afro-Handzeichen
+passte. Heute sieht das RoR-Netzwerk sowohl das alte Handzeichen als rassistisch
+an, als auch die Tatsache, dass Angela Davis wegen ihrer Afro-Frisur ausgewählt
+wurde.
 
 ## Kontroversen
 
-There is an ongoing discussion in the RoR network whether we should play a tune
-that is based on the music of a rapist.
+Es gibt im RoR-Netzwerk laufende Diskussionen, ob ein Tune, der auf der Musik
+eines Vergewaltigers basiert, gespielt werden sollte.
 
-Some RoR members from the Baltic States have recently raised concerns that the
-tune is named after Angela Davis, who was a member of the Communist Party and
-actively collaborating with the oppressive regime of the Soviet Union.
+Einige RoR-Mitglieder aus dem Baltikum haben in letzter Zeit Bedenken geäußert,
+dass der Tune nach Angela Davis benannt ist, da diese als Mitglied der
+Kommunistischen Partei aktiv mit dem unterdrückerischen Regime der Sowjetunion
+zusammen gearbeitet hat.
 
 ## Schwierigkeit
 
-* **Low Surdo:** hard
-* **Mid Surdo:** easy to remember, but hard to play it without beeing to fast
-  nor to slow
-* **High Surdo:** medium
+* **Tiefe Surdo:** schwierig
+* **Mittlere Surdo:** einfach zu merken, aber schwierig im richtigen Tempo zu
+  spielen
+* **Hohe Surdo:** mittel
 * **Repi:** einfach
-* **Snare:** easy (there are some variations)
-* **Tamborim:** easy
-* **Agogô:** medium
+* **Snare:** einfach (es gibt ein paar Variationen)
+* **Tamborim:** einfach
+* **Agogô:** mittel
 
 ## Breaks
 
-* Break 1 consists of a pickup followed by a bar of eight-notes.
-* Break 2 is a call&response between Surdos and everyone else, it is ended by
-  the pattern of Break 1.
-* Break 3 is a loop which is played by everyone except the Snare (which just
-  continues its normal groove). At the end (or every time just before the Break
-  starts again from the beginning) the pattern of Break 1 is played.
+* Break 1 besteht aus einem Auftakt gefolgt von einem Takt voller Achtel.
+* Break 2 ist eine Call&Response zwischen den Surdos und den anderen. Er wird
+  mit dem Rhythmus von Break 1 beendet.
+* Break 3 wird als Endlosschleife gespielt, von allen außer der Snare (die
+  spielt den normalen Tune weiter). Am Ende des Breaks wird der Rhythmus von
+  Break 1 gespielt.
 
-## More
+## Weiteres
 
-Combinations of Angela Davis and Funk sound nice (changing between both,
-introducing break of one on the other, etc.). In fact, Angela Davis is a kind of
-funk too.
+Kombinationen aus Angela Davis und Funk klingen gut (der Wechsel zwischen den
+beiden, Breaks des anderen benutzen, etc.). Angela Davis ist tatsächlich auch
+eine Form von Funk.
