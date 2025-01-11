@@ -1,13 +1,14 @@
-**Sign:** draw a big “V” in the air with both hands (from up to down).
+**Handzeichen:** mit beiden Händen ein großes V in die Luft malen (von oben nach
+unten).
 
 ## Hintergrund
 
-**Name:** A wolf is a large mammal native to Eurasia and North America and the
-ancestor of domestic dogs.
+**Name:** Wölfe sind große Säugetiere, die in Eurasien und Nordamerika
+beheimatet sind. Sie sind die Vorfahren der Haushunde.
 
-**Musical background:** *(More info needed.)*
+**Musikalischer Hintergrund:** *(Mehr Informationen notwendig.)*
 
-**Sign:** *(More info needed.)*
+**Handzeichen:** *(Mehr Informationen benötigt.)*
 
-**History:** From the [website of RoR
-Kraków](https://sambaka.wordpress.com/rytmy/) *(more info needed)*
+**Geschichte:** Von der [Website von RoR
+Kraków](https://sambaka.wordpress.com/rytmy/) *(mehr Informationen benötigt)*
