@@ -24,21 +24,21 @@ Spiky fingers on the head
 **Name:** A hedgehog is a medium-size spiky mammal. *(More info needed about why
 the name.)*
 
-**Musical background:** *(More info needed.)*
+**Musikalischer Hintergrund:** *(Mehr Informationen notwendig.)*
 
 **Sign:** The sign depicts the spikes of a hedgehog
 
 **History:** Part of the first set of tunes taken from Barking Bateria in 2000.
 
-## Difficulty
+## Schwierigkeit
 
 * **Low Surdo**: easy
 * **Mid Surdo**: easy
 * **High Surdo**: easy
-* **Repi**: medium
+* **Repi:** mittel
 * **Snare**: medium
 * **Tamb**: easy
-* **Agogô**: medium
+* **Agogô:** mittel
 
 ## Breaks
 
