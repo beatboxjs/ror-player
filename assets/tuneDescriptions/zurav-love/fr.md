@@ -2,7 +2,7 @@ Was drawn as the **Tune of the Year 2018**.
 
 **Sign:** open and close the beak of a bird with your hands
 
-## Background
+## Contexte
 
 **Name:** A word play on Żuravlów, the village where the TNM 2015 happened.
 
