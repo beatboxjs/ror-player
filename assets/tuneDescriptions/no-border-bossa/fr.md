@@ -1,6 +1,6 @@
 **Sign:** interlock your hands like a fence and then open it.
 
-## Background
+## Contexte
 
 **Name:** Bossa Nova is a Brazilian style of music that developed out of Samba,
 which usually involves a guitar and a singer on top of the characteristic Bossa
