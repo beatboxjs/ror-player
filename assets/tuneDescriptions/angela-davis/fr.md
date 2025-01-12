@@ -6,7 +6,7 @@ combination of high-pitched and normal hits.
 
 **Sign:** pull two prison bars apart in front of your face
 
-## Background
+## Contexte
 
 **Name:** Angela Davis is an Afro-American activist from the USA. She
 experienced a lot of oppression as a university professor due to her political
