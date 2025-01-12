@@ -1,24 +1,24 @@
-**Sign:** draw a triangle in the air with one hand
+**Handzeichen:** mit einer Hand ein Dreieck in die Luft malen
 
 ## Hintergrund
 
-**Name:** Waltz (German: Walzer) is a European style of classical music
-originating in German and Austrian folk dances of the middle age
-([Wikipedia](https://en.wikipedia.org/wiki/Waltz_(music)). Characteristic for it
-is its slow 3⁄4 time signature and it specific dance. The particular spelling of
-our tune comes from Polish “walc” for Waltz and “walcz” for “fight!”
-(imperative).
+**Name:** Walzer ist eine europäische Art von klassischer Musik, die ihren
+Ursprung in deutschen und österreichischen Volkstänzen des Mittelalters hat
+([Wikipedia](https://en.wikipedia.org/wiki/Waltz_(music))). Charakteristisch ist
+der langsame ¾-Takt und sein zugehöriger Tanz. Die Schreibweise des Tunes kommt
+von polnisch „walc“ für Walzer und „walcz“ für „kämpfe!“ (Imperativ).
 
-**Musical background:** All instruments play the typical Waltz rhythm.
+**Musikalischer Hintergrund:** Alle Instrumente spielen den typischen
+Walzertakt.
 
-**Sign:** The triangle stands for the characteristic 3⁄4 time signature.
+**Handzeichen:** Das Handzeichen steht für den charakteristischen ¾-Takt.
 
-**History:** Introduced by RoR Kraków in 2016.
+**Geschichte:** 2016 von RoR Kraków vorgestellt.
 
 ## Schwierigkeit
 
-* **Surdos**: Easy
-* **Repi**: Easy
-* **Snare**: Medium
-* **Tamborim**: Easy
-* **Agogô**: Easy
+* **Surdos:** einfach
+* **Repi:** einfach
+* **Snare:** mittel
+* **Tamborim:** einfach
+* **Agogô:** einfach
