@@ -40,7 +40,7 @@ Afoxé-Rhythmen aus Brasilien ([YouTube](https://youtu.be/WCah-JgDktA?t=301)).
 **Handzeichen:** Das Zeichen stammt aus der Ähnlichkeit des Namens mit
 “After-shave”, wenn dieser mit einem englischen Akzent ausgesprochen wird.
 
-**Geschichte:** Teil der zweiten Runde von Tunes, die von der Barking Baterie
+**Geschichte:** Teil der zweiten Runde von Tunes, die von der Barking Bateria
 2004/2005 eingeführt wurden.
 
 ## Kontroversen
