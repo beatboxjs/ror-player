@@ -1,0 +1,282 @@
+{
+    "utils": {
+        "time-month-nov": "Nov",
+        "time-yesterday": "Hier",
+        "time-month-sep": "Sept",
+        "time-weeks-ago_one": "Il y a {{count}} semaine",
+        "time-weeks-ago_many": "Il y a {{count}} semaines",
+        "time-weeks-ago_other": "Il y a {{count}} semaines",
+        "time-years-ago_one": "Il y a {{count}} an",
+        "time-years-ago_many": "Il y a {{count}} ans",
+        "time-years-ago_other": "Il y a {{count}} ans",
+        "time-month-feb": "Fev",
+        "time-month-jun": "Juin",
+        "time-month-oct": "Oct",
+        "time-month-dec": "Dec",
+        "time-day-and-time": "{{day}} {{time}}",
+        "time-today": "Aujourd'hui",
+        "time-days-ago_one": "Il y a {{count}} jour",
+        "time-days-ago_many": "Il y a {{count}} jours",
+        "time-days-ago_other": "Il y a {{count}} jours",
+        "time-months-ago_one": "Il y a {{count}} mois",
+        "time-months-ago_many": "Il y a {{count}} mois",
+        "time-months-ago_other": "Il y a {{count}} mois",
+        "time-month-jan": "Jan",
+        "time-month-mar": "Mar",
+        "time-month-apr": "Avr",
+        "time-month-may": "Mai",
+        "time-month-jul": "Juil",
+        "time-month-aug": "Août",
+        "time-day-with-year": "{{day}} {{month}} {{year}}",
+        "time-day-without-year": "{{day}} {{month}}"
+    },
+    "general": {
+        "dialog-close": "Fermer",
+        "dialog-ok": "OK",
+        "untitled-song": "Chanson sans titre",
+        "dialog-cancel": "Annuler"
+    },
+    "i18n": {
+        "tune": "Morceau",
+        "general-breaks": "Breaks Généraux",
+        "special-breaks": "Breaks Spéciaux",
+        "shouting-breaks": "Breaks Criés",
+        "silence": "{{beats}} Silence",
+        "whistle-in": "Sifflé"
+    },
+    "import-dialog": {
+        "break-exists-identical": "Le break existe déjà.",
+        "paste-placeholder": "Coller le lien ou les données brutes…",
+        "customize-selection": "Personnaliser la sélection",
+        "songs": "Morceaux",
+        "break-exists-different": "Existe déjà. La version locale va être modifiée.",
+        "unrecognized-format-error": "Format non reconnu.",
+        "title": "Importer",
+        "decoding-error": "Erreur de décodage des données collées : {{message}}",
+        "tunes-breaks": "Morceaux/Breaks",
+        "song-exists": "Le morceau existe déjà.",
+        "break-used": "break est utilisé dans Morceau, ne peut pas être désactivé",
+        "import-button": "Importer"
+    },
+    "song-player-toolbar": {
+        "tools": "Outils",
+        "clear-song-title": "Effacer le morceau",
+        "clear-song-message": "Voulez-vous vraiment effacer ce morceau ?",
+        "clear-song": "Effacer le morceau",
+        "export-mp3": "Exporter en MP3",
+        "export-wav": "Exporter en WAV",
+        "share": "Partager",
+        "import": "Importer",
+        "clear-song-ok": "Effacer"
+    },
+    "pattern-list": {
+        "remove-tune": "Supprimer le morceau",
+        "create-tune-duplicate-name-error": "Ce nom est déjà pris. Veuillez entrer un autre nom.",
+        "create-pattern-title": "Créer un break",
+        "create-pattern-ok": "Créer",
+        "create-tune-title": "Créer morceau",
+        "remove-pattern-title": "Supprimer le break",
+        "remove-pattern-ok": "Supprimer",
+        "create-tune-ok": "Créer",
+        "rename-tune-title": "Renommer le morceau",
+        "rename-tune-empty-name-error": "Veuillez entrer un nouveau nom pour le morceau.",
+        "rename-tune-ok": "Renommer",
+        "copy-tune-title": "Copier le morceau",
+        "copy-tune-ok": "Copier",
+        "remove-tune-title": "Supprimer le morceau",
+        "remove-tune-ok": "Supprimer",
+        "user-created-tune": "Morceau créé par les utilisateur.ice.s",
+        "copy-move-rename-break": "Copier/Déplacer/Renommer le break",
+        "copy-break": "Copier le break",
+        "create-break": "Nouveau break",
+        "rename-tune": "Renommer le morceau",
+        "copy-tune": "Copier le morceau",
+        "create-tune": "Nouveau morceau",
+        "copy-tune-empty-name-error": "Veuillez entrer un nouveau nom pour le morceau.",
+        "remove-break": "Supprimer",
+        "copy-tune-duplicate-name-error": "Ce nom est déjà pris. Veuillez en trouver un autre.",
+        "create-pattern-empty-name-error": "Veuillez entrer un nom pour le nouveau break.",
+        "create-pattern-duplicate-name-error": "Ce nom est déjà pris. Veuillez entrer un nom différent.",
+        "create-tune-empty-name-error": "Veuillez nommer le nouveau morceau.",
+        "rename-tune-duplicate-name-error": "Ce nom est déjà pris. Veuillez en trouver un autre.",
+        "remove-pattern-message": "Voulez-vous vraiment supprimer {{patternName}} ({{tuneName}}) ?",
+        "remove-tune-message": "Voulez-vous vraiment supprimer le morceau {{tuneName}} ?"
+    },
+    "history-picker": {
+        "history-alt": "Historique",
+        "shared-link": "Vous avez ouvert un lien partagé. Vos morceaux précédents peuvent être récupérés ici.",
+        "import-error-title": "Erreurs pendant le chargement",
+        "clear-title": "Vider l'historique",
+        "clear-ok": "Vider",
+        "clear": "Vider",
+        "clear-message": "Êtes-vous sûr.e de vouloir vider votre historique? Si vous avez récemment ouvert un lien partagé, vous pourriez perdre tout morceau/break personnalisé créé précédemment."
+    },
+    "config": {
+        "stroke-volume-defaults": "Par défaut",
+        "instruments-ls": "Surdo grave",
+        "instruments-ms": "Surdo moyen",
+        "instruments-hs": "Surdo aigu",
+        "instruments-re": "Repi",
+        "instruments-sn": "Caisse claire",
+        "instruments-ag": "Agogô",
+        "instruments-ot": "Criés",
+        "stroke-description-hd": "Frapper avec la main",
+        "stroke-description-0": "Étouffer avec la main",
+        "stroke-description-sil": "Coup silencieux",
+        "stroke-description-fl": "Rebond",
+        "stroke-description-.": "Coup silencieux",
+        "stroke-description-wh": "Sifflet",
+        "stroke-description-wh2": "Sifflet long",
+        "stroke-description-s": "Rebond doux",
+        "time-with-quintuplets": "{{time}} avec quintolets",
+        "category-all": "Tous les morceaux",
+        "category-common": "Morceaux communs",
+        "category-uncommon": "Morceaux peu communs",
+        "category-new": "Nouveaux morceaux",
+        "category-onesurdo": "Un Surdo",
+        "category-easy": "Facile",
+        "category-medium": "Moyen",
+        "category-western": "Musique occidentale",
+        "category-cultural-appropriation": "Appropriation culturelle",
+        "stroke-volume-shitty": "Haut-parleurs foireux",
+        "instruments-ta": "Tamborim",
+        "instruments-sh": "Shaker",
+        "stroke-description-w": "Baguette \"fouet\" (tamborim)",
+        "category-tricky": "Complexe",
+        "time-with-triplets": "{{time}} avec triolets",
+        "category-proposed": "Morceaux proposés",
+        "category-custom": "Morceaux personnalisés"
+    },
+    "share-dialog": {
+        "customize-tooltip-default": "Sera ouvert par défaut",
+        "title": "Partager",
+        "link": "Lien",
+        "raw-compressed": "Raw (compressé)",
+        "raw-uncompressed": "Raw (non compressé)",
+        "customize-heading": "Sélection personnalisée",
+        "customize-songs": "Morceaux",
+        "customize-tunes-breaks": "Morceaux/Breaks",
+        "customize-tooltip-used": "Utilisé dans le morceau, ne peut être retiré",
+        "link-description": "Ouvrir cet URL ouvrira les morceaux sélectionnés ci-dessous et les rendra disponibles dans la liste.",
+        "raw-description": "Copier ces données dans le menu \"Importer\" pour rendre disponibles les morceaux/breaks sélectionnés dans le lecteur."
+    },
+    "rename-pattern-dialog": {
+        "title-copy": "Copier le break",
+        "empty-name-error": "Veuillez entrer un nouveau nom pour le break.",
+        "title-rename": "Renommer le break",
+        "different-tune-copy": "Copier vers un autre morceau ?",
+        "mode": "Mode",
+        "mode-move": "Déplacer",
+        "new-name": "Nouveau nom",
+        "duplicate-name-error": "Ce nom est déjà pris. Veuillez en choisir un autre.",
+        "different-tune-move": "Déplacer vers un autre morceau ?",
+        "mode-copy": "Copier",
+        "title-move": "Déplacer le break",
+        "mode-rename": "Renommer"
+    },
+    "state": {
+        "untitled-song": "Morceau intitulé {{no}}"
+    },
+    "compose": {
+        "add-to-song-tooltip": "Ajouter au morceau"
+    },
+    "song-picker": {
+        "rename-title": "Entrer le nom du morceau",
+        "copy-of-song-name": "Copie de {{name}}",
+        "copy-song-name": "Copier",
+        "remove-title": "Supprimer le morceau",
+        "remove-message": "Voulez-vous vraiment supprimer le morceau {{name}} ?",
+        "rename-tooltip": "Renommer",
+        "remove-tooltip": "Supprimer",
+        "new-song": "Nouveau morceau",
+        "copy-tooltip": "Copier",
+        "rename-ok": "Renommer",
+        "remove-ok": "Supprimer"
+    },
+    "song-player": {
+        "all-instruments": "Tous",
+        "all-instruments-drop": "(Tous)",
+        "remove-tooltip": "Supprimer",
+        "pick-intruments-tooltip": "Choisir les instruments"
+    },
+    "help": {
+        "report-problem": "Signaler un problème",
+        "download": "Télécharger {{appName}}",
+        "app": "{{appName}} appli",
+        "source-code": "Code source sur GitHub",
+        "language": "Langage",
+        "user-manual": "Manuel de l'utilisateur"
+    },
+    "example-song-player": {
+        "listen": "Ecouter",
+        "download-mp3": "Télécharger en MP3"
+    },
+    "tune-info": {
+        "tune-sheet-pdf": "Livret des morceaux (PDF)",
+        "video": "Vidéo",
+        "sounds": "Sons",
+        "download-mp3": "Télécharger en MP3",
+        "notation": "Notation",
+        "notation-info": "Cliquer sur le {{pen}} sur les breaks ci-dessous pour voir les notes."
+    },
+    "pattern-length-picker": {
+        "length": "Longueur : {{length}}"
+    },
+    "pattern-player": {
+        "restore-title": "Restaurer l'original",
+        "restore-ok": "Restaurer",
+        "restore": "Restaurer l'original",
+        "restore-message": "Êtes-vous sûr.e de vouloir annuler vos modifications et restaurer le break original ?"
+    },
+    "mute-button": {
+        "unmute-all": "Rétablir le son de tous les instruments",
+        "mute-all": "Mettre en sourdine tous les instruments"
+    },
+    "playback-settings-picker": {
+        "title": "Paramètres de lecture",
+        "speed": "Vitesse",
+        "speed-reset": "Réinitialiser",
+        "whistle-off": "Non",
+        "whistle-one": "Sur \"un\"",
+        "whistle-all": "Sur tous",
+        "volume-master": "Général",
+        "whistle": "Sifflet",
+        "loop": "Boucle"
+    },
+    "export": {
+        "error-title": "Erreur à l'exportation {{type}}"
+    },
+    "overview": {
+        "listen": "Écouter",
+        "compose": "Composer"
+    },
+    "pattern-list-filter": {
+        "filter-placeholder": "Filtre : {{category}}"
+    },
+    "pattern-placeholder": {
+        "restore-title": "Restaurer l'original",
+        "restore-ok": "Restaurer",
+        "listen-tooltip": "Ecouter",
+        "show-notes-tooltip": "Montrer les notes",
+        "edit-notes-tooltip": "Editer les notes",
+        "restore-tooltip": "Restaurer l'original",
+        "restore-message": "Êtes-vous sûr.e de vouloir annuler les modifications de {{patternName}} ({{tuneName}}) et restaurer le break original ?",
+        "user-created-tooltip": "Break créé par les utilisateur.ice.s"
+    },
+    "play-pause-stop-button": {
+        "play": "Play",
+        "stop": "Stop",
+        "pause": "Pause"
+    },
+    "update": {
+        "new-version": "Une nouvelle version de {{appName}} est disponible.",
+        "refresh": "{{refresh}} pour mettre à jour.",
+        "refresh-refresh": "Rafraîchir la page"
+    },
+    "time-signature-picker": {
+        "time-signature": "Mesure : {{time}}"
+    },
+    "pattern-player-dialog": {
+        "share": "Partager"
+    }
+}

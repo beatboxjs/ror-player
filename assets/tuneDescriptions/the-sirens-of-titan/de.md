@@ -1,1 +1,1 @@
-Played by RoR Kraków ([website](https://sambaka.wordpress.com/rytmy/)).
+Wird von RoR Kraków gespielt ([Website](https://sambaka.wordpress.com/rytmy/)).
