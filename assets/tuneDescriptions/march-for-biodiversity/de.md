@@ -6,18 +6,18 @@
 loss of biodiversity is one of the most drastic consequences of environmental
 pollution.
 
-**Musical background:** *(More info needed.)*
+**Musikalischer Hintergrund:** *(Mehr Informationen notwendig.)*
 
 **Sign:** *(None yet.)*
 
 **History:** Introduced by RoR Helsinki on the TNM in 2019 in Lithuania.
 
-## Difficulty
+## Schwierigkeit
 
 * **Low Surdo**: medium
-* **Mid Surdo:** easy
-* **High Surdo:** medium
+* **Mittlere Surdo:** einfach
+* **Hohe Surdo:** mittel
 * **Repi**: tricky
 * **Snare**: easy
 * **Tamb**: tricky
-* **Agogô**: medium
+* **Agogô:** mittel
