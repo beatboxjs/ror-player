@@ -34,13 +34,13 @@ in 2006, although it is not clear whether it is the same tune.
 
 ## Schwierigkeit
 
-* **Low Surdo:** hard
-* **Mid Surdo:** easy
+* **Tiefe Surdo:** schwierig
+* **Mittlere Surdo:** einfach
 * **High Surdo:** easy
 * **Repi:** hard
-* **Snare:** medium
+* **Snare:** mittel
 * **Tamb:** easy
-* **Agogô:** medium
+* **Agogô:** mittel
 
 ## Breaks
 
