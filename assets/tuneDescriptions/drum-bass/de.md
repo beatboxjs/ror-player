@@ -1,45 +1,48 @@
-Sounds more like Hip-Hop than Drum ‘n’ Bass but has a really nice groove. Can be
-very cheerful when played quite fast or be groovy when played slow.
+Klingt mehr wie Hip-Hop als Drum’n’Bass, aber hat einen richtig guten Groove.
+Kann sehr heiter klingen, wenn er schnell gespielt wird, oder groovy, wenn er
+langsam gespielt wird.
 
-The Low Surdo is very important in this tune because it gives the special hip
-hop rhythm and “carries” the tune. There are different versions on the tune
-sheets but both sound good ;). Since none of the Surdos play at the same time,
-it is also possible to play this tune with only one or two surdo players and
-three surdos. To remember the Surdo lines it is also helpful to sing them all
-together (low, high, middle middle, low, high-low, low, high, middle middle,
-low, high…).
+Die tiefe Surdo ist in diesem Tune sehr wichtig, weil sie ihm den speziellen
+Hip-Hop-Klang gibt und ihn „trägt“. Es gibt zwei verschiedene Versionen in den
+Tunesheets, aber beide klingen gut ;). Weil keine der Surdos im selben Moment
+geschlagen werden, ist es auch möglich, diesen Tune mit nur ein oder zwei
+Surdo-Spieler_innen mit drei Surdos zu spielen. Um sich den Surdo-Rhythmus
+merken zu können, kann es auch helfen ihn gemeinsam zu singen (tief, hoch,
+mittel mittel tief hoch-tief, tief, hoch, mittel mittel tief hoch…).
 
-**Sign:** With one hand in your ear lift the other and move it front and back
-(like a DJ).
+**Handzeichen:** Mit einer Hand am Ohr die andere vor und zurück bewegen (wie
+ein_e DJ_ane).
 
 ## Hintergrund
 
-**Name:** Drum&Bass is a style of electronic music that developed in the 1990s
-in the UK. Characteristic for it is its really fast and strong base.
+**Name:** Drum&Bass ist eine elektronische Musikrichtung, die in den
+1990er-Jahren in Großbritannien entstanden ist. Charakteristisch ist das
+schnelle Tempo und der starke Bass.
 ([Wikipedia](https://en.wikipedia.org/wiki/Drum_and_bass))
 
-**Musical background:** The baseline of the tune somewhat resembles Drum&Bass,
-although Drum&Bass is usually played much faster at 165–185 bpm, while RoR Tunes
-are usually played at around 100–120 bpm. At this speed, the tune more sounds
-like Hip Hop, and a very similar base line can be heard in several hip hop songs
-such as this: [YouTube](https://www.youtube.com/watch?v=UePtoxDhJSw).
+**Musikalischer Hintergrund:** Der Bass des Tunes klingt zumindest grob wie
+Drum&Bass, wobei Drum&Bass normalerweise mit 165–185 bpm deutlich schneller
+gespielt wird, während RoR-Tunes üblicherweise mit 100–120 bpm gespielt werden.
+In dem Tempo klingt der Tune mehr wie Hip-Hop, und eine sehr ähnliche
+Bassmelodie findet sich in mehreren Hip-Hop-Liedern wie zum Beispiel diesem:
+[YouTube](https://www.youtube.com/watch?v=UePtoxDhJSw).
 
-**Sign:** The sign depicts a DJ.
+**Handzeichen:** Das Handzeichen stellt einen DJ dar.
 
-**History:** First mentioned in 2010 by RoR Bremen. Has been developed on a
-transnational basis between 2009 & 2010. Barking Bateria also mentions a tune
-with this name [on their
-website](https://web.archive.org/web/20061023061031/http://www.barkingbateria.co.uk/samba.htm)
-in 2006, although it is not clear whether it is the same tune.
+**Geschichte:** Erstmals 2010 von RoR Bremen erwähnt. Wurde zwischen 2009 und
+2010 transnational entwickelt. Barking Bateria erwähnt den Tune 2006 auch [auf
+ihrer
+Website](https://web.archive.org/web/20061023061031/http://www.barkingbateria.co.uk/samba.htm),
+wobei nicht klar ist, ob es sich um den selben Tune handelt.
 
 ## Schwierigkeit
 
 * **Tiefe Surdo:** schwierig
 * **Mittlere Surdo:** einfach
-* **High Surdo:** easy
-* **Repi:** hard
+* **Hohe Surdo:** einfach
+* **Repi:** schwierig
 * **Snare:** mittel
-* **Tamb:** easy
+* **Tamborim:** einfach
 * **Agogô:** mittel
 
 ## Breaks
