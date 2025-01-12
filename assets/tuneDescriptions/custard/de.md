@@ -1,57 +1,60 @@
-This tune is one of the RoR basics. It is (together with ‘Samba Reggae’) the RoR
-Tune which sounds most like “real” Samba.
+Dieser Tune ist Teil des RoR-Basisrepertoires. Er ist (zusammen mit „Samba
+Reggae“) der RoR-Tune, der am meisten wie „echter“ Samba klingt.
 
-A lot of this tune is based on the Tamborim’s voice, which can be memorized by
-“I’ve got custard in my underpants”. When learning the tune, start off there and
-make sure it’s burnt into everyone’s brain.
+Ein großer Teil des Tunes basiert auf dem Rhythmus des Tamborims, welcher sich
+als “I’ve got custard in my underpants” merken lässt. Beim Lernen des Tunes
+hilft es damit zu starten und sich den Rhythmus gut einzuprägen.
 
-If you are playing Agogô or Tamborim, don’t mix up your voice with the one from
-afoxe, as they are very similar. Check out the differences and find your way to
-remember them.
+Beim Spielen der Agogô und des Tamborims kann der Rhythmus leicht mit dem von
+Afoxé verwechselt werden, da beide sehr ähnlich sind. Es lohnt sich, sich beide
+genauer anzuschauen und einen eigenen Weg zu finden, sich die Unterschiede zu
+merken.
 
-**Sign:** making an offer to the sky
+**Handzeichen:** dem Himmel ein Angebot machen
 
 ## Hintergrund
 
-**Name:** Custard is the English word for a sweet, creamy, puddingy vanilla
-sauce ([Wikipedia](https://en.wikipedia.org/wiki/Custard)). The name was chosen
-because of the memory “I’ve got custard in my underpants” for the tamborim
-stroke.
+**Name:** Custard ist der englische Begriff für eine süße, kremige und
+puddingartige Vanillesoße ([Wikipeda](https://en.wikipedia.org/wiki/Custard)).
+Der Name wurde aufgrund des Tamborim-Merkspruchs “I’ve got custard in my
+underpants” („Ich habe Vanillesoße in der Unterhose“) ausgewählt.
 
-**Musical background:** A typical Samba Reggae style tune.
+**Musikalischer Hintergrund:** Ein typischer Samba-Reggae-Rhythmus.
 
-**Sign:** The sign used to depict a “W” for Welfare State (the former name of
-the tune), as can be seen in this
-[video](https://tube.rhythms-of-resistance.org/w/3LnZ6d58J1jd5GNzK1mQqp) by RoR
-London. It changed into the current sign and can also be interpreted as “holding
-a bowl of custard”.
+**Handzeichen:** Das urpsrüngliche Handzeichen war ein W für “Welfare State”
+(Sozialstaat, der ursprüngliche Name des Tunes), wie in [diesem
+Video](https://tube.rhythms-of-resistance.org/w/3LnZ6d58J1jd5GNzK1mQqp) von RoR
+London zu sehen ist. Er wurde dann in das heutige Zeichen abgeändert, das auch
+als das „Halten einer Schale Vanillesoße“ beschrieben werden kann.
 
-**History:** Part of the first set of tunes taken from Barking Bateria in 2000.
-Used to be called Welfare State, but was renamed because people don’t like the
-state.
+**Geschichte:** Teil der ersten Runde von Tunes, die 2000 von der Barking
+Baterie übernommen wurden. Hieß ursprünglich “Welfare State” (Sozialstaat),
+wurde später aber umbenannt, weil der Staat nicht besonders beliebt ist.
 
 ## Kontroversen
 
-The rhythm clearly sounds like Samba Reggae, which is a tune developed and used
-by the Black liberation movement in Brazil. Many people in the RoR network
-consider it cultural appropriation to play this tune in our mainly white
-European bands, and there is an ongoing debate about abolishing the tune.
+Der Rhythmus klingt klar nach Samba Reggae, einem Rhythmus, der von der
+Schwarzen Befreiungsbewegung in Brasilien entwickelt wurde und gespielt wird.
+Viele Mitglieder des RoR-Netzwerks sehen es als kulturelle Aneignung, diesen
+Tune in unseren größtenteils weißen europäischen Bands zu spielen, und es gibt
+laufende Diskussionen darüber, den Tune zu entfernen.
 
 ## Schwierigkeit
 
-* **Surdos**: medium
+* **Surdos:** mittel
 * **Repi:** mittel
-* **Snare**: medium
-* **Tamb**: medium (easy to remember, very tiring)
-* **Agogô**: medium (easy to mix up with afoxe)
+* **Snare:** mittel
+* **Tamborm:** mittel (einfach zu lernen aber sehr ermüdend)
+* **Agogô:** mittel (leicht mit Afoxé zu verwechseln)
 
 ## Breaks
 
-* Break 1&2 are variations of the Tamb stroke in a call&response-way. In Break 1
-  the Surdos call, in Break 2 the Tambs.
-* Break 3 can be used to have kind of solo parts for instrument sections: Let
-  them continue while the others play Break 3. At the beginning you might need
-  to count the bars in your head to find the transition back to the groove. This
-  is most important for snare players as they have a solo in the last bar.
-* Break 5 is a call&response between Snares and all others, which is really nice
-  as an intro, or to speed up.
+* Break 1 und 2 sind Variationen des Tamborim-Rhythmus als Call&Response. Im
+  Break 1 ruft die Surdo, in Break 2 das Tamborim.
+* Break 3 kann als Solo für einzelne Instrumente dienen, indem sie
+  weiterspielen, während alle anderen Break 3 spielen. Als Maestra ist es
+  hilfreich im Kopf mitzuzählen, um den richtigen Zeitpunkt zu finden, wieder in
+  den Tune zurück zu wechseln. Das ist besonders für die Snare wichtig, da diese
+  im letzten Takt ein Solo hat.
+* Break 5 ist eine Call&Response zwischen Snare und den anderen, welche sich
+  sehr gut als Intro eignet oder um das Tempo zu erhöhen.
