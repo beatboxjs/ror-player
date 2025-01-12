@@ -15,7 +15,7 @@ KRS One ([YouTube](https://www.youtube.com/watch?v=iaYDe3gu1go)).
 
 * **Low Surdo**: easy
 * **Mid/High Surdo:** tricky
-* **Repi:** medium
+* **Repi:** mittel
 * **Snare:** tricky
 * **Tamborim:** mittel
-* **Agogô:** medium
+* **Agogô:** mittel
