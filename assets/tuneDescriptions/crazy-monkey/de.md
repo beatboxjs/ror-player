@@ -30,10 +30,10 @@ football fans commonly make the same noises at Black players.
 ## Schwierigkeit
 
 * **Tiefe Surdo:** einfach
-* **Mid Surdo:** medium
+* **Mitlere Surdo:** mittel
 * **High Surdo:** easy
 * **Repi:** hard
-* **Snare:** medium
+* **Snare:** mittel
 * **Tamborim:** mittel
 * **Agogô:** hard (catchy)
 
