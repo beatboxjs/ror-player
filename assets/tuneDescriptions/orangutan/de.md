@@ -8,7 +8,7 @@ melody, so they are suitable to be played by one Surdo player with three Surdos.
 **Name:** Orangutan is a critically endangered species of apes native to
 south-east Asia.
 
-**Musical background:** *(More info needed.)*
+**Musikalischer Hintergrund:** *(Mehr Informationen notwendig.)*
 
 **Sign:** The sign depicts a monkey
 
@@ -21,7 +21,7 @@ There is a debate about removing all monkey references from the tune name and
 breaks, since racist stereotypes associate monkeys with Black people (who are
 also often associated with drumming).
 
-## Difficulty
+## Schwierigkeit
 
 * **Surdos**: Easy
 * **Repi**: Medium
