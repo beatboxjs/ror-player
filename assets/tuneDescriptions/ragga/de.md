@@ -31,12 +31,12 @@ music based on Reggae. ([Wikipedia](https://en.wikipedia.org/wiki/Ragga))
 **Musical background:** The Snare and Surdo beats can be heard in many Ragga
 songs.
 
-**Sign:** *(More info needed.)*
+**Handzeichen:** *(Mehr Informationen benötigt.)*
 
 **History:** Was introduced to the network in 2010 or so (together with Funk,
 but Funk is played at least since 2008 in the network)
 
-## Difficulty
+## Schwierigkeit
 
 * **Surdos**: medium
 * **Repinique**: medium (alternate-version: hard)

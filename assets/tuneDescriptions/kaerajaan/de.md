@@ -17,10 +17,10 @@ YouTube](https://youtu.be/-udR34x2aTM?t=4)).
 
 **History:** Invented by RoR Tallinn in 2021.
 
-## Difficulty
+## Schwierigkeit
 
 * **Surdos:** easy
 * **Repi:** hard
 * **Snare:** easy
-* **Tamb:** medium
-* **Agogô:** medium
+* **Tamborim:** mittel
+* **Agogô:** mittel

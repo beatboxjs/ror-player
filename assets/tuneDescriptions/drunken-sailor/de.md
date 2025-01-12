@@ -28,6 +28,6 @@ plays the “early in the morning”.
 * **Low/Mid Surdo**: Easy
 * **High Surdo**: Medium
 * **Repi**: hard
-* **Snare**: hard
+* **Snare:** schwierig
 * **Tamborim**: medium
 * **Agogo**: medium

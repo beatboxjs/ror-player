@@ -11,15 +11,15 @@ each other
 **Musical background:** The Snare and Repi line and the Intro seem to be Samba
 Reggae style. *(More info needed.)*
 
-**Sign:** *(More info needed.)*
+**Handzeichen:** *(Mehr Informationen benötigt.)*
 
 **History:** Introduced to the network by RoR London in 2012, was probably
 played there before?
 
-## Difficulty
+## Schwierigkeit
 
 * **Surdos:** easy
 * **Repi:** hard
-* **Snare:** hard
+* **Snare:** schwierig
 * **Tamborim:** hard
-* **Agogô:** medium
+* **Agogô:** mittel

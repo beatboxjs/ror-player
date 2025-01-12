@@ -26,7 +26,7 @@ fighting for rights or liberation, that historians never wrote about since
 history has always been written by the powerful and the exceptional, and
 especially hiding the contribution of women.
 
-**Musical background:** *(More info needed.)*
+**Musikalischer Hintergrund:** *(Mehr Informationen notwendig.)*
 
 **Sign:** The fictional character Karla Shnikov was also an animal rights
 activist, and one of her actions was to liberate the biggest rabbit farm in
@@ -38,11 +38,11 @@ showing a gun, and other bands didn’t want to have a tune named after a weapon
 The story of Karla Shnikov was made up by the working group thinking about a new
 name+sign for the tune.
 
-## Difficulty
+## Schwierigkeit
 
 * **Surdos**: medium (it is important, that the double hit in every bar is not
   played to fast.)
-* **Repi**: medium
+* **Repi:** mittel
 * **Snare**: easy
 * **Tamb**: easy
 * **Agogô**:easy

@@ -1,4 +1,4 @@
-This tune is one of the RoR basics.
+Dieser Tune ist Teil des Basis-Repertoires von RoR.
 
 This tune is played over 8 beats instead of 4, so take care when counting in.
 
@@ -25,7 +25,7 @@ history. The pioneer of Funk is James Brown.
 hit on the 1 and 3 and a snare hit on the 2 and 4. It seems that the tune
 doesn't actually sound like Funk. *(More info needed.)*
 
-**Sign:** *(More info needed.)*
+**Handzeichen:** *(Mehr Informationen benötigt.)*
 
 **History:** Was introduced to the network at least 2008 (together with Ragga).
 A slightly different version called “Lego Funk” has been played by Barking
@@ -40,7 +40,7 @@ Good to begin with, because all instruments are quite easy:
 * **Repi**: medium (the repi is not that easy, but anyway it’s a good tune to
   begin with, because you find different repi-hits)
 * **Snare**: easy
-* **Tamborim**: easy
+* **Tamborim:** einfach
 * **Agogô**: easy (because they can look at the surdos for almost any hit they
   play)
 

@@ -3,7 +3,7 @@ melody, so they are suitable to be played by one Surdo player with three Surdos.
 
 **Sign:** monkey, both hands in armpits
 
-## Background
+## Contexte
 
 **Name:** Orangutan is a critically endangered species of apes native to
 south-east Asia.

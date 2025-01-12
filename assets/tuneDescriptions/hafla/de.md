@@ -10,7 +10,7 @@ It is not the easiest to play but sounds really cool!
 rhythms that are typically played on hand drums such as the Dumbek
 ([Wikipedia](https://en.wikipedia.org/wiki/Dumbek_rhythms)).
 
-**Sign:** *(More info needed.)*
+**Handzeichen:** *(Mehr Informationen benötigt.)*
 
 **History:** Introduced by RoR Tel Aviv on TNM 2011.
 
@@ -20,9 +20,9 @@ rhythms that are typically played on hand drums such as the Dumbek
 * **Mid Surdo**: medium
 * **High Surdo**: easy
 * **Repi**: hard
-* **Snare**: hard
+* **Snare:** schwierig
 * **Tamb**: medium
-* **Agogô**: medium
+* **Agogô:** mittel
 
 ## Breaks
 

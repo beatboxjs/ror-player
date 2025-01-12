@@ -27,13 +27,13 @@ moments to reflect and (natural) silence.
 
 * **Washing Machine Break** sign: Make bowls of your hands and turn them.
 
-## Difficulty
+## Schwierigkeit
 
 * **Tiefe Surdo:** einfach
-* **Mid Surdo:** medium
+* **Mitlere Surdo:** mittel
 * **High Surdo:** hard
 * **Repi:** hard
-* **Snare:** hard
-* **Tamb:** hard
+* **Snare:** schwierig
+* **Tamborim:** schwierig
 * **Agogô:** hard
 * **Shaker:** hard

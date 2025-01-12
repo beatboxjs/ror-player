@@ -28,11 +28,11 @@ persons’ heads in the art of many different religions throughout history.
 
 ## Kontroversen
 
-Since this tune is directly rooted in Afro-Brazilian religion, many people in
-the RoR network consider it cultural appropriation to play it. There is an
-ongoing debate on whether this tune should be abandoned.
+Da der Tune direkt in afro-brasilianischer Religion verwurzelt ist, sehen es
+viele Mitglieder des RoR-Netzwerks als kulturelle Aneignung ihn zu spielen. Es
+gibt laufende Diskussionen darüber, ob er entfernt werden sollte.
 
-## Difficulty
+## Schwierigkeit
 
 * **Low Surdo**: Medium
 * **Mid/High Surdo**: Easy

@@ -9,18 +9,18 @@ supported by an extensive international campaign. Pekurinen was executed without
 a trial. His actions forced the government to change laws to allow peaceful,
 non-military civil service.
 
-**Musical background:** *(More info needed.)*
+**Musikalischer Hintergrund:** *(Mehr Informationen notwendig.)*
 
 **Sign:** *(None yet.)*
 
 **History:** Introduced by RoR Helsinki on the TNM in 2019 in Lithuania.
 
-## Difficulty
+## Schwierigkeit
 
 * **Low Surdo**: easy
-* **Mid Surdo:** easy
+* **Mittlere Surdo:** einfach
 * **High Surdo:** easy
 * **Repi**: tricky
 * **Snare**: tricky
 * **Tamb**: tricky
-* **Agogô**: medium
+* **Agogô:** mittel

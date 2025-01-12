@@ -40,7 +40,7 @@ European bands, and there is an ongoing debate about abolishing the tune.
 ## Schwierigkeit
 
 * **Surdos**: medium
-* **Repi**: medium
+* **Repi:** mittel
 * **Snare**: medium
 * **Tamb**: medium (easy to remember, very tiring)
 * **Agogô**: medium (easy to mix up with afoxe)

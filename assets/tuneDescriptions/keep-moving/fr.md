@@ -1,6 +1,6 @@
 **Sign:** “Walk” with two fingers on the other hand.
 
-## Background
+## Contexte
 
 **History:** This tune was developed in 2024 by a member of Extinction
 Rebellion.

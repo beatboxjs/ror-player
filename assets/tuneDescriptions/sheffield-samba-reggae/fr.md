@@ -1,6 +1,6 @@
 **Sign:** smoke a joint like a cup of tea (with thumb and index finger)
 
-## Background
+## Contexte
 
 **Name:** See Samba Reggae. Sheffield is a city in the UK that used to have a
 very active RoR band.

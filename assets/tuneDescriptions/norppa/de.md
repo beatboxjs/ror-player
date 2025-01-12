@@ -16,12 +16,12 @@ does not imitate any particular genre or song.
 
 **History:** Rediscovered from old notes by RoR Helsinki in 2021
 
-## Difficulty
+## Schwierigkeit
 
 * **Low Surdo**: easy
-* **Mid Surdo:** medium
+* **Mitlere Surdo:** mittel
 * **High Surdo:** easy
-* **Repi**: medium
+* **Repi:** mittel
 * **Snare**: tricky
 * **Tamb**: tricky
-* **Agogô**: medium
+* **Agogô:** mittel

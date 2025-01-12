@@ -1,6 +1,6 @@
 **Sign:** *(None yet.)*
 
-## Background
+## Contexte
 
 **Name:** Biodiversity refers to the variety of species in the ecosystem. The
 loss of biodiversity is one of the most drastic consequences of environmental

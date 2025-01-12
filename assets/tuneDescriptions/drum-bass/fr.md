@@ -12,7 +12,7 @@ low, high…).
 **Sign:** With one hand in your ear lift the other and move it front and back
 (like a DJ).
 
-## Background
+## Contexte
 
 **Name:** Drum&Bass is a style of electronic music that developed in the 1990s
 in the UK. Characteristic for it is its really fast and strong base.

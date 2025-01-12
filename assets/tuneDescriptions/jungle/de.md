@@ -14,12 +14,12 @@ the 1990s. It is the main successor of Drum&Bass.
 parties in a squat in London. Was only played occasionally because it was never
 in the official tune sheets. Was rediscovered in 2021.
 
-## Difficulty
+## Schwierigkeit
 
 * **Tiefe Surdo:** einfach
-* **Mid Surdo:** medium
+* **Mitlere Surdo:** mittel
 * **High Surdo:** hard
 * **Repi:** hard
-* **Snare:** hard
-* **Tamb:** medium
+* **Snare:** schwierig
+* **Tamborim:** mittel
 * **Agogô:** hard
