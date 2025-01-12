@@ -1,32 +1,34 @@
-**Sign:** Point with your index fingers to the ground, your thumbs pointing
-towards each other.
+**Handzeichen:** Mit beiden Zeigefingern richtung Boden zeigen, die Daumen
+zeigen zu einander.
 
 ## Hintergrund
 
-**Name:** Hip hop is an art movement that originated in the 1970s from Black and
-Latino communities in New York. Often only associated with rap, the hip hop
-culture includes many more elements such as breakdance, graffiti and beatboxing.
-Originally an underground movement and a tool to protest against the oppressive
-state institutions, it was discovered in the 1990s by the music industry, who
-started making huge profits by marketing it towards a white male audience. Over
-the years, Hip hop has become one of the most popular genres of music worldwide,
-and not much is left of its original purpose. Some white pop musicians have been
-criticized for cultural appropriation and commercializing hip hop culture.
+**Name:** Hip-Hop ist eine Kunstbewegung, die in den 1970er-Jahren in Schwarzen
+und Latino-Communities in New York entstanden ist. Sie wird oft mit Rap
+assoziiert, umfasst aber weitaus mehr Elemente, wie zum Beispiel Breakdance,
+Graffiti und Beatboxen. Ursprünglich eine Untergrundbewegung und ein Werkzeug,
+um gegen unterdrückerische staatliche Institutionen zu protestieren, wurde es in
+den 1990ern von der Musikindustrie entdeckt, welche darauf hin riesige Profite
+einfuhr, indem sie die Musik an ein weißes männliches Publikum vermarktete. Im
+Laufe der Jahre wurde Hip-Hop zu einer der beliebtesten Musikrichtung weltweit,
+und von ihrem ursprünglichen Zweck ist nicht mehr viel übrig. Manche weißen
+Pop-Musiker_innen wurden für kulturelle Aneignung und für die Kommerzialisierung
+der Hip-Hop-Kultur kritisiert.
 
-**Musical background:** The tune is based on Hip hop beats.
+**Musikalischer Hintergrund:** Der Tune basiert auf Hip-Hop-Rhythmen.
 
-**Sign:** A common hand gesture that Hip hop artists like to make ([example on
+**Handzeichen:** Eine unter Hip-Hop-Künstlern verbreitete Geste ([Beispiel auf
 YouTube](https://youtu.be/010KyIQjkTk)).
 
-**History:** Invented by someone from RoR Berlin in 2005, but never published.
-Was rediscovered in 2021.
+**Geschichte:** 2005 von einem Mitglied von RoR Berlin erfunden, aber nie
+veröffentlicht. Wurde 2021 wieder entdeckt.
 
 ## Schwierigkeit
 
 * **Tiefe Surdo:** mittel
 * **Mitlere Surdo:** mittel
 * **Hohe Surdo:** mittel
-* **Repi:** easy
+* **Repi:** einfach
 * **Snare:** schwierig
 * **Tamborim:** schwierig
-* **Agogô:** hard
+* **Agogô:** schwierig
