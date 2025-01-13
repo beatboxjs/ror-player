@@ -1,4 +1,4 @@
-This tune is one of the RoR basics.
+Ce morceau est une des fondamentaux de RoR.
 
 This tune is played over 8 beats instead of 4, so take care when counting in.
 
@@ -31,7 +31,7 @@ doesn't actually sound like Funk. *(More info needed.)*
 A slightly different version called “Lego Funk” has been played by Barking
 Bateria: [SoundCloud](https://soundcloud.com/barking-bateria/lego-funk)
 
-## Difficulty
+## Difficulté
 
 Good to begin with, because all instruments are quite easy:
 
