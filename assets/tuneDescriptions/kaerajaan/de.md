@@ -20,7 +20,7 @@ YouTube](https://youtu.be/-udR34x2aTM?t=4)).
 ## Schwierigkeit
 
 * **Surdos:** easy
-* **Repi:** hard
+* **Repi:** schwierig
 * **Snare:** easy
 * **Tamborim:** mittel
 * **Agogô:** mittel
