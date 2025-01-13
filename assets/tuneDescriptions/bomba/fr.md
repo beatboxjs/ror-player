@@ -13,12 +13,12 @@ and the breaks inspired in song “Bomba” by King Africa
 **History:** Invented by a member of a former band in Valencia called Mandala
 around 2014
 
-## Difficulty
+## Difficulté
 
 * **Low Surdo:** medium
 * **Mid Surdo:** easy
-* **High Surdo:** medium
+* **Surdo aigu:** moyenne
 * **Repi:** medium
 * **Snare:** medium
 * **Tamb:** hard
-* **Agogô:** medium
+* **Agogô:** moyenne
