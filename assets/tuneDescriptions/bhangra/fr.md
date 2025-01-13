@@ -44,13 +44,13 @@ very small).
 **Sign:** The sign is a common gesture to greet or honour someone in India and
 Southeast Asia. In Hindu, the gesture is called Namaste.
 
-**History:** Part of the second round of tunes that was introduced by Barking
-Bateria in 2004/2005.
+**Histoire :** Fait partie du second lot de morceaux proposés par Barking
+Bateria en 2004/2005.
 
-## Difficulty
+## Difficulté
 
 * **Surdos:** easy
-* **Repi:** easy
+* **Repi:** facile
 * **Snare:** easy
 * **Tamb:** medium
 * **Agogô:** easy
