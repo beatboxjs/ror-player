@@ -24,9 +24,9 @@ Kraftwerk ([YouTube](https://www.youtube.com/watch?v=XMVokT5e0zs)).
 
 ## Schwierigkeit
 
-* **Surdos**: Easy
+* **Surdos:** einfach
 * **Repi**: Tricky
-* **Snare**: Medium
-* **Tamborim**: Easy
+* **Snare:** mittel
+* **Tamborim:** einfach
 * **Agogô:** Easy
 * **Shaker:** Tricky
