@@ -20,7 +20,7 @@ does not imitate any particular genre or song.
 
 * **Low Surdo**: easy
 * **Mitlere Surdo:** mittel
-* **High Surdo:** easy
+* **Hohe Surdo:** einfach
 * **Repi:** mittel
 * **Snare**: tricky
 * **Tamb**: tricky
