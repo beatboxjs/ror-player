@@ -11,7 +11,7 @@ Since practically every samba band can play a version of samba reggae, it is a
 good tune to play together in demonstrations in which there are other non-RoR
 samba bands.
 
-## Sign
+## Signe
 
 An S formed with two hands
 
@@ -45,7 +45,7 @@ ritual in the Rastafari religion, which is closely linked to Reggae music.
 
 **History:** Part of the first set of tunes taken from Barking Bateria in 2000.
 
-## Controversies
+## Controverses
 
 The rhythm clearly sounds like real Samba Reggae, which is a tune developed and
 used by the Black liberation movement in Brazil. Many people in the RoR network
@@ -55,7 +55,7 @@ European bands, and there is an ongoing debate about abolishing the tune.
 There is also some criticism towards the sign, which is based on a racist
 stereotype.
 
-## Difficulty
+## Difficulté
 
 * **Surdos**: medium
 * **Repinique**: medium
