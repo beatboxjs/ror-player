@@ -27,7 +27,7 @@ before drinking Tequila. The tune sign represents using a salt shaker.
 
 **History:** Invented by RoR Berlin in 2017.
 
-## Difficulty
+## Difficulté
 
 * **Low Surdo:** tricky
 * **Mid Surdo:** medium
@@ -35,7 +35,7 @@ before drinking Tequila. The tune sign represents using a salt shaker.
 * **Repi:** hard
 * **Snare:** easy
 * **Tamb:** easy
-* **Agogô:** medium
+* **Agogô:** moyenne
 
 ## Breaks
 
