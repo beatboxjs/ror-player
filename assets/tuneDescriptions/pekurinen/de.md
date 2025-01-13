@@ -19,7 +19,7 @@ non-military civil service.
 
 * **Low Surdo**: easy
 * **Mittlere Surdo:** einfach
-* **High Surdo:** easy
+* **Hohe Surdo:** einfach
 * **Repi**: tricky
 * **Snare**: tricky
 * **Tamb**: tricky
