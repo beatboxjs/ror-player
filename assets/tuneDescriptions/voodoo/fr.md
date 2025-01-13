@@ -26,13 +26,13 @@ persons’ heads in the art of many different religions throughout history.
 
 **History:** Part of the first set of tunes taken from Barking Bateria in 2000.
 
-## Controversies
+## Controverses
 
 Since this tune is directly rooted in Afro-Brazilian religion, many people in
 the RoR network consider it cultural appropriation to play it. There is an
 ongoing debate on whether this tune should be abandoned.
 
-## Difficulty
+## Difficulté
 
 * **Low Surdo**: Medium
 * **Mid/High Surdo**: Easy

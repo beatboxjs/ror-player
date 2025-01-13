@@ -37,6 +37,6 @@ gibt laufende Diskussionen darüber, ob er entfernt werden sollte.
 * **Low Surdo**: Medium
 * **Mid/High Surdo**: Easy
 * **Repi**: Medium
-* **Snare**: Medium
-* **Tamborim**: Easy
+* **Snare:** mittel
+* **Tamborim:** einfach
 * **Agogo**: Medium
