@@ -11,11 +11,11 @@ KRS One ([YouTube](https://www.youtube.com/watch?v=iaYDe3gu1go)).
 
 **History:** Introduced by RoR Leipzig in 2022.
 
-## Difficulty
+## Difficulté
 
 * **Low Surdo**: easy
 * **Mid/High Surdo:** tricky
 * **Repi:** medium
 * **Snare:** tricky
 * **Tamborim:** medium
-* **Agogô:** medium
+* **Agogô:** moyenne
