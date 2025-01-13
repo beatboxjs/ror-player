@@ -22,9 +22,9 @@ Coupé-Décalé. It does not seem to sound the same as Coupé-Décalé though.
 
 **History:** The tune was invented by RoR Montpellier in 2018.
 
-## Difficulty
+## Difficulté
 
-* **Low Surdo:** easy
+* **Surdo Grave :** facile
 * **Mid/High Surdo**: medium
 * **Repi/Snare**: hard (they play the same)
 * **Tamb**: hard
