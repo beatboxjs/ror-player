@@ -7,9 +7,9 @@ ligths of a police car
 of da Police](https://en.wikipedia.org/wiki/Sound_of_da_Police) by the rapper
 KRS-One. The song criticizes police brutality and systemic racism.
 
-## Difficulty
+## Difficulté
 
-* **Low Surdo:** easy
+* **Surdo Grave :** facile
 * **Mid/High Surdo**: medium
 * **Repi**: hard
 * **Snare**: easy
