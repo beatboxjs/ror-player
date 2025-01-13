@@ -32,8 +32,8 @@ moments to reflect and (natural) silence.
 * **Tiefe Surdo:** einfach
 * **Mitlere Surdo:** mittel
 * **High Surdo:** hard
-* **Repi:** hard
+* **Repi:** schwierig
 * **Snare:** schwierig
 * **Tamborim:** schwierig
-* **Agogô:** hard
+* **Agogô:** schwierig
 * **Shaker:** hard
