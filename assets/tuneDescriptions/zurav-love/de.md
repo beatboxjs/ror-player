@@ -1,27 +1,29 @@
-Was drawn as the **Tune of the Year 2018**.
+Wurde als **Tune des Jahres 2018** ausgelost.
 
-**Sign:** open and close the beak of a bird with your hands
+**Handzeichen:** den Schnabel eines Vogels mit beiden Händen öffnen und
+schließen
 
 ## Hintergrund
 
-**Name:** A word play on Żuravlów, the village where the TNM 2015 happened.
+**Name:** Ein Wortspiel auf Żuravlów, das Dort, in dem das TNM 2015 statt fand.
 
-**Musical background:** Based on the song “Truant” by British electronic
-musician Burial ([Surdo+Tamb+Snare](https://youtu.be/8u4D0wAc2AA?t=1m48s),
-[Agogô + Kick Back](https://youtu.be/8u4D0wAc2AA?t=6m27s)).
+**Musikalischer Hintergrund:** Basiert auf dem Lied „Truant“ des britischen
+Elektro-Musikers Burial
+([Surdo+Tamb+Snare](https://youtu.be/8u4D0wAc2AA?t=1m48s), [Agogô + Kick
+Back](https://youtu.be/8u4D0wAc2AA?t=6m27s)).
 
-**Sign:** “Żurav” is Polish for “crane” (a type of large bird). The sign
-represents the beak of the bird.
+**Handzeichen:** „Żurav“ ist polnisch für Kranich. Das Handzeichen steht für den
+Schnabel eines Vogels.
 
-**History:** Introduced by RoR Kraków and Ror Trójmiasto on the TNM 2015 in
-Żuravlów.
+**Geschichte:** Auf dem TNM 2015 in Żuravlów von RoR Kraków und RoR Trójmiasto
+vorgestellt.
 
 ## Schwierigkeit
 
-* **Low/Mid Surdo:** medium (easy to play, but hard to keep the right speed
-  because of off-beats)
-* **High Surdo:** easy
-* **Repi:** easy
-* **Snare:** tricky
+* **Tiefe/mittlere Surdo:** mittel (leicht zu spielen, aber wegen der Off-Beats
+  schwierig im Takt zu bleiben)
+* **Hohe Surdo:** einfach
+* **Repi:** einfach
+* **Snare:** schwierig
 * **Tamborim:** einfach
-* **Agogô**: hard
+* **Agogô:** schwierig
