@@ -19,7 +19,7 @@ played there before?
 ## Schwierigkeit
 
 * **Surdos:** easy
-* **Repi:** hard
+* **Repi:** schwierig
 * **Snare:** schwierig
 * **Tamborim:** hard
 * **Agogô:** mittel
