@@ -1,6 +1,6 @@
 A été choisi **Morceau de l'année 2021** (avec Sambasso).
 
-Si les joueur.euse.s ou le public a besoin d'un peu de repos, Bhaṅgṛā et un
+Si les joueur.euse.s ou le public ont besoin d'un peu de repos, Bhaṅgṛā et un
 morceau adéquat.
 
 Mais attention au rythme 6/8. Sur la "partition", chaque temps est divisé en 3
@@ -54,7 +54,7 @@ Bateria en 2004/2005.
 * **Surdos:** facile
 * **Repi:** facile
 * **Caisse claire:** facile
-* **Tamborim:** medium
+* **Tamborim:** moyenne
 * **Agogô:** facile
 
 ## Breaks
