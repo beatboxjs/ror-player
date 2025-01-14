@@ -32,13 +32,13 @@ the name.)*
 
 ## Schwierigkeit
 
-* **Low Surdo**: easy
-* **Mid Surdo**: easy
-* **High Surdo**: easy
-* **Repi:** mittel
-* **Snare:** mittel
-* **Tamb**: easy
-* **Agogô:** mittel
+* **Low Surdo:** easy
+* **Mid Surdo:** easy
+* **High Surdo:** easy
+* **Repi:** medium
+* **Snare:** medium
+* **Tamborim:** easy
+* **Agogô:** medium
 
 ## Breaks
 
