@@ -34,9 +34,9 @@ gibt laufende Diskussionen darüber, ob er entfernt werden sollte.
 
 ## Schwierigkeit
 
-* **Low Surdo**: Medium
-* **Mid/High Surdo**: Easy
-* **Repi**: Medium
-* **Snare:** mittel
-* **Tamborim:** einfach
-* **Agogo**: Medium
+* **Low Surdo:** medium
+* **Mid/High Surdo:** easy
+* **Repi:** medium
+* **Snare:** medium
+* **Tamborim:** easy
+* **Agogo:** medium
