@@ -1,10 +1,10 @@
-Ce morceau est une des fondamentaux de RoR.
+Ce morceau est un des fondamentaux de RoR.
 
 Ici, idéalement, le Surdo grave échange une de ses mailloches pour une baguette
 souple du Repinique pour obtenir un son plus aigu pour jouer une combinaison de
 coup aigus et normaux.
 
-**Signe:** écarter deux barreaux de prison de devant son visage
+**Signe:** Écarter deux barreaux de prison de devant son visage
 
 ## Contexte
 
@@ -21,13 +21,13 @@ documentaire “Free Angela and All Political Prisoners”)
 Brown, et le Surdo grave est basé sur le rythme de batterie de cette chanson. Il
 se peut que le reste du morceau soit aussi basé sur cette musique.
 
-**Signe:** Le signe représente des barreaux de prison puisqu' Angela Davis est
+**Signe:** Le signe représente des barreaux de prison puisque Angela Davis est
 une personnalité majeure du mouvement pour l'abolition de la prison.
 
 **Histoire:** Fait partie du premier lot de morceaux proposés par Barking
 Bateria en 2000. Le nom était auparavant "James Brown" et le signe était une
 coupe afro. James Brown n'a pas eu de coupe de cheveux afro pendant une grande
-partie de sa vie, mais en a porté lorsque c'est devenu un symbole de fierté
+partie de sa vie, mais en a porté une lorsque c'est devenu un symbole de fierté
 Noire (Black pride). Le morceau a été renommé depuis les accusations de violence
 domestique et viol commis par James Brown, et Angela Davis a été choisie
 puisqu'elle correspondait au signe du morceau. Plus tard, le signe a changé :
