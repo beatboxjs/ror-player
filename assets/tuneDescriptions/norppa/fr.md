@@ -18,10 +18,10 @@ does not imitate any particular genre or song.
 
 ## Difficulté
 
-* **Low Surdo**: easy
+* **Low Surdo:** easy
 * **Mid Surdo:** medium
 * **High Surdo:** easy
-* **Repi**: medium
-* **Snare**: tricky
-* **Tamb**: tricky
-* **Agogô**: medium
+* **Repi:** medium
+* **Snare:** tricky
+* **Tamborim:** tricky
+* **Agogô:** medium
