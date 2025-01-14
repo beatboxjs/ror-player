@@ -2,19 +2,19 @@ Sign: move flat hands like stepping
 
 ## Hintergrund
 
-**Name:** _More info needed._
+**Name:** _Mehr Informationen benötigt._
 
-**Musical background:** The Surdos are also inspired by the song “Boom Bap” by
-KRS One ([YouTube](https://www.youtube.com/watch?v=iaYDe3gu1go)).
+**Musikalischer Hintergrund:** Die Surdos sind unter Anderem inspiriert vom Lied
+„Boom Bap“ von KRS One ([YouTube](https://www.youtube.com/watch?v=iaYDe3gu1go)).
 
-**Sign:** _More info needed._
+**Handzeichen:** _Mehr Informationen benötigt._
 
-**History:** Introduced by RoR Leipzig in 2022.
+**Geschichte:** 2022 von RoR Leipzig vorgestellt.
 
 ## Schwierigkeit
 
-* **Low Surdo:** easy
-* **Mid/High Surdo:** tricky
+* **Tiefe Surdo:** einfach
+* **Mittlere/hohe Surdo:** schwierig
 * **Repi:** mittel
 * **Snare:** schwierig
 * **Tamborim:** mittel
