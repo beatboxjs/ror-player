@@ -9,7 +9,7 @@ supported by an extensive international campaign. Pekurinen was executed without
 a trial. His actions forced the government to change laws to allow peaceful,
 non-military civil service.
 
-**Musical background:** *(More info needed.)*
+**Contexte musical:** *(+ d'infos nécessaires)*
 
 **Sign:** *(None yet.)*
 
@@ -23,4 +23,4 @@ non-military civil service.
 * **Repi:** tricky
 * **Snare:** tricky
 * **Tamborim:** tricky
-* **Agogô:** medium
+* **Agogô:** moyenne
