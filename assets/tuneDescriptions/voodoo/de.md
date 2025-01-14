@@ -24,7 +24,8 @@ Voodoo rhythms. *(More info needed.)*
 **Sign:** The tune sign stands for a halo, which has been depicted above godly
 persons’ heads in the art of many different religions throughout history.
 
-**History:** Part of the first set of tunes taken from Barking Bateria in 2000.
+**Geschichte:** Teil der ersten Sammlung von Tunes, die 2000 von der Barking
+Bateria übernommen wurden.
 
 ## Kontroversen
 
@@ -39,4 +40,4 @@ gibt laufende Diskussionen darüber, ob er entfernt werden sollte.
 * **Repi:** mittel
 * **Snare:** mittel
 * **Tamborim:** einfach
-* **Agogô:** medium
+* **Agogô:** mittel
