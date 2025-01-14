@@ -19,8 +19,8 @@ YouTube](https://youtu.be/-udR34x2aTM?t=4)).
 
 ## Difficulté
 
-* **Surdos:** easy
+* **Surdos:** facile
 * **Repi:** hard
-* **Snare:** easy
-* **Tamb:** medium
+* **Caisse claire:** facile
+* **Tam:** moyenne
 * **Agogô:** moyenne
