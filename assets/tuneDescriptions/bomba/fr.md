@@ -20,5 +20,5 @@ around 2014
 * **Surdo aigu:** moyenne
 * **Repi:** medium
 * **Snare:** medium
-* **Tamb:** hard
+* **Tamborim:** hard
 * **Agogô:** moyenne
