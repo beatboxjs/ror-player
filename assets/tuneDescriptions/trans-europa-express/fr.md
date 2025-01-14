@@ -28,5 +28,5 @@ Kraftwerk ([YouTube](https://www.youtube.com/watch?v=XMVokT5e0zs)).
 * **Repi:** tricky
 * **Snare:** medium
 * **Tamborim:** facile
-* **Agogô:** easy
+* **Agogô:** facile
 * **Shaker:** tricky
