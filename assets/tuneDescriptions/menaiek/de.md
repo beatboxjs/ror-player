@@ -10,9 +10,10 @@ Polizist_in)
 Sambarhythmen. Der Kick Back basiert auf Mozambique, einer kubanischen
 Musikrichtung.
 
-**Sign:** The sign depicts a cop covering their badge
+**Handzeichen:** Das Zeichen stellt einen Polizisten dar, der sein Abzeichen
+verdeckt
 
-**History:** Introduced in 2015 by RoR Jerusalem.
+**Geschichte:** 2015 von RoR Jerusalem eingeführt.
 
 ## Schwierigkeit
 
