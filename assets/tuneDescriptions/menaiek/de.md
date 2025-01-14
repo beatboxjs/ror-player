@@ -1,13 +1,14 @@
-**Sign:** put three fingers on your other upper arm (like covering a police
-badge)
+**Handzeichen:** drei Finger auf den anderen Oberarm legen (wie beim Verdecken
+eines Polizeiabzeichens)
 
 ## Hintergrund
 
-**Name:** “Menaiek” is Hebrew for “cop” (insulting word for police officer)
+**Name:** „Menaiek“ ist Hebräisch für „Bulle“ (herabwürdigende Bezeichnung für
+Polizist_in)
 
-**Musical background:** The Surdo and Agogô lines are based on some Afro-Cuban
-Samba rhythms. The Kick Back break is based on Mozambique, a Cuban style of
-music.
+**Musikalischer Hintergrund:** Die Surdo und Agogô basieren auf afro-kubanischen
+Sambarhythmen. Der Kick Back basiert auf Mozambique, einer kubanischen
+Musikrichtung.
 
 **Sign:** The sign depicts a cop covering their badge
 
