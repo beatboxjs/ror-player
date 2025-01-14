@@ -18,7 +18,7 @@ played there before?
 
 ## Schwierigkeit
 
-* **Surdos:** easy
+* **Surdos:** einfach
 * **Repi:** schwierig
 * **Snare:** schwierig
 * **Tamborim:** schwierig
