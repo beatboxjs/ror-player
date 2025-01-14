@@ -80,8 +80,8 @@ gibt laufende Diskussionen darüber, ob er entfernt werden sollte.
 
 ## Schwierigkeit
 
-* **Surdos:** einfach
-* **Repi:** mittel
-* **Snare:** schwierig
-* **Tamborim:** einfach
-* **Agogô:** mittel
+* **Surdos:** easy
+* **Repi:** medium
+* **Snare:** hard
+* **Tamborim:** easy
+* **Agogô:** medium

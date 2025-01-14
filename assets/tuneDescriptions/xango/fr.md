@@ -73,8 +73,8 @@ ongoing debate on whether this tune should be abandoned.
 
 ## Difficulté
 
-* **Surdos**: easy
-* **Repi**: medium
-* **Snare**: hard
-* **Tamborim**: easy
-* **Agogô**: medium
+* **Surdos:** easy
+* **Repi:** medium
+* **Snare:** hard
+* **Tamborim:** easy
+* **Agogô:** medium
