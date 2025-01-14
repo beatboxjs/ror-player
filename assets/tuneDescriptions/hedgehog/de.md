@@ -35,10 +35,10 @@ the name.)*
 * **Low Surdo:** easy
 * **Mid Surdo:** easy
 * **High Surdo:** easy
-* **Repi:** medium
-* **Snare:** medium
-* **Tamborim:** easy
-* **Agogô:** medium
+* **Repi:** mittel
+* **Snare:** mittel
+* **Tamborim:** einfach
+* **Agogô:** mittel
 
 ## Breaks
 
