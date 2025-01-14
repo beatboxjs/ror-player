@@ -17,7 +17,7 @@ music.
 
 * **Low Surdo:** easy
 * **Mid/High Surdo:** tricky
-* **Repi:** hard
-* **Snare:** hard
-* **Tamborim:** hard
-* **Agogô:** medium
+* **Repi:** schwierig
+* **Snare:** schwierig
+* **Tamborim:** schwierig
+* **Agogô:** mittel
