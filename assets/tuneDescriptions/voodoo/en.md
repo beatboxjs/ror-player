@@ -28,4 +28,4 @@ Since this tune is directly rooted in Afro-Brazilian religion, many people in th
 * **Repi:** medium
 * **Snare:** medium
 * **Tamborim:** easy
-* **Agogo:** medium
+* **Agogô:** medium
