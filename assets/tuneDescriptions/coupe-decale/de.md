@@ -26,7 +26,7 @@ Coupé-Décalé. Es scheint jedoch nicht wie Coupé-Décalé zu klingen.
 ## Schwierigkeit
 
 * **Tiefe Surdo:** einfach
-* **Mittlere/hohe Surdo:** mittel
-* **Repi/Snare:** schwierig (beide spielen das Gleiche)
-* **Tamborim:** schwierig
-* **Agogô:** mittel
+* **Mid/High Surdo:** medium
+* **Repi/Snare:** hard (they play the same)
+* **Tamborim:** hard
+* **Agogô:** medium
