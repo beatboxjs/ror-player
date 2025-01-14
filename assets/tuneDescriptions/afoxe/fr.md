@@ -59,13 +59,14 @@ difficile dans notre société patriarcale.
 * **Repi :** difficile (variations de tonalité et de vitesse)
 * **Caisse claire :** difficile (L'accent n'est pas sur le temps au 4e
   temps)</dd>
-* **Tamborim:** medium (quite exhausting if played for a long time)
+* **Tamborim:** moyenne (Assez fatiguant à la longue)
 * **Agogô :** moyenne (facile à confondre avec Custard)
 
 ## Breaks
 
 * Break 1, un question-réponse entre Surdos et les autres
-* Breaks 2 et 3 sont des lignes d'échange pour les Surdos medium et aigu
+* Breaks 2 et 3, seuls les Surdos medium et aigu changent par rapport au riff
+  principal
 * Call Break, un question-réponse entre le Repi et les autres
 * Wolf Break, un question réponse entre les Surdos et les autres, et qui fini
   avec un hurlement de loup. Il est généralement joué en boucle, et peut être
