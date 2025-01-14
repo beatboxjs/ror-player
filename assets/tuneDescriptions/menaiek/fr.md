@@ -15,7 +15,7 @@ music.
 
 ## Difficulté
 
-* **Low Surdo:** easy
+* **Surdo Grave :** facile
 * **Mid/High Surdo:** tricky
 * **Repi:** difficile
 * **Caisse claire:** difficile
