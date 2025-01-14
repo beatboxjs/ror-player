@@ -35,13 +35,13 @@ Bateria: [SoundCloud](https://soundcloud.com/barking-bateria/lego-funk)
 
 Good to begin with, because all instruments are quite easy:
 
-* **Surdos**: easy (all surdos play the same line and there are tons of
+* **Surdos:** easy (all surdos play the same line and there are tons of
   memoryhook-phrases)
-* **Repi**: medium (the repi is not that easy, but anyway it’s a good tune to
+* **Repi:** medium (the repi is not that easy, but anyway it’s a good tune to
   begin with, because you find different repi-hits)
-* **Snare**: easy
-* **Tamborim**: easy
-* **Agogô**: easy (because they can look at the surdos for almost any hit they
+* **Snare:** easy
+* **Tamborim:** easy
+* **Agogô:** easy (because they can look at the surdos for almost any hit they
   play)
 
 ## Breaks

@@ -37,14 +37,14 @@ und 3 und die Snare auf der 2 und 4. Demnach klingt dieser Tune nicht wie Funk.
 
 Gut geeignet als Einstig, weil alle Instrumente recht einfach zu spielen sind:
 
-* **Surdos:** einfach (alle Surdos spielen das gleiche und es gibt zahlreiche
-  Merksprüche)
-* **Repi:** mittel (die Repi ist nicht so einfach, aber es ist trotzdem ein
-  guter Tune für den Einstieg, weil die verschiedenen Arten von Repi-Schlägen
-  vorkommen)
-* **Snare:** einfach
-* **Tamborim:** einfach
-* **Agogô:** einfach (sie kann fast alle Schläge bei den Surdos abgucken)
+* **Surdos:** easy (all surdos play the same line and there are tons of
+  memoryhook-phrases)
+* **Repi:** medium (the repi is not that easy, but anyway it’s a good tune to
+  begin with, because you find different repi-hits)
+* **Snare:** easy
+* **Tamborim:** easy
+* **Agogô:** easy (because they can look at the surdos for almost any hit they
+  play)
 
 ## Breaks
 
