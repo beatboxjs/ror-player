@@ -16,13 +16,13 @@ rhythms that are typically played on hand drums such as the Dumbek
 
 ## Schwierigkeit
 
-* **Low Surdo**: easy
-* **Mid Surdo**: medium
-* **High Surdo**: easy
-* **Repi**: hard
-* **Snare:** schwierig
-* **Tamb**: medium
-* **Agogô:** mittel
+* **Low Surdo:** easy
+* **Mid Surdo:** medium
+* **High Surdo:** easy
+* **Repi:** hard
+* **Snare:** hard
+* **Tamborim:** medium
+* **Agogô:** medium
 
 ## Breaks
 
