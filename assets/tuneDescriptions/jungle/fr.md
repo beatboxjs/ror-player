@@ -21,5 +21,5 @@ in the official tune sheets. Was rediscovered in 2021.
 * **High Surdo:** hard
 * **Repi:** hard
 * **Snare:** hard
-* **Tam:** moyenne
+* **Tamborim:** medium
 * **Agogô:** hard
