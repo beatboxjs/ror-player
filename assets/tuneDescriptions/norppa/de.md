@@ -21,7 +21,7 @@ does not imitate any particular genre or song.
 * **Low Surdo:** easy
 * **Mitlere Surdo:** mittel
 * **Hohe Surdo:** einfach
-* **Repi:** medium
+* **Repi:** mittel
 * **Snare:** tricky
 * **Tamborim:** tricky
-* **Agogô:** medium
+* **Agogô:** mittel
