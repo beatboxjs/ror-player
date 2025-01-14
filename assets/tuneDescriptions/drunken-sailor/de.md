@@ -3,7 +3,7 @@ drunken sailor?” basiert. Die Agogô und Surdos spielen gemeinsam die Melodie 
 Liedes (Agogôs: “What shall we do with the drunken sailor”, Surdos im vierten
 Takt: “Early in the morning”).
 
-**Handzeichen:** mit einer Hand eine Augenklappe vor einem Auge darstellen
+**Sign:** build an eyepatch with one hand in front of your eye
 
 ## Hintergrund
 

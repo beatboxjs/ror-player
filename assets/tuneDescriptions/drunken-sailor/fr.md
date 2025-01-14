@@ -3,7 +3,7 @@ sailor?”. The Agogôs and Surdos together make the melody of that song (Agogô
 “What shall we do with the drunken sailor”, Surdos in the 4th bar: “Early in the
 morning”).
 
-**Sign:** tune sign: build an eyepatch with one hand in front of your eye
+**Sign:** build an eyepatch with one hand in front of your eye
 
 ## Contexte
 
