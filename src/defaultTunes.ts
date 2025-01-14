@@ -2307,9 +2307,15 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '@re'
 			},
 			'Zorro-Break': {
+				loop: true,
 				ls: 'X       X       X       X  X  X ',
 				ms: '@ls',
-				hs: '@ls'
+				hs: '@ls',
+				re: '  X   X   X   X   X   X  XXX  X ',
+				sn: '..XX..X...XX..X...XX..X...XX..X.',
+				ta: '  X   X   X   X   X   X   XX  X ',
+				ag: 'o a o a oa ao a o a  oooo a o   ',
+				sh: 'X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.X.'
 			}
 		},
 		exampleSong: [ "Tune", "Tune", "Break 2", "Tune", "Tune", "Break 3", "Tune", "Tune", "Kick Back 1", "Kick Back 1", "Kick Back 2", "Kick Back 2", "Tune", "Tune", "Zorro-Break", "Zorro-Break", "Tune", "Tune" ]
