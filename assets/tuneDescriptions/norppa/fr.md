@@ -18,7 +18,7 @@ does not imitate any particular genre or song.
 
 ## Difficulté
 
-* **Low Surdo:** easy
+* **Surdo Grave :** facile
 * **Mid Surdo:** medium
 * **High Surdo:** easy
 * **Repi:** moyenne
