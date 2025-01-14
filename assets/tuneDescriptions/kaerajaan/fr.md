@@ -20,7 +20,7 @@ YouTube](https://youtu.be/-udR34x2aTM?t=4)).
 ## Difficulté
 
 * **Surdos:** facile
-* **Repi:** hard
+* **Repi:** difficile
 * **Caisse claire:** facile
-* **Tamborim:** medium
+* **Tamborim:** moyenne
 * **Agogô:** moyenne

@@ -1,5 +1,6 @@
-**Sign:** Place forearms on top of each other in front of you, fingertips
-aligned with elbows (like in the Estonian folk dance).
+**Handzeichen:** Unterarme vor dem Körper auf einander legen, die Finger
+umschließen den Ellbogen des jeweils anderen Armes (wie im estnischen
+Volkstanz).
 
 ## Hintergrund
 
@@ -19,7 +20,7 @@ YouTube](https://youtu.be/-udR34x2aTM?t=4)).
 
 ## Schwierigkeit
 
-* **Surdos:** easy
+* **Surdos:** einfach
 * **Repi:** schwierig
 * **Snare:** einfach
 * **Tamborim:** mittel
