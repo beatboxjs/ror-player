@@ -2,7 +2,7 @@ A nice tune based on the famous folk song “What shall we do with the drunken s
 make the melody of that song (Agogôs: “What shall we do with the drunken sailor”, Surdos in the 4th bar: “Early in the
 morning”).
 
-**Sign:** tune sign: build an eyepatch with one hand in front of your eye
+**Sign:** build an eyepatch with one hand in front of your eye
 
 ## Background
 
