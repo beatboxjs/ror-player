@@ -21,7 +21,7 @@ Scott & the Dynamic Three.
 **History:** Spontaneously invented by RoR Kaunas during the TNM 2019 after the
 roof of the sauna caught fire.
 
-## Difficulty
+## Difficulté
 
 * **Surdos:** tricky
 * **Repi:** medium

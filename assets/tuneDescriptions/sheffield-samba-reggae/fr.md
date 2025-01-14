@@ -15,7 +15,7 @@ is closely linked to Reggae music.
 **History:** Introduced to the network by RoR London in 2012, was probably
 played there before?
 
-## Controversies
+## Controverses
 
 The rhythm clearly sounds like real Samba Reggae, which is a tune developed and
 used by the Black liberation movement in Brazil. Many people in the RoR network
@@ -25,7 +25,7 @@ European bands, and there is an ongoing debate about abolishing the tune.
 There is also some criticism towards the sign, which is based on a racist
 stereotype.
 
-## Difficulty
+## Difficulté
 
 * **Low Surdo**: medium
 * **Mid Surdo**: easy

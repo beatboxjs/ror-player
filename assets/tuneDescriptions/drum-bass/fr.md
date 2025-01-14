@@ -32,15 +32,15 @@ with this name [on their
 website](https://web.archive.org/web/20061023061031/http://www.barkingbateria.co.uk/samba.htm)
 in 2006, although it is not clear whether it is the same tune.
 
-## Difficulty
+## Difficulté
 
-* **Low Surdo:** hard
+* **Surdo grave:** difficile
 * **Mid Surdo:** easy
 * **High Surdo:** easy
 * **Repi:** hard
 * **Snare:** medium
 * **Tamb:** easy
-* **Agogô:** medium
+* **Agogô:** moyenne
 
 ## Breaks
 

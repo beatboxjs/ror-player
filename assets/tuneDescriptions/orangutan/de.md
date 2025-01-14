@@ -17,14 +17,15 @@ played there before?
 
 ## Kontroversen
 
-There is a debate about removing all monkey references from the tune name and
-breaks, since racist stereotypes associate monkeys with Black people (who are
-also often associated with drumming).
+Es gibt Diskussionen darüber, alle Affenreferenzen aus dem Namen und den Breaks
+zu entfernen, weil rassistische Stereotype oft Affen mit Schwarzen Menschen in
+Verbindung bringen (welche ebenso oft mit Trommeln in Verbindung gebracht
+werden).
 
 ## Schwierigkeit
 
-* **Surdos**: Easy
+* **Surdos:** einfach
 * **Repi**: Medium
-* **Snare**: Medium
-* **Tamborim**: Easy
+* **Snare:** mittel
+* **Tamborim:** einfach
 * **Agogô**: Tricky

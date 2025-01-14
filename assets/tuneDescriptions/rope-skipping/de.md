@@ -17,6 +17,6 @@ oneself or others are swinging around your body.
 * **Mid Surdo**: tricky
 * **High Surdo**: medium
 * **Repi**: difficult
-* **Snare**: medium
+* **Snare:** mittel
 * **Tamborim**: medium
 * **Agogô**: easy

@@ -11,7 +11,7 @@ Intro resemble the rhythm of the song.
 **History:** Introduced by RoR Zürich in 2024, shared and extended (yay!) on the
 TNM 2024.
 
-## Difficulty
+## Difficulté
 
 * **Low Surdo:** medium
 * **Mid Surdo:** medium

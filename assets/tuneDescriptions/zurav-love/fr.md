@@ -16,12 +16,12 @@ represents the beak of the bird.
 **History:** Introduced by RoR Kraków and Ror Trójmiasto on the TNM 2015 in
 Żuravlów.
 
-## Difficulty
+## Difficulté
 
 * **Low/Mid Surdo:** medium (easy to play, but hard to keep the right speed
   because of off-beats)
 * **High Surdo:** easy
-* **Repi:** easy
+* **Repi:** facile
 * **Snare:** tricky
-* **Tamborim:** easy
+* **Tamborim:** facile
 * **Agogô**: hard

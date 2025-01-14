@@ -36,7 +36,7 @@ the name.)*
 * **Mid Surdo**: easy
 * **High Surdo**: easy
 * **Repi:** mittel
-* **Snare**: medium
+* **Snare:** mittel
 * **Tamb**: easy
 * **Agogô:** mittel
 

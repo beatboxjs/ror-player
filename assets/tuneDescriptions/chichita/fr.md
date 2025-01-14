@@ -8,11 +8,11 @@ called “chicha”, which combines Andean “huayno” and tropical “cumbia�
 **History:** Composed by the Peruvian Lima-based collective Tamboras Resistencia
 and shared on the TNM 2024 by RoR Zürich.
 
-## Difficulty
+## Difficulté
 
-* **Low Surdo:** easy
+* **Surdo Grave :** facile
 * **Mid Surdo:** easy
 * **Repi:** medium
 * **Snare 1:** tricky
 * **Snare 2:** tricky
-* **Agogô:** medium
+* **Agogô:** moyenne

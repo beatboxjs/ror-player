@@ -18,6 +18,6 @@ pollution.
 * **Mittlere Surdo:** einfach
 * **Hohe Surdo:** mittel
 * **Repi**: tricky
-* **Snare**: easy
+* **Snare:** einfach
 * **Tamb**: tricky
 * **Agogô:** mittel

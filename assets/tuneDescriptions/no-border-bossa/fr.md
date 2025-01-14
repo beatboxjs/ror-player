@@ -16,7 +16,7 @@ The Bossa clave is the clave that we use at RoR. See
 her room and found an old notation of a ‘no border bossa’. The paper points to
 Maastricht.”
 
-## Difficulty
+## Difficulté
 
 * **Surdos**: Medium
 * **Repi**: Difficult

@@ -12,11 +12,11 @@ pollution.
 
 **History:** Introduced by RoR Helsinki on the TNM in 2019 in Lithuania.
 
-## Difficulty
+## Difficulté
 
 * **Low Surdo**: medium
 * **Mid Surdo:** easy
-* **High Surdo:** medium
+* **Surdo aigu:** moyenne
 * **Repi**: tricky
 * **Snare**: easy
 * **Tamb**: tricky
