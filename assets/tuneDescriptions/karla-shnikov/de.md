@@ -49,7 +49,7 @@ für den Tune zu erfinden.
 * **Repi:** mittel
 * **Snare:** einfach
 * **Tamborim:** einfach
-* **Agogô:** einfach
+* **Agogô:** easy
 
 ## Breaks
 

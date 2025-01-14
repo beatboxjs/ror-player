@@ -45,7 +45,7 @@ cherchant un nouveau nom et signe.
 * **Repi:** moyenne
 * **Caisse claire:** facile
 * **Tamborim:** facile
-* **Agogô:** facile
+* **Agogô:** easy
 
 ## Breaks
 
