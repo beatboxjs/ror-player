@@ -38,10 +38,10 @@ but Funk is played at least since 2008 in the network)
 
 ## Schwierigkeit
 
-* **Surdos:** medium
+* **Surdos:** mittel
 * **Repi:** medium (alternate-version: hard)
 * **Snare:** tricky
-* **Tamborim:** medium
+* **Tamborim:** mittel
 * **Agogô:** hard
 
 ## Breaks
