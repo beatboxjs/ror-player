@@ -49,24 +49,25 @@ für den Tune zu erfinden.
 * **Repi:** mittel
 * **Snare:** einfach
 * **Tamborim:** einfach
-* **Agogô:** easy
+* **Agogô:** einfach
 
 ## Breaks
 
-Karla Shnikov has 3 breaks, one called just Karla Break (aka break 1), Break 2,
-and its inverted variation.
+Karla Shnikov hat 3 Breaks, Karla Break (a.k.a. Break 1) und Break 2 und seine
+umgedrehte Variation.
 
-Karla Break is a quite common break, which can be played in every other tune. it
-consists of three bars of 4 hits per beat (for instruments which only have one
-beater it’s better to play 2 hits per beat) followed by a fourth bar where only
-the first sixteenth is played and the rest is silence. This Break creates a lot
-of tension. It’s also possible to let one instrument section continue playing
-it’s normal rhythm (for most instruments it sounds pretty awesome).
+Der Karla Break wird sehr häufig gespielt und kann in jedem Tune gespielt
+werden. Er besteht aus drei Takten mit vier Schlägen pro Viertel (Instrumente,
+die nur einen Schlägel haben, können auch zwei Schläge pro Viertel spielen),
+gefolgt von einem vierten Takt, in dem nu die erste Sechzehntel gespielt wird,
+der Rest ist Stille. Dieser Break erzeugt eine Menge Spannung. Eine Idee ist,
+ein Instrument während des Breaks den Tune weiter spielen zu lassen (für die
+meisten Instrumente klingt das ziemlich gut).
 
-Break 2 consists of one bar with sixteen notes, played from soft to loud in
-group of four, then another bar with one note on time on each beat, and then two
-call & response bars.
+Break 2 besteht aus einem Takt mit 16 Schlägen, in Vierergruppen von leise nach
+laut gespielt, dann einem Takt mit einem Schlag pro Viertel, und dann zwei Takte
+Call&Response.
 
-Break 2 inverted consists in playing break 2 forward and then backward (that is,
-4 up, 4 beats ontime, 2x call&response, 2x call&response, 4 beats ontime, 4
-down).
+Break 2 Inverted besteht zuerst aus Break 2 vorwärts und dann rückwärts (das
+bedeutet: ein Takt lauter werden, ein Takt Viertel, zwei Takte Call&Response,
+zwei Takte Call&Response, ein Takt Viertel, ein Takt leiser werden).
