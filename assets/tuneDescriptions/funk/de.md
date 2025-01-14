@@ -41,8 +41,8 @@ Gut geeignet als Einstig, weil alle Instrumente recht einfach zu spielen sind:
   memoryhook-phrases)
 * **Repi:** medium (the repi is not that easy, but anyway it’s a good tune to
   begin with, because you find different repi-hits)
-* **Snare:** easy
-* **Tamborim:** easy
+* **Snare:** einfach
+* **Tamborim:** einfach
 * **Agogô:** easy (because they can look at the surdos for almost any hit they
   play)
 
