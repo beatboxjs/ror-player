@@ -1,25 +1,25 @@
-Was chosen as a **Tune of the Year 2021** (along with Bhaṅgṛā).
+A été choisi **Morceau de l'année 2021** (avec Bhaṅgṛā).
 
-**Sign:** V with 4 fingers (vulcan salute) on both hands, slide the gaps into
-each other
+**Signe:** Faire un V avec 4 doigts (comme le "salut vulcain") avec chaque main,
+connecter les 2 mains ensemble au creux du V
 
 ## Contexte
 
-**Name:** Probably a combination of the words “Samba” and “basso” (Italian for
-“low” or “base”).
+**Nom:** Probablement une combinaison des mots "Samba" et "basso" (Italien pour
+"grave" ou "basse").
 
-**Musical background:** The Snare and Repi line and the Intro seem to be Samba
-Reggae style. *(More info needed.)*
+**Contexte musical:** La Caisse claire et le Repi ainsi que l'intro semblent
+être dans le style Samba Reggae. *(+ d'infos nécessaires.)*
 
-**Sign:** *(More info needed.)*
+**Signe:** *(+ d'infos nécessaires.)*
 
-**History:** Introduced to the network by RoR London in 2012, was probably
-played there before?
+**Histoire:** Présenté dans le réseau RoR Londres en 2012, y a probablement été
+joué avant ?
 
 ## Difficulté
 
 * **Surdos:** facile
-* **Repi:** hard
-* **Snare:** hard
-* **Tamborim:** hard
+* **Repi:** difficile
+* **Caisse claire:** difficile
+* **Tamborim:** difficile
 * **Agogô:** moyenne
