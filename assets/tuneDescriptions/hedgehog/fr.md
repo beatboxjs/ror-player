@@ -32,7 +32,7 @@ the name.)*
 
 ## Difficulté
 
-* **Low Surdo:** easy
+* **Surdo Grave :** facile
 * **Mid Surdo:** easy
 * **High Surdo:** easy
 * **Repi:** moyenne
