@@ -1,51 +1,55 @@
-This tune is one of the RoR basics. Often simply called “Karla”.
+Dieser Tune gehört zum RoR-Basisrepertoire. Oft wird er kurz „Karla“ genannt.
 
-It sounds a bit, as the name implies, like machinegun-fire. As the Breaks have
-steady drum rolls in them, it’s important to aim for a steady even roll.
-Although the temptation is to play as fast as you can, you should try to be just
-in time (highlighting the first hit on every step can be helpful, to keep
-track).
+Er klingt ein wenig, wie der Namen schon sagt, wie das Feuer eines
+Maschinengewehrs. Weil die Breaks einen ständigen Trommelwirbel beinhalten, ist
+es wichtig auf einen gleichmäßigen Rhythmus zu achten. Obwohl die Versuchung
+groß ist, so schnell wie möglich zu spielen, sollte versucht werden im Tempo zu
+bleiben (es kann helfen, den ersten Ton jeder Viertel zu betonen).
 
-Karla Shnikov is a funk tune too, but it does not fit with the other funks (Funk
-and Angela Davis) as well as they do together. But just try and find your own
-way!
+Karla Shnikov ist ein Funk-artiger Tune, aber er passt nicht so gut zu den
+anderen Funk-Tunes (Funk und Angela Davis) wie diese zu einander. Aber Probieren
+geht über Studieren!
 
 ## Handzeichen
 
-Move index+middle finger like rabbit ears and cover other fingers with other
-hand.
+Den Zeige- und Mittelfinger wie Hasenohren bewegen und die restlichen Finger mit
+der anderen Hand bedecken.
 
 ## Hintergrund
 
-**Name:** Based on a fictional character invented by RoR called Karla Shnikov, a
-Russian activist who was one of Trotzky’s secret lovers and was first a
-communist, but later became an anarchist. There was a big discussion about
-taking a fictive name, but it can be seen as our ability to create our own
-histories – in the end, there might have been many “Karla Snikov”s, individuals
-fighting for rights or liberation, that historians never wrote about since
-history has always been written by the powerful and the exceptional, and
-especially hiding the contribution of women.
+**Name:** Basiert auf einer fiktionalen von RoR erfundenen Person namens Karla
+Shnikov, eine russische Aktivistin, die eine von Trotzkys heimlichen
+Liebhaberinnen war und zunächst Kommunistin war, später aber Anarchistin wurde.
+Es gab eine große Debatte darüber, einen fiktionalen Namen zu benutzen, aber es
+kann auch als Symbol unserer eigenen Fähigkeit, Geschichte zu schreiben, gesehen
+werden – letztendlich kann es viele Karla Shikovs gegeben haben, Individuen, die
+für Rechte oder Befreiung gekämpft haben, ohne dass Historiker_innen jemals
+darüber berichten würden. Die Geschichte wurde immer von den Mächtigen und
+Außergewöhnlichen geschrieben, was oft zu einer Nichtbeachtung besonders von
+Frauen geführt hat.
 
 **Musikalischer Hintergrund:** *(Mehr Informationen notwendig.)*
 
-**Sign:** The fictional character Karla Shnikov was also an animal rights
-activist, and one of her actions was to liberate the biggest rabbit farm in
-Russia. The sign depicts rabbit ears.
+**Handzeichen:** Die fiktionale Person Karla Shnikov war auch eine
+Tierrechtsaktivistin, und eine ihrer Aktionen war die größte Hasenfarm in
+Russand zu befreien. Das Zeichen soll Hasenohren darstellen.
 
-**History:** The tune was invented in London. Used to be called Kalashnikov, the
-sign a finger pistol, but was changed because some bands got in trouble for
-showing a gun, and other bands didn’t want to have a tune named after a weapon.
-The story of Karla Shnikov was made up by the working group thinking about a new
-name+sign for the tune.
+**Geschichte:** Der Tune wurde in London erfunden. Er hieß ursprünglich
+Kalashnikov, als Handzeichen eine Fingerpistole, wurde aber irgendwann
+umbenannt, weil manche Bands Repression erfuhren, wenn sie eine Waffe
+signalisierten, und andere Bands keinen Tune spielen wollten, der nach einer
+Waffe benannt ist. Die Geschichte von Karla Shnikov wurde von der Arbeitsgruppe
+erfunden, die dafür zuständig war, einen neuen Namen und ein neues Handzeichen
+für den Tune zu erfinden.
 
 ## Schwierigkeit
 
-* **Surdos:** medium (it is important, that the double hit in every bar is not
-  played to fast.)
+* **Surdos:** mittel (es ist wichtig, dass der Doppelschlag zwischen jedem Takt
+  nicht zu schnell gespielt wird.)
 * **Repi:** mittel
 * **Snare:** einfach
 * **Tamborim:** einfach
-* **Agogô:**easy
+* **Agogô:** einfach
 
 ## Breaks
 
