@@ -26,7 +26,7 @@ Kraftwerk ([YouTube](https://www.youtube.com/watch?v=XMVokT5e0zs)).
 
 * **Surdos:** easy
 * **Repi:** tricky
-* **Snare:** medium
-* **Tamborim:** easy
+* **Snare:** mittel
+* **Tamborim:** einfach
 * **Agogô:** easy
 * **Shaker:** tricky
