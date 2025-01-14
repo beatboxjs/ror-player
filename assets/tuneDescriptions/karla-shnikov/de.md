@@ -40,12 +40,12 @@ name+sign for the tune.
 
 ## Schwierigkeit
 
-* **Surdos**: medium (it is important, that the double hit in every bar is not
+* **Surdos:** medium (it is important, that the double hit in every bar is not
   played to fast.)
-* **Repi:** mittel
-* **Snare:** einfach
-* **Tamb**: easy
-* **Agogô**:easy
+* **Repi:** medium
+* **Snare:** easy
+* **Tamborim:** easy
+* **Agogô:**easy
 
 ## Breaks
 
