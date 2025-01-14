@@ -30,4 +30,4 @@ plays the “early in the morning”.
 * **Repi:** hard
 * **Snare:** hard
 * **Tamborim:** medium
-* **Agogo:** medium
+* **Agogô:** medium
