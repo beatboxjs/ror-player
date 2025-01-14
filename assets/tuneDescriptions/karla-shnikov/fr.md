@@ -1,68 +1,68 @@
-This tune is one of the RoR basics. Often simply called “Karla”.
+Ce morceau est un des fondamentaux de RoR, souvent appelé "Karla".
 
-It sounds a bit, as the name implies, like machinegun-fire. As the Breaks have
-steady drum rolls in them, it’s important to aim for a steady even roll.
-Although the temptation is to play as fast as you can, you should try to be just
-in time (highlighting the first hit on every step can be helpful, to keep
-track).
+Il sonne un peu, comme son nom sous-entend, à une mitraillette. Les breaks ont
+des roulements de tambours précis, il est important de veiller à bien garder le
+rythme. On a tendance à accélérer, faites attention à rester dans les temps
+(pour ça, souligner chaque temps de la mesure peut aider).
 
-Karla Shnikov is a funk tune too, but it does not fit with the other funks (Funk
-and Angela Davis) as well as they do together. But just try and find your own
-way!
+Karla Shnikov est aussi un morceau type funk, mais il ne se marie pas aussi bien
+avec les autres funks (Funk et Angela Davis) qui eux sonnent mieux ensemble.
+Mais libre à vous d'essayer des combinaisons !
 
 ## Signe
 
-Move index+middle finger like rabbit ears and cover other fingers with other
-hand.
+Faire des oreilles de lapin avec majeur+index et couvrir les doigts restants
+avec l'autre main.
 
 ## Contexte
 
-**Name:** Based on a fictional character invented by RoR called Karla Shnikov, a
-Russian activist who was one of Trotzky’s secret lovers and was first a
-communist, but later became an anarchist. There was a big discussion about
-taking a fictive name, but it can be seen as our ability to create our own
-histories – in the end, there might have been many “Karla Snikov”s, individuals
-fighting for rights or liberation, that historians never wrote about since
-history has always been written by the powerful and the exceptional, and
-especially hiding the contribution of women.
+**Nom:** Basé sur un personnage fictif inventé par RoR nommé Karla Shnikov, une
+activiste russe, amante secrète de Trotsky, d'abord communiste puis anarchiste.
+Il y a eu une grande discussion sur le fait de choisir un nom fictif, mais
+voyons ça comme notre capacité à créer nos propres histoires - Finalement, il a
+pu y avoir de nombreuses "Karla Shnikov" combattant pour des droits ou la
+libération, à propos desquelles les historiens n'ont jamais écrit puisque
+l'histoire a toujours été écrite par les puissants et les "exceptionnels", en
+cachant particulièrement la participation des femmes.
 
-**Musical background:** *(More info needed.)*
+**Contexte musical:** *(+ d'infos nécessaires)*
 
-**Sign:** The fictional character Karla Shnikov was also an animal rights
-activist, and one of her actions was to liberate the biggest rabbit farm in
-Russia. The sign depicts rabbit ears.
+**Signe:** Le personnage fictif de Karla Shnikov était aussi une activiste pour
+les droits des animaux, et une des ses actions était de libérer les lapins du
+plus grand élevage en Russie. Le signe montre donc des oreilles de lapin.
 
-**History:** The tune was invented in London. Used to be called Kalashnikov, the
-sign a finger pistol, but was changed because some bands got in trouble for
-showing a gun, and other bands didn’t want to have a tune named after a weapon.
-The story of Karla Shnikov was made up by the working group thinking about a new
-name+sign for the tune.
+**Histoire:** Ce morceau a vu le jour à Londres. Il était précédemment appelé
+Kalashnikov et le signe était un pistolet avec les doigts, mais il a été changé
+quand certains groupes ont eu des problèmes pour avoir mimé une arme, et
+d'autres groupes ne voulaient simplement pas avoir un morceau nommé après une
+arme à feu. L'histoire de Karla Shnikov a été trouvée par un travail collectif
+cherchant un nouveau nom et signe.
 
 ## Difficulté
 
-* **Surdos:** medium (it is important, that the double hit in every bar is not
-  played to fast.)
-* **Repi:** medium
-* **Snare:** easy
-* **Tamborim:** easy
-* **Agogô:**easy
+* **Surdos:** moyenne (Il est important de ne pas jouer trop rapidement le
+  double coup de chaque mesure)
+* **Repi:** moyenne
+* **Caisse claire:** facile
+* **Tamborim:** facile
+* **Agogô:** facile
 
 ## Breaks
 
-Karla Shnikov has 3 breaks, one called just Karla Break (aka break 1), Break 2,
-and its inverted variation.
+Karla Shnikov a 3 breaks, Karla Break (soit le break numéro 1), Break 2, et la
+version inversée de Break 2.
 
-Karla Break is a quite common break, which can be played in every other tune. it
-consists of three bars of 4 hits per beat (for instruments which only have one
-beater it’s better to play 2 hits per beat) followed by a fourth bar where only
-the first sixteenth is played and the rest is silence. This Break creates a lot
-of tension. It’s also possible to let one instrument section continue playing
-it’s normal rhythm (for most instruments it sounds pretty awesome).
+Karla Break est un break assez commun qui peut être joué dans tous les autres
+morceaux. Il est composé de 3 mesures de 4 coups par temps, soit 16 coups par
+mesure (pour les instrus qui n'ont qu'une baguette mieux vaut jouer 2 coups par
+temps) suivi d'une quatrième mesure où seul le premier des 16 coups est joué. Le
+reste est du silence. Ce break peut créer beaucoup de tension. Il est aussi
+possible de laisser un instrument jouer son riff principal pendant que les
+autres font le break (pour la plupart des instrus, ça sonne très bien).
 
-Break 2 consists of one bar with sixteen notes, played from soft to loud in
-group of four, then another bar with one note on time on each beat, and then two
-call & response bars.
+Le Break 2 est fait d'une mesure de 16 coups, joués de doux à fort, puis une
+mesure avec 1 coup sur chaque temps, et enfin deux mesures en question-réponse.
 
-Break 2 inverted consists in playing break 2 forward and then backward (that is,
-4 up, 4 beats ontime, 2x call&response, 2x call&response, 4 beats ontime, 4
-down).
+Le Break 2 Inversé est le Break 2 joué normalement + joué en inversant les
+mesures (soit : 16 coups, 4 coups sur les temps, 2x le question-réponse, puis 2x
+le question-réponse, 4 coups sur les temps, 16 coups).
