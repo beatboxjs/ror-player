@@ -59,7 +59,7 @@ difficile dans notre société patriarcale.
 * **Repi :** difficile (variations de tonalité et de vitesse)
 * **Caisse claire :** difficile (L'accent n'est pas sur le temps au 4e
   temps)</dd>
-* **Tam :** moyenne (Assez fatiguant au bout d'un moment)
+* **Tamborim:** medium (quite exhausting if played for a long time)
 * **Agogô :** moyenne (facile à confondre avec Custard)
 
 ## Breaks
