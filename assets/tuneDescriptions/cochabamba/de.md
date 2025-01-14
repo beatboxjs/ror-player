@@ -38,7 +38,7 @@ gab
 * **Surdos:** mittel/schwierig
 * **Tamb&Repi:** mittel (beide spielen das Gleiche, eine Variation der
   „Ragga“-Snare)
-* **Snare:** einfach
+* **Snare:** easy
 * **Agogô:** schwierig (aber es fetzt – an einem guten Tag lohnt es sich, mit
   den Glocken zwischen den Schlägen zu klicken.)
 
