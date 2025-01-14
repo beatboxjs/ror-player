@@ -19,8 +19,8 @@ Der Zettel verwies auf Maastricht.“
 
 ## Schwierigkeit
 
-* **Surdos**: mittel
-* **Repi:** schwierig
-* **Snare:** mittel
-* **Tamborim:** mittel
-* **Agogô:** mittel
+* **Surdos:** medium
+* **Repi:** hard
+* **Snare:** medium
+* **Tamborim:** medium
+* **Agogô:** medium
