@@ -19,4 +19,4 @@ oneself or others are swinging around your body.
 * **Repi:** schwierig
 * **Snare:** mittel
 * **Tamborim:** mittel
-* **Agogô:** easy
+* **Agogô:** einfach
