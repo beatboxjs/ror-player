@@ -47,15 +47,17 @@ wobei nicht klar ist, ob es sich um den selben Tune handelt.
 
 ## Breaks
 
-* Break 1 is a singing break (no drumming, all sing together "everybody dance
-  now!”), brings a good mood and moves and can be used to involve audience. This
-  break can be played in all other tunes as well.
-* Break 2 is similar to the “Kick Back 2 Break” from the tune Ragga. Be aware
-  that only repi and snare play on the 8th beat before it goes back into the
-  tune.
-* Break 3 is a little tricky but once mastered, sounds really nice.
-* The Progressive break is quite easy and can creates tension. With the special
-  hand sign for this break it is easy to include it while playing other tunes.
-* The Hip Hop Break (the hand sign is supposed to look really cool
-  hip-hop-stylish, everyone does it their way) sounds really groovy but is also
-  quite tricky for the surdos (a memory-hook phrase is helpful).
+* Break 1 ist ein Sprechchor (ohne Trommeln, alle singen gemeinsam “everybody
+  dance now!”), sorgt für gute Stimmung und Bewegung und kann verwendet werden,
+  um das Publikum mit einzubeziehen. Dieser Break kann auch in anderen Tunes
+  gespielt werden.
+* Break 2 ist ähnlich wie der „Kick Back 2“ von Ragga. Zu beachten ist, dass
+  während der achten Viertel ganz am Ende des Breaks nur die Repi und Snare
+  spielen.
+* Break 3 ist ein bisschen herausfordernd, aber wenn es klappt, klingt er
+  wirklich gut.
+* Der Progressive Break ist recht einfach und kann Spannung erzeugen. Mit seinem
+  eigenen Handzeichen kann er leicht auch in anderen Tunes gespielt werden.
+* Der Hip-Hop-Break (das Handzeichen soll „cool“ und „hip-hop-stylish“ aussehen,
+  alle zeigen es auf unterschiedliche Weise) groovt richtig, ist aber besonders
+  für die Surdos ziemlich herausfordernd (ein Merkspruch kann helfen).
