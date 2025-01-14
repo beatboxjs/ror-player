@@ -1,4 +1,4 @@
-**Sign:** *(None yet.)*
+**Handzeichen:** *(Noch keins festgelegt.)*
 
 ## Hintergrund
 
@@ -11,16 +11,16 @@ non-military civil service.
 
 **Musikalischer Hintergrund:** *(Mehr Informationen notwendig.)*
 
-**Sign:** *(None yet.)*
+**Handzeichen:** *(Noch keins festgelegt.)*
 
-**History:** Introduced by RoR Helsinki on the TNM in 2019 in Lithuania.
+**Geschichte:** Auf dem TNM 2019 in Litauen von RoR Helsinki vorgestellt.
 
 ## Schwierigkeit
 
 * **Tiefe Surdo:** einfach
 * **Mittlere Surdo:** einfach
 * **Hohe Surdo:** einfach
-* **Repi:** tricky
-* **Snare:** tricky
-* **Tamborim:** tricky
+* **Repi:** schwierig
+* **Snare:** schwierig
+* **Tamborim:** schwierig
 * **Agogô:** mittel
