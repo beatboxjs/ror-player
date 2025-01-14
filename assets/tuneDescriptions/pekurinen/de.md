@@ -1,4 +1,4 @@
-**Handzeichen:** *(Noch keins festgelegt.)*
+**Sign:** *(None yet.)*
 
 ## Hintergrund
 
@@ -11,7 +11,7 @@ non-military civil service.
 
 **Musikalischer Hintergrund:** *(Mehr Informationen notwendig.)*
 
-**Handzeichen:** *(Noch keins festgelegt.)*
+**Sign:** *(None yet.)*
 
 **Geschichte:** Auf dem TNM 2019 in Litauen von RoR Helsinki vorgestellt.
 
