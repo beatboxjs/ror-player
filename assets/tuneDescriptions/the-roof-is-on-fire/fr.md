@@ -27,4 +27,4 @@ roof of the sauna caught fire.
 * **Repi:** medium
 * **Snare:** medium
 * **Tamborim:** tricky
-* **Agogô:** easy
+* **Agogô:** facile
