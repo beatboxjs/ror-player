@@ -1,24 +1,25 @@
-It is not the easiest to play but sounds really cool!
+Nicht der einfachste Tune zu spielen, aber klingt richtig cool!
 
-**Sign:** spread arms and shake your shoulders and hips
+**Handzeichen:** die Arme zur Seite strecken und dabei die Schultern und Hüfte
+schütteln
 
 ## Hintergrund
 
-**Name:** “Hafla” (حفلة) means “Party/Festivity” in Arabic.
+**Name:** „Hafla“ (حفلة) ist Arabisch für Party/Fest.
 
-**Musical background:** Based on Masmoudi, one of the 6 major Middle Eastern
-rhythms that are typically played on hand drums such as the Dumbek
-([Wikipedia](https://en.wikipedia.org/wiki/Dumbek_rhythms)).
+**Musikalischer Hintergrund:** Basiert auf Masmoudi, einem der 6 Hauptrhythmen
+der Musik des Nahen Ostens, welcher üblicherweise auf Handtrommeln wie zum
+Beispiel der Dumbek ([Wikipedia](https://en.wikipedia.org/wiki/Dumbek_rhythms)).
 
 **Handzeichen:** *(Mehr Informationen benötigt.)*
 
-**History:** Introduced by RoR Tel Aviv on TNM 2011.
+**Geschichte:** Auf dem TNM 2011 von RoR Tel Aviv vorgestellt.
 
 ## Schwierigkeit
 
-* **Low Surdo:** easy
-* **Mid Surdo:** medium
-* **High Surdo:** easy
+* **Tiefe Surdo:** einfach
+* **Mittlere Surdo:** mittel
+* **Hohe Surdo:** einfach
 * **Repi:** schwierig
 * **Snare:** schwierig
 * **Tamborim:** mittel
@@ -26,12 +27,13 @@ rhythms that are typically played on hand drums such as the Dumbek
 
 ## Breaks
 
-* Hafla Break/Yala break is similar to the first two counts of the Tamb line.
-* Kick Back 1 Break is like the Hafla Break with alternating surdo and
-  all-others (call-response). It is played in a loop, repeated over and over
-  until something else is shown.
-* Break 3 is a call response over 8 counts between Snare and all others.
-* Hook Break is a bit tricky. It’s call response (Surdo to all-others) over 16
-  counts. There is a funny memoryhook: “It’s a banana, it’s not a pineapple.
-  it’s not an aubergine or a pear. It’s a what, It’s a what, It’s a what, It’s a
-  what? It’s a yellow ba-na-na.” Also really nice if repeated a few times.
+* Hafla Brea/Yala Break klingt ähnlich wie der erste Takt des Tamborim-Rhythmus.
+* Kick Back 1 ist wie der Hafla Break, nur dass die Surdo und die anderen
+  abwechselnd spielen (Call&Response). Er wird als Endlosschleife gespielt, bis
+  etwas anderes angezeigt wird.
+* Break 3 ist eine Call&Response über 8 Viertel zwischen Snare und den anderen.
+* Der Hook Break ist ein bisschen kompliziert. Es ist eine Call&Response (Surdo
+  zu den anderen) über 16 Viertel. Es gibt einen lustigen Merkspruch: “It’s a
+  banana, it’s not a pineapple. It’s not an aubergine, nor a pear. It’s a what,
+  it’s a what, it’s a what, it’s a what, it’s a yellow, ba-na-na.” Klingt auch
+  gut, wenn er ein paar Mal wiederholt wird.
