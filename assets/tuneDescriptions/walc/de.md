@@ -17,8 +17,8 @@ Walzertakt.
 
 ## Schwierigkeit
 
-* **Surdos:** easy
-* **Repi:** easy
+* **Surdos:** einfach
+* **Repi:** einfach
 * **Snare:** mittel
 * **Tamborim:** einfach
-* **Agogô:** easy
+* **Agogô:** einfach
