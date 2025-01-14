@@ -15,8 +15,8 @@ music.
 
 ## Schwierigkeit
 
-* **Low Surdo:** easy
-* **Mid/High Surdo:** tricky
+* **Tiefe Surdo:** einfach
+* **Mittlere/hohe Surdo:** schwierig
 * **Repi:** schwierig
 * **Snare:** schwierig
 * **Tamborim:** schwierig
