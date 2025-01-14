@@ -1,9 +1,9 @@
-A nice tune based on the famous folk song “What shall we do with the drunken
-sailor?”. The Agogôs and Surdos together make the melody of that song (Agogôs:
-“What shall we do with the drunken sailor”, Surdos in the 4th bar: “Early in the
-morning”).
+Ein lustiger Tune, der auf dem bekannten Volkslied “What shall we do with the
+drunken sailor?” basiert. Die Agogô und Surdos spielen gemeinsam die Melodie des
+Liedes (Agogôs: “What shall we do with the drunken sailor”, Surdos im vierten
+Takt: “Early in the morning”).
 
-**Sign:** tune sign: build an eyepatch with one hand in front of your eye
+**Handzeichen:** mit einer Hand eine Augenklappe vor einem Auge darstellen
 
 ## Hintergrund
 
