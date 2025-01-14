@@ -21,5 +21,5 @@ namens Mandala komponiert
 * **Hohe Surdo:** mittel
 * **Repi:** mittel
 * **Snare:** mittel
-* **Tamborim:** hard
+* **Tamborim:** schwierig
 * **Agogô:** mittel
