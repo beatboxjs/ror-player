@@ -28,5 +28,5 @@ Was rediscovered in 2021.
 * **Surdo aigu:** moyenne
 * **Repi:** facile
 * **Snare:** hard
-* **Tamb:** hard
+* **Tamborim:** hard
 * **Agogô:** hard

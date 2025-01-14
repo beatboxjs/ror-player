@@ -30,5 +30,5 @@ veröffentlicht. Wurde 2021 wieder entdeckt.
 * **Hohe Surdo:** mittel
 * **Repi:** einfach
 * **Snare:** schwierig
-* **Tamborim:** schwierig
+* **Tamborim:** hard
 * **Agogô:** schwierig
