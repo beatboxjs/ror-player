@@ -1,4 +1,4 @@
-**Sign:** Swing your fist above your head and share your body, like dancing to
+**Sign:** Swing your fist above your head and shake your body, like dancing to
 techno music.
 
 ## Hintergrund
@@ -17,7 +17,7 @@ in the official tune sheets. Was rediscovered in 2021.
 ## Schwierigkeit
 
 * **Tiefe Surdo:** einfach
-* **Mitlere Surdo:** mittel
+* **Mittlere Surdo:** mittel
 * **High Surdo:** hard
 * **Repi:** schwierig
 * **Snare:** schwierig
