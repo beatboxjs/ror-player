@@ -1,5 +1,5 @@
-**Sign:** tune sign: Put one fist on top of the other, as if you were holding a
-paddle, and start paddling.
+**Sign:** Put one fist on top of the other, as if you were holding a paddle, and
+start paddling.
 
 ## Contexte
 
