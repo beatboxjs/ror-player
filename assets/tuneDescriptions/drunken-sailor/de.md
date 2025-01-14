@@ -31,4 +31,4 @@ vierten Takt “early in the morning”.
 * **Repi:** schwierig
 * **Snare:** schwierig
 * **Tamborim:** mittel
-* **Agogô:** medium
+* **Agogô:** mittel
