@@ -31,11 +31,11 @@ that the new wave will come and bring the deported slaves back home.
 
 ## Schwierigkeit
 
-* **Surdos:** mittel
-* **Repinique**: easy
-* **Snare:** einfach
-* **Tamborim:** einfach
-* **Agogô**: easy – in fact the same as in Karla Shnikov
+* **Surdos:** medium
+* **Repi:** easy
+* **Snare:** easy
+* **Tamborim:** easy
+* **Agogô:** easy – in fact the same as in Karla Shnikov
 
 ## Breaks
 
