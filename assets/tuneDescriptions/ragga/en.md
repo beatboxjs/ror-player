@@ -30,11 +30,11 @@ Fists together, thumbs to the left and to the right
 
 ## Difficulty
 
-* **Surdos**: medium
-* **Repinique**: medium (alternate-version: hard)
-* **Snare**: tricky
-* **Tamborim**: medium
-* **Agogô**: hard
+* **Surdos:** medium
+* **Repi:** medium (alternate-version: hard)
+* **Snare:** tricky
+* **Tamborim:** medium
+* **Agogô:** hard
 
 ## Breaks
 

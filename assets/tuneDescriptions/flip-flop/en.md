@@ -12,7 +12,7 @@ Sign: move flat hands like stepping
 
 ## Difficulty
 
-* **Low Surdo**: easy
+* **Low Surdo:** easy
 * **Mid/High Surdo:** tricky
 * **Repi:** medium
 * **Snare:** tricky

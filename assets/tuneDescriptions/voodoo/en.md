@@ -23,9 +23,9 @@ Since this tune is directly rooted in Afro-Brazilian religion, many people in th
 
 ## Difficulty
 
-* **Low Surdo**: Medium
-* **Mid/High Surdo**: Easy
-* **Repi**: Medium
-* **Snare**: Medium
-* **Tamborim**: Easy
-* **Agogo**: Medium
+* **Low Surdo:** medium
+* **Mid/High Surdo:** easy
+* **Repi:** medium
+* **Snare:** medium
+* **Tamborim:** easy
+* **Agogo:** medium

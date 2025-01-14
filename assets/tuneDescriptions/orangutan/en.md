@@ -19,8 +19,8 @@ There is a debate about removing all monkey references from the tune name and br
 
 ## Difficulty
 
-* **Surdos**: Easy
-* **Repi**: Medium
-* **Snare**: Medium
-* **Tamborim**: Easy
-* **Agogô**: Tricky
+* **Surdos:** easy
+* **Repi:** medium
+* **Snare:** medium
+* **Tamborim:** easy
+* **Agogô:** tricky

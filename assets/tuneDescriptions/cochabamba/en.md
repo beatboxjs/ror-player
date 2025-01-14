@@ -26,7 +26,7 @@ Drink from a cup formed with one hand
 
 * **Surdos:** medium/hard
 * **Tamb&Repi:** medium (they play the same, a variation of the “ragga”-snare)
-* **snare:** easy
+* **Snare:** easy
 * **Agogô:** hard (but it kicks ass – if you feel lucky try clicking the bells between the (double)hits.)
 
 ## Breaks

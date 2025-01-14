@@ -17,9 +17,9 @@ morning”).
 
 ## Difficulty
 
-* **Low/Mid Surdo**: Easy
-* **High Surdo**: Medium
-* **Repi**: hard
-* **Snare**: hard
-* **Tamborim**: medium
-* **Agogo**: medium
+* **Low/Mid Surdo:** easy
+* **High Surdo:** medium
+* **Repi:** hard
+* **Snare:** hard
+* **Tamborim:** medium
+* **Agogo:** medium

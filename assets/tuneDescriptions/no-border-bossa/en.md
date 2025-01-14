@@ -12,8 +12,8 @@
 
 ## Difficulty
 
-* **Surdos**: Medium
-* **Repi**: Difficult
-* **Snare**: Medium
-* **Tamborim**: Medium
-* **Agogô**: Medium
+* **Surdos:** medium
+* **Repi:** hard
+* **Snare:** medium
+* **Tamborim:** medium
+* **Agogô:** medium

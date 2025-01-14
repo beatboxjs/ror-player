@@ -19,4 +19,4 @@ Was drawn as the **Tune of the Year 2018**.
 * **Repi:** easy
 * **Snare:** tricky
 * **Tamborim:** easy
-* **Agogô**: hard
+* **Agogô:** hard

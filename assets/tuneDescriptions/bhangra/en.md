@@ -33,7 +33,7 @@ Nowadays, Bhaṅgṛā also refers to a style of pop music that was invented by 
 * **Surdos:** easy
 * **Repi:** easy
 * **Snare:** easy
-* **Tamb:** medium
+* **Tamborim:** medium
 * **Agogô:** easy
 
 ## Breaks

@@ -14,9 +14,9 @@ Doppler Break sign: Move your hand in front of your body from one side to the ot
 
 ## Difficulty
 
-* **Surdos**: Easy
-* **Repi**: Tricky
-* **Snare**: Medium
-* **Tamborim**: Easy
-* **Agogô:** Easy
-* **Shaker:** Tricky
+* **Surdos:** easy
+* **Repi:** tricky
+* **Snare:** medium
+* **Tamborim:** easy
+* **Agogô:** easy
+* **Shaker:** tricky

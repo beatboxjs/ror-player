@@ -27,13 +27,13 @@ Spiky fingers on the head
 
 ## Difficulty
 
-* **Low Surdo**: easy
-* **Mid Surdo**: easy
-* **High Surdo**: easy
-* **Repi**: medium
-* **Snare**: medium
-* **Tamb**: easy
-* **Agogô**: medium
+* **Low Surdo:** easy
+* **Mid Surdo:** easy
+* **High Surdo:** easy
+* **Repi:** medium
+* **Snare:** medium
+* **Tamborim:** easy
+* **Agogô:** medium
 
 ## Breaks
 

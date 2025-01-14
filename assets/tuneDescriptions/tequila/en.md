@@ -26,7 +26,7 @@ The Surdo line has an upbeat, so when entering the groove (and Break 2), the Sur
 * **High Surdo:** easy
 * **Repi:** hard
 * **Snare:** easy
-* **Tamb:** easy
+* **Tamborim:** easy
 * **Agogô:** medium
 
 ## Breaks

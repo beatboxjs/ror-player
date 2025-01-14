@@ -14,7 +14,7 @@ to the 3/4 for a moment while increasing the speed.
 ## Difficulty
 
 * **Low Surdo:** easy
-* **Mid/High Surdo**: medium
-* **Repi/Snare**: hard (they play the same)
-* **Tamb**: hard
-* **Agogô**: medium
+* **Mid/High Surdo:** medium
+* **Repi/Snare:** hard (they play the same)
+* **Tamborim:** hard
+* **Agogô:** medium

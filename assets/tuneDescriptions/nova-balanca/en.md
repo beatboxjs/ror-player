@@ -25,11 +25,11 @@ Fists before breast, open hands and arms
 
 ## Difficulty
 
-* **Surdos**: medium
-* **Repinique**: easy
-* **Snare**: easy
-* **Tamborim**: easy
-* **Agogô**: easy – in fact the same as in Karla Shnikov
+* **Surdos:** medium
+* **Repi:** easy
+* **Snare:** easy
+* **Tamborim:** easy
+* **Agogô:** easy – in fact the same as in Karla Shnikov
 
 ## Breaks
 

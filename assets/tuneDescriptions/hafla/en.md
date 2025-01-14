@@ -14,13 +14,13 @@ It is not the easiest to play but sounds really cool!
 
 ## Difficulty
 
-* **Low Surdo**: easy
-* **Mid Surdo**: medium
-* **High Surdo**: easy
-* **Repi**: hard
-* **Snare**: hard
-* **Tamb**: medium
-* **Agogô**: medium
+* **Low Surdo:** easy
+* **Mid Surdo:** medium
+* **High Surdo:** easy
+* **Repi:** hard
+* **Snare:** hard
+* **Tamborim:** medium
+* **Agogô:** medium
 
 ## Breaks
 

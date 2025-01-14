@@ -23,11 +23,11 @@ Move index+middle finger like rabbit ears and cover other fingers with other han
 
 ## Difficulty
 
-* **Surdos**: medium (it is important, that the double hit in every bar is not played to fast.)
-* **Repi**: medium
-* **Snare**: easy
-* **Tamb**: easy
-* **Agogô**:easy
+* **Surdos:** medium (it is important, that the double hit in every bar is not played to fast.)
+* **Repi:** medium
+* **Snare:** easy
+* **Tamborim:** easy
+* **Agogô:**easy
 
 ## Breaks
 

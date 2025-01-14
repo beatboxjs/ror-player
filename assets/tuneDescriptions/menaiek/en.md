@@ -12,9 +12,9 @@
 
 ## Difficulty
 
-* **Low Surdo**: Easy
-* **Mid/High Surdo**: Tricky
-* **Repi**: Difficult
-* **Snare**: Difficult
-* **Tamborim**: Difficult
-* **Agogô**: Medium
+* **Low Surdo:** easy
+* **Mid/High Surdo:** tricky
+* **Repi:** hard
+* **Snare:** hard
+* **Tamborim:** hard
+* **Agogô:** medium

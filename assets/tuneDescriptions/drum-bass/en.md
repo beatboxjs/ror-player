@@ -25,7 +25,7 @@ also helpful to sing them all together (low, high, middle middle, low, high-low,
 * **High Surdo:** easy
 * **Repi:** hard
 * **Snare:** medium
-* **Tamb:** easy
+* **Tamborim:** easy
 * **Agogô:** medium
 
 

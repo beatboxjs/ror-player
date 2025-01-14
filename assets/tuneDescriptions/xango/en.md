@@ -39,8 +39,8 @@ Since this tune is directly rooted in Afro-Brazilian religion, many people in th
 
 ## Difficulty
 
-* **Surdos**: easy
-* **Repi**: medium
-* **Snare**: hard
-* **Tamborim**: easy
-* **Agogô**: medium
+* **Surdos:** easy
+* **Repi:** medium
+* **Snare:** hard
+* **Tamborim:** easy
+* **Agogô:** medium

@@ -12,5 +12,5 @@
 * **Mid/High Surdo:** medium
 * **Repi:** hard
 * **Snare:** hard
-* **Tamb:** easy
+* **Tamborim:** easy
 * **Agogô:** hard

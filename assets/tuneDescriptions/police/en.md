@@ -7,11 +7,11 @@
 ## Difficulty
 
 * **Low Surdo:** easy
-* **Mid/High Surdo**: medium
-* **Repi**: hard
-* **Snare**: easy
-* **Tamb**: medium
-* **Agogô**: easy
+* **Mid/High Surdo:** medium
+* **Repi:** hard
+* **Snare:** easy
+* **Tamborim:** medium
+* **Agogô:** easy
 
 ## Breaks
 
