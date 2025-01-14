@@ -6,7 +6,7 @@
 loss of biodiversity is one of the most drastic consequences of environmental
 pollution.
 
-**Musical background:** *(More info needed.)*
+**Contexte musical:** *(+ d'infos nécessaires)*
 
 **Sign:** *(None yet.)*
 
@@ -14,10 +14,10 @@ pollution.
 
 ## Difficulté
 
-* **Low Surdo**: medium
+* **Low Surdo:** medium
 * **Mid Surdo:** easy
 * **Surdo aigu:** moyenne
-* **Repi**: tricky
-* **Snare**: easy
-* **Tamb**: tricky
-* **Agogô**: medium
+* **Repi:** tricky
+* **Caisse claire:** facile
+* **Tamborim:** tricky
+* **Agogô:** moyenne

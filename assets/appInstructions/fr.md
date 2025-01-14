@@ -5,20 +5,21 @@ votre navigateur.
 ### Chrome
 
 1. Appuyez sur l'icône de menu de Chrome (3 points) en haut à droite
-2. Press “Install app” (or “Add to Home Screen”)
+2. Appuyer sur "Installer app" (ou "Ajouter à l’Écran d'Accueil")
 
 ### Firefox
 
-1. Press Firefox’s menu icon (3 dots) on the top right or bottom right
-2. Press “Add to Home screen”
+1. Appuyer sur l'icône de menu de Firefox (3 points) en haut à droite ou bas à
+   droite
+2. Appuyer sur "Ajouter à l’Écran d'Accueil"
 
 ### Safari
 
-1. Press Safari’s share icon (rectangle with an up arrow) at the bottom in the
-   middle
-2. Press “Add to Home Screen”
+1. Appuyer sur l'icône Partager de Safari (rectangle avec un flèche vers le
+   haut) au centre bas
+2. Appuyer sur "Ajouter à l’Écran d'Accueil"
 
 ### Opera
 
-1. Press Opera’s plus icon on the top left
-2. Press “Add to…” → “Home screen”
+1. Appuyer sur l'icône "plus" en haut à gauche
+2. Appuyer sur "Ajouter à" → “Écran d'Accueil"

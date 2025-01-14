@@ -15,7 +15,7 @@ samba bands.
 
 An S formed with two hands
 
-## Background
+## Contexte
 
 **Name:** Samba Reggae is the original afro-bloc rhythm, a mix of Samba and
 Reggae that was invented by the black liberation movement in Brazil. Samba
@@ -57,8 +57,8 @@ stereotype.
 
 ## Difficulté
 
-* **Surdos**: medium
-* **Repinique**: medium
-* **Snare**: medium
-* **Tamborim**: easy (clave)
-* **Agogô**: medium
+* **Surdos:** medium
+* **Repi:** moyenne
+* **Snare:** medium
+* **Tamborim:** easy (clave)
+* **Agogô:** moyenne

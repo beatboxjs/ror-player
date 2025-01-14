@@ -14,7 +14,7 @@ erweitert (yay!).
 ## Schwierigkeit
 
 * **Tiefe Surdo:** mittel
-* **Mitlere Surdo:** mittel
+* **Mittlere Surdo:** mittel
 * **Repi:** mittel
 * **Snare:** schwierig
 * **Tamborim:** mittel

@@ -32,9 +32,9 @@ football fans commonly make the same noises at Black players.
 * **Surdo Grave :** facile
 * **Mid Surdo:** medium
 * **High Surdo:** easy
-* **Repi:** hard
+* **Repi:** difficile
 * **Snare:** medium
-* **Tamborim:** medium
+* **Tamborim:** moyenne
 * **Agogô:** hard (catchy)
 
 ## About the tune

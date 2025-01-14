@@ -1,26 +1,26 @@
-**Sign:** Place forearms on top of each other in front of you, fingertips
-aligned with elbows (like in the Estonian folk dance).
+**Handzeichen:** Unterarme vor dem Körper auf einander legen, die Finger
+umschließen den Ellbogen des jeweils anderen Armes (wie im estnischen
+Volkstanz).
 
 ## Hintergrund
 
-**Name:** Kaerajaan is an Estonian folk dance that is danced to a folk song
-called Kaera-Jaan ([example on
-YouTube](https://www.youtube.com/watch?v=5BKoS9CfQPA)). The name roughly
-translates to “John of Oats”. Estonians probably used to sing this song while
-harvesting oat crops.
+**Name:** Kaerajaan ist ein estnischer Volkstanz das zu einem Volkslied namens
+Kaera-Jaan ([Beispiel auf YouTube](https://www.youtube.com/watch?v=5BKoS9CfQPA))
+getanzt wird. Der Name lässt sich grob als „Hafer-Johannes“ übersetzen. Die
+Est_innen sangen dieses Lied vermutlich während der Haferernte.
 
-**Musical background:** The tune is based on the folk music that is played while
-dancing Kaerajaan.
+**Musikalischer Hintergrund:** Der Rhythmus basiert auf der Volksmusik, die beim
+Tanz von Kaerajaan gespielt wird.
 
-**Sign:** The sign is a move in Estonian folk dances ([example on
-YouTube](https://youtu.be/-udR34x2aTM?t=4)).
+**Handzeichen:** Das Zeichen ist eine Bewegung in estnischen Volkstänzen
+([Beispiel auf YouTube](https://youtu.be/-udR34x2aTM?t=4)).
 
-**History:** Invented by RoR Tallinn in 2021.
+**Geschichte:** 2021 von RoR Tallinn erfunden.
 
 ## Schwierigkeit
 
-* **Surdos:** easy
+* **Surdos:** einfach
 * **Repi:** schwierig
-* **Snare:** easy
+* **Snare:** einfach
 * **Tamborim:** mittel
 * **Agogô:** mittel

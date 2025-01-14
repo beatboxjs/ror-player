@@ -10,11 +10,11 @@ KRS-One. The song criticizes police brutality and systemic racism.
 ## Schwierigkeit
 
 * **Tiefe Surdo:** einfach
-* **Mittlere/hohe Surdo:** mittel
-* **Repi**: hard
+* **Mittlere/hohe Surdo**: mittel
+* **Repi:** schwierig
 * **Snare:** einfach
-* **Tamb**: medium
-* **Agogô**: easy
+* **Tamborim:** mittel
+* **Agogô:** einfach
 
 ## Breaks
 

@@ -27,10 +27,10 @@ stereotype.
 
 ## Schwierigkeit
 
-* **Low Surdo**: medium
-* **Mid Surdo**: easy
-* **High Surdo**: medium
-* **Repi**: difficult
-* **Snare**: difficult
-* **Tamborim**: medium
+* **Low Surdo:** medium
+* **Mittlere Surdo:** einfach
+* **Hohe Surdo:** mittel
+* **Repi:** schwierig
+* **Snare:** schwierig
+* **Tamborim:** mittel
 * **Agogô:** mittel

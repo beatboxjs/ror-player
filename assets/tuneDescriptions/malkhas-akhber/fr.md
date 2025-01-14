@@ -1,5 +1,5 @@
-**Sign:** tune sign: Put one fist on top of the other, as if you were holding a
-paddle, and start paddling.
+**Sign:** Put one fist on top of the other, as if you were holding a paddle, and
+start paddling.
 
 ## Contexte
 
@@ -13,7 +13,7 @@ Armenian Navy Band ([YouTube](https://www.youtube.com/watch?v=OCgrJFbIAcw)).
 
 * **Surdo Grave :** facile
 * **Mid/High Surdo:** medium
-* **Repi:** hard
-* **Snare:** hard
-* **Tamb:** easy
+* **Repi:** difficile
+* **Caisse claire:** difficile
+* **Tamborim:** facile
 * **Agogô:** hard

@@ -17,10 +17,10 @@ non-military civil service.
 
 ## Schwierigkeit
 
-* **Low Surdo**: easy
+* **Tiefe Surdo:** einfach
 * **Mittlere Surdo:** einfach
 * **Hohe Surdo:** einfach
-* **Repi**: tricky
-* **Snare**: tricky
-* **Tamb**: tricky
+* **Repi:** tricky
+* **Snare:** tricky
+* **Tamborim:** tricky
 * **Agogô:** mittel

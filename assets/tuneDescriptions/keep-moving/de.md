@@ -1,39 +1,41 @@
-**Sign:** “Walk” with two fingers on the other hand.
+**Handzeichen:** Mit zwei Fingern auf der an deren Hand „laufen“.
 
 ## Hintergrund
 
-**History:** This tune was developed in 2024 by a member of Extinction
-Rebellion.
+**Geschichte:** 2024 von einem Mitglied von Extinction Rebellion entwickelt.
 
-**Name:** The name has a double meaning. Literally, this tune serves to keep the
-group moving. By moving along with the music, you stay in the mood and thus come
-across as very convincing. It also helps keep the atmosphere right for the whole
-(action) group. A moving rhythm band is contagious, unlike an unmoving one. The
-second meaning is perhaps the most important. “Keep moving” in the sense of
-“stay committed, persevere, resist”. Don't give up the fight, together we stand
-strong to strive for a climate-just world and take the action needed to raise
-awareness about current issues among a large part of the population. Don’t give
-up hope! There have already been many victims, but step by step we are creating
-a world where every human being, every life on this planet counts. Let’s act for
-climate justice all over the world! Keep moving!
+**Name:** Der Name („in Bewegung bleiben“) ist zweideutig. Einerseits dient der
+Tune der Gruppe wörtlich dazu, sich weiter zu bewegen. Durch die Bewegung zur
+Musik bleibt die Stimmung erhalten und wirkt authentisch. Das sorgt auch für die
+richtige Atmosphäre in der ganzen Menschenmenge der Aktion. Eine Trommelgruppe
+in Bewegung ist ansteckend, im Gegensatz zu einer still stehenden. Die andere
+Bedeutung ist vielleicht die wichtigste. „In Bewegung bleiben“ im Sinne von
+„dabei bleiben, durchhalten, Widerstand leisten“. Gebt den Kampf nicht auf,
+gemeinsam sind wir stark in unserem Strebe nach einer klimagerechten Welt und
+ergreifen die Maßnahmen, die nötig sind, um in der Gesellschaft ein Bewusstsein
+für die Probleme unserer Zeit zu schaffen. Gebt die Hoffnung nicht auf! Es hat
+bereits viele Opfer gegeben, aber Schritt für Schritt schaffen wir eine Welt,
+auf der jeder Mensch, jedes Leben auf diesem Planeten zählt. Lasst uns auf der
+ganzen Welt für Klimagerechtigkeit kämpfen! Bleibt in Bewegung!
 
-**Musical background:** The music symbolises being in constant motion, with some
-exceptions. Occasionally, the music stops, emphasising the need for breaks,
-moments to reflect and (natural) silence.
+**Musikalischer Hintergrund:** Der Rhythmus symbolisiert konstante Bewegung, mit
+ein paar Ausnahmen. Gelegentlich hält die Musik an, um auf die Notwendigkeit von
+Pausen, Zeit für Reflektion und (natürliche) Stille hinzuweisen.
 
-**Sign:** Symbolises walking, moving.
+**Handzeichen:** Steht für gehen, in Bewegung bleiben.
 
 ## Breaks
 
-* **Washing Machine Break** sign: Make bowls of your hands and turn them.
+* Handzeichen für **Washing Machine Break**: Mit beiden Händen Schalen bilden
+  und diese drehen.
 
 ## Schwierigkeit
 
 * **Tiefe Surdo:** einfach
-* **Mitlere Surdo:** mittel
-* **High Surdo:** hard
+* **Mittlere Surdo:** mittel
+* **Hohe Surdo:** schwierig
 * **Repi:** schwierig
 * **Snare:** schwierig
 * **Tamborim:** schwierig
 * **Agogô:** schwierig
-* **Shaker:** hard
+* **Shaker:** schwierig

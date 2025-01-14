@@ -33,7 +33,7 @@ Fußballspieler_innen machen.
 ## Schwierigkeit
 
 * **Tiefe Surdo:** einfach
-* **Mitlere Surdo:** mittel
+* **Mittlere Surdo:** mittel
 * **Hohe Surdo:** einfach
 * **Repi:** schwierig
 * **Snare:** mittel

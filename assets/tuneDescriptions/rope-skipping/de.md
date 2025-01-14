@@ -13,10 +13,10 @@ oneself or others are swinging around your body.
 
 ## Schwierigkeit
 
-* **Low Surdo**: medium
-* **Mid Surdo**: tricky
-* **High Surdo**: medium
-* **Repi**: difficult
+* **Low Surdo:** medium
+* **Mid Surdo:** tricky
+* **Hohe Surdo:** mittel
+* **Repi:** schwierig
 * **Snare:** mittel
-* **Tamborim**: medium
-* **Agogô**: easy
+* **Tamborim:** mittel
+* **Agogô:** einfach

@@ -60,7 +60,7 @@ Gesellschaft ein aufgeladenes Thema ist.
 * **Mittlere/hohe Surdo:** mittel (beide spielen das Gleiche…)
 * **Repi:** schwierig (enthält viele Variationen von Schlägen und Tempi)
 * **Snare:** schwierig (am Anfang noch im Takt, am Ende ein paar Offbeats)</dd>
-* **Tamborim:** mittel (nach einer Weile wird es anstrengend)
+* **Tamborim:** mittel (nach einer Weile sehr ermüdend)
 * **Agogô:** mittel (leicht zu verwechseln mit Custard)
 
 ## Breaks

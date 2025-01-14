@@ -32,8 +32,8 @@ moments to reflect and (natural) silence.
 * **Surdo Grave :** facile
 * **Mid Surdo:** medium
 * **High Surdo:** hard
-* **Repi:** hard
-* **Snare:** hard
-* **Tamb:** hard
+* **Repi:** difficile
+* **Caisse claire:** difficile
+* **Tamborim:** difficile
 * **Agogô:** hard
 * **Shaker:** hard

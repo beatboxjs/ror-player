@@ -34,7 +34,7 @@ water against which the protests happened in Cochabamba
 
 * **Surdos:** medium/hard
 * **Tamb&Repi:** medium (they play the same, a variation of the “ragga”-snare)
-* **snare:** easy
+* **Caisse claire:** facile
 * **Agogô:** hard (but it kicks ass – if you feel lucky try clicking the bells
   between the (double)hits.)
 

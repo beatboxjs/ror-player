@@ -15,8 +15,8 @@ TNM 2024.
 
 * **Low Surdo:** medium
 * **Mid Surdo:** medium
-* **Repi:** medium
-* **Snare:** hard
-* **Tamborim:** medium
+* **Repi:** moyenne
+* **Caisse claire:** difficile
+* **Tamborim:** moyenne
 * **Agogô:** facile
 * **Shaker:** medium

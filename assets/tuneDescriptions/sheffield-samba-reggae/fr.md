@@ -12,8 +12,8 @@ tea is a common activity in the UK (not sure if there is a specific connection
 to Sheffield). Smoking joints is a main ritual in the Rastafari religion, which
 is closely linked to Reggae music.
 
-**History:** Introduced to the network by RoR London in 2012, was probably
-played there before?
+**Histoire:** Présenté dans le réseau RoR Londres en 2012, y a probablement été
+joué avant ?
 
 ## Controverses
 
@@ -27,10 +27,10 @@ stereotype.
 
 ## Difficulté
 
-* **Low Surdo**: medium
-* **Mid Surdo**: easy
-* **High Surdo**: medium
-* **Repi**: difficult
-* **Snare**: difficult
-* **Tamborim**: medium
-* **Agogô**: medium
+* **Low Surdo:** medium
+* **Mid Surdo:** easy
+* **High Surdo:** medium
+* **Repi:** difficile
+* **Caisse claire:** difficile
+* **Tamborim:** moyenne
+* **Agogô:** moyenne

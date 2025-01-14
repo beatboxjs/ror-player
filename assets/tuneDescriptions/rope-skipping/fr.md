@@ -5,7 +5,7 @@
 **Name:** “Rope skipping” in British English means to jump over a rope that
 oneself or others are swinging around your body.
 
-**Musical background:** *(More info needed.)*
+**Contexte musical:** *(+ d'infos nécessaires)*
 
 **Sign:** Depicts the activity of rope skipping
 
@@ -13,10 +13,10 @@ oneself or others are swinging around your body.
 
 ## Difficulté
 
-* **Low Surdo**: medium
-* **Mid Surdo**: tricky
-* **High Surdo**: medium
-* **Repi**: difficult
-* **Snare**: medium
-* **Tamborim**: medium
-* **Agogô**: easy
+* **Low Surdo:** medium
+* **Mid Surdo:** tricky
+* **High Surdo:** medium
+* **Repi:** difficile
+* **Snare:** medium
+* **Tamborim:** moyenne
+* **Agogô:** facile

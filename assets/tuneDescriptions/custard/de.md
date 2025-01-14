@@ -44,7 +44,7 @@ laufende Diskussionen darüber, den Tune zu entfernen.
 * **Surdos:** mittel
 * **Repi:** mittel
 * **Snare:** mittel
-* **Tamborm:** mittel (einfach zu lernen aber sehr ermüdend)
+* **Tamborim:** mittel (einfach zu merken, aber sehr ermüdend)
 * **Agogô:** mittel (leicht mit Afoxé zu verwechseln)
 
 ## Breaks

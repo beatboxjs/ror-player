@@ -43,7 +43,8 @@ use to be swapped too.
 **Sign:** The sign depicts someone smoking a joint. Smoking joints is a main
 ritual in the Rastafari religion, which is closely linked to Reggae music.
 
-**History:** Part of the first set of tunes taken from Barking Bateria in 2000.
+**Geschichte:** Teil der ersten Sammlung von Tunes, die 2000 von der Barking
+Bateria übernommen wurden.
 
 ## Kontroversen
 
@@ -58,7 +59,7 @@ stereotype.
 ## Schwierigkeit
 
 * **Surdos:** mittel
-* **Repinique**: medium
+* **Repi:** mittel
 * **Snare:** mittel
-* **Tamborim**: easy (clave)
+* **Tamborim:** easy (clave)
 * **Agogô:** mittel

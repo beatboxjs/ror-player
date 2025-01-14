@@ -19,7 +19,7 @@ Der Zettel verwies auf Maastricht.“
 
 ## Schwierigkeit
 
-* **Surdos**: mittel
+* **Surdos:** mittel
 * **Repi:** schwierig
 * **Snare:** mittel
 * **Tamborim:** mittel

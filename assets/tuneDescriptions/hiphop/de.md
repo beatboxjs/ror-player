@@ -26,7 +26,7 @@ veröffentlicht. Wurde 2021 wieder entdeckt.
 ## Schwierigkeit
 
 * **Tiefe Surdo:** mittel
-* **Mitlere Surdo:** mittel
+* **Mittlere Surdo:** mittel
 * **Hohe Surdo:** mittel
 * **Repi:** einfach
 * **Snare:** schwierig

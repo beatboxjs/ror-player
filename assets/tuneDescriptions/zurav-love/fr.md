@@ -24,4 +24,4 @@ represents the beak of the bird.
 * **Repi:** facile
 * **Snare:** tricky
 * **Tamborim:** facile
-* **Agogô**: hard
+* **Agogô:** hard

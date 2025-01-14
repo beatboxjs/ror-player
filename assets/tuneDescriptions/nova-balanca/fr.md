@@ -23,19 +23,19 @@ Fists before breast, open hands and arms
 **Name:** “Nova balança” means ‘new wave’ in brazilian. It’s part of a belief
 that the new wave will come and bring the deported slaves back home.
 
-**Musical background:** *(More info needed.)*
+**Contexte musical:** *(+ d'infos nécessaires)*
 
-**Sign:** *(More info needed.)*
+**Signe:** *(+ d'infos nécessaires.)*
 
 **History:** From RoR Maastricht.
 
 ## Difficulté
 
-* **Surdos**: medium
-* **Repinique**: easy
-* **Snare**: easy
-* **Tamborim**: easy
-* **Agogô**: easy – in fact the same as in Karla Shnikov
+* **Surdos:** medium
+* **Repi:** easy
+* **Caisse claire:** facile
+* **Tamborim:** facile
+* **Agogô:** easy – in fact the same as in Karla Shnikov
 
 ## Breaks
 

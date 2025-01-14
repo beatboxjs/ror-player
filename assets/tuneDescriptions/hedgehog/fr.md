@@ -24,7 +24,7 @@ Spiky fingers on the head
 **Name:** A hedgehog is a medium-size spiky mammal. *(More info needed about why
 the name.)*
 
-**Musical background:** *(More info needed.)*
+**Contexte musical:** *(+ d'infos nécessaires)*
 
 **Sign:** The sign depicts the spikes of a hedgehog
 
@@ -32,13 +32,13 @@ the name.)*
 
 ## Difficulté
 
-* **Low Surdo**: easy
-* **Mid Surdo**: easy
-* **High Surdo**: easy
-* **Repi**: medium
-* **Snare**: medium
-* **Tamb**: easy
-* **Agogô**: medium
+* **Surdo Grave :** facile
+* **Mid Surdo:** easy
+* **High Surdo:** easy
+* **Repi:** moyenne
+* **Snare:** medium
+* **Tamborim:** facile
+* **Agogô:** moyenne
 
 ## Breaks
 

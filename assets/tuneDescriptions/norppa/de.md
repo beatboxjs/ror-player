@@ -1,27 +1,29 @@
-**Sign:** *(None yet.)*
+**Handzeichen:** *(Noch keins festgelegt.)*
 
 ## Hintergrund
 
-**Name:** Saimaannorppa or Saimaa ringed seal is an endangered animal species
-that only lives in one lake in Finland. They like to chill out on warm rocks.
-Norppas were nearly hunted to extinction in the 20th century, as it was
-considered an enemy to the fishing industry. Conservation began in 1979 and
-saved it from extinction. Since then, it has became the symbol of nature
-conservation in Finland. Climate change poses a direct threat to the Norppa.
+**Name:** Saimaannorppa oder die Saimaa-Ringelrobbe ist eine bedrohte Tierart,
+die nur in einem einzigen See in Finnland vorkommt. Sie faulenzt gerne auf
+warmen Felsen. Norppas wurden im 20. Jahrhundert fast bis zum Aussterben bejagt,
+da sie als Konkurrenz zur Fischerei gesehen wurden. 1979 wurden sie unter Schutz
+gestellt und damit vor dem Aussterben gerettet. Seitdem sind sie ein Symbol des
+Naturschutzes in Finnland. Der Klimawandel stellt eine direkte Bedrohung für die
+Norppas dar.
 
-**Musical background:** Song takes inspiration from the electronic music, but
-does not imitate any particular genre or song.
+**Musikalischer Hintergrund:** Der Rhythmus ist von elektronischer Musik
+inspiriert, basiert aber nicht direkt auf einer bestimmten Musikrichtung oder
+einem bestimmten Lied.
 
-**Sign:** *(None yet.)*
+**Handzeichen:** *(Noch keins festgelegt.)*
 
-**History:** Rediscovered from old notes by RoR Helsinki in 2021
+**Geschichte:** 2021 in alten Noten von RoR Helsinki wieder entdeckt
 
 ## Schwierigkeit
 
-* **Low Surdo**: easy
-* **Mitlere Surdo:** mittel
+* **Tiefe Surdo:** einfach
+* **Mittlere Surdo:** mittel
 * **Hohe Surdo:** einfach
 * **Repi:** mittel
-* **Snare**: tricky
-* **Tamb**: tricky
+* **Snare:** schwierig
+* **Tamborim:** schwierig
 * **Agogô:** mittel

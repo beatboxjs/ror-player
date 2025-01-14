@@ -12,5 +12,5 @@ rotate your hands as if to zoom in and out.
 * **Surdos:** facile
 * **Repi:** facile
 * **Caisse claire:** facile
-* **Tamborim:** medium
+* **Tamborim:** moyenne
 * **Agogô:** facile

@@ -15,9 +15,9 @@ music.
 
 ## Difficulté
 
-* **Low Surdo**: Easy
-* **Mid/High Surdo**: Tricky
-* **Repi**: Difficult
-* **Snare**: Difficult
-* **Tamborim**: Difficult
-* **Agogô**: Medium
+* **Surdo Grave :** facile
+* **Mid/High Surdo:** tricky
+* **Repi:** difficile
+* **Caisse claire:** difficile
+* **Tamborim:** difficile
+* **Agogô:** moyenne
