@@ -81,7 +81,7 @@ gibt laufende Diskussionen darüber, ob er entfernt werden sollte.
 ## Schwierigkeit
 
 * **Surdos:** easy
-* **Repi:** medium
-* **Snare:** hard
-* **Tamborim:** easy
-* **Agogô:** medium
+* **Repi:** mittel
+* **Snare:** schwierig
+* **Tamborim:** einfach
+* **Agogô:** mittel
