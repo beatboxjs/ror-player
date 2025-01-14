@@ -22,5 +22,5 @@ YouTube](https://youtu.be/-udR34x2aTM?t=4)).
 * **Surdos:** facile
 * **Repi:** hard
 * **Caisse claire:** facile
-* **Tam:** moyenne
+* **Tamborim:** medium
 * **Agogô:** moyenne

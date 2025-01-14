@@ -22,5 +22,5 @@ YouTube](https://youtu.be/-udR34x2aTM?t=4)).
 * **Surdos:** easy
 * **Repi:** schwierig
 * **Snare:** easy
-* **Tamborim:** mittel
+* **Tamborim:** medium
 * **Agogô:** mittel
