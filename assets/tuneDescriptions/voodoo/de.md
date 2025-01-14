@@ -36,7 +36,7 @@ gibt laufende Diskussionen darüber, ob er entfernt werden sollte.
 
 ## Schwierigkeit
 
-* **Low Surdo:** medium
+* **Tiefe Surdo:** mittel
 * **Mid/High Surdo:** easy
 * **Repi:** mittel
 * **Snare:** mittel

@@ -40,7 +40,7 @@ but Funk is played at least since 2008 in the network)
 
 * **Surdos:** mittel
 * **Repi:** medium (alternate-version: hard)
-* **Snare:** tricky
+* **Snare:** schwierig
 * **Tamborim:** mittel
 * **Agogô:** schwierig
 
