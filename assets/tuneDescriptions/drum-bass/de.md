@@ -42,7 +42,7 @@ wobei nicht klar ist, ob es sich um den selben Tune handelt.
 * **Hohe Surdo:** einfach
 * **Repi:** schwierig
 * **Snare:** mittel
-* **Tamborim:** einfach
+* **Tamborim:** easy
 * **Agogô:** mittel
 
 ## Breaks

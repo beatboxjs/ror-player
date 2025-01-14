@@ -39,7 +39,7 @@ in 2006, although it is not clear whether it is the same tune.
 * **High Surdo:** easy
 * **Repi:** hard
 * **Snare:** medium
-* **Tamb:** easy
+* **Tamborim:** easy
 * **Agogô:** moyenne
 
 ## Breaks
