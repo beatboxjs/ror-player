@@ -54,7 +54,7 @@ Bateria en 2004/2005.
 * **Surdos:** facile
 * **Repi:** facile
 * **Caisse claire:** facile
-* **Tam:** moyenne
+* **Tamborim:** medium
 * **Agogô:** facile
 
 ## Breaks

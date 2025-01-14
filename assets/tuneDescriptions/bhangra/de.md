@@ -55,7 +55,7 @@ Namaste.
 * **Surdos:** enfach
 * **Repi:** einfach
 * **Snare:** einfach
-* **Tamborim:** mittel
+* **Tamborim:** medium
 * **Agogô:** einfach
 
 ## Breaks
