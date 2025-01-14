@@ -19,6 +19,6 @@ Walzertakt.
 
 * **Surdos:** easy
 * **Repi:** easy
-* **Snare:** medium
-* **Tamborim:** easy
+* **Snare:** mittel
+* **Tamborim:** einfach
 * **Agogô:** easy
