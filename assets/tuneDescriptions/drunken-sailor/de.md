@@ -3,31 +3,32 @@ drunken sailor?” basiert. Die Agogô und Surdos spielen gemeinsam die Melodie 
 Liedes (Agogôs: “What shall we do with the drunken sailor”, Surdos im vierten
 Takt: “Early in the morning”).
 
-**Sign:** build an eyepatch with one hand in front of your eye
+**Handzeichen:** mit einer Hand eine Augenklappe vor einem Auge darstellen
 
 ## Hintergrund
 
-**Name:** “What shall we do with the drunken sailor” is a traditional sea
-shanty, probably originating from the US in the 1800s. The song is probably
-based on the traditional Irish folk song “Óró sé do bheatha abhaile” (Oh-ro
-welcome home), which has the same melody and was historically used by the Irish
-movement against the British rule.
+**Name:** “What shall we do with the drunken sailor” („Was sollen wir mit dem
+besoffenen Matrosen anstellen?“) ist ein traditionelles Seemannslied, das
+vermutlich in den 1800er-Jahren in den USA entstanden ist. Das Lied basiert
+ursprünglich vermutlich auf dem irischen Volkslied „Óró sé do bheatha abhaile“
+(Oh-ro willkommen zuhause), welches die gleiche Melodie hat und von der irischen
+Widerstandsbewegung gegen die britische Herrschaft genutzt wurde.
 ([Wikipedia](https://en.wikipedia.org/wiki/Drunken_Sailor))
 
-**Musical background:** The tune is based on the folk song. The Agogô line plays
-“What shall we do with the drunken sailor”, while the 4th bar of the Surdos
-plays the “early in the morning”.
+**Musikalischer Hintergrund:** Der Tune basiert auf dem Volkslied. Die Agogô
+spielt “What shall we do with the drunken sailor” und die Surdos spielen im
+vierten Takt “early in the morning”.
 
-**Sign:** The eye-patch depicts a pirate.
+**Handzeichen:** Die Augenklappe soll eine_n Pirat_in darstellen.
 
-**History:** Introduced as a tune by someone from RoR Köln/Cologne in 2010.
+**Geschichte:** 2010 von einem Mitglied von RoR Köln vorgestellt.
 
 
 ## Schwierigkeit
 
-* **Low/Mid Surdo**: Easy
-* **High Surdo**: Medium
-* **Repi**: hard
+* **Tiefe/mittlere Surdo:** einfach
+* **Hohe Surdo:** mittel
+* **Repi:** schwierig
 * **Snare:** schwierig
-* **Tamborim**: medium
-* **Agogo**: medium
+* **Tamborim:** mittel
+* **Agogô:** mittel
