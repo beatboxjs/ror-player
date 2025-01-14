@@ -27,7 +27,7 @@ stereotype.
 
 ## Schwierigkeit
 
-* **Low Surdo:** medium
+* **Tiefe Surdo:** mittel
 * **Mittlere Surdo:** einfach
 * **Hohe Surdo:** mittel
 * **Repi:** schwierig
