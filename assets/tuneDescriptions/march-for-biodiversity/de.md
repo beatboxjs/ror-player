@@ -1,23 +1,23 @@
-**Sign:** *(None yet.)*
+**Handzeichen:** *(Noch keins festgelegt.)*
 
 ## Hintergrund
 
-**Name:** Biodiversity refers to the variety of species in the ecosystem. The
-loss of biodiversity is one of the most drastic consequences of environmental
-pollution.
+**Name:** “Biodiversity” (Biodiversität) bezeichnet die Artenvielfalt im
+Ökosystem. Der Verlust der Artenvielfalt ist eine der katastrophalsten
+Auswirkungen von Umweltverschmutzung.
 
 **Musikalischer Hintergrund:** *(Mehr Informationen notwendig.)*
 
-**Sign:** *(None yet.)*
+**Handzeichen:** *(Noch keins festgelegt.)*
 
-**History:** Introduced by RoR Helsinki on the TNM in 2019 in Lithuania.
+**Geschichte:** Auf dem TNM 2019 in Litauen von RoR Helsinki vorgestellt.
 
 ## Schwierigkeit
 
-* **Low Surdo:** medium
+* **Tiefe Surdo:** mittel
 * **Mittlere Surdo:** einfach
 * **Hohe Surdo:** mittel
-* **Repi:** tricky
+* **Repi:** schwierig
 * **Snare:** einfach
-* **Tamborim:** tricky
+* **Tamborim:** schwierig
 * **Agogô:** mittel
