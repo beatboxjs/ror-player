@@ -14,7 +14,7 @@ KRS-One. The song criticizes police brutality and systemic racism.
 * **Repi:** schwierig
 * **Snare:** einfach
 * **Tamborim:** mittel
-* **Agogô:** easy
+* **Agogô:** einfach
 
 ## Breaks
 
