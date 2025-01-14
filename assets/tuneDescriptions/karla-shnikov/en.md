@@ -27,7 +27,7 @@ Move index+middle finger like rabbit ears and cover other fingers with other han
 * **Repi:** medium
 * **Snare:** easy
 * **Tamborim:** easy
-* **Agogô:**easy
+* **Agogô:** easy
 
 ## Breaks
 
