@@ -21,5 +21,5 @@ played there before?
 * **Surdos:** easy
 * **Repi:** schwierig
 * **Snare:** schwierig
-* **Tamborim:** hard
+* **Tamborim:** schwierig
 * **Agogô:** mittel
