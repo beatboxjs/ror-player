@@ -14,10 +14,10 @@ pollution.
 
 ## Schwierigkeit
 
-* **Low Surdo**: medium
+* **Low Surdo:** medium
 * **Mittlere Surdo:** einfach
 * **Hohe Surdo:** mittel
-* **Repi**: tricky
-* **Snare:** einfach
-* **Tamb**: tricky
-* **Agogô:** mittel
+* **Repi:** tricky
+* **Snare:** easy
+* **Tamborim:** tricky
+* **Agogô:** medium
