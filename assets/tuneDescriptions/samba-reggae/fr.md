@@ -57,8 +57,8 @@ stereotype.
 
 ## Difficulté
 
-* **Surdos**: medium
-* **Repinique**: medium
-* **Snare**: medium
-* **Tamborim**: easy (clave)
-* **Agogô**: medium
+* **Surdos:** medium
+* **Repi:** medium
+* **Snare:** medium
+* **Tamborim:** easy (clave)
+* **Agogô:** medium
