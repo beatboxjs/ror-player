@@ -26,9 +26,9 @@ vierten Takt “early in the morning”.
 
 ## Schwierigkeit
 
-* **Tiefe/mittlere Surdo:** einfach
-* **Hohe Surdo:** mittel
-* **Repi:** schwierig
-* **Snare:** schwierig
-* **Tamborim:** mittel
-* **Agogô:** mittel
+* **Low/Mid Surdo:** easy
+* **High Surdo:** medium
+* **Repi:** hard
+* **Snare:** hard
+* **Tamborim:** medium
+* **Agogo:** medium
