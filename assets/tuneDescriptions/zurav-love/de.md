@@ -26,4 +26,4 @@ vorgestellt.
 * **Repi:** einfach
 * **Snare:** schwierig
 * **Tamborim:** einfach
-* **Agogô:** hard
+* **Agogô:** schwierig
