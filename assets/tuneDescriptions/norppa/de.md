@@ -18,8 +18,8 @@ does not imitate any particular genre or song.
 
 ## Schwierigkeit
 
-* **Low Surdo:** easy
-* **Mitlere Surdo:** mittel
+* **Tiefe Surdo:** einfach
+* **Mittlere Surdo:** mittel
 * **Hohe Surdo:** einfach
 * **Repi:** mittel
 * **Snare:** tricky
