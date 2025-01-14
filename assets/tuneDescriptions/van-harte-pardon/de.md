@@ -25,4 +25,4 @@ heart”, hence the heart.
 * **Repi:** mittel
 * **Snare:** mittel
 * **Tamborim:** mittel
-* **Agogô:** hard
+* **Agogô:** schwierig
