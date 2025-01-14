@@ -41,11 +41,11 @@ laufende Diskussionen darüber, den Tune zu entfernen.
 
 ## Schwierigkeit
 
-* **Surdos:** medium
-* **Repi:** medium
-* **Snare:** medium
-* **Tamborim:** medium (easy to remember, very tiring)
-* **Agogô:** medium (easy to mix up with afoxe)
+* **Surdos:** mittel
+* **Repi:** mittel
+* **Snare:** mittel
+* **Tamborim:** mittel (einfach zu merken, aber sehr ermüdend)
+* **Agogô:** mittel (leicht mit Afoxé zu verwechseln)
 
 ## Breaks
 
