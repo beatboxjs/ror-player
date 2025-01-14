@@ -13,7 +13,7 @@ KRS One ([YouTube](https://www.youtube.com/watch?v=iaYDe3gu1go)).
 
 ## Difficulté
 
-* **Low Surdo**: easy
+* **Low Surdo:** easy
 * **Mid/High Surdo:** tricky
 * **Repi:** medium
 * **Snare:** tricky
