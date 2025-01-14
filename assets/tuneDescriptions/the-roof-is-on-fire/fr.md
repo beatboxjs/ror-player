@@ -24,7 +24,7 @@ roof of the sauna caught fire.
 ## Difficulté
 
 * **Surdos:** tricky
-* **Repi:** medium
+* **Repi:** moyenne
 * **Snare:** medium
 * **Tamborim:** tricky
 * **Agogô:** facile
