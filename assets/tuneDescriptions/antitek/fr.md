@@ -9,8 +9,8 @@ rotate your hands as if to zoom in and out.
 
 ## Difficulté
 
-* **Surdos:** easy
+* **Surdos:** facile
 * **Repi:** facile
-* **Snare:** easy
+* **Caisse claire:** facile
 * **Tamborim:** medium
-* **Agogô:** easy
+* **Agogô:** facile

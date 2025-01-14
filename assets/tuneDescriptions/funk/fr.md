@@ -1,4 +1,4 @@
-Ce morceau est une des fondamentaux de RoR.
+Ce morceau est un des fondamentaux de RoR.
 
 This tune is played over 8 beats instead of 4, so take care when counting in.
 
