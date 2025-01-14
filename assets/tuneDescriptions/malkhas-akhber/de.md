@@ -12,8 +12,8 @@ Armenian Navy Band ([YouTube](https://www.youtube.com/watch?v=OCgrJFbIAcw)).
 ## Schwierigkeit
 
 * **Tiefe Surdo:** einfach
-* **Mid/High Surdo:** medium
+* **Mittlere/hohe Surdo**: mittel
 * **Repi:** schwierig
 * **Snare:** schwierig
-* **Tamborim:** easy
+* **Tamborim:** einfach
 * **Agogô:** schwierig
