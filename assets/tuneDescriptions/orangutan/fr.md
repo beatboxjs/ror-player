@@ -23,8 +23,8 @@ also often associated with drumming).
 
 ## Difficulté
 
-* **Surdos**: Easy
-* **Repi**: Medium
-* **Snare**: Medium
-* **Tamborim**: Easy
-* **Agogô**: Tricky
+* **Surdos:** easy
+* **Repi:** medium
+* **Snare:** medium
+* **Tamborim:** easy
+* **Agogô:** tricky

@@ -24,8 +24,8 @@ werden).
 
 ## Schwierigkeit
 
-* **Surdos:** einfach
-* **Repi**: Medium
-* **Snare:** mittel
-* **Tamborim:** einfach
-* **Agogô**: Tricky
+* **Surdos:** easy
+* **Repi:** medium
+* **Snare:** medium
+* **Tamborim:** easy
+* **Agogô:** tricky
