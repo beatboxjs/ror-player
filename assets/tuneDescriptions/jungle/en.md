@@ -1,4 +1,4 @@
-**Sign:** Swing your fist above your head and share your body, like dancing to techno music.
+**Sign:** Swing your fist above your head and shake your body, like dancing to techno music.
 
 ## Background
 
