@@ -21,4 +21,4 @@ our tune comes from Polish “walc” for Waltz and “walcz” for “fight!”
 * **Repi:** easy
 * **Snare:** medium
 * **Tamborim:** facile
-* **Agogô:** easy
+* **Agogô:** facile
