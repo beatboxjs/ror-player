@@ -30,7 +30,7 @@ moments to reflect and (natural) silence.
 ## Schwierigkeit
 
 * **Tiefe Surdo:** einfach
-* **Mitlere Surdo:** mittel
+* **Mittlere Surdo:** mittel
 * **High Surdo:** hard
 * **Repi:** schwierig
 * **Snare:** schwierig
