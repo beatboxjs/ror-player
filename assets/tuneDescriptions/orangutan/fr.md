@@ -8,12 +8,12 @@ melody, so they are suitable to be played by one Surdo player with three Surdos.
 **Name:** Orangutan is a critically endangered species of apes native to
 south-east Asia.
 
-**Musical background:** *(More info needed.)*
+**Contexte musical:** *(+ d'infos nécessaires)*
 
 **Sign:** The sign depicts a monkey
 
-**History:** Introduced to the network by RoR London in 2012, was probably
-played there before?
+**Histoire:** Présenté dans le réseau RoR Londres en 2012, y a probablement été
+joué avant ?
 
 ## Controverses
 
@@ -23,8 +23,8 @@ also often associated with drumming).
 
 ## Difficulté
 
-* **Surdos:** easy
-* **Repi:** medium
+* **Surdos:** facile
+* **Repi:** moyenne
 * **Snare:** medium
-* **Tamborim:** easy
+* **Tamborim:** facile
 * **Agogô:** tricky

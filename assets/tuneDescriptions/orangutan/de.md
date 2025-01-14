@@ -24,7 +24,7 @@ werden).
 
 ## Schwierigkeit
 
-* **Surdos:** easy
+* **Surdos:** einfach
 * **Repi:** mittel
 * **Snare:** mittel
 * **Tamborim:** einfach
