@@ -12,15 +12,16 @@ tea is a common activity in the UK (not sure if there is a specific connection
 to Sheffield). Smoking joints is a main ritual in the Rastafari religion, which
 is closely linked to Reggae music.
 
-**History:** Introduced to the network by RoR London in 2012, was probably
-played there before?
+**Geschichte:** Wurde dem Netzwerk 2012 von RoR London vorgestellt, vermutlich
+wurde es dort schon vorher gespielt?
 
 ## Kontroversen
 
-The rhythm clearly sounds like real Samba Reggae, which is a tune developed and
-used by the Black liberation movement in Brazil. Many people in the RoR network
-consider it cultural appropriation to play this tune in our mainly white
-European bands, and there is an ongoing debate about abolishing the tune.
+Der Rhythmus klingt eindeutig wie echter Samba Reggae, welcher von der Schwarzen
+Befreiungsbewegung in Brasilien entwickelt wurde und verwendet wird. Viele
+Mitglieder des RoR-Netzwerks sehen es als kulturelle Aneignung diesen Tune in
+unseren größtenteils weißen europäischen Bands zu spielen, und es gibt laufende
+Diskussionen darüber, den Tune zu entfernen.
 
 There is also some criticism towards the sign, which is based on a racist
 stereotype.
