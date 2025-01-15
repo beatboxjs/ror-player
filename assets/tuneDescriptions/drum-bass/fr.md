@@ -36,7 +36,7 @@ in 2006, although it is not clear whether it is the same tune.
 
 * **Surdo grave:** difficile
 * **Mid Surdo:** easy
-* **High Surdo:** easy
+* **Surdo aigu:** facile
 * **Repi:** difficile
 * **Snare:** medium
 * **Tamborim:** facile
