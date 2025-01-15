@@ -12,8 +12,8 @@ south-east Asia.
 
 **Sign:** The sign depicts a monkey
 
-**History:** Introduced to the network by RoR London in 2012, was probably
-played there before?
+**Geschichte:** Wurde dem Netzwerk 2012 von RoR London vorgestellt, vermutlich
+wurde es dort schon vorher gespielt?
 
 ## Kontroversen
 
