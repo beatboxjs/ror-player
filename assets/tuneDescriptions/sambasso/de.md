@@ -1,20 +1,20 @@
-Was chosen as a **Tune of the Year 2021** (along with Bhaṅgṛā).
+Wurde als **Tune des Jahres 2021** gewählt (zusammen mit Bhaṅgṛā).
 
-**Sign:** V with 4 fingers (vulcan salute) on both hands, slide the gaps into
-each other
+**Handzeichen:** An beiden Händen ein V mit 4 Fingern bilden (vulkanischer Gruß
+aus Star Trek) und die Lücken der beiden Vs ineinander schieben
 
 ## Hintergrund
 
-**Name:** Probably a combination of the words “Samba” and “basso” (Italian for
-“low” or “base”).
+**Name:** Vermutlich eine Kombination der Wörter „Samba“ und „basso“
+(Italienisch für „tief“ oder „Bass“).
 
-**Musical background:** The Snare and Repi line and the Intro seem to be Samba
-Reggae style. *(More info needed.)*
+**Musikalischer Hintergrund:** Die Snare und Repi und das Intro scheinen im Stil
+von Samba Reggae zu sein. *(Mehr Informationen benötigt.)*
 
 **Handzeichen:** *(Mehr Informationen benötigt.)*
 
-**History:** Introduced to the network by RoR London in 2012, was probably
-played there before?
+**Geschichte:** Wurde dem Netzwerk 2012 von RoR London vorgestellt, vermutlich
+wurde es dort schon vorher gespielt?
 
 ## Schwierigkeit
 
