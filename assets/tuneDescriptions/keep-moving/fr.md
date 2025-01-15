@@ -30,7 +30,7 @@ moments to reflect and (natural) silence.
 ## Difficulté
 
 * **Surdo Grave :** facile
-* **Mid Surdo:** medium
+* **Surdo moyen:** moyenne
 * **High Surdo:** hard
 * **Repi:** difficile
 * **Caisse claire:** difficile
