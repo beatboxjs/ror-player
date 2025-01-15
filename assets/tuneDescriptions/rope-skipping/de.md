@@ -1,20 +1,19 @@
-**Sign:** with both hands a rotating rope and jump up and down
+**Handzeichen:** springen und dabei beide Hände rotieren wie beim Seilhüpfen
 
 ## Hintergrund
 
-**Name:** “Rope skipping” in British English means to jump over a rope that
-oneself or others are swinging around your body.
+**Name:** “Rope skipping” ist britisches Englisch für Seilhüpfen.
 
 **Musikalischer Hintergrund:** *(Mehr Informationen notwendig.)*
 
-**Sign:** Depicts the activity of rope skipping
+**Handzeichen:** Stellt das Seilhüpfen dar
 
-**History:** Introduced in 2010
+**Geschichte:** 2010 eingeführt
 
 ## Schwierigkeit
 
 * **Tiefe Surdo:** mittel
-* **Mid Surdo:** tricky
+* **Mittlere Surdo:** schwierig
 * **Hohe Surdo:** mittel
 * **Repi:** schwierig
 * **Snare:** mittel
