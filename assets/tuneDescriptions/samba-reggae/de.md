@@ -43,25 +43,27 @@ während die meisten Sambabands es genau anders herum spielen (tief, mittel,
 tief, mittel-mittel). Die Rhythmen der Repi und Snare werden auch üblicherweise
 genau umgekehrt gespielt.
 
-**Sign:** The sign depicts an S, which stands for Samba Reggae.
+**Handzeichen:** Das Zeichen stellt ein S dar, welches für Samba Reggae steht.
 
-**History:** Part of the first set of tunes taken from Barking Bateria in 2000.
-The tune sign used to be “smoking a joint”, as smoking joints is a main ritual
-in the Rastafari religion, which is closely linked to Reggae music. On the TNM
-2024 it was decided to change the sign, as smoking weed is also a racist
-stereotype associated with Black people.
+**Geschichte:** Teil der ersten Sammlung von Tunes, die 2000 von der Barking
+Bateria übernommen wurden. Das Handzeichen war ursprünglich „einen Joint
+rauchen“, da das Rauchen von Joints eines der Hauptrituale der
+Rastafari-Religion ist, welche eng mit Reggae-Musik verwoben ist. Auf dem TNM
+2024 wurde beschlossen das Zeichen zu ändern, da das Rauchen von Joints auch ein
+rassistisches Vorurteil gegenüber Schwarzen Menschen ist.
 
 ## Kontroversen
 
-The rhythm clearly sounds like real Samba Reggae, which is a tune developed and
-used by the Black liberation movement in Brazil. Many people in the RoR network
-consider it cultural appropriation to play this tune in our mainly white
-European bands, and there is an ongoing debate about abolishing the tune.
+Der Rhythmus klingt eindeutig wie echter Samba Reggae, welcher von der Schwarzen
+Befreiungsbewegung in Brasilien entwickelt wurde und verwendet wird. Viele
+Mitglieder des RoR-Netzwerks sehen es als kulturelle Aneignung diesen Tune in
+unseren größtenteils weißen europäischen Bands zu spielen, und es gibt laufende
+Diskussionen darüber, den Tune zu entfernen.
 
 ## Schwierigkeit
 
 * **Surdos:** mittel
 * **Repi:** mittel
 * **Snare:** mittel
-* **Tamborim:** easy (clave)
+* **Tamborim:** einfach (Clave)
 * **Agogô:** mittel
