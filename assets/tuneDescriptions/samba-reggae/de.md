@@ -43,11 +43,13 @@ während die meisten Sambabands es genau anders herum spielen (tief, mittel,
 tief, mittel-mittel). Die Rhythmen der Repi und Snare werden auch üblicherweise
 genau umgekehrt gespielt.
 
-**Sign:** The sign depicts someone smoking a joint. Smoking joints is a main
-ritual in the Rastafari religion, which is closely linked to Reggae music.
+**Sign:** The sign depicts an S, which stands for Samba Reggae.
 
-**Geschichte:** Teil der ersten Sammlung von Tunes, die 2000 von der Barking
-Bateria übernommen wurden.
+**History:** Part of the first set of tunes taken from Barking Bateria in 2000.
+The tune sign used to be “smoking a joint”, as smoking joints is a main ritual
+in the Rastafari religion, which is closely linked to Reggae music. On the TNM
+2024 it was decided to change the sign, as smoking weed is also a racist
+stereotype associated with Black people.
 
 ## Kontroversen
 
@@ -55,9 +57,6 @@ The rhythm clearly sounds like real Samba Reggae, which is a tune developed and
 used by the Black liberation movement in Brazil. Many people in the RoR network
 consider it cultural appropriation to play this tune in our mainly white
 European bands, and there is an ongoing debate about abolishing the tune.
-
-There is also some criticism towards the sign, which is based on a racist
-stereotype.
 
 ## Schwierigkeit
 
