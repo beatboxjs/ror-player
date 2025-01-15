@@ -14,7 +14,7 @@ TNM 2024.
 ## Difficulté
 
 * **Low Surdo:** medium
-* **Mid Surdo:** medium
+* **Surdo moyen:** moyenne
 * **Repi:** moyenne
 * **Caisse claire:** difficile
 * **Tamborim:** moyenne

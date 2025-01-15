@@ -34,7 +34,7 @@ the name.)*
 
 * **Surdo Grave :** facile
 * **Mid Surdo:** easy
-* **High Surdo:** easy
+* **Surdo aigu:** facile
 * **Repi:** moyenne
 * **Snare:** medium
 * **Tamborim:** facile

@@ -30,8 +30,8 @@ football fans commonly make the same noises at Black players.
 ## Difficulté
 
 * **Surdo Grave :** facile
-* **Mid Surdo:** medium
-* **High Surdo:** easy
+* **Surdo moyen:** moyenne
+* **Surdo aigu:** facile
 * **Repi:** difficile
 * **Snare:** medium
 * **Tamborim:** moyenne
