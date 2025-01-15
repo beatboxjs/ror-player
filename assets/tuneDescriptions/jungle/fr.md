@@ -17,7 +17,7 @@ in the official tune sheets. Was rediscovered in 2021.
 ## Difficulté
 
 * **Surdo Grave :** facile
-* **Mid Surdo:** medium
+* **Surdo moyen:** moyenne
 * **High Surdo:** hard
 * **Repi:** difficile
 * **Caisse claire:** difficile
