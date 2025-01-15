@@ -1,26 +1,27 @@
-**Sign:** Wave an imaginary tissue like saying goodbye to a train.
+**Handzeichen:** Mit einem imaginären Taschentuch winken, zur Verabschiedung
+eines abfahrenden Zuges.
 
-Doppler Break sign: Move your hand in front of your body from one side to the
-other like a train passing by.
+Handzeichen des Doppler Breaks: Hand vor dem Körper von einer Seite zur anderen
+bewegen, wie ein Zug, der vorbei fährt.
 
 ## Hintergrund
 
-**Name:** Trans Europ Express (TEE) was an international high-speed luxury train
-in Western Europe between 1957 and 1995, aiming to provide an alternative to
-flying to business people
-([Wikipedia](https://en.wikipedia.org/wiki/Trans_Europ_Express)). The train was
-the theme of an electronic music album called Trans-Europe Express (German:
-Trans Europa Express) by the German band Kraftwerk, released in 1977
+**Name:** Der Trans Europ Express (TEE) war zwischen 1957 und 1995 ein
+internationaler Luxus-Schnellzug in Westeuropa, mit dem Ziel Geschäftsleuten
+eine Alternative zum Flugzeug zu bieten
+([Wikipedia](https://en.wikipedia.org/wiki/Trans_Europ_Express)). Der Zug war
+das Thema eines Elektro-Albums der deutschen Band Kraftwerk namens Trans Europa
+Express, erschienen 1977
 ([Wikipedia](https://en.wikipedia.org/wiki/Trans-Europe_Express_(album))).
-Kraftwerk were one of the pioneers of electronic music and are considered a
-major influence to many modern styles of electronic music.
+Kaftwerk waren eine der Pioniere elektronischer Musik und werden als ein
+wichtiger Einfluss vieler heutiger elektronischer Musikrichtungen gesehen.
 
-**Musical background:** The tune is based on the song Trans Europa Express by
-Kraftwerk ([YouTube](https://www.youtube.com/watch?v=XMVokT5e0zs)).
+**Musikalischer Hintergrund:** Der Tune basiert auf dem Lied Trans Europa
+Express von Kraftwerk ([YouTube](https://www.youtube.com/watch?v=XMVokT5e0zs)).
 
-**Sign:** The sign represents a train passing by.
+**Handzeichen:** Das Zeichen stellt einen vorbei fahrenden Zug dar.
 
-**History:** Invented by RoR Berlin in 2021.
+**Geschichte:** 2021 von RoR Berlin erfunden.
 
 ## Schwierigkeit
 
@@ -29,4 +30,4 @@ Kraftwerk ([YouTube](https://www.youtube.com/watch?v=XMVokT5e0zs)).
 * **Snare:** mittel
 * **Tamborim:** einfach
 * **Agogô:** einfach
-* **Shaker:** tricky
+* **Shaker:** schwierig
