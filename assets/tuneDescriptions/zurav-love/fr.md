@@ -20,7 +20,7 @@ represents the beak of the bird.
 
 * **Low/Mid Surdo:** medium (easy to play, but hard to keep the right speed
   because of off-beats)
-* **High Surdo:** easy
+* **Surdo aigu:** facile
 * **Repi:** facile
 * **Snare:** tricky
 * **Tamborim:** facile
