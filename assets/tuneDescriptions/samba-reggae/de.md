@@ -1,44 +1,47 @@
-This tune is one of the RoR basics. It is (together with ‘Custard’) the RoR-Tune
-which sounds most like “real” Samba.
+Dieser Tune gehört zum RoR-Basisrepertoire. Er ist (zusammen mit Custard) einer
+der RoR Tunes, die „echtem“ Samba am ähnlichsten klingen.
 
-It is the tune with the most breaks (seven, not counting the tamb-stroke/clave).
-And a lot of breaks also have nice bonuses. For example is every break ended
-with a surdo pickup from either high-(1, 2 & 3) or low- (every other break,
-sometimes even the clave & 4-pause) surdo. Also after the ‘SOS-Break’ the repis
-should continue playing their part of the break until the next break is called.
+Es ist der Tune mit den meisten Breaks (sieben, der Tamborim Stroke und die
+Clave nicht mal mitgezählt). Und viele Breaks kommen mit einem Bonus. Zum
+Beispiel endet jeder Break mit einem Auftakt der Surdo, entweder von der hohen
+(Break 1, 2 und 3) oder der tiefen (alle anderen Breaks, manchmal sogar die
+Clave und Pause). Nach dem SOS-Break spielen die Repis den Break so lange
+weiter, bis etwas anderes angezeigt wird.
 
-Since practically every samba band can play a version of samba reggae, it is a
-good tune to play together in demonstrations in which there are other non-RoR
-samba bands.
+Weil praktisch jede Sambaband eine Version von Samba Reggae spielen kann, ist es
+ein guter Tune für Demonstrationen, auf denen Sambabands spielen, die nicht Teil
+von RoR sind.
 
 ## Handzeichen
 
-An S formed with two hands
+Mit beiden Händen ein S formen
 
 ## Hintergrund
 
-**Name:** Samba Reggae is the original afro-bloc rhythm, a mix of Samba and
-Reggae that was invented by the black liberation movement in Brazil. Samba
-reggae is a sub-genre of Samba, which arose in the context of afro-brazilian
-people fighting for their right to play samba music and partake in Carnival
-parades in the late 1960s. At that time only white people were allowed to play
-in the parades for Carnival and in Samba schools of Rio de Janeiro. Samba reggae
-is a Samba style, that developed because black people in Brazil wanted to have a
-samba style to call their own. The music of the afro blocos aimed to recreate
-and strengthen the afro-brazilian community.
+**Name:** Samba Reggae ist der ursprüngliche Rhythmus der Afro-Blocs. Er ist
+eine Mischung aus Samba und Reggae, die von Schwarzen Befreiungsbewegungen in
+Brasilien erfunden wurde. Samba Reggae ist eine Unterform von Samba, die im
+Kontext der Kämpfe afro-brasilianischer Menschen in den 1960er-Jahren für ihr
+Recht, an den Umzügen des Karnevals teilzunehmen und dort Samba zu spielen,
+entstanden ist. Zu jener Zeit war es nur Weißen gestattet, auf den Umzügen und
+in den Sambaschulen in Rio de Janeiro zu spielen. Samba Reggae wurde entwickelt,
+weil Schwarze Menschen in Brasilien einen Sambastil haben wollten, den sie ihr
+Eigen nennen konnten. Die Musik der Afro-Blocs hatte das Ziel, die
+afro-brasilianische Community wiederherzustellen und zu stärken.
 ([Wikipedia](https://en.wikipedia.org/wiki/Samba_reggae))
 
-In “real” Samba, ‘samba reggae’ is a specific sub-genre, it’s not only in terms
-of the rhythm, but also of the instruments, which are played (and how they are
-played), different from other kinds of Samba. For example the Repi, which is
-otherwise mostly hanging quite high and is played with a short wooden stick and
-the hand, is hanging really low and is played with two long plastic beaters.
+In „echtem“ Samba ist „Samba Reggae“ eine spezifische Unterform, nicht nur in
+Bezug auf den Rhythmus, sondern auch die Instrumente, die gespielt werden (und
+wie sie gespielt werden). Zum Beispiel wird die Repi, normalerweise hoch hängend
+mit einem kurzen Holzschlägel gespielt, stattdessen tief hängend mit zwei langen
+Plastikschlägeln gespielt.
 
-**Musical background:** The tune is a mix of Samba Reggae 1 & 3. RoR Samba
-Reggae is played with mid surdo hitting in 1 and 3 beats and low one in 2 and 4
-(mid-low-mid-low,low), while most of the samba bands used to play with low surdo
-in 1 and 3 and mid one in 2 and 4 (low-mid-low-mid,mid). Repi and snare grooves
-use to be swapped too.
+**Musikalischer Hintergrund:** Der Tune ist eine Mischung von Samba Reggae 1 &
+3. RoR Samba Reggae wird mit der mittleren Surdo auf der 1. und 3. Viertel und
+der tiefen auf der 2. und 4. Viertel (mittel, tief, mittel, tief-tief) gespielt,
+während die meisten Sambabands es genau anders herum spielen (tief, mittel,
+tief, mittel-mittel). Die Rhythmen der Repi und Snare werden auch üblicherweise
+genau umgekehrt gespielt.
 
 **Sign:** The sign depicts someone smoking a joint. Smoking joints is a main
 ritual in the Rastafari religion, which is closely linked to Reggae music.
