@@ -24,7 +24,7 @@ Was rediscovered in 2021.
 ## Difficulté
 
 * **Low Surdo:** medium
-* **Mid Surdo:** medium
+* **Surdo moyen:** moyenne
 * **Surdo aigu:** moyenne
 * **Repi:** facile
 * **Caisse claire:** difficile
