@@ -19,8 +19,8 @@ does not imitate any particular genre or song.
 ## Difficulté
 
 * **Surdo Grave :** facile
-* **Mid Surdo:** medium
-* **High Surdo:** easy
+* **Surdo moyen:** moyenne
+* **Surdo aigu:** facile
 * **Repi:** moyenne
 * **Snare:** tricky
 * **Tamborim:** tricky
