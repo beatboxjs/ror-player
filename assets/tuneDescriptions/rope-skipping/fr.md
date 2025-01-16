@@ -13,7 +13,7 @@ oneself or others are swinging around your body.
 
 ## Difficulté
 
-* **Low Surdo:** medium
+* **Surdo Moyen:** moyenne
 * **Mid Surdo:** tricky
 * **High Surdo:** medium
 * **Repi:** difficile

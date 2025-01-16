@@ -34,7 +34,7 @@ ongoing debate on whether this tune should be abandoned.
 
 ## Difficulté
 
-* **Low Surdo:** medium
+* **Surdo Moyen:** moyenne
 * **Mid/High Surdo:** easy
 * **Repi:** moyenne
 * **Snare:** medium

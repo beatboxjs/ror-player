@@ -23,7 +23,7 @@ Was rediscovered in 2021.
 
 ## Difficulté
 
-* **Low Surdo:** medium
+* **Surdo Moyen:** moyenne
 * **Surdo moyen:** moyenne
 * **Surdo aigu:** moyenne
 * **Repi:** facile
