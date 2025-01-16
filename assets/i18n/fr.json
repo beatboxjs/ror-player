@@ -42,7 +42,7 @@
         "special-breaks": "Breaks Spéciaux",
         "shouting-breaks": "Breaks Criés",
         "silence": "{{beats}} Silence",
-        "whistle-in": "Sifflé"
+        "whistle-in": "Sifflet"
     },
     "import-dialog": {
         "break-exists-identical": "Le break existe déjà.",
@@ -55,7 +55,7 @@
         "decoding-error": "Erreur de décodage des données collées : {{message}}",
         "tunes-breaks": "Morceaux/Breaks",
         "song-exists": "Le morceau existe déjà.",
-        "break-used": "break est utilisé dans Morceau, ne peut pas être désactivé",
+        "break-used": "Le Break est utilisé dans le Morceau, ne peut pas être désactivé.",
         "import-button": "Importer"
     },
     "song-player-toolbar": {
@@ -109,7 +109,7 @@
         "clear-title": "Vider l'historique",
         "clear-ok": "Vider",
         "clear": "Vider",
-        "clear-message": "Êtes-vous sûr.e de vouloir vider votre historique? Si vous avez récemment ouvert un lien partagé, vous pourriez perdre tout morceau/break personnalisé créé précédemment."
+        "clear-message": "Êtes-vous sûr.e de vouloir vider votre historique ? Si vous avez récemment ouvert un lien partagé, vous pourriez perdre tout morceau/break personnalisé créé précédemment."
     },
     "config": {
         "stroke-volume-defaults": "Par défaut",

@@ -1,4 +1,4 @@
-**Handzeichen:** *(Noch keins.)*
+**Sign:** *(None yet.)*
 
 ## Hintergrund
 
@@ -14,7 +14,7 @@ Norppas dar.
 inspiriert, basiert aber nicht direkt auf einer bestimmten Musikrichtung oder
 einem bestimmten Lied.
 
-**Handzeichen:** *(Noch keins.)*
+**Sign:** *(None yet.)*
 
 **Geschichte:** 2021 in alten Noten von RoR Helsinki wieder entdeckt
 
