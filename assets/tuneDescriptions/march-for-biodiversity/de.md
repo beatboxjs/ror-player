@@ -1,4 +1,4 @@
-**Handzeichen:** *(Noch keins.)*
+**Sign:** *(None yet.)*
 
 ## Hintergrund
 
@@ -8,7 +8,7 @@ Auswirkungen von Umweltverschmutzung.
 
 **Musikalischer Hintergrund:** *(Mehr Informationen notwendig.)*
 
-**Handzeichen:** *(Noch keins.)*
+**Sign:** *(None yet.)*
 
 **Geschichte:** Auf dem TNM 2019 in Litauen von RoR Helsinki vorgestellt.
 
