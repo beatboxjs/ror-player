@@ -1,22 +1,22 @@
-**Sign:** put the fingertips together with straight fingers, building a top of a
-mountain with both hands
+**Signe:** Mettre les doigts droits et joints, créant le sommet d'une montagne
+avec les deux mains
 
 ## Contexte
 
-**Musical background:** The song is based on the song [Bella
-Ciao](https://en.wikipedia.org/wiki/Bella_ciao), a song used by the Italian
-partisans who resisted against Nazi Germany. The Repi line, Break 1 and the
-Intro resemble the rhythm of the song.
+**Contexte musical:** Basé sur la chanson [Bella
+Ciao](https://en.wikipedia.org/wiki/Bella_ciao), utilisée par les partisans
+italiens qui ont résisté à l'Allemagne nazie. La partie du Repi, Break 1 et
+l'Intro ressemblent au rythme de la chanson.
 
-**History:** Introduced by RoR Zürich in 2024, shared and extended (yay!) on the
-TNM 2024.
+**Histoire:** Présentée par RoR Zürich en 2024, puis partagée et approfondie
+pendant le TNM 2024.
 
 ## Difficulté
 
-* **Low Surdo:** medium
+* **Surdo Moyen:** moyenne
 * **Surdo moyen:** moyenne
 * **Repi:** moyenne
 * **Caisse claire:** difficile
 * **Tamborim:** moyenne
 * **Agogô:** facile
-* **Shaker:** medium
+* **Shaker:** moyenne

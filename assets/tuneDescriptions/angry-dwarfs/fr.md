@@ -1,21 +1,23 @@
-**Sign:** looking angry, forming an A with hands over your head (as a pointed
-cap).
+**Signe:** avec l'air énervé, faire un A avec les mains au dessus de la tête
+(comme un chapeau pointu).
 
 ## Contexte
 
-**Name:** The original name of this tune was German „Wütende Heinzelmenschen“,
-which has been translated as “angry dwarfs”. „Heinzelmenschen“ (officially but
-gendered: „Heinzelmännchen“) are small human creatures in a local tale in
-Cologne, who, according to the tale, secretly did all the work for the people of
-Cologne at night, so that the people could be lazy during the day. One day,
-someone got curious to see them and set up a trap, so they got really angry and
-left. From that day on the people had to do all the work themselves.
+**Nom:** Le nom original de ce morceau était en allemand „Wütende
+Heinzelmenschen“, ce qui a été traduit en "angry dwarfs" (soit "nains énervés").
+„Heinzelmenschen“ (officiellement mais genré : „Heinzelmännchen“) sont des
+petites créatures humanoïdes d'un conte local de Cologne qui, selon l'histoire,
+effectuaient tout le travail des habitant.e.s de Cologne pendant la nuit, et les
+gens pouvaient se la couler douce pendant la journée. Mais un jour, une personne
+curieuse a tendu un piège pour les observer, ce qui les a profondément
+énervé.e.s et les a fait partir. Depuis ce jour les gens de Cologne doivent
+travailler eux-même.
 ([Wikipedia](https://en.wikipedia.org/wiki/Heinzelm%C3%A4nnchen))
 
-**Sign:** The hand signal refers to the pointed cap that Heinzelmenschen are
-wearing on their heads.
+**Signe:** La forme de A sur la tête fait référence au chapeau pointu que les
+Heinzelmenschen portent.
 
 **Contexte musical:** *(+ d'infos nécessaires)*
 
-**History:** Local tune from RoR Cologne, published in 2006. Was removed from
-the tune sheet in 2012.
+**Histoire:** Morceau local de RoR Cologne, publiée en 2006. A été supprimée du
+répertoire en 2012.

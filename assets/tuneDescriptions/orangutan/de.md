@@ -1,19 +1,20 @@
-A quite groovy tune that can be played slowly for a long time. The Surdos make a
-melody, so they are suitable to be played by one Surdo player with three Surdos.
+Ein recht grooviger Tune, der auch langsam lange gespielt werden kann. Die
+Surdos spielen eine Melodie, daher ist es auch möglich, dass eine Person alle
+drei Surdos spielt.
 
-**Sign:** monkey, both hands in armpits
+**Handzeichen:** Einen Affen darstellen, beide Hände in den Achseln
 
 ## Hintergrund
 
-**Name:** Orangutan is a critically endangered species of apes native to
-south-east Asia.
+**Name:** Orang-Utans sind eine vom Aussterben bedrohte Art von Menschenaffen,
+die in Südostasien beheimatet sind.
 
 **Musikalischer Hintergrund:** *(Mehr Informationen notwendig.)*
 
-**Sign:** The sign depicts a monkey
+**Handzeichen:** Das Zeichen stellt einen Affen dar
 
-**History:** Introduced to the network by RoR London in 2012, was probably
-played there before?
+**Geschichte:** Wurde dem Netzwerk 2012 von RoR London vorgestellt, vermutlich
+wurde es dort schon vorher gespielt?
 
 ## Kontroversen
 
@@ -28,4 +29,4 @@ werden).
 * **Repi:** mittel
 * **Snare:** mittel
 * **Tamborim:** einfach
-* **Agogô:** tricky
+* **Agogô:** schwierig
