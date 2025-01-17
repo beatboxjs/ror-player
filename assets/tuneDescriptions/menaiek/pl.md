@@ -15,7 +15,7 @@ music.
 
 ## Poziom trudności
 
-* **Low Surdo:** easy
+* **Niskie Surdo:** łatwy
 * **Mid/High Surdo:** tricky
 * **Repi:** hard
 * **Snare:** hard
