@@ -44,7 +44,7 @@ name+sign for the tune.
   played to fast.)
 * **Repi:** medium
 * **Snare:** easy
-* **Tamborim:** easy
+* **:Tamborim:** łatwy
 * **Agogô:** easy
 
 ## Breaks
