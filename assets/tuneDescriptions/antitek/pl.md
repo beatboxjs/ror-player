@@ -13,5 +13,5 @@ jakbyś zoomowałx.
 * **Surda:** łatwy
 * **Repi:** łatwy
 * **Werbel:** łatwy
-* **Tamborim:** medium
+* **Tamborim:** średni
 * **Agogô:** easy
