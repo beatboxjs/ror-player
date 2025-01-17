@@ -34,7 +34,7 @@ that the new wave will come and bring the deported slaves back home.
 * **Surdos:** medium
 * **Repi:** łatwy
 * **Snare:** easy
-* **Tamborim:** easy
+* **:Tamborim:** łatwy
 * **Agogô:** easy – in fact the same as in Karla Shnikov
 
 ## Breaks
