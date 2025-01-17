@@ -34,7 +34,7 @@ in 2006, although it is not clear whether it is the same tune.
 
 ## Trudność
 
-* **Low Surdo:** hard
+* **Niskie Surdo:** trudne
 * **Mid Surdo:** easy
 * **High Surdo:** easy
 * **Repi:** hard
