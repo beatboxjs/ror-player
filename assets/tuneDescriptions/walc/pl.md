@@ -15,10 +15,10 @@ our tune comes from Polish “walc” for Waltz and “walcz” for “fight!”
 
 **History:** Introduced by RoR Kraków in 2016.
 
-## Trudność
+## Poziom trudności
 
 * **Surdos:** easy
-* **Repi:** easy
+* **Repi:** łatwy
 * **Snare:** medium
 * **Tamborim:** easy
 * **Agogô:** easy
