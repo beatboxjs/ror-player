@@ -22,4 +22,4 @@ played there before?
 * **Repi:** hard
 * **Snare:** hard
 * **Tamborim:** hard
-* **Agogô:** medium
+* **Agogô:** średni
