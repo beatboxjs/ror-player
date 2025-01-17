@@ -31,7 +31,7 @@ doesn't actually sound like Funk. *(More info needed.)*
 A slightly different version called “Lego Funk” has been played by Barking
 Bateria: [SoundCloud](https://soundcloud.com/barking-bateria/lego-funk)
 
-## Trudność
+## Poziom trudności
 
 Good to begin with, because all instruments are quite easy:
 
