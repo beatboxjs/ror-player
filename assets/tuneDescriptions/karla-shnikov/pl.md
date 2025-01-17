@@ -15,7 +15,7 @@ way!
 Move index+middle finger like rabbit ears and cover other fingers with other
 hand.
 
-## Background
+## Kontekst
 
 **Name:** Based on a fictional character invented by RoR called Karla Shnikov, a
 Russian activist who was one of Trotzky’s secret lovers and was first a
