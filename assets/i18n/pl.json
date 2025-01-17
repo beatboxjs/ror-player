@@ -1,1 +1,285 @@
-{}
+{
+    "utils": {
+        "time-days-ago_one": "{{count}} dzień temu",
+        "time-days-ago_few": "{{count}} dni temu",
+        "time-days-ago_many": "{{count}} dni temu",
+        "time-yesterday": "Wczoraj",
+        "time-month-mar": "ma.",
+        "time-month-jun": "czerw.",
+        "time-day-and-time": "{{day}} {{time}}",
+        "time-today": "Dzisiaj",
+        "time-weeks-ago_one": "{{count}} tydzień temu",
+        "time-weeks-ago_few": "{{count}} tygodni temu",
+        "time-weeks-ago_many": "{{count}} tygodni temu",
+        "time-months-ago_one": "{{count}} miesiąc temu",
+        "time-months-ago_few": "{{count}} miesięcy temu",
+        "time-months-ago_many": "{{count}} miesięcy temu",
+        "time-month-may": "maj",
+        "time-month-apr": "kwie.",
+        "time-month-aug": "sie.",
+        "time-month-sep": "wrze.",
+        "time-month-oct": "paź.",
+        "time-month-nov": "list.",
+        "time-month-dec": "gru.",
+        "time-day-with-year": "{{day}} {{month}} {{year}}",
+        "time-day-without-year": "{{day}} {{month}}",
+        "time-month-jul": "lip.",
+        "time-month-feb": "lu.",
+        "time-month-jan": "sty.",
+        "time-years-ago_one": "{{count}} rok temu",
+        "time-years-ago_few": "{{count}} lata temu",
+        "time-years-ago_many": "{{count}} lata temu"
+    },
+    "rename-pattern-dialog": {
+        "different-tune-move": "Przesuń do innego rytmu?",
+        "empty-name-error": "Wprowadź nową nazwę dla tego brejku.",
+        "duplicate-name-error": "Ta nazwa jest już zajęta. Wybierz inną nazwę.",
+        "title-copy": "Kopiuj brejk",
+        "title-rename": "Zmień nazwę brejka",
+        "mode": "Tryb",
+        "mode-rename": "Zmień nazwę",
+        "mode-move": "Przesuń",
+        "mode-copy": "Kopiuj",
+        "title-move": "Przesuń brejk",
+        "different-tune-copy": "Skopiować do innego rytmu?",
+        "new-name": "Nowa nazwa"
+    },
+    "import-dialog": {
+        "unrecognized-format-error": "Format nierozpoznawany.",
+        "decoding-error": "Błąd przy dekodowaniu wklejonych danych: {{message}}",
+        "paste-placeholder": "Wklej link lub przedmiot raw data…",
+        "songs": "Utwory",
+        "tunes-breaks": "Rytmy/Brejki",
+        "song-exists": "Utwór już istnieje.",
+        "customize-selection": "Dostosuj wybór",
+        "break-exists-different": "Już istnieje. Wersja lokalna zostanie nadpisana.",
+        "import-button": "Importuj",
+        "break-used": "Brejk jest używany w utworze, nie może zostać wyłączony.",
+        "break-exists-identical": "Brejk już istnieje.",
+        "title": "Importuj"
+    },
+    "pattern-list": {
+        "remove-break": "Usuń",
+        "create-pattern-title": "Stwórz brejk",
+        "create-pattern-empty-name-error": "Nazwij nowy brejk.",
+        "create-pattern-duplicate-name-error": "Ta nazwa jest już zajęta. Wybierz inną nazwę.",
+        "create-pattern-ok": "Stwórz",
+        "remove-pattern-title": "Usuń brejk",
+        "remove-pattern-message": "Czy na pewno chcesz usunąć {{patternName}} ({{tuneName}})?",
+        "create-tune-ok": "Stwórz",
+        "rename-tune-title": "Zmień nazwę rytmu",
+        "rename-tune-empty-name-error": "Wprowadź nową nazwę dla tego rytmu.",
+        "rename-tune-duplicate-name-error": "Ta nazwa jest już zajęta. Wybierz inną nazwę.",
+        "copy-tune-title": "Kopiuj rytm",
+        "copy-tune-empty-name-error": "Wprowadź nową nazwę dla tego rytmu.",
+        "remove-tune-ok": "Usuń",
+        "user-created-tune": "Rytm stworzony przez użytkowniczkx",
+        "copy-move-rename-break": "Kopiuj/Przesuń/Zmień nazwę brejku",
+        "copy-break": "Kopiuj brejk",
+        "rename-tune": "Zmień nazwę rytmu",
+        "copy-tune": "Kopiuj rytm",
+        "remove-tune": "Usuń rytm",
+        "create-tune": "Nowy rytm",
+        "create-tune-title": "Stwórz rytm",
+        "create-tune-duplicate-name-error": "Ta nazwa jest już zajęta. Wybierz inną nazwę.",
+        "remove-tune-title": "Usuń rytm",
+        "create-break": "Nowy brejk",
+        "remove-pattern-ok": "Usuń",
+        "create-tune-empty-name-error": "Nazwij nowy rytm.",
+        "rename-tune-ok": "Zmień nazwę",
+        "copy-tune-duplicate-name-error": "Ta nazwa jest już zajęta. Wybierz inną nazwę.",
+        "copy-tune-ok": "Kopiuj",
+        "remove-tune-message": "Czy na pewno chcesz usunąć rytm {{tuneName}}?"
+    },
+    "i18n": {
+        "general-breaks": "Brejki Generalne",
+        "special-breaks": "Brejki Specjalne",
+        "shouting-breaks": "Brejki Krzyczane",
+        "tune": "Rytm",
+        "silence": "{{beats}} Cisza",
+        "whistle-in": "Gwizdek"
+    },
+    "general": {
+        "untitled-song": "Utwór bez tytułu",
+        "dialog-close": "Zamknij",
+        "dialog-ok": "OK",
+        "dialog-cancel": "Anuluj"
+    },
+    "history-picker": {
+        "shared-link": "Otworzyłxś udostępniony link. Twoje poprzednie utwory i rytmy mogą być odzyskane tutaj.",
+        "import-error-title": "Błąd podczas ładowania danych",
+        "clear-title": "Wyczyść historie",
+        "clear-ok": "Wyczyść",
+        "history-alt": "Historia",
+        "clear": "Wyczyść",
+        "clear-message": "Czy jesteś pewnx, że chcesz wyczyścić swoją historie? Jeśli ostatnio otwierałxś udostępniony link możesz utracić personalizowane rytmy/brejki/utwory, które wcześniej utowrzyłxś."
+    },
+    "share-dialog": {
+        "link": "Link",
+        "title": "Udostępnij",
+        "raw-compressed": "Raw (skompresowane)",
+        "raw-uncompressed": "Raw (nieskompresowane)",
+        "link-description": "Otworzenie tego URL otworzy wybrane poniżej utwory i dostęp do listy rytmów/brejków.",
+        "raw-description": "Żeby zyskać dostęp w playerze do wybranych poniżej rytmów/brejków skopiuj te dane do menu \"Importuj\".",
+        "customize-heading": "Dostosuj wybór",
+        "customize-tooltip-default": "Zostanie otworzone domyślnie",
+        "customize-tooltip-used": "Użyte w utworze, nie można wyłączyć",
+        "customize-songs": "Utwory",
+        "customize-tunes-breaks": "Rytmy/Brejki"
+    },
+    "compose": {
+        "add-to-song-tooltip": "Dodaj do utworu"
+    },
+    "state": {
+        "untitled-song": "Utwór bez tytułu {{no}}"
+    },
+    "song-picker": {
+        "rename-title": "Wprowadź nazwę utworu",
+        "rename-ok": "Zmień nazwę",
+        "copy-of-song-name": "Kopia {{name}}",
+        "remove-title": "Usuń utwór",
+        "remove-message": "Czy na pewno chcesz usunąć ten utwór {{name}}?",
+        "remove-ok": "Usuń",
+        "copy-tooltip": "Kopiuj",
+        "remove-tooltip": "Usuń",
+        "new-song": "Nowy utwór",
+        "copy-song-name": "Kopia",
+        "rename-tooltip": "Zmień nazwę"
+    },
+    "song-player-toolbar": {
+        "import": "Importuj",
+        "share": "Udostępnij",
+        "clear-song-ok": "Wyczyść",
+        "clear-song-title": "Wyczyść utwór",
+        "clear-song-message": "Czy na pewno chcesz wyczyścić bieżący utwór?",
+        "tools": "Narzędzia",
+        "clear-song": "Wyczyść utwór",
+        "export-mp3": "Eksportuj MP3",
+        "export-wav": "Eksportuj WAV"
+    },
+    "song-player": {
+        "all-instruments": "Wszystkie",
+        "remove-tooltip": "Usuń",
+        "all-instruments-drop": "(Wszystkie)",
+        "pick-intruments-tooltip": "Wybierz instrumenty"
+    },
+    "help": {
+        "user-manual": "Instrukcja obsługi",
+        "app": "{{appName}}",
+        "source-code": "Kod źródłowy na GitHub",
+        "download": "Pobierz {{appName}}",
+        "report-problem": "Zgłoś problem",
+        "language": "Język"
+    },
+    "example-song-player": {
+        "listen": "Posłuchaj",
+        "download-mp3": "Pobierz jako MP3"
+    },
+    "tune-info": {
+        "notation": "Notacja",
+        "tune-sheet-pdf": "Nuty utworu (PDF)",
+        "video": "Wideo",
+        "sounds": "Dźwięki",
+        "download-mp3": "Pobierze jako MP3",
+        "notation-info": "Kliknij {{pen}} na brejkach żeby zobaczyć nuty."
+    },
+    "pattern-player-dialog": {
+        "share": "Udostępnij"
+    },
+    "pattern-player": {
+        "restore-title": "Przywróć oryginał",
+        "restore-ok": "Przywróć",
+        "restore": "Przywróć oryginał",
+        "restore-message": "Czy na pewno chcesz cofnąć swoje modyfikacje i przywrócić oryginalny brejk?"
+    },
+    "time-signature-picker": {
+        "time-signature": "Metrum: {{time}}"
+    },
+    "upbeat-picker": {
+        "upbeat": "Przedtakt: {{upbeat}}"
+    },
+    "mute-button": {
+        "mute-all": "Wycisz wszystkie instrumenty",
+        "unmute-all": "Wyłącz wyciszenie wszystkich instrumentów"
+    },
+    "playback-settings-picker": {
+        "title": "Ustawienia odtwarzania",
+        "speed": "Prędkość",
+        "speed-reset": "Resetuj",
+        "loop": "Pętla",
+        "whistle": "Gwizdek",
+        "whistle-off": "Nie",
+        "volume-master": "Master",
+        "whistle-all": "Na każdy",
+        "whistle-one": "Na raz"
+    },
+    "export": {
+        "error-title": "Błąd przy eksportowaniu {{type}}"
+    },
+    "overview": {
+        "listen": "Posłuchaj",
+        "compose": "Komponuj"
+    },
+    "pattern-list-filter": {
+        "filter-placeholder": "Filtr: {{category}}"
+    },
+    "pattern-placeholder": {
+        "restore-title": "Przywróć oryginał",
+        "restore-ok": "Przywróć",
+        "show-notes-tooltip": "Pokaż nuty",
+        "restore-tooltip": "Przywróć oryginał",
+        "user-created-tooltip": "Brejk stworzny przez użytkowniczkx",
+        "edit-notes-tooltip": "Edytuj nuty",
+        "restore-message": "Czy na pewno chcesz cofnąć swoje modyfikacje w {{patternName}} ({{tuneName}}) i przywrócić oryginalny brejk?",
+        "listen-tooltip": "Posłuchaj"
+    },
+    "play-pause-stop-button": {
+        "pause": "Pauza",
+        "play": "Odtwarzaj",
+        "stop": "Stop"
+    },
+    "update": {
+        "new-version": "Nowa wersja {{appName}} jest dostępna.",
+        "refresh": "{{refresh}} to update.",
+        "refresh-refresh": "Odśwież stronę"
+    },
+    "config": {
+        "instruments-ls": "Niskie Surdo",
+        "instruments-ms": "Średnie Surdo",
+        "instruments-re": "Repi",
+        "instruments-sn": "Werbel",
+        "instruments-ta": "Tamborim",
+        "instruments-sh": "Shaker",
+        "stroke-description-hd": "Uderzenie ręką",
+        "stroke-description-fl": "Flara",
+        "stroke-description-w": "Miotełka (tamborim)",
+        "stroke-description-.": "Tłumione uderzenie",
+        "stroke-description-sil": "Tłumione uderzenie",
+        "stroke-description-wh": "Gwizdek",
+        "stroke-description-wh2": "Długi gwizdek",
+        "stroke-description-s": "Delikatna flara",
+        "time-with-triplets": "{{time}} z triolami",
+        "category-all": "Wszystkie rytmy",
+        "category-common": "Powszechne rytmy",
+        "category-new": "Nowe rytmy",
+        "category-custom": "Personalizowane rytmy",
+        "category-onesurdo": "Jedno Surdo",
+        "category-easy": "Łatwy",
+        "category-medium": "Średni",
+        "stroke-volume-defaults": "Domyślne",
+        "stroke-volume-shitty": "Gówniane głośniki",
+        "stroke-description-0": "Stłum ręką",
+        "category-tricky": "Skomplikowany",
+        "category-cultural-appropriation": "Zawłaszczenie kulturowe",
+        "category-western": "Muzyka zachodnia",
+        "instruments-hs": "Wysokie Surdo",
+        "category-proposed": "Proponowane rytmy",
+        "time-with-quintuplets": "{{time}} z kwintolami",
+        "category-uncommon": "Rzadkie rytmy",
+        "instruments-ag": "Agogô",
+        "instruments-ot": "Okrzyki"
+    },
+    "pattern-length-picker": {
+        "length": "Długość: {{length}}"
+    }
+}
