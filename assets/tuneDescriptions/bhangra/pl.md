@@ -49,7 +49,7 @@ Bateria in 2004/2005.
 
 ## Poziom trudności
 
-* **Surdos:** easy
+* **Surda:** łatwy
 * **Repi:** łatwy
 * **Snare:** easy
 * **Tamborim:** medium
