@@ -16,7 +16,7 @@ in the official tune sheets. Was rediscovered in 2021.
 
 ## Poziom trudności
 
-* **Low Surdo:** easy
+* **Niskie Surdo:** łatwy
 * **Mid Surdo:** medium
 * **High Surdo:** hard
 * **Repi:** hard
