@@ -1,16 +1,18 @@
-**Sign:** smoke a joint like a cup of tea (with thumb and index finger)
+**Handzeichen:** einen Joint rauchen, aber dabei die Finger wie beim Teetrinken
+halten (mit Daumen und Zeigefinger)
 
 ## Hintergrund
 
-**Name:** See Samba Reggae. Sheffield is a city in the UK that used to have a
-very active RoR band.
+**Name:** Siehe Samba Reggae. Sheffield ist eine Stadt in Großbritannien, wo es
+einst eine sehr aktive RoR-Band gab.
 
-**Musical background:** A typical Samba Reggae tune.
+**Musikalischer Hintergrund:** Ein typischer Samba-Reggae-Rhythmus.
 
-**Sign:** The sign is a mix between drinking tea and smoking a joint. Drinking
-tea is a common activity in the UK (not sure if there is a specific connection
-to Sheffield). Smoking joints is a main ritual in the Rastafari religion, which
-is closely linked to Reggae music.
+**Handzeichen:** Das Handzeichen ist eine Mischung zwischen Teetrinken und
+Joint-Rauchen. Teetrinken ist eine verbreitete Aktivität in Großbritannien
+(nicht sicher, ob Sheffield hierbei eine bestimmte Rolle spielt). Joints zu
+rauchen ist eines der Hauptrituale in der Religion der Rastafari, welche eng mit
+Reggaemusik verwoben ist.
 
 **Geschichte:** Wurde dem Netzwerk 2012 von RoR London vorgestellt, vermutlich
 wurde es dort schon vorher gespielt?
@@ -23,8 +25,8 @@ Mitglieder des RoR-Netzwerks sehen es als kulturelle Aneignung diesen Tune in
 unseren größtenteils weißen europäischen Bands zu spielen, und es gibt laufende
 Diskussionen darüber, den Tune zu entfernen.
 
-There is also some criticism towards the sign, which is based on a racist
-stereotype.
+Es gibt auch Kritik am Handzeichen, welches auf einem rassistischen Stereotyp
+basiert.
 
 ## Schwierigkeit
 
