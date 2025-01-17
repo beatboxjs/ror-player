@@ -77,4 +77,4 @@ ongoing debate on whether this tune should be abandoned.
 * **Repi:** medium
 * **Snare:** hard
 * **:Tamborim:** łatwy
-* **Agogô:** medium
+* **Agogô:** średni
