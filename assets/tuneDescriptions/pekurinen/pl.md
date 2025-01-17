@@ -1,6 +1,6 @@
 **Sign:** *(None yet.)*
 
-## Background
+## Kontekst
 
 **Name:** Arndt Pekurinen (1905–1941) was a Finnish pacifist and antimilitarist,
 who opposed all forms of violence, and refused to join the war. He was
