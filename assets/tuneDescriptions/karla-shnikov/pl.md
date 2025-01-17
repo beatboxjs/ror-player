@@ -45,7 +45,7 @@ name+sign for the tune.
 * **Repi:** medium
 * **Werbel:** łatwy
 * **:Tamborim:** łatwy
-* **Agogô:** easy
+* **Agogô:** łatwy
 
 ## Brejki
 
