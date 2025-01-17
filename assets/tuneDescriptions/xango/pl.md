@@ -65,7 +65,7 @@ In 1983, there was a conference on the orixa tradition and culture in Salvador
 elements in Candomblé (especially imagery of saints). Today it’s hotly debated
 whether to do this or not.
 
-## Controversies
+## Kontrowersje
 
 Since this tune is directly rooted in Afro-Brazilian religion, many people in
 the RoR network consider it cultural appropriation to play it. There is an
