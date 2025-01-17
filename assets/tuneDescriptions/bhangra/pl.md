@@ -55,7 +55,7 @@ Bateria in 2004/2005.
 * **Tamborim:** medium
 * **Agogô:** easy
 
-## Breaks
+## Brejki
 
 * Break 1 and 2: are very similar, but luckily, there are memory-phrases to help
   you memorize and distinguish them. Singing them together in a rehearsal is
