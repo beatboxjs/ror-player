@@ -13,7 +13,7 @@ KRS-One. The song criticizes police brutality and systemic racism.
 * **Mid/High Surdo:** medium
 * **Repi:** hard
 * **Werbel:** łatwy
-* **Tamborim:** medium
+* **Tamborim:** średni
 * **Agogô:** easy
 
 ## Brejki
