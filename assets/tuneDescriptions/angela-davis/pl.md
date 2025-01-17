@@ -49,7 +49,7 @@ i aktywnie współpracowała z opresyjnym reżimem Związku Radzieckiego.
 * **Repi:** łatwy
 * **Werbel:** łatwy (istnieją różne wariacje)
 * **:Tamborim:** łatwy
-* **Agogô:** medium
+* **Agogô:** średni
 
 ## Breaks
 
