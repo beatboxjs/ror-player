@@ -30,7 +30,7 @@ water against which the protests happened in Cochabamba
 
 **History:** *(More info needed.)*
 
-## Difficulty
+## Trudność
 
 * **Surdos:** medium/hard
 * **Tamb&Repi:** medium (they play the same, a variation of the “ragga”-snare)
