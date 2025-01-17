@@ -14,7 +14,7 @@ the 1990s. It is the main successor of Drum&Bass.
 parties in a squat in London. Was only played occasionally because it was never
 in the official tune sheets. Was rediscovered in 2021.
 
-## Trudność
+## Poziom trudności
 
 * **Low Surdo:** easy
 * **Mid Surdo:** medium
