@@ -24,7 +24,7 @@ Kraftwerk ([YouTube](https://www.youtube.com/watch?v=XMVokT5e0zs)).
 
 ## Poziom trudności
 
-* **Surdos:** easy
+* **Surda:** łatwy
 * **Repi:** tricky
 * **Snare:** medium
 * **:Tamborim:** łatwy
