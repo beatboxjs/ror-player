@@ -6,31 +6,31 @@ połączenie wysokich i zwykłych uderzeń.
 
 **Znak:** rozerwij więzienne kraty przed twoją twarzą
 
-## Background
+## Kontekst
 
-**Name:** Angela Davis is an Afro-American activist from the USA. She
-experienced a lot of oppression as a university professor due to her political
-views and involvement in the black liberation, communist and radical feminist
-movement. She became a major figure of the prison abolishment movement after
-being imprisoned for a murder that she did not commit.
-([Wikipedia](https://en.wikipedia.org/wiki/Angela_Davis), see also the
-documentary “Free Angela & All Political Prisoners”)
+**Nazwa:** Angela Davis jest afro-amerykańską aktywistką z USA. Jako profesorka
+na uniwersytecie doświadczyła opresji ze względu na jej poglądy polityczne i
+zaangażowanie w ruch praw obywatelskich, ruch komunistyczny i ruch radykalnego
+feminizmu. Została jedną z większych figur ruchu antywięziennego po tym, jak
+została wrzucona do więzienia za morderstwo, którego nie popełniła.
+([Wikipednia](https://en.wikipedia.org/wiki/Angela_Davis), a także film
+dokumentalny "Free Angela & All Political Prisoners")
 
-**Musical background:** Break 1 sounds like from “Sex machine” by James Brown,
-Low Surdo is based on the drumset rhythm of this song, not sure if the rest of
-the tune is also based on his music.
+**Kontekst muzyczny:** Brejk 1 jest inspirowany fragmentem "Sex machine" Jamesa
+Browna. Partia Niskiego Surda jest oparta o rytm perkusji z tej samej piosenki.
+Reszta rytmu również może być oparta o jego muzykę.
 
-**Sign:** The sign represents prison bars, because Angela Davis is a major
-figure in the prison abolishment movement.
+**Znak:** Znak przedstawia kraty więzienne, ponieważ Angela Davis jest jedną z
+głównych figur ruch antywięziennego.
 
-**History:** Part of the first set of tunes taken from Barking Bateria in 2000.
-The name used to be “James Brown” (famous musician from the USA) and the sign
-was to depict an afro haircut. James Brown didn’t have an afro haircut for most
-of his life, but later got one as it became a symbol of Black pride. The tune
-was renamed because of domestic violence and rape accusations against James
-Brown, and Angela Davis was chosen because she fit the tune sign. Later the tune
-sign was changed. We consider both the old tune sign itself and the fact that
-Angela Davis was chosen because of her afro hair as racist.
+**Historia:** Rytm z pierwszego kompletu rytmów wziętych od Barking Bateria w
+2000 r. Kiedyś się nazywał "James Brown" (znany muzyk z USA) i znak przedstawiał
+fryzurę afro. James Brown zaczął nosić afro dopiero później, kiedy stało się ono
+symbolem Czarnej dumy. Rytm został przemianowany z powodu oskarżeń o przemoc
+domową i gwałt skierowanych w Jamesa Browna. Wybrano Angele Davis, ponieważ
+pasowała do ówczesnego znaku. Później zmieniono znak rytmu. Uważamy, że zarówno
+stary znak sam w sobie, jak i fakt, że wybrano Angele Davis ze względu na jej
+afro, jest rasistowski.
 
 ## Controversies
 
