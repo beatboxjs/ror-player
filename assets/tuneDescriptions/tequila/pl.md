@@ -33,7 +33,7 @@ before drinking Tequila. The tune sign represents using a salt shaker.
 * **Mid Surdo:** medium
 * **High Surdo:** easy
 * **Repi:** hard
-* **Snare:** easy
+* **Werbel:** łatwy
 * **:Tamborim:** łatwy
 * **Agogô:** średni
 
