@@ -19,7 +19,7 @@ played there before?
 ## Poziom trudności
 
 * **Surda:** łatwy
-* **Repi:** hard
+* **Repi:** trudny
 * **Snare:** hard
 * **Tamborim:** hard
 * **Agogô:** średni
