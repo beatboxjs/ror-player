@@ -15,7 +15,7 @@ south-east Asia.
 **History:** Introduced to the network by RoR London in 2012, was probably
 played there before?
 
-## Controversies
+## Kontrowersje
 
 There is a debate about removing all monkey references from the tune name and
 breaks, since racist stereotypes associate monkeys with Black people (who are
