@@ -51,7 +51,7 @@ There is also some criticism about the sign, since it ridicules the spiritual
 meaning of the rhythm, and shaving the armpits is a loaded topic in our
 patriarchal society.
 
-## Trudność
+## Poziom trudności
 
 * **Low Surdo:** easy
 * **Mid/High Surdo:** medium (they play the same…)
