@@ -30,7 +30,7 @@ the name.)*
 
 **History:** Part of the first set of tunes taken from Barking Bateria in 2000.
 
-## Difficulty
+## Trudność
 
 * **Low Surdo:** easy
 * **Mid Surdo:** easy
