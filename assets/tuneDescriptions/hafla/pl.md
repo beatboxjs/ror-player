@@ -14,7 +14,7 @@ rhythms that are typically played on hand drums such as the Dumbek
 
 **History:** Introduced by RoR Tel Aviv on TNM 2011.
 
-## Trudność
+## Poziom trudności
 
 * **Low Surdo:** easy
 * **Mid Surdo:** medium
