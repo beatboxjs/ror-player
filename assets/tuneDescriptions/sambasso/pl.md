@@ -16,7 +16,7 @@ Reggae style. *(More info needed.)*
 **History:** Introduced to the network by RoR London in 2012, was probably
 played there before?
 
-## Trudność
+## Poziom trudności
 
 * **Surdos:** easy
 * **Repi:** hard
