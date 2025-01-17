@@ -26,5 +26,5 @@ also often associated with drumming).
 * **Surdos:** easy
 * **Repi:** medium
 * **Snare:** medium
-* **Tamborim:** easy
+* **:Tamborim:** łatwy
 * **Agogô:** tricky
