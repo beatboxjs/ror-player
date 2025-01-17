@@ -40,7 +40,7 @@ pronounced with an English accent).
 **History:** Part of the second round of tunes that was introduced by Barking
 Bateria in 2004/2005.
 
-## Controversies
+## Kontrowersje
 
 Since this rhythm is directly rooted in Afro-Brazilian religion, many people in
 the RoR network consider it cultural appropriation to play it. There is an
