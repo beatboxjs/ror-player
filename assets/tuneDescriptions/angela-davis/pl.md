@@ -43,10 +43,9 @@ i aktywnie współpracowała z opresyjnym reżimem Związku Radzieckiego.
 
 ## Trudność
 
-* **Low Surdo:** hard
-* **Mid Surdo:** easy to remember, but hard to play it without beeing to fast
-  nor to slow
-* **High Surdo:** medium
+* **Niskie Surdo:** trudne
+* **Średnie Surdo:** łatwe do zapamiętania, ale trudne do grania równo
+* **Wysokie Surdo:** średni
 * **Repi:** easy
 * **Snare:** easy (there are some variations)
 * **Tamborim:** easy
