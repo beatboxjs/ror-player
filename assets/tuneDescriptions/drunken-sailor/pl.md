@@ -5,7 +5,7 @@ morning”).
 
 **Sign:** build an eyepatch with one hand in front of your eye
 
-## Background
+## Kontekst
 
 **Name:** “What shall we do with the drunken sailor” is a traditional sea
 shanty, probably originating from the US in the 1800s. The song is probably
