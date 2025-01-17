@@ -10,7 +10,7 @@ and shared on the TNM 2024 by RoR Zürich.
 
 ## Poziom trudności
 
-* **Low Surdo:** easy
+* **Niskie Surdo:** łatwy
 * **Mid Surdo:** easy
 * **Repi:** medium
 * **Snare 1:** tricky
