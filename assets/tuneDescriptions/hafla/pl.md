@@ -24,7 +24,7 @@ rhythms that are typically played on hand drums such as the Dumbek
 * **Tamborim:** medium
 * **Agogô:** średni
 
-## Breaks
+## Brejki
 
 * Hafla Break/Yala break is similar to the first two counts of the Tamb line.
 * Kick Back 1 Break is like the Hafla Break with alternating surdo and
