@@ -47,10 +47,10 @@ Southeast Asia. In Hindu, the gesture is called Namaste.
 **History:** Part of the second round of tunes that was introduced by Barking
 Bateria in 2004/2005.
 
-## Trudność
+## Poziom trudności
 
 * **Surdos:** easy
-* **Repi:** easy
+* **Repi:** łatwy
 * **Snare:** easy
 * **Tamborim:** medium
 * **Agogô:** easy
