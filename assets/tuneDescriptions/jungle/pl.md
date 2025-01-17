@@ -19,7 +19,7 @@ in the official tune sheets. Was rediscovered in 2021.
 * **Niskie Surdo:** łatwy
 * **Mid Surdo:** medium
 * **High Surdo:** hard
-* **Repi:** hard
+* **Repi:** trudny
 * **Snare:** hard
 * **Tamborim:** średni
 * **Agogô:** hard
