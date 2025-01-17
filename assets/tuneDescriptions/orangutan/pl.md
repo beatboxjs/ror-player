@@ -23,7 +23,7 @@ also often associated with drumming).
 
 ## Poziom trudności
 
-* **Surdos:** easy
+* **Surda:** łatwy
 * **Repi:** medium
 * **Snare:** medium
 * **:Tamborim:** łatwy
