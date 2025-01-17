@@ -39,4 +39,4 @@ ongoing debate on whether this tune should be abandoned.
 * **Repi:** medium
 * **Snare:** medium
 * **:Tamborim:** łatwy
-* **Agogô:** medium
+* **Agogô:** średni
