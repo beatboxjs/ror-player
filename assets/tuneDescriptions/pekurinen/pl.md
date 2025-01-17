@@ -23,4 +23,4 @@ non-military civil service.
 * **Repi:** tricky
 * **Snare:** tricky
 * **Tamborim:** tricky
-* **Agogô:** medium
+* **Agogô:** średni
