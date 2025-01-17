@@ -61,7 +61,7 @@ patriarchal society.
 * **Tamborim:** medium (quite exhausting if played for a long time)
 * **Agogô:** medium (easy to mix up with custard)
 
-## Breaks
+## Brejki
 
 * Break 1, a call&response between Surdos and all others
 * Breaks 2 & 3 which are exchange-surdo-lines for Mid and High Surdos
