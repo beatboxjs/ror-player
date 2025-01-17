@@ -1,6 +1,6 @@
 **Sign:** throw a grenade
 
-## Background
+## Kontekst
 
 **Name:** “Bomba” is the name of a commercial song from artist King Africa. The
 Call Break is inspired on the chorus of this song.
