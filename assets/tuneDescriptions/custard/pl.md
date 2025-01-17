@@ -37,7 +37,7 @@ by the Black liberation movement in Brazil. Many people in the RoR network
 consider it cultural appropriation to play this tune in our mainly white
 European bands, and there is an ongoing debate about abolishing the tune.
 
-## Trudność
+## Poziom trudności
 
 * **Surdos:** medium
 * **Repi:** medium
