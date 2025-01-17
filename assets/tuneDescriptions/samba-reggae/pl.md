@@ -61,4 +61,4 @@ European bands, and there is an ongoing debate about abolishing the tune.
 * **Repi:** medium
 * **Snare:** medium
 * **Tamborim:** easy (clave)
-* **Agogô:** medium
+* **Agogô:** średni
