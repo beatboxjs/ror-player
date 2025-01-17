@@ -22,4 +22,4 @@ Maastricht.”
 * **Repi:** hard
 * **Snare:** medium
 * **Tamborim:** medium
-* **Agogô:** medium
+* **Agogô:** średni
