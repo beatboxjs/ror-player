@@ -41,7 +41,7 @@ Niektóre członkinie sieci RoR z krajów bałtyckich zwróciły uwagę na fakt,
 Angela Davis (po której jest nazwany rytm) była członkinią Partii Komunistycznej
 i aktywnie współpracowała z opresyjnym reżimem Związku Radzieckiego.
 
-## Difficulty
+## Trudność
 
 * **Low Surdo:** hard
 * **Mid Surdo:** easy to remember, but hard to play it without beeing to fast
