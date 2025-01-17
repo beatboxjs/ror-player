@@ -44,7 +44,7 @@ but Funk is played at least since 2008 in the network)
 * **Tamborim:** medium
 * **Agogô:** hard
 
-## Breaks
+## Brejki
 
 * The Kick Back Breaks are a call & response between Surdos and all others.
   While ‘Kick Back 1’ is quite moderate, ‘Kick Back 2’ is quite fast. Using them
