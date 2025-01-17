@@ -19,7 +19,7 @@ YouTube](https://youtu.be/-udR34x2aTM?t=4)).
 
 ## Poziom trudności
 
-* **Surdos:** easy
+* **Surda:** łatwy
 * **Repi:** hard
 * **Snare:** easy
 * **Tamborim:** medium
