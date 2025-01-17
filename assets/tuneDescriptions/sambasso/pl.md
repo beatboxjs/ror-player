@@ -18,7 +18,7 @@ played there before?
 
 ## Poziom trudności
 
-* **Surdos:** easy
+* **Surda:** łatwy
 * **Repi:** hard
 * **Snare:** hard
 * **Tamborim:** hard
