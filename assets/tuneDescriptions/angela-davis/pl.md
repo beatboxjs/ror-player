@@ -1,10 +1,10 @@
-This tune is one of the RoR basics.
+Jest to jeden z podstawowych rytmów granych w RoR.
 
-In this tune, the Low Surdo swaps one of its beaters for a plastic Repinique
-stick (aka a whippy stick) to get a higher pitched sound. Then it plays a
-combination of high-pitched and normal hits.
+W tym rytmie, Niskie Surdo zamienia jedną ze swoich pałek na plastikową pałkę od
+Repinique (tzw. miotełkę), żeby otrzymać wyższy dźwięk. Tym sposobem gra
+połączenie wysokich i zwykłych uderzeń.
 
-**Sign:** pull two prison bars apart in front of your face
+**Znak:** rozerwij więzienne kraty przed twoją twarzą
 
 ## Background
 
