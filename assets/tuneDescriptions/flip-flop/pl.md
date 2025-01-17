@@ -17,5 +17,5 @@ KRS One ([YouTube](https://www.youtube.com/watch?v=iaYDe3gu1go)).
 * **Mid/High Surdo:** tricky
 * **Repi:** medium
 * **Snare:** tricky
-* **Tamborim:** medium
+* **Tamborim:** średni
 * **Agogô:** średni
