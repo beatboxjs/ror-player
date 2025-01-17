@@ -16,7 +16,7 @@ does not imitate any particular genre or song.
 
 **History:** Rediscovered from old notes by RoR Helsinki in 2021
 
-## Trudność
+## Poziom trudności
 
 * **Low Surdo:** easy
 * **Mid Surdo:** medium
