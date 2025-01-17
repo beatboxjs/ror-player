@@ -18,7 +18,7 @@ comes from the popular Tanzanian type of music “Bongo Flava”.
 **History:** Composed by someone from RoR Vienna during his time in Tanzania in
 2011.
 
-## Controversies
+## Kontrowersje
 
 There is a debate about removing all monkey references from the tune name and
 breaks, since racist stereotypes associate monkeys with Black people (who are
