@@ -1,4 +1,4 @@
-**Handzeichen:** *(Noch keins.)*
+**Handzeichen:** *(Noch keins festgelegt.)*
 
 ## Hintergrund
 
@@ -12,7 +12,7 @@ friedlichen, nicht-militärischen Zivildienst einzuführen.
 
 **Musikalischer Hintergrund:** *(Mehr Informationen notwendig.)*
 
-**Handzeichen:** *(Noch keins.)*
+**Handzeichen:** *(Noch keins festgelegt.)*
 
 **Geschichte:** Auf dem TNM 2019 in Litauen von RoR Helsinki vorgestellt.
 
