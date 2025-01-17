@@ -32,5 +32,5 @@ stereotype.
 * **Wysokie Surdo:** średni
 * **Repi:** hard
 * **Snare:** hard
-* **Tamborim:** medium
+* **Tamborim:** średni
 * **Agogô:** średni
