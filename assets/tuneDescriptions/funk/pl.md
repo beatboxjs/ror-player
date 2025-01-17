@@ -39,7 +39,7 @@ Good to begin with, because all instruments are quite easy:
   memoryhook-phrases)
 * **Repi:** medium (the repi is not that easy, but anyway it’s a good tune to
   begin with, because you find different repi-hits)
-* **Snare:** easy
+* **Werbel:** łatwy
 * **:Tamborim:** łatwy
 * **Agogô:** easy (because they can look at the surdos for almost any hit they
   play)
