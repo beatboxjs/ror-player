@@ -29,7 +29,7 @@ moments to reflect and (natural) silence.
 
 ## Poziom trudności
 
-* **Low Surdo:** easy
+* **Niskie Surdo:** łatwy
 * **Mid Surdo:** medium
 * **High Surdo:** hard
 * **Repi:** hard
