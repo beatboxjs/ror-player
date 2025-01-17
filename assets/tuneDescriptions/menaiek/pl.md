@@ -13,7 +13,7 @@ music.
 
 **History:** Introduced in 2015 by RoR Jerusalem.
 
-## Trudność
+## Poziom trudności
 
 * **Low Surdo:** easy
 * **Mid/High Surdo:** tricky
