@@ -26,31 +26,31 @@ wykorzystywany w ruchach praw obywatelskich. Pionierem Funku jest James Brown.
 perkusyjnej na 1 i 3 oraz uderzenie werbla na 2 i 4. Zdaje się, że rytm wcale
 nie brzmi jak Funk. *(Potrzebne więcej info.)*
 
-**Sign:** *(More info needed.)*
+**Znak:** *(Potrzebne więcej info)*
 
-**History:** Was introduced to the network at least 2008 (together with Ragga).
-A slightly different version called “Lego Funk” has been played by Barking
-Bateria: [SoundCloud](https://soundcloud.com/barking-bateria/lego-funk)
+**Historia:** Rytm wprowadzono do sieci co najmniej w 2008 r. (wraz z Raggą).
+Barking Bateria gra odrobinę inną wersje nazwaną "Lego Funk"
+[SoundCloud](https://soundcloud.com/barking-bateria/lego-funk)
 
 ## Poziom trudności
 
-Good to begin with, because all instruments are quite easy:
+Dobry rytm do nauczenia się jako pierwszy bo wszystkie instrumenty mają dosyć
+łatwe partie:
 
-* **Surdos:** easy (all surdos play the same line and there are tons of
-  memoryhook-phrases)
-* **Repi:** medium (the repi is not that easy, but anyway it’s a good tune to
-  begin with, because you find different repi-hits)
+* **Surdo:** łatwy (wszystkie Surda grają to samo i istnieje wiele rymowanek
+  pomagających zapamiętać partie)
+* **Repi:** średni (Repi nie jest najprostsza, ale wciąż jest to dobry rytm do
+  nauki na początku, bo zawiera parę różnych typów uderzeń na Repi)
 * **Werbel:** łatwy
 * **:Tamborim:** łatwy
-* **Agogô:** easy (because they can look at the surdos for almost any hit they
-  play)
+* **Agogô:** łatwy (łatwo się zgrać z Surdami, ich uderzenia się w większości
+  pokrywają z tym co gra Agogô)
 
 ## Brejki
 
-* Break 1, which is a call & response-break between Surdos and all others
-* Break 2, where everyone plays one bar of eighth-notes
-* Call Break, two breaks wich are played the same way (five hits in the
-  beginning) but end with a shout of either “oi!” or “uah!”. They can be used in
-  almost any tune, not just this one. Some bands play around with the shouting
-  break by using other shouts in the end. This way it’s also possible to connect
-  a political output to this breaks.
+* Brejk 1, zawołanie-odpowiedź pomiędzy Surdami i całą resztą
+* Brejk 2, każdy gra jeden takt ośmiu uderzeń
+* Call Brejk, dwa bardzo podobne brejki grane jeden po drugim (5 uderzeń na
+  początku) po czym albo "oi!" albo "uah!". Mogą być używane w prawie każdym
+  rytmie, nie tylko w Funku. Niektóre grupy RoR podmieniają okrzyki na końcu. W
+  ten sposób można uzyskać bardziej polityczny przekaz.
