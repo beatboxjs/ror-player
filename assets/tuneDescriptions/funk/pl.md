@@ -1,4 +1,4 @@
-This tune is one of the RoR basics.
+Jest to jeden z podstawowych rytmów granych w RoR.
 
 This tune is played over 8 beats instead of 4, so take care when counting in.
 
