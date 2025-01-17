@@ -22,7 +22,7 @@ Kraftwerk ([YouTube](https://www.youtube.com/watch?v=XMVokT5e0zs)).
 
 **History:** Invented by RoR Berlin in 2021.
 
-## Trudność
+## Poziom trudności
 
 * **Surdos:** easy
 * **Repi:** tricky
