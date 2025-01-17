@@ -14,4 +14,4 @@ jakbyś zoomowałx.
 * **Repi:** łatwy
 * **Werbel:** łatwy
 * **Tamborim:** średni
-* **Agogô:** easy
+* **Agogô:** łatwy
