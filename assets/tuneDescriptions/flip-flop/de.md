@@ -1,17 +1,18 @@
-Sign: repeatedly place flat hands in front of each other like feet walking on
-the ground
+Handzeichen: die flachen Hände mehrmals vor einander platzieren, wie gehende
+Füße auf dem Boden
 
 ## Hintergrund
 
-**Name:** Flip-flops are a type of simple sandals. They make a distinctive noise
-while walking. The sound of the tune has some similarity to this noise.
+**Name:** Flip-Flops sind eine Art von einfachen Sandalen. Sie machen beim
+Laufen ein charakteristisches Geräusch. Der Tune klingt ein wenig wie dieses
+Geräusch.
 
-**Musical background:** The Surdos are inspired by the song “Boom Bap” by KRS
-One ([YouTube](https://www.youtube.com/watch?v=iaYDe3gu1go)). The Snare is
-inspired by the song “Digital Monkey” by Balkan Beat Box
-([YouTube](https://www.youtube.com/watch?v=D813i6GnFmE)).
+**Musikalischer Hintergrund:** Die Surdos sind vom Lied „Boom Bap“ von KRS One
+([YouTube](https://www.youtube.com/watch?v=iaYDe3gu1go)) inspiriert. Die Snare
+ist vom Lied „Digital Monkey“ von Balkan Beat Box
+([YouTube](https://www.youtube.com/watch?v=D813i6GnFmE)) inspiriert.
 
-**Sign:** The sign resemples walking with flip-flops.
+**Handzeichen:** Das Zeichen stellt das Gehen mit Flip-Flops dar.
 
 **Geschichte:** 2022 von RoR Leipzig vorgestellt.
 
