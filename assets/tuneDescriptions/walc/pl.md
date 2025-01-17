@@ -1,6 +1,6 @@
 **Sign:** draw a triangle in the air with one hand
 
-## Background
+## Kontekst
 
 **Name:** Waltz (German: Walzer) is a European style of classical music
 originating in German and Austrian folk dances of the middle age
