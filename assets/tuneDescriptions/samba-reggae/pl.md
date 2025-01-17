@@ -48,7 +48,7 @@ in the Rastafari religion, which is closely linked to Reggae music. On the TNM
 2024 it was decided to change the sign, as smoking weed is also a racist
 stereotype associated with Black people.
 
-## Controversies
+## Kontrowersje
 
 The rhythm clearly sounds like real Samba Reggae, which is a tune developed and
 used by the Black liberation movement in Brazil. Many people in the RoR network
