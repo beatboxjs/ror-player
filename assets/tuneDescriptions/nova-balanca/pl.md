@@ -29,10 +29,10 @@ that the new wave will come and bring the deported slaves back home.
 
 **History:** From RoR Maastricht.
 
-## Trudność
+## Poziom trudności
 
 * **Surdos:** medium
-* **Repi:** easy
+* **Repi:** łatwy
 * **Snare:** easy
 * **Tamborim:** easy
 * **Agogô:** easy – in fact the same as in Karla Shnikov
