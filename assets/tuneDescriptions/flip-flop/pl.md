@@ -11,7 +11,7 @@ KRS One ([YouTube](https://www.youtube.com/watch?v=iaYDe3gu1go)).
 
 **History:** Introduced by RoR Leipzig in 2022.
 
-## Difficulty
+## Trudność
 
 * **Low Surdo:** easy
 * **Mid/High Surdo:** tricky
