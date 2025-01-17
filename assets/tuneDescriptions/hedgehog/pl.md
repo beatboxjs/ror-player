@@ -37,7 +37,7 @@ the name.)*
 * **High Surdo:** easy
 * **Repi:** medium
 * **Snare:** medium
-* **Tamborim:** easy
+* **:Tamborim:** łatwy
 * **Agogô:** medium
 
 ## Breaks
