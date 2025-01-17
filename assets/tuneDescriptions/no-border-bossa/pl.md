@@ -21,5 +21,5 @@ Maastricht.”
 * **Surdos:** medium
 * **Repi:** hard
 * **Snare:** medium
-* **Tamborim:** medium
+* **Tamborim:** średni
 * **Agogô:** średni
