@@ -1,10 +1,11 @@
 Jest to jeden z podstawowych rytmów granych w RoR.
 
-This tune is played over 8 beats instead of 4, so take care when counting in.
+Ten rytm jest grany w pętli dwóch taktów, zwracaj na to uwagę przy odgwizdywaniu
+brejków.
 
-Although is the only tune called Funk, is not the only that sounds “funky”.
-There are two other, Karla Shnikov and Angela Davis. Just try to combine them,
-especially Funk-Angela Davis sounds great.
+Mimo tego, że jest to jedyny rytm nazwany Funk, nie jest jedynym funkującym
+rytmem. Dwa inne to Karla Shnikov i Angela Davis. Warto próbować je łączyć,
+szczególnie Funk-Angela Davis dobrze się łączą.
 
 ## Sign
 
