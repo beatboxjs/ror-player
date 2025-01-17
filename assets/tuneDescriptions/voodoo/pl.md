@@ -8,7 +8,7 @@ of hypnotising effect, especially when you start slowly and gradually speed up.
 
 Aureole – make a circle around head with your index finger down
 
-## Background
+## Kontekst
 
 **Name:** The so-called African diaspora religions are religions that evolved
 from traditional African beliefs and rituals, sometimes with a Christian
