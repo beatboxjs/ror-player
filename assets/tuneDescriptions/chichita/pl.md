@@ -1,6 +1,6 @@
 **Sign:** make two fists and rub middle joints against each other
 
-## Background
+## Kontekst
 
 **Musical background:** The tune bases its sounds in a popular local music genre
 called “chicha”, which combines Andean “huayno” and tropical “cumbia”.
