@@ -13,7 +13,7 @@ especially Funk-Angela Davis sounds great.
 
 Glasses on your eyes
 
-## Background
+## Kontekst
 
 **Name:** Funk is a style of music that was created in the 1960s by African
 Americans. As most/all African American music, it originates from African music
