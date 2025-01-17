@@ -18,5 +18,5 @@ oneself or others are swinging around your body.
 * **Wysokie Surdo:** średni
 * **Repi:** hard
 * **Snare:** medium
-* **Tamborim:** medium
+* **Tamborim:** średni
 * **Agogô:** easy
