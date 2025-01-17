@@ -71,7 +71,7 @@ Since this tune is directly rooted in Afro-Brazilian religion, many people in
 the RoR network consider it cultural appropriation to play it. There is an
 ongoing debate on whether this tune should be abandoned.
 
-## Trudność
+## Poziom trudności
 
 * **Surdos:** easy
 * **Repi:** medium
