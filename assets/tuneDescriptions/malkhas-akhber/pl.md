@@ -12,7 +12,7 @@ Armenian Navy Band ([YouTube](https://www.youtube.com/watch?v=OCgrJFbIAcw)).
 ## Poziom trudności
 
 * **Niskie Surdo:** łatwy
-* **Mid/High Surdo:** medium
+* **Średnie/Wysokie Suro:** średni
 * **Repi:** hard
 * **Snare:** hard
 * **:Tamborim:** łatwy
