@@ -29,7 +29,7 @@ football fans commonly make the same noises at Black players.
 
 ## Poziom trudności
 
-* **Low Surdo:** easy
+* **Niskie Surdo:** łatwy
 * **Mid Surdo:** medium
 * **High Surdo:** easy
 * **Repi:** hard
