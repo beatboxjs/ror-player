@@ -19,7 +19,7 @@ Maastricht.”
 ## Poziom trudności
 
 * **Surdos:** medium
-* **Repi:** hard
+* **Repi:** trudny
 * **Snare:** medium
 * **Tamborim:** średni
 * **Agogô:** średni

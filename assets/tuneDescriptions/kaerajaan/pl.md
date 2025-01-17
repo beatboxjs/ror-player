@@ -20,7 +20,7 @@ YouTube](https://youtu.be/-udR34x2aTM?t=4)).
 ## Poziom trudności
 
 * **Surda:** łatwy
-* **Repi:** hard
+* **Repi:** trudny
 * **Werbel:** łatwy
 * **Tamborim:** średni
 * **Agogô:** średni

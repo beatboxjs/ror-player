@@ -37,7 +37,7 @@ in 2006, although it is not clear whether it is the same tune.
 * **Niskie Surdo:** trudny
 * **Mid Surdo:** easy
 * **High Surdo:** easy
-* **Repi:** hard
+* **Repi:** trudny
 * **Snare:** medium
 * **:Tamborim:** łatwy
 * **Agogô:** średni

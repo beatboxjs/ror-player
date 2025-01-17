@@ -32,7 +32,7 @@ moments to reflect and (natural) silence.
 * **Niskie Surdo:** łatwy
 * **Mid Surdo:** medium
 * **High Surdo:** hard
-* **Repi:** hard
+* **Repi:** trudny
 * **Snare:** hard
 * **Tamborim:** hard
 * **Agogô:** hard

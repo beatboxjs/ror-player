@@ -30,7 +30,7 @@ stereotype.
 * **Low Surdo:** medium
 * **Mid Surdo:** easy
 * **Wysokie Surdo:** średni
-* **Repi:** hard
+* **Repi:** trudny
 * **Snare:** hard
 * **Tamborim:** średni
 * **Agogô:** średni

@@ -13,7 +13,7 @@ Armenian Navy Band ([YouTube](https://www.youtube.com/watch?v=OCgrJFbIAcw)).
 
 * **Niskie Surdo:** łatwy
 * **Średnie/Wysokie Suro:** średni
-* **Repi:** hard
+* **Repi:** trudny
 * **Snare:** hard
 * **:Tamborim:** łatwy
 * **Agogô:** hard

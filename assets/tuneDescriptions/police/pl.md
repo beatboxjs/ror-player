@@ -10,16 +10,14 @@ RoR Frankfurt w 2022 r. Piosenka krytykuje przemoc policyjną i systemowy rasizm
 
 * **Niskie Surdo:** łatwy
 * **Średnie/Wysokie Suro:** średni
-* **Repi:** hard
+* **Repi:** trudny
 * **Werbel:** łatwy
 * **Tamborim:** średni
 * **Agogô:** łatwy
 
 ## Brejki
 
-* **Beast Break** handsignal: evil claws going down (hand inside down, moving
-  from up to down)
-* **Beast Break inverted** handsignal: evil claws going up (hand inside up,
-  moving from down to up)
+* **Beast Brejk** znak: szpony od góry do dołu (wnętrzem dłoni do dołu)
+* **Odwrócony Beast Brejk** znak: szpony od dołu do góry (wnętrze dłoni do góry)
 
-* **Shouting** Oo is pronounced as Whoop!
+* **Okrzyki** Oo wymawiane jako Whoop!
