@@ -7,7 +7,7 @@ rotate your hands as if to zoom in and out.
 
 *To be written.*
 
-## Difficulty
+## Trudność
 
 * **Surdos:** easy
 * **Repi:** easy
