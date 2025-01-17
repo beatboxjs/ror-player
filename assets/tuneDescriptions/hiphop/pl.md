@@ -21,12 +21,12 @@ YouTube](https://youtu.be/010KyIQjkTk)).
 **History:** Invented by someone from RoR Berlin in 2005, but never published.
 Was rediscovered in 2021.
 
-## Trudność
+## Poziom trudności
 
 * **Low Surdo:** medium
 * **Mid Surdo:** medium
 * **Wysokie Surdo:** średni
-* **Repi:** easy
+* **Repi:** łatwy
 * **Snare:** hard
 * **Tamborim:** hard
 * **Agogô:** hard
