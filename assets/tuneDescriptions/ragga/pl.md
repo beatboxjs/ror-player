@@ -23,7 +23,7 @@ sound nice.
 
 Fists together, thumbs to the left and to the right
 
-## Background
+## Kontekst
 
 **Name:** Ragga (short for Raggamuffin) is a type of electronic Jamaican pop
 music based on Reggae. ([Wikipedia](https://en.wikipedia.org/wiki/Ragga))
