@@ -26,7 +26,7 @@ plays the “early in the morning”.
 ## Trudność
 
 * **Low/Mid Surdo:** easy
-* **High Surdo:** medium
+* **Wysokie Surdo:** średni
 * **Repi:** hard
 * **Snare:** hard
 * **Tamborim:** medium
