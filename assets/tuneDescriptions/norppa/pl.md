@@ -24,4 +24,4 @@ does not imitate any particular genre or song.
 * **Repi:** medium
 * **Snare:** tricky
 * **Tamborim:** tricky
-* **Agogô:** medium
+* **Agogô:** średni
