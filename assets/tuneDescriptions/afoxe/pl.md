@@ -53,7 +53,7 @@ patriarchal society.
 
 ## Poziom trudności
 
-* **Low Surdo:** easy
+* **Niskie Surdo:** łatwy
 * **Mid/High Surdo:** medium (they play the same…)
 * **Repi:** hard (contains many variations in tone and speed)
 * **Snare:** hard (while it’s on beat in the beginning it’s getting some offbeat
