@@ -3,7 +3,7 @@ Was chosen as a **Tune of the Year 2021** (along with Bhaṅgṛā).
 **Sign:** V with 4 fingers (vulcan salute) on both hands, slide the gaps into
 each other
 
-## Background
+## Kontekst
 
 **Name:** Probably a combination of the words “Samba” and “basso” (Italian for
 “low” or “base”).
