@@ -16,7 +16,7 @@ KRS-One. The song criticizes police brutality and systemic racism.
 * **Tamborim:** medium
 * **Agogô:** easy
 
-## Breaks
+## Brejki
 
 * **Beast Break** handsignal: evil claws going down (hand inside down, moving
   from up to down)
