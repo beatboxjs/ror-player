@@ -11,7 +11,7 @@ each other
 **Musical background:** The Snare and Repi line and the Intro seem to be Samba
 Reggae style. *(More info needed.)*
 
-**Sign:** *(More info needed.)*
+**Znak:** *(Potrzebne więcej info)*
 
 **History:** Introduced to the network by RoR London in 2012, was probably
 played there before?
