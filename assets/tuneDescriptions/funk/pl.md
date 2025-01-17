@@ -40,7 +40,7 @@ Good to begin with, because all instruments are quite easy:
 * **Repi:** medium (the repi is not that easy, but anyway it’s a good tune to
   begin with, because you find different repi-hits)
 * **Snare:** easy
-* **Tamborim:** easy
+* **:Tamborim:** łatwy
 * **Agogô:** easy (because they can look at the surdos for almost any hit they
   play)
 
