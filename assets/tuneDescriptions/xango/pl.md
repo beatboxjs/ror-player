@@ -76,5 +76,5 @@ ongoing debate on whether this tune should be abandoned.
 * **Surdos:** easy
 * **Repi:** medium
 * **Snare:** hard
-* **Tamborim:** easy
+* **:Tamborim:** łatwy
 * **Agogô:** medium
