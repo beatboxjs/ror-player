@@ -24,7 +24,7 @@ Coupé-Décalé. It does not seem to sound the same as Coupé-Décalé though.
 
 ## Poziom trudności
 
-* **Low Surdo:** easy
+* **Niskie Surdo:** łatwy
 * **Mid/High Surdo:** medium
 * **Repi/Snare:** hard (they play the same)
 * **Tamborim:** hard
