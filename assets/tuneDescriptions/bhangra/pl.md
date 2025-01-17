@@ -51,7 +51,7 @@ Bateria in 2004/2005.
 
 * **Surda:** łatwy
 * **Repi:** łatwy
-* **Snare:** easy
+* **Werbel:** łatwy
 * **Tamborim:** medium
 * **Agogô:** easy
 
