@@ -18,5 +18,5 @@ TNM 2024.
 * **Repi:** medium
 * **Snare:** hard
 * **Tamborim:** średni
-* **Agogô:** easy
+* **Agogô:** łatwy
 * **Shaker:** medium
