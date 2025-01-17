@@ -9,7 +9,7 @@ Armenian Navy Band ([YouTube](https://www.youtube.com/watch?v=OCgrJFbIAcw)).
 
 **History:** Introduced by RoR Berlin in 2022.
 
-## Difficulty
+## Trudność
 
 * **Low Surdo:** easy
 * **Mid/High Surdo:** medium
