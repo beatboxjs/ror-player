@@ -48,7 +48,7 @@ i aktywnie współpracowała z opresyjnym reżimem Związku Radzieckiego.
 * **Wysokie Surdo:** średni
 * **Repi:** łatwy
 * **Werbel:** łatwy (istnieją różne wariacje)
-* **Tamborim:** easy
+* **:Tamborim:** łatwy
 * **Agogô:** medium
 
 ## Breaks
