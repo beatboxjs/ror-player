@@ -7,10 +7,10 @@ rotate your hands as if to zoom in and out.
 
 *To be written.*
 
-## Trudność
+## Poziom trudności
 
 * **Surdos:** easy
-* **Repi:** easy
+* **Repi:** łatwy
 * **Snare:** easy
 * **Tamborim:** medium
 * **Agogô:** easy
