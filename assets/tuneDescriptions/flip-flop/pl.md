@@ -18,4 +18,4 @@ KRS One ([YouTube](https://www.youtube.com/watch?v=iaYDe3gu1go)).
 * **Repi:** medium
 * **Snare:** tricky
 * **Tamborim:** medium
-* **Agogô:** medium
+* **Agogô:** średni
