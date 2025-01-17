@@ -51,17 +51,16 @@ i aktywnie współpracowała z opresyjnym reżimem Związku Radzieckiego.
 * **:Tamborim:** łatwy
 * **Agogô:** średni
 
-## Breaks
+## Brejki
 
-* Break 1 consists of a pickup followed by a bar of eight-notes.
-* Break 2 is a call&response between Surdos and everyone else, it is ended by
-  the pattern of Break 1.
-* Break 3 is a loop which is played by everyone except the Snare (which just
-  continues its normal groove). At the end (or every time just before the Break
-  starts again from the beginning) the pattern of Break 1 is played.
+* Brejk 1 polega na jednej odbitce, po której następuje takt ośmiu uderzeń.
+* Brejk 2 polega na zawołaniu-odpowiedzi między Surdami i całą resztą, kończy
+  się Brejkiem 1.
+* Brejk 3 jest pętlą, którą grają wszyscy (poza werblem, który kontynuuje według
+  swojej zwyczajnej partii). W ostatnim takcie pętli pojawia się Brejk 1.
 
-## More
+## Więcej
 
-Combinations of Angela Davis and Funk sound nice (changing between both,
-introducing break of one on the other, etc.). In fact, Angela Davis is a kind of
-funk too.
+Dobrze brzmiącym połączeniem jest Angela Davis i Funk (przechodzenie z jednego
+na drugi, wprowadzanie brejków z Angeli w Funku i na odwrót itd.). Angela Davis
+również jest funkującym rytmem.
