@@ -11,7 +11,7 @@ Boum Shakla Break.
 
 Rain trickling down, with 10 fingers
 
-## Background
+## Kontekst
 
 **Name:** Xangô (pronounced Shango) is an Orisha, a spirit in the Yoruba
 religion (originating from Central Africa, but making its way to South America
