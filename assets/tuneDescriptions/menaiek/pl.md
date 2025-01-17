@@ -1,7 +1,7 @@
 **Sign:** put three fingers on your other upper arm (like covering a police
 badge)
 
-## Background
+## Kontekst
 
 **Name:** “Menaiek” is Hebrew for “cop” (insulting word for police officer)
 
