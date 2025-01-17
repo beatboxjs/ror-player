@@ -34,7 +34,7 @@ football fans commonly make the same noises at Black players.
 * **High Surdo:** easy
 * **Repi:** hard
 * **Snare:** medium
-* **Tamborim:** medium
+* **Tamborim:** średni
 * **Agogô:** hard (catchy)
 
 ## About the tune
