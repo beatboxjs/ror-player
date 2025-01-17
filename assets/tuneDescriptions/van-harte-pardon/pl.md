@@ -24,5 +24,5 @@ heart”, hence the heart.
 * **Surdos:** medium
 * **Repi:** medium
 * **Snare:** medium
-* **Tamborim:** medium
+* **Tamborim:** średni
 * **Agogô:** hard
