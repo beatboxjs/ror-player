@@ -10,7 +10,7 @@ It is not the easiest to play but sounds really cool!
 rhythms that are typically played on hand drums such as the Dumbek
 ([Wikipedia](https://en.wikipedia.org/wiki/Dumbek_rhythms)).
 
-**Sign:** *(More info needed.)*
+**Znak:** *(Potrzebne więcej info)*
 
 **History:** Introduced by RoR Tel Aviv on TNM 2011.
 
