@@ -52,7 +52,7 @@ Bateria in 2004/2005.
 * **Surda:** łatwy
 * **Repi:** łatwy
 * **Werbel:** łatwy
-* **Tamborim:** medium
+* **Tamborim:** średni
 * **Agogô:** easy
 
 ## Brejki
