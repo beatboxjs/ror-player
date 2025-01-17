@@ -32,14 +32,14 @@ pasowała do ówczesnego znaku. Później zmieniono znak rytmu. Uważamy, że za
 stary znak sam w sobie, jak i fakt, że wybrano Angele Davis ze względu na jej
 afro, jest rasistowski.
 
-## Controversies
+## Kontrowersje
 
-There is an ongoing discussion in the RoR network whether we should play a tune
-that is based on the music of a rapist.
+W sieci RoR trwa dyskusja na temat tego, czy powinnxśmy grać rytm oparty o
+muzykę gwałciciela.
 
-Some RoR members from the Baltic States have recently raised concerns that the
-tune is named after Angela Davis, who was a member of the Communist Party and
-actively collaborating with the oppressive regime of the Soviet Union.
+Niektóre członkinie sieci RoR z krajów bałtyckich zwróciły uwagę na fakt, że
+Angela Davis (po której jest nazwany rytm) była członkinią Partii Komunistycznej
+i aktywnie współpracowała z opresyjnym reżimem Związku Radzieckiego.
 
 ## Difficulty
 
