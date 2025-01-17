@@ -21,6 +21,6 @@ YouTube](https://youtu.be/-udR34x2aTM?t=4)).
 
 * **Surda:** łatwy
 * **Repi:** hard
-* **Snare:** easy
+* **Werbel:** łatwy
 * **Tamborim:** medium
 * **Agogô:** średni
