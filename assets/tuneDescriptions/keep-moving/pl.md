@@ -27,7 +27,7 @@ moments to reflect and (natural) silence.
 
 * **Washing Machine Break** sign: Make bowls of your hands and turn them.
 
-## Trudność
+## Poziom trudności
 
 * **Low Surdo:** easy
 * **Mid Surdo:** medium
