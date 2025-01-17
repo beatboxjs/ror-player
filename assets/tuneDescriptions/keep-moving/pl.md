@@ -23,7 +23,7 @@ moments to reflect and (natural) silence.
 
 **Sign:** Symbolises walking, moving.
 
-## Breaks
+## Brejki
 
 * **Washing Machine Break** sign: Make bowls of your hands and turn them.
 
