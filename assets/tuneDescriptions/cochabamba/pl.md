@@ -38,7 +38,7 @@ water against which the protests happened in Cochabamba
 * **Agogô:** hard (but it kicks ass – if you feel lucky try clicking the bells
   between the (double)hits.)
 
-## Breaks
+## Brejki
 
 Some breaks go for three bars (12 steps) so if one instrument plays along it’s
 much likely to get desynchronized.
