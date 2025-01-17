@@ -1,6 +1,6 @@
 Sign: move flat hands like stepping
 
-## Background
+## Kontekst
 
 **Name:** _More info needed._
 
