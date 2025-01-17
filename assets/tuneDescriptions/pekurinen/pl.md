@@ -17,7 +17,7 @@ non-military civil service.
 
 ## Poziom trudności
 
-* **Low Surdo:** easy
+* **Niskie Surdo:** łatwy
 * **Mid Surdo:** easy
 * **High Surdo:** easy
 * **Repi:** tricky
