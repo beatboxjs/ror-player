@@ -11,7 +11,7 @@ oneself or others are swinging around your body.
 
 **History:** Introduced in 2010
 
-## Trudność
+## Poziom trudności
 
 * **Low Surdo:** medium
 * **Mid Surdo:** tricky
