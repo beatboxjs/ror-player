@@ -38,7 +38,7 @@ the name.)*
 * **Repi:** medium
 * **Snare:** medium
 * **:Tamborim:** łatwy
-* **Agogô:** medium
+* **Agogô:** średni
 
 ## Breaks
 
