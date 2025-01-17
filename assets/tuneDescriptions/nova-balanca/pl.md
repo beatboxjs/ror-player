@@ -29,7 +29,7 @@ that the new wave will come and bring the deported slaves back home.
 
 **History:** From RoR Maastricht.
 
-## Difficulty
+## Trudność
 
 * **Surdos:** medium
 * **Repi:** easy
