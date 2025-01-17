@@ -1,11 +1,12 @@
-This tune is very easy to learn and yet groovy. It can be played very fast.
+Ten rytmy jest bardzo prosty do nauczenia się (co nie zmienia faktu, że buja).
+Można go grać bardzo szybko.
 
-**Sign:** place your hands as if you were holding a telescope over one eye and
-rotate your hands as if to zoom in and out.
+**Sign:** Połącz swoje dłonie w teleskop przed jednym okiem i obracaj nimi
+jakbyś zoomowałx.
 
 ## Kontekst
 
-*To be written.*
+*Jeszcze nie napisane*
 
 ## Poziom trudności
 
