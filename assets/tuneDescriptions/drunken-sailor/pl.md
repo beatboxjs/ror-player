@@ -23,7 +23,7 @@ plays the “early in the morning”.
 **History:** Introduced as a tune by someone from RoR Köln/Cologne in 2010.
 
 
-## Trudność
+## Poziom trudności
 
 * **Low/Mid Surdo:** easy
 * **Wysokie Surdo:** średni
