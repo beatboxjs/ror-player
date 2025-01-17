@@ -41,7 +41,7 @@ but Funk is played at least since 2008 in the network)
 * **Surdos:** medium
 * **Repi:** medium (alternate-version: hard)
 * **Snare:** tricky
-* **Tamborim:** medium
+* **Tamborim:** średni
 * **Agogô:** hard
 
 ## Brejki
