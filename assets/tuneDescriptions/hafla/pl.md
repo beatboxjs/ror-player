@@ -21,7 +21,7 @@ rhythms that are typically played on hand drums such as the Dumbek
 * **High Surdo:** easy
 * **Repi:** hard
 * **Snare:** hard
-* **Tamborim:** medium
+* **Tamborim:** średni
 * **Agogô:** średni
 
 ## Brejki
