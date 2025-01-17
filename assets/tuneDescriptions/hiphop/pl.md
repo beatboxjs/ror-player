@@ -1,7 +1,7 @@
 **Sign:** Point with your index fingers to the ground, your thumbs pointing
 towards each other.
 
-## Background
+## Kontekst
 
 **Name:** Hip hop is an art movement that originated in the 1970s from Black and
 Latino communities in New York. Often only associated with rap, the hip hop
