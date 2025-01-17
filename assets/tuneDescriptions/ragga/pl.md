@@ -36,7 +36,7 @@ songs.
 **History:** Was introduced to the network in 2010 or so (together with Funk,
 but Funk is played at least since 2008 in the network)
 
-## Difficulty
+## Trudność
 
 * **Surdos:** medium
 * **Repi:** medium (alternate-version: hard)
