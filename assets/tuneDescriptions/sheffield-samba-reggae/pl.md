@@ -15,7 +15,7 @@ is closely linked to Reggae music.
 **History:** Introduced to the network by RoR London in 2012, was probably
 played there before?
 
-## Controversies
+## Kontrowersje
 
 The rhythm clearly sounds like real Samba Reggae, which is a tune developed and
 used by the Black liberation movement in Brazil. Many people in the RoR network
