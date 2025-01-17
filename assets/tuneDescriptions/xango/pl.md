@@ -73,7 +73,7 @@ ongoing debate on whether this tune should be abandoned.
 
 ## Poziom trudności
 
-* **Surdos:** easy
+* **Surda:** łatwy
 * **Repi:** medium
 * **Snare:** hard
 * **:Tamborim:** łatwy
