@@ -9,7 +9,7 @@ RoR Frankfurt w 2022 r. Piosenka krytykuje przemoc policyjną i systemowy rasizm
 ## Poziom trudności
 
 * **Niskie Surdo:** łatwy
-* **Mid/High Surdo:** medium
+* **Średnie/Wysokie Suro:** średni
 * **Repi:** hard
 * **Werbel:** łatwy
 * **Tamborim:** średni
