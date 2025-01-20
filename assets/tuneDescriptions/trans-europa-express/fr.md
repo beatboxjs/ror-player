@@ -25,7 +25,7 @@ Kraftwerk ([YouTube](https://www.youtube.com/watch?v=XMVokT5e0zs)).
 ## Difficulté
 
 * **Surdos:** facile
-* **Repi:** tricky
+* **Repi:** compliqué
 * **Caisse claire:** moyenne
 * **Tamborim:** facile
 * **Agogô:** facile
