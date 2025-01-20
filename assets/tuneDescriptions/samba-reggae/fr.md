@@ -59,6 +59,6 @@ European bands, and there is an ongoing debate about abolishing the tune.
 
 * **Surdos:** medium
 * **Repi:** moyenne
-* **Snare:** medium
+* **Caisse claire:** moyenne
 * **Tamborim:** easy (clave)
 * **Agogô:** moyenne

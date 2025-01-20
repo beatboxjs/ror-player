@@ -29,4 +29,4 @@ Was rediscovered in 2021.
 * **Repi:** facile
 * **Caisse claire:** difficile
 * **Tamborim:** difficile
-* **Agogô:** hard
+* **Agogô:** difficile

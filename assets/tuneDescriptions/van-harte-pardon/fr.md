@@ -23,6 +23,6 @@ heart”, hence the heart.
 
 * **Surdos:** medium
 * **Repi:** moyenne
-* **Snare:** medium
+* **Caisse claire:** moyenne
 * **Tamborim:** moyenne
-* **Agogô:** hard
+* **Agogô:** difficile

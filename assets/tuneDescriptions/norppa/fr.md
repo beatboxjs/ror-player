@@ -1,4 +1,4 @@
-**Sign:** *(None yet.)*
+**Signe:** *(À définir.)*
 
 ## Contexte
 
@@ -12,7 +12,7 @@ conservation in Finland. Climate change poses a direct threat to the Norppa.
 **Musical background:** Song takes inspiration from the electronic music, but
 does not imitate any particular genre or song.
 
-**Sign:** *(None yet.)*
+**Signe:** *(À définir.)*
 
 **History:** Rediscovered from old notes by RoR Helsinki in 2021
 
@@ -23,5 +23,5 @@ does not imitate any particular genre or song.
 * **Surdo aigu:** facile
 * **Repi:** moyenne
 * **Snare:** tricky
-* **Tamborim:** tricky
+* **Tamborim:** compliqué
 * **Agogô:** moyenne

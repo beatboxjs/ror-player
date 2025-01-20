@@ -28,8 +28,8 @@ stereotype.
 ## Difficulté
 
 * **Surdo Moyen:** moyenne
-* **Mid Surdo:** easy
-* **High Surdo:** medium
+* **Surdo Moyen:** facile
+* **Surdo aigu:** moyenne
 * **Repi:** difficile
 * **Caisse claire:** difficile
 * **Tamborim:** moyenne

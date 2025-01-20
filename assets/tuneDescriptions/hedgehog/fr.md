@@ -33,10 +33,10 @@ the name.)*
 ## Difficulté
 
 * **Surdo Grave :** facile
-* **Mid Surdo:** easy
+* **Surdo Moyen:** facile
 * **Surdo aigu:** facile
 * **Repi:** moyenne
-* **Snare:** medium
+* **Caisse claire:** moyenne
 * **Tamborim:** facile
 * **Agogô:** moyenne
 

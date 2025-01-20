@@ -22,4 +22,4 @@ in the official tune sheets. Was rediscovered in 2021.
 * **Repi:** difficile
 * **Caisse claire:** difficile
 * **Tamborim:** moyenne
-* **Agogô:** hard
+* **Agogô:** difficile

@@ -20,6 +20,6 @@ Maastricht.”
 
 * **Surdos:** medium
 * **Repi:** difficile
-* **Snare:** medium
+* **Caisse claire:** moyenne
 * **Tamborim:** moyenne
 * **Agogô:** moyenne
