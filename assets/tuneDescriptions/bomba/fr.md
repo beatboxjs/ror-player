@@ -17,7 +17,7 @@ vers 2014
 ## Difficulté
 
 * **Surdo Moyen:** moyenne
-* **Mid Surdo:** easy
+* **Surdo Moyen:** facile
 * **Surdo aigu:** moyenne
 * **Repi:** moyenne
 * **Caisse claire:** moyenne
