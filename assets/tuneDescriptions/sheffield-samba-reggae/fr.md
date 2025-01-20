@@ -29,7 +29,7 @@ stereotype.
 
 * **Surdo Moyen:** moyenne
 * **Surdo Moyen:** facile
-* **High Surdo:** medium
+* **Surdo aigu:** moyenne
 * **Repi:** difficile
 * **Caisse claire:** difficile
 * **Tamborim:** moyenne
