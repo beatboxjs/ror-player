@@ -33,7 +33,7 @@ the name.)*
 ## Difficulté
 
 * **Surdo Grave :** facile
-* **Mid Surdo:** easy
+* **Surdo Moyen:** facile
 * **Surdo aigu:** facile
 * **Repi:** moyenne
 * **Caisse claire:** moyenne
