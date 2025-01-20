@@ -22,6 +22,6 @@ représente le bec de l'oiseau.
   vitesse à cause des contre-temps)
 * **Surdo aigu:** facile
 * **Repi:** facile
-* **Snare:** tricky
+* **Caisse Claire:** complexe
 * **Tamborim:** facile
 * **Agogô:** difficile
