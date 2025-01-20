@@ -1,13 +1,13 @@
-**Sign:** Put one fist on top of the other, as if you were holding a paddle, and
-start paddling.
+**Signe:** Mettre un poing au dessus de l'autre comme pour tenir une pagaie, et
+pagayer.
 
 ## Contexte
 
-**Musical background:** Based on the song with the same name by Arto
-Tunçboyacıyan, an artist part of the Armenian minority in Turkey, and his band
-Armenian Navy Band ([YouTube](https://www.youtube.com/watch?v=OCgrJFbIAcw)).
+**Contexte musical:** Basé sur la chanson du même nom d'Arto Tunçboyacıyan, un
+artiste appartenant à la minorité arménienne en Turquie, et de son groupe
+Armenia Navy Band ([YouTube](https://www.youtube.com/watch?v=OCgrJFbIAcw)).
 
-**History:** Introduced by RoR Berlin in 2022.
+**Histoire:** Présenté par RoR Berlin en 2022.
 
 ## Difficulté
 
@@ -16,4 +16,4 @@ Armenian Navy Band ([YouTube](https://www.youtube.com/watch?v=OCgrJFbIAcw)).
 * **Repi:** difficile
 * **Caisse claire:** difficile
 * **Tamborim:** facile
-* **Agogô:** hard
+* **Agogô:** difficile
