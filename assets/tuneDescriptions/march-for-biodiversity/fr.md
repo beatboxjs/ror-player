@@ -19,5 +19,5 @@ pollution.
 * **Surdo aigu:** moyenne
 * **Repi:** tricky
 * **Caisse claire:** facile
-* **Tamborim:** tricky
+* **Tamborim:** compliqué
 * **Agogô:** moyenne
