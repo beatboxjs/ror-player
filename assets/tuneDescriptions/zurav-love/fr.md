@@ -1,27 +1,27 @@
-Was drawn as the **Tune of the Year 2018**.
+Tiré au sort **Morceau de l'Année 2018**.
 
-**Sign:** open and close the beak of a bird with your hands
+**Signe:** Ouvrir et fermer un bec d'oiseau avec ses mains
 
 ## Contexte
 
-**Name:** A word play on Żuravlów, the village where the TNM 2015 happened.
+**Nom:** Jeu de mot sur Żuravlów, village où s'est déroulé le TNM 2015.
 
-**Musical background:** Based on the song “Truant” by British electronic
-musician Burial ([Surdo+Tamb+Snare](https://youtu.be/8u4D0wAc2AA?t=1m48s),
+**Contexte musical:** Basé sur la chanson "Truant" par le musicien électronique
+britannique Burial ([Surdo+Tamb+Snare](https://youtu.be/8u4D0wAc2AA?t=1m48s),
 [Agogô + Kick Back](https://youtu.be/8u4D0wAc2AA?t=6m27s)).
 
-**Sign:** “Żurav” is Polish for “crane” (a type of large bird). The sign
-represents the beak of the bird.
+**Signe:** « Żurav » signifie « grue » en polonais (le type d'oiseau). Le signe
+représente le bec de l'oiseau.
 
-**History:** Introduced by RoR Kraków and Ror Trójmiasto on the TNM 2015 in
+**Histoire:** Présenté par RoR Cracovie et Ror Trójmiasto lors du TNM 2015 à
 Żuravlów.
 
 ## Difficulté
 
-* **Low/Mid Surdo:** medium (easy to play, but hard to keep the right speed
-  because of off-beats)
+* **Surdo Grave/Moyen:** moyenne (facile à jouer, difficile de garder la bonne
+  vitesse à cause des contre-temps)
 * **Surdo aigu:** facile
 * **Repi:** facile
 * **Snare:** tricky
 * **Tamborim:** facile
-* **Agogô:** hard
+* **Agogô:** difficile
