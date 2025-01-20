@@ -38,7 +38,7 @@ in 2006, although it is not clear whether it is the same tune.
 * **Mid Surdo:** easy
 * **Surdo aigu:** facile
 * **Repi:** difficile
-* **Snare:** medium
+* **Caisse claire:** moyenne
 * **Tamborim:** facile
 * **Agogô:** moyenne
 
