@@ -10,7 +10,7 @@ de la pollution environnementale.
 
 **Signe:** *(À définir.)*
 
-**History:** Introduced by RoR Helsinki on the TNM in 2019 in Lithuania.
+**Histoire:** Présenté par RoR Helsinki au TNM 2019 en Lithuanie.
 
 ## Difficulté
 
