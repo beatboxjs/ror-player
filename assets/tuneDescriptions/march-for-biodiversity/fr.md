@@ -17,7 +17,7 @@ de la pollution environnementale.
 * **Surdo Moyen:** moyenne
 * **Surdo Moyen:** facile
 * **Surdo aigu:** moyenne
-* **Repi:** tricky
+* **Repi:** compliqué
 * **Caisse claire:** facile
 * **Tamborim:** compliqué
 * **Agogô:** moyenne
