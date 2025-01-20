@@ -35,7 +35,7 @@ in 2006, although it is not clear whether it is the same tune.
 ## Difficulté
 
 * **Surdo grave:** difficile
-* **Mid Surdo:** easy
+* **Surdo Moyen:** facile
 * **Surdo aigu:** facile
 * **Repi:** difficile
 * **Caisse claire:** moyenne
