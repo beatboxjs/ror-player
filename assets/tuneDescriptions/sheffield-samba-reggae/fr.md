@@ -28,7 +28,7 @@ stereotype.
 ## Difficulté
 
 * **Surdo Moyen:** moyenne
-* **Mid Surdo:** easy
+* **Surdo Moyen:** facile
 * **High Surdo:** medium
 * **Repi:** difficile
 * **Caisse claire:** difficile
