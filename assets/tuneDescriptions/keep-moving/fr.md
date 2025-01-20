@@ -35,5 +35,5 @@ moments to reflect and (natural) silence.
 * **Repi:** difficile
 * **Caisse claire:** difficile
 * **Tamborim:** difficile
-* **Agogô:** hard
+* **Agogô:** difficile
 * **Shaker:** hard
