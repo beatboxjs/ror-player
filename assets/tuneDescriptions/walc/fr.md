@@ -19,6 +19,6 @@ our tune comes from Polish “walc” for Waltz and “walcz” for “fight!”
 
 * **Surdos:** facile
 * **Repi:** facile
-* **Snare:** medium
+* **Caisse claire:** moyenne
 * **Tamborim:** facile
 * **Agogô:** facile
