@@ -36,7 +36,7 @@ the name.)*
 * **Mid Surdo:** easy
 * **Surdo aigu:** facile
 * **Repi:** moyenne
-* **Snare:** medium
+* **Caisse claire:** moyenne
 * **Tamborim:** facile
 * **Agogô:** moyenne
 
