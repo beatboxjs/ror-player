@@ -15,7 +15,7 @@ pollution.
 ## Difficulté
 
 * **Surdo Moyen:** moyenne
-* **Mid Surdo:** easy
+* **Surdo Moyen:** facile
 * **Surdo aigu:** moyenne
 * **Repi:** tricky
 * **Caisse claire:** facile
