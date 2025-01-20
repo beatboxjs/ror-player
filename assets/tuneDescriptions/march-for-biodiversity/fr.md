@@ -1,14 +1,14 @@
-**Sign:** *(None yet.)*
+**Signe:** *(À définir.)*
 
 ## Contexte
 
-**Name:** Biodiversity refers to the variety of species in the ecosystem. The
-loss of biodiversity is one of the most drastic consequences of environmental
-pollution.
+**Nom:** La biodiversité désigne la variété des espèces présentes dans un
+écosystème. La perte de biodiversité est l’une des conséquences les plus graves
+de la pollution environnementale.
 
 **Contexte musical:** *(+ d'infos nécessaires)*
 
-**Sign:** *(None yet.)*
+**Signe:** *(À définir.)*
 
 **History:** Introduced by RoR Helsinki on the TNM in 2019 in Lithuania.
 
