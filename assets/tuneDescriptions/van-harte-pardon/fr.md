@@ -25,4 +25,4 @@ heart”, hence the heart.
 * **Repi:** moyenne
 * **Caisse claire:** moyenne
 * **Tamborim:** moyenne
-* **Agogô:** hard
+* **Agogô:** difficile
