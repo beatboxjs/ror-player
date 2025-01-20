@@ -17,9 +17,9 @@ joué avant ?
 
 ## Controverses
 
-There is a debate about removing all monkey references from the tune name and
-breaks, since racist stereotypes associate monkeys with Black people (who are
-also often associated with drumming).
+Il y a un débat sur la suppression de toutes les références aux singes du nom du
+morceau et des breaks, puisque les stéréotypes racistes associent les singes aux
+personnes noires (qui sont également souvent associées aux percussions).
 
 ## Difficulté
 
