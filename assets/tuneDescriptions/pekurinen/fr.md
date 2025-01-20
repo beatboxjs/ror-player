@@ -1,4 +1,4 @@
-**Sign:** *(None yet.)*
+**Signe:** *(À définir.)*
 
 ## Contexte
 
@@ -11,7 +11,7 @@ non-military civil service.
 
 **Contexte musical:** *(+ d'infos nécessaires)*
 
-**Sign:** *(None yet.)*
+**Signe:** *(À définir.)*
 
 **History:** Introduced by RoR Helsinki on the TNM in 2019 in Lithuania.
 
