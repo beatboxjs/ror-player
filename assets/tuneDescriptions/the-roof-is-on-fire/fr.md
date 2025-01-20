@@ -1,30 +1,30 @@
-Was drawn as a **Tune of the Year 2024**.
+Tiré au sort comme **Morceau de l'Année 2024**.
 
-**Sign:** Form a roof with your hands, interlace the fingers and wiggle them
-like flames.
+**Signe:** Former un toit avec les mains, croiser et bouger les doigts pour
+illustrer les flammes.
 
 ## Contexte
 
-**Name:** “The roof is on fire” is part of the chorus in the song “Fire Water
-Burn” by the Bloodhound Gang
-([YouTube](https://www.youtube.com/watch?v=Adgx9wt63NY)), which covers the
-chorus of the song “The Roof Is on Fire” by Rock Master Scott & the Dynamic
-Three ([YouTube](https://youtu.be/-Vv_LwwwpmU?t=263)). Also, the roof of the
-sauna was literally on fire during the TNM 2019 in Lithuania.
+**Nom:** “The roof is on fire” ("Le toit est en feu") et une partie du refrain
+de la chanson "Fire Water Burn" des Bloodhound Gang
+([YouTube](https://www.youtube.com/watch?v=Adgx9wt63NY)), qui reprend le refrain
+de la chanson “The Roof is on Fire” de Rock Master Scott and the Dynamic Three
+([YouTube](https://youtu.be/-Vv_LwwwpmU?t=263)). De plus, le toit du sauna a
+littéralement pris feu pendant le TNM 2019 en Lithuanie.
 
-**Musical background:** Based on the song “Fire Water Burn” by the Bloodhound
-Gang, which covers the chorus of the song “The Roof Is on Fire” by Rock Master
-Scott & the Dynamic Three.
+**Contexte musical:** Basé sur la chanson "Fire Water Burn" des Bloodhound Gang,
+qui reprend le refrain de la chanson “The Roof is on Fire” de Rock Master Scott
+and the Dynamic Three.
 
-**Sign:** The sign represents a roof in flames.
+**Signe:** Le signe représente un toit en feu.
 
-**History:** Spontaneously invented by RoR Kaunas during the TNM 2019 after the
-roof of the sauna caught fire.
+**Histoire:** Inventé spontanément par RoR Kaunas pendant le TNM 2019 après que
+le toit du sauna ait pris feu.
 
 ## Difficulté
 
-* **Surdos:** tricky
+* **Surdos:** compliqué
 * **Repi:** moyenne
-* **Snare:** medium
-* **Tamborim:** tricky
+* **Caisse claire:** moyenne
+* **Tamborim:** compliqué
 * **Agogô:** facile
