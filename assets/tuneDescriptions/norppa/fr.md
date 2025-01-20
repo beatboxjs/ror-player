@@ -23,5 +23,5 @@ does not imitate any particular genre or song.
 * **Surdo aigu:** facile
 * **Repi:** moyenne
 * **Snare:** tricky
-* **Tamborim:** tricky
+* **Tamborim:** compliqué
 * **Agogô:** moyenne
