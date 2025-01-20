@@ -18,7 +18,7 @@ non-military civil service.
 ## Difficulté
 
 * **Surdo Grave :** facile
-* **Mid Surdo:** easy
+* **Surdo Moyen:** facile
 * **Surdo aigu:** facile
 * **Repi:** tricky
 * **Snare:** tricky
