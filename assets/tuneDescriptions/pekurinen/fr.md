@@ -22,5 +22,5 @@ non-military civil service.
 * **Surdo aigu:** facile
 * **Repi:** tricky
 * **Snare:** tricky
-* **Tamborim:** tricky
+* **Tamborim:** compliqué
 * **Agogô:** moyenne
