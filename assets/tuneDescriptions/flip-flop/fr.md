@@ -20,6 +20,6 @@ inspired by the song “Digital Monkey” by Balkan Beat Box
 * **Surdo Grave :** facile
 * **Mid/High Surdo:** tricky
 * **Repi:** moyenne
-* **Snare:** tricky
+* **Caisse Claire:** complexe
 * **Tamborim:** moyenne
 * **Agogô:** moyenne
