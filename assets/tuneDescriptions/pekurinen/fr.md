@@ -20,7 +20,7 @@ non-military civil service.
 * **Surdo Grave :** facile
 * **Surdo Moyen:** facile
 * **Surdo aigu:** facile
-* **Repi:** tricky
+* **Repi:** compliqué
 * **Snare:** tricky
 * **Tamborim:** compliqué
 * **Agogô:** moyenne
