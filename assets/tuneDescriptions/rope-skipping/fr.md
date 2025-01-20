@@ -15,7 +15,7 @@ oneself or others are swinging around your body.
 
 * **Surdo Moyen:** moyenne
 * **Mid Surdo:** tricky
-* **High Surdo:** medium
+* **Surdo aigu:** moyenne
 * **Repi:** difficile
 * **Caisse claire:** moyenne
 * **Tamborim:** moyenne
