@@ -28,19 +28,23 @@ self.addEventListener('fetch', (event) => {
 
 function refresh(cache, event, oldResponse) {
 	fetch(event.request).then((response) => {
-		cache.put(event.request.url, response.clone());
+		if (response.ok) {
+			cache.put(event.request.url, response.clone());
 
-		return Promise.all([ response.text(), oldResponse.text() ]).then(([ r1, r2 ]) => {
-			if (r1 === r2)
-				console.log("Cache reloaded, nothing changed");
-			else {
-				console.log("Cache reloaded, publishing changes");
-				clients.matchAll().then((clients) => {
-					for(const client of clients)
-						client.postMessage("bb-refresh");
-				});
-			}
-		});
+			return Promise.all([ response.text(), oldResponse.text() ]).then(([ r1, r2 ]) => {
+				if (r1 === r2)
+					console.log("Cache reloaded, nothing changed");
+				else {
+					console.log("Cache reloaded, publishing changes");
+					clients.matchAll().then((clients) => {
+						for(const client of clients)
+							client.postMessage("bb-refresh");
+					});
+				}
+			});
+		} else {
+			console.log(`Cache reloading failed, status ${response.status}`);
+		}
 	}).catch((err) => {
 		console.warn("Cache reloading failed", err.stack || err);
 	})
