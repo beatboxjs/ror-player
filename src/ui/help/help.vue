@@ -80,6 +80,10 @@
 
 <style lang="scss">
 	.bb-help {
+		.dropdown-item > svg {
+			vertical-align: middle;
+		}
+
 		.bb-language-picker {
 			display: grid;
 			grid-template-columns: repeat(auto-fill, 50px);
