@@ -2,7 +2,7 @@ It is not the easiest to play but sounds really cool!
 
 **Sign:** spread arms and shake your shoulders and hips
 
-## Background
+## Фон
 
 **Name:** “Hafla” (حفلة) means “Party/Festivity” in Arabic.
 
