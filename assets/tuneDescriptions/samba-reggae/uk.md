@@ -26,11 +26,11 @@
 афро-блоків мала на меті відтворити та зміцнити афро-бразильську спільноту.
 ([Вікіпедія](https://en.wikipedia.org/wiki/Samba_reggae))
 
-In “real” Samba, ‘samba reggae’ is a specific sub-genre, it’s not only in terms
-of the rhythm, but also of the instruments, which are played (and how they are
-played), different from other kinds of Samba. For example the Repi, which is
-otherwise mostly hanging quite high and is played with a short wooden stick and
-the hand, is hanging really low and is played with two long plastic beaters.
+У «справжній» самбі «самба-реггі» є особливим піджанром, він відрізняється від
+інших видів самби не лише ритмом, але й інструментами, на яких грають (і як на
+них грають). Наприклад, репі, який зазвичай висить досить високо і грається
+короткою дерев’яною палицею та рукою, висить дуже низько, і грається двома
+довгими пластиковими стукачами.
 
 **Musical background:** The tune is a mix of Samba Reggae 1 & 3. RoR Samba
 Reggae is played with mid surdo hitting in 1 and 3 beats and low one in 2 and 4
