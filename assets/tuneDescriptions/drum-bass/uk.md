@@ -32,7 +32,7 @@ with this name [on their
 website](https://web.archive.org/web/20061023061031/http://www.barkingbateria.co.uk/samba.htm)
 in 2006, although it is not clear whether it is the same tune.
 
-## Difficulty
+## Важко
 
 * **Low Surdo:** hard
 * **Mid Surdo:** easy
