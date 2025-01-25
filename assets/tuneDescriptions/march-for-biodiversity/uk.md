@@ -20,4 +20,4 @@ pollution.
 * **Repi:** tricky
 * **Snare:** easy
 * **Tamborim:** tricky
-* **Agogô:** medium
+* **Agogô:** середній
