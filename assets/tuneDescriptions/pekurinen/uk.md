@@ -17,7 +17,7 @@ non-military civil service.
 
 ## Важко
 
-* **Low Surdo:** easy
+* **Low Surdo:** легко
 * **Mid Surdo:** easy
 * **High Surdo:** легко
 * **Repi:** tricky
