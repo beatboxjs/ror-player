@@ -2,12 +2,12 @@
 
 ## Фон
 
-**Name:** Arndt Pekurinen (1905–1941) was a Finnish pacifist and antimilitarist,
-who opposed all forms of violence, and refused to join the war. He was
-imprisoned after he became a famous peace symbol, and his hunger strike was
-supported by an extensive international campaign. Pekurinen was executed without
-a trial. His actions forced the government to change laws to allow peaceful,
-non-military civil service.
+**Ім’я:** Арндт Пекурінен (1905–1941) був фінським пацифістом і
+антимілітаристом, який виступав проти всіх форм насильства та відмовився брати
+участь у війні. Його ув'язнили після того, як він став відомим символом миру, а
+його голодування підтримала широка міжнародна кампанія. Пекурінена стратили без
+суду. Його дії змусили уряд змінити закони, щоб дозволити мирну невійськову
+державну службу.
 
 **Musical background:** *(More info needed.)*
 
@@ -22,5 +22,5 @@ non-military civil service.
 * **High Surdo:** легко
 * **Repi:** tricky
 * **Пастка:** складно
-* **Tamborim:** tricky
+* **Тамборім:** складно
 * **Agogô:** середній
