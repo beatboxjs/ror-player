@@ -35,7 +35,7 @@ the name.)*
 
 * **Low Surdo:** easy
 * **Mid Surdo:** easy
-* **High Surdo:** easy
+* **High Surdo:** легко
 * **Представник:** середній
 * **Малий барабан:** середній
 * **Бубен:** легко
