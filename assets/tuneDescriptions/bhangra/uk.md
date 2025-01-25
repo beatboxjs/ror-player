@@ -63,8 +63,7 @@
   на репетиції. (до речі: пападам - це індійський хліб)
 * Перерва 3: є варіацією голосу Agogô; усі просто грають ритм Agogô на одному
   тоні. Пауза в кінці звичайного голосу Agogô не враховується.
-* Call Break: where the Repi calls and everyone else answers. There’s an
-  intermezzo, where the Surdos play something similar to the Tamb-stroke and at
-  the end everyone shouts “ey”. While it seems really hard to learn at first,
-  you’ll see that the break will be stuck in your ear already after you heard it
-  a few times.
+* Перерва дзвінка: коли репі телефонує, а всі інші відповідають. Є інтермеццо,
+  де Surdos грають щось схоже на Tamb-stroke, а в кінці всі кричать «ей». Хоча
+  спочатку це здається дуже важким для навчання, ви побачите, що пауза застрягне
+  у вашому вусі вже після того, як ви почуєте її кілька разів.
