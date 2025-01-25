@@ -1,25 +1,25 @@
-**Sign:** Place forearms on top of each other in front of you, fingertips
-aligned with elbows (like in the Estonian folk dance).
+**Знак:** Покладіть передпліччя одне на одне перед собою, кінчики пальців на
+одній лінії з ліктями (як в естонському народному танці).
 
 ## Фон
 
-**Name:** Kaerajaan is an Estonian folk dance that is danced to a folk song
-called Kaera-Jaan ([example on
-YouTube](https://www.youtube.com/watch?v=5BKoS9CfQPA)). The name roughly
-translates to “John of Oats”. Estonians probably used to sing this song while
-harvesting oat crops.
+**Назва:** Kaerajaan – це естонський народний танець, який танцюють під народну
+пісню Kaera-Jaan ([приклад на
+YouTube](https://www.youtube.com/watch?v=5BKoS9CfQPA)). Назва приблизно
+перекладається як «Іван Вівса». Ймовірно, естонці співали цю пісню під час
+збирання врожаю вівса.
 
-**Musical background:** The tune is based on the folk music that is played while
-dancing Kaerajaan.
+**Музичний фон:** Мелодія заснована на народній музиці, яка грає під час танцю
+Kaerajaan.
 
-**Sign:** The sign is a move in Estonian folk dances ([example on
+**Знак:** Знак — це рух в естонських народних танцях ([приклад на
 YouTube](https://youtu.be/-udR34x2aTM?t=4)).
 
-**History:** Invented by RoR Tallinn in 2021.
+**Історія:** Винайдено RoR Tallinn у 2021 році.
 
 ## Важко
 
-* **Surdos:** easy
+* **Глухо:** легко
 * **Rep:** важко
 * **Малий барабан:** легко
 * **Бубон:** середній
