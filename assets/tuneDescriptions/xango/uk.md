@@ -67,9 +67,9 @@ whether to do this or not.
 
 ## Суперечки
 
-Since this tune is directly rooted in Afro-Brazilian religion, many people in
-the RoR network consider it cultural appropriation to play it. There is an
-ongoing debate on whether this tune should be abandoned.
+Оскільки ця мелодія має пряме коріння в афро-бразильській релігії, багато людей
+у мережі RoR вважають її культурним присвоєнням. Тривають дебати щодо того, чи
+варто цю мелодію використовувати.
 
 ## Difficulty
 
