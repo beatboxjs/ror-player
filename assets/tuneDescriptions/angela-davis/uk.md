@@ -52,7 +52,7 @@ actively collaborating with the oppressive regime of the Soviet Union.
 * **Бубен:** легко
 * **Agogô:** середній
 
-## Breaks
+## Перерви
 
 * Break 1 consists of a pickup followed by a bar of eight-notes.
 * Break 2 is a call&response between Surdos and everyone else, it is ended by
