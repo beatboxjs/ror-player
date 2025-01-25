@@ -38,7 +38,7 @@ the name.)*
 * **High Surdo:** easy
 * **Repi:** medium
 * **Малий барабан:** середній
-* **Tamborim:** easy
+* **Бубен:** легко
 * **Agogô:** medium
 
 ## Breaks
