@@ -15,7 +15,7 @@ possible.
 
 Drink from a cup formed with one hand
 
-## Background
+## Фон
 
 **Name:** Cochabamba is a major city in Bolivia. The 3rd PGA conference in 2001
 was there. Social movements and direct action groups there revoked the
