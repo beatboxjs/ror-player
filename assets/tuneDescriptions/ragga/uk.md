@@ -42,7 +42,7 @@ but Funk is played at least since 2008 in the network)
 * **Repi:** medium (alternate-version: hard)
 * **Пастка:** складно
 * **Tamborim:** medium
-* **Agogô:** hard
+* **Agogô:** важко
 
 ## Breaks
 
