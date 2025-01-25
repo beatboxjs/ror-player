@@ -1,18 +1,18 @@
-**Sign:** make two fists and rub middle joints against each other
+**Знак:** стисніть два кулаки і потріть середні суглоби один об одного
 
 ## Фон
 
-**Musical background:** The tune bases its sounds in a popular local music genre
-called “chicha”, which combines Andean “huayno” and tropical “cumbia”.
+**Музичний фон:** Мелодія базується на популярному місцевому музичному жанрі під
+назвою «chicha», який поєднує андське «huayno» та тропічне «cumbia».
 
-**History:** Composed by the Peruvian Lima-based collective Tamboras Resistencia
-and shared on the TNM 2024 by RoR Zürich.
+**Історія:** Створено перуанським колективом Tamboras Resistencia з Ліми та
+поширено на TNM 2024 RoR Zürich.
 
 ## Важко
 
 * **Low Surdo:** легко
 * **Mid Surdo:** легко
 * **Представник:** середній
-* **Snare 1:** tricky
-* **Snare 2:** tricky
+* **Малий барабан 1:** складно
+* **Snare 2:** складно
 * **Agogô:** середній
