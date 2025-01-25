@@ -23,7 +23,7 @@ Was rediscovered in 2021.
 
 ## Важко
 
-* **Low Surdo:** medium
+* **Низький Surdo:** середній
 * **Mid Surdo:** medium
 * **High Surdo:** medium
 * **Repi:** easy
