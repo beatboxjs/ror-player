@@ -46,7 +46,7 @@ actively collaborating with the oppressive regime of the Soviet Union.
 * **Low Surdo:** hard
 * **Mid Surdo:** easy to remember, but hard to play it without beeing to fast
   nor to slow
-* **High Surdo:** medium
+* **Високий Surdo:** середній
 * **Repi:** легко
 * **Snare:** easy (there are some variations)
 * **Бубен:** легко
