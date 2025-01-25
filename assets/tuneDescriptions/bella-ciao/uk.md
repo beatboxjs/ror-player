@@ -13,7 +13,7 @@ TNM 2024.
 
 ## Важко
 
-* **Low Surdo:** medium
+* **Низький Surdo:** середній
 * **Mid Surdo:** medium
 * **Repi:** medium
 * **Snare:** hard
