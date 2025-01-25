@@ -36,7 +36,7 @@ the name.)*
 * **Low Surdo:** easy
 * **Mid Surdo:** easy
 * **High Surdo:** easy
-* **Repi:** medium
+* **Представник:** середній
 * **Малий барабан:** середній
 * **Бубен:** легко
 * **Agogô:** середній
