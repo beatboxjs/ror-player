@@ -18,7 +18,7 @@ rhythms that are typically played on hand drums such as the Dumbek
 
 * **Low Surdo:** easy
 * **Mid Surdo:** medium
-* **High Surdo:** easy
+* **High Surdo:** легко
 * **Repi:** hard
 * **Snare:** hard
 * **Tamborim:** medium
