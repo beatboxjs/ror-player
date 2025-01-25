@@ -1,23 +1,23 @@
-**Sign:** throw a grenade
+**Знак:** кинути гранату
 
 ## Фон
 
-**Name:** “Bomba” is the name of a commercial song from artist King Africa. The
-Call Break is inspired on the chorus of this song.
+**Назва:** «Бомба» — це назва рекламної пісні виконавця King Africa. The Call
+Break натхненний приспівом цієї пісні.
 
-**Musical background:** The main tune is inspired in song “Queremos Marcha” by
-Spanish artist Rosario ([YouTube](https://www.youtube.com/watch?v=aC6XTOwNBO8))
-and the breaks inspired in song “Bomba” by King Africa
+**Музичний фон:** Основна мелодія натхненна піснею «Queremos Marcha» іспанського
+виконавця Росаріо ([YouTube](https://www.youtube.com/watch?v=aC6XTOwNBO8)), а
+паузи — з пісні «Bomba» короля Африки
 ([YouTube](https://www.youtube.com/watch?v=QlPS16NeBO0)).
 
-**History:** Invented by a member of a former band in Valencia called Mandala
-around 2014
+**Історія:** Винайдено учасником колишньої групи під назвою Mandala у Валенсії
+приблизно в 2014 році
 
 ## Важко
 
 * **Низький Surdo:** середній
 * **Mid Surdo:** легко
-* **High Surdo:** medium
+* **Високий Surdo:** середній
 * **Представник:** середній
 * **Малий барабан:** середній
 * **Tamborim:** hard
