@@ -1,11 +1,12 @@
-This tune is very easy to learn and yet groovy. It can be played very fast.
+Ця мелодія дуже легка для вивчення, але водночас захоплююча. У неї можна грати
+дуже швидко.
 
-**Sign:** place your hands as if you were holding a telescope over one eye and
-rotate your hands as if to zoom in and out.
+**Знак:** розмістіть руки так, ніби ви тримаєте телескоп над одним оком, і
+обертайте руками, ніби для збільшення та зменшення масштабу.
 
 ## Фон
 
-*To be written.*
+*Буде написано.*
 
 ## Важко
 
@@ -13,4 +14,4 @@ rotate your hands as if to zoom in and out.
 * **Repi:** легко
 * **Малий барабан:** легко
 * **Бубон:** середній
-* **Agogô:** easy
+* **Agogô:** легко
