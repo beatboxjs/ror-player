@@ -33,7 +33,7 @@ the name.)*
 
 ## Важко
 
-* **Low Surdo:** easy
+* **Low Surdo:** легко
 * **Mid Surdo:** easy
 * **High Surdo:** легко
 * **Представник:** середній
