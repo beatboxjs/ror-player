@@ -16,7 +16,7 @@ in the official tune sheets. Was rediscovered in 2021.
 
 ## Важко
 
-* **Low Surdo:** easy
+* **Low Surdo:** легко
 * **Mid Surdo:** medium
 * **High Surdo:** hard
 * **Repi:** hard
