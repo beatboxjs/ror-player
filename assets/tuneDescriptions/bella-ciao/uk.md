@@ -14,7 +14,7 @@ TNM 2024.
 ## Важко
 
 * **Низький Surdo:** середній
-* **Mid Surdo:** medium
+* **Mid Surdo:** середній
 * **Представник:** середній
 * **Snare:** hard
 * **Tamborim:** medium
