@@ -1,15 +1,14 @@
-**Sign:** put the fingertips together with straight fingers, building a top of a
-mountain with both hands
+**Знак:** з’єднайте кінчики прямих пальців, будуючи обома руками вершину гори
 
 ## Фон
 
-**Musical background:** The song is based on the song [Bella
-Ciao](https://en.wikipedia.org/wiki/Bella_ciao), a song used by the Italian
-partisans who resisted against Nazi Germany. The Repi line, Break 1 and the
-Intro resemble the rhythm of the song.
+**Музичний фон:** Пісня заснована на пісні [Bella
+Ciao](https://en.wikipedia.org/wiki/Bella_ciao), пісні, яку використовували
+італійські партизани, які чинили опір нацистській Німеччині. Лінія Repi, Break 1
+і Intro нагадують ритм пісні.
 
-**History:** Introduced by RoR Zürich in 2024, shared and extended (yay!) on the
-TNM 2024.
+**Історія:** Представлено RoR Zürich у 2024 році, оприлюднено та розширено
+(ура!) на TNM 2024.
 
 ## Важко
 
@@ -18,5 +17,5 @@ TNM 2024.
 * **Представник:** середній
 * **Малий барабан:** жорсткий
 * **Бубон:** середній
-* **Agogô:** easy
-* **Shaker:** medium
+* **Agogô:** легко
+* **Шейкер:** середній
