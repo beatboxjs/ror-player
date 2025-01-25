@@ -20,6 +20,6 @@ in the official tune sheets. Was rediscovered in 2021.
 * **Mid Surdo:** середній
 * **High Surdo:** hard
 * **Repi:** hard
-* **Snare:** hard
+* **Малий барабан:** жорсткий
 * **Tamborim:** medium
 * **Agogô:** важко
