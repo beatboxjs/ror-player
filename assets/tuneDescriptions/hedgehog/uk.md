@@ -19,7 +19,7 @@ they are counted in - don’t stop!
 
 Spiky fingers on the head
 
-## Background
+## Фон
 
 **Name:** A hedgehog is a medium-size spiky mammal. *(More info needed about why
 the name.)*
