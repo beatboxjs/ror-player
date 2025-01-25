@@ -25,7 +25,7 @@ history. The pioneer of Funk is James Brown.
 hit on the 1 and 3 and a snare hit on the 2 and 4. It seems that the tune
 doesn't actually sound like Funk. *(More info needed.)*
 
-**Sign:** *(More info needed.)*
+**Знак:** *(Потрібна додаткова інформація.)*
 
 **History:** Was introduced to the network at least 2008 (together with Ragga).
 A slightly different version called “Lego Funk” has been played by Barking
