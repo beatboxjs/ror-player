@@ -1,11 +1,11 @@
-**Sign:** hold one hand inside up and turn it left and right like the blue
-ligths of a police car
+**Знак:** тримайте одну руку всередині вгору та повертайте її ліворуч і
+праворуч, як сині ліхтарі поліцейської машини
 
 ## Фон
 
-**History:** The tune was adapted by RoR Frankfurt in 2022 from the song [Sound
-of da Police](https://en.wikipedia.org/wiki/Sound_of_da_Police) by the rapper
-KRS-One. The song criticizes police brutality and systemic racism.
+**Історія:** Мелодію було адаптовано RoR Frankfurt у 2022 році з пісні [Sound of
+da Police](https://en.wikipedia.org/wiki/Sound_of_da_Police) репера KRS-One.
+Пісня критикує жорстокість поліції та системний расизм.
 
 ## Важко
 
@@ -14,13 +14,13 @@ KRS-One. The song criticizes police brutality and systemic racism.
 * **Rep:** важко
 * **Малий барабан:** легко
 * **Бубон:** середній
-* **Agogô:** easy
+* **Agogô:** легко
 
 ## Перерви
 
-* **Beast Break** handsignal: evil claws going down (hand inside down, moving
-  from up to down)
-* **Beast Break inverted** handsignal: evil claws going up (hand inside up,
-  moving from down to up)
+* **Сигнал Beast Break**: злі кігті опускаються вниз (рука всередині вниз, рух
+  згори вниз)
+* **Перевернутий сигнал Beast Break**: злі кігті піднімаються вгору (рука
+  всередині вгору, рух знизу вгору)
 
-* **Shouting** Oo is pronounced as Whoop!
+* **Крик** Oo вимовляється як Whoop!
