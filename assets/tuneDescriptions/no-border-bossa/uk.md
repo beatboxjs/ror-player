@@ -22,4 +22,4 @@ Maastricht.”
 * **Repi:** hard
 * **Малий барабан:** середній
 * **Tamborim:** medium
-* **Agogô:** medium
+* **Agogô:** середній
