@@ -20,6 +20,6 @@ inspired by the song “Digital Monkey” by Balkan Beat Box
 * **Low Surdo:** easy
 * **Mid/High Surdo:** tricky
 * **Представник:** середній
-* **Snare:** tricky
+* **Пастка:** складно
 * **Tamborim:** medium
 * **Agogô:** середній
