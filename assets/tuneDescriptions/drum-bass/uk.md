@@ -35,7 +35,7 @@ in 2006, although it is not clear whether it is the same tune.
 ## Важко
 
 * **Low Surdo:** hard
-* **Mid Surdo:** easy
+* **Mid Surdo:** легко
 * **High Surdo:** легко
 * **Repi:** hard
 * **Малий барабан:** середній
