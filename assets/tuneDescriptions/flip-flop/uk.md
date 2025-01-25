@@ -17,7 +17,7 @@ inspired by the song “Digital Monkey” by Balkan Beat Box
 
 ## Важко
 
-* **Low Surdo:** easy
+* **Low Surdo:** легко
 * **Mid/High Surdo:** tricky
 * **Представник:** середній
 * **Пастка:** складно
