@@ -1,24 +1,24 @@
-Sign: repeatedly place flat hands in front of each other like feet walking on
-the ground
+Прикмета: кілька разів покладіть плоскі руки одна перед одною, ніби ноги ходять
+по землі
 
 ## Фон
 
-**Name:** Flip-flops are a type of simple sandals. They make a distinctive noise
-while walking. The sound of the tune has some similarity to this noise.
+**Назва:** В'єтнамки - різновид простих босоніжок. Під час ходьби вони видають
+характерний шум. Звучання мелодії має деяку схожість з цим шумом.
 
-**Musical background:** The Surdos are inspired by the song “Boom Bap” by KRS
-One ([YouTube](https://www.youtube.com/watch?v=iaYDe3gu1go)). The Snare is
-inspired by the song “Digital Monkey” by Balkan Beat Box
+**Музичне підґрунтя:** The Surdos надихнулися піснею «Boom Bap» KRS One
+([YouTube](https://www.youtube.com/watch?v=iaYDe3gu1go)). The Snare натхненний
+піснею «Digital Monkey» гурту Balkan Beat Box
 ([YouTube](https://www.youtube.com/watch?v=D813i6GnFmE)).
 
-**Sign:** The sign resemples walking with flip-flops.
+**Знак:** Знак нагадує ходьбу в шльопанцях.
 
-**History:** Introduced by RoR Leipzig in 2022.
+**Історія:** Представлено RoR Leipzig у 2022 році.
 
 ## Важко
 
 * **Low Surdo:** легко
-* **Mid/High Surdo:** tricky
+* **Середній/високий сурдо:** складно
 * **Представник:** середній
 * **Пастка:** складно
 * **Tamborim:** medium
