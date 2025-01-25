@@ -20,7 +20,7 @@ YouTube](https://youtu.be/-udR34x2aTM?t=4)).
 ## Важко
 
 * **Surdos:** easy
-* **Repi:** hard
+* **Rep:** важко
 * **Малий барабан:** легко
 * **Tamborim:** medium
 * **Agogô:** середній
