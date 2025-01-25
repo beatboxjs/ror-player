@@ -1,7 +1,7 @@
 **Sign:** Swing your fist above your head and shake your body, like dancing to
 techno music.
 
-## Background
+## Фон
 
 **Name:** Jungle is a genre of dance music that devloped in the UK rave scene in
 the 1990s. It is the main successor of Drum&Bass.
