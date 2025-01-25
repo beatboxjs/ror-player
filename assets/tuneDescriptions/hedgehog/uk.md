@@ -37,7 +37,7 @@ the name.)*
 * **Mid Surdo:** easy
 * **High Surdo:** easy
 * **Repi:** medium
-* **Snare:** medium
+* **Малий барабан:** середній
 * **Tamborim:** easy
 * **Agogô:** medium
 
