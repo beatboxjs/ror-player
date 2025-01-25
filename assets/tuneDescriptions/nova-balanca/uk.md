@@ -18,7 +18,7 @@ synchronized:
 
 Fists before breast, open hands and arms
 
-## Background
+## Фон
 
 **Name:** “Nova balança” means ‘new wave’ in brazilian. It’s part of a belief
 that the new wave will come and bring the deported slaves back home.
