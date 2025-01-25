@@ -45,7 +45,7 @@ European bands, and there is an ongoing debate about abolishing the tune.
 * **Tamborim:** medium (easy to remember, very tiring)
 * **Agogô:** medium (easy to mix up with afoxe)
 
-## Breaks
+## Перерви
 
 * Break 1&2 are variations of the Tamb stroke in a call&response-way. In Break 1
   the Surdos call, in Break 2 the Tambs.
