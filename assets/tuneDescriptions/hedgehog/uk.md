@@ -41,7 +41,7 @@ the name.)*
 * **Бубен:** легко
 * **Agogô:** середній
 
-## Breaks
+## Перерви
 
 It has only two breaks, which are (in contrast to every other break) both meant
 to be counted in in the beginning of the 8 steps, so the groove is really
