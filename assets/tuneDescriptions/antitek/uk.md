@@ -12,5 +12,5 @@ rotate your hands as if to zoom in and out.
 * **Surdos:** easy
 * **Repi:** легко
 * **Малий барабан:** легко
-* **Tamborim:** medium
+* **Бубон:** середній
 * **Agogô:** easy
