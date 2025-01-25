@@ -21,7 +21,7 @@ tiring for them so give them a break once in a while.
 
 Shaving the armpit
 
-## Background
+## Фон
 
 **Name:** Afoxé can refer to a rhythm from brazilian carnival, a certain kind of
 rattle from brazilian music, or a dance- and music formation in the Carnival.
