@@ -5,7 +5,7 @@
 **Name:** A wolf is a large mammal native to Eurasia and North America and the
 ancestor of domestic dogs.
 
-**Musical background:** *(More info needed.)*
+**Музичний фон:** *(Потрібна додаткова інформація.)*
 
 **Sign:** *(More info needed.)*
 
