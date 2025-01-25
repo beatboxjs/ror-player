@@ -44,8 +44,8 @@ very small).
 **Sign:** The sign is a common gesture to greet or honour someone in India and
 Southeast Asia. In Hindu, the gesture is called Namaste.
 
-**History:** Part of the second round of tunes that was introduced by Barking
-Bateria in 2004/2005.
+**Історія:** Частина другого циклу мелодій, представлених Barking Bateria у
+2004/2005 роках.
 
 ## Важко
 
