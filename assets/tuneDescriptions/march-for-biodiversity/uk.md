@@ -10,7 +10,7 @@ pollution.
 
 **Знак:** *(Поки немає.)*
 
-**History:** Introduced by RoR Helsinki on the TNM in 2019 in Lithuania.
+**Історія:** Представлено RoR Helsinki на TNM у 2019 році в Литві.
 
 ## Важко
 
