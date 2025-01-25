@@ -15,7 +15,7 @@ inspired by the song “Digital Monkey” by Balkan Beat Box
 
 **History:** Introduced by RoR Leipzig in 2022.
 
-## Difficulty
+## Важко
 
 * **Low Surdo:** easy
 * **Mid/High Surdo:** tricky
