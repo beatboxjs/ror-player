@@ -29,7 +29,7 @@ moments to reflect and (natural) silence.
 
 ## Важко
 
-* **Low Surdo:** easy
+* **Low Surdo:** легко
 * **Mid Surdo:** medium
 * **High Surdo:** hard
 * **Repi:** hard
