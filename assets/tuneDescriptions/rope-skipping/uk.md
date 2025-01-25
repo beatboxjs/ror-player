@@ -17,6 +17,6 @@ oneself or others are swinging around your body.
 * **Mid Surdo:** tricky
 * **High Surdo:** medium
 * **Repi:** hard
-* **Snare:** medium
+* **Малий барабан:** середній
 * **Tamborim:** medium
 * **Agogô:** easy
