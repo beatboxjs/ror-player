@@ -11,6 +11,6 @@ rotate your hands as if to zoom in and out.
 
 * **Surdos:** easy
 * **Repi:** легко
-* **Snare:** easy
+* **Малий барабан:** легко
 * **Tamborim:** medium
 * **Agogô:** easy
