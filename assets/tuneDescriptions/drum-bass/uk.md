@@ -38,7 +38,7 @@ in 2006, although it is not clear whether it is the same tune.
 * **Mid Surdo:** easy
 * **High Surdo:** easy
 * **Repi:** hard
-* **Snare:** medium
+* **Малий барабан:** середній
 * **Tamborim:** easy
 * **Agogô:** medium
 
