@@ -5,22 +5,22 @@
 
 ## Фон
 
-**Name:** Trans Europ Express (TEE) was an international high-speed luxury train
-in Western Europe between 1957 and 1995, aiming to provide an alternative to
-flying to business people
-([Wikipedia](https://en.wikipedia.org/wiki/Trans_Europ_Express)). The train was
-the theme of an electronic music album called Trans-Europe Express (German:
-Trans Europa Express) by the German band Kraftwerk, released in 1977
-([Wikipedia](https://en.wikipedia.org/wiki/Trans-Europe_Express_(album))).
-Kraftwerk were one of the pioneers of electronic music and are considered a
-major influence to many modern styles of electronic music.
+**Назва:** Trans Europ Express (TEE) був міжнародним високошвидкісним поїздом
+класу люкс у Західній Європі між 1957 і 1995 роками, метою якого було надати
+діловим людям альтернативу польотам
+([Вікіпедія](https://en.wikipedia.org/wiki/Trans_Europ_Express)). Поїзд був
+темою альбому електронної музики під назвою Trans-Europe Express (нім. Trans
+Europa Express) німецького гурту Kraftwerk, випущеного в 1977 році
+([Вікіпедія](https://en.wikipedia.org/wiki/Trans-Europe_Express_(album))).
+Kraftwerk були одними з піонерів електронної музики та вважаються великим
+впливом на багато сучасних стилів електронної музики.
 
-**Musical background:** The tune is based on the song Trans Europa Express by
+**Музичний фон:** Мелодія заснована на пісні Trans Europa Express групи
 Kraftwerk ([YouTube](https://www.youtube.com/watch?v=XMVokT5e0zs)).
 
-**Sign:** The sign represents a train passing by.
+**Знак:** Знак позначає поїзд, що проїжджає.
 
-**History:** Invented by RoR Berlin in 2021.
+**Історія:** Винайдено RoR Berlin у 2021 році.
 
 ## Важко
 
@@ -29,4 +29,4 @@ Kraftwerk ([YouTube](https://www.youtube.com/watch?v=XMVokT5e0zs)).
 * **Малий барабан:** середній
 * **Бубен:** легко
 * **Agogô:** легко
-* **Shaker:** tricky
+* **Шейкер:** складно
