@@ -20,7 +20,7 @@ differently it can get very chaotic…
 
 Folded hands, like praying
 
-## Background
+## Фон
 
 **Name:** Bhaṅgṛā is a traditional folk dance from Punjab (a region in northern
 India and eastern Pakistan)
