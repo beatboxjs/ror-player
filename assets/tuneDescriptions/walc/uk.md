@@ -20,5 +20,5 @@ our tune comes from Polish “walc” for Waltz and “walcz” for “fight!”
 * **Surdos:** easy
 * **Repi:** easy
 * **Малий барабан:** середній
-* **Tamborim:** easy
+* **Бубен:** легко
 * **Agogô:** easy
