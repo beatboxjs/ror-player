@@ -11,7 +11,7 @@ Armenian Navy Band ([YouTube](https://www.youtube.com/watch?v=OCgrJFbIAcw)).
 
 ## Важко
 
-* **Low Surdo:** easy
+* **Low Surdo:** легко
 * **Mid/High Surdo:** medium
 * **Repi:** hard
 * **Snare:** hard
