@@ -20,6 +20,6 @@ Maastricht.”
 
 * **Surdos:** medium
 * **Repi:** hard
-* **Snare:** medium
+* **Малий барабан:** середній
 * **Tamborim:** medium
 * **Agogô:** medium
