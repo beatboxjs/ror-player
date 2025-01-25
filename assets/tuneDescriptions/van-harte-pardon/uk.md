@@ -25,4 +25,4 @@ heart”, hence the heart.
 * **Представник:** середній
 * **Малий барабан:** середній
 * **Tamborim:** medium
-* **Agogô:** hard
+* **Agogô:** важко
