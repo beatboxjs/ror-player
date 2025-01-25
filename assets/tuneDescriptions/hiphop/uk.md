@@ -26,7 +26,7 @@ Was rediscovered in 2021.
 * **Низький Surdo:** середній
 * **Mid Surdo:** medium
 * **High Surdo:** medium
-* **Repi:** easy
+* **Repi:** легко
 * **Snare:** hard
 * **Tamborim:** hard
 * **Agogô:** hard
