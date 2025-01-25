@@ -1,7 +1,7 @@
 **Sign:** put the fingertips together with straight fingers, building a top of a
 mountain with both hands
 
-## Background
+## Фон
 
 **Musical background:** The song is based on the song [Bella
 Ciao](https://en.wikipedia.org/wiki/Bella_ciao), a song used by the Italian
