@@ -3,7 +3,7 @@ Was drawn as a **Tune of the Year 2024**.
 **Sign:** Form a roof with your hands, interlace the fingers and wiggle them
 like flames.
 
-## Background
+## Фон
 
 **Name:** “The roof is on fire” is part of the chorus in the song “Fire Water
 Burn” by the Bloodhound Gang
