@@ -7,7 +7,7 @@ ancestor of domestic dogs.
 
 **Музичний фон:** *(Потрібна додаткова інформація.)*
 
-**Sign:** *(More info needed.)*
+**Знак:** *(Потрібна додаткова інформація.)*
 
 **History:** From the [website of RoR
 Kraków](https://sambaka.wordpress.com/rytmy/) *(more info needed)*
