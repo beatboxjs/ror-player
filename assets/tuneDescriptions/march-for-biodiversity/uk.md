@@ -14,7 +14,7 @@ pollution.
 
 ## Важко
 
-* **Low Surdo:** medium
+* **Низький Surdo:** середній
 * **Mid Surdo:** easy
 * **High Surdo:** medium
 * **Repi:** tricky
