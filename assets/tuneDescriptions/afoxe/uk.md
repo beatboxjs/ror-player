@@ -52,13 +52,14 @@
 
 ## Важко
 
-* **Low Surdo:** easy
-* **Mid/High Surdo:** medium (they play the same…)
-* **Repi:** hard (contains many variations in tone and speed)
-* **Snare:** hard (while it’s on beat in the beginning it’s getting some offbeat
-  in the end)</dd>
-* **Tamborim:** medium (quite exhausting if played for a long time)
-* **Agogô:** medium (easy to mix up with custard)
+* **Low Surdo:** легко
+* **Mid/High Surdo:** середній (вони грають однаково…)
+* **Repi:** жорсткий (містить багато варіантів тону та швидкості)
+* **Малий барабан:** жорсткий (хоча на початку він у ритмі, наприкінці він стає
+  дещо незвичним)</dd>
+* **Тамборім:** середній (досить виснажливий, якщо грати протягом тривалого
+  часу)
+* **Agogô:** середній (легко змішується із заварним кремом)
 
 ## Breaks
 
