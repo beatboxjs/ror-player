@@ -13,7 +13,7 @@ and the breaks inspired in song “Bomba” by King Africa
 **History:** Invented by a member of a former band in Valencia called Mandala
 around 2014
 
-## Difficulty
+## Важко
 
 * **Low Surdo:** medium
 * **Mid Surdo:** easy
