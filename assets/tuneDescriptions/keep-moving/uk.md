@@ -1,39 +1,40 @@
-**Sign:** “Walk” with two fingers on the other hand.
+**Знак:** «Ходити» двома пальцями іншої руки.
 
 ## Фон
 
-**History:** This tune was developed in 2024 by a member of Extinction
+**Історія:** Ця мелодія була розроблена в 2024 році учасником Extinction
 Rebellion.
 
-**Name:** The name has a double meaning. Literally, this tune serves to keep the
-group moving. By moving along with the music, you stay in the mood and thus come
-across as very convincing. It also helps keep the atmosphere right for the whole
-(action) group. A moving rhythm band is contagious, unlike an unmoving one. The
-second meaning is perhaps the most important. “Keep moving” in the sense of
-“stay committed, persevere, resist”. Don't give up the fight, together we stand
-strong to strive for a climate-just world and take the action needed to raise
-awareness about current issues among a large part of the population. Don’t give
-up hope! There have already been many victims, but step by step we are creating
-a world where every human being, every life on this planet counts. Let’s act for
-climate justice all over the world! Keep moving!
+**Ім’я:** Ім’я має подвійне значення. Буквально, ця мелодія служить для
+підтримки руху групи. Рухаючись під музику, ви залишаєтеся в настрої, а отже,
+виглядаєте дуже переконливо. Це також допомагає підтримувати правильну атмосферу
+для всієї (активної) групи. Рухлива смуга ритму заразна, на відміну від
+нерухомої. Друге значення, мабуть, найважливіше. «Продовжуйте рухатися» у
+значенні «залишатися відданим, наполегливо, протистояти». Не відмовляйтеся від
+боротьби, разом ми твердо прагнемо до кліматично справедливого світу та вживаємо
+заходів, необхідних для підвищення обізнаності про поточні проблеми серед
+значної частини населення. Не втрачайте надії! Уже було багато жертв, але крок
+за кроком ми створюємо світ, де кожна людина, кожне життя на цій планеті має
+значення. Давайте діяти за кліматичну справедливість у всьому світі! Продовжуйте
+рухатись!
 
-**Musical background:** The music symbolises being in constant motion, with some
-exceptions. Occasionally, the music stops, emphasising the need for breaks,
-moments to reflect and (natural) silence.
+**Музичний фон:** Музика символізує перебування в постійному русі, за деякими
+винятками. Час від часу музика припиняється, підкреслюючи необхідність перерв,
+моментів для роздумів і (природної) тиші.
 
-**Sign:** Symbolises walking, moving.
+**Знак:** Символізує ходьбу, рух.
 
 ## Перерви
 
-* **Washing Machine Break** sign: Make bowls of your hands and turn them.
+* **Знак «Поломка пральної машини**»: зробіть миски з рук і поверніть їх.
 
 ## Важко
 
 * **Low Surdo:** легко
 * **Mid Surdo:** середній
-* **High Surdo:** hard
+* **Високий сурдо:** жорсткий
 * **Rep:** важко
 * **Малий барабан:** жорсткий
 * **Бубон:** жорсткий
 * **Agogô:** важко
-* **Shaker:** hard
+* **Шейкер:** жорсткий
