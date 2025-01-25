@@ -18,5 +18,5 @@ oneself or others are swinging around your body.
 * **Високий Surdo:** середній
 * **Rep:** важко
 * **Малий барабан:** середній
-* **Tamborim:** medium
+* **Бубон:** середній
 * **Agogô:** easy
