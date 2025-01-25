@@ -15,7 +15,7 @@ non-military civil service.
 
 **History:** Introduced by RoR Helsinki on the TNM in 2019 in Lithuania.
 
-## Difficulty
+## Важко
 
 * **Low Surdo:** easy
 * **Mid Surdo:** easy
