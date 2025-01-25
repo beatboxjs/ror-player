@@ -22,6 +22,6 @@ does not imitate any particular genre or song.
 * **Mid Surdo:** medium
 * **High Surdo:** легко
 * **Представник:** середній
-* **Snare:** tricky
+* **Пастка:** складно
 * **Tamborim:** tricky
 * **Agogô:** середній
