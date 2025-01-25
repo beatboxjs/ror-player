@@ -16,7 +16,7 @@ TNM 2024.
 * **Низький Surdo:** середній
 * **Mid Surdo:** середній
 * **Представник:** середній
-* **Snare:** hard
+* **Малий барабан:** жорсткий
 * **Tamborim:** medium
 * **Agogô:** easy
 * **Shaker:** medium
