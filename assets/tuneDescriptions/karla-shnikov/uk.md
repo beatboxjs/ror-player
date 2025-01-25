@@ -47,7 +47,7 @@ name+sign for the tune.
 * **Бубен:** легко
 * **Agogô:** easy
 
-## Breaks
+## Перерви
 
 Karla Shnikov has 3 breaks, one called just Karla Break (aka break 1), Break 2,
 and its inverted variation.
