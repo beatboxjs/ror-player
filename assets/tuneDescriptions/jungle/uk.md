@@ -21,5 +21,5 @@ in the official tune sheets. Was rediscovered in 2021.
 * **High Surdo:** hard
 * **Rep:** важко
 * **Малий барабан:** жорсткий
-* **Tamborim:** medium
+* **Бубон:** середній
 * **Agogô:** важко
