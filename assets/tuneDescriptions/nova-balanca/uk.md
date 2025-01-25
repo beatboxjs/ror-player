@@ -32,7 +32,7 @@ that the new wave will come and bring the deported slaves back home.
 ## Важко
 
 * **Surdos:** medium
-* **Repi:** easy
+* **Repi:** легко
 * **Snare:** easy
 * **Бубен:** легко
 * **Agogô:** easy – in fact the same as in Karla Shnikov
