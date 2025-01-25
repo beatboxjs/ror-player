@@ -25,7 +25,7 @@ that the new wave will come and bring the deported slaves back home.
 
 **Музичний фон:** *(Потрібна додаткова інформація.)*
 
-**Sign:** *(More info needed.)*
+**Знак:** *(Потрібна додаткова інформація.)*
 
 **History:** From RoR Maastricht.
 
