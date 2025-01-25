@@ -20,7 +20,7 @@ does not imitate any particular genre or song.
 
 * **Low Surdo:** easy
 * **Mid Surdo:** medium
-* **High Surdo:** easy
+* **High Surdo:** легко
 * **Представник:** середній
 * **Snare:** tricky
 * **Tamborim:** tricky
