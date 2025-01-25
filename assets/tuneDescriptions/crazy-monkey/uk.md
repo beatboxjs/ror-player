@@ -33,7 +33,7 @@ football fans commonly make the same noises at Black players.
 * **Mid Surdo:** medium
 * **High Surdo:** easy
 * **Repi:** hard
-* **Snare:** medium
+* **Малий барабан:** середній
 * **Tamborim:** medium
 * **Agogô:** hard (catchy)
 
