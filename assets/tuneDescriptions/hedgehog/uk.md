@@ -31,7 +31,7 @@ the name.)*
 **Історія:** Частина першого набору мелодій, взятих із Barking Bateria у 2000
 році.
 
-## Difficulty
+## Важко
 
 * **Low Surdo:** easy
 * **Mid Surdo:** easy
