@@ -15,7 +15,7 @@ music.
 
 ## Важко
 
-* **Low Surdo:** easy
+* **Low Surdo:** легко
 * **Mid/High Surdo:** tricky
 * **Repi:** hard
 * **Snare:** hard
