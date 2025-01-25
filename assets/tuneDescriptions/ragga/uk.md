@@ -38,7 +38,7 @@ but Funk is played at least since 2008 in the network)
 
 ## Важко
 
-* **Surdos:** medium
+* **Глухий:** середній
 * **Repi:** medium (alternate-version: hard)
 * **Пастка:** складно
 * **Бубон:** середній
