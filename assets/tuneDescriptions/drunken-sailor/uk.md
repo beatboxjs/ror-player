@@ -28,6 +28,6 @@ plays the “early in the morning”.
 * **Low/Mid Surdo:** easy
 * **Високий Surdo:** середній
 * **Repi:** hard
-* **Snare:** hard
+* **Малий барабан:** жорсткий
 * **Tamborim:** medium
 * **Agogô:** середній
