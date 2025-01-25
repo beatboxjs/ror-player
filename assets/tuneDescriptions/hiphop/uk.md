@@ -21,7 +21,7 @@ YouTube](https://youtu.be/010KyIQjkTk)).
 **History:** Invented by someone from RoR Berlin in 2005, but never published.
 Was rediscovered in 2021.
 
-## Difficulty
+## Важко
 
 * **Low Surdo:** medium
 * **Mid Surdo:** medium
