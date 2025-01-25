@@ -43,7 +43,7 @@ name+sign for the tune.
 * **Surdos:** medium (it is important, that the double hit in every bar is not
   played to fast.)
 * **Представник:** середній
-* **Snare:** easy
+* **Малий барабан:** легко
 * **Бубен:** легко
 * **Agogô:** easy
 
