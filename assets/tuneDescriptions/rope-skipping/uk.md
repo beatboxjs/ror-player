@@ -13,7 +13,7 @@ oneself or others are swinging around your body.
 
 ## Важко
 
-* **Low Surdo:** medium
+* **Низький Surdo:** середній
 * **Mid Surdo:** tricky
 * **High Surdo:** medium
 * **Repi:** hard
