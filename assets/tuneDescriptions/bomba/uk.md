@@ -21,4 +21,4 @@ around 2014
 * **Repi:** medium
 * **Малий барабан:** середній
 * **Tamborim:** hard
-* **Agogô:** medium
+* **Agogô:** середній
