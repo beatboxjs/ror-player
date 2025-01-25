@@ -18,7 +18,7 @@
 ## Важко
 
 * **Low Surdo:** легко
-* **Mid Surdo:** easy
+* **Mid Surdo:** легко
 * **High Surdo:** легко
 * **Repi:** tricky
 * **Пастка:** складно
