@@ -1,4 +1,4 @@
-**Sign:** *(None yet.)*
+**Знак:** *(Поки немає.)*
 
 ## Фон
 
@@ -11,7 +11,7 @@ non-military civil service.
 
 **Musical background:** *(More info needed.)*
 
-**Sign:** *(None yet.)*
+**Знак:** *(Поки немає.)*
 
 **History:** Introduced by RoR Helsinki on the TNM in 2019 in Lithuania.
 
