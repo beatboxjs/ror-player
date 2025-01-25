@@ -30,7 +30,7 @@ a bowl of custard”.
 Used to be called Welfare State, but was renamed because people don’t like the
 state.
 
-## Controversies
+## Суперечки
 
 The rhythm clearly sounds like Samba Reggae, which is a tune developed and used
 by the Black liberation movement in Brazil. Many people in the RoR network
