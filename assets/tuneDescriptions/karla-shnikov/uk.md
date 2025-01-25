@@ -26,7 +26,7 @@ fighting for rights or liberation, that historians never wrote about since
 history has always been written by the powerful and the exceptional, and
 especially hiding the contribution of women.
 
-**Musical background:** *(More info needed.)*
+**Музичний фон:** *(Потрібна додаткова інформація.)*
 
 **Sign:** The fictional character Karla Shnikov was also an animal rights
 activist, and one of her actions was to liberate the biggest rabbit farm in
