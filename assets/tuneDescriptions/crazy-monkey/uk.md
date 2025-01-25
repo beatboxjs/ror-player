@@ -30,7 +30,7 @@ football fans commonly make the same noises at Black players.
 ## Важко
 
 * **Low Surdo:** легко
-* **Mid Surdo:** medium
+* **Mid Surdo:** середній
 * **High Surdo:** легко
 * **Repi:** hard
 * **Малий барабан:** середній
