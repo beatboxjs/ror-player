@@ -3,7 +3,7 @@
 Doppler Break sign: Move your hand in front of your body from one side to the
 other like a train passing by.
 
-## Background
+## Фон
 
 **Name:** Trans Europ Express (TEE) was an international high-speed luxury train
 in Western Europe between 1957 and 1995, aiming to provide an alternative to
