@@ -24,7 +24,7 @@ also often associated with drumming).
 ## Важко
 
 * **Surdos:** easy
-* **Repi:** medium
+* **Представник:** середній
 * **Малий барабан:** середній
 * **Бубен:** легко
 * **Agogô:** tricky
