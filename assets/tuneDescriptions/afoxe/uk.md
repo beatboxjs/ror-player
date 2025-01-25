@@ -61,11 +61,11 @@
   часу)
 * **Agogô:** середній (легко змішується із заварним кремом)
 
-## Breaks
+## Перерви
 
-* Break 1, a call&response between Surdos and all others
-* Breaks 2 & 3 which are exchange-surdo-lines for Mid and High Surdos
-* Call Break, a call&response between Repis and all others
-* Wolf Break, a call&response between Surdos and all others which ends with a
-  (name giving) howl. It is usually played in a loop. Can also be played in
-  other tunes.
+* Перерва 1, виклик і відповідь між Surdos та всіма іншими
+* Перерви 2 і 3, які є лініями обміну сурдо для середніх і високих сурдо
+* Перерва виклику, виклик і відповідь між Repis та всіма іншими
+* Wolf Break, дзвінок і відповідь між Surdos та всіма іншими, що закінчується
+  виттям (вказати ім’я). Зазвичай грається циклічно. Також можна відтворювати
+  інші мелодії.
