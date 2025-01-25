@@ -30,7 +30,7 @@ moments to reflect and (natural) silence.
 ## Важко
 
 * **Low Surdo:** легко
-* **Mid Surdo:** medium
+* **Mid Surdo:** середній
 * **High Surdo:** hard
 * **Repi:** hard
 * **Snare:** hard
