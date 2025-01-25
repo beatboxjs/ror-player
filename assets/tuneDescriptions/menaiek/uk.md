@@ -18,6 +18,6 @@ music.
 * **Low Surdo:** легко
 * **Mid/High Surdo:** tricky
 * **Repi:** hard
-* **Snare:** hard
+* **Малий барабан:** жорсткий
 * **Бубон:** жорсткий
 * **Agogô:** середній
