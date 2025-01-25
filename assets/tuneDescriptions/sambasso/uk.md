@@ -20,6 +20,6 @@ played there before?
 
 * **Surdos:** easy
 * **Repi:** hard
-* **Snare:** hard
+* **Малий барабан:** жорсткий
 * **Бубон:** жорсткий
 * **Agogô:** середній
