@@ -1,7 +1,7 @@
 **Sign:** Put one fist on top of the other, as if you were holding a paddle, and
 start paddling.
 
-## Background
+## Фон
 
 **Musical background:** Based on the song with the same name by Arto
 Tunçboyacıyan, an artist part of the Armenian minority in Turkey, and his band
