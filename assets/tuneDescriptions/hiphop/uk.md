@@ -24,7 +24,7 @@ Was rediscovered in 2021.
 ## Важко
 
 * **Низький Surdo:** середній
-* **Mid Surdo:** medium
+* **Mid Surdo:** середній
 * **High Surdo:** medium
 * **Repi:** легко
 * **Snare:** hard
