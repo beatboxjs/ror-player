@@ -31,6 +31,6 @@ stereotype.
 * **Mid Surdo:** легко
 * **Високий Surdo:** середній
 * **Repi:** hard
-* **Snare:** hard
+* **Малий барабан:** жорсткий
 * **Tamborim:** medium
 * **Agogô:** середній
