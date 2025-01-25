@@ -5,7 +5,7 @@
 **Name:** “Rope skipping” in British English means to jump over a rope that
 oneself or others are swinging around your body.
 
-**Musical background:** *(More info needed.)*
+**Музичний фон:** *(Потрібна додаткова інформація.)*
 
 **Sign:** Depicts the activity of rope skipping
 
