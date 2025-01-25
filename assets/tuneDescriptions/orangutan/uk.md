@@ -21,7 +21,7 @@ There is a debate about removing all monkey references from the tune name and
 breaks, since racist stereotypes associate monkeys with Black people (who are
 also often associated with drumming).
 
-## Difficulty
+## Важко
 
 * **Surdos:** easy
 * **Repi:** medium
