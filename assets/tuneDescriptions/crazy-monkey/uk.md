@@ -41,7 +41,7 @@ football fans commonly make the same noises at Black players.
 
 Is a very happy tune and quite new. It was introduced at the TNM 2010.
 
-## Breaks
+## Перерви
 
 Break 1: It is over 16 counts and a call response. The Agogô plays part of their
 line and all others respond. Then there is a part where everyone (including
