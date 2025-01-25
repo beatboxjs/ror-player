@@ -28,7 +28,8 @@ the name.)*
 
 **Sign:** The sign depicts the spikes of a hedgehog
 
-**History:** Part of the first set of tunes taken from Barking Bateria in 2000.
+**Історія:** Частина першого набору мелодій, взятих із Barking Bateria у 2000
+році.
 
 ## Difficulty
 
