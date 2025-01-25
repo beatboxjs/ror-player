@@ -10,7 +10,7 @@ rotate your hands as if to zoom in and out.
 ## Важко
 
 * **Surdos:** easy
-* **Repi:** easy
+* **Repi:** легко
 * **Snare:** easy
 * **Tamborim:** medium
 * **Agogô:** easy
