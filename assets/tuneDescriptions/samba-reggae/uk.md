@@ -57,7 +57,7 @@ European bands, and there is an ongoing debate about abolishing the tune.
 
 ## Важко
 
-* **Surdos:** medium
+* **Глухий:** середній
 * **Представник:** середній
 * **Малий барабан:** середній
 * **Tamborim:** easy (clave)
