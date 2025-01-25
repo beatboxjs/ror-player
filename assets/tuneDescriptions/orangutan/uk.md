@@ -12,8 +12,8 @@ south-east Asia.
 
 **Sign:** The sign depicts a monkey
 
-**History:** Introduced to the network by RoR London in 2012, was probably
-played there before?
+**Історія:** Представлено в мережі RoR London у 2012 році, ймовірно, грали там
+раніше?
 
 ## Суперечки
 
