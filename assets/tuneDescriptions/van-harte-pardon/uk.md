@@ -19,7 +19,7 @@ heart”, hence the heart.
 
 **History:** From RoR Maastricht
 
-## Difficulty
+## Важко
 
 * **Surdos:** medium
 * **Repi:** medium
