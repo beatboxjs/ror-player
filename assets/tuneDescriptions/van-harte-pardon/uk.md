@@ -23,6 +23,6 @@ heart”, hence the heart.
 
 * **Surdos:** medium
 * **Repi:** medium
-* **Snare:** medium
+* **Малий барабан:** середній
 * **Tamborim:** medium
 * **Agogô:** hard
