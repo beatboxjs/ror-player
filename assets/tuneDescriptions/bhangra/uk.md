@@ -55,7 +55,7 @@ Southeast Asia. In Hindu, the gesture is called Namaste.
 * **Tamborim:** medium
 * **Agogô:** easy
 
-## Breaks
+## Перерви
 
 * Break 1 and 2: are very similar, but luckily, there are memory-phrases to help
   you memorize and distinguish them. Singing them together in a rehearsal is
