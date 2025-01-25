@@ -59,6 +59,6 @@ European bands, and there is an ongoing debate about abolishing the tune.
 
 * **Surdos:** medium
 * **Repi:** medium
-* **Snare:** medium
+* **Малий барабан:** середній
 * **Tamborim:** easy (clave)
 * **Agogô:** medium
