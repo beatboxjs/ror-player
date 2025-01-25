@@ -74,7 +74,7 @@ whether to do this or not.
 ## Важко
 
 * **Surdos:** easy
-* **Repi:** medium
+* **Представник:** середній
 * **Snare:** hard
 * **Бубен:** легко
 * **Agogô:** середній
