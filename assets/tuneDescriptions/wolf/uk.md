@@ -1,13 +1,13 @@
-**Sign:** draw a big “V” in the air with both hands (from up to down).
+**Знак:** намалюйте в повітрі велику букву «V» обома руками (згори вниз).
 
 ## Фон
 
-**Name:** A wolf is a large mammal native to Eurasia and North America and the
-ancestor of domestic dogs.
+**Назва:** Вовк — великий ссавець Євразії та Північної Америки, предок домашніх
+собак.
 
 **Музичний фон:** *(Потрібна додаткова інформація.)*
 
 **Знак:** *(Потрібна додаткова інформація.)*
 
-**History:** From the [website of RoR
-Kraków](https://sambaka.wordpress.com/rytmy/) *(more info needed)*
+**Історія:** З [веб-сайту RoR Kraków](https://sambaka.wordpress.com/rytmy/)
+*(необхідно більше інформації)*
