@@ -29,7 +29,7 @@ stereotype.
 
 * **Низький Surdo:** середній
 * **Mid Surdo:** легко
-* **High Surdo:** medium
+* **Високий Surdo:** середній
 * **Repi:** hard
 * **Snare:** hard
 * **Tamborim:** medium
