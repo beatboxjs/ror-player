@@ -50,10 +50,10 @@ stereotype associated with Black people.
 
 ## Суперечки
 
-The rhythm clearly sounds like real Samba Reggae, which is a tune developed and
-used by the Black liberation movement in Brazil. Many people in the RoR network
-consider it cultural appropriation to play this tune in our mainly white
-European bands, and there is an ongoing debate about abolishing the tune.
+Ритм чітко звучить як справжня самба-реггі, яка є мелодією, розробленою та
+використовуваною визвольним рухом темношкірих у Бразилії. Багато людей у мережі
+RoR вважають культурним присвоєнням грати цю мелодію в наших переважно білих
+європейських групах, і зараз тривають дебати щодо скасування цієї мелодії.
 
 ## Важко
 
