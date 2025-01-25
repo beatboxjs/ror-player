@@ -21,4 +21,4 @@ our tune comes from Polish “walc” for Waltz and “walcz” for “fight!”
 * **Repi:** легко
 * **Малий барабан:** середній
 * **Бубен:** легко
-* **Agogô:** easy
+* **Agogô:** легко
