@@ -50,7 +50,7 @@ Bateria in 2004/2005.
 ## Важко
 
 * **Surdos:** easy
-* **Repi:** easy
+* **Repi:** легко
 * **Snare:** easy
 * **Tamborim:** medium
 * **Agogô:** easy
