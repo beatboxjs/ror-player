@@ -38,7 +38,7 @@ showing a gun, and other bands didn’t want to have a tune named after a weapon
 The story of Karla Shnikov was made up by the working group thinking about a new
 name+sign for the tune.
 
-## Difficulty
+## Важко
 
 * **Surdos:** medium (it is important, that the double hit in every bar is not
   played to fast.)
