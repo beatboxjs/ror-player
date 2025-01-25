@@ -1,4 +1,4 @@
-**Sign:** Wave an imaginary tissue like saying goodbye to a train.
+**Знак:** Помахайте уявною серветкою, наче прощаючись із поїздом.
 
 Doppler Break sign: Move your hand in front of your body from one side to the
 other like a train passing by.
