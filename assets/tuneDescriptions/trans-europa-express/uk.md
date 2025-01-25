@@ -27,6 +27,6 @@ Kraftwerk ([YouTube](https://www.youtube.com/watch?v=XMVokT5e0zs)).
 * **Surdos:** easy
 * **Repi:** tricky
 * **Малий барабан:** середній
-* **Tamborim:** easy
+* **Бубен:** легко
 * **Agogô:** easy
 * **Shaker:** tricky
