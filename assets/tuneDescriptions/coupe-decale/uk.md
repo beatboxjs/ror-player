@@ -2,7 +2,7 @@ This tune exists in two variations, one in 4/4 and one in 6/8. Usually, the 4/4
 variation is played, sometimes switching to the 3/4 for a moment while
 increasing the speed.
 
-## Background
+## Фон
 
 **Name:** Coupé-Décalé is a type of club dance music popular in Côte d’Ivoire.
 It was developed in Paris by Ivorian DJs and eventually brought back to Côte
