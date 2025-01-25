@@ -22,7 +22,7 @@ Coupé-Décalé. It does not seem to sound the same as Coupé-Décalé though.
 
 **History:** The tune was invented by RoR Montpellier in 2018.
 
-## Difficulty
+## Важко
 
 * **Low Surdo:** easy
 * **Mid/High Surdo:** medium
