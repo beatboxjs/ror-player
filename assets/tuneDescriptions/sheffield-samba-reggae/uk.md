@@ -1,19 +1,18 @@
-**Sign:** smoke a joint like a cup of tea (with thumb and index finger)
+**Знак:** курити джойнт як чашку чаю (великим і вказівним пальцями)
 
 ## Фон
 
-**Name:** See Samba Reggae. Sheffield is a city in the UK that used to have a
-very active RoR band.
+**Назва:** Див. Samba Reggae. Шеффілд – це місто у Великій Британії, де колись
+був дуже активний гурт RoR.
 
-**Musical background:** A typical Samba Reggae tune.
+**Музичний фон: ** Типова мелодія Samba Reggae.
 
-**Sign:** The sign is a mix between drinking tea and smoking a joint. Drinking
-tea is a common activity in the UK (not sure if there is a specific connection
-to Sheffield). Smoking joints is a main ritual in the Rastafari religion, which
-is closely linked to Reggae music.
+**Знак:** Знак є сумішшю між питтям чаю та курінням джойнту. Пити чай у Великій
+Британії (не впевнений, чи є якийсь зв’язок із Шеффілдом). Куріння джойнтів є
+основним ритуалом у релігії растафарі, яка тісно пов'язана з музикою реггі.
 
-**History:** Introduced to the network by RoR London in 2012, was probably
-played there before?
+**Історія:** Представлено в мережі RoR London у 2012 році, ймовірно, грали там
+раніше?
 
 ## Суперечки
 
