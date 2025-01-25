@@ -76,5 +76,5 @@ whether to do this or not.
 * **Surdos:** easy
 * **Repi:** medium
 * **Snare:** hard
-* **Tamborim:** easy
+* **Бубен:** легко
 * **Agogô:** medium
