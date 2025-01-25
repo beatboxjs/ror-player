@@ -19,7 +19,7 @@ Maastricht.”
 ## Важко
 
 * **Surdos:** medium
-* **Repi:** hard
+* **Rep:** важко
 * **Малий барабан:** середній
 * **Tamborim:** medium
 * **Agogô:** середній
