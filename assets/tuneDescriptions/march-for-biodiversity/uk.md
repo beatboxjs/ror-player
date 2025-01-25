@@ -19,5 +19,5 @@ pollution.
 * **High Surdo:** medium
 * **Repi:** tricky
 * **Snare:** easy
-* **Tamborim:** tricky
+* **Тамборім:** складно
 * **Agogô:** середній
