@@ -1,19 +1,19 @@
-**Sign:** Put one fist on top of the other, as if you were holding a paddle, and
-start paddling.
+**Знак:** Покладіть один кулак на інший, ніби ви тримаєте весло, і почніть
+гребти.
 
 ## Фон
 
-**Musical background:** Based on the song with the same name by Arto
-Tunçboyacıyan, an artist part of the Armenian minority in Turkey, and his band
-Armenian Navy Band ([YouTube](https://www.youtube.com/watch?v=OCgrJFbIAcw)).
+**Музичний фон:** На основі однойменної пісні Арто Тунчбояджіяна, артиста
+вірменської меншини в Туреччині, та його групи Armenian Navy Band
+([YouTube](https://www.youtube.com/watch?v=OCgrJFbIAcw)).
 
-**History:** Introduced by RoR Berlin in 2022.
+**Історія:** Представлено RoR Berlin у 2022 році.
 
 ## Важко
 
 * **Low Surdo:** легко
-* **Mid/High Surdo:** medium
+* **Середній/Високий Surdo:** середній
 * **Repi:** hard
-* **Snare:** hard
+* **Малий барабан:** жорсткий
 * **Бубен:** легко
 * **Agogô:** важко
