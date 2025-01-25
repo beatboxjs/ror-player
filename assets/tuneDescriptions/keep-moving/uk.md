@@ -32,7 +32,7 @@ moments to reflect and (natural) silence.
 * **Low Surdo:** легко
 * **Mid Surdo:** середній
 * **High Surdo:** hard
-* **Repi:** hard
+* **Rep:** важко
 * **Малий барабан:** жорсткий
 * **Бубон:** жорсткий
 * **Agogô:** важко
