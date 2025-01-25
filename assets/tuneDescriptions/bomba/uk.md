@@ -18,7 +18,7 @@ around 2014
 * **Низький Surdo:** середній
 * **Mid Surdo:** easy
 * **High Surdo:** medium
-* **Repi:** medium
+* **Представник:** середній
 * **Малий барабан:** середній
 * **Tamborim:** hard
 * **Agogô:** середній
