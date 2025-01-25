@@ -34,7 +34,7 @@ football fans commonly make the same noises at Black players.
 * **High Surdo:** легко
 * **Rep:** важко
 * **Малий барабан:** середній
-* **Tamborim:** medium
+* **Бубон:** середній
 * **Agogô:** hard (catchy)
 
 ## About the tune
