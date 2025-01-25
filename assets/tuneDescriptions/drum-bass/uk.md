@@ -42,7 +42,7 @@ in 2006, although it is not clear whether it is the same tune.
 * **Бубен:** легко
 * **Agogô:** середній
 
-## Breaks
+## Перерви
 
 * Break 1 is a singing break (no drumming, all sing together "everybody dance
   now!”), brings a good mood and moves and can be used to involve audience. This
