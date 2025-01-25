@@ -1,30 +1,30 @@
-A quite groovy tune that can be played slowly for a long time. The Surdos make a
-melody, so they are suitable to be played by one Surdo player with three Surdos.
+Досить заводна мелодія, яку можна повільно грати протягом тривалого часу. Сурдо
+створює мелодію, тому їх можна грати одному гравцю на Сурдо з трьома Сурдо.
 
-**Sign:** monkey, both hands in armpits
+**Знак:** мавпа, обидві руки в пахвах
 
 ## Фон
 
-**Name:** Orangutan is a critically endangered species of apes native to
-south-east Asia.
+**Назва:** Орангутанг — вид людиноподібних мавп, що знаходиться під загрозою
+зникнення, походить із Південно-Східної Азії.
 
 **Музичний фон:** *(Потрібна додаткова інформація.)*
 
-**Sign:** The sign depicts a monkey
+**Знак:** На знаку зображена мавпа
 
 **Історія:** Представлено в мережі RoR London у 2012 році, ймовірно, грали там
 раніше?
 
 ## Суперечки
 
-There is a debate about removing all monkey references from the tune name and
-breaks, since racist stereotypes associate monkeys with Black people (who are
-also often associated with drumming).
+Існує дискусія щодо видалення всіх посилань на мавп із назви мелодії та пауз,
+оскільки расистські стереотипи асоціюють мавп із темношкірими людьми (яких також
+часто асоціюють із грою на барабанах).
 
 ## Важко
 
-* **Surdos:** easy
+* **Глухо:** легко
 * **Представник:** середній
 * **Малий барабан:** середній
 * **Бубен:** легко
-* **Agogô:** tricky
+* **Agogô:** складно
