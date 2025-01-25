@@ -19,5 +19,5 @@ music.
 * **Mid/High Surdo:** tricky
 * **Repi:** hard
 * **Snare:** hard
-* **Tamborim:** hard
+* **Бубон:** жорсткий
 * **Agogô:** середній
