@@ -17,7 +17,9 @@
         "copy-of-song-name": "Копія {{name}}",
         "copy-song-name": "Копія",
         "rename-tooltip": "Перейменувати",
-        "remove-message": "Ви дійсно хочете видалити пісню {{name}}?"
+        "remove-message": "Ви дійсно хочете видалити пісню {{name}}?",
+        "new-song": "Нова пісня",
+        "remove-tooltip": "Видалити"
     },
     "utils": {
         "time-month-aug": "Серп",
@@ -143,5 +145,141 @@
     },
     "compose": {
         "add-to-song-tooltip": "Додати до пісні"
+    },
+    "pattern-placeholder": {
+        "restore-tooltip": "Відновити оригінал",
+        "user-created-tooltip": "Розрив, створений користувачем",
+        "restore-message": "Ви впевнені, що бажаєте повернути свої зміни до {{patternName}} ({{tuneName}}) і відновити оригінальну розрив?",
+        "show-notes-tooltip": "Показати нотатки",
+        "listen-tooltip": "Слухай",
+        "edit-notes-tooltip": "Редагувати нотатки",
+        "restore-ok": "Відновити",
+        "restore-title": "Відновити оригінал"
+    },
+    "config": {
+        "instruments-hs": "Високий глухий",
+        "stroke-description-.": "Безшумний удар",
+        "stroke-description-fl": "Відблиск",
+        "instruments-ot": "Кричати",
+        "category-tricky": "Трюки",
+        "stroke-description-w": "Віпсова (тамборимська) палиця",
+        "category-uncommon": "Незвичайні мелодії",
+        "instruments-ms": "Середня глухота",
+        "stroke-description-s": "М'який відблиск",
+        "category-common": "Загальні мелодії",
+        "instruments-re": "Рип",
+        "stroke-description-hd": "Ляпас рукою",
+        "stroke-description-wh": "Свисток",
+        "instruments-ag": "Agogo",
+        "stroke-volume-shitty": "Хренові динаміки",
+        "instruments-sn": "Пастка",
+        "instruments-sh": "Шейкер",
+        "stroke-description-wh2": "Довгий свисток",
+        "category-onesurdo": "Один Глухий",
+        "category-easy": "Легко",
+        "category-western": "Західна музика",
+        "stroke-volume-defaults": "За замовчуванням",
+        "instruments-ls": "Низький Глухий",
+        "instruments-ta": "Бубон",
+        "stroke-description-0": "Змочіть рукою",
+        "stroke-description-sil": "Безшумний удар",
+        "time-with-triplets": "{{time}} з трійнями",
+        "time-with-quintuplets": "{{time}} із п’ятірками",
+        "category-all": "Всі мелодії",
+        "category-new": "Нові мелодії",
+        "category-proposed": "Пропоновані мелодії",
+        "category-custom": "Спеціальні мелодії",
+        "category-medium": "Середній",
+        "category-cultural-appropriation": "Культурне присвоєння"
+    },
+    "help": {
+        "source-code": "Вихідний код на GitHub",
+        "app": "{{appName}} додаток",
+        "download": "Завантажити {{appName}}",
+        "report-problem": "Повідомте про проблему",
+        "user-manual": "Посібник користувача",
+        "language": "Мова"
+    },
+    "playback-settings-picker": {
+        "loop": "Петля",
+        "volume-master": "Майстер",
+        "speed-reset": "Скинути",
+        "whistle-one": "На одному",
+        "speed": "Швидкість",
+        "whistle-all": "На всіх",
+        "title": "Налаштування відтворення",
+        "whistle": "Свисток",
+        "whistle-off": "Ні"
+    },
+    "example-song-player": {
+        "listen": "Слухай",
+        "download-mp3": "Завантажити як MP3"
+    },
+    "song-player-toolbar": {
+        "tools": "Інструменти",
+        "clear-song-ok": "Очистити",
+        "share": "Поділіться",
+        "clear-song-title": "Ясна пісня",
+        "clear-song": "Ясна пісня",
+        "clear-song-message": "Ви дійсно хочете очистити поточну пісню?",
+        "import": "Імпорт",
+        "export-mp3": "Експорт MP3",
+        "export-wav": "Експорт WAV"
+    },
+    "update": {
+        "refresh": "{{refresh}} для оновлення.",
+        "new-version": "Доступна нова версія {{appName}}.",
+        "refresh-refresh": "Оновіть сторінку"
+    },
+    "song-player": {
+        "pick-intruments-tooltip": "Збирати інструменти",
+        "all-instruments": "Все",
+        "remove-tooltip": "Видалити",
+        "all-instruments-drop": "(Все)"
+    },
+    "pattern-player": {
+        "restore-ok": "Відновити",
+        "restore-message": "Ви впевнені, що бажаєте скасувати свої зміни та відновити вихідну розрив?",
+        "restore-title": "Відновити оригінал",
+        "restore": "Відновити оригінал"
+    },
+    "mute-button": {
+        "mute-all": "Вимкнути всі інструменти",
+        "unmute-all": "Увімкнути всі інструменти"
+    },
+    "tune-info": {
+        "download-mp3": "Завантажити як MP3",
+        "notation": "Позначення",
+        "sounds": "Звуки",
+        "notation-info": "Натисніть {{pen}} на розривах нижче, щоб переглянути примітки.",
+        "video": "Відео",
+        "tune-sheet-pdf": "Мелодія (PDF)"
+    },
+    "upbeat-picker": {
+        "upbeat": "Бадьорий: {{upbeat}}"
+    },
+    "pattern-length-picker": {
+        "length": "Довжина: {{length}}"
+    },
+    "pattern-player-dialog": {
+        "share": "Поділіться"
+    },
+    "pattern-list-filter": {
+        "filter-placeholder": "Фільтр: {{category}}"
+    },
+    "play-pause-stop-button": {
+        "pause": "Пауза",
+        "play": "Грати",
+        "stop": "Стій"
+    },
+    "export": {
+        "error-title": "Помилка експорту {{type}}"
+    },
+    "time-signature-picker": {
+        "time-signature": "Тактовий розмір: {{time}}"
+    },
+    "overview": {
+        "listen": "Слухай",
+        "compose": "Скласти"
     }
 }
