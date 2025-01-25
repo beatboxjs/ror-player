@@ -1,23 +1,24 @@
-On some devices (such as smartphones and tablets), it is possible to install RoR
-Player as an app. The required steps depend on your browser.
+На деяких пристроях (таких як смартфони та планшети) можна встановити RoR Player
+як додаток. Необхідні дії залежать від вашого браузера.
 
 ### Chrome
 
-1. Press Chrome’s menu icon (3 dots) on the top right
-2. Press “Install app” (or “Add to Home Screen”)
+1. Натисніть значок меню Chrome (3 крапки) у верхньому правому куті
+2. Натисніть «Встановити програму» (або «Додати на головний екран»)
 
 ### Firefox
 
-1. Press Firefox’s menu icon (3 dots) on the top right or bottom right
-2. Press “Add to Home screen”
+1. Натисніть піктограму меню Firefox (3 крапки) у верхньому правому або нижньому
+   правому куті
+2. Натисніть «Додати на головний екран»
 
-### Safari
+### Сафарі
 
-1. Press Safari’s share icon (rectangle with an up arrow) at the bottom in the
-   middle
-2. Press “Add to Home Screen”
+1. Натисніть піктограму спільного доступу Safari (прямокутник зі стрілкою вгору)
+   внизу посередині
+2. Натисніть «Додати на головний екран»
 
 ### Opera
 
-1. Press Opera’s plus icon on the top left
-2. Press “Add to…” → “Home screen”
+1. Натисніть значок плюса Opera у верхньому лівому куті
+2. Натисніть «Додати до…» → «Головний екран»
