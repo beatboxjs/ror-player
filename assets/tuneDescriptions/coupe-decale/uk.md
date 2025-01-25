@@ -14,17 +14,17 @@ Coupé-Décalé «обдурюють» Францію та Західну Євр
 повертаються до Кот-д’Івуару.
 ([Вікіпедія](https://en.wikipedia.org/wiki/Coup%C3%A9-D%C3%A9cal%C3%A9))
 
-**Musical background:** According to RoR Montpellier, the music is based on
-Coupé-Décalé. It does not seem to sound the same as Coupé-Décalé though.
+**Музичний фон:** Згідно з RoR Montpellier, музика заснована на Coupé-Décalé.
+Здається, це не звучить так само, як Coupé-Décalé.
 
-**Sign:** The tune does not have a sign so far.
+**Знак:** Мелодія поки що не має знака.
 
-**History:** The tune was invented by RoR Montpellier in 2018.
+**Історія:** Мелодію придумав RoR Montpellier у 2018 році.
 
 ## Важко
 
 * **Low Surdo:** легко
 * **Середній/Високий Surdo:** середній
-* **Repi/Snare:** hard (they play the same)
+* **Repi/Snare:** жорсткий (вони грають однаково)
 * **Бубон:** жорсткий
 * **Agogô:** середній
