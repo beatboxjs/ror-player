@@ -22,7 +22,7 @@ rhythms that are typically played on hand drums such as the Dumbek
 * **Repi:** hard
 * **Snare:** hard
 * **Tamborim:** medium
-* **Agogô:** medium
+* **Agogô:** середній
 
 ## Breaks
 
