@@ -15,7 +15,7 @@ left. From that day on the people had to do all the work themselves.
 **Sign:** The hand signal refers to the pointed cap that Heinzelmenschen are
 wearing on their heads.
 
-**Musical background:** *(More info needed.)*
+**Музичний фон:** *(Потрібна додаткова інформація.)*
 
 **History:** Local tune from RoR Cologne, published in 2006. Was removed from
 the tune sheet in 2012.
