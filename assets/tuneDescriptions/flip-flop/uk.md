@@ -22,4 +22,4 @@ inspired by the song “Digital Monkey” by Balkan Beat Box
 * **Repi:** medium
 * **Snare:** tricky
 * **Tamborim:** medium
-* **Agogô:** medium
+* **Agogô:** середній
