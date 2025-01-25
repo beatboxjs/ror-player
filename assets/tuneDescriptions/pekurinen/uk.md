@@ -21,6 +21,6 @@ non-military civil service.
 * **Mid Surdo:** easy
 * **High Surdo:** легко
 * **Repi:** tricky
-* **Snare:** tricky
+* **Пастка:** складно
 * **Tamborim:** tricky
 * **Agogô:** середній
