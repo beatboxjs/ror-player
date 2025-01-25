@@ -21,6 +21,6 @@ YouTube](https://youtu.be/-udR34x2aTM?t=4)).
 
 * **Surdos:** easy
 * **Repi:** hard
-* **Snare:** easy
+* **Малий барабан:** легко
 * **Tamborim:** medium
 * **Agogô:** середній
