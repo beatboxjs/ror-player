@@ -11,27 +11,28 @@
 
 ## Фон
 
-**Name:** The so-called African diaspora religions are religions that evolved
-from traditional African beliefs and rituals, sometimes with a Christian
-influence, among African slaves in America. They often had to be practiced in
-secret. Some of these religions are called Voodoo (sometimes spelled Vodum,
-Vodou, Vodú). While these religions originate in Africa, some of them (in
-particular Louisiana Voodoo) are also practicioned by white people. African
-diaspora religions usually include drumming in their rituals.
+**Назва:** так звані релігії африканської діаспори – це релігії, які розвинулися
+з традиційних африканських вірувань і ритуалів, іноді з християнським впливом,
+серед африканських рабів в Америці. Їх часто доводилося практикувати таємно.
+Деякі з цих релігій називають Вуду (іноді пишуться Vodum, Vodou, Vodú). Хоча ці
+релігії походять з Африки, деякі з них (зокрема, луїзіанське вуду) також
+сповідують білі люди. Релігії африканської діаспори зазвичай включають гру на
+барабанах у свої ритуали.
 
-**Musical background:** It is not clear whether our tune is based on traditional
-Voodoo rhythms. *(More info needed.)*
+**Музичний фон:** Незрозуміло, чи заснована наша мелодія на традиційних ритмах
+вуду. *(Потрібна додаткова інформація.)*
 
-**Sign:** The tune sign stands for a halo, which has been depicted above godly
-persons’ heads in the art of many different religions throughout history.
+**Знак:** Знак мелодії означає німб, який зображувався над головами
+благочестивих людей у мистецтві багатьох різних релігій протягом історії.
 
-**History:** Part of the first set of tunes taken from Barking Bateria in 2000.
+**Історія:** Частина першого набору мелодій, взятих із Barking Bateria у 2000
+році.
 
-## Controversies
+## Суперечки
 
-Since this tune is directly rooted in Afro-Brazilian religion, many people in
-the RoR network consider it cultural appropriation to play it. There is an
-ongoing debate on whether this tune should be abandoned.
+Оскільки ця мелодія має пряме коріння в афро-бразильській релігії, багато людей
+у мережі RoR вважають її культурним присвоєнням. Тривають дебати щодо того, чи
+варто цю мелодію використовувати
 
 ## Difficulty
 
