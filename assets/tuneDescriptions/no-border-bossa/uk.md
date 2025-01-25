@@ -1,20 +1,20 @@
-**Sign:** interlock your hands like a fence and then open it.
+**Знак:** скріпіть руки, як паркан, а потім розкрийте.
 
 ## Фон
 
-**Name:** Bossa Nova is a Brazilian style of music that developed out of Samba,
-which usually involves a guitar and a singer on top of the characteristic Bossa
-Nova beat.
+**Назва:** Bossa Nova — це бразильський стиль музики, який розвинувся на основі
+самби, яка зазвичай включає гітару та співака на основі характерного ритму Bossa
+Nova.
 
-**Musical background:** The Surdo line is very similar to the Bossa Nova beat.
-The Bossa clave is the clave that we use at RoR. See
+**Музичний фон:** Лінія Surdo дуже схожа на ритм Bossa Nova. Клава Bossa — це
+клава, яку ми використовуємо в RoR. Перегляньте
 [YouTube](https://www.youtube.com/watch?v=mZ_mEmaJu98).
 
-**Sign:** The sign probably depicts a border fence that is opened.
+**Знак:** На знаку, ймовірно, зображена прикордонна огорожа, яка відкрита.
 
-**History:** From RoR Maastricht. “A former Amsterdam band member was cleaning
-her room and found an old notation of a ‘no border bossa’. The paper points to
-Maastricht.”
+**Історія:** З RoR Маастрихт. «Колишня учасниця амстердамського гурту прибирала
+свою кімнату та знайшла стару нотацію «no border bossa». Папір вказує на
+Маастрихт»
 
 ## Важко
 
