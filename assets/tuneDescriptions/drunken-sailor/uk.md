@@ -1,31 +1,30 @@
-A nice tune based on the famous folk song “What shall we do with the drunken
-sailor?”. The Agogôs and Surdos together make the melody of that song (Agogôs:
-“What shall we do with the drunken sailor”, Surdos in the 4th bar: “Early in the
-morning”).
+Гарна мелодія на мотив відомої народної пісні «Що нам робити з п'яним
+матросом?». Agogôs і Surdos разом складають мелодію цієї пісні (Agogôs: «Що нам
+робити з п’яним моряком», Surdos у 4-му такті: «Рано-вранці»).
 
-**Sign:** build an eyepatch with one hand in front of your eye
+**Знак:** побудуйте пов’язку на оці однією рукою перед оком
 
 ## Фон
 
-**Name:** “What shall we do with the drunken sailor” is a traditional sea
-shanty, probably originating from the US in the 1800s. The song is probably
-based on the traditional Irish folk song “Óró sé do bheatha abhaile” (Oh-ro
-welcome home), which has the same melody and was historically used by the Irish
-movement against the British rule.
-([Wikipedia](https://en.wikipedia.org/wiki/Drunken_Sailor))
+**Назва:** «Що нам робити з п’яним матросом» — це традиційна морська халупа,
+яка, ймовірно, походить із США в 1800-х роках. Ймовірно, ця пісня заснована на
+традиційній ірландській народній пісні «Óró sé do bheatha abhaile» («О-ро,
+ласкаво просимо додому»), яка має ту саму мелодію та історично використовувалася
+ірландським рухом проти британського правління.
+([Вікіпедія](https://en.wikipedia.org/wiki/Drunken_Sailor))
 
-**Musical background:** The tune is based on the folk song. The Agogô line plays
-“What shall we do with the drunken sailor”, while the 4th bar of the Surdos
-plays the “early in the morning”.
+**Музичний супровід:** Мелодія написана на мотиви народної пісні. Лінія Agogô
+грає «Що нам робити з п’яним моряком», тоді як 4-й такт Surdos грає «рано
+вранці».
 
-**Sign:** The eye-patch depicts a pirate.
+**Знак:** На пов'язці на оці зображений пірат.
 
-**History:** Introduced as a tune by someone from RoR Köln/Cologne in 2010.
+**Історія:** Представлено як мелодію кимось із RoR Köln/Cöln у 2010 році.
 
 
 ## Важко
 
-* **Low/Mid Surdo:** easy
+* **Low/Mid Surdo:** легко
 * **Високий Surdo:** середній
 * **Rep:** важко
 * **Малий барабан:** жорсткий
