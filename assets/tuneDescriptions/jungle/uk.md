@@ -1,12 +1,12 @@
-**Sign:** Swing your fist above your head and shake your body, like dancing to
-techno music.
+**Знак:** Змахніть кулаком над головою та потрясіть тілом, ніби танцюєте під
+техно.
 
 ## Фон
 
-**Name:** Jungle is a genre of dance music that devloped in the UK rave scene in
-the 1990s. It is the main successor of Drum&Bass.
+**Назва:** Джангл — це жанр танцювальної музики, який розвинувся на рейв-сцені
+Великобританії в 1990-х роках. Це головний наступник Drum&Bass.
 
-**Musical background:** The tune is based on Jungle.
+**Музичний фон:** Мелодія заснована на Jungle.
 
 **Sign:** The sign represents dancing to electronic music.
 
