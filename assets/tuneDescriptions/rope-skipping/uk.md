@@ -1,6 +1,6 @@
 **Sign:** with both hands a rotating rope and jump up and down
 
-## Background
+## Фон
 
 **Name:** “Rope skipping” in British English means to jump over a rope that
 oneself or others are swinging around your body.
