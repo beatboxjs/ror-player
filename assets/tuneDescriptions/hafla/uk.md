@@ -1,18 +1,18 @@
-It is not the easiest to play but sounds really cool!
+Це не найпростіший для гри, але звучить дійсно круто!
 
-**Sign:** spread arms and shake your shoulders and hips
+**Знак:** розведіть руки і потрясіть плечима і стегнами
 
 ## Фон
 
-**Name:** “Hafla” (حفلة) means “Party/Festivity” in Arabic.
+**Назва:** «Хафла» арабською означає «вечірка/свято».
 
-**Musical background:** Based on Masmoudi, one of the 6 major Middle Eastern
-rhythms that are typically played on hand drums such as the Dumbek
-([Wikipedia](https://en.wikipedia.org/wiki/Dumbek_rhythms)).
+**Музичний фон:** На основі Masmoudi, одного з 6 головних близькосхідних ритмів,
+які зазвичай грають на ручних барабанах, таких як Dumbek
+([Вікіпедія](https://en.wikipedia.org/wiki/Dumbek_rhythms)).
 
 **Знак:** *(Потрібна додаткова інформація.)*
 
-**History:** Introduced by RoR Tel Aviv on TNM 2011.
+**Історія:** Представлено RoR Tel Aviv на TNM 2011.
 
 ## Важко
 
@@ -26,11 +26,12 @@ rhythms that are typically played on hand drums such as the Dumbek
 
 ## Перерви
 
-* Hafla Break/Yala break is similar to the first two counts of the Tamb line.
-* Kick Back 1 Break is like the Hafla Break with alternating surdo and
-  all-others (call-response). It is played in a loop, repeated over and over
-  until something else is shown.
-* Break 3 is a call response over 8 counts between Snare and all others.
+* Розрив Хафла/Яла подібний до перших двох пунктів лінії Тамб.
+* Kick Back 1 Break схожий на Hafla Break із чергуванням surdo та all-others
+  (call-response). Він відтворюється циклічно, повторюється знову і знову, доки
+  не буде показано щось інше.
+* Break 3 — це відповідь на виклик протягом 8 рахунків між Snare та всіма
+  іншими.
 * Hook Break is a bit tricky. It’s call response (Surdo to all-others) over 16
   counts. There is a funny memoryhook: “It’s a banana, it’s not a pineapple.
   it’s not an aubergine or a pear. It’s a what, It’s a what, It’s a what, It’s a

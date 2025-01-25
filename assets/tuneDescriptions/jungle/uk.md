@@ -8,17 +8,17 @@
 
 **Музичний фон:** Мелодія заснована на Jungle.
 
-**Sign:** The sign represents dancing to electronic music.
+**Знак:** Знак символізує танці під електронну музику.
 
-**History:** Invented by someone from RoR Berlin in 2005, inspired by the jungle
-parties in a squat in London. Was only played occasionally because it was never
-in the official tune sheets. Was rediscovered in 2021.
+**Історія:** винайшов кимось із RoR Berlin у 2005 році, натхненний вечірками в
+джунглях у сквоті в Лондоні. Виконувався лише зрідка, тому що його ніколи не
+було в офіційних аркушах мелодій. Був повторно відкритий у 2021 році.
 
 ## Важко
 
 * **Low Surdo:** легко
 * **Mid Surdo:** середній
-* **High Surdo:** hard
+* **Високий сурдо:** жорсткий
 * **Rep:** важко
 * **Малий барабан:** жорсткий
 * **Бубон:** середній
