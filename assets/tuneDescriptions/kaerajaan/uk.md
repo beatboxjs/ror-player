@@ -23,4 +23,4 @@ YouTube](https://youtu.be/-udR34x2aTM?t=4)).
 * **Repi:** hard
 * **Snare:** easy
 * **Tamborim:** medium
-* **Agogô:** medium
+* **Agogô:** середній
