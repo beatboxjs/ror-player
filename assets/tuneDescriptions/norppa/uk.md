@@ -18,7 +18,7 @@ does not imitate any particular genre or song.
 
 ## Важко
 
-* **Low Surdo:** easy
+* **Low Surdo:** легко
 * **Mid Surdo:** medium
 * **High Surdo:** легко
 * **Представник:** середній
