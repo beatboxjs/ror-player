@@ -25,7 +25,7 @@ European bands, and there is an ongoing debate about abolishing the tune.
 There is also some criticism towards the sign, which is based on a racist
 stereotype.
 
-## Difficulty
+## Важко
 
 * **Low Surdo:** medium
 * **Mid Surdo:** easy
