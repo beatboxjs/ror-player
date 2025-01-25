@@ -23,5 +23,5 @@ represents the beak of the bird.
 * **High Surdo:** easy
 * **Repi:** easy
 * **Snare:** tricky
-* **Tamborim:** easy
+* **Бубен:** легко
 * **Agogô:** hard
