@@ -44,7 +44,7 @@ Good to begin with, because all instruments are quite easy:
 * **Agogô:** easy (because they can look at the surdos for almost any hit they
   play)
 
-## Breaks
+## Перерви
 
 * Break 1, which is a call & response-break between Surdos and all others
 * Break 2, where everyone plays one bar of eighth-notes
