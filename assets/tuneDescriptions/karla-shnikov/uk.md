@@ -1,47 +1,46 @@
-This tune is one of the RoR basics. Often simply called “Karla”.
+Ця мелодія є однією з основ RoR. Часто називають просто «Карла».
 
-It sounds a bit, as the name implies, like machinegun-fire. As the Breaks have
-steady drum rolls in them, it’s important to aim for a steady even roll.
-Although the temptation is to play as fast as you can, you should try to be just
-in time (highlighting the first hit on every step can be helpful, to keep
-track).
+Звучить трохи, як випливає з назви, як автоматна черга. Оскільки Breaks мають
+постійні барабанні качки, важливо прагнути до стабільного рівномірного крену.
+Хоча спокуса полягає в тому, щоб грати якнайшвидше, ви повинні намагатися
+встигнути вчасно (виділення першого удару на кожному кроці може бути корисним,
+щоб стежити).
 
-Karla Shnikov is a funk tune too, but it does not fit with the other funks (Funk
-and Angela Davis) as well as they do together. But just try and find your own
-way!
+Karla Shnikov – теж фанк, але він не так добре поєднується з іншими фанками
+(Funk і Angela Davis), як вони разом. Але просто спробуйте знайти свій власний
+шлях!
 
 ## Знак
 
-Move index+middle finger like rabbit ears and cover other fingers with other
-hand.
+Рухайте вказівним+середнім пальцем, як кролячі вуха, а іншою рукою прикривайте
+інші пальці.
 
 ## Фон
 
-**Name:** Based on a fictional character invented by RoR called Karla Shnikov, a
-Russian activist who was one of Trotzky’s secret lovers and was first a
-communist, but later became an anarchist. There was a big discussion about
-taking a fictive name, but it can be seen as our ability to create our own
-histories – in the end, there might have been many “Karla Snikov”s, individuals
-fighting for rights or liberation, that historians never wrote about since
-history has always been written by the powerful and the exceptional, and
-especially hiding the contribution of women.
+**Ім’я:** засновано на вигаданому РоР персонажем на ім’я Карла Шнікова,
+російська активістка, яка була однією з таємних коханок Троцького і спочатку
+була комуністкою, а потім стала анархісткою. Була велика дискусія щодо
+використання вигаданої назви, але це можна розглядати як нашу здатність
+створювати власні історії – зрештою, могло бути багато «Карли Сніков», людей,
+які борються за права чи звільнення, про що історики ніколи писав, оскільки
+історію завжди писали могутні та виняткові, особливо приховуючи внесок жінок.
 
 **Музичний фон:** *(Потрібна додаткова інформація.)*
 
-**Sign:** The fictional character Karla Shnikov was also an animal rights
-activist, and one of her actions was to liberate the biggest rabbit farm in
-Russia. The sign depicts rabbit ears.
+**Прикмета:** Вигадана героїня Карла Шнікова також була захисницею прав тварин,
+і однією з її акцій було звільнення найбільшої в Росії кролячої ферми. На знаку
+зображені кролячі вушка.
 
-**History:** The tune was invented in London. Used to be called Kalashnikov, the
-sign a finger pistol, but was changed because some bands got in trouble for
-showing a gun, and other bands didn’t want to have a tune named after a weapon.
-The story of Karla Shnikov was made up by the working group thinking about a new
-name+sign for the tune.
+**Історія:** Мелодію винайшли в Лондоні. Раніше він називався «Калашников», знак
+— «пальцевий пістолет», але його змінили, оскільки деякі гурти мали проблеми
+через демонстрацію пістолета, а інші гурти не хотіли, щоб мелодія називалася на
+честь зброї. Історія Карли Шнікова була вигадана робочою групою, яка думала над
+новою назвою+знаком для мелодії.
 
 ## Важко
 
-* **Surdos:** medium (it is important, that the double hit in every bar is not
-  played to fast.)
+* **Surdos:** середній (важливо, щоб подвійний удар у кожному такті не
+  відтворювався швидко.)
 * **Представник:** середній
 * **Малий барабан:** легко
 * **Бубен:** легко
@@ -49,20 +48,21 @@ name+sign for the tune.
 
 ## Перерви
 
-Karla Shnikov has 3 breaks, one called just Karla Break (aka break 1), Break 2,
-and its inverted variation.
+Карла Шніков має 3 розриви, один називається просто Karla Break (він же перерва
+1), перерва 2 і його перевернута варіація.
 
-Karla Break is a quite common break, which can be played in every other tune. it
-consists of three bars of 4 hits per beat (for instruments which only have one
-beater it’s better to play 2 hits per beat) followed by a fourth bar where only
-the first sixteenth is played and the rest is silence. This Break creates a lot
-of tension. It’s also possible to let one instrument section continue playing
-it’s normal rhythm (for most instruments it sounds pretty awesome).
+Karla Break — досить поширений брейк, який можна грати в будь-якій іншій
+мелодії. він складається з трьох тактів по 4 удари на такт (для інструментів,
+які мають лише одну колотку, краще грати 2 удари на такт), за якими йде
+четвертий такт, де грається лише перша шістнадцята, а решта — тиша. Ця перерва
+створює велику напругу. Також можна дозволити одній секції інструменту
+продовжувати грати у своєму нормальному ритмі (для більшості інструментів це
+звучить досить приголомшливо).
 
-Break 2 consists of one bar with sixteen notes, played from soft to loud in
-group of four, then another bar with one note on time on each beat, and then two
-call & response bars.
+Перерва 2 складається з одного такту з шістнадцятьма нотами, які граються від
+тихо до голосно групою з чотирьох, потім ще одного такту з однією нотою на
+кожному такті, а потім двох тактів виклику та відповіді.
 
-Break 2 inverted consists in playing break 2 forward and then backward (that is,
-4 up, 4 beats ontime, 2x call&response, 2x call&response, 4 beats ontime, 4
-down).
+Перерва 2 перевернута полягає у відтворенні перерви 2 вперед, а потім назад
+(тобто, 4 удари вгору, 4 удари на час, 2x виклик і відповідь, 2x виклик і
+відповідь, 4 удари на час, 4 вниз).
