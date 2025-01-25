@@ -27,7 +27,7 @@ also often associated with drumming).
 Some bands in France have decided to stop playing the Monkey Break, since racist
 football fans commonly make the same noises at Black players.
 
-## Difficulty
+## Важко
 
 * **Low Surdo:** easy
 * **Mid Surdo:** medium
