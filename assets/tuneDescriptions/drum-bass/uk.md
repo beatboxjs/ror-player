@@ -40,7 +40,7 @@ in 2006, although it is not clear whether it is the same tune.
 * **Repi:** hard
 * **Малий барабан:** середній
 * **Бубен:** легко
-* **Agogô:** medium
+* **Agogô:** середній
 
 ## Breaks
 
