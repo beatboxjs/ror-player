@@ -11,7 +11,7 @@ Surdos always start a bit before the 1.
 
 **Sign:** Shake salt onto your hand
 
-## Background
+## Фон
 
 **Name:** Tequila is an alcoholic drink made from blue agave in the region
 around the city of Tequila, Mexico. It was first made in the 16th century by
