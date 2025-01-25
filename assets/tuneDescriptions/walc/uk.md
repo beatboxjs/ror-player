@@ -1,23 +1,22 @@
-**Sign:** draw a triangle in the air with one hand
+**Знак:** однією рукою намалюйте в повітрі трикутник
 
 ## Фон
 
-**Name:** Waltz (German: Walzer) is a European style of classical music
-originating in German and Austrian folk dances of the middle age
-([Wikipedia](https://en.wikipedia.org/wiki/Waltz_(music)). Characteristic for it
-is its slow 3⁄4 time signature and it specific dance. The particular spelling of
-our tune comes from Polish “walc” for Waltz and “walcz” for “fight!”
-(imperative).
+**Назва:** Вальс (нім. Walzer) — це європейський стиль класичної музики, що
+походить від німецьких та австрійських народних танців середньовіччя
+([Вікіпедія](https://en.wikipedia.org/wiki/Waltz_(music))). Для нього характерні
+повільний розмір 3⁄4 і Специфічне написання нашої мелодії походить від
+польського «вальс» і «вальс» (наказовий наказ).
 
-**Musical background:** All instruments play the typical Waltz rhythm.
+**Музичний фон:** Усі інструменти грають у типовому ритмі вальсу.
 
-**Sign:** The triangle stands for the characteristic 3⁄4 time signature.
+**Знак:** Трикутник позначає характерний тактовий розмір 3⁄4.
 
-**History:** Introduced by RoR Kraków in 2016.
+**Історія:** Запроваджено RoR Kraków у 2016 році.
 
 ## Важко
 
-* **Surdos:** easy
+* **Глухо:** легко
 * **Repi:** легко
 * **Малий барабан:** середній
 * **Бубен:** легко

@@ -20,9 +20,9 @@ comes from the popular Tanzanian type of music “Bongo Flava”.
 
 ## Суперечки
 
-There is a debate about removing all monkey references from the tune name and
-breaks, since racist stereotypes associate monkeys with Black people (who are
-also often associated with drumming).
+Існує дискусія щодо видалення всіх посилань на мавп із назви мелодії та пауз,
+оскільки расистські стереотипи асоціюють мавп із темношкірими людьми (яких також
+часто асоціюють із грою на барабанах).
 
 Some bands in France have decided to stop playing the Monkey Break, since racist
 football fans commonly make the same noises at Black players.

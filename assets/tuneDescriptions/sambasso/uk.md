@@ -1,24 +1,24 @@
-Was chosen as a **Tune of the Year 2021** (along with Bhaṅgṛā).
+Була обрана **Млодією 2021 року** (разом із Bhaṅgṛā).
 
-**Sign:** V with 4 fingers (vulcan salute) on both hands, slide the gaps into
-each other
+**Знак:** V 4 пальцями (вулканське вітання) на обох руках, проведіть проміжки
+один в одного
 
 ## Фон
 
-**Name:** Probably a combination of the words “Samba” and “basso” (Italian for
-“low” or “base”).
+**Назва:** Ймовірно, це поєднання слів «самба» та «басо» (італ. «низький» або
+«база»).
 
-**Musical background:** The Snare and Repi line and the Intro seem to be Samba
-Reggae style. *(More info needed.)*
+**Музичний фон:** Лінія Snare і Repi та Intro схожі на стиль Samba Reggae.
+*(Потрібна додаткова інформація.)*
 
-**Sign:** *(More info needed.)*
+**Знак:** *(Потрібна додаткова інформація.)*
 
 **Історія:** Представлено в мережі RoR London у 2012 році, ймовірно, грали там
 раніше?
 
 ## Важко
 
-* **Surdos:** easy
+* **Глухо:** легко
 * **Rep:** важко
 * **Малий барабан:** жорсткий
 * **Бубон:** жорсткий
