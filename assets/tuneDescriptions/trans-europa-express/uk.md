@@ -28,5 +28,5 @@ Kraftwerk ([YouTube](https://www.youtube.com/watch?v=XMVokT5e0zs)).
 * **Repi:** складно
 * **Малий барабан:** середній
 * **Бубен:** легко
-* **Agogô:** easy
+* **Agogô:** легко
 * **Shaker:** tricky
