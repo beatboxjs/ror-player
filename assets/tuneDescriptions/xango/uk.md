@@ -77,4 +77,4 @@ whether to do this or not.
 * **Repi:** medium
 * **Snare:** hard
 * **Бубен:** легко
-* **Agogô:** medium
+* **Agogô:** середній
