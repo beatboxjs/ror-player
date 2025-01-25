@@ -31,7 +31,7 @@ that the new wave will come and bring the deported slaves back home.
 
 ## Важко
 
-* **Surdos:** medium
+* **Глухий:** середній
 * **Repi:** легко
 * **Малий барабан:** легко
 * **Бубен:** легко
