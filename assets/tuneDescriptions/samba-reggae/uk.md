@@ -32,19 +32,20 @@
 короткою дерев’яною палицею та рукою, висить дуже низько, і грається двома
 довгими пластиковими стукачами.
 
-**Musical background:** The tune is a mix of Samba Reggae 1 & 3. RoR Samba
-Reggae is played with mid surdo hitting in 1 and 3 beats and low one in 2 and 4
-(mid-low-mid-low,low), while most of the samba bands used to play with low surdo
-in 1 and 3 and mid one in 2 and 4 (low-mid-low-mid,mid). Repi and snare grooves
-use to be swapped too.
+**Музичний фон:** Мелодія є сумішшю Samba Reggae 1 і 3. RoR Samba Reggae
+грається з середніми ударами сурдо в 1 і 3 тактах і низькими в 2 і 4
+(середньо-низько-середньо-низько, низько). ), тоді як більшість гуртів самби
+грали з низьким сурдо в 1 і 3 і середнім у 2 і 4
+(низький-середній-низький-середній, середній). Груви репі та малого барабана
+також можна міняти місцями.
 
-**Sign:** The sign depicts an S, which stands for Samba Reggae.
+**Знак:** На знаку зображено літеру S, що означає Samba Reggae.
 
-**History:** Part of the first set of tunes taken from Barking Bateria in 2000.
-The tune sign used to be “smoking a joint”, as smoking joints is a main ritual
-in the Rastafari religion, which is closely linked to Reggae music. On the TNM
-2024 it was decided to change the sign, as smoking weed is also a racist
-stereotype associated with Black people.
+**Історія:** Частина першого набору мелодій, узятих із Barking Bateria у 2000
+році. Раніше знак мелодії був «курити джойнт», оскільки куріння джойнтів є
+основним ритуалом у релігії Растафарі, яка тісно пов’язана з реггі. музика. На
+TNM 2024 було вирішено змінити знак, оскільки куріння трави також є расистським
+стереотипом, пов’язаним з чорношкірими людьми.
 
 ## Суперечки
 
@@ -58,5 +59,5 @@ RoR вважають культурним присвоєнням грати цю
 * **Глухий:** середній
 * **Представник:** середній
 * **Малий барабан:** середній
-* **Tamborim:** easy (clave)
+* **Бубен:** легкий (клав)
 * **Agogô:** середній

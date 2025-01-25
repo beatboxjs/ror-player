@@ -1,68 +1,68 @@
-This tune is one of the RoR basics.
+Ця мелодія є однією з основ RoR.
 
-In this tune, the Low Surdo swaps one of its beaters for a plastic Repinique
-stick (aka a whippy stick) to get a higher pitched sound. Then it plays a
-combination of high-pitched and normal hits.
+У цій мелодії Low Surdo замінює один зі своїх стукачів на пластикову паличку
+Repinique (вона ж паличка для бігу), щоб отримати більш високий звук. Потім він
+відтворює комбінацію високих і звичайних ударів.
 
-**Sign:** pull two prison bars apart in front of your face
+**Знак:** розтягніть дві тюремні грати перед своїм обличчям
 
 ## Фон
 
-**Name:** Angela Davis is an Afro-American activist from the USA. She
-experienced a lot of oppression as a university professor due to her political
-views and involvement in the black liberation, communist and radical feminist
-movement. She became a major figure of the prison abolishment movement after
-being imprisoned for a murder that she did not commit.
-([Wikipedia](https://en.wikipedia.org/wiki/Angela_Davis), see also the
-documentary “Free Angela & All Political Prisoners”)
+**Ім’я:** Анджела Девіс — афроамериканська активістка зі США. Будучи професором
+університету, вона зазнала численних утисків через свої політичні погляди та
+участь у визвольному, комуністичному та радикальному феміністичному русі. Вона
+стала головною фігурою руху за скасування в'язниці після того, як її ув'язнили
+за вбивство, якого вона не скоїла.
+([Вікіпедія](https://en.wikipedia.org/wiki/Angela_Davis), також дивіться
+документальний фільм «Звільніть Анджелу та всіх політичних в’язнів»)
 
-**Musical background:** Break 1 sounds like from “Sex machine” by James Brown,
-Low Surdo is based on the drumset rhythm of this song, not sure if the rest of
-the tune is also based on his music.
+**Музичний фон:** Break 1 звучить як із “Sex machine” Джеймса Брауна, Low Surdo
+базується на ритмі барабанної установки цієї пісні, не впевнений, що решта
+мелодії також базується на його музиці.
 
-**Sign:** The sign represents prison bars, because Angela Davis is a major
-figure in the prison abolishment movement.
+**Знак:** Знак символізує тюремні решітки, оскільки Анджела Девіс є головною
+фігурою в русі за скасування в’язниць.
 
-**History:** Part of the first set of tunes taken from Barking Bateria in 2000.
-The name used to be “James Brown” (famous musician from the USA) and the sign
-was to depict an afro haircut. James Brown didn’t have an afro haircut for most
-of his life, but later got one as it became a symbol of Black pride. The tune
-was renamed because of domestic violence and rape accusations against James
-Brown, and Angela Davis was chosen because she fit the tune sign. Later the tune
-sign was changed. We consider both the old tune sign itself and the fact that
-Angela Davis was chosen because of her afro hair as racist.
+**Історія:** Частина першого набору мелодій, взятих із Barking Bateria у 2000
+році. Раніше назва була «Джеймс Браун» (відомий музикант із США), а знак мав
+зображати афро-стрижку. Джеймс Браун не мав афро-стрижки протягом більшої
+частини свого життя, але пізніше зробив її, оскільки вона стала символом
+чорношкірої гордості. Мелодію перейменували через звинувачення Джеймса Брауна в
+домашньому насильстві та зґвалтуванні, а Анджелу Девіс обрали, оскільки вона
+відповідала знаку мелодії. Пізніше знак мелодії був змінений. Ми вважаємо
+расистським як саму стару мелодію, так і той факт, що Анджелу Девіс обрали через
+її афро-зачіску.
 
 ## Суперечки
 
-There is an ongoing discussion in the RoR network whether we should play a tune
-that is based on the music of a rapist.
+У мережі RoR триває дискусія, чи варто грати мелодію, засновану на музиці
+ґвалтівника.
 
-Some RoR members from the Baltic States have recently raised concerns that the
-tune is named after Angela Davis, who was a member of the Communist Party and
-actively collaborating with the oppressive regime of the Soviet Union.
+Деякі члени RoR з країн Балтії нещодавно висловили стурбованість тим, що мелодія
+названа на честь Анджели Девіс, яка була членом комуністичної партії та активно
+співпрацювала з репресивним режимом Радянського Союзу.
 
 ## Важко
 
-* **Low Surdo:** hard
-* **Mid Surdo:** easy to remember, but hard to play it without beeing to fast
-  nor to slow
+* **Низький Surdo:** жорсткий
+* **Mid Surdo:** легко запам’ятати, але важко грати, не будучи надто швидким чи
+  повільним
 * **Високий Surdo:** середній
 * **Repi:** легко
-* **Snare:** easy (there are some variations)
+* **Малий барабан:** легкий (є кілька варіантів)
 * **Бубен:** легко
 * **Agogô:** середній
 
 ## Перерви
 
-* Break 1 consists of a pickup followed by a bar of eight-notes.
-* Break 2 is a call&response between Surdos and everyone else, it is ended by
-  the pattern of Break 1.
-* Break 3 is a loop which is played by everyone except the Snare (which just
-  continues its normal groove). At the end (or every time just before the Break
-  starts again from the beginning) the pattern of Break 1 is played.
+* Перерва 1 складається з звукознімання, за яким слід такт із восьми нот.
+* Перерва 2 — це виклик і відповідь між Surdos і всіма іншими, він завершується
+  шаблоном Перерви 1.
+* Break 3 — це цикл, який грають усі, крім Snare (який просто продовжує свій
+  звичайний грув). Наприкінці (або щоразу безпосередньо перед тим, як перерва
+  починається знову) відтворюється схема перерви 1.
 
-## More
+## Більше
 
-Combinations of Angela Davis and Funk sound nice (changing between both,
-introducing break of one on the other, etc.). In fact, Angela Davis is a kind of
-funk too.
+Гарно звучать комбінації Angela Davis і Funk (перехід між обома, введення брейка
+одного на інший тощо). Насправді Анджела Девіс теж свого роду фанк.

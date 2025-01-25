@@ -1,40 +1,42 @@
-Sounds more like Hip-Hop than Drum ‘n’ Bass but has a really nice groove. Can be
-very cheerful when played quite fast or be groovy when played slow.
+Звучить більше схоже на хіп-хоп, ніж на драм-н-бас, але має справді гарний грув.
+Може бути дуже веселим, якщо грати досить швидко, або бути заводним, якщо грати
+повільно.
 
-The Low Surdo is very important in this tune because it gives the special hip
-hop rhythm and “carries” the tune. There are different versions on the tune
-sheets but both sound good ;). Since none of the Surdos play at the same time,
-it is also possible to play this tune with only one or two surdo players and
-three surdos. To remember the Surdo lines it is also helpful to sing them all
-together (low, high, middle middle, low, high-low, low, high, middle middle,
-low, high…).
+Low Surdo дуже важливий у цій мелодії, оскільки він надає особливого ритму
+хіп-хопу та «несе» мелодію. На аркушах мелодій є різні версії, але обидві
+звучать добре ;). Оскільки жоден із сурдо не грає одночасно, цю мелодію також
+можна грати лише одним або двома гравцями на сурдо та трьома сурдо. Щоб
+запам’ятати рядки сурдо, також корисно співати їх усі разом (низький, високий,
+середній середній, низький, високий-низький, низький, високий, середній
+середній, низький, високий…).
 
-**Sign:** With one hand in your ear lift the other and move it front and back
-(like a DJ).
+**Знак:** Тримаючи одну руку у вусі, підніміть іншу та рухайте нею вперед і
+назад (як ді-джей).
 
 ## Фон
 
-**Name:** Drum&Bass is a style of electronic music that developed in the 1990s
-in the UK. Characteristic for it is its really fast and strong base.
-([Wikipedia](https://en.wikipedia.org/wiki/Drum_and_bass))
+**Назва:** Drum&Bass — це стиль електронної музики, який розвинувся у 1990-х
+роках у Великобританії. Характерним для нього є його дуже швидка та міцна
+основа. ([Вікіпедія](https://en.wikipedia.org/wiki/Drum_and_bass))
 
-**Musical background:** The baseline of the tune somewhat resembles Drum&Bass,
-although Drum&Bass is usually played much faster at 165–185 bpm, while RoR Tunes
-are usually played at around 100–120 bpm. At this speed, the tune more sounds
-like Hip Hop, and a very similar base line can be heard in several hip hop songs
-such as this: [YouTube](https://www.youtube.com/watch?v=UePtoxDhJSw).
+**Музичне тло:** базова лінія мелодії дещо нагадує Drum&Bass, хоча Drum&Bass
+зазвичай відтворюється набагато швидше зі швидкістю 165–185 ударів на хвилину,
+тоді як мелодії RoR зазвичай відтворюються приблизно зі швидкістю 100–120 ударів
+на хвилину. На такій швидкості мелодія більше нагадує хіп-хоп, і дуже схожу
+базову лінію можна почути в кількох піснях у стилі хіп-хоп, як-от ця:
+[YouTube](https://www.youtube.com/watch?v=UePtoxDhJSw).
 
-**Sign:** The sign depicts a DJ.
+**Знак:** На знаку зображений ді-джей.
 
-**History:** First mentioned in 2010 by RoR Bremen. Has been developed on a
-transnational basis between 2009 & 2010. Barking Bateria also mentions a tune
-with this name [on their
-website](https://web.archive.org/web/20061023061031/http://www.barkingbateria.co.uk/samba.htm)
-in 2006, although it is not clear whether it is the same tune.
+**Історія:** Вперше згадується в 2010 році RoR Bremen. Було розроблено на
+міжнародній основі між 2009 та 2010 роками. Barking Bateria також згадує мелодію
+з такою назвою [на своєму
+веб-сайті](https://web.archive.org/web/20061023061031/http://www.barkingbateria.co.uk/samba.htm)
+у 2006 році, хоча неясно, чи це та сама мелодія.
 
 ## Важко
 
-* **Low Surdo:** hard
+* **Низький Surdo:** жорсткий
 * **Mid Surdo:** легко
 * **High Surdo:** легко
 * **Rep:** важко
@@ -44,15 +46,16 @@ in 2006, although it is not clear whether it is the same tune.
 
 ## Перерви
 
-* Break 1 is a singing break (no drumming, all sing together "everybody dance
-  now!”), brings a good mood and moves and can be used to involve audience. This
-  break can be played in all other tunes as well.
-* Break 2 is similar to the “Kick Back 2 Break” from the tune Ragga. Be aware
-  that only repi and snare play on the 8th beat before it goes back into the
-  tune.
-* Break 3 is a little tricky but once mastered, sounds really nice.
-* The Progressive break is quite easy and can creates tension. With the special
-  hand sign for this break it is easy to include it while playing other tunes.
-* The Hip Hop Break (the hand sign is supposed to look really cool
-  hip-hop-stylish, everyone does it their way) sounds really groovy but is also
-  quite tricky for the surdos (a memory-hook phrase is helpful).
+* Пауза 1 — це співоча пауза (без гри на барабанах, усі співають разом «Танцюйте
+  всі!»), приносить гарний настрій і рухи, і її можна використати для залучення
+  аудиторії. Цю паузу можна грати також і в усіх інших мелодіях.
+* Break 2 схожий на «Kick Back 2 Break» із мелодії Ragga. Майте на увазі, що
+  лише репі та малий барабан грають на 8-му долі, перш ніж він повернеться до
+  мелодії.
+* Перерва 3 трохи складна, але як тільки її освоїти, звучить дуже добре.
+* Прогресивна перерва досить легка і може створити напругу. Завдяки спеціальному
+  знаку рукою для цього перерви його легко включити під час відтворення інших
+  мелодій.
+* Хіп-хоп-брейк (знак рукою має виглядати дуже круто, хіп-хоп-стильно, кожен
+  робить це по-своєму) звучить справді круто, але також досить хитро для сурдо
+  (фраза, що зачіпає пам’ять, корисна).

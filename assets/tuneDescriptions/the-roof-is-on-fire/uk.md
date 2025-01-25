@@ -1,29 +1,27 @@
-Was drawn as a **Tune of the Year 2024**.
+Був обраний як **Краща композиція 2024 року**.
 
-**Sign:** Form a roof with your hands, interlace the fingers and wiggle them
-like flames.
+**Знак:** Утворіть руками дах, переплетіть пальці і ворушіть ними, як полум'ям.
 
 ## Фон
 
-**Name:** “The roof is on fire” is part of the chorus in the song “Fire Water
-Burn” by the Bloodhound Gang
-([YouTube](https://www.youtube.com/watch?v=Adgx9wt63NY)), which covers the
-chorus of the song “The Roof Is on Fire” by Rock Master Scott & the Dynamic
-Three ([YouTube](https://youtu.be/-Vv_LwwwpmU?t=263)). Also, the roof of the
-sauna was literally on fire during the TNM 2019 in Lithuania.
+**Назва:** «The roof is on fire» є частиною приспіву пісні «Fire Water Burn»
+гурту Bloodhound Gang ([YouTube](https://www.youtube.com/watch?v=Adgx9wt63NY)),
+яка містить приспів пісні «The Roof Is» у вогні» Rock Master Scott & the Dynamic
+Three ([YouTube](https://youtu.be/-Vv_LwwwpmU?t=263)). Також під час TNM 2019 у
+Литві буквально горів дах сауни.
 
-**Musical background:** Based on the song “Fire Water Burn” by the Bloodhound
-Gang, which covers the chorus of the song “The Roof Is on Fire” by Rock Master
-Scott & the Dynamic Three.
+**Музичний фон:** На основі пісні «Fire Water Burn» групи Bloodhound Gang, яка
+містить приспів пісні «The Roof Is on Fire» Rock Master Scott & the Dynamic
+Three.
 
-**Sign:** The sign represents a roof in flames.
+**Знак:** Знак являє собою дах у вогні.
 
-**History:** Spontaneously invented by RoR Kaunas during the TNM 2019 after the
-roof of the sauna caught fire.
+**Історія:** Спонтанно винайдений RoR Kaunas під час TNM 2019 після того, як
+загорівся дах сауни.
 
 ## Важко
 
-* **Surdos:** tricky
+* **Surdos:** складно
 * **Представник:** середній
 * **Малий барабан:** середній
 * **Тамборім:** складно
