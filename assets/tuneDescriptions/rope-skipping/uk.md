@@ -1,22 +1,22 @@
-**Sign:** with both hands a rotating rope and jump up and down
+**Знак:** двома руками мотузку, що обертається, і стрибайте вгору-вниз
 
 ## Фон
 
-**Name:** “Rope skipping” in British English means to jump over a rope that
-oneself or others are swinging around your body.
+**Назва:** «Rope skipping» у перекладі з британської англійської означає
+стрибати через мотузку, яку ви або інші розгойдують навколо вашого тіла.
 
 **Музичний фон:** *(Потрібна додаткова інформація.)*
 
-**Sign:** Depicts the activity of rope skipping
+**Знак:** Зображує стрибки зі скакалкою
 
-**History:** Introduced in 2010
+**Історія:** Випущено в 2010 році
 
 ## Важко
 
 * **Низький Surdo:** середній
-* **Mid Surdo:** tricky
+* **Mid Surdo:** прийоми
 * **Високий Surdo:** середній
 * **Rep:** важко
 * **Малий барабан:** середній
 * **Бубон:** середній
-* **Agogô:** easy
+* **Agogô:** легко
