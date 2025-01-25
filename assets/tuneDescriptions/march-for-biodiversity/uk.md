@@ -6,7 +6,7 @@
 loss of biodiversity is one of the most drastic consequences of environmental
 pollution.
 
-**Musical background:** *(More info needed.)*
+**Музичний фон:** *(Потрібна додаткова інформація.)*
 
 **Знак:** *(Поки немає.)*
 
