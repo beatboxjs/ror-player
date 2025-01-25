@@ -15,7 +15,7 @@ TNM 2024.
 
 * **Низький Surdo:** середній
 * **Mid Surdo:** medium
-* **Repi:** medium
+* **Представник:** середній
 * **Snare:** hard
 * **Tamborim:** medium
 * **Agogô:** easy
