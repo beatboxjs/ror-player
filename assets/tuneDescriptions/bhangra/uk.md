@@ -52,7 +52,7 @@ Southeast Asia. In Hindu, the gesture is called Namaste.
 * **Surdos:** easy
 * **Repi:** легко
 * **Малий барабан:** легко
-* **Tamborim:** medium
+* **Бубон:** середній
 * **Agogô:** easy
 
 ## Перерви
