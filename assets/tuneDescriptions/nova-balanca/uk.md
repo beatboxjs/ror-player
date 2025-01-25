@@ -37,7 +37,7 @@ that the new wave will come and bring the deported slaves back home.
 * **Бубен:** легко
 * **Agogô:** easy – in fact the same as in Karla Shnikov
 
-## Breaks
+## Перерви
 
 * Break 1 is basically the same as Funk break 2, but to be played from soft to
   really, really loud!!! Try not to speed up whilst you’re playing it.
