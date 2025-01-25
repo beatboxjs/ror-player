@@ -2,9 +2,9 @@
 
 ## Фон
 
-**Name:** Biodiversity refers to the variety of species in the ecosystem. The
-loss of biodiversity is one of the most drastic consequences of environmental
-pollution.
+**Назва:** Біорізноманіття стосується різноманітності видів в екосистемі. Втрата
+біорізноманіття є одним із найдраматичніших наслідків забруднення навколишнього
+середовища.
 
 **Музичний фон:** *(Потрібна додаткова інформація.)*
 
@@ -16,8 +16,8 @@ pollution.
 
 * **Низький Surdo:** середній
 * **Mid Surdo:** легко
-* **High Surdo:** medium
-* **Repi:** tricky
-* **Snare:** easy
+* **Високий Surdo:** середній
+* **Repi:** складно
+* **Малий барабан:** легко
 * **Тамборім:** складно
 * **Agogô:** середній
