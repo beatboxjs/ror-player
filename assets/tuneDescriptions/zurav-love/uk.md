@@ -1,25 +1,24 @@
-Was drawn as the **Tune of the Year 2018**.
+Був обраний як **Мелодія року 2018**.
 
-**Sign:** open and close the beak of a bird with your hands
+**Прикмета:** відкривати і закривати руками дзьоб птаха
 
 ## Фон
 
-**Name:** A word play on Żuravlów, the village where the TNM 2015 happened.
+**Назва:** Гра слів про Журавлів, село, де відбувся TNM 2015.
 
-**Musical background:** Based on the song “Truant” by British electronic
-musician Burial ([Surdo+Tamb+Snare](https://youtu.be/8u4D0wAc2AA?t=1m48s),
-[Agogô + Kick Back](https://youtu.be/8u4D0wAc2AA?t=6m27s)).
+**Музичний фон:** На основі пісні «Truant» британського електронного музиканта
+Burial ([Surdo+Tamb+Snare](https://youtu.be/8u4D0wAc2AA?t=1m48s), [Agogô + Kick
+Back](https://youtu.be/8u4D0wAc2AA?t=6m27s)).
 
-**Sign:** “Żurav” is Polish for “crane” (a type of large bird). The sign
-represents the beak of the bird.
+**Знак:** “Журав” – це польське “журавель” (вид великого птаха). Знак позначає
+дзьоб птаха.
 
-**History:** Introduced by RoR Kraków and Ror Trójmiasto on the TNM 2015 in
-Żuravlów.
+**Історія:** Представлено RoR Kraków і Ror Trójmiasto на TNM 2015 у Журавлові.
 
 ## Важко
 
-* **Low/Mid Surdo:** medium (easy to play, but hard to keep the right speed
-  because of off-beats)
+* **Низький/Середній Surdo:** середній (легко грати, але важко підтримувати
+  правильну швидкість через нерівності)
 * **High Surdo:** easy
 * **Repi:** easy
 * **Snare:** tricky
