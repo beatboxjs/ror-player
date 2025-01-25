@@ -1,7 +1,7 @@
 Sign: repeatedly place flat hands in front of each other like feet walking on
 the ground
 
-## Background
+## Фон
 
 **Name:** Flip-flops are a type of simple sandals. They make a distinctive noise
 while walking. The sound of the tune has some similarity to this noise.
