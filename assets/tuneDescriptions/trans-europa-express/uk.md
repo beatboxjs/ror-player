@@ -1,7 +1,7 @@
 **Знак:** Помахайте уявною серветкою, наче прощаючись із поїздом.
 
-Doppler Break sign: Move your hand in front of your body from one side to the
-other like a train passing by.
+Доплерівський знак розриву: рухайте рукою перед тілом з одного боку на інший, як
+поїзд, що проїжджає повз.
 
 ## Фон
 
