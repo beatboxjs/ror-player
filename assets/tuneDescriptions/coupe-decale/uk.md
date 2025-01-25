@@ -27,5 +27,5 @@ Coupé-Décalé. It does not seem to sound the same as Coupé-Décalé though.
 * **Low Surdo:** легко
 * **Mid/High Surdo:** medium
 * **Repi/Snare:** hard (they play the same)
-* **Tamborim:** hard
+* **Бубон:** жорсткий
 * **Agogô:** середній
