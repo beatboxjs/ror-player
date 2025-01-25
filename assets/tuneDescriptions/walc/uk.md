@@ -15,7 +15,7 @@ our tune comes from Polish “walc” for Waltz and “walcz” for “fight!”
 
 **History:** Introduced by RoR Kraków in 2016.
 
-## Difficulty
+## Важко
 
 * **Surdos:** easy
 * **Repi:** easy
