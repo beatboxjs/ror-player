@@ -22,7 +22,7 @@ heart”, hence the heart.
 ## Важко
 
 * **Surdos:** medium
-* **Repi:** medium
+* **Представник:** середній
 * **Малий барабан:** середній
 * **Tamborim:** medium
 * **Agogô:** hard
