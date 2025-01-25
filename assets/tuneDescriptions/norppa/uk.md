@@ -1,20 +1,20 @@
-**Sign:** *(None yet.)*
+**Знак:** *(Поки немає.)*
 
 ## Фон
 
-**Name:** Saimaannorppa or Saimaa ringed seal is an endangered animal species
-that only lives in one lake in Finland. They like to chill out on warm rocks.
-Norppas were nearly hunted to extinction in the 20th century, as it was
-considered an enemy to the fishing industry. Conservation began in 1979 and
-saved it from extinction. Since then, it has became the symbol of nature
-conservation in Finland. Climate change poses a direct threat to the Norppa.
+**Назва:** Saimaannorppa або Saimaa кільчаста нерпа — вид тварин, що перебуває
+під загрозою зникнення, живе лише в одному озері у Фінляндії. Вони люблять
+відпочивати на теплих каменях. У 20-му столітті на норп майже полювали до
+повного зникнення, оскільки вважали ворогом рибної промисловості. Збереження
+почалося в 1979 році і врятувало його від вимирання. Відтоді він став символом
+охорони природи у Фінляндії. Зміна клімату становить пряму загрозу для Norppa.
 
-**Musical background:** Song takes inspiration from the electronic music, but
-does not imitate any particular genre or song.
+**Музичний фон:** Пісня черпає натхнення з електронної музики, але не імітує
+певний жанр чи пісню.
 
-**Sign:** *(None yet.)*
+**Знак:** *(Поки немає.)*
 
-**History:** Rediscovered from old notes by RoR Helsinki in 2021
+**Історія:** Повторно знайдено зі старих нотаток RoR Helsinki у 2021 році
 
 ## Важко
 
