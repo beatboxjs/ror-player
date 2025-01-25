@@ -50,7 +50,7 @@ actively collaborating with the oppressive regime of the Soviet Union.
 * **Repi:** easy
 * **Snare:** easy (there are some variations)
 * **Бубен:** легко
-* **Agogô:** medium
+* **Agogô:** середній
 
 ## Breaks
 
