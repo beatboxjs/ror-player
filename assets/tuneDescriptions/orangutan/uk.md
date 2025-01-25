@@ -8,7 +8,7 @@ melody, so they are suitable to be played by one Surdo player with three Surdos.
 **Name:** Orangutan is a critically endangered species of apes native to
 south-east Asia.
 
-**Musical background:** *(More info needed.)*
+**Музичний фон:** *(Потрібна додаткова інформація.)*
 
 **Sign:** The sign depicts a monkey
 
