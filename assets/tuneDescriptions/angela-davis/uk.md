@@ -32,7 +32,7 @@ Brown, and Angela Davis was chosen because she fit the tune sign. Later the tune
 sign was changed. We consider both the old tune sign itself and the fact that
 Angela Davis was chosen because of her afro hair as racist.
 
-## Controversies
+## Суперечки
 
 There is an ongoing discussion in the RoR network whether we should play a tune
 that is based on the music of a rapist.
