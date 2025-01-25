@@ -37,7 +37,7 @@ before drinking Tequila. The tune sign represents using a salt shaker.
 * **Бубен:** легко
 * **Agogô:** середній
 
-## Breaks
+## Перерви
 
 * **Break 1:** Only Agogô, then everyone shouting “Tequila!”. Typically played
   after Break 2 or Call Break, also sounds good after other 3-bar breaks, such
