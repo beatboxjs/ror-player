@@ -24,7 +24,7 @@ Kraftwerk ([YouTube](https://www.youtube.com/watch?v=XMVokT5e0zs)).
 
 ## Важко
 
-* **Surdos:** easy
+* **Глухо:** легко
 * **Repi:** складно
 * **Малий барабан:** середній
 * **Бубен:** легко
