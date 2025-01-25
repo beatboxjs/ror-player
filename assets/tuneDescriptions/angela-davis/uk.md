@@ -49,7 +49,7 @@ actively collaborating with the oppressive regime of the Soviet Union.
 * **High Surdo:** medium
 * **Repi:** easy
 * **Snare:** easy (there are some variations)
-* **Tamborim:** easy
+* **Бубен:** легко
 * **Agogô:** medium
 
 ## Breaks
