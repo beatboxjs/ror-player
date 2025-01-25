@@ -15,7 +15,7 @@ samba bands.
 
 An S formed with two hands
 
-## Background
+## Фон
 
 **Name:** Samba Reggae is the original afro-bloc rhythm, a mix of Samba and
 Reggae that was invented by the black liberation movement in Brazil. Samba
