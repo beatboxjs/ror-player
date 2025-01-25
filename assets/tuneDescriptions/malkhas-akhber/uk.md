@@ -16,4 +16,4 @@ Armenian Navy Band ([YouTube](https://www.youtube.com/watch?v=OCgrJFbIAcw)).
 * **Repi:** hard
 * **Snare:** hard
 * **Бубен:** легко
-* **Agogô:** hard
+* **Agogô:** важко
