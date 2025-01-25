@@ -1,32 +1,30 @@
-This tune is one of the RoR basics. It is (together with ‘Custard’) the RoR-Tune
-which sounds most like “real” Samba.
+Ця мелодія є однією з основ RoR. Це (разом із «Custard») RoR-Tune, яка звучить
+найбільше як «справжня» Samba.
 
-It is the tune with the most breaks (seven, not counting the tamb-stroke/clave).
-And a lot of breaks also have nice bonuses. For example is every break ended
-with a surdo pickup from either high-(1, 2 & 3) or low- (every other break,
-sometimes even the clave & 4-pause) surdo. Also after the ‘SOS-Break’ the repis
-should continue playing their part of the break until the next break is called.
+Це мелодія з найбільшою кількістю брейків (сім, не враховуючи тамбу/клаву). А
+багато перерв мають ще й приємні бонуси. Наприклад, кожна перерва закінчується
+підйомом сурдо з високого (1, 2 і 3) або низького (кожна інша перерва, іноді
+навіть клав і 4-пауза) сурдо. Також після «SOS-перерви» репіс має продовжувати
+грати свою частину перерви до наступної перерви.
 
-Since practically every samba band can play a version of samba reggae, it is a
-good tune to play together in demonstrations in which there are other non-RoR
-samba bands.
+Оскільки практично кожен самба-гурт може грати версію самба-реггі, це гарна
+мелодія, щоб грати разом на демонстраціях, у яких є інші не-RoR гурти самби.
 
 ## Знак
 
-An S formed with two hands
+Буква S утворена двома руками
 
 ## Фон
 
-**Name:** Samba Reggae is the original afro-bloc rhythm, a mix of Samba and
-Reggae that was invented by the black liberation movement in Brazil. Samba
-reggae is a sub-genre of Samba, which arose in the context of afro-brazilian
-people fighting for their right to play samba music and partake in Carnival
-parades in the late 1960s. At that time only white people were allowed to play
-in the parades for Carnival and in Samba schools of Rio de Janeiro. Samba reggae
-is a Samba style, that developed because black people in Brazil wanted to have a
-samba style to call their own. The music of the afro blocos aimed to recreate
-and strengthen the afro-brazilian community.
-([Wikipedia](https://en.wikipedia.org/wiki/Samba_reggae))
+**Назва:** Samba Reggae – це оригінальний афро-ритм, поєднання самби й реггі,
+який був винайдений рухом за визволення темношкірих у Бразилії. Самба-реггі — це
+піджанр самби, який виник у контексті боротьби афро-бразильців за своє право
+грати самбу та брати участь у карнавальних парадах наприкінці 1960-х років. У
+той час лише білим людям дозволялося грати на парадах для карнавалу та в школах
+самби в Ріо-де-Жанейро. Самба-реггі — це стиль самби, який розвинувся тому, що
+чорні жителі Бразилії хотіли мати стиль самби, щоб назвати його власним. Музика
+афро-блоків мала на меті відтворити та зміцнити афро-бразильську спільноту.
+([Вікіпедія](https://en.wikipedia.org/wiki/Samba_reggae))
 
 In “real” Samba, ‘samba reggae’ is a specific sub-genre, it’s not only in terms
 of the rhythm, but also of the instruments, which are played (and how they are
