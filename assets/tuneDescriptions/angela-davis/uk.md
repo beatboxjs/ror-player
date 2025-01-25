@@ -41,7 +41,7 @@ Some RoR members from the Baltic States have recently raised concerns that the
 tune is named after Angela Davis, who was a member of the Communist Party and
 actively collaborating with the oppressive regime of the Soviet Union.
 
-## Difficulty
+## Важко
 
 * **Low Surdo:** hard
 * **Mid Surdo:** easy to remember, but hard to play it without beeing to fast
