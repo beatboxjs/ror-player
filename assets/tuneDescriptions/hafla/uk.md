@@ -32,7 +32,7 @@
   не буде показано щось інше.
 * Break 3 — це відповідь на виклик протягом 8 рахунків між Snare та всіма
   іншими.
-* Hook Break is a bit tricky. It’s call response (Surdo to all-others) over 16
-  counts. There is a funny memoryhook: “It’s a banana, it’s not a pineapple.
-  it’s not an aubergine or a pear. It’s a what, It’s a what, It’s a what, It’s a
-  what? It’s a yellow ba-na-na.” Also really nice if repeated a few times.
+* Hook Break трохи складний. Це відповідь на дзвінок (Surdo до всіх інших) понад
+  16 пунктів. Є кумедна пам’ятка: «Це банан, це не ананас. це не баклажан і не
+  груша. Це що, Це що, Це що, Це що? Це жовта ба-на-на». Також дуже добре, якщо
+  повторити кілька разів.
