@@ -15,4 +15,4 @@ and shared on the TNM 2024 by RoR Zürich.
 * **Repi:** medium
 * **Snare 1:** tricky
 * **Snare 2:** tricky
-* **Agogô:** medium
+* **Agogô:** середній
