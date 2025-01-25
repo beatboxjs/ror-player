@@ -1,0 +1,285 @@
+{
+    "history-picker": {
+        "import-error-title": "Помилки під час завантаження даних",
+        "clear-ok": "Очистити",
+        "history-alt": "історія",
+        "shared-link": "Ви відкрили спільне посилання. Ваші попередні пісні та мелодії можна відновити тут.",
+        "clear-message": "Ви впевнені, що бажаєте очистити свою історію? Якщо ви нещодавно відкривали спільне посилання, це може призвести до втрати будь-яких власних мелодій/брейків/пісень, які ви створили раніше.",
+        "clear-title": "Очистити історію",
+        "clear": "Очистити"
+    },
+    "song-picker": {
+        "remove-ok": "Видалити",
+        "rename-title": "Введіть назву пісні",
+        "rename-ok": "Перейменувати",
+        "remove-title": "Видалити пісню",
+        "copy-tooltip": "Копія",
+        "copy-of-song-name": "Копія {{name}}",
+        "copy-song-name": "Копія",
+        "rename-tooltip": "Перейменувати",
+        "remove-message": "Ви дійсно хочете видалити пісню {{name}}?",
+        "new-song": "Нова пісня",
+        "remove-tooltip": "Видалити"
+    },
+    "utils": {
+        "time-month-aug": "Серп",
+        "time-yesterday": "Вчора",
+        "time-month-apr": "Квіт",
+        "time-month-may": "Трав",
+        "time-month-oct": "Жов",
+        "time-day-with-year": "{{day}} {{month}} {{year}}",
+        "time-months-ago_one": "{{count}} місяць тому",
+        "time-months-ago_few": "{{count}} місяців тому",
+        "time-months-ago_many": "{{count}} місяців тому",
+        "time-month-sep": "Вер",
+        "time-days-ago_one": "{{count}} день тому",
+        "time-days-ago_few": "{{count}} днів тому",
+        "time-days-ago_many": "{{count}} днів тому",
+        "time-years-ago_one": "{{count}} рік тому",
+        "time-years-ago_few": "{{count}} років тому",
+        "time-years-ago_many": "{{count}} років тому",
+        "time-month-jan": "Січ",
+        "time-month-feb": "Лют",
+        "time-month-mar": "Бер",
+        "time-month-jun": "Чер",
+        "time-month-nov": "Лис",
+        "time-month-dec": "Груд",
+        "time-day-without-year": "{{day}} {{month}}",
+        "time-weeks-ago_one": "{{count}} тиждень тому",
+        "time-weeks-ago_few": "{{count}} тижні тому",
+        "time-weeks-ago_many": "{{count}} тижні тому",
+        "time-month-jul": "Лип",
+        "time-day-and-time": "{{day}} {{time}}",
+        "time-today": "Сьогодні"
+    },
+    "i18n": {
+        "special-breaks": "Спеціальні перерви",
+        "silence": "{{beats}} Тиша",
+        "tune": "Налаштувати",
+        "whistle-in": "Свисток в",
+        "general-breaks": "Загальні перерви",
+        "shouting-breaks": "Кричальні перерви"
+    },
+    "rename-pattern-dialog": {
+        "duplicate-name-error": "Ця назва вже зайнята. Будь ласка, введіть інше ім'я.",
+        "new-name": "Нова назва",
+        "different-tune-move": "Перейти на іншу мелодію?",
+        "empty-name-error": "Будь ласка, введіть нову назву для розриву.",
+        "title-move": "Перерва в ході",
+        "title-rename": "Перейменувати розрив",
+        "different-tune-copy": "Копіювати на іншу мелодію?",
+        "mode": "Режим",
+        "title-copy": "Розрив копіювання",
+        "mode-rename": "Перейменувати",
+        "mode-move": "Рухатися",
+        "mode-copy": "Копія"
+    },
+    "import-dialog": {
+        "break-exists-different": "Вже існує. Локальну версію буде замінено.",
+        "decoding-error": "Помилка декодування вставлених даних: {{message}}",
+        "break-exists-identical": "Перерва вже існує.",
+        "tunes-breaks": "Мелодії/перерви",
+        "song-exists": "Пісня вже існує.",
+        "unrecognized-format-error": "Нерозпізнаний формат.",
+        "title": "Імпорт",
+        "customize-selection": "Налаштувати вибір",
+        "songs": "Пісні",
+        "break-used": "Перерва використовується в пісні, не може бути відключена.",
+        "import-button": "Імпорт",
+        "paste-placeholder": "Вставити посилання або об’єкт необроблених даних…"
+    },
+    "general": {
+        "dialog-ok": "OK",
+        "untitled-song": "Пісня без назви",
+        "dialog-close": "Закрити",
+        "dialog-cancel": "Скасувати"
+    },
+    "state": {
+        "untitled-song": "Пісня без назви {{no}}"
+    },
+    "pattern-list": {
+        "create-pattern-empty-name-error": "Введіть назву нової перерви.",
+        "remove-tune-message": "Ви справді хочете видалити мелодію {{tuneName}}?",
+        "user-created-tune": "Мелодія, створена користувачем",
+        "create-tune-title": "Створити мелодію",
+        "rename-tune-ok": "Перейменувати",
+        "copy-tune-empty-name-error": "Будь ласка, введіть нову назву для мелодії.",
+        "create-tune-empty-name-error": "Введіть назву для нової мелодії.",
+        "copy-tune-title": "Копіювати мелодію",
+        "rename-tune-duplicate-name-error": "Ця назва вже зайнята. Будь ласка, введіть інший.",
+        "remove-tune-ok": "Видалити",
+        "copy-move-rename-break": "Розрив Копіювати/Перемістити/Перейменувати",
+        "create-tune": "Нова мелодія",
+        "create-pattern-title": "Створити перерву",
+        "create-pattern-ok": "Створити",
+        "remove-pattern-title": "Зняти перерву",
+        "remove-pattern-message": "Ви дійсно хочете видалити {{patternName}} ({{tuneName}})?",
+        "remove-pattern-ok": "Видалити",
+        "create-tune-duplicate-name-error": "Ця назва вже зайнята. Будь ласка, введіть інший.",
+        "create-tune-ok": "Створити",
+        "rename-tune-title": "Перейменувати мелодію",
+        "rename-tune-empty-name-error": "Будь ласка, введіть нову назву для мелодії.",
+        "copy-tune-duplicate-name-error": "ця назва вже зайнята. будь ласка, введіть інший.",
+        "copy-tune-ok": "Копія",
+        "remove-tune-title": "Видалити мелодію",
+        "copy-break": "Розрив копіювання",
+        "remove-break": "Видалити",
+        "create-break": "Нова перерва",
+        "rename-tune": "Перейменувати мелодію",
+        "copy-tune": "Копіювати мелодію",
+        "remove-tune": "Видалити мелодію",
+        "create-pattern-duplicate-name-error": "Ця назва вже зайнята. Будь ласка, введіть інший."
+    },
+    "share-dialog": {
+        "customize-tooltip-default": "Буде відкрито за замовчуванням",
+        "customize-tooltip-used": "Використовується в пісні, не можна вимкнути",
+        "raw-compressed": "Сирий (стиснутий)",
+        "raw-uncompressed": "Сирий (без стиснення)",
+        "title": "Поділіться",
+        "link": "Посилання",
+        "link-description": "Якщо відкрити цю URL-адресу, відкриються пісні, вибрані нижче, і вибрані мелодії/перерви будуть доступні в списку.",
+        "raw-description": "Скопіюйте ці дані в меню «Імпорт», щоб зробити вибрані нижче пісні та мелодії/перерви доступними в програвачі.",
+        "customize-heading": "Налаштувати вибір",
+        "customize-songs": "Пісні",
+        "customize-tunes-breaks": "Мелодії/перерви"
+    },
+    "compose": {
+        "add-to-song-tooltip": "Додати до пісні"
+    },
+    "pattern-placeholder": {
+        "restore-tooltip": "Відновити оригінал",
+        "user-created-tooltip": "Розрив, створений користувачем",
+        "restore-message": "Ви впевнені, що бажаєте повернути свої зміни до {{patternName}} ({{tuneName}}) і відновити оригінальну розрив?",
+        "show-notes-tooltip": "Показати нотатки",
+        "listen-tooltip": "Слухай",
+        "edit-notes-tooltip": "Редагувати нотатки",
+        "restore-ok": "Відновити",
+        "restore-title": "Відновити оригінал"
+    },
+    "config": {
+        "instruments-hs": "Високий глухий",
+        "stroke-description-.": "Безшумний удар",
+        "stroke-description-fl": "Відблиск",
+        "instruments-ot": "Кричати",
+        "category-tricky": "Трюки",
+        "stroke-description-w": "Віпсова (тамборимська) палиця",
+        "category-uncommon": "Незвичайні мелодії",
+        "instruments-ms": "Середня глухота",
+        "stroke-description-s": "М'який відблиск",
+        "category-common": "Загальні мелодії",
+        "instruments-re": "Рип",
+        "stroke-description-hd": "Ляпас рукою",
+        "stroke-description-wh": "Свисток",
+        "instruments-ag": "Agogo",
+        "stroke-volume-shitty": "Хренові динаміки",
+        "instruments-sn": "Пастка",
+        "instruments-sh": "Шейкер",
+        "stroke-description-wh2": "Довгий свисток",
+        "category-onesurdo": "Один Глухий",
+        "category-easy": "Легко",
+        "category-western": "Західна музика",
+        "stroke-volume-defaults": "За замовчуванням",
+        "instruments-ls": "Низький Глухий",
+        "instruments-ta": "Бубон",
+        "stroke-description-0": "Змочіть рукою",
+        "stroke-description-sil": "Безшумний удар",
+        "time-with-triplets": "{{time}} з трійнями",
+        "time-with-quintuplets": "{{time}} із п’ятірками",
+        "category-all": "Всі мелодії",
+        "category-new": "Нові мелодії",
+        "category-proposed": "Пропоновані мелодії",
+        "category-custom": "Спеціальні мелодії",
+        "category-medium": "Середній",
+        "category-cultural-appropriation": "Культурне присвоєння"
+    },
+    "help": {
+        "source-code": "Вихідний код на GitHub",
+        "app": "{{appName}} додаток",
+        "download": "Завантажити {{appName}}",
+        "report-problem": "Повідомте про проблему",
+        "user-manual": "Посібник користувача",
+        "language": "Мова"
+    },
+    "playback-settings-picker": {
+        "loop": "Петля",
+        "volume-master": "Майстер",
+        "speed-reset": "Скинути",
+        "whistle-one": "На одному",
+        "speed": "Швидкість",
+        "whistle-all": "На всіх",
+        "title": "Налаштування відтворення",
+        "whistle": "Свисток",
+        "whistle-off": "Ні"
+    },
+    "example-song-player": {
+        "listen": "Слухай",
+        "download-mp3": "Завантажити як MP3"
+    },
+    "song-player-toolbar": {
+        "tools": "Інструменти",
+        "clear-song-ok": "Очистити",
+        "share": "Поділіться",
+        "clear-song-title": "Ясна пісня",
+        "clear-song": "Ясна пісня",
+        "clear-song-message": "Ви дійсно хочете очистити поточну пісню?",
+        "import": "Імпорт",
+        "export-mp3": "Експорт MP3",
+        "export-wav": "Експорт WAV"
+    },
+    "update": {
+        "refresh": "{{refresh}} для оновлення.",
+        "new-version": "Доступна нова версія {{appName}}.",
+        "refresh-refresh": "Оновіть сторінку"
+    },
+    "song-player": {
+        "pick-intruments-tooltip": "Збирати інструменти",
+        "all-instruments": "Все",
+        "remove-tooltip": "Видалити",
+        "all-instruments-drop": "(Все)"
+    },
+    "pattern-player": {
+        "restore-ok": "Відновити",
+        "restore-message": "Ви впевнені, що бажаєте скасувати свої зміни та відновити вихідну розрив?",
+        "restore-title": "Відновити оригінал",
+        "restore": "Відновити оригінал"
+    },
+    "mute-button": {
+        "mute-all": "Вимкнути всі інструменти",
+        "unmute-all": "Увімкнути всі інструменти"
+    },
+    "tune-info": {
+        "download-mp3": "Завантажити як MP3",
+        "notation": "Позначення",
+        "sounds": "Звуки",
+        "notation-info": "Натисніть {{pen}} на розривах нижче, щоб переглянути примітки.",
+        "video": "Відео",
+        "tune-sheet-pdf": "Мелодія (PDF)"
+    },
+    "upbeat-picker": {
+        "upbeat": "Бадьорий: {{upbeat}}"
+    },
+    "pattern-length-picker": {
+        "length": "Довжина: {{length}}"
+    },
+    "pattern-player-dialog": {
+        "share": "Поділіться"
+    },
+    "pattern-list-filter": {
+        "filter-placeholder": "Фільтр: {{category}}"
+    },
+    "play-pause-stop-button": {
+        "pause": "Пауза",
+        "play": "Грати",
+        "stop": "Стій"
+    },
+    "export": {
+        "error-title": "Помилка експорту {{type}}"
+    },
+    "time-signature-picker": {
+        "time-signature": "Тактовий розмір: {{time}}"
+    },
+    "overview": {
+        "listen": "Слухай",
+        "compose": "Скласти"
+    }
+}
