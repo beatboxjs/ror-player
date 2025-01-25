@@ -11,7 +11,7 @@ and shared on the TNM 2024 by RoR Zürich.
 ## Важко
 
 * **Low Surdo:** легко
-* **Mid Surdo:** easy
+* **Mid Surdo:** легко
 * **Представник:** середній
 * **Snare 1:** tricky
 * **Snare 2:** tricky
