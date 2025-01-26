@@ -31,7 +31,7 @@ that the new wave will come and bring the deported slaves back home.
 
 ## Difficulté
 
-* **Surdos:** medium
+* **Surdos:** moyenne
 * **Repi:** facile
 * **Caisse claire:** facile
 * **Tamborim:** facile
