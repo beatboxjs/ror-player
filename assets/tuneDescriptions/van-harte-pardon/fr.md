@@ -21,7 +21,7 @@ heart”, hence the heart.
 
 ## Difficulté
 
-* **Surdos:** medium
+* **Surdos:** moyenne
 * **Repi:** moyenne
 * **Caisse claire:** moyenne
 * **Tamborim:** moyenne
