@@ -38,7 +38,7 @@ but Funk is played at least since 2008 in the network)
 
 ## Difficulté
 
-* **Surdos:** medium
+* **Surdos:** moyenne
 * **Repi:** medium (alternate-version: hard)
 * **Caisse Claire:** complexe
 * **Tamborim:** moyenne
