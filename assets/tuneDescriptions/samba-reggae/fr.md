@@ -57,7 +57,7 @@ European bands, and there is an ongoing debate about abolishing the tune.
 
 ## Difficulté
 
-* **Surdos:** medium
+* **Surdos:** moyenne
 * **Repi:** moyenne
 * **Caisse claire:** moyenne
 * **Tamborim:** easy (clave)
