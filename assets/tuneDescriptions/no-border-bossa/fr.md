@@ -18,7 +18,7 @@ Maastricht.”
 
 ## Difficulté
 
-* **Surdos:** medium
+* **Surdos:** moyenne
 * **Repi:** difficile
 * **Caisse claire:** moyenne
 * **Tamborim:** moyenne
