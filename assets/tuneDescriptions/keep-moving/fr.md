@@ -31,7 +31,7 @@ moments to reflect and (natural) silence.
 
 * **Surdo Grave :** facile
 * **Surdo moyen:** moyenne
-* **High Surdo:** hard
+* **Surdo aigu:** difficile
 * **Repi:** difficile
 * **Caisse claire:** difficile
 * **Tamborim:** difficile
