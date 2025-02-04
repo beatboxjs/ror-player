@@ -1,21 +1,21 @@
-**Sign:** Place forearms on top of each other in front of you, fingertips
-aligned with elbows (like in the Estonian folk dance).
+**Signe:** Placer les avant-bras l'un sur l'autre devant soi, le bout des doigts
+alignés avec les coudes (comme dans la danse folklorique estonienne).
 
 ## Contexte
 
-**Name:** Kaerajaan is an Estonian folk dance that is danced to a folk song
-called Kaera-Jaan ([example on
-YouTube](https://www.youtube.com/watch?v=5BKoS9CfQPA)). The name roughly
-translates to “John of Oats”. Estonians probably used to sing this song while
-harvesting oat crops.
+**Nom:** Kaerajaan est une danse folklorique estonienne qui se danse sur une
+chanson folklorique appelée Kaera-Jaan ([example on
+YouTube](https://www.youtube.com/watch?v=5BKoS9CfQPA)). Le nom se traduit
+approximativement par « Jean d'Avoine ». Les Estoniens chantaient probablement
+cette chanson pendant la récolte de l'avoine.
 
-**Musical background:** The tune is based on the folk music that is played while
-dancing Kaerajaan.
+**Contexte musical:** Le morceau est basé sur la musique folklorique jouée en
+dansant le Kaerajaan.
 
-**Sign:** The sign is a move in Estonian folk dances ([example on
-YouTube](https://youtu.be/-udR34x2aTM?t=4)).
+**Signe:** Le signe est un mouvement effectué dans les danses folkloriques
+estoniennes ([exemple sur YouTube](https://youtu.be/-udR34x2aTM?t=4)).
 
-**History:** Invented by RoR Tallinn in 2021.
+**Histoire:** Inventé par RoR Tallinn en 2021.
 
 ## Difficulté
 
