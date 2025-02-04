@@ -1,2 +1,2 @@
-Part of a proposal to split up Samba Reggae into two tunes, Samba Reggae High
-and Samba Reggae Low.
+Fait partie d'une proposition visant à diviser Samba Reggae en deux morceaux,
+Samba Reggae High et Samba Reggae Low.
