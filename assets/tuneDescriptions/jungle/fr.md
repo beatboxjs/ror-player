@@ -1,24 +1,25 @@
-**Sign:** Swing your fist above your head and shake your body, like dancing to
-techno music.
+**Signe:** Balancez votre poing au-dessus de votre tête et secouez votre corps,
+comme si vous dansiez sur de la musique techno.
 
 ## Contexte
 
-**Name:** Jungle is a genre of dance music that devloped in the UK rave scene in
-the 1990s. It is the main successor of Drum&Bass.
+**Nom:** La Jungle est un genre de musique dance qui s'est développé sur la
+scène rave britannique dans les années 1990. C'est le principal successeur du
+style Drum and Bass.
 
-**Musical background:** The tune is based on Jungle.
+**Contexte musical:** Le morceau est basé sur le style Jungle.
 
-**Sign:** The sign represents dancing to electronic music.
+**Signe:** Le signe représente danser sur de la musique électro.
 
-**History:** Invented by someone from RoR Berlin in 2005, inspired by the jungle
-parties in a squat in London. Was only played occasionally because it was never
-in the official tune sheets. Was rediscovered in 2021.
+**Histoire:** Inventé par quelqu'un.e de RoR Berlin en 2005, inspiré des "jungle
+parties" d'un squat de Londres. Ce morceau n'a été joué qu'occasionnellement car
+il ne figurait pas dans le recueil officiel. A été redécouvert en 2021.
 
 ## Difficulté
 
 * **Surdo Grave :** facile
 * **Surdo moyen:** moyenne
-* **High Surdo:** hard
+* **Surdo aigu:** difficile
 * **Repi:** difficile
 * **Caisse claire:** difficile
 * **Tamborim:** moyenne
