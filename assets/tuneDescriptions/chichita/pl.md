@@ -12,7 +12,7 @@ and shared on the TNM 2024 by RoR Zürich.
 
 * **Niskie Surdo:** łatwy
 * **Mid Surdo:** easy
-* **Repi:** medium
+* **Repi:** średni
 * **Snare 1:** tricky
 * **Snare 2:** tricky
 * **Agogô:** średni
