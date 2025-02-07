@@ -21,8 +21,8 @@ heart”, hence the heart.
 
 ## Poziom trudności
 
-* **Surdos:** medium
-* **Repi:** medium
-* **Snare:** medium
+* **Surdo:** średni
+* **Repi:** średni
+* **Werbel:** średni
 * **Tamborim:** średni
 * **Agogô:** hard
