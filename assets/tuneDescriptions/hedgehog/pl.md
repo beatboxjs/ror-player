@@ -35,8 +35,8 @@ the name.)*
 * **Niskie Surdo:** łatwy
 * **Mid Surdo:** easy
 * **High Surdo:** easy
-* **Repi:** medium
-* **Snare:** medium
+* **Repi:** średni
+* **Werbel:** średni
 * **:Tamborim:** łatwy
 * **Agogô:** średni
 
