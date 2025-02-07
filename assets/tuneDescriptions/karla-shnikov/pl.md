@@ -42,7 +42,7 @@ name+sign for the tune.
 
 * **Surdos:** medium (it is important, that the double hit in every bar is not
   played to fast.)
-* **Repi:** medium
+* **Repi:** średni
 * **Werbel:** łatwy
 * **:Tamborim:** łatwy
 * **Agogô:** łatwy
