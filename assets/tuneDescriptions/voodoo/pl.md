@@ -36,7 +36,7 @@ ongoing debate on whether this tune should be abandoned.
 
 * **Low Surdo:** medium
 * **Mid/High Surdo:** easy
-* **Repi:** medium
-* **Snare:** medium
+* **Repi:** średni
+* **Werbel:** średni
 * **:Tamborim:** łatwy
 * **Agogô:** średni
