@@ -57,8 +57,8 @@ European bands, and there is an ongoing debate about abolishing the tune.
 
 ## Poziom trudności
 
-* **Surdos:** medium
-* **Repi:** medium
-* **Snare:** medium
+* **Surdo:** średni
+* **Repi:** średni
+* **Werbel:** średni
 * **Tamborim:** easy (clave)
 * **Agogô:** średni
