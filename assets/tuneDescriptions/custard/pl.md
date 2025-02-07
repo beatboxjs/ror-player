@@ -1,57 +1,59 @@
-This tune is one of the RoR basics. It is (together with ‘Samba Reggae’) the RoR
-Tune which sounds most like “real” Samba.
+Jest to jeden z podstawowych rytmów granych w RoR. Wraz z "Samba Reggae" są
+rytmami RoR, które najbardziej przypominają "prawdziwą" Sambę.
 
-A lot of this tune is based on the Tamborim’s voice, which can be memorized by
-“I’ve got custard in my underpants”. When learning the tune, start off there and
-make sure it’s burnt into everyone’s brain.
+Duża część rytmu opiera się na partii Tambo, którą można zapamiętywać frazą
+"I've got custard in my underpants". Przy uczeniu się tego rytmu dobrze jest
+mieć pewność, że każdx ma wrytą partie Tambo do głowy.
 
-If you are playing Agogô or Tamborim, don’t mix up your voice with the one from
-afoxe, as they are very similar. Check out the differences and find your way to
-remember them.
+Jeśli grasz na Agogô lub Tambo uważaj żeby nie pomylić swojej partii z partią z
+Afoxe, są bardzo podobne. Sprawdź sobie różnice pomiędzy nimi i znajdź swój
+sposób na zapamiętywanie ich.
 
-**Sign:** making an offer to the sky
+**Znak:** wznoszenie ofiary ku niebu
 
 ## Kontekst
 
-**Name:** Custard is the English word for a sweet, creamy, puddingy vanilla
-sauce ([Wikipedia](https://en.wikipedia.org/wiki/Custard)). The name was chosen
-because of the memory “I’ve got custard in my underpants” for the tamborim
-stroke.
+**Nazwa:** Custard to angielskie słowo na słodki, kremowo-puddingowy sos
+waniliowy (tzw. sos angielski)
+([Wikipedia](https://en.wikipedia.org/wiki/Custard)). Nazwa została wybrana
+przez frazę "I’ve got custard in my underpants" używana do uderzenia Tambo.
 
-**Musical background:** A typical Samba Reggae style tune.
+**Kontekst Muzyczny:** Typowy rytm w stylu Samba Reggae.
 
-**Sign:** The sign used to depict a “W” for Welfare State (the former name of
-the tune), as can be seen in this
-[video](https://tube.rhythms-of-resistance.org/w/3LnZ6d58J1jd5GNzK1mQqp) by RoR
-London. It changed into the current sign and can also be interpreted as “holding
-a bowl of custard”.
+**Znak:** Kiedyś znak przedstawiał "W" od Welfare State (pierwotna nazwa rytmu),
+jak można zobaczyć w tym
+[nagraniu](https://tube.rhythms-of-resistance.org/w/3LnZ6d58J1jd5GNzK1mQqp)
+autorstwa RoRu Londyn. Został zmieniony w obecny znak i może być również
+interpretowany jako "trzymanie miski sosu angielskiego (custarda)".
 
-**History:** Part of the first set of tunes taken from Barking Bateria in 2000.
-Used to be called Welfare State, but was renamed because people don’t like the
-state.
+**Historia:** Część pierwszej partii rytmów wziętych od Barking Bateria w 2000
+r. Niegdyś rytm nazywał się Welfare State (Państwo dobrobytu), lecz został
+później przemianowany ponieważ ludzie nie lubią państwa.
 
 ## Kontrowersje
 
-The rhythm clearly sounds like Samba Reggae, which is a tune developed and used
-by the Black liberation movement in Brazil. Many people in the RoR network
-consider it cultural appropriation to play this tune in our mainly white
-European bands, and there is an ongoing debate about abolishing the tune.
+Rytm dosyć oczywiście brzmi jak Samba Reggae, która jest rytmem stworzonym i
+używanym przez czarny ruch wyzwolenia w Brazylii. Wiele osób w sieci RoR uważa
+granie tego rytmu w naszych grupach składających się głównie z białych
+europejek, jako zawłaszczenie kulturowe. Stale trwa debata na temat porzucenia
+tego rytmu.
 
 ## Poziom trudności
 
-* **Surdos:** medium
-* **Repi:** medium
-* **Snare:** medium
-* **Tamborim:** medium (easy to remember, very tiring)
-* **Agogô:** medium (easy to mix up with afoxe)
+* **Surdo:** średni
+* **Repi:** średni
+* **Werbel:** średni
+* **Tamborim:** średni (łatwe do zapamiętania, bardzo męczące)
+* **Agogô:** średni (łatwo się pomylić z Afoxe)
 
 ## Brejki
 
-* Break 1&2 are variations of the Tamb stroke in a call&response-way. In Break 1
-  the Surdos call, in Break 2 the Tambs.
-* Break 3 can be used to have kind of solo parts for instrument sections: Let
-  them continue while the others play Break 3. At the beginning you might need
-  to count the bars in your head to find the transition back to the groove. This
-  is most important for snare players as they have a solo in the last bar.
-* Break 5 is a call&response between Snares and all others, which is really nice
-  as an intro, or to speed up.
+* Brejki 1 i 2 są wariacjami uderzenia Tambo polegających na zawołaniu i
+  odpowiedzi. W Brejku 1 Surda wołają, w Brejku 2 Tamba wołają.
+* Brejk 3 może być użyty by stwarzać swego rodzaju solówki dla poszczególnych
+  instrumentów. Niech dana sekcja kontynuuje a reszta niech gra Brejk 3. Na
+  początku może być pomocne liczyć takty żeby dobrze wejść z powrotem do rytmu.
+  Bardzo ważny szczegół dla grających na werblu jako, że w ostatnim takcie mają
+  małą solówkę.
+* Brejk 5 jest zawołaniem-odpowiedzią między werblami i całą resztą, dobrze się
+  sprawdza jako intro lub do przyspieszenia tempa.
