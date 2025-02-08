@@ -18,8 +18,8 @@ Maastricht.”
 
 ## Poziom trudności
 
-* **Surdos:** medium
+* **Surdo:** średni
 * **Repi:** trudny
-* **Snare:** medium
+* **Werbel:** średni
 * **Tamborim:** średni
 * **Agogô:** średni

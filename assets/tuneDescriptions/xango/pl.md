@@ -74,7 +74,7 @@ ongoing debate on whether this tune should be abandoned.
 ## Poziom trudności
 
 * **Surda:** łatwy
-* **Repi:** medium
+* **Repi:** średni
 * **Snare:** hard
 * **:Tamborim:** łatwy
 * **Agogô:** średni

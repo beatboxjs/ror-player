@@ -24,7 +24,7 @@ also often associated with drumming).
 ## Poziom trudności
 
 * **Surda:** łatwy
-* **Repi:** medium
-* **Snare:** medium
+* **Repi:** średni
+* **Werbel:** średni
 * **:Tamborim:** łatwy
 * **Agogô:** tricky

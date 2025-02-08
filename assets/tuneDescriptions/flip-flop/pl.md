@@ -19,7 +19,7 @@ inspired by the song “Digital Monkey” by Balkan Beat Box
 
 * **Niskie Surdo:** łatwy
 * **Mid/High Surdo:** tricky
-* **Repi:** medium
+* **Repi:** średni
 * **Snare:** tricky
 * **Tamborim:** średni
 * **Agogô:** średni
