@@ -1,25 +1,26 @@
-**Sign:** Point with your index fingers to the ground, your thumbs pointing
-towards each other.
+**Signe:** Pointez vos index vers le sol, vos pouces pointés l'un vers l'autre.
 
 ## Contexte
 
-**Name:** Hip hop is an art movement that originated in the 1970s from Black and
-Latino communities in New York. Often only associated with rap, the hip hop
-culture includes many more elements such as breakdance, graffiti and beatboxing.
-Originally an underground movement and a tool to protest against the oppressive
-state institutions, it was discovered in the 1990s by the music industry, who
-started making huge profits by marketing it towards a white male audience. Over
-the years, Hip hop has become one of the most popular genres of music worldwide,
-and not much is left of its original purpose. Some white pop musicians have been
-criticized for cultural appropriation and commercializing hip hop culture.
+**Nom:** Le hip-hop est un mouvement artistique né dans les années 1970 dans les
+communautés noires et latinos de New York. Souvent uniquement associé au rap, la
+culture hip-hop comprend de nombreux autres éléments tels que le breakdance, le
+graffiti et le beatboxing. À l'origine mouvement underground et outil de
+protestation contre les institutions étatiques oppressives, il a été découvert
+dans les années 1990 par l'industrie musicale, qui a commencé à faire d'énormes
+profits en le commercialisant auprès d'un public masculin blanc. Au fil des ans,
+le hip-hop est devenu l'un des genres musicaux les plus populaires au monde, et
+il ne reste pas grand-chose de son objectif initial. Certains musiciens pop
+blancs ont été critiqués pour appropriation culturelle et commercialisation de
+la culture hip-hop.
 
-**Musical background:** The tune is based on Hip hop beats.
+**Contexte musical:** Le morceau est basé sur des rythmes hip-hop.
 
-**Sign:** A common hand gesture that Hip hop artists like to make ([example on
-YouTube](https://youtu.be/010KyIQjkTk)).
+**Signe:** Geste de la main courant que les artistes hip-hop aiment faire
+([exemple sur YouTube](https://youtu.be/010KyIQjkTk)).
 
-**History:** Invented by someone from RoR Berlin in 2005, but never published.
-Was rediscovered in 2021.
+**Histoire:** Inventé par un.e membre de RoR Berlin en 2005, mais jamais publié.
+A été redécouvert en 2021.
 
 ## Difficulté
 
