@@ -1,11 +1,12 @@
-**Sign:** hold one hand inside up and turn it left and right like the blue
-ligths of a police car
+**Signe:** tenez une main paume vers le haut et tournez-la à gauche et à droite
+comme les lumières bleues d'une voiture de police
 
 ## Contexte
 
-**History:** The tune was adapted by RoR Frankfurt in 2022 from the song [Sound
-of da Police](https://en.wikipedia.org/wiki/Sound_of_da_Police) by the rapper
-KRS-One. The song criticizes police brutality and systemic racism.
+**Histoire:** Le morceau a été adapté par RoR Frankfort en 2022 à partir de la
+chanson [Sound of da Police](https://en.wikipedia.org/wiki/Sound_of_da_Police)
+du rappeur KRS-One. La chanson critique la brutalité policière et le racisme
+systémique.
 
 ## Difficulté
 
@@ -18,9 +19,9 @@ KRS-One. The song criticizes police brutality and systemic racism.
 
 ## Breaks
 
-* **Beast Break** handsignal: evil claws going down (hand inside down, moving
-  from up to down)
-* **Beast Break inverted** handsignal: evil claws going up (hand inside up,
-  moving from down to up)
+* **Beast Break** signe de main : les griffes du diable descendent (main paume
+  en bas, se déplaçant de haut en bas)
+* **Beast Break inversé** signe de main : griffes maléfiques se levant (main
+  paume vers le haut, se déplaçant de bas en haut)
 
-* **Shouting** Oo is pronounced as Whoop!
+* **Cri** Oo se prononce Woup !
