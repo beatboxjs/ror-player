@@ -1,16 +1,17 @@
-A quite groovy tune that can be played slowly for a long time. The Surdos make a
-melody, so they are suitable to be played by one Surdo player with three Surdos.
+Morceau assez groovy qui peut être joué lentement pendant longtemps. Les Surdos
+forment une mélodie, ils peuvent donc être joués par 1 joueur de Surdos avec 3
+Surdos.
 
-**Sign:** monkey, both hands in armpits
+**Signe:** Imiter un singe, les deux mains sous les aisselles
 
 ## Contexte
 
-**Name:** Orangutan is a critically endangered species of apes native to
-south-east Asia.
+**Nom:** L’orang-outan est une espèce de singe, en danger critique d’extinction,
+originaire d’Asie du Sud-Est.
 
 **Contexte musical:** *(+ d'infos nécessaires)*
 
-**Sign:** The sign depicts a monkey
+**Signe:** Le signe représente un singe
 
 **Histoire:** Présenté dans le réseau RoR Londres en 2012, y a probablement été
 joué avant ?
@@ -27,4 +28,4 @@ personnes noires (qui sont également souvent associées aux percussions).
 * **Repi:** moyenne
 * **Caisse claire:** moyenne
 * **Tamborim:** facile
-* **Agogô:** tricky
+* **Agogô:** complexe
