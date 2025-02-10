@@ -24,7 +24,8 @@ Voodoo rhythms. *(More info needed.)*
 **Sign:** The tune sign stands for a halo, which has been depicted above godly
 persons’ heads in the art of many different religions throughout history.
 
-**History:** Part of the first set of tunes taken from Barking Bateria in 2000.
+**Histoire:** Partie du premier ensemble de morceaux empruntés à Barking Bateria
+en 2000.
 
 ## Controverses
 
