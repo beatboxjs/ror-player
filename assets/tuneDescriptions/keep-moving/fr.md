@@ -1,31 +1,34 @@
-**Sign:** “Walk” with two fingers on the other hand.
+**Signe:** "Marcher" avec deux doigts d'une main.
 
 ## Contexte
 
-**History:** This tune was developed in 2024 by a member of Extinction
+**Histoire:** Ce morceau a été développé en 2024 par un.e membre d'Extinction
 Rebellion.
 
-**Name:** The name has a double meaning. Literally, this tune serves to keep the
-group moving. By moving along with the music, you stay in the mood and thus come
-across as very convincing. It also helps keep the atmosphere right for the whole
-(action) group. A moving rhythm band is contagious, unlike an unmoving one. The
-second meaning is perhaps the most important. “Keep moving” in the sense of
-“stay committed, persevere, resist”. Don't give up the fight, together we stand
-strong to strive for a climate-just world and take the action needed to raise
-awareness about current issues among a large part of the population. Don’t give
-up hope! There have already been many victims, but step by step we are creating
-a world where every human being, every life on this planet counts. Let’s act for
-climate justice all over the world! Keep moving!
+**Nom:** Le nom a une double signification. Littéralement, ce morceau sert à
+faire bouger le groupe. En bougeant au rythme de la musique, vous restez dans
+l’ambiance et vous paraissez donc très convaincant.e. Cela aide également à
+maintenir une atmosphère propice pour tout le groupe (d’action). Un groupe de
+percussions en mouvement est contagieux, contrairement à un groupe immobile. La
+deuxième signification est peut-être la plus importante. « Keep moving » dans le
+sens de « rester engagé.e, persévérer, résister ». N’abandonnez pas le combat,
+ensemble nous sommes fort.e.s pour lutter pour un monde juste sur le plan
+climatique et prenons les mesures nécessaires pour sensibiliser une grande
+partie de la population aux problèmes actuels. Ne perdez pas espoir ! Il y a
+déjà eu de nombreuses victimes, mais petit à petit nous créons un monde où
+chaque être humain, chaque vie sur cette planète compte. Agissons pour la
+justice climatique partout dans le monde ! Continuez à bouger !
 
-**Musical background:** The music symbolises being in constant motion, with some
-exceptions. Occasionally, the music stops, emphasising the need for breaks,
-moments to reflect and (natural) silence.
+**Contexte musical:** La musique symbolise le mouvement permanent, à quelques
+exceptions près. De temps à autre, la musique s'arrête, soulignant la nécessité
+de faire des pauses, de prendre des moments de réflexion et de faire du silence
+(naturel).
 
-**Sign:** Symbolises walking, moving.
+**Signe:** Symbolise la marche, le mouvement.
 
 ## Breaks
 
-* **Washing Machine Break** sign: Make bowls of your hands and turn them.
+* **Washing Machine Break** : Formez des bols avec vos mains et retournez-les.
 
 ## Difficulté
 
@@ -36,4 +39,4 @@ moments to reflect and (natural) silence.
 * **Caisse claire:** difficile
 * **Tamborim:** difficile
 * **Agogô:** difficile
-* **Shaker:** hard
+* **Shaker:** difficile
