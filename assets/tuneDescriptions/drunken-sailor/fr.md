@@ -1,31 +1,32 @@
-A nice tune based on the famous folk song “What shall we do with the drunken
-sailor?”. The Agogôs and Surdos together make the melody of that song (Agogôs:
-“What shall we do with the drunken sailor”, Surdos in the 4th bar: “Early in the
-morning”).
+Un beau morceau basé sur la célèbre chanson folklorique “What shall we do with
+the drunken sailor?”. Les Agogôs et les Surdos forment ensemble la mélodie de
+cette chanson (Agogôs : “What shall we do with the drunken sailor”, Surdos dans
+la 4ème mesure : “Early in the morning”).
 
-**Sign:** build an eyepatch with one hand in front of your eye
+**Signe:** Faire un cache-œil avec sa main
 
 ## Contexte
 
-**Name:** “What shall we do with the drunken sailor” is a traditional sea
-shanty, probably originating from the US in the 1800s. The song is probably
-based on the traditional Irish folk song “Óró sé do bheatha abhaile” (Oh-ro
-welcome home), which has the same melody and was historically used by the Irish
-movement against the British rule.
+**Nom:** “What shall we do with the drunken sailor” est un chant de marin
+traditionnel, à priori originaire des États-Unis dans les années 1800. Le
+morceau est probablement basé sur la chanson folklorique traditionnelle
+irlandaise « Óró sé do bheatha abhaile » (Oh-ro welcome home), qui a la même
+mélodie et a été historiquement utilisée par le mouvement irlandais contre la
+domination britannique.
 ([Wikipedia](https://en.wikipedia.org/wiki/Drunken_Sailor))
 
-**Musical background:** The tune is based on the folk song. The Agogô line plays
-“What shall we do with the drunken sailor”, while the 4th bar of the Surdos
-plays the “early in the morning”.
+**Contexte musical:** Morceau basé sur la célèbre chanson populaire. La ligne
+d'Agogô joue “What shall we do with the drunken sailor”, tandis que la 4e mesure
+du Surdos joue “early in the morning”.
 
-**Sign:** The eye-patch depicts a pirate.
+**Signe:** Le cache-œil représente un pirate.
 
-**History:** Introduced as a tune by someone from RoR Köln/Cologne in 2010.
+**Histoire:** Morceau proposé par quelqu'un.e de RoR Köln/Cologne en 2010.
 
 
 ## Difficulté
 
-* **Low/Mid Surdo:** easy
+* **Surdo Grave/Moyen:** facile
 * **Surdo aigu:** moyenne
 * **Repi:** difficile
 * **Caisse claire:** difficile
