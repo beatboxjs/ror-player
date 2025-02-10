@@ -1,24 +1,25 @@
-Sign: repeatedly place flat hands in front of each other like feet walking on
-the ground
+Signe : placez les mains à plat l'une devant l'autre comme si vos pieds
+marchaient sur le sol
 
 ## Contexte
 
-**Name:** Flip-flops are a type of simple sandals. They make a distinctive noise
-while walking. The sound of the tune has some similarity to this noise.
+**Nom:** Flip-flops veut dire tongs, le type de sandales simples. Elles font un
+bruit caractéristique en marchant. Le son de la mélodie a une certaine
+similitude avec ce bruit.
 
-**Musical background:** The Surdos are inspired by the song “Boom Bap” by KRS
-One ([YouTube](https://www.youtube.com/watch?v=iaYDe3gu1go)). The Snare is
-inspired by the song “Digital Monkey” by Balkan Beat Box
+**Contexte musical:** Les Surdos sont basés sur la chanson « Boom Bap » de KRS
+One ([YouTube](https://www.youtube.com/watch?v=iaYDe3gu1go)). La Caisse Claire
+est basée sur la chanson « Digital Monkey » de Balkan Beat Box
 ([YouTube](https://www.youtube.com/watch?v=D813i6GnFmE)).
 
-**Sign:** The sign resemples walking with flip-flops.
+**Signe:** Le signe imite des pieds qui marchent.
 
-**History:** Introduced by RoR Leipzig in 2022.
+**Histoire:** Présentée par RoR Leipzig en 2022.
 
 ## Difficulté
 
 * **Surdo Grave :** facile
-* **Mid/High Surdo:** tricky
+* **Surdo Moyen/Aigu:** complexe
 * **Repi:** moyenne
 * **Caisse Claire:** complexe
 * **Tamborim:** moyenne
