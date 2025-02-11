@@ -1,20 +1,19 @@
-**Sign:** with both hands a rotating rope and jump up and down
+**Signe:** avec les deux mains, mimer un sauter à la corde
 
 ## Contexte
 
-**Name:** “Rope skipping” in British English means to jump over a rope that
-oneself or others are swinging around your body.
+**Nom:** “Rope skipping” en anglais britannique signifie sauter à la corde.
 
 **Contexte musical:** *(+ d'infos nécessaires)*
 
-**Sign:** Depicts the activity of rope skipping
+**Signe:** Représente l'activité de sauter à la corde
 
-**History:** Introduced in 2010
+**Histoire:** Introduit en 2010
 
 ## Difficulté
 
 * **Surdo Moyen:** moyenne
-* **Mid Surdo:** tricky
+* **Surdo Moyen:** complexe
 * **Surdo aigu:** moyenne
 * **Repi:** difficile
 * **Caisse claire:** moyenne

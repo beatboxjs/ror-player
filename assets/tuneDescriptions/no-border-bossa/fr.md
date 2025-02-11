@@ -1,20 +1,19 @@
-**Sign:** interlock your hands like a fence and then open it.
+**Signe:** entrecroisez vos mains comme une clôture, puis ouvrez-la.
 
 ## Contexte
 
-**Name:** Bossa Nova is a Brazilian style of music that developed out of Samba,
-which usually involves a guitar and a singer on top of the characteristic Bossa
-Nova beat.
+**Nom:** La Bossa Nova est un style de musique brésilien issu de la Samba, qui
+implique généralement une guitare et un chanteur sur un rythme caractéristique.
 
-**Musical background:** The Surdo line is very similar to the Bossa Nova beat.
-The Bossa clave is the clave that we use at RoR. See
+**Contexte musical:** La partie des Surdos est très similaire au rythme de la
+Bossa Nova. La clave de Bossa est la clave que nous utilisons chez RoR. Voir
 [YouTube](https://www.youtube.com/watch?v=mZ_mEmaJu98).
 
-**Sign:** The sign probably depicts a border fence that is opened.
+**Signe:** Le signe représente, à priori, une frontière qui s'ouvre.
 
-**History:** From RoR Maastricht. “A former Amsterdam band member was cleaning
-her room and found an old notation of a ‘no border bossa’. The paper points to
-Maastricht.”
+**Histoire:** De RoR Maastricht. "Un.e ancien.ne membre d’un groupe d’Amsterdam
+faisait le ménage dans sa chambre et a trouvé une vieille notation d’une "bossa
+sans frontière". Le papier pointe vers Maastricht."
 
 ## Difficulté
 

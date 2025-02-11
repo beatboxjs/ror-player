@@ -1,17 +1,17 @@
-**Sign:** *(None yet.)*
+**Signe:** *(À définir.)*
 
 ## Contexte
 
-**Name:** Arndt Pekurinen (1905–1941) was a Finnish pacifist and antimilitarist,
-who opposed all forms of violence, and refused to join the war. He was
-imprisoned after he became a famous peace symbol, and his hunger strike was
-supported by an extensive international campaign. Pekurinen was executed without
-a trial. His actions forced the government to change laws to allow peaceful,
-non-military civil service.
+**Nom:** Arndt Pekurinen (1905–1941) était un pacifiste et antimilitariste
+finlandais qui s'opposait à toute forme de violence et refusait de participer à
+la guerre. Il fut emprisonné après être devenu un célèbre symbole de la paix et
+sa grève de la faim fut soutenue par une vaste campagne internationale.
+Pekurinen fut exécuté sans procès. Ses actions forcèrent le gouvernement à
+modifier les lois pour autoriser un service civil pacifique et non militaire.
 
 **Contexte musical:** *(+ d'infos nécessaires)*
 
-**Sign:** *(None yet.)*
+**Signe:** *(À définir.)*
 
 **Histoire:** Présenté par RoR Helsinki au TNM 2019 en Lithuanie.
 

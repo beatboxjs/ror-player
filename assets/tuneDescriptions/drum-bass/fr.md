@@ -1,36 +1,40 @@
-Sounds more like Hip-Hop than Drum ‘n’ Bass but has a really nice groove. Can be
-very cheerful when played quite fast or be groovy when played slow.
+Ressemble plus à du hip-hop qu'à de la drum'n'bass mais le groove est vraiment
+sympa. Cela peut être très joyeux lorsqu'il est joué assez rapidement ou être
+groovy lorsqu'il est joué lentement.
 
-The Low Surdo is very important in this tune because it gives the special hip
-hop rhythm and “carries” the tune. There are different versions on the tune
-sheets but both sound good ;). Since none of the Surdos play at the same time,
-it is also possible to play this tune with only one or two surdo players and
-three surdos. To remember the Surdo lines it is also helpful to sing them all
-together (low, high, middle middle, low, high-low, low, high, middle middle,
-low, high…).
+Le Surdo grave est très important dans ce morceau car il donne le rythme hip-hop
+particulier et " porte " la mélodie. Il existe différentes versions sur les
+partitions mais les deux sonnent bien ;). Comme aucun des Surdos ne joue en même
+temps, il est également possible de jouer ce morceau avec seulement un ou deux
+joueurs de surdo sur trois surdos. Pour mémoriser les lignes du Surdo, il est
+également utile de les chanter toutes ensemble (grave, aigu, milieu-milieu,
+grave, aigu-grave, grave, aigu, milieu-milieu, grave, aigu…).
 
-**Sign:** With one hand in your ear lift the other and move it front and back
-(like a DJ).
+**Signe:** Mimer un DJ : une main sur l'oreille, l'autre main à plat qui bouge
+comme pour faire du scratch sur un vinyle.
 
 ## Contexte
 
-**Name:** Drum&Bass is a style of electronic music that developed in the 1990s
-in the UK. Characteristic for it is its really fast and strong base.
+**Nom:** La Drum'n'Bass est un style de musique électronique qui s'est développé
+dans les années 1990 au Royaume-Uni. Il se caractérise par un rythme syncopé
+appelé 2-step et une basse omniprésente.
 ([Wikipedia](https://en.wikipedia.org/wiki/Drum_and_bass))
 
-**Musical background:** The baseline of the tune somewhat resembles Drum&Bass,
-although Drum&Bass is usually played much faster at 165–185 bpm, while RoR Tunes
-are usually played at around 100–120 bpm. At this speed, the tune more sounds
-like Hip Hop, and a very similar base line can be heard in several hip hop songs
-such as this: [YouTube](https://www.youtube.com/watch?v=UePtoxDhJSw).
+**Contexte musical:** La ligne de base de la mélodie ressemble quelque peu à
+celle de la Drum'n'Bass, bien que la Drum'n'Bass soit généralement jouée
+beaucoup plus rapidement, à 165-185 bpm, tandis que les morceaux RoR sont
+généralement joués à environ 100-120 bpm. À cette vitesse, la mélodie ressemble
+davantage à du Hip Hop, et une ligne de base très similaire peut être entendue
+dans plusieurs chansons hip hop telles que celle-ci :
+[YouTube](https://www.youtube.com/watch?v=UePtoxDhJSw).
 
-**Sign:** The sign depicts a DJ.
+**Signe:** Le signe représente un DJ.
 
-**History:** First mentioned in 2010 by RoR Bremen. Has been developed on a
-transnational basis between 2009 & 2010. Barking Bateria also mentions a tune
-with this name [on their
-website](https://web.archive.org/web/20061023061031/http://www.barkingbateria.co.uk/samba.htm)
-in 2006, although it is not clear whether it is the same tune.
+**Histoire:** Mentionné pour la première fois en 2010 par RoR Bremen. Il a été
+développé à l'échelle transnationale entre 2009 et 2010. Barking Bateria
+mentionne également un morceau portant ce nom [sur son site
+Web](https://web.archive.org/web/20061023061031/http://www.barkingbateria.co.uk/samba.htm)
+en 2006, bien qu'il ne soit pas certain qu'il s'agisse du même morceau.
 
 ## Difficulté
 
@@ -44,15 +48,17 @@ in 2006, although it is not clear whether it is the same tune.
 
 ## Breaks
 
-* Break 1 is a singing break (no drumming, all sing together "everybody dance
-  now!”), brings a good mood and moves and can be used to involve audience. This
-  break can be played in all other tunes as well.
-* Break 2 is similar to the “Kick Back 2 Break” from the tune Ragga. Be aware
-  that only repi and snare play on the 8th beat before it goes back into the
-  tune.
-* Break 3 is a little tricky but once mastered, sounds really nice.
-* The Progressive break is quite easy and can creates tension. With the special
-  hand sign for this break it is easy to include it while playing other tunes.
-* The Hip Hop Break (the hand sign is supposed to look really cool
-  hip-hop-stylish, everyone does it their way) sounds really groovy but is also
-  quite tricky for the surdos (a memory-hook phrase is helpful).
+* Le Break 1 est un break chanté (pas de percussions, toustes chantent ensemble
+  «Everybody dance now!»), apporte de la bonne humeur et du mouvement et peut
+  être utilisé pour impliquer le public. Ce break peut également être joué sur
+  tous les autres morceaux.
+* Break 2 est similaire au " Kick Back 2 Break " de la chanson Ragga. Notez que
+  seuls le repi et la caisse claire jouent sur le 8ème temps avant de revenir
+  dans le morceau.
+* Le Break 3 est un peu complexe, mais sonne très bien une fois maitrisé.
+* Le Break Progressif est assez facile et peut créer de la tension. Grâce au
+  signe de main spécial pour ce break, il est facile de l'inclure dans d'autres
+  morceaux.
+* Le Hip Hop Break (le signe de la main est censé avoir un style hip-hop cool,
+  chacun le fait à sa manière) sonne vraiment groovy mais est également assez
+  délicat pour les surdos (une phrase mnémotechnique est utile).

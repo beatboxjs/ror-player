@@ -1,22 +1,23 @@
-**Sign:** put three fingers on your other upper arm (like covering a police
-badge)
+**Signe:** placez trois doigts sur votre autre bras (comme pour couvrir un
+brassard de police)
 
 ## Contexte
 
-**Name:** “Menaiek” is Hebrew for “cop” (insulting word for police officer)
+**Nom:** "Menaiek" signifie "flic" en hébreu (terme insultant pour désigner un
+policier)
 
-**Musical background:** The Surdo and Agogô lines are based on some Afro-Cuban
-Samba rhythms. The Kick Back break is based on Mozambique, a Cuban style of
-music.
+**Contexte musical:** Les parties de Surdo et Agogô sont basées sur des rythmes
+de Samba afro-cubaines. Le break Kick Back est basé sur le Mozambique, un style
+de musique cubain.
 
-**Sign:** The sign depicts a cop covering their badge
+**Signe:** Représente un policier couvrant son brassard
 
-**History:** Introduced in 2015 by RoR Jerusalem.
+**Histoire:** Présenté en 2015 par RoR Jerusalem.
 
 ## Difficulté
 
 * **Surdo Grave :** facile
-* **Mid/High Surdo:** tricky
+* **Surdo Moyen/Aigu:** complexe
 * **Repi:** difficile
 * **Caisse claire:** difficile
 * **Tamborim:** difficile

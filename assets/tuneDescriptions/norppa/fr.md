@@ -1,20 +1,22 @@
-**Sign:** *(None yet.)*
+**Signe:** *(À définir.)*
 
 ## Contexte
 
-**Name:** Saimaannorppa or Saimaa ringed seal is an endangered animal species
-that only lives in one lake in Finland. They like to chill out on warm rocks.
-Norppas were nearly hunted to extinction in the 20th century, as it was
-considered an enemy to the fishing industry. Conservation began in 1979 and
-saved it from extinction. Since then, it has became the symbol of nature
-conservation in Finland. Climate change poses a direct threat to the Norppa.
+**Nom:** Le phoque annelé de Saimaa ou "Saimaannorppa" est une espèce animale en
+voie de disparition qui ne vit que dans un seul lac en Finlande. Ils aiment se
+détendre sur des rochers chauds. Le Norppa a failli être chassé jusqu'à
+l'extinction au 20e siècle, car il était considéré comme un ennemi de
+l'industrie de la pêche. La conservation a commencé en 1979 et l'a sauvé de
+l'extinction. Depuis lors, il est devenu le symbole de la conservation de la
+nature en Finlande. Le changement climatique constitue une menace directe pour
+le Norppa.
 
-**Musical background:** Song takes inspiration from the electronic music, but
-does not imitate any particular genre or song.
+**Contexte musical:** Le morceau s'inspire de la musique électronique, mais
+n'imite aucun genre ou chanson en particulier.
 
-**Sign:** *(None yet.)*
+**Signe:** *(À définir.)*
 
-**History:** Rediscovered from old notes by RoR Helsinki in 2021
+**Histoire:** Redécouvert dans d'anciennes notes par RoR Helsinki en 2021
 
 ## Difficulté
 
