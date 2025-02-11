@@ -278,5 +278,8 @@
     },
     "pattern-player-dialog": {
         "share": "Partager"
+    },
+    "upbeat-picker": {
+        "upbeat": "Levée : {{upbeat}}"
     }
 }
