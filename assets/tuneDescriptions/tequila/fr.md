@@ -1,35 +1,36 @@
-A funny tune based on the famous song “Tequila” by The Champs.
+Un morceau amusant basé sur la célèbre chanson « Tequila » de The Champs.
 
-The Surdos make together make the melody of the saxophone in the song. It is
-thus important for the sound of the tune to time them right. The rhythm of Low
-Surdo is quite off-beat and can be easier to understand when copying the Mid
-Surdo line using the hand. The High Surdo line is very simple, so it is an
-option for one person to play Mid & High Surdo together.
+Les surdos forment ensemble la mélodie du saxophone dans la chanson. Il est donc
+important pour le son de les riff soient bien synchronisés. Le rythme du surdo
+grave est assez décalé et peut être plus facile à comprendre en copiant la ligne
+du surdo moyen à l'aide de la main. La ligne du surdo aigu est très simple, il y
+a donc une option pour une personne de jouer le surdo moyen et aigu ensemble.
 
-The Surdo line has an upbeat, so when entering the groove (and Break 2), the
-Surdos always start a bit before the 1.
+La ligne de Surdo a un rythme optimiste, donc en entrant dans le groove (et
+Break 2), les Surdos commencent toujours un peu avant le 1er temps.
 
-**Sign:** Shake salt onto your hand
+**Signe:** Saupoudrez du sel sur votre main
 
 ## Contexte
 
-**Name:** Tequila is an alcoholic drink made from blue agave in the region
-around the city of Tequila, Mexico. It was first made in the 16th century by
-Spanish colonisers, inspired by Pulque, a traditional alcoholic drink made from
-fermented agave.
+**Nom:** La tequila est une boisson alcoolisée fabriquée à partir d'agave bleu
+dans la région autour de la ville de Tequila, au Mexique. Elle a été fabriquée
+pour la première fois au XVIe siècle par les colons espagnols, inspirés par le
+pulque, une boisson alcoolisée traditionnelle à base d'agave fermentée.
 
-**Musical background:** Based on the song “Tequila” by The Champs
-([YouTube](https://youtu.be/Uyl7GP_VMJY?t=20)). The Surdos make together make
-the melody of the saxophone in the song.
+**Contexte musical:** Basé sur la chanson "Tequila" de The Champs
+([YouTube](https://youtu.be/Uyl7GP_VMJY?t=20)). Les surdos forment ensemble la
+mélodie du saxophone dans la chanson.
 
-**Sign:** Outside of Mexico, it is common to lick salt and lemon from one’s hand
-before drinking Tequila. The tune sign represents using a salt shaker.
+**Signe:** En dehors du Mexique, il est courant de lécher le sel et le citron de
+sa main avant de boire de la tequila. Le signe de la mélodie représente
+l'utilisation d'une salière.
 
-**History:** Invented by RoR Berlin in 2017.
+**Histoire:** Inventé par RoR Berlin en 2017.
 
 ## Difficulté
 
-* **Low Surdo:** tricky
+* **Surdo Grave:** complexe
 * **Surdo moyen:** moyenne
 * **Surdo aigu:** facile
 * **Repi:** difficile
@@ -39,11 +40,12 @@ before drinking Tequila. The tune sign represents using a salt shaker.
 
 ## Breaks
 
-* **Break 1:** Only Agogô, then everyone shouting “Tequila!”. Typically played
-  after Break 2 or Call Break, also sounds good after other 3-bar breaks, such
-  as the Progressive Break.
-* **Break 2:** The Surdos make the melody of the saxophone solo in the song.
-  Typically, Break 1 is played afterwards. There is an upbeat of 3 strokes, so
-  the Surdos start playing immediately after the 4th whistle.
-* **Break 3:** Call&Response between Repis and everyone else. The same as the
-  first half of the Agogô line. Typically, Break 1 is played afterwards.
+* **Break 1:** l'Agogô joue seul, puis tout le monde crie "Tequila !".
+  Généralement joué après le Break 2 ou le Call Break, il sonne également bien
+  après d'autres pauses de 3 mesures, comme le Progressive Break.
+* **Break 2:** Les Surdos composent la mélodie du solo de saxophone de la
+  chanson. En général, la pause 1 est jouée après. Il y a un temps fort de 3
+  coups, donc les Surdos commencent à jouer immédiatement après le 4e coup de
+  sifflet.
+* **Break 3:** Question-réponse entre Repi et les autres. Identique à la
+  première moitié de la ligne d'Agogô. En général, le Break 1 est joué ensuite.
