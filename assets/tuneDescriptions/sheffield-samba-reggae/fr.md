@@ -1,29 +1,30 @@
-**Sign:** smoke a joint like a cup of tea (with thumb and index finger)
+**Signe:** fumer un joint comme on tient une tasse de thé (avec le pouce et
+l'index)
 
 ## Contexte
 
-**Name:** See Samba Reggae. Sheffield is a city in the UK that used to have a
-very active RoR band.
+**Nom:** Voir Samba Reggae. Sheffield est une ville du Royaume-Uni qui abritait
+autrefois un groupe RoR très actif.
 
-**Musical background:** A typical Samba Reggae tune.
+**Contexte musical:** Un morceau typique de Samba Reggae.
 
-**Sign:** The sign is a mix between drinking tea and smoking a joint. Drinking
-tea is a common activity in the UK (not sure if there is a specific connection
-to Sheffield). Smoking joints is a main ritual in the Rastafari religion, which
-is closely linked to Reggae music.
+**Signe:** Le signe est un mélange entre boire du thé et fumer un joint. Boire
+du thé est une activité courante au Royaume-Uni (Y a t'il un lien spécifique
+avec Sheffield ?). Fumer des joints est un rituel principal de la religion
+rastafari, qui est étroitement liée à la musique reggae.
 
 **Histoire:** Présenté dans le réseau RoR Londres en 2012, y a probablement été
 joué avant ?
 
 ## Controverses
 
-The rhythm clearly sounds like real Samba Reggae, which is a tune developed and
-used by the Black liberation movement in Brazil. Many people in the RoR network
-consider it cultural appropriation to play this tune in our mainly white
-European bands, and there is an ongoing debate about abolishing the tune.
+Le rythme ressemble clairement à celui de la vraie Samba Reggae, un style
+développé et utilisé par le mouvement de libération des Noirs au Brésil. De
+nombreuses personnes du réseau RoR considèrent que jouer ce morceau dans nos
+groupes européens majoritairement blancs constitue de l'appropriation
+culturelle, et il existe un débat en cours sur l'abolition de ce morceau.
 
-There is also some criticism towards the sign, which is based on a racist
-stereotype.
+Certain.e.s critiquent également ce signe, qui repose sur un stéréotype raciste.
 
 ## Difficulté
 
