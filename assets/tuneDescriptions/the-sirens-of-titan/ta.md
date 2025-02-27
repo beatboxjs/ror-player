@@ -1,1 +1,1 @@
-Played by RoR Kraków ([website](https://sambaka.wordpress.com/rytmy/)).
+ரோர் கிராகோவ் விளையாடினார் ([website](https://sambaka.wordpress.com/rytmy/)).
