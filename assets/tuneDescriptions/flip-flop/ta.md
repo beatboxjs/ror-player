@@ -1,7 +1,7 @@
 Sign: repeatedly place flat hands in front of each other like feet walking on
 the ground
 
-## Background
+## பின்னணி
 
 **Name:** Flip-flops are a type of simple sandals. They make a distinctive noise
 while walking. The sound of the tune has some similarity to this noise.
@@ -15,11 +15,11 @@ inspired by the song “Digital Monkey” by Balkan Beat Box
 
 **History:** Introduced by RoR Leipzig in 2022.
 
-## Difficulty
+## தொல்லை
 
 * **Low Surdo:** easy
 * **Mid/High Surdo:** tricky
-* **Repi:** medium
+* ** ரச்: ** சராசரி
 * **Snare:** tricky
-* **Tamborim:** medium
-* **Agogô:** medium
+* ** தம்போரிம்: ** நடுத்தர
+* ** அகோகே: ** நடுத்தர
