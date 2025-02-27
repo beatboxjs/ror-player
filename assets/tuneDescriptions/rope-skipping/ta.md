@@ -1,6 +1,6 @@
 **Sign:** with both hands a rotating rope and jump up and down
 
-## Background
+## பின்னணி
 
 **Name:** “Rope skipping” in British English means to jump over a rope that
 oneself or others are swinging around your body.
@@ -11,12 +11,12 @@ oneself or others are swinging around your body.
 
 **History:** Introduced in 2010
 
-## Difficulty
+## தொல்லை
 
 * **Low Surdo:** medium
 * **Mid Surdo:** tricky
-* **High Surdo:** medium
-* **Repi:** hard
-* **Snare:** medium
-* **Tamborim:** medium
+* ** உயர் சூர்டோ: ** நடுத்தர
+* ** ரெய்பி: ** கடினமானது
+* ** SNARE: ** நடுத்தர
+* ** தம்போரிம்: ** நடுத்தர
 * **Agogô:** easy
