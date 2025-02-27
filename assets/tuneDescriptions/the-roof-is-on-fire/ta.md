@@ -3,7 +3,7 @@ Was drawn as a **Tune of the Year 2024**.
 **Sign:** Form a roof with your hands, interlace the fingers and wiggle them
 like flames.
 
-## Background
+## பின்னணி
 
 **Name:** “The roof is on fire” is part of the chorus in the song “Fire Water
 Burn” by the Bloodhound Gang
@@ -21,10 +21,10 @@ Scott & the Dynamic Three.
 **History:** Spontaneously invented by RoR Kaunas during the TNM 2019 after the
 roof of the sauna caught fire.
 
-## Difficulty
+## தொல்லை
 
 * **Surdos:** tricky
-* **Repi:** medium
-* **Snare:** medium
+* ** ரச்: ** சராசரி
+* ** SNARE: ** நடுத்தர
 * **Tamborim:** tricky
 * **Agogô:** easy
