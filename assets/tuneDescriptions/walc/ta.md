@@ -1,6 +1,6 @@
 **Sign:** draw a triangle in the air with one hand
 
-## Background
+## பின்னணி
 
 **Name:** Waltz (German: Walzer) is a European style of classical music
 originating in German and Austrian folk dances of the middle age
@@ -15,10 +15,10 @@ our tune comes from Polish “walc” for Waltz and “walcz” for “fight!”
 
 **History:** Introduced by RoR Kraków in 2016.
 
-## Difficulty
+## தொல்லை
 
-* **Surdos:** easy
+* ** சூர்டோச்: ** எளிதானது
 * **Repi:** easy
-* **Snare:** medium
+* ** SNARE: ** நடுத்தர
 * **Tamborim:** easy
 * **Agogô:** easy
