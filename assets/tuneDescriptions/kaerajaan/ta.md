@@ -1,7 +1,7 @@
 **Sign:** Place forearms on top of each other in front of you, fingertips
 aligned with elbows (like in the Estonian folk dance).
 
-## Background
+## பின்னணி
 
 **Name:** Kaerajaan is an Estonian folk dance that is danced to a folk song
 called Kaera-Jaan ([example on
@@ -17,10 +17,10 @@ YouTube](https://youtu.be/-udR34x2aTM?t=4)).
 
 **History:** Invented by RoR Tallinn in 2021.
 
-## Difficulty
+## தொல்லை
 
-* **Surdos:** easy
-* **Repi:** hard
-* **Snare:** easy
-* **Tamborim:** medium
-* **Agogô:** medium
+* ** சூர்டோச்: ** எளிதானது
+* ** ரெய்பி: ** கடினமானது
+* ** SNARE: ** எளிதானது
+* ** தம்போரிம்: ** நடுத்தர
+* ** அகோகே: ** நடுத்தர
