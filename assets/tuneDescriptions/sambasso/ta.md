@@ -3,7 +3,7 @@ Was chosen as a **Tune of the Year 2021** (along with Bhaṅgṛā).
 **Sign:** V with 4 fingers (vulcan salute) on both hands, slide the gaps into
 each other
 
-## Background
+## பின்னணி
 
 **Name:** Probably a combination of the words “Samba” and “basso” (Italian for
 “low” or “base”).
@@ -16,10 +16,10 @@ Reggae style. *(More info needed.)*
 **History:** Introduced to the network by RoR London in 2012, was probably
 played there before?
 
-## Difficulty
+## தொல்லை
 
-* **Surdos:** easy
-* **Repi:** hard
-* **Snare:** hard
+* ** சூர்டோச்: ** எளிதானது
+* ** ரெய்பி: ** கடினமானது
+* ** SNARE: ** கடினமானது
 * **Tamborim:** hard
-* **Agogô:** medium
+* ** அகோகே: ** நடுத்தர
