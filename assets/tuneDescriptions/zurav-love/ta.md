@@ -2,7 +2,7 @@ Was drawn as the **Tune of the Year 2018**.
 
 **Sign:** open and close the beak of a bird with your hands
 
-## Background
+## பின்னணி
 
 **Name:** A word play on Żuravlów, the village where the TNM 2015 happened.
 
@@ -16,7 +16,7 @@ represents the beak of the bird.
 **History:** Introduced by RoR Kraków and Ror Trójmiasto on the TNM 2015 in
 Żuravlów.
 
-## Difficulty
+## தொல்லை
 
 * **Low/Mid Surdo:** medium (easy to play, but hard to keep the right speed
   because of off-beats)
