@@ -1,6 +1,6 @@
 **Sign:** throw a grenade
 
-## Background
+## பின்னணி
 
 **Name:** “Bomba” is the name of a commercial song from artist King Africa. The
 Call Break is inspired on the chorus of this song.
@@ -13,12 +13,12 @@ and the breaks inspired in song “Bomba” by King Africa
 **History:** Invented by a member of a former band in Valencia called Mandala
 around 2014
 
-## Difficulty
+## தொல்லை
 
 * **Low Surdo:** medium
 * **Mid Surdo:** easy
-* **High Surdo:** medium
-* **Repi:** medium
-* **Snare:** medium
+* ** உயர் சூர்டோ: ** நடுத்தர
+* ** ரச்: ** சராசரி
+* ** SNARE: ** நடுத்தர
 * **Tamborim:** hard
-* **Agogô:** medium
+* ** அகோகே: ** நடுத்தர
