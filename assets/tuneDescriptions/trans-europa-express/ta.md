@@ -3,7 +3,7 @@
 Doppler Break sign: Move your hand in front of your body from one side to the
 other like a train passing by.
 
-## Background
+## பின்னணி
 
 **Name:** Trans Europ Express (TEE) was an international high-speed luxury train
 in Western Europe between 1957 and 1995, aiming to provide an alternative to
@@ -22,11 +22,11 @@ Kraftwerk ([YouTube](https://www.youtube.com/watch?v=XMVokT5e0zs)).
 
 **History:** Invented by RoR Berlin in 2021.
 
-## Difficulty
+## தொல்லை
 
-* **Surdos:** easy
+* ** சூர்டோச்: ** எளிதானது
 * **Repi:** tricky
-* **Snare:** medium
+* ** SNARE: ** நடுத்தர
 * **Tamborim:** easy
 * **Agogô:** easy
 * **Shaker:** tricky
