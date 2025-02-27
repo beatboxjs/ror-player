@@ -1,6 +1,6 @@
 **Sign:** *(None yet.)*
 
-## Background
+## பின்னணி
 
 **Name:** Arndt Pekurinen (1905–1941) was a Finnish pacifist and antimilitarist,
 who opposed all forms of violence, and refused to join the war. He was
@@ -15,7 +15,7 @@ non-military civil service.
 
 **History:** Introduced by RoR Helsinki on the TNM in 2019 in Lithuania.
 
-## Difficulty
+## தொல்லை
 
 * **Low Surdo:** easy
 * **Mid Surdo:** easy
@@ -23,4 +23,4 @@ non-military civil service.
 * **Repi:** tricky
 * **Snare:** tricky
 * **Tamborim:** tricky
-* **Agogô:** medium
+* ** அகோகே: ** நடுத்தர
