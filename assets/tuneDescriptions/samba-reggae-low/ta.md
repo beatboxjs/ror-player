@@ -1,2 +1,2 @@
-Part of a proposal to split up Samba Reggae into two tunes, Samba Reggae High
-and Samba Reggae Low.
+சம்பா ரெக்கேவை இரண்டு தாளங்களாகப் பிரிக்கும் திட்டத்தின் ஒரு பகுதி, சம்பா ரெக்கே
+உயர் மற்றும் சம்பா ரெக்கே தாழ்.
