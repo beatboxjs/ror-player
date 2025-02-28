@@ -1,18 +1,20 @@
-**Sign:** make two fists and rub middle joints against each other
+** அடையாளம்: ** இரண்டு கைமுட்டிகளை உருவாக்கி, ஒருவருக்கொருவர் எதிராக நடுத்தர
+மூட்டுகளை தேய்க்கவும்
 
 ## பின்னணி
 
-**Musical background:** The tune bases its sounds in a popular local music genre
-called “chicha”, which combines Andean “huayno” and tropical “cumbia”.
+** இசை பின்னணி: ** ஆண்டியன் “உவானோ” மற்றும் வெப்பமண்டல “கும்பியா” ஆகியவற்றை
+ஒருங்கிணைக்கும் “சிச்சா” என்று அழைக்கப்படும் பிரபலமான உள்ளக இசை வகையில் அதன்
+ஒலிகளை டியூன் அடிப்படையாகக் கொண்டுள்ளது.
 
-**History:** Composed by the Peruvian Lima-based collective Tamboras Resistencia
-and shared on the TNM 2024 by RoR Zürich.
+** வரலாறு: ** பெருவியன் லிமாவை தளமாகக் கொண்ட கூட்டு தம்போராச் ரெசிச்டென்சியா
+இசையமைத்து, டி.என்.எம் 2024 இல் ரோர் சூரிச் பகிர்ந்து கொண்டார்.
 
 ## தொல்லை
 
-* **Low Surdo:** easy
-* **Mid Surdo:** easy
+* ** குறைந்த சூர்டோ: ** எளிதானது
+* ** மிட் சூர்டோ: ** எளிதானது
 * ** ரச்: ** சராசரி
-* **Snare 1:** tricky
-* **Snare 2:** tricky
+* ** SNARE 1: ** தந்திரமான
+* ** SNARE 2: ** தந்திரமான
 * ** அகோகே: ** நடுத்தர
