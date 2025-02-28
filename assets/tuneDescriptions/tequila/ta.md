@@ -1,49 +1,50 @@
-A funny tune based on the famous song “Tequila” by The Champs.
+சாம்ப்ச் எழுதிய “டெக்யுலா” என்ற பிரபலமான பாடலை அடிப்படையாகக் கொண்ட ஒரு
+வேடிக்கையான இசை.
 
-The Surdos make together make the melody of the saxophone in the song. It is
-thus important for the sound of the tune to time them right. The rhythm of Low
-Surdo is quite off-beat and can be easier to understand when copying the Mid
-Surdo line using the hand. The High Surdo line is very simple, so it is an
-option for one person to play Mid & High Surdo together.
+சூர்டோக்கள் ஒன்றாக பாடலில் சாக்சபோனின் மெல்லிசையை உருவாக்குகின்றன. காலத்தின்
+ஒலியின் ஒலிக்கு இது சரியானது. குறைந்த சூர்டோவின் தாளம் மிகவும் துடிப்பு மற்றும்
+கையைப் பயன்படுத்தி மிட் சூர்டோ வரியை நகலெடுக்கும் போது புரிந்துகொள்வது எளிதாக
+இருக்கும். உயர் சூர்டோ வரி மிகவும் எளிதானது, எனவே ஒரு நபர் ஒன்றாக நடுப்பகுதியில்
+& உயர் சூர்டோ விளையாடுவது ஒரு விருப்பமாகும்.
 
-The Surdo line has an upbeat, so when entering the groove (and Break 2), the
-Surdos always start a bit before the 1.
+சூர்டோ வரிசையில் ஒரு ஊக்கம் உள்ளது, எனவே பள்ளத்திற்குள் நுழையும்போது (மற்றும் 2
+ஐ முறித்துக் கொள்ளும்போது), சூர்டோச் எப்போதும் 1 க்கு முன் சற்று தொடங்குகிறது.
 
-**Sign:** Shake salt onto your hand
+** அடையாளம்: ** உங்கள் கையில் உப்பை அசைக்கவும்
 
 ## பின்னணி
 
-**Name:** Tequila is an alcoholic drink made from blue agave in the region
-around the city of Tequila, Mexico. It was first made in the 16th century by
-Spanish colonisers, inspired by Pulque, a traditional alcoholic drink made from
-fermented agave.
+! இது முதன்முதலில் 16 ஆம் நூற்றாண்டில் ச்பானிச் காலனித்துவவாதிகளால்
+தயாரிக்கப்பட்டது, புல்வெளிகளால் ஈர்க்கப்பட்டது, இது புளித்த நீலக்கத்தாழை
+தயாரித்த ஒரு பாரம்பரிய ஆல்கஆல்.
 
-**Musical background:** Based on the song “Tequila” by The Champs
-([YouTube](https://youtu.be/Uyl7GP_VMJY?t=20)). The Surdos make together make
-the melody of the saxophone in the song.
+** இசை பின்னணி: ** சாம்பியனின் ([YouTube] (https://youtu.be/Uyl7GP_VMJY?t=20))
+“டெக்யுலா” பாடலை அடிப்படையாகக் கொண்டது. சூர்டோக்கள் ஒன்றாக பாடலில் சாக்சபோனின்
+மெல்லிசையை உருவாக்குகின்றன.
 
-**Sign:** Outside of Mexico, it is common to lick salt and lemon from one’s hand
-before drinking Tequila. The tune sign represents using a salt shaker.
+** அடையாளம்: ** மெக்சிகோவுக்கு வெளியே, டெக்கீலா குடிப்பதற்கு முன்பு ஒருவரின்
+கையில் இருந்து உப்பு மற்றும் எலுமிச்சை நக்குவது பொதுவானது. டியூன் அடையாளம் ஒரு
+உப்பு சேக்கரைப் பயன்படுத்துவதைக் குறிக்கிறது.
 
-**History:** Invented by RoR Berlin in 2017.
+** வரலாறு: ** 2017 இல் ரோர் பெர்லின் கண்டுபிடித்தார்.
 
 ## தொல்லை
 
-* **Low Surdo:** tricky
-* **Mid Surdo:** medium
-* **High Surdo:** easy
+* ** குறைந்த சூர்டோ: ** தந்திரமான
+* ** மிட் சூர்டோ: ** நடுத்தர
+* ** உயர் சூர்டோ: ** எளிதானது
 * ** ரெய்பி: ** கடினமானது
 * ** SNARE: ** எளிதானது
-* **Tamborim:** easy
+* ** தம்போரிம்: ** எளிதானது
 * ** அகோகே: ** நடுத்தர
 
-## Breaks
+## இடைவெளிகள்
 
-* **Break 1:** Only Agogô, then everyone shouting “Tequila!”. Typically played
-  after Break 2 or Call Break, also sounds good after other 3-bar breaks, such
-  as the Progressive Break.
-* **Break 2:** The Surdos make the melody of the saxophone solo in the song.
-  Typically, Break 1 is played afterwards. There is an upbeat of 3 strokes, so
-  the Surdos start playing immediately after the 4th whistle.
-* **Break 3:** Call&Response between Repis and everyone else. The same as the
-  first half of the Agogô line. Typically, Break 1 is played afterwards.
+* ** முறிவு 1: ** அகோகா மட்டுமே, பின்னர் எல்லோரும் “டெக்யுலா!” என்று
+  கத்துகிறார்கள். பொதுவாக பிரேக் 2 அல்லது கால் பிரேக்குக்குப் பிறகு விளையாடுவது,
+  முற்போக்கான இடைவெளி போன்ற பிற 3-பார் இடைவெளிகளுக்குப் பிறகு நன்றாக இருக்கிறது.
+* ** இடைவெளி 2: ** சூர்டோச் பாடலில் சாக்சபோன் தனிப்பாடலின் மெல்லிசை செய்கிறது.
+  பொதுவாக, பிரேக் 1 பின்னர் இயக்கப்படுகிறது. 3 பக்கவாதம் ஒரு ஊக்கம் உள்ளது, எனவே
+  சுர்டோச் 4 வது விசில் முடிந்த உடனேயே விளையாடத் தொடங்குகிறது.
+* ** இடைவெளி 3: ** ரெப்பிகளுக்கும் மற்ற அனைவருக்கும் இடையே அழைப்பு & பதில்.
+  அகோகே வரியின் முதல் பாதியைப் போலவே. பொதுவாக, பிரேக் 1 பின்னர் இயக்கப்படுகிறது.
