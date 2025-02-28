@@ -1,22 +1,22 @@
-**Sign:** put the fingertips together with straight fingers, building a top of a
-mountain with both hands
+** அடையாளம்: ** விரல் நுனியை நேராக விரல்களால் ஒன்றாக வைத்து, இரு கைகளால் ஒரு
+மலையின் உச்சியை கட்டவும்
 
 ## பின்னணி
 
-**Musical background:** The song is based on the song [Bella
-Ciao](https://en.wikipedia.org/wiki/Bella_ciao), a song used by the Italian
-partisans who resisted against Nazi Germany. The Repi line, Break 1 and the
-Intro resemble the rhythm of the song.
+** இசை பின்னணி: ** பாடல் [பெல்லா சியாவோ]
+(https://en.wikipedia.org/wiki/Bella_ciao), நாசி செர்மனிக்கு எதிராக எதிர்த்த
+இத்தாலிய பாகுபாடானவர்கள் பயன்படுத்திய பாடல். ரெபி லைன், பிரேக் 1 மற்றும்
+அறிமுகம் பாடலின் தாளத்தை ஒத்திருக்கின்றன.
 
-**History:** Introduced by RoR Zürich in 2024, shared and extended (yay!) on the
-TNM 2024.
+** வரலாறு: ** 2024 இல் ரோர் சூரிச் அறிமுகப்படுத்தினார், டி.என்.எம் 2024 இல்
+பகிரப்பட்டு நீட்டிக்கப்பட்டது (ஆம்!).
 
 ## தொல்லை
 
-* **Low Surdo:** medium
-* **Mid Surdo:** medium
+* ** குறைந்த சூர்டோ: ** நடுத்தர
+* ** மிட் சூர்டோ: ** நடுத்தர
 * ** ரச்: ** சராசரி
 * ** SNARE: ** கடினமானது
 * ** தம்போரிம்: ** நடுத்தர
-* **Agogô:** easy
-* **Shaker:** medium
+* ** அகோகே: ** எளிதானது
+* ** சேக்கர்: ** நடுத்தர
