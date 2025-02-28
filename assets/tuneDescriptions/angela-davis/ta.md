@@ -43,16 +43,16 @@ actively collaborating with the oppressive regime of the Soviet Union.
 
 ## தொல்லை
 
-* **Low Surdo:** hard
+* ** குறைந்த சூர்டோ: ** கடினமானது
 * **Mid Surdo:** easy to remember, but hard to play it without beeing to fast
   nor to slow
 * ** உயர் சூர்டோ: ** நடுத்தர
-* **Repi:** easy
+* ** ரெபி: ** எளிதானது
 * **Snare:** easy (there are some variations)
-* **Tamborim:** easy
+* ** தம்போரிம்: ** எளிதானது
 * ** அகோகே: ** நடுத்தர
 
-## Breaks
+## இடைவெளிகள்
 
 * Break 1 consists of a pickup followed by a bar of eight-notes.
 * Break 2 is a call&response between Surdos and everyone else, it is ended by
