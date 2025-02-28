@@ -1,32 +1,30 @@
-**Sign:** Wave an imaginary tissue like saying goodbye to a train.
+** அடையாளம்: ** ஒரு ரயிலுக்கு விடைபெறுவது போன்ற ஒரு கற்பனை திசுவை அலையுங்கள்.
 
-Doppler Break sign: Move your hand in front of your body from one side to the
-other like a train passing by.
+டாப்ளர் பிரேக் அடையாளம்: உங்கள் கையை உங்கள் உடலின் முன் ஒரு பக்கத்திலிருந்து
+மறுபுறம் நகர்த்தவும்.
 
 ## பின்னணி
 
-**Name:** Trans Europ Express (TEE) was an international high-speed luxury train
-in Western Europe between 1957 and 1995, aiming to provide an alternative to
-flying to business people
-([Wikipedia](https://en.wikipedia.org/wiki/Trans_Europ_Express)). The train was
-the theme of an electronic music album called Trans-Europe Express (German:
-Trans Europa Express) by the German band Kraftwerk, released in 1977
-([Wikipedia](https://en.wikipedia.org/wiki/Trans-Europe_Express_(album))).
-Kraftwerk were one of the pioneers of electronic music and are considered a
-major influence to many modern styles of electronic music.
+. 1977 ஆம் ஆண்டில் ([விக்கிபீடியா]
+(https://en.wikipedia.org/wiki/Trans_Europ_Express)) வெளியான செர்மன் இசைக்குழு
+கிராஃப்ட்வெர்க் எழுதிய டிரான்ச்-யூரோப் எக்ச்பிரச் (செர்மன்: டிரான்ச் யூரோபா
+எக்ச்பிரச்) என்ற மின்னணு இசை ஆல்பத்தின் கருப்பொருளாக இந்த ரயில் இருந்தது.
+கிராஃப்ட்வெர்க் எலக்ட்ரானிக் இசையின் முன்னோடிகளில் ஒருவராக இருந்தார், மேலும் பல
+நவீன பாணிகளின் மின்னணு இசைக்கு பெரும் செல்வாக்கு செலுத்துகிறார்கள்.
 
-**Musical background:** The tune is based on the song Trans Europa Express by
-Kraftwerk ([YouTube](https://www.youtube.com/watch?v=XMVokT5e0zs)).
+** இசை பின்னணி: ** கிராஃப்ட்வெர்க் ([YouTube]
+(https://www.youtube.com/watch?v=XMVokT5e0zs)) எழுதிய டிரான்ச் யூரோபா எக்ச்பிரச்
+பாடலை அடிப்படையாகக் கொண்டது.
 
-**Sign:** The sign represents a train passing by.
+** அடையாளம்: ** அடையாளம் கடந்து செல்லும் ரயிலைக் குறிக்கிறது.
 
-**History:** Invented by RoR Berlin in 2021.
+** வரலாறு: ** 2021 இல் ரோர் பெர்லின் கண்டுபிடித்தார்.
 
 ## தொல்லை
 
 * ** சூர்டோச்: ** எளிதானது
-* **Repi:** tricky
+* ** ரெபி: ** தந்திரமான
 * ** SNARE: ** நடுத்தர
-* **Tamborim:** easy
-* **Agogô:** easy
-* **Shaker:** tricky
+* ** தம்போரிம்: ** எளிதானது
+* ** அகோகே: ** எளிதானது
+* ** சேக்கர்: ** தந்திரமான
