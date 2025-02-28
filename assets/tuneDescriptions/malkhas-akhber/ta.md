@@ -11,9 +11,9 @@ Armenian Navy Band ([YouTube](https://www.youtube.com/watch?v=OCgrJFbIAcw)).
 
 ## தொல்லை
 
-* **Low Surdo:** easy
-* **Mid/High Surdo:** medium
+* ** குறைந்த சூர்டோ: ** எளிதானது
+* ** மிட்/ஐ சூர்டோ: ** நடுத்தர
 * ** ரெய்பி: ** கடினமானது
 * ** SNARE: ** கடினமானது
-* **Tamborim:** easy
-* **Agogô:** hard
+* ** தம்போரிம்: ** எளிதானது
+* ** அகோகே: ** கடினமானது
