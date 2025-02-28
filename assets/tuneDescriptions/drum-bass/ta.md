@@ -1,58 +1,58 @@
-Sounds more like Hip-Hop than Drum ‘n’ Bass but has a really nice groove. Can be
-very cheerful when played quite fast or be groovy when played slow.
+டிரம் ‘என்’ மொழி விட இப்-ஆப் போல தெரிகிறது, ஆனால் ஒரு நல்ல பள்ளம் உள்ளது. மிக
+வேகமாக விளையாடும்போது மிகவும் மகிழ்ச்சியாக இருக்க முடியும் அல்லது மெதுவாக
+விளையாடும்போது க்ரூவியாக இருக்க முடியும்.
 
-The Low Surdo is very important in this tune because it gives the special hip
-hop rhythm and “carries” the tune. There are different versions on the tune
-sheets but both sound good ;). Since none of the Surdos play at the same time,
-it is also possible to play this tune with only one or two surdo players and
-three surdos. To remember the Surdo lines it is also helpful to sing them all
-together (low, high, middle middle, low, high-low, low, high, middle middle,
-low, high…).
+இந்த பாடலில் குறைந்த சூர்டோ மிகவும் முக்கியமானது, ஏனெனில் இது சிறப்பு இப் ஆப்
+தாளத்தை அளிக்கிறது மற்றும் பாடலை "சுமக்கிறது". டியூன் தாள்களில் வெவ்வேறு
+பதிப்புகள் உள்ளன, ஆனால் இரண்டும் நன்றாக இருக்கின்றன;). ஒரே நேரத்தில் சுர்டோச்
+எதுவும் விளையாடுவதால், ஒன்று அல்லது இரண்டு சூர்டோ வீரர்கள் மற்றும் மூன்று
+சூர்டோசுடன் இந்த பாடலை விளையாட முடியும். சூர்டோ வரிகளை நினைவில் வைத்துக் கொள்ள,
+அவை அனைத்தையும் ஒன்றாகப் பாடுவதும் உதவியாக இருக்கும் (குறைந்த, உயர், நடுத்தர
+நடுத்தர, குறைந்த, உயர்-குறைந்த, குறைந்த, உயர், நடுத்தர நடுத்தர, குறைந்த, உயர்…).
 
-**Sign:** With one hand in your ear lift the other and move it front and back
-(like a DJ).
+** அடையாளம்: ** உங்கள் காதில் ஒரு கையால் மற்றொன்றை தூக்கி முன் மற்றும் பின்னால்
+நகர்த்தவும் (ஒரு டி.சே போன்றது).
 
 ## பின்னணி
 
-**Name:** Drum&Bass is a style of electronic music that developed in the 1990s
-in the UK. Characteristic for it is its really fast and strong base.
-([Wikipedia](https://en.wikipedia.org/wiki/Drum_and_bass))
+** பெயர்: ** டிரம் & பாச் என்பது 1990 களில் இங்கிலாந்தில் வளர்ந்த மின்னணு
+இசையின் பாணியாகும். அதற்கான சிறப்பியல்பு அதன் வேகமான மற்றும் வலுவான அடிப்படை.
+([விக்கிபீடியா] (https://en.wikipedia.org/wiki/Drum_and_bass))
 
-**Musical background:** The baseline of the tune somewhat resembles Drum&Bass,
-although Drum&Bass is usually played much faster at 165–185 bpm, while RoR Tunes
-are usually played at around 100–120 bpm. At this speed, the tune more sounds
-like Hip Hop, and a very similar base line can be heard in several hip hop songs
-such as this: [YouTube](https://www.youtube.com/watch?v=UePtoxDhJSw).
+. இந்த வேகத்தில், இப் ஆப் போல மேலும் ஒலிக்கிறது, மேலும் இது போன்ற பல இப் ஆப்
+பாடல்களில் மிகவும் ஒத்த அடிப்படை வரியைக் கேட்கலாம்: [YouTube]
+(https://www.youtube.com/watch?v=UePtoxDhJSw).
 
-**Sign:** The sign depicts a DJ.
+** அடையாளம்: ** அடையாளம் ஒரு டி.சே.
 
-**History:** First mentioned in 2010 by RoR Bremen. Has been developed on a
-transnational basis between 2009 & 2010. Barking Bateria also mentions a tune
-with this name [on their
-website](https://web.archive.org/web/20061023061031/http://www.barkingbateria.co.uk/samba.htm)
-in 2006, although it is not clear whether it is the same tune.
+** வரலாறு: ** முதன்முதலில் 2010 இல் ரோர் ப்ரெமன் குறிப்பிட்டார். 2009 மற்றும்
+2010 க்கு இடையில் ஒரு நாடுகடந்த அடிப்படையில் உருவாக்கப்பட்டுள்ளது. 2006 ஆம்
+ஆண்டில் [அவர்களின் இணையதளத்தில்] {1 with உடன் ஒரு பாடலையும் பார்கிங் பாட்டேரியா
+குறிப்பிடுகிறார், இருப்பினும் இது அதே பாடலா என்பது தெளிவாகத் தெரியவில்லை.
 
 ## தொல்லை
 
-* **Low Surdo:** hard
-* **Mid Surdo:** easy
-* **High Surdo:** easy
+* ** குறைந்த சூர்டோ: ** கடினமானது
+* ** மிட் சூர்டோ: ** எளிதானது
+* ** உயர் சூர்டோ: ** எளிதானது
 * ** ரெய்பி: ** கடினமானது
 * ** SNARE: ** நடுத்தர
-* **Tamborim:** easy
+* ** தம்போரிம்: ** எளிதானது
 * ** அகோகே: ** நடுத்தர
 
-## Breaks
+## இடைவெளிகள்
 
-* Break 1 is a singing break (no drumming, all sing together "everybody dance
-  now!”), brings a good mood and moves and can be used to involve audience. This
-  break can be played in all other tunes as well.
-* Break 2 is similar to the “Kick Back 2 Break” from the tune Ragga. Be aware
-  that only repi and snare play on the 8th beat before it goes back into the
-  tune.
-* Break 3 is a little tricky but once mastered, sounds really nice.
-* The Progressive break is quite easy and can creates tension. With the special
-  hand sign for this break it is easy to include it while playing other tunes.
-* The Hip Hop Break (the hand sign is supposed to look really cool
-  hip-hop-stylish, everyone does it their way) sounds really groovy but is also
-  quite tricky for the surdos (a memory-hook phrase is helpful).
+* பிரேக் 1 ஒரு பாடும் இடைவெளி (டிரம்மிங் இல்லை, எல்லோரும் "எல்லோரும் இப்போது
+  நடனமாடுகிறார்கள்!"
+* பிரேக் 2 என்பது ராகாவிலிருந்து "கிக் பேக் 2 இடைவெளியை" போன்றது. 8 வது
+  துடிப்பில் ரெபி மற்றும் ச்னேர் மட்டுமே விளையாடுகிறார்கள் என்பதை அறிந்து
+  கொள்ளுங்கள்.
+* பிரேக் 3 கொஞ்சம் தந்திரமானது, ஆனால் ஒரு முறை தேர்ச்சி பெற்றால், மிகவும் நன்றாக
+  இருக்கிறது.
+* முற்போக்கான இடைவெளி மிகவும் எளிதானது மற்றும் பதற்றத்தை உருவாக்க முடியும். இந்த
+  இடைவேளையின் சிறப்பு கை அடையாளத்துடன் மற்ற தாளங்களை விளையாடும்போது அதைச்
+  சேர்ப்பது எளிது.
+* இப் ஆப் பிரேக் (கை அடையாளம் மிகவும் குளிர்ந்த இப்-ஆப்-ச்டைலிச் என்று தோன்றும்,
+  எல்லோரும் அதை தங்கள் வழியில் செய்கிறார்கள்) உண்மையிலேயே க்ரூவி என்று
+  தெரிகிறது, ஆனால் சூர்டோசுக்கும் மிகவும் தந்திரமானதாக இருக்கிறது (ஒரு
+  நினைவக-கொலை சொற்றொடர் உதவியாக இருக்கும்).
