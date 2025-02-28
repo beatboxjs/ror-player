@@ -1,21 +1,21 @@
-**Sign:** looking angry, forming an A with hands over your head (as a pointed
-cap).
+** அடையாளம்: ** கோபமாகப் பார்த்து, உங்கள் தலைக்கு மேல் கைகளால் A ஐ
+உருவாக்குகிறது (சுட்டிக்காட்டப்பட்ட தொப்பியாக).
 
 ## பின்னணி
 
-**Name:** The original name of this tune was German „Wütende Heinzelmenschen“,
-which has been translated as “angry dwarfs”. „Heinzelmenschen“ (officially but
-gendered: „Heinzelmännchen“) are small human creatures in a local tale in
-Cologne, who, according to the tale, secretly did all the work for the people of
-Cologne at night, so that the people could be lazy during the day. One day,
-someone got curious to see them and set up a trap, so they got really angry and
-left. From that day on the people had to do all the work themselves.
-([Wikipedia](https://en.wikipedia.org/wiki/Heinzelm%C3%A4nnchen))
+** பெயர்: ** இந்த பாடலின் அசல் பெயர் செர்மன் „வூதெண்டே எய்ன்செல்மென்சென்“, இது
+“கோபமான குள்ளர்கள்” என்று மொழிபெயர்க்கப்பட்டுள்ளது. "எய்ன்செல்மென்சென்“
+(அதிகாரப்பூர்வமாக ஆனால் பாலின: “எய்ன்சல்மொன்சென்”) கொலோனில் உள்ள ஒரு உள்ளக
+கதையில் சிறிய மனித உயிரினங்கள், கதையின் படி, இரவில் கொலோன் மக்களுக்கான அனைத்து
+வேலைகளையும் ரகசியமாக செய்தார்கள், இதனால் மக்கள் பகலில் சோம்பேறியாக இருக்க
+முடியும். ஒரு நாள், யாரோ அவர்களைப் பார்த்து ஒரு பொறியை அமைக்க ஆர்வமாக
+இருந்தார்கள், அதனால் அவர்கள் மிகவும் கோபமடைந்து வெளியேறினர். அன்றிலிருந்து
+மக்கள் எல்லா வேலைகளையும் அவர்களே செய்ய வேண்டியிருந்தது. ([விக்கிபீடியா]
+(https://en.wikipedia.org/wiki/Heinzelm%C3%A4nnchen))
 
-**Sign:** The hand signal refers to the pointed cap that Heinzelmenschen are
-wearing on their heads.
+** அடையாளம்: ** கை சமிக்ஞை எய்ன்செல்மென்சென் அவர்களின் தலையில் அணிந்திருக்கும்
+சுட்டிக்காட்டப்பட்ட தொப்பியைக் குறிக்கிறது.
 
-**Musical background:** *(More info needed.)*
+** இசை பின்னணி: ***(மேலும் செய்தி தேவை.)*
 
-**History:** Local tune from RoR Cologne, published in 2006. Was removed from
-the tune sheet in 2012.
+!
