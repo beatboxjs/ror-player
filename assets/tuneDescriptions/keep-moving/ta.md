@@ -1,39 +1,42 @@
-**Sign:** “Walk” with two fingers on the other hand.
+** அடையாளம்: ** மறுபுறம் இரண்டு விரல்களால் “நடந்து”.
 
 ## பின்னணி
 
-**History:** This tune was developed in 2024 by a member of Extinction
-Rebellion.
+** வரலாறு: ** இந்த இசைக்கு 2024 ஆம் ஆண்டில் அழிவு கிளர்ச்சியின் உறுப்பினரால்
+உருவாக்கப்பட்டது.
 
-**Name:** The name has a double meaning. Literally, this tune serves to keep the
-group moving. By moving along with the music, you stay in the mood and thus come
-across as very convincing. It also helps keep the atmosphere right for the whole
-(action) group. A moving rhythm band is contagious, unlike an unmoving one. The
-second meaning is perhaps the most important. “Keep moving” in the sense of
-“stay committed, persevere, resist”. Don't give up the fight, together we stand
-strong to strive for a climate-just world and take the action needed to raise
-awareness about current issues among a large part of the population. Don’t give
-up hope! There have already been many victims, but step by step we are creating
-a world where every human being, every life on this planet counts. Let’s act for
-climate justice all over the world! Keep moving!
+** பெயர்: ** பெயருக்கு இரட்டை பொருள் உள்ளது. உண்மையில், இந்த இசை குழுவை
+நகர்த்துவதற்கு உதவுகிறது. இசையுடன் சேர்ந்து செல்வதன் மூலம், நீங்கள் மனநிலையில்
+தங்கியிருக்கிறீர்கள், இதனால் மிகவும் உறுதியானவர். இது முழு (செயல்) குழுவிற்கும்
+வளிமண்டலத்தை சரியாக வைத்திருக்க உதவுகிறது. நகரும் ரிதம் பேண்ட் ஒரு அசையாத
+ஒன்றைப் போலல்லாமல் தொற்றுநோயாகும். இரண்டாவது பொருள் மிக முக்கியமானது. "தொடர்ந்து
+செல்லுங்கள்" என்ற பொருளில் "தொடர்ந்து செல்லுங்கள்". சண்டையை விட்டுவிடாதீர்கள்,
+ஒரு காலநிலை-வெறுக்கத்தக்க உலகத்திற்காக பாடுபடுவதற்கு நாங்கள் ஒன்றாக நிற்கிறோம்,
+மக்கள்தொகையில் ஒரு பெரிய பகுதியினரிடையே தற்போதைய பிரச்சினைகள் குறித்த
+விழிப்புணர்வை ஏற்படுத்த தேவையான நடவடிக்கைகளை எடுத்துக்கொள்கிறோம். நம்பிக்கையை
+விட்டுவிடாதீர்கள்! ஏற்கனவே பல பாதிக்கப்பட்டவர்கள் இருந்திருக்கிறார்கள், ஆனால்
+படிப்படியாக நாம் ஒவ்வொரு மனிதனும், இந்த கிரகத்தின் ஒவ்வொரு வாழ்க்கையும்
+கணக்கிடும் ஒரு உலகத்தை உருவாக்குகிறோம். உலகெங்கிலும் காலநிலை நீதிக்காக
+செயல்படுவோம்! நகரும்!
 
-**Musical background:** The music symbolises being in constant motion, with some
-exceptions. Occasionally, the music stops, emphasising the need for breaks,
-moments to reflect and (natural) silence.
+** இசை பின்னணி: ** இசை சில விதிவிலக்குகளுடன் நிலையான இயக்கத்தில் இருப்பதை
+குறிக்கிறது. எப்போதாவது, இசை நிறுத்தப்படும், இடைவெளிகளின் அவசியத்தை
+வலியுறுத்துகிறது, பிரதிபலிக்க வேண்டிய தருணங்கள் மற்றும் (இயற்கை) ம .னம்.
 
-**Sign:** Symbolises walking, moving.
+** அடையாளம்: ** நடைபயிற்சி, நகரும்.
 
-## Breaks
+## இடைவெளிகள்
 
-* **Washing Machine Break** sign: Make bowls of your hands and turn them.
+* ** சலவை இயந்திர இடைவெளி ** அடையாளம்: உங்கள் கைகளின் கிண்ணங்களை உருவாக்கி
+  அவற்றைத் திருப்புங்கள்.
 
 ## தொல்லை
 
-* **Low Surdo:** easy
-* **Mid Surdo:** medium
-* **High Surdo:** hard
+* ** குறைந்த சூர்டோ: ** எளிதானது
+* ** மிட் சூர்டோ: ** நடுத்தர
+* ** உயர் சூர்டோ: ** கடினமானது
 * ** ரெய்பி: ** கடினமானது
 * ** SNARE: ** கடினமானது
-* **Tamborim:** hard
-* **Agogô:** hard
-* **Shaker:** hard
+* ** தம்போரிம்: ** கடினமானது
+* ** அகோகே: ** கடினமானது
+* ** சேக்கர்: ** கடினமானது
