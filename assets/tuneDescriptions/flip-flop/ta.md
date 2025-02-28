@@ -17,9 +17,9 @@ inspired by the song “Digital Monkey” by Balkan Beat Box
 
 ## தொல்லை
 
-* **Low Surdo:** easy
+* ** குறைந்த சூர்டோ: ** எளிதானது
 * **Mid/High Surdo:** tricky
 * ** ரச்: ** சராசரி
-* **Snare:** tricky
+* ** SNARE: ** தந்திரமான
 * ** தம்போரிம்: ** நடுத்தர
 * ** அகோகே: ** நடுத்தர
