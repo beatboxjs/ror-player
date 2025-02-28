@@ -1,23 +1,23 @@
-**Sign:** *(None yet.)*
+** அடையாளம்: ***(இன்னும் எதுவுமில்லை.)*
 
 ## பின்னணி
 
-**Name:** Biodiversity refers to the variety of species in the ecosystem. The
-loss of biodiversity is one of the most drastic consequences of environmental
-pollution.
+** பெயர்: ** பல்லுயிர் என்பது சுற்றுச்சூழல் அமைப்பில் உள்ள பல்வேறு வகையான
+உயிரினங்களைக் குறிக்கிறது. பல்லுயிர் இழப்பு சுற்றுச்சூழல் மாசுபாட்டின் மிக
+கடுமையான விளைவுகளில் ஒன்றாகும்.
 
-**Musical background:** *(More info needed.)*
+** இசை பின்னணி: ***(மேலும் செய்தி தேவை.)*
 
-**Sign:** *(None yet.)*
+** அடையாளம்: ***(இன்னும் எதுவுமில்லை.)*
 
-**History:** Introduced by RoR Helsinki on the TNM in 2019 in Lithuania.
+** வரலாறு: ** ரோர் எல்சின்கி 2019 இல் லிதுவேனியாவில் டி.என்.எம்.
 
 ## தொல்லை
 
-* **Low Surdo:** medium
-* **Mid Surdo:** easy
+* ** குறைந்த சூர்டோ: ** நடுத்தர
+* ** மிட் சூர்டோ: ** எளிதானது
 * ** உயர் சூர்டோ: ** நடுத்தர
-* **Repi:** tricky
+* ** ரெபி: ** தந்திரமான
 * ** SNARE: ** எளிதானது
-* **Tamborim:** tricky
+* ** தம்போரிம்: ** தந்திரமான
 * ** அகோகே: ** நடுத்தர
