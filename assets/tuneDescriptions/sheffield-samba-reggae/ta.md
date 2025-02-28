@@ -12,8 +12,8 @@ tea is a common activity in the UK (not sure if there is a specific connection
 to Sheffield). Smoking joints is a main ritual in the Rastafari religion, which
 is closely linked to Reggae music.
 
-**History:** Introduced to the network by RoR London in 2012, was probably
-played there before?
+** வரலாறு: ** 2012 இல் ரோர் லண்டனால் நெட்வொர்க்கிற்கு அறிமுகப்படுத்தப்பட்டது,
+இதற்கு முன்பு அங்கு விளையாடியிருக்கலாம்?
 
 ## சர்ச்சைகள்
 
@@ -28,8 +28,8 @@ stereotype.
 
 ## தொல்லை
 
-* **Low Surdo:** medium
-* **Mid Surdo:** easy
+* ** குறைந்த சூர்டோ: ** நடுத்தர
+* ** மிட் சூர்டோ: ** எளிதானது
 * ** உயர் சூர்டோ: ** நடுத்தர
 * ** ரெய்பி: ** கடினமானது
 * ** SNARE: ** கடினமானது
