@@ -1,23 +1,23 @@
-On some devices (such as smartphones and tablets), it is possible to install RoR
-Player as an app. The required steps depend on your browser.
+சில சாதனங்களில் (ச்மார்ட்போன்கள் மற்றும் டேப்லெட்டுகள் போன்றவை), ROR பிளேயரை ஒரு
+பயன்பாடாக நிறுவ முடியும். தேவையான படிகள் உங்கள் உலாவியைப் பொறுத்தது.
 
-### Chrome
+### குரோம்
 
-1. Press Chrome’s menu icon (3 dots) on the top right
-2. Press “Install app” (or “Add to Home Screen”)
+1. மேல் வலதுபுறத்தில் குரோம் பட்டியல் ஐகானை (3 புள்ளிகள்) அழுத்தவும்
+2. “பயன்பாட்டை நிறுவு” (அல்லது “முகப்புத் திரையில் சேர்”) அழுத்தவும்)
 
-### Firefox
+### பயர்பாக்ச்
 
-1. Press Firefox’s menu icon (3 dots) on the top right or bottom right
-2. Press “Add to Home screen”
+1. மேல் வலது அல்லது கீழ் வலதுபுறத்தில் பயர்பாக்சின் பட்டியல் ஐகானை (3 புள்ளிகள்)
+   அழுத்தவும்
+2. “முகப்புத் திரையில் சேர்” என்பதை அழுத்தவும்
 
-### Safari
+### சஃபாரி
 
-1. Press Safari’s share icon (rectangle with an up arrow) at the bottom in the
-   middle
-2. Press “Add to Home Screen”
+1. நடுவில் கீழே சஃபாரியின் பங்கு ஐகானை (ஒரு அம்புடன் செவ்வகம்) அழுத்தவும்
+2. “முகப்புத் திரையில் சேர்” என்பதை அழுத்தவும்
 
-### Opera
+### ஓபரா
 
-1. Press Opera’s plus icon on the top left
-2. Press “Add to…” → “Home screen”
+1. மேல் இடதுபுறத்தில் ஓபராவின் பிளச் ஐகானை அழுத்தவும்
+2. “சேர்…” → “முகப்புத் திரை” என்பதை அழுத்தவும்
