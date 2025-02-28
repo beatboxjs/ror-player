@@ -10,12 +10,12 @@ Karla Shnikov is a funk tune too, but it does not fit with the other funks (Funk
 and Angela Davis) as well as they do together. But just try and find your own
 way!
 
-## Sign
+## அடையாளம்
 
 Move index+middle finger like rabbit ears and cover other fingers with other
 hand.
 
-## Background
+## பின்னணி
 
 **Name:** Based on a fictional character invented by RoR called Karla Shnikov, a
 Russian activist who was one of Trotzky’s secret lovers and was first a
@@ -38,12 +38,12 @@ showing a gun, and other bands didn’t want to have a tune named after a weapon
 The story of Karla Shnikov was made up by the working group thinking about a new
 name+sign for the tune.
 
-## Difficulty
+## தொல்லை
 
 * **Surdos:** medium (it is important, that the double hit in every bar is not
   played to fast.)
-* **Repi:** medium
-* **Snare:** easy
+* ** ரச்: ** சராசரி
+* ** SNARE: ** எளிதானது
 * **Tamborim:** easy
 * **Agogô:** easy
 

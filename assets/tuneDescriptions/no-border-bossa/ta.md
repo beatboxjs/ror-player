@@ -1,6 +1,6 @@
 **Sign:** interlock your hands like a fence and then open it.
 
-## Background
+## பின்னணி
 
 **Name:** Bossa Nova is a Brazilian style of music that developed out of Samba,
 which usually involves a guitar and a singer on top of the characteristic Bossa
@@ -16,10 +16,10 @@ The Bossa clave is the clave that we use at RoR. See
 her room and found an old notation of a ‘no border bossa’. The paper points to
 Maastricht.”
 
-## Difficulty
+## தொல்லை
 
-* **Surdos:** medium
-* **Repi:** hard
-* **Snare:** medium
-* **Tamborim:** medium
-* **Agogô:** medium
+* ** காது கேளாதோர்: ** நடுத்தர
+* ** ரெய்பி: ** கடினமானது
+* ** SNARE: ** நடுத்தர
+* ** தம்போரிம்: ** நடுத்தர
+* ** அகோகே: ** நடுத்தர

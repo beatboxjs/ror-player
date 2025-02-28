@@ -1,6 +1,6 @@
 **Sign:** “Walk” with two fingers on the other hand.
 
-## Background
+## பின்னணி
 
 **History:** This tune was developed in 2024 by a member of Extinction
 Rebellion.
@@ -27,13 +27,13 @@ moments to reflect and (natural) silence.
 
 * **Washing Machine Break** sign: Make bowls of your hands and turn them.
 
-## Difficulty
+## தொல்லை
 
 * **Low Surdo:** easy
 * **Mid Surdo:** medium
 * **High Surdo:** hard
-* **Repi:** hard
-* **Snare:** hard
+* ** ரெய்பி: ** கடினமானது
+* ** SNARE: ** கடினமானது
 * **Tamborim:** hard
 * **Agogô:** hard
 * **Shaker:** hard

@@ -1,6 +1,6 @@
 **Sign:** *(None yet.)*
 
-## Background
+## பின்னணி
 
 **Name:** Saimaannorppa or Saimaa ringed seal is an endangered animal species
 that only lives in one lake in Finland. They like to chill out on warm rocks.
@@ -16,12 +16,12 @@ does not imitate any particular genre or song.
 
 **History:** Rediscovered from old notes by RoR Helsinki in 2021
 
-## Difficulty
+## தொல்லை
 
 * **Low Surdo:** easy
 * **Mid Surdo:** medium
 * **High Surdo:** easy
-* **Repi:** medium
+* ** ரச்: ** சராசரி
 * **Snare:** tricky
 * **Tamborim:** tricky
-* **Agogô:** medium
+* ** அகோகே: ** நடுத்தர

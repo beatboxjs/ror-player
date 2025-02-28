@@ -1,6 +1,6 @@
 **Sign:** *(None yet.)*
 
-## Background
+## பின்னணி
 
 **Name:** Biodiversity refers to the variety of species in the ecosystem. The
 loss of biodiversity is one of the most drastic consequences of environmental
@@ -12,12 +12,12 @@ pollution.
 
 **History:** Introduced by RoR Helsinki on the TNM in 2019 in Lithuania.
 
-## Difficulty
+## தொல்லை
 
 * **Low Surdo:** medium
 * **Mid Surdo:** easy
-* **High Surdo:** medium
+* ** உயர் சூர்டோ: ** நடுத்தர
 * **Repi:** tricky
-* **Snare:** easy
+* ** SNARE: ** எளிதானது
 * **Tamborim:** tricky
-* **Agogô:** medium
+* ** அகோகே: ** நடுத்தர

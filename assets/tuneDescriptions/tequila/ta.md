@@ -11,7 +11,7 @@ Surdos always start a bit before the 1.
 
 **Sign:** Shake salt onto your hand
 
-## Background
+## பின்னணி
 
 **Name:** Tequila is an alcoholic drink made from blue agave in the region
 around the city of Tequila, Mexico. It was first made in the 16th century by
@@ -27,15 +27,15 @@ before drinking Tequila. The tune sign represents using a salt shaker.
 
 **History:** Invented by RoR Berlin in 2017.
 
-## Difficulty
+## தொல்லை
 
 * **Low Surdo:** tricky
 * **Mid Surdo:** medium
 * **High Surdo:** easy
-* **Repi:** hard
-* **Snare:** easy
+* ** ரெய்பி: ** கடினமானது
+* ** SNARE: ** எளிதானது
 * **Tamborim:** easy
-* **Agogô:** medium
+* ** அகோகே: ** நடுத்தர
 
 ## Breaks
 

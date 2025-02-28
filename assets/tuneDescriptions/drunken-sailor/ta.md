@@ -1,33 +1,35 @@
-A nice tune based on the famous folk song “What shall we do with the drunken
-sailor?”. The Agogôs and Surdos together make the melody of that song (Agogôs:
-“What shall we do with the drunken sailor”, Surdos in the 4th bar: “Early in the
-morning”).
+பிரபலமான நாட்டுப்புற பாடலை அடிப்படையாகக் கொண்ட ஒரு நல்ல இசைக்கு “குடிபோதையில்
+மாலுமியுடன் நாங்கள் என்ன செய்ய வேண்டும்?”. அகோகச் மற்றும் சூர்டோச் ஒன்றாக அந்த
+பாடலின் மெல்லிசையை உருவாக்குகிறார்கள் (அகோகச்: “குடிபோதையில் மாலுமியுடன் நாம்
+என்ன செய்ய வேண்டும்”, 4 வது பட்டியில் சுர்டோச்: “அதிகாலையில்”).
 
-**Sign:** build an eyepatch with one hand in front of your eye
+** அடையாளம்: ** உங்கள் கண்ணுக்கு முன்னால் ஒரு கையால் ஒரு கண் பார்வையை
+உருவாக்குங்கள்
 
-## Background
+## பின்னணி
 
-**Name:** “What shall we do with the drunken sailor” is a traditional sea
-shanty, probably originating from the US in the 1800s. The song is probably
-based on the traditional Irish folk song “Óró sé do bheatha abhaile” (Oh-ro
-welcome home), which has the same melody and was historically used by the Irish
-movement against the British rule.
-([Wikipedia](https://en.wikipedia.org/wiki/Drunken_Sailor))
+** பெயர்: ** “குடிபோதையில் மாலுமியுடன் நாம் என்ன செய்ய வேண்டும்” என்பது ஒரு
+பாரம்பரிய கடல் குடிசை, இது 1800 களில் அமெரிக்காவிலிருந்து தோன்றியிருக்கலாம்.
+இந்த பாடல் அநேகமாக பாரம்பரிய ஐரிச் நாட்டுப்புற பாடலான “ஆரி செ டோ பீதா அபைல்”
+(ஓ-ரோ வரவேற்பு இல்லம்), அதே மெல்லிசையைக் கொண்டுள்ளது மற்றும் வரலாற்று ரீதியாக
+பிரிட்டிச் ஆட்சிக்கு எதிரான ஐரிச் இயக்கத்தால் பயன்படுத்தப்பட்டது.
+([விக்கிபீடியா] (https://en.wikipedia.org/wiki/Drunken_Sailor))
 
-**Musical background:** The tune is based on the folk song. The Agogô line plays
-“What shall we do with the drunken sailor”, while the 4th bar of the Surdos
-plays the “early in the morning”.
+** இசை பின்னணி: ** டியூன் நாட்டுப்புற பாடலை அடிப்படையாகக் கொண்டது. அகோகே வரி
+"குடிபோதையில் மாலுமியுடன் நாம் என்ன செய்ய வேண்டும்" என்று விளையாடுகிறார், அதே
+நேரத்தில் சுர்டோசின் 4 வது பட்டி "அதிகாலையில்" விளையாடுகிறது.
 
-**Sign:** The eye-patch depicts a pirate.
+** அடையாளம்: ** கண் இணைப்பு ஒரு கொள்ளையரை சித்தரிக்கிறது.
 
-**History:** Introduced as a tune by someone from RoR Köln/Cologne in 2010.
+** வரலாறு: ** 2010 இல் ரோர் கோல்ன்/கொலோனிலிருந்து யாரோ ஒரு பாடலாக
+அறிமுகப்படுத்தப்பட்டது.
 
 
-## Difficulty
+## தொல்லை
 
-* **Low/Mid Surdo:** easy
-* **High Surdo:** medium
-* **Repi:** hard
-* **Snare:** hard
-* **Tamborim:** medium
-* **Agogô:** medium
+* ** குறைந்த/மிட் சூர்டோ: ** எளிதானது
+* ** உயர் சூர்டோ: ** நடுத்தர
+* ** ரெய்பி: ** கடினமானது
+* ** SNARE: ** கடினமானது
+* ** தம்போரிம்: ** நடுத்தர
+* ** அகோகே: ** நடுத்தர

@@ -1,64 +1,63 @@
-This tune is one of the RoR basics. It is (together with ‘Custard’) the RoR-Tune
-which sounds most like “real” Samba.
+இந்த இசைக்கு ROR அடிப்படைகளில் ஒன்றாகும். இது (‘கச்டர்டுடன்’ சேர்ந்து) ROR-Tune
+என்பது “உண்மையான” சம்பாவைப் போலவே ஒலிக்கிறது.
 
-It is the tune with the most breaks (seven, not counting the tamb-stroke/clave).
-And a lot of breaks also have nice bonuses. For example is every break ended
-with a surdo pickup from either high-(1, 2 & 3) or low- (every other break,
-sometimes even the clave & 4-pause) surdo. Also after the ‘SOS-Break’ the repis
-should continue playing their part of the break until the next break is called.
+இது அதிக இடைவெளிகளைக் கொண்ட இசைக்கு (ஏழு, தட்டுகடுக்கு/கிளேவை கணக்கிடவில்லை).
+மேலும் நிறைய இடைவெளிகளும் நல்ல போனசைக் கொண்டுள்ளன. எடுத்துக்காட்டாக, ஒவ்வொரு
+இடைவெளியும் உயர்- (1, 2 & 3) அல்லது குறைந்த- (ஒவ்வொரு இடைவெளியையும், சில
+நேரங்களில் கிளேவ் & 4-இடைநிறுத்தம்) சுர்டோவிலிருந்து ஒரு சூர்டோ இடும்.
+‘SOS-BREAK’ க்குப் பிறகு, மறுபிரவேசம் அடுத்த இடைவெளி அழைக்கப்படும் வரை
+இடைவேளையின் பங்கை தொடர்ந்து விளையாட வேண்டும்.
 
-Since practically every samba band can play a version of samba reggae, it is a
-good tune to play together in demonstrations in which there are other non-RoR
-samba bands.
+நடைமுறையில் ஒவ்வொரு சம்பா இசைக்குழுவும் சம்பா ரெக்கேயின் பதிப்பை இயக்க முடியும்
+என்பதால், ஆர்ப்பாட்டங்களில் ஒன்றாக விளையாடுவது ஒரு நல்ல பாடலாகும், இதில் மற்ற
+ROR அல்லாத சம்பா இசைக்குழுக்கள் உள்ளன.
 
-## Sign
+## அடையாளம்
 
-An S formed with two hands
+இரண்டு கைகளால் உருவானது
 
-## Background
+## பின்னணி
 
-**Name:** Samba Reggae is the original afro-bloc rhythm, a mix of Samba and
-Reggae that was invented by the black liberation movement in Brazil. Samba
-reggae is a sub-genre of Samba, which arose in the context of afro-brazilian
-people fighting for their right to play samba music and partake in Carnival
-parades in the late 1960s. At that time only white people were allowed to play
-in the parades for Carnival and in Samba schools of Rio de Janeiro. Samba reggae
-is a Samba style, that developed because black people in Brazil wanted to have a
-samba style to call their own. The music of the afro blocos aimed to recreate
-and strengthen the afro-brazilian community.
-([Wikipedia](https://en.wikipedia.org/wiki/Samba_reggae))
+** பெயர்: ** சம்பா ரெக்கே என்பது அசல் ஆப்ரோ-பிளாக் ரிதம், பிரேசிலில் கறுப்பு
+விடுதலை இயக்கத்தால் கண்டுபிடிக்கப்பட்ட சம்பா மற்றும் ரெக்கே ஆகியவற்றின்
+கலவையாகும். சம்பா ரெக்கே சம்பாவின் துணை வகையாகும், இது ஆப்ரோ-பிரேசிலிய மக்கள்
+சம்பா இசையை வாசிப்பதற்கான உரிமைக்காக போராடும் மற்றும் 1960 களின் பிற்பகுதியில்
+கார்னிவல் அணிவகுப்புகளில் பங்கேற்கும் சூழலில் எழுந்தது. அந்த நேரத்தில் வெள்ளை
+மக்கள் மட்டுமே திருவிழாவிற்கான அணிவகுப்புகளிலும், ரியோ டி செனிரோவின் சம்பா
+பள்ளிகளிலும் விளையாட அனுமதிக்கப்பட்டனர். சம்பா ரெக்கே ஒரு சம்பா பாணி, இது
+வளர்ந்தது, ஏனெனில் பிரேசிலில் உள்ள கறுப்பின மக்கள் தங்கள் சொந்தத்தை அழைக்க ஒரு
+சம்பா பாணியைக் கொண்டிருக்க விரும்பினர். ஆப்ரோ-பிரேசிலிய சமூகத்தை மீண்டும்
+உருவாக்கி பலப்படுத்துவதை நோக்கமாகக் கொண்ட ஆப்ரோ பிளாக்சின் இசை. ([விக்கிபீடியா]
+(https://en.wikipedia.org/wiki/Samba_reggae))
 
-In “real” Samba, ‘samba reggae’ is a specific sub-genre, it’s not only in terms
-of the rhythm, but also of the instruments, which are played (and how they are
-played), different from other kinds of Samba. For example the Repi, which is
-otherwise mostly hanging quite high and is played with a short wooden stick and
-the hand, is hanging really low and is played with two long plastic beaters.
+“ரியல்” சம்பாவில், ‘சம்பா ரெக்கே’ என்பது ஒரு குறிப்பிட்ட துணை வகையாகும், இது
+தாளத்தின் அடிப்படையில் மட்டுமல்ல, மற்ற வகையான சம்பாவிலிருந்து வேறுபட்ட (மற்றும்
+அவை எவ்வாறு விளையாடப்படுகின்றன) விளையாடும் கருவிகளும் கூட. எடுத்துக்காட்டாக,
+ரெபி, இல்லையெனில் பெரும்பாலும் மிக அதிகமாக தொங்கிக்கொண்டிருக்கிறது மற்றும் ஒரு
+குறுகிய மர குச்சி மற்றும் கையால் விளையாடப்படுகிறது, இது மிகவும் குறைவாக
+தொங்கிக்கொண்டிருக்கிறது மற்றும் இரண்டு நீண்ட பிளாச்டிக் பீட்டர்களுடன்
+விளையாடப்படுகிறது.
 
-**Musical background:** The tune is a mix of Samba Reggae 1 & 3. RoR Samba
-Reggae is played with mid surdo hitting in 1 and 3 beats and low one in 2 and 4
-(mid-low-mid-low,low), while most of the samba bands used to play with low surdo
-in 1 and 3 and mid one in 2 and 4 (low-mid-low-mid,mid). Repi and snare grooves
-use to be swapped too.
+. ரெபி மற்றும் ச்னேர் பள்ளங்கள் கூட மாற்றப்படுகின்றன.
 
-**Sign:** The sign depicts an S, which stands for Samba Reggae.
+** அடையாளம்: ** அடையாளம் ஒரு எச் சித்தரிக்கிறது, இது சம்பா ரெக்கேவைக்
+குறிக்கிறது.
 
-**History:** Part of the first set of tunes taken from Barking Bateria in 2000.
-The tune sign used to be “smoking a joint”, as smoking joints is a main ritual
-in the Rastafari religion, which is closely linked to Reggae music. On the TNM
-2024 it was decided to change the sign, as smoking weed is also a racist
-stereotype associated with Black people.
+! டி.என்.எம் 2024 இல் அடையாளத்தை மாற்ற முடிவு செய்யப்பட்டது, ஏனெனில்
+புகைபிடிக்கும் களை கறுப்பின மக்களுடன் தொடர்புடைய ஒரு இனவெறி ச்டீரியோடைப் ஆகும்.
 
-## Controversies
+## சர்ச்சைகள்
 
-The rhythm clearly sounds like real Samba Reggae, which is a tune developed and
-used by the Black liberation movement in Brazil. Many people in the RoR network
-consider it cultural appropriation to play this tune in our mainly white
-European bands, and there is an ongoing debate about abolishing the tune.
+தாளம் உண்மையான சம்பா ரெக்கே போல தெளிவாகத் தெரிகிறது, இது பிரேசிலில் கறுப்பு
+விடுதலை இயக்கத்தால் உருவாக்கப்பட்ட மற்றும் பயன்படுத்தப்படும் ஒரு இசைக்கு. ROR
+நெட்வொர்க்கில் உள்ள பலர் எங்கள் முக்கியமாக வெள்ளை ஐரோப்பிய இசைக்குழுக்களில் இந்த
+பாடலை விளையாடுவது கலாச்சார ஒதுக்கீட்டைக் கருதுகின்றனர், மேலும் இந்த பாடலை
+ஒழிப்பது குறித்து தொடர்ந்து விவாதம் உள்ளது.
 
-## Difficulty
+## தொல்லை
 
-* **Surdos:** medium
-* **Repi:** medium
-* **Snare:** medium
-* **Tamborim:** easy (clave)
-* **Agogô:** medium
+* ** காது கேளாதோர்: ** நடுத்தர
+* ** ரச்: ** சராசரி
+* ** SNARE: ** நடுத்தர
+* ** தம்போரிம்: ** எளிதானது (கிளேவ்)
+* ** அகோகே: ** நடுத்தர

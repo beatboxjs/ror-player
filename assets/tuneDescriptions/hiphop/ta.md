@@ -1,7 +1,7 @@
 **Sign:** Point with your index fingers to the ground, your thumbs pointing
 towards each other.
 
-## Background
+## பின்னணி
 
 **Name:** Hip hop is an art movement that originated in the 1970s from Black and
 Latino communities in New York. Often only associated with rap, the hip hop
@@ -21,12 +21,12 @@ YouTube](https://youtu.be/010KyIQjkTk)).
 **History:** Invented by someone from RoR Berlin in 2005, but never published.
 Was rediscovered in 2021.
 
-## Difficulty
+## தொல்லை
 
 * **Low Surdo:** medium
 * **Mid Surdo:** medium
-* **High Surdo:** medium
+* ** உயர் சூர்டோ: ** நடுத்தர
 * **Repi:** easy
-* **Snare:** hard
+* ** SNARE: ** கடினமானது
 * **Tamborim:** hard
 * **Agogô:** hard

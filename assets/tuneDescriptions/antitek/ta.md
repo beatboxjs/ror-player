@@ -1,33 +1,31 @@
-This tune is easy to pick up yet incredibly catchy. It can be played very fast.
+இந்த ட்யூன் இன்னும் நம்பமுடியாத அளவிற்கு கவர்ச்சியாக எடுக்க எளிதானது. அதை மிக
+வேகமாக விளையாடலாம்.
 
-**Sign:** form your hands into the shape of holding a telescope over one eye,
-then twist them slightly as if zooming in and out.
+!
 
-## Background
-**Name:** Antitek is a movement that critiques the use of technology as a tool
-for exploitation and oppression. While they oppose the misuse of technology,
-they firmly reject criticisms of technology that are rooted in transphobia or
-ableism.
+## பின்னணி
+** பெயர்: ** ஆன்டிடெக் என்பது சுரண்டல் மற்றும் அடக்குமுறைக்கான கருவியாக
+தொழில்நுட்பத்தைப் பயன்படுத்துவதை விமர்சிக்கும் ஒரு இயக்கம். தொழில்நுட்பத்தை
+தவறாகப் பயன்படுத்துவதை அவர்கள் எதிர்க்கும் அதே வேளையில், டிரான்ச்ஃபோபியா அல்லது
+திறமையில் வேரூன்றிய தொழில்நுட்பத்தின் விமர்சனங்களை அவர்கள் உறுதியாக
+நிராகரிக்கிறார்கள்.
 
-**Musical background:** Inspired by the song "Ode aux casseur/euses" by "la
-chorale des Canulars" from Lyon. The ode was made in reaction to the media
-stigmatizing so-called casseur/euses (translated as vandals, rioters. A word
-used by media to depoliticize anarchist and radical actions). It's an ode to the
-political actions of these so-called vandals, reminding us that these "violent"
-actions made great victories possible.
+** இசை பின்னணி: ** லியோனில் இருந்து "லா சோரல் டெச் கானுலர்ச்" எழுதிய "ஓட் ஆக்ச்
+காசூர்/யூச்" பாடலால் ஈர்க்கப்பட்டது. காச்சூர்/யூச் என்று அழைக்கப்படுவதை
+ஊடகங்களுக்கு எதிர்வினையாக ODE செய்யப்பட்டது (காழ்ப்புணர்ச்சிகள், கலகக்காரர்கள்
+என மொழிபெயர்க்கப்பட்டுள்ளது. அராசகவாத மற்றும் தீவிரமான செயல்களை நீக்குவதற்கு
+ஊடகங்கள் பயன்படுத்தும் ஒரு சொல்). இந்த "வன்முறை" நடவடிக்கைகள் பெரும் வெற்றிகளை
+சாத்தியமாக்கியது என்பதை நினைவூட்டுகின்ற இந்த காழ்ப்புணர்ச்சிகள் என்று
+அழைக்கப்படுபவர்களின் அரசியல் நடவடிக்கைகளுக்கு இது ஒரு இடமாகும்.
 
-**Sign:** The sign represents a camera lens zooming in and out.
+** அடையாளம்: ** அடையாளம் ஒரு கேமரா லென்சை உள்ளேயும் வெளியேயும் பெரிதாக்குகிறது.
 
-**History:** Antitek was created in a poorly insulated home in Lille during the
-2023 French pension reform strikes, which fought against a law project raising
-the retirement age to 64. As of early 2025, the French state is investing in
-surveillance assets to break the movement and boost the propaganda for nuclear
-revival.
+!
 
-## Difficulty
+## தொல்லை
 
-* **Surdos:** easy
-* **Repi:** medium
-* **Snare:** easy
-* **Tamborim:** medium
-* **Agogô:** medium
+* ** சூர்டோச்: ** எளிதானது
+* ** ரச்: ** சராசரி
+* ** SNARE: ** எளிதானது
+* ** தம்போரிம்: ** நடுத்தர
+* ** அகோகே: ** நடுத்தர

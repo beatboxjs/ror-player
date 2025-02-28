@@ -1,7 +1,7 @@
 **Sign:** put three fingers on your other upper arm (like covering a police
 badge)
 
-## Background
+## பின்னணி
 
 **Name:** “Menaiek” is Hebrew for “cop” (insulting word for police officer)
 
@@ -13,11 +13,11 @@ music.
 
 **History:** Introduced in 2015 by RoR Jerusalem.
 
-## Difficulty
+## தொல்லை
 
 * **Low Surdo:** easy
 * **Mid/High Surdo:** tricky
-* **Repi:** hard
-* **Snare:** hard
+* ** ரெய்பி: ** கடினமானது
+* ** SNARE: ** கடினமானது
 * **Tamborim:** hard
-* **Agogô:** medium
+* ** அகோகே: ** நடுத்தர

@@ -11,7 +11,7 @@ remember them.
 
 **Sign:** making an offer to the sky
 
-## Background
+## பின்னணி
 
 **Name:** Custard is the English word for a sweet, creamy, puddingy vanilla
 sauce ([Wikipedia](https://en.wikipedia.org/wiki/Custard)). The name was chosen
@@ -30,18 +30,18 @@ a bowl of custard”.
 Used to be called Welfare State, but was renamed because people don’t like the
 state.
 
-## Controversies
+## சர்ச்சைகள்
 
 The rhythm clearly sounds like Samba Reggae, which is a tune developed and used
 by the Black liberation movement in Brazil. Many people in the RoR network
 consider it cultural appropriation to play this tune in our mainly white
 European bands, and there is an ongoing debate about abolishing the tune.
 
-## Difficulty
+## தொல்லை
 
-* **Surdos:** medium
-* **Repi:** medium
-* **Snare:** medium
+* ** காது கேளாதோர்: ** நடுத்தர
+* ** ரச்: ** சராசரி
+* ** SNARE: ** நடுத்தர
 * **Tamborim:** medium (easy to remember, very tiring)
 * **Agogô:** medium (easy to mix up with afoxe)
 
