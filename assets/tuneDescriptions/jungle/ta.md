@@ -1,25 +1,24 @@
-**Sign:** Swing your fist above your head and shake your body, like dancing to
-techno music.
+** அடையாளம்: ** டெக்னோ இசைக்கு நடனமாடுவது போல, உங்கள் தலைக்கு மேலே உங்கள்
+முச்டியை ஆடி, உங்கள் உடலை அசைக்கவும்.
 
 ## பின்னணி
 
-**Name:** Jungle is a genre of dance music that devloped in the UK rave scene in
-the 1990s. It is the main successor of Drum&Bass.
+** பெயர்: ** சங்கிள் என்பது 1990 களில் இங்கிலாந்து ரேவ் காட்சியில் வளர்ந்த நடன
+இசையின் ஒரு வகை. இது டிரம் & பாசின் முக்கிய வாரிசு.
 
-**Musical background:** The tune is based on Jungle.
+** இசை பின்னணி: ** டியூன் காட்டை அடிப்படையாகக் கொண்டது.
 
-**Sign:** The sign represents dancing to electronic music.
+** அடையாளம்: ** அடையாளம் மின்னணு இசைக்கு நடனமாடுவதைக் குறிக்கிறது.
 
-**History:** Invented by someone from RoR Berlin in 2005, inspired by the jungle
-parties in a squat in London. Was only played occasionally because it was never
-in the official tune sheets. Was rediscovered in 2021.
+! அவ்வப்போது மட்டுமே விளையாடப்பட்டது, ஏனெனில் இது ஒருபோதும் அதிகாரப்பூர்வ டியூன்
+தாள்களில் இல்லை. 2021 இல் மீண்டும் கண்டுபிடிக்கப்பட்டது.
 
 ## தொல்லை
 
-* **Low Surdo:** easy
-* **Mid Surdo:** medium
-* **High Surdo:** hard
+* ** குறைந்த சூர்டோ: ** எளிதானது
+* ** மிட் சூர்டோ: ** நடுத்தர
+* ** உயர் சூர்டோ: ** கடினமானது
 * ** ரெய்பி: ** கடினமானது
 * ** SNARE: ** கடினமானது
 * ** தம்போரிம்: ** நடுத்தர
-* **Agogô:** hard
+* ** அகோகே: ** கடினமானது
