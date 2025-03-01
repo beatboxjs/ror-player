@@ -2,19 +2,19 @@
 
 ## பின்னணி
 
-**Name:** Saimaannorppa or Saimaa ringed seal is an endangered animal species
-that only lives in one lake in Finland. They like to chill out on warm rocks.
-Norppas were nearly hunted to extinction in the 20th century, as it was
-considered an enemy to the fishing industry. Conservation began in 1979 and
-saved it from extinction. Since then, it has became the symbol of nature
-conservation in Finland. Climate change poses a direct threat to the Norppa.
+! அவர்கள் சூடான பாறைகளை குளிர்விக்க விரும்புகிறார்கள். 20 ஆம் நூற்றாண்டில்
+நோர்பாச் கிட்டத்தட்ட அழிந்துபோனது, ஏனெனில் இது மீன்பிடித் தொழிலுக்கு எதிரியாக
+கருதப்பட்டது. பாதுகாப்பு 1979 இல் தொடங்கி அதை அழிவிலிருந்து காப்பாற்றியது.
+அப்போதிருந்து, இது பின்லாந்தில் இயற்கை பாதுகாப்பின் அடையாளமாக மாறியுள்ளது.
+காலநிலை மாற்றம் NORPPA க்கு நேரடி அச்சுறுத்தலை ஏற்படுத்துகிறது.
 
-**Musical background:** Song takes inspiration from the electronic music, but
-does not imitate any particular genre or song.
+** இசை பின்னணி: ** பாடல் மின்னணு இசையிலிருந்து ஊக்கம் பெறுகிறது, ஆனால் எந்தவொரு
+குறிப்பிட்ட வகையையும் பாடலையும் பின்பற்றாது.
 
 ** அடையாளம்: ***(இன்னும் எதுவுமில்லை.)*
 
-**History:** Rediscovered from old notes by RoR Helsinki in 2021
+** வரலாறு: ** 2021 இல் ரோர் எல்சின்கியின் பழைய குறிப்புகளிலிருந்து மீண்டும்
+கண்டுபிடிக்கப்பட்டது
 
 ## தொல்லை
 
