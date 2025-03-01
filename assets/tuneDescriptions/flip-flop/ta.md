@@ -1,24 +1,25 @@
-Sign: repeatedly place flat hands in front of each other like feet walking on
-the ground
+அடையாளம்: தரையில் நடந்து செல்வது போல மீண்டும் மீண்டும் தட்டையான கைகளை வைக்கவும்
 
 ## பின்னணி
 
-**Name:** Flip-flops are a type of simple sandals. They make a distinctive noise
-while walking. The sound of the tune has some similarity to this noise.
+** பெயர்: ** ஃபிளிப்-ஃப்ளாப்ச் ஒரு வகை எளிய செருப்புகள். அவர்கள் நடைபயிற்சி போது
+ஒரு தனித்துவமான ஒலி எழுப்புகிறார்கள். இந்த சத்தத்தின் ஒலி இந்த சத்தத்திற்கு சில
+ஒற்றுமையைக் கொண்டுள்ளது.
 
-**Musical background:** The Surdos are inspired by the song “Boom Bap” by KRS
-One ([YouTube](https://www.youtube.com/watch?v=iaYDe3gu1go)). The Snare is
-inspired by the song “Digital Monkey” by Balkan Beat Box
-([YouTube](https://www.youtube.com/watch?v=D813i6GnFmE)).
+** இசை பின்னணி: ** KRS ONE ([YouTube]
+(https://www.youtube.com/watch?v=iaYDe3gu1go)) எழுதிய “பூம் பாப்” பாடலால்
+சூர்டோக்கள் ஈர்க்கப்பட்டுள்ளன. பால்கன் பீட் பாக்ச் ([YouTube]
+(https://www.youtube.com/watch?v=D813i6GnFmE)) எழுதிய “டிசிட்டல் குரங்கு”
+பாடலால் இந்த ச்னேர் ஈர்க்கப்பட்டுள்ளது.
 
-**Sign:** The sign resemples walking with flip-flops.
+** அடையாளம்: ** அடையாளம் ஃபிளிப்-ஃப்ளாப்புகளுடன் நடப்பதை ஒத்திருக்கிறது.
 
-**History:** Introduced by RoR Leipzig in 2022.
+** வரலாறு: ** 2022 இல் ரோர் லீப்சிக் அறிமுகப்படுத்தினார்.
 
 ## தொல்லை
 
 * ** குறைந்த சூர்டோ: ** எளிதானது
-* **Mid/High Surdo:** tricky
+* ** மிட்/ஐ சூர்டோ: ** தந்திரமான
 * ** ரச்: ** சராசரி
 * ** SNARE: ** தந்திரமான
 * ** தம்போரிம்: ** நடுத்தர
