@@ -1,27 +1,27 @@
-Was drawn as the **Tune of the Year 2018**.
+2018 ஆம் ஆண்டின் ** டியூன் ** ஆக வரையப்பட்டது.
 
-**Sign:** open and close the beak of a bird with your hands
+** அடையாளம்: ** உங்கள் கைகளால் ஒரு பறவையின் கொக்கைத் திறந்து மூடு
 
 ## பின்னணி
 
-**Name:** A word play on Żuravlów, the village where the TNM 2015 happened.
+** பெயர்: ** டி.என்.எம் 2015 நடந்த கிராமமான żuravlow இல் ஒரு சொல் நாடகம்.
 
-**Musical background:** Based on the song “Truant” by British electronic
-musician Burial ([Surdo+Tamb+Snare](https://youtu.be/8u4D0wAc2AA?t=1m48s),
-[Agogô + Kick Back](https://youtu.be/8u4D0wAc2AA?t=6m27s)).
+**Musical background:** Based on the song “Truant” by British மின்னணு musician
+Burial ([Surdo+Tamb+Snare](https://youtu.be/8u4D0wAc2AA?t=1m48s), [Agogô + Kick
+Back](https://youtu.be/8u4D0wAc2AA?t=6m27s)).
 
-**Sign:** “Żurav” is Polish for “crane” (a type of large bird). The sign
-represents the beak of the bird.
+** அடையாளம்: ** “żurav” என்பது “கிரேன்” (ஒரு வகை பெரிய பறவை) க்கு போலந்து.
+அடையாளம் பறவையின் கொக்கைக் குறிக்கிறது.
 
 **History:** Introduced by RoR Kraków and Ror Trójmiasto on the TNM 2015 in
 Żuravlów.
 
 ## தொல்லை
 
-* **Low/Mid Surdo:** medium (easy to play, but hard to keep the right speed
-  because of off-beats)
-* **High Surdo:** easy
-* **Repi:** easy
-* **Snare:** tricky
-* **Tamborim:** easy
-* **Agogô:** hard
+* ** குறைந்த/மிட் சூர்டோ: ** நடுத்தர (விளையாட எளிதானது, ஆனால் ஆஃப் பீட்ச்
+  காரணமாக சரியான வேகத்தை வைத்திருப்பது கடினம்)
+* ** உயர் சூர்டோ: ** எளிதானது
+* ** ரெபி: ** எளிதானது
+* ** SNARE: ** தந்திரமான
+* ** தம்போரிம்: ** எளிதானது
+* ** அகோகே: ** கடினமானது

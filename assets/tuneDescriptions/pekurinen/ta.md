@@ -1,4 +1,4 @@
-**Sign:** *(None yet.)*
+** அடையாளம்: ***(இன்னும் எதுவுமில்லை.)*
 
 ## பின்னணி
 
@@ -9,18 +9,18 @@ supported by an extensive international campaign. Pekurinen was executed without
 a trial. His actions forced the government to change laws to allow peaceful,
 non-military civil service.
 
-**Musical background:** *(More info needed.)*
+** இசை பின்னணி: ***(மேலும் செய்தி தேவை.)*
 
-**Sign:** *(None yet.)*
+** அடையாளம்: ***(இன்னும் எதுவுமில்லை.)*
 
-**History:** Introduced by RoR Helsinki on the TNM in 2019 in Lithuania.
+** வரலாறு: ** ரோர் எல்சின்கி 2019 இல் லிதுவேனியாவில் டி.என்.எம்.
 
 ## தொல்லை
 
-* **Low Surdo:** easy
-* **Mid Surdo:** easy
-* **High Surdo:** easy
-* **Repi:** tricky
-* **Snare:** tricky
-* **Tamborim:** tricky
+* ** குறைந்த சூர்டோ: ** எளிதானது
+* ** மிட் சூர்டோ: ** எளிதானது
+* ** உயர் சூர்டோ: ** எளிதானது
+* ** ரெபி: ** தந்திரமான
+* ** SNARE: ** தந்திரமான
+* ** தம்போரிம்: ** தந்திரமான
 * ** அகோகே: ** நடுத்தர

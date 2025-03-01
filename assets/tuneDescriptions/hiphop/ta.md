@@ -1,32 +1,33 @@
-**Sign:** Point with your index fingers to the ground, your thumbs pointing
-towards each other.
+** அடையாளம்: ** உங்கள் குறியீட்டு விரல்களை தரையில் சுட்டிக்காட்டுங்கள், உங்கள்
+கட்டைவிரல் ஒருவருக்கொருவர் சுட்டிக்காட்டுகிறது.
 
 ## பின்னணி
 
-**Name:** Hip hop is an art movement that originated in the 1970s from Black and
-Latino communities in New York. Often only associated with rap, the hip hop
-culture includes many more elements such as breakdance, graffiti and beatboxing.
-Originally an underground movement and a tool to protest against the oppressive
-state institutions, it was discovered in the 1990s by the music industry, who
-started making huge profits by marketing it towards a white male audience. Over
-the years, Hip hop has become one of the most popular genres of music worldwide,
-and not much is left of its original purpose. Some white pop musicians have been
-criticized for cultural appropriation and commercializing hip hop culture.
+** பெயர்: ** இப் ஆப் என்பது 1970 களில் நியூயார்க்கில் உள்ள கருப்பு மற்றும்
+லத்தீன் சமூகங்களிலிருந்து தோன்றிய ஒரு கலை இயக்கம். பெரும்பாலும் RAP உடன் மட்டுமே
+தொடர்புடையது, இப் ஆப் கலாச்சாரத்தில் பிரேக்டான்ச், கிராஃபிட்டி மற்றும்
+பீட்பாக்சிங் போன்ற பல கூறுகள் உள்ளன. முதலில் ஒரு நிலத்தடி இயக்கம் மற்றும்
+அடக்குமுறை அரசு நிறுவனங்களுக்கு எதிராக எதிர்ப்பதற்கான ஒரு கருவி, 1990 களில்
+இசைத் துறையால் கண்டுபிடிக்கப்பட்டது, அவர் ஒரு வெள்ளை ஆண் பார்வையாளர்களை நோக்கி
+விற்பனை செய்வதன் மூலம் பெரும் லாபம் ஈட்டத் தொடங்கினார். பல ஆண்டுகளாக, இப் ஆப்
+உலகளவில் மிகவும் பிரபலமான இசையின் வகைகளில் ஒன்றாக மாறியுள்ளது, மேலும் அதன் அசல்
+நோக்கத்தில் அதிகம் இல்லை. சில வெள்ளை பாப் இசைக்கலைஞர்கள் கலாச்சார ஒதுக்கீடு
+மற்றும் இப் ஆப் கலாச்சாரத்தை வணிகமயமாக்குவதற்காக விமர்சிக்கப்பட்டுள்ளனர்.
 
-**Musical background:** The tune is based on Hip hop beats.
+** இசை பின்னணி: ** டியூன் இப் ஆப் துடிப்புகளை அடிப்படையாகக் கொண்டது.
 
-**Sign:** A common hand gesture that Hip hop artists like to make ([example on
-YouTube](https://youtu.be/010KyIQjkTk)).
+** அடையாளம்: ** இப் ஆப் கலைஞர்கள் செய்ய விரும்பும் ஒரு பொதுவான கை சைகை
+([[யூடியூப்பில் எடுத்துக்காட்டு] (https://youtu.be/010KyIQjkTk)).
 
-**History:** Invented by someone from RoR Berlin in 2005, but never published.
-Was rediscovered in 2021.
+** வரலாறு: ** 2005 இல் ரோர் பெர்லினிலிருந்து யாரோ ஒருவர் கண்டுபிடித்தார், ஆனால்
+ஒருபோதும் வெளியிடப்படவில்லை. 2021 இல் மீண்டும் கண்டுபிடிக்கப்பட்டது.
 
 ## தொல்லை
 
-* **Low Surdo:** medium
-* **Mid Surdo:** medium
+* ** குறைந்த சூர்டோ: ** நடுத்தர
+* ** மிட் சூர்டோ: ** நடுத்தர
 * ** உயர் சூர்டோ: ** நடுத்தர
-* **Repi:** easy
+* ** ரெபி: ** எளிதானது
 * ** SNARE: ** கடினமானது
-* **Tamborim:** hard
-* **Agogô:** hard
+* ** தம்போரிம்: ** கடினமானது
+* ** அகோகே: ** கடினமானது

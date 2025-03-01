@@ -1,24 +1,21 @@
-**Sign:** draw a triangle in the air with one hand
+** அடையாளம்: ** ஒரு கையால் காற்றில் ஒரு முக்கோணத்தை வரையவும்
 
 ## பின்னணி
 
-**Name:** Waltz (German: Walzer) is a European style of classical music
-originating in German and Austrian folk dances of the middle age
-([Wikipedia](https://en.wikipedia.org/wiki/Waltz_(music)). Characteristic for it
-is its slow 3⁄4 time signature and it specific dance. The particular spelling of
-our tune comes from Polish “walc” for Waltz and “walcz” for “fight!”
-(imperative).
+** பெயர்: ** வால்ட்ச் (செர்மன்: வால்சர்) என்பது நடுத்தர யுகத்தின் செர்மன்
+மற்றும் ஆச்திரிய நாட்டுப்புற நடனங்களில் ([விக்கிபீடியா]
+(https://en.wikipedia.org/wiki/Waltz_(music)).
 
-**Musical background:** All instruments play the typical Waltz rhythm.
+** இசை பின்னணி: ** அனைத்து கருவிகளும் வழக்கமான வால்ட்ச் தாளத்தை இயக்குகின்றன.
 
-**Sign:** The triangle stands for the characteristic 3⁄4 time signature.
+** அடையாளம்: ** முக்கோணம் 3⁄4 நேர கையொப்பத்தை குறிக்கிறது.
 
-**History:** Introduced by RoR Kraków in 2016.
+** வரலாறு: ** 2016 இல் ரோர் கிராகோவ் அறிமுகப்படுத்தினார்.
 
 ## தொல்லை
 
 * ** சூர்டோச்: ** எளிதானது
-* **Repi:** easy
+* ** ரெபி: ** எளிதானது
 * ** SNARE: ** நடுத்தர
-* **Tamborim:** easy
-* **Agogô:** easy
+* ** தம்போரிம்: ** எளிதானது
+* ** அகோகே: ** எளிதானது

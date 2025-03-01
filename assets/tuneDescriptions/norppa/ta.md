@@ -1,4 +1,4 @@
-**Sign:** *(None yet.)*
+** அடையாளம்: ***(இன்னும் எதுவுமில்லை.)*
 
 ## பின்னணி
 
@@ -12,16 +12,16 @@ conservation in Finland. Climate change poses a direct threat to the Norppa.
 **Musical background:** Song takes inspiration from the electronic music, but
 does not imitate any particular genre or song.
 
-**Sign:** *(None yet.)*
+** அடையாளம்: ***(இன்னும் எதுவுமில்லை.)*
 
 **History:** Rediscovered from old notes by RoR Helsinki in 2021
 
 ## தொல்லை
 
-* **Low Surdo:** easy
-* **Mid Surdo:** medium
-* **High Surdo:** easy
+* ** குறைந்த சூர்டோ: ** எளிதானது
+* ** மிட் சூர்டோ: ** நடுத்தர
+* ** உயர் சூர்டோ: ** எளிதானது
 * ** ரச்: ** சராசரி
-* **Snare:** tricky
-* **Tamborim:** tricky
+* ** SNARE: ** தந்திரமான
+* ** தம்போரிம்: ** தந்திரமான
 * ** அகோகே: ** நடுத்தர

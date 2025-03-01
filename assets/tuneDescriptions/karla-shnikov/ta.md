@@ -1,68 +1,70 @@
-This tune is one of the RoR basics. Often simply called “Karla”.
+இந்த இசைக்கு ROR அடிப்படைகளில் ஒன்றாகும். பெரும்பாலும் "கார்லா" என்று
+அழைக்கப்படுகிறது.
 
-It sounds a bit, as the name implies, like machinegun-fire. As the Breaks have
-steady drum rolls in them, it’s important to aim for a steady even roll.
-Although the temptation is to play as fast as you can, you should try to be just
-in time (highlighting the first hit on every step can be helpful, to keep
-track).
+இது சற்று தெரிகிறது, பெயர் குறிப்பிடுவது போல, மெசின் கன்-ஃபயர் போன்றது.
+இடைவெளிகளில் நிலையான டிரம் ரோல்ச் இருப்பதால், நிலையான கூட ரோலை நோக்கமாகக்
+கொள்வது தேவை. சோதனையானது உங்களால் முடிந்தவரை வேகமாக விளையாடுவதாக இருந்தாலும்,
+நீங்கள் சரியான நேரத்தில் இருக்க முயற்சிக்க வேண்டும் (ஒவ்வொரு அடியிலும் முதல்
+வெற்றியை முன்னிலைப்படுத்துவது உதவியாக இருக்கும், கண்காணிக்க).
 
-Karla Shnikov is a funk tune too, but it does not fit with the other funks (Funk
-and Angela Davis) as well as they do together. But just try and find your own
-way!
+கார்லா ச்னிகோவ் ஒரு ஃபங்க் டியூன் கூட, ஆனால் இது மற்ற ஃபங்க்சுடன் (ஃபங்க்
+மற்றும் ஏஞ்சலா டேவிச்) பொருந்தாது, அதே போல் அவர்கள் ஒன்றாகச் செய்கிறார்கள்.
+ஆனால் முயற்சி செய்து உங்கள் சொந்த வழியைக் கண்டுபிடி!
 
 ## அடையாளம்
 
-Move index+middle finger like rabbit ears and cover other fingers with other
-hand.
+முயல் காதுகள் போன்ற குறியீட்டு+நடுத்தர விரலை நகர்த்தவும், மற்ற விரல்களை மறுபுறம்
+மறைக்கவும்.
 
 ## பின்னணி
 
-**Name:** Based on a fictional character invented by RoR called Karla Shnikov, a
-Russian activist who was one of Trotzky’s secret lovers and was first a
-communist, but later became an anarchist. There was a big discussion about
-taking a fictive name, but it can be seen as our ability to create our own
-histories – in the end, there might have been many “Karla Snikov”s, individuals
-fighting for rights or liberation, that historians never wrote about since
-history has always been written by the powerful and the exceptional, and
-especially hiding the contribution of women.
+. ஒரு கற்பனையான பெயரை எடுப்பது பற்றி ஒரு பெரிய விவாதம் இருந்தது, ஆனால் இது
+எங்கள் சொந்த வரலாறுகளை உருவாக்கும் திறனாகக் காணப்படுகிறது - இறுதியில், பல
+“கார்லா ச்னிகோவ்”, உரிமைகள் அல்லது விடுதலைக்காக போராடும் தனிநபர்கள்
+இருந்திருக்கலாம், வரலாற்றாசிரியர்கள் ஒருபோதும் எழுதியதால் வரலாறு எப்போதும்
+சக்திவாய்ந்த மற்றும் விதிவிலக்கால் எழுதப்பட்டிருக்கிறது, குறிப்பாக பெண்களின்
+பங்களிப்பை மறைக்கிறது.
 
-**Musical background:** *(More info needed.)*
+** இசை பின்னணி: ***(மேலும் செய்தி தேவை.)*
 
-**Sign:** The fictional character Karla Shnikov was also an animal rights
-activist, and one of her actions was to liberate the biggest rabbit farm in
-Russia. The sign depicts rabbit ears.
+** அடையாளம்: ** கற்பனையான கதாபாத்திரம் கார்லா ச்னிகோவ் ஒரு விலங்கு உரிமை
+ஆர்வலராகவும் இருந்தார், மேலும் அவரது நடவடிக்கைகளில் ஒன்று ரச்யாவின் மிகப்பெரிய
+முயல் பண்ணையை விடுவிப்பதாகும். அடையாளம் முயல் காதுகளை சித்தரிக்கிறது.
 
-**History:** The tune was invented in London. Used to be called Kalashnikov, the
-sign a finger pistol, but was changed because some bands got in trouble for
-showing a gun, and other bands didn’t want to have a tune named after a weapon.
-The story of Karla Shnikov was made up by the working group thinking about a new
-name+sign for the tune.
+** வரலாறு: ** டியூன் லண்டனில் கண்டுபிடிக்கப்பட்டது. ஒரு விரல் பிச்டல் அடையாளமான
+கலாச்னிகோவ் என்று அழைக்கப்படுவது, ஆனால் மாற்றப்பட்டது, ஏனெனில் சில
+இசைக்குழுக்கள் துப்பாக்கியைக் காட்டியதற்காக சிக்கலில் சிக்கியதால், மற்ற
+இசைக்குழுக்கள் ஒரு ஆயுதத்தின் பெயரிடப்பட்ட ஒரு பாடலை வைத்திருக்க விரும்பவில்லை.
+கார்லா ச்னிகோவின் கதை ஒரு புதிய பெயரைப் பற்றி நினைத்து பணிக்குழுவால்
+உருவாக்கப்பட்டது.
 
 ## தொல்லை
 
-* **Surdos:** medium (it is important, that the double hit in every bar is not
-  played to fast.)
+* ** சூர்டோச்: ** நடுத்தர (இது முக்கியமானது, ஒவ்வொரு பட்டியிலும் இரட்டை செய்
+  வேகமாக விளையாடப்படவில்லை.)
 * ** ரச்: ** சராசரி
 * ** SNARE: ** எளிதானது
-* **Tamborim:** easy
-* **Agogô:** easy
+* ** தம்போரிம்: ** எளிதானது
+* ** அகோகே: ** எளிதானது
 
-## Breaks
+## இடைவெளிகள்
 
-Karla Shnikov has 3 breaks, one called just Karla Break (aka break 1), Break 2,
-and its inverted variation.
+கார்லா ச்னிகோவ் 3 இடைவெளிகளைக் கொண்டுள்ளது, ஒன்று கார்லா பிரேக் (அக்கா பிரேக்
+1), பிரேக் 2 மற்றும் அதன் தலைகீழ் மாறுபாடு என்று அழைக்கப்படுகிறது.
 
-Karla Break is a quite common break, which can be played in every other tune. it
-consists of three bars of 4 hits per beat (for instruments which only have one
-beater it’s better to play 2 hits per beat) followed by a fourth bar where only
-the first sixteenth is played and the rest is silence. This Break creates a lot
-of tension. It’s also possible to let one instrument section continue playing
-it’s normal rhythm (for most instruments it sounds pretty awesome).
+கார்லா பிரேக் என்பது மிகவும் பொதுவான இடைவெளி, இது மற்ற எல்லா இசைக்கும்
+விளையாடலாம். இது ஒரு துடிப்புக்கு 4 வெற்றிகளின் மூன்று பார்களைக் கொண்டுள்ளது
+(ஒரு பீட்டர் மட்டுமே இருக்கும் கருவிகளுக்கு, ஒரு துடிப்புக்கு 2 வெற்றிகள்
+விளையாடுவது நல்லது) அதைத் தொடர்ந்து நான்காவது பட்டியில் முதல் பதினாறாவது மட்டுமே
+விளையாடப்படுகிறது, மீதமுள்ளவை ம .னமாக உள்ளன. இந்த இடைவெளி நிறைய பதற்றத்தை
+உருவாக்குகிறது. ஒரு கருவி பிரிவு தொடர்ந்து சாதாரண தாளத்தை இயக்க அனுமதிக்க
+முடியும் (பெரும்பாலான கருவிகளுக்கு இது மிகவும் அருமையாக இருக்கிறது).
 
-Break 2 consists of one bar with sixteen notes, played from soft to loud in
-group of four, then another bar with one note on time on each beat, and then two
-call & response bars.
+பிரேக் 2 பதினாறு குறிப்புகளைக் கொண்ட ஒரு பட்டியைக் கொண்டுள்ளது, இது நான்கு
+குழுவில் மென்மையாக இருந்து சத்தமாக விளையாடுகிறது, பின்னர் ஒவ்வொரு துடிப்பிலும்
+ஒரு குறிப்பைக் கொண்ட மற்றொரு பட்டி, பின்னர் இரண்டு அழைப்பு மற்றும் மறுமொழி
+பார்கள்.
 
-Break 2 inverted consists in playing break 2 forward and then backward (that is,
-4 up, 4 beats ontime, 2x call&response, 2x call&response, 4 beats ontime, 4
-down).
+பிரேக் 2 தலைகீழ் பிரேக் 2 முன்னோக்கி விளையாடுவதிலும், பின்னர் பின்தங்கியதாகவும்
+(அதாவது 4 அப், 4 பீட்ச் ஆன் டைம், 2 ஃச் கால் & ரெச்பான்ச், 2 ஃச் கால் &
+ரெச்பான்ச், 4 பீட்ச் ஆன் டைம், 4 டவுன்).

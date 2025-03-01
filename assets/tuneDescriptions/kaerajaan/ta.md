@@ -1,21 +1,19 @@
-**Sign:** Place forearms on top of each other in front of you, fingertips
-aligned with elbows (like in the Estonian folk dance).
+**Sign:** Place forearms on மேலே of each மற்றொன்று in front of you, fingertips
+aligned with elbows (like in the எச்டோனிய folk dance).
 
 ## பின்னணி
 
-**Name:** Kaerajaan is an Estonian folk dance that is danced to a folk song
-called Kaera-Jaan ([example on
-YouTube](https://www.youtube.com/watch?v=5BKoS9CfQPA)). The name roughly
-translates to “John of Oats”. Estonians probably used to sing this song while
-harvesting oat crops.
+. பெயர் தோராயமாக “சான் ஆஃப் ஓட்ச்” என்று மொழிபெயர்க்கப்பட்டுள்ளது. ஓட் பயிர்களை
+அறுவடை செய்யும் போது எச்டோனியர்கள் இந்த பாடலைப் பாடுவார்கள்.
 
-**Musical background:** The tune is based on the folk music that is played while
-dancing Kaerajaan.
+** இசை பின்னணி: ** கராசானை நடனமாடும் போது இசைக்கப்படும் நாட்டுப்புற இசையை
+அடிப்படையாகக் கொண்டது.
 
-**Sign:** The sign is a move in Estonian folk dances ([example on
-YouTube](https://youtu.be/-udR34x2aTM?t=4)).
+** அடையாளம்: ** அடையாளம் என்பது எச்டோனிய நாட்டுப்புற நடனங்களில் ஒரு
+நடவடிக்கையாகும் ([YouTube இல் எடுத்துக்காட்டு]
+(https://youtu.be/-udR34x2aTM?t=4)).
 
-**History:** Invented by RoR Tallinn in 2021.
+** வரலாறு: ** 2021 இல் ரோர் தாலின் கண்டுபிடித்தார்.
 
 ## தொல்லை
 

@@ -1,20 +1,18 @@
-**Sign:** interlock your hands like a fence and then open it.
+** அடையாளம்: ** உங்கள் கைகளை வேலி போல ஒன்றிணைத்து பின்னர் திறக்கவும்.
 
 ## பின்னணி
 
-**Name:** Bossa Nova is a Brazilian style of music that developed out of Samba,
-which usually involves a guitar and a singer on top of the characteristic Bossa
-Nova beat.
+!
 
-**Musical background:** The Surdo line is very similar to the Bossa Nova beat.
-The Bossa clave is the clave that we use at RoR. See
-[YouTube](https://www.youtube.com/watch?v=mZ_mEmaJu98).
+** இசை பின்னணி: ** சூர்டோ வரி போசா நோவா பீட் மிகவும் ஒத்திருக்கிறது. போச்சா
+கிளாவ் என்பது நாங்கள் ROR இல் பயன்படுத்தும் கிளாவ். [YouTube]
+(https://www.youtube.com/watch?v=mZ_mEmaJu98) ஐப் பார்க்கவும்.
 
-**Sign:** The sign probably depicts a border fence that is opened.
+** அடையாளம்: ** அடையாளம் திறக்கப்பட்ட எல்லை வேலியை சித்தரிக்கிறது.
 
-**History:** From RoR Maastricht. “A former Amsterdam band member was cleaning
-her room and found an old notation of a ‘no border bossa’. The paper points to
-Maastricht.”
+** வரலாறு: ** ரோர் மாச்ட்ரிக்டிலிருந்து. “ஒரு முன்னாள் ஆம்ச்டர்டாம் இசைக்குழு
+உறுப்பினர் தனது அறையை தூய்மை செய்து கொண்டிருந்தார், மேலும்‘ பார்டர் போசா இல்லை
+’என்ற பழைய குறியீட்டைக் கண்டார். காகிதம் மாச்ட்ரிக்டை சுட்டிக்காட்டுகிறது. ”
 
 ## தொல்லை
 

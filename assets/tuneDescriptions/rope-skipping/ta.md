@@ -1,22 +1,22 @@
-**Sign:** with both hands a rotating rope and jump up and down
+** அடையாளம்: ** இரு கைகளால் சுழலும் கயிறு மற்றும் மேலேயும் கீழும் குதிக்கவும்
 
 ## பின்னணி
 
-**Name:** “Rope skipping” in British English means to jump over a rope that
-oneself or others are swinging around your body.
+** பெயர்: ** பிரிட்டிச் ஆங்கிலத்தில் “கயிறு ச்கிப்பிங்” என்பது உங்கள் உடலைச்
+சுற்றிக் கொண்டிருக்கும் ஒரு கயிற்றின் மீது குதிப்பதாகும்.
 
-**Musical background:** *(More info needed.)*
+** இசை பின்னணி: ***(மேலும் செய்தி தேவை.)*
 
-**Sign:** Depicts the activity of rope skipping
+** அடையாளம்: ** கயிறு ச்கிப்பிங்கின் செயல்பாட்டை சித்தரிக்கிறது
 
-**History:** Introduced in 2010
+** வரலாறு: ** 2010 இல் அறிமுகப்படுத்தப்பட்டது
 
 ## தொல்லை
 
-* **Low Surdo:** medium
-* **Mid Surdo:** tricky
+* ** குறைந்த சூர்டோ: ** நடுத்தர
+* ** மிட் சூர்டோ: ** தந்திரமான
 * ** உயர் சூர்டோ: ** நடுத்தர
 * ** ரெய்பி: ** கடினமானது
 * ** SNARE: ** நடுத்தர
 * ** தம்போரிம்: ** நடுத்தர
-* **Agogô:** easy
+* ** அகோகே: ** எளிதானது

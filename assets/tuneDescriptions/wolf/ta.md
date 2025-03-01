@@ -1,13 +1,13 @@
-**Sign:** draw a big “V” in the air with both hands (from up to down).
+** அடையாளம்: ** இரு கைகளாலும் (வரை கீழே) காற்றில் ஒரு பெரிய “வி” ஐ வரையவும்.
 
 ## பின்னணி
 
-**Name:** A wolf is a large mammal native to Eurasia and North America and the
-ancestor of domestic dogs.
+** பெயர்: ** ஓநாய் என்பது யூரேசியா மற்றும் வட அமெரிக்காவிற்கு ஒரு பெரிய பாலூட்டி
+மற்றும் வீட்டு நாய்களின் மூதாதையர்.
 
-**Musical background:** *(More info needed.)*
+** இசை பின்னணி: ***(மேலும் செய்தி தேவை.)*
 
-**Sign:** *(More info needed.)*
+** அடையாளம்: ***(மேலும் செய்தி தேவை.)*
 
-**History:** From the [website of RoR
-Kraków](https://sambaka.wordpress.com/rytmy/) *(more info needed)*
+** வரலாறு: ** [ரோர் கிராக்வின் வலைத்தளத்திலிருந்து]
+(https://sambaka.wordpress.com/rytmy/)*(மேலும் செய்தி தேவை)*

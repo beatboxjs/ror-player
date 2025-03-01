@@ -1,57 +1,57 @@
-This tune is one of the RoR basics. It is (together with ‘Samba Reggae’) the RoR
-Tune which sounds most like “real” Samba.
+இந்த இசைக்கு ROR அடிப்படைகளில் ஒன்றாகும். இது (‘சம்பா ரெக்கே’ உடன் சேர்ந்து)
+ரோர் டியூன் “உண்மையான” சம்பா போல ஒலிக்கிறது.
 
-A lot of this tune is based on the Tamborim’s voice, which can be memorized by
-“I’ve got custard in my underpants”. When learning the tune, start off there and
-make sure it’s burnt into everyone’s brain.
+இந்த பாடலின் நிறைய தம்போரிமின் குரலை அடிப்படையாகக் கொண்டது, இது “எனது
+உள்ளாடைகளில் கச்டார்ட் கிடைத்தது” என்பதன் மூலம் மனப்பாடம் செய்யப்படலாம்.
+ட்யூனைக் கற்றுக் கொள்ளும்போது, அங்கேயே தொடங்கி, அது அனைவரின் மூளையிலும்
+எரிக்கப்படுவதை உறுதிசெய்க.
 
-If you are playing Agogô or Tamborim, don’t mix up your voice with the one from
-afoxe, as they are very similar. Check out the differences and find your way to
-remember them.
+நீங்கள் அகோகே அல்லது தம்போரிம் விளையாடுகிறீர்கள் என்றால், உங்கள் குரலை
+அஃபாக்சிலிருந்து கலக்க வேண்டாம், ஏனெனில் அவை மிகவும் ஒத்தவை. வேறுபாடுகளைப்
+பார்த்து அவற்றை நினைவில் கொள்வதற்கான வழியைக் கண்டறியவும்.
 
-**Sign:** making an offer to the sky
+** அடையாளம்: ** வானத்திற்கு ஒரு சலுகையை வழங்குதல்
 
 ## பின்னணி
 
-**Name:** Custard is the English word for a sweet, creamy, puddingy vanilla
-sauce ([Wikipedia](https://en.wikipedia.org/wiki/Custard)). The name was chosen
-because of the memory “I’ve got custard in my underpants” for the tamborim
-stroke.
+** பெயர்: ** கச்டார்ட் என்பது ஒரு இனிப்பு, கிரீமி, புட்டு வெண்ணிலா சாசுக்கான
+ஆங்கில வார்த்தையாகும் ([விக்கிபீடியா] (https://en.wikipedia.org/wiki/Custard)).
+தம்போரிம் பக்கவாதத்திற்கான “எனது உள்ளாடைகளில் கச்டார்ட் கிடைத்தது” என்ற
+நினைவகத்தின் காரணமாக பெயர் தேர்ந்தெடுக்கப்பட்டது.
 
-**Musical background:** A typical Samba Reggae style tune.
+** இசை பின்னணி: ** ஒரு பொதுவான சம்பா ரெக்கே பாணி டியூன்.
 
-**Sign:** The sign used to depict a “W” for Welfare State (the former name of
-the tune), as can be seen in this
-[video](https://tube.rhythms-of-resistance.org/w/3LnZ6d58J1jd5GNzK1mQqp) by RoR
-London. It changed into the current sign and can also be interpreted as “holding
-a bowl of custard”.
+. இது தற்போதைய அடையாளமாக மாறியது, மேலும் “கச்டர்டின் கிண்ணத்தை வைத்திருத்தல்”
+என்றும் பொருள் கொள்ளலாம்.
 
-**History:** Part of the first set of tunes taken from Barking Bateria in 2000.
-Used to be called Welfare State, but was renamed because people don’t like the
-state.
+** வரலாறு: ** 2000 ஆம் ஆண்டில் பார்கிங் பாட்டேரியாவிலிருந்து எடுக்கப்பட்ட முதல்
+தொகுப்பின் ஒரு பகுதி. நலன்புரி அரசு என்று அழைக்கப்பட்டது, ஆனால் மக்கள் மாநிலத்தை
+விரும்பாததால் மறுபெயரிடப்பட்டது.
 
 ## சர்ச்சைகள்
 
-The rhythm clearly sounds like Samba Reggae, which is a tune developed and used
-by the Black liberation movement in Brazil. Many people in the RoR network
-consider it cultural appropriation to play this tune in our mainly white
-European bands, and there is an ongoing debate about abolishing the tune.
+தாளம் சம்பா ரெக்கே போல தெளிவாகத் தெரிகிறது, இது பிரேசிலில் கருப்பு விடுதலை
+இயக்கத்தால் உருவாக்கப்பட்ட மற்றும் பயன்படுத்தப்படும் ஒரு இசைக்கு. ROR
+நெட்வொர்க்கில் உள்ள பலர் எங்கள் முக்கியமாக வெள்ளை ஐரோப்பிய இசைக்குழுக்களில் இந்த
+பாடலை விளையாடுவது கலாச்சார ஒதுக்கீட்டைக் கருதுகின்றனர், மேலும் இந்த பாடலை
+ஒழிப்பது குறித்து தொடர்ந்து விவாதம் உள்ளது.
 
 ## தொல்லை
 
 * ** காது கேளாதோர்: ** நடுத்தர
 * ** ரச்: ** சராசரி
 * ** SNARE: ** நடுத்தர
-* **Tamborim:** medium (easy to remember, very tiring)
-* **Agogô:** medium (easy to mix up with afoxe)
+* ** தம்போரிம்: ** நடுத்தர (நினைவில் கொள்வது எளிது, மிகவும் சோர்வாக)
+* ** அகோகே: ** நடுத்தர (அஃபாக்சுடன் கலக்க எளிதானது)
 
-## Breaks
+## இடைவெளிகள்
 
-* Break 1&2 are variations of the Tamb stroke in a call&response-way. In Break 1
-  the Surdos call, in Break 2 the Tambs.
-* Break 3 can be used to have kind of solo parts for instrument sections: Let
-  them continue while the others play Break 3. At the beginning you might need
-  to count the bars in your head to find the transition back to the groove. This
-  is most important for snare players as they have a solo in the last bar.
-* Break 5 is a call&response between Snares and all others, which is really nice
-  as an intro, or to speed up.
+* இடைவெளி 1 & 2 என்பது அழைப்பு மற்றும் மறுமொழி வழியில் உள்ள SAMB பக்கவாதத்தின்
+  மாறுபாடுகள். இடைவெளி 1 இல் சூர்டோச் அழைக்கிறார், இடைவேளையில் 2 டம்ப்ச்.
+* கருவி பிரிவுகளுக்கு ஒரு வகையான தனி பாகங்கள் இருக்க பிரேக் 3
+  பயன்படுத்தப்படலாம்: மற்றவர்கள் இடைவெளியை விளையாடும்போது அவை தொடரட்டும்.
+  ஆரம்பத்தில் நீங்கள் பள்ளத்திற்கு மாற்றத்தைக் கண்டுபிடிக்க உங்கள் தலையில் உள்ள
+  பட்டிகளை எண்ண வேண்டியிருக்கும். கடைசி பட்டியில் ஒரு தனிப்பாடலைக்
+  கொண்டிருப்பதால் ச்னேர் வீரர்களுக்கு இது மிகவும் முக்கியமானது.
+* பிரேக் 5 என்பது ச்னேர் மற்றும் பிற அனைவருக்கும் இடையிலான அழைப்பு பதில், இது
+  ஒரு அறிமுகமாக அல்லது வேகப்படுத்துவது மிகவும் நன்றாக இருக்கிறது.

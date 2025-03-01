@@ -1,26 +1,24 @@
-**Sign:** hold one hand inside up and turn it left and right like the blue
-ligths of a police car
+** அடையாளம்: ** ஒரு கையை உள்ளே பிடித்து, பொலிச் காரின் நீல நிற லிக்ட்ச் போல இடது
+மற்றும் வலதுபுறமாக திருப்புங்கள்
 
 ## பின்னணி
 
-**History:** The tune was adapted by RoR Frankfurt in 2022 from the song [Sound
-of da Police](https://en.wikipedia.org/wiki/Sound_of_da_Police) by the rapper
-KRS-One. The song criticizes police brutality and systemic racism.
+. இந்த பாடல் பொலிச் மிருகத்தனத்தையும் முறையான இனவெறியையும் விமர்சிக்கிறது.
 
 ## தொல்லை
 
-* **Low Surdo:** easy
-* **Mid/High Surdo:** medium
+* ** குறைந்த சூர்டோ: ** எளிதானது
+* ** மிட்/ஐ சூர்டோ: ** நடுத்தர
 * ** ரெய்பி: ** கடினமானது
 * ** SNARE: ** எளிதானது
 * ** தம்போரிம்: ** நடுத்தர
-* **Agogô:** easy
+* ** அகோகே: ** எளிதானது
 
-## Breaks
+## இடைவெளிகள்
 
-* **Beast Break** handsignal: evil claws going down (hand inside down, moving
-  from up to down)
-* **Beast Break inverted** handsignal: evil claws going up (hand inside up,
-  moving from down to up)
+* ** மிருக இடைவெளி ** கை சமிக்ஞை: தீய நகங்கள் கீழே செல்கின்றன (கை கீழே கீழே,
+  மேலே இருந்து கீழே நகரும்)
+* **Beast இடைவேளை inverted** handsignal: evil claws going மேலே (hand inside up,
+  moving இருந்து down பெறுநர் up)
 
-* **Shouting** Oo is pronounced as Whoop!
+* ** கூச்சலிடுதல் ** oo ஊப் என்று உச்சரிக்கப்படுகிறது!

@@ -1,31 +1,32 @@
-This tune exists in two variations, one in 4/4 and one in 6/8. Usually, the 4/4
-variation is played, sometimes switching to the 3/4 for a moment while
-increasing the speed.
+இந்த இசைக்கு இரண்டு மாறுபாடுகளில், ஒன்று 4/4 இல் மற்றும் 6/8 இல் ஒன்று.
+வழக்கமாக, 4/4 மாறுபாடு விளையாடப்படுகிறது, சில நேரங்களில் வேகத்தை அதிகரிக்கும்
+போது ஒரு கணம் 3/4 க்கு மாறுகிறது.
 
 ## பின்னணி
 
-**Name:** Coupé-Décalé is a type of club dance music popular in Côte d’Ivoire.
-It was developed in Paris by Ivorian DJs and eventually brought back to Côte
-d’Ivoire, where it became very popular. Some say that it represents the desire
-of a young generation to bring more party, carefreeness and openness to the
-world into a country shaped by its unstable political situation and dominated by
-patriotic and military music. “Coupé-Décalé” means something like “cheated
-somebody and then run away”, which is generally interpreted to stand for famous
-Coupé-Décalé artists “tricking” France and Western Europe to successful and
-famous there and then returning to Côte d’Ivoire.
-([Wikipedia](https://en.wikipedia.org/wiki/Coup%C3%A9-D%C3%A9cal%C3%A9))
+** பெயர்: ** கூபே-டெலிகே என்பது கோட் டி ஐவோயரில் பிரபலமான கிளப் நடன இசை. இது
+பாரிசில் ஐவோரியன் டி.சேக்களால் உருவாக்கப்பட்டது, இறுதியில் கோட் டி ஐவோயருக்கு
+மீண்டும் கொண்டு வரப்பட்டது, அங்கு அது மிகவும் பிரபலமானது. ஒரு இளம்
+தலைமுறையினரின் விருப்பத்தை இது பிரதிபலிக்கிறது என்று சிலர் கூறுகிறார்கள், அதன்
+நிலையற்ற அரசியல் நிலைமையால் வடிவமைக்கப்பட்ட மற்றும் தேசபக்தி மற்றும் இராணுவ
+இசையால் ஆதிக்கம் செலுத்தும் ஒரு நாட்டிற்கு உலகிற்கு அதிக கட்சி, கவனிப்பு மற்றும்
+திறந்த தன்மையைக் கொண்டுவருகிறார்கள். “கூபே-டெலிகே” என்பது “யாரையாவது ஏமாற்றி,
+பின்னர் ஓடுங்கள்” போன்ற ஒன்றைக் குறிக்கிறது, இது பொதுவாக பிரபலமான கூபே-டெலிகேக்
+கலைஞர்களுக்காக பிரான்ச் மற்றும் மேற்கு ஐரோப்பாவை வெற்றிகரமாகவும் பிரபலமாகவும்
+"ஏமாற்றுகிறது", பின்னர் கோட் டி ஐவோயருக்குத் திரும்புகிறது. ([விக்கிபீடியா]
+(https://en.wikipedia.org/wiki/Coup%C3%A9-D%C3%A9cal%C3%A9))
 
-**Musical background:** According to RoR Montpellier, the music is based on
-Coupé-Décalé. It does not seem to sound the same as Coupé-Décalé though.
+** இசை பின்னணி: ** ரோர் மான்ட்பெல்லியரின் கூற்றுப்படி, இசை கூபே-டெலிகேவை
+அடிப்படையாகக் கொண்டது. இது கூபே-டெலிகேவைப் போலவே ஒலிப்பதாகத் தெரியவில்லை.
 
-**Sign:** The tune does not have a sign so far.
+** அடையாளம்: ** இசைக்கு இதுவரை ஒரு அடையாளம் இல்லை.
 
-**History:** The tune was invented by RoR Montpellier in 2018.
+** வரலாறு: ** இந்த பாடலை 2018 இல் ரோர் மாண்ட்பெல்லியர் கண்டுபிடித்தார்.
 
 ## தொல்லை
 
-* **Low Surdo:** easy
-* **Mid/High Surdo:** medium
-* **Repi/Snare:** hard (they play the same)
-* **Tamborim:** hard
+* ** குறைந்த சூர்டோ: ** எளிதானது
+* ** மிட்/ஐ சூர்டோ: ** நடுத்தர
+* ** ரெபி/ச்னேர்: ** கடினமானது (அவை அவ்வாறே விளையாடுகின்றன)
+* ** தம்போரிம்: ** கடினமானது
 * ** அகோகே: ** நடுத்தர

@@ -1,30 +1,25 @@
-Was drawn as a **Tune of the Year 2024**.
+2024 ஆம் ஆண்டின் ** டியூனாக வரையப்பட்டது **.
 
-**Sign:** Form a roof with your hands, interlace the fingers and wiggle them
-like flames.
+** அடையாளம்: ** உங்கள் கைகளால் கூரையை உருவாக்கி, விரல்களை ஒன்றிணைத்து அவற்றை
+தீப்பிழம்புகள் போல அசைக்கவும்.
 
 ## பின்னணி
 
-**Name:** “The roof is on fire” is part of the chorus in the song “Fire Water
-Burn” by the Bloodhound Gang
-([YouTube](https://www.youtube.com/watch?v=Adgx9wt63NY)), which covers the
-chorus of the song “The Roof Is on Fire” by Rock Master Scott & the Dynamic
-Three ([YouTube](https://youtu.be/-Vv_LwwwpmU?t=263)). Also, the roof of the
-sauna was literally on fire during the TNM 2019 in Lithuania.
+. மேலும், லிதுவேனியாவில் டி.என்.எம் 2019 இன் போது ச உனா னாவின் கூரை உண்மையில்
+தீப்பிடித்தது.
 
-**Musical background:** Based on the song “Fire Water Burn” by the Bloodhound
-Gang, which covers the chorus of the song “The Roof Is on Fire” by Rock Master
-Scott & the Dynamic Three.
+** இசை பின்னணி: ** பிளட்அவுண்ட் கும்பலின் “ஃபயர் வாட்டர் பர்ன்” பாடலை
+அடிப்படையாகக் கொண்டு, இது ராக் மாச்டர் ச்காட் & மாறும் மூன்று எழுதிய “தி ரூஃப்
+ஆன் ஃபயர்” பாடலின் கோரசை உள்ளடக்கியது.
 
-**Sign:** The sign represents a roof in flames.
+** அடையாளம்: ** அடையாளம் தீப்பிழம்புகளில் கூரையைக் குறிக்கிறது.
 
-**History:** Spontaneously invented by RoR Kaunas during the TNM 2019 after the
-roof of the sauna caught fire.
+!
 
 ## தொல்லை
 
-* **Surdos:** tricky
+* ** சூர்டோச்: ** தந்திரமான
 * ** ரச்: ** சராசரி
 * ** SNARE: ** நடுத்தர
-* **Tamborim:** tricky
-* **Agogô:** easy
+* ** தம்போரிம்: ** தந்திரமான
+* ** அகோகே: ** எளிதானது

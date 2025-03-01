@@ -1,30 +1,32 @@
-A quite groovy tune that can be played slowly for a long time. The Surdos make a
-melody, so they are suitable to be played by one Surdo player with three Surdos.
+நீண்ட காலமாக மெதுவாக விளையாடக்கூடிய ஒரு க்ரூவி டியூன். சூர்டோச் ஒரு மெல்லிசையை
+உருவாக்குகிறது, எனவே அவை மூன்று சூர்டோசுடன் ஒரு சூர்டோ வீரரால் விளையாடுவதற்கு
+ஏற்றவை.
 
-**Sign:** monkey, both hands in armpits
+** அடையாளம்: ** குரங்கு, இரு கைகளும் அக்குள்
 
 ## பின்னணி
 
-**Name:** Orangutan is a critically endangered species of apes native to
-south-east Asia.
+** பெயர்: ** ஓரங்குட்டான் என்பது தென்கிழக்கு ஆசியாவைச் சேர்ந்த குரங்குகளின்
+ஆபத்தான உயிரினமாகும்.
 
-**Musical background:** *(More info needed.)*
+** இசை பின்னணி: ***(மேலும் செய்தி தேவை.)*
 
-**Sign:** The sign depicts a monkey
+** அடையாளம்: ** அடையாளம் ஒரு குரங்கை சித்தரிக்கிறது
 
-**History:** Introduced to the network by RoR London in 2012, was probably
-played there before?
+** வரலாறு: ** 2012 இல் ரோர் லண்டனால் நெட்வொர்க்கிற்கு அறிமுகப்படுத்தப்பட்டது,
+இதற்கு முன்பு அங்கு விளையாடியிருக்கலாம்?
 
 ## சர்ச்சைகள்
 
-There is a debate about removing all monkey references from the tune name and
-breaks, since racist stereotypes associate monkeys with Black people (who are
-also often associated with drumming).
+அனைத்து குரங்கு குறிப்புகளையும் டியூன் பெயர் மற்றும் இடைவெளிகளிலிருந்து
+அகற்றுவது பற்றி ஒரு விவாதம் உள்ளது, ஏனெனில் இனவெறி ச்டீரியோடைப்கள் குரங்குகளை
+கறுப்பின மக்களுடன் தொடர்புபடுத்துகின்றன (அவர்கள் பெரும்பாலும் டிரம்மிங்கோடு
+தொடர்புடையவர்கள்).
 
 ## தொல்லை
 
 * ** சூர்டோச்: ** எளிதானது
 * ** ரச்: ** சராசரி
 * ** SNARE: ** நடுத்தர
-* **Tamborim:** easy
-* **Agogô:** tricky
+* ** தம்போரிம்: ** எளிதானது
+* ** அகோகே: ** தந்திரமான

@@ -1,37 +1,39 @@
-It is not the easiest to play but sounds really cool!
+இது விளையாடுவது எளிதானது அல்ல, ஆனால் மிகவும் அருமையாக இருக்கிறது!
 
-**Sign:** spread arms and shake your shoulders and hips
+** அடையாளம்: ** ஆயுதங்களை பரப்பி உங்கள் தோள்களையும் இடுப்பையும் அசைக்கவும்
 
 ## பின்னணி
 
-**Name:** “Hafla” (حفلة) means “Party/Festivity” in Arabic.
+** பெயர்: ** “அஃப்லா” (حفلة) என்றால் அரபியில் “கட்சி/பண்டிகை” என்று பொருள்.
 
-**Musical background:** Based on Masmoudi, one of the 6 major Middle Eastern
-rhythms that are typically played on hand drums such as the Dumbek
+**Musical background:** Based on Masmoudi, one of the 6 major Middle கிழக்கு
+rhythms that அரே typically played on hand drums such அச் the Dumbek
 ([Wikipedia](https://en.wikipedia.org/wiki/Dumbek_rhythms)).
 
-**Sign:** *(More info needed.)*
+** அடையாளம்: ***(மேலும் செய்தி தேவை.)*
 
-**History:** Introduced by RoR Tel Aviv on TNM 2011.
+** வரலாறு: ** டி.என்.எம் 2011 இல் ரோர் டெல் அவிவ் அறிமுகப்படுத்தினார்.
 
 ## தொல்லை
 
-* **Low Surdo:** easy
-* **Mid Surdo:** medium
-* **High Surdo:** easy
+* ** குறைந்த சூர்டோ: ** எளிதானது
+* ** மிட் சூர்டோ: ** நடுத்தர
+* ** உயர் சூர்டோ: ** எளிதானது
 * ** ரெய்பி: ** கடினமானது
 * ** SNARE: ** கடினமானது
 * ** தம்போரிம்: ** நடுத்தர
 * ** அகோகே: ** நடுத்தர
 
-## Breaks
+## இடைவெளிகள்
 
-* Hafla Break/Yala break is similar to the first two counts of the Tamb line.
-* Kick Back 1 Break is like the Hafla Break with alternating surdo and
-  all-others (call-response). It is played in a loop, repeated over and over
-  until something else is shown.
-* Break 3 is a call response over 8 counts between Snare and all others.
-* Hook Break is a bit tricky. It’s call response (Surdo to all-others) over 16
-  counts. There is a funny memoryhook: “It’s a banana, it’s not a pineapple.
-  it’s not an aubergine or a pear. It’s a what, It’s a what, It’s a what, It’s a
-  what? It’s a yellow ba-na-na.” Also really nice if repeated a few times.
+* அஃப்லா பிரேக்/யலா பிரேக் TAMB வரியின் முதல் இரண்டு எண்ணிக்கையைப் போன்றது.
+* கிக் பேக் 1 இடைவெளி என்பது மாற்று சூர்டோ மற்றும் ஆல்டரை (கால்-ரெச்பான்ச்) உடன்
+  அஃப்லா பிரேக் போன்றது. இது ஒரு சுழற்சியில் இயக்கப்படுகிறது, வேறு ஏதாவது
+  காண்பிக்கப்படும் வரை மீண்டும் மீண்டும்.
+* பிரேக் 3 என்பது ச்னேர் மற்றும் மற்ற அனைவருக்கும் இடையிலான 8 எண்ணிக்கையில்
+  அழைப்பு பதில்.
+* ஊக் பிரேக் கொஞ்சம் தந்திரமானது. இது 16 எண்ணிக்கையில் அழைப்பு பதில்
+  (அனைவருக்கும் சூர்டோ). ஒரு வேடிக்கையான மெமரிஊக் உள்ளது: “இது ஒரு வாழைப்பழம்,
+  இது அன்னாசிப்பழம் அல்ல. இது ஒரு ஆபர்கின் அல்லது பேரிக்காய் அல்ல. இது என்ன, அது
+  என்ன, அது என்ன, அது என்ன? இது ஒரு மஞ்சள் பா-நா-நா. ” சில முறை மீண்டும்
+  மீண்டும் செய்தால் மிகவும் நல்லது.
