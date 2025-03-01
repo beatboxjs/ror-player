@@ -1,16 +1,18 @@
-**Sign:** smoke a joint like a cup of tea (with thumb and index finger)
+** அடையாளம்: ** ஒரு கப் தேநீர் போன்ற ஒரு கூட்டு (கட்டைவிரல் மற்றும் ஆள்காட்டி
+விரலுடன்) புகைபிடிக்கவும்
 
 ## பின்னணி
 
-**Name:** See Samba Reggae. Sheffield is a city in the UK that used to have a
-very active RoR band.
+** பெயர்: ** சம்பா ரெக்கே பார்க்கவும். செஃபீல்ட் என்பது இங்கிலாந்தில் ஒரு நகரம்,
+இது மிகவும் சுறுசுறுப்பான ROR இசைக்குழுவைக் கொண்டிருந்தது.
 
-**Musical background:** A typical Samba Reggae tune.
+** இசை பின்னணி: ** ஒரு பொதுவான சம்பா ரெக்கே டியூன்.
 
-**Sign:** The sign is a mix between drinking tea and smoking a joint. Drinking
-tea is a common activity in the UK (not sure if there is a specific connection
-to Sheffield). Smoking joints is a main ritual in the Rastafari religion, which
-is closely linked to Reggae music.
+** அடையாளம்: ** அடையாளம் தேநீர் குடிப்பதற்கும் மூட்டு புகைப்பதற்கும் இடையிலான
+கலவையாகும். தேநீர் குடிப்பது என்பது இங்கிலாந்தில் ஒரு பொதுவான செயலாகும்
+(செஃபீல்டுடன் ஒரு குறிப்பிட்ட தொடர்பு இருக்கிறதா என்று உறுதியாக தெரியவில்லை).
+ரச்தாபரி மதத்தில் புகைபிடித்தல் மூட்டுகள் ஒரு முக்கிய சடங்காகும், இது ரெக்கே
+இசையுடன் நெருக்கமாக இணைக்கப்பட்டுள்ளது.
 
 ** வரலாறு: ** 2012 இல் ரோர் லண்டனால் நெட்வொர்க்கிற்கு அறிமுகப்படுத்தப்பட்டது,
 இதற்கு முன்பு அங்கு விளையாடியிருக்கலாம்?
@@ -23,8 +25,8 @@ is closely linked to Reggae music.
 பாடலை விளையாடுவது கலாச்சார ஒதுக்கீட்டைக் கருதுகின்றனர், மேலும் இந்த பாடலை
 ஒழிப்பது குறித்து தொடர்ந்து விவாதம் உள்ளது.
 
-There is also some criticism towards the sign, which is based on a racist
-stereotype.
+அடையாளத்தைப் பற்றிய சில விமர்சனங்களும் உள்ளன, இது ஒரு இனவெறி ச்டீரியோடைப்பை
+அடிப்படையாகக் கொண்டது.
 
 ## தொல்லை
 
