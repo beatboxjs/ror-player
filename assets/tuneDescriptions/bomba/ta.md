@@ -1,24 +1,24 @@
-**Sign:** throw a grenade
+** அடையாளம்: ** ஒரு கையெறி குண்டியை எறியுங்கள்
 
 ## பின்னணி
 
-**Name:** “Bomba” is the name of a commercial song from artist King Africa. The
-Call Break is inspired on the chorus of this song.
+** பெயர்: ** “பாம்பா” என்பது கலைஞர் கிங் ஆப்பிரிக்காவின் வணிகப் பாடலின் பெயர்.
+இந்த பாடலின் கோரசில் அழைப்பு இடைவெளி ஈர்க்கப்பட்டுள்ளது.
 
 **Musical background:** The main tune is inspired in song “Queremos Marcha” by
-Spanish artist Rosario ([YouTube](https://www.youtube.com/watch?v=aC6XTOwNBO8))
+ச்பானிச் artist Rosario ([YouTube](https://www.youtube.com/watch?v=aC6XTOwNBO8))
 and the breaks inspired in song “Bomba” by King Africa
 ([YouTube](https://www.youtube.com/watch?v=QlPS16NeBO0)).
 
-**History:** Invented by a member of a former band in Valencia called Mandala
-around 2014
+** வரலாறு: ** 2014 ஆம் ஆண்டில் வலென்சியாவில் மாண்டலா என்ற முன்னாள் இசைக்குழுவின்
+உறுப்பினரால் கண்டுபிடிக்கப்பட்டது
 
 ## தொல்லை
 
-* **Low Surdo:** medium
-* **Mid Surdo:** easy
+* ** குறைந்த சூர்டோ: ** நடுத்தர
+* ** மிட் சூர்டோ: ** எளிதானது
 * ** உயர் சூர்டோ: ** நடுத்தர
 * ** ரச்: ** சராசரி
 * ** SNARE: ** நடுத்தர
-* **Tamborim:** hard
+* ** தம்போரிம்: ** கடினமானது
 * ** அகோகே: ** நடுத்தர
