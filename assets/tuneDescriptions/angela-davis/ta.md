@@ -1,68 +1,71 @@
-This tune is one of the RoR basics.
+இந்த இசைக்கு ROR அடிப்படைகளில் ஒன்றாகும்.
 
-In this tune, the Low Surdo swaps one of its beaters for a plastic Repinique
-stick (aka a whippy stick) to get a higher pitched sound. Then it plays a
-combination of high-pitched and normal hits.
+இந்த பாடலில், குறைந்த சுர்டோ அதன் பீட்டர்களில் ஒன்றை ஒரு பிளாச்டிக் ரெபினிக்
+குச்சிக்கு (அக்கா ஒரு விப்பி ச்டிக்) மாற்றுகிறது. பின்னர் அது உயரமான மற்றும்
+சாதாரண வெற்றிகளின் கலவையை இயக்குகிறது.
 
-**Sign:** pull two prison bars apart in front of your face
+** அடையாளம்: ** உங்கள் முகத்தின் முன் இரண்டு சிறைச்சாலைகளை இழுக்கவும்
 
 ## பின்னணி
 
-**Name:** Angela Davis is an Afro-American activist from the USA. She
-experienced a lot of oppression as a university professor due to her political
-views and involvement in the black liberation, communist and radical feminist
-movement. She became a major figure of the prison abolishment movement after
-being imprisoned for a murder that she did not commit.
-([Wikipedia](https://en.wikipedia.org/wiki/Angela_Davis), see also the
-documentary “Free Angela & All Political Prisoners”)
+** பெயர்: ** ஏஞ்சலா டேவிச் அமெரிக்காவைச் சேர்ந்த ஆப்ரோ-அமெரிக்க ஆர்வலர். தனது
+அரசியல் கருத்துக்கள் மற்றும் கறுப்பு விடுதலை, கம்யூனிச்ட் மற்றும் தீவிர பெண்ணிய
+இயக்கத்தில் ஈடுபாடு காரணமாக பல்கலைக்கழக பேராசிரியராக அவர் நிறைய அடக்குமுறையை
+அனுபவித்தார். அவர் செய்யாத ஒரு கொலைக்காக சிறையில் அடைக்கப்பட்ட பின்னர் சிறை
+ஒழிப்பு இயக்கத்தின் முக்கிய நபராக அவர் ஆனார். ([விக்கிபீடியா]
+(https://en.wikipedia.org/wiki/Angela_Davis), “இலவச ஏஞ்சலா & அனைத்து அரசியல்
+கைதிகளும்” என்ற ஆவணப்படத்தையும் காண்க)
 
-**Musical background:** Break 1 sounds like from “Sex machine” by James Brown,
-Low Surdo is based on the drumset rhythm of this song, not sure if the rest of
-the tune is also based on his music.
+**Musical background:** இடைவேளை 1 sounds like இருந்து “Sex machine” by James
+Brown, Low Surdo is based on the drumset rhythm of this song, not sure if the
+rest of the tune is also based on his music.
 
-**Sign:** The sign represents prison bars, because Angela Davis is a major
-figure in the prison abolishment movement.
+** அடையாளம்: ** அடையாளம் சிறைக் கம்பிகளைக் குறிக்கிறது, ஏனென்றால் சிறை ஒழிப்பு
+இயக்கத்தில் ஏஞ்சலா டேவிச் ஒரு முக்கிய நபராக இருக்கிறார்.
 
-**History:** Part of the first set of tunes taken from Barking Bateria in 2000.
-The name used to be “James Brown” (famous musician from the USA) and the sign
-was to depict an afro haircut. James Brown didn’t have an afro haircut for most
-of his life, but later got one as it became a symbol of Black pride. The tune
-was renamed because of domestic violence and rape accusations against James
-Brown, and Angela Davis was chosen because she fit the tune sign. Later the tune
-sign was changed. We consider both the old tune sign itself and the fact that
-Angela Davis was chosen because of her afro hair as racist.
+** வரலாறு: ** 2000 ஆம் ஆண்டில் பார்கிங் பாட்டேரியாவிலிருந்து எடுக்கப்பட்ட முதல்
+தொகுப்பின் ஒரு பகுதி. சேம்ச் பிரவுனுக்கு அவரது வாழ்க்கையின் பெரும்பகுதிக்கு
+ஆப்ரோ ஏர்கட் இல்லை, ஆனால் பின்னர் அது பிளாக் பிரைட்டின் அடையாளமாக மாறியது.
+சேம்ச் பிரவுனுக்கு எதிரான வீட்டு வன்முறை மற்றும் கற்பழிப்பு குற்றச்சாட்டுகள்
+காரணமாக இந்த இசைக்கு பெயர் மறுபெயரிடப்பட்டது, மேலும் ஏஞ்சலா டேவிச் ட்யூன்
+அடையாளத்திற்கு பொருந்துவதால் தேர்வு செய்யப்பட்டார். பின்னர் டியூன் அடையாளம்
+மாற்றப்பட்டது. பழைய டியூன் அடையாளம் மற்றும் ஏஞ்சலா டேவிச் தனது ஆப்ரோ முடி இனவெறி
+காரணமாக தேர்ந்தெடுக்கப்பட்டார் என்ற உண்மையை நாங்கள் கருதுகிறோம்.
 
 ## சர்ச்சைகள்
 
-There is an ongoing discussion in the RoR network whether we should play a tune
-that is based on the music of a rapist.
+ஒரு கற்பழிப்பாளரின் இசையை அடிப்படையாகக் கொண்ட ஒரு பாடலை நாம் இயக்க வேண்டுமா
+என்று ROR நெட்வொர்க்கில் தொடர்ந்து விவாதம் நடைபெறுகிறது.
 
-Some RoR members from the Baltic States have recently raised concerns that the
-tune is named after Angela Davis, who was a member of the Communist Party and
-actively collaborating with the oppressive regime of the Soviet Union.
+பால்டிக் மாநிலங்களைச் சேர்ந்த சில ROR உறுப்பினர்கள் அண்மைக் காலத்தில்
+கம்யூனிச்ட் கட்சியின் உறுப்பினராக இருந்த ஏஞ்சலா டேவிசின் பெயரிடப்படுவதாகவும்,
+சோவியத் ஒன்றியத்தின் அடக்குமுறை ஆட்சியுடன் தீவிரமாக ஒத்துழைக்கவும் இந்த
+பாடலுக்கு பெயரிடப்படுவதாக கவலைகளை எழுப்பியுள்ளனர்.
 
 ## தொல்லை
 
 * ** குறைந்த சூர்டோ: ** கடினமானது
-* **Mid Surdo:** easy to remember, but hard to play it without beeing to fast
-  nor to slow
+* ** நடுப்பகுதியில் சூர்தாச்: ** நினைவில் கொள்வது எளிது, ஆனால் மிகவும் கொழுப்பு
+  இல்லாமல் அல்லது மெதுவாக விளையாடுவது கடினம்
 * ** உயர் சூர்டோ: ** நடுத்தர
 * ** ரெபி: ** எளிதானது
-* **Snare:** easy (there are some variations)
+* ** SNARE: ** எளிதானது (சில மாறுபாடுகள் உள்ளன)
 * ** தம்போரிம்: ** எளிதானது
 * ** அகோகே: ** நடுத்தர
 
 ## இடைவெளிகள்
 
-* Break 1 consists of a pickup followed by a bar of eight-notes.
-* Break 2 is a call&response between Surdos and everyone else, it is ended by
-  the pattern of Break 1.
-* Break 3 is a loop which is played by everyone except the Snare (which just
-  continues its normal groove). At the end (or every time just before the Break
-  starts again from the beginning) the pattern of Break 1 is played.
+* பிரேக் 1 ஒரு இடும் இடத்தைக் கொண்டுள்ளது, அதைத் தொடர்ந்து எட்டு குறிப்புகள்
+  உள்ளன.
+* பிரேக் 2 என்பது சூர்டோசுக்கும் மற்ற அனைவருக்கும் இடையிலான அழைப்பு மற்றும்
+  பதில், இது இடைவெளி 1 இன் வடிவத்தால் முடிக்கப்படுகிறது.
+* பிரேக் 3 என்பது ஒரு வளையமாகும், இது கண்ணி தவிர எல்லோரும் விளையாடும் (இது அதன்
+  சாதாரண பள்ளத்தைத் தொடர்கிறது). முடிவில் (அல்லது ஒவ்வொரு முறையும் இடைவெளி
+  ஆரம்பத்தில் இருந்தே மீண்டும் தொடங்குவதற்கு சற்று முன்பு) இடைவெளி 1 இன் முறை
+  விளையாடப்படுகிறது.
 
-## More
+## மேலும்
 
-Combinations of Angela Davis and Funk sound nice (changing between both,
-introducing break of one on the other, etc.). In fact, Angela Davis is a kind of
-funk too.
+ஏஞ்சலா டேவிச் மற்றும் ஃபங்கின் சேர்க்கைகள் நன்றாக ஒலிக்கின்றன (இரண்டிற்கும்
+இடையில் மாறுதல், ஒன்றின் ஒன்றின் இடைவெளியை அறிமுகப்படுத்துதல் போன்றவை).
+உண்மையில், ஏஞ்சலா டேவிசும் ஒரு வகையான ஃபங்க்.

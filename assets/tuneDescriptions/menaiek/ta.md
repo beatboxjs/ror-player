@@ -1,22 +1,24 @@
-**Sign:** put three fingers on your other upper arm (like covering a police
-badge)
+** அடையாளம்: ** உங்கள் மற்ற மேல் கையில் மூன்று விரல்களை வைக்கவும் (பொலிச் பேட்சை
+மறைப்பது போல)
 
 ## பின்னணி
 
-**Name:** “Menaiek” is Hebrew for “cop” (insulting word for police officer)
+** பெயர்: ** “மெனீக்” என்பது “காவல்துறைக்கு” எபிரேய மொழியாகும் (பொலிச்
+அதிகாரிக்கு அவமதிக்கும் சொல்)
 
-**Musical background:** The Surdo and Agogô lines are based on some Afro-Cuban
-Samba rhythms. The Kick Back break is based on Mozambique, a Cuban style of
-music.
+** இசை பின்னணி: ** சூர்டோ மற்றும் அகோகே கோடுகள் சில ஆப்ரோ-கியூபன் சம்பா தாளங்களை
+அடிப்படையாகக் கொண்டவை. கிக் பேக் பிரேக் கியூபா பாணியிலான மொசாம்பிக்கை
+அடிப்படையாகக் கொண்டது.
 
-**Sign:** The sign depicts a cop covering their badge
+** அடையாளம்: ** அடையாளம் அவர்களின் பேட்சை உள்ளடக்கிய ஒரு போலீச்காரரை
+சித்தரிக்கிறது
 
-**History:** Introduced in 2015 by RoR Jerusalem.
+** வரலாறு: ** ரோர் செருசலேம் 2015 இல் அறிமுகப்படுத்தப்பட்டது.
 
 ## தொல்லை
 
 * ** குறைந்த சூர்டோ: ** எளிதானது
-* **Mid/High Surdo:** tricky
+* ** மிட்/ஐ சூர்டோ: ** தந்திரமான
 * ** ரெய்பி: ** கடினமானது
 * ** SNARE: ** கடினமானது
 * ** தம்போரிம்: ** கடினமானது

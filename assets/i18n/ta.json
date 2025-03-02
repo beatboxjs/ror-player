@@ -1,1 +1,281 @@
-{}
+{
+    "utils": {
+        "time-weeks-ago_one": "{{count}} வாரத்திற்கு முன்பு",
+        "time-weeks-ago_other": "{{count}}} வாரங்களுக்கு முன்பு",
+        "time-days-ago_one": "{{count}}} நாள் முன்பு",
+        "time-days-ago_other": "{{count}}} சில நாட்களுக்கு முன்பு",
+        "time-months-ago_one": "{{count}}} மாதத்திற்கு முன்பு",
+        "time-months-ago_other": "{{count}}} மாதங்களுக்கு முன்பு",
+        "time-years-ago_one": "{{count}}} வருடத்திற்கு முன்பு",
+        "time-years-ago_other": "{{count}}} ஆண்டுகளுக்கு முன்பு",
+        "time-month-feb": "பிப்ரவரி",
+        "time-month-mar": "மார்",
+        "time-month-apr": "ஏப்ரல்",
+        "time-month-may": "சி-வைகாசி",
+        "time-month-jun": "சூன்",
+        "time-month-jul": "சூலை",
+        "time-month-aug": "ஆக",
+        "time-month-sep": "செப்",
+        "time-month-oct": "அக்",
+        "time-month-nov": "ஒன்பது",
+        "time-month-dec": "டிசம்பர்",
+        "time-day-with-year": "{{day}} {{month}} {{{}}}",
+        "time-day-without-year": "{{day}} {{month}}",
+        "time-day-and-time": "{{day}} {{time}}",
+        "time-today": "இன்று",
+        "time-yesterday": "நேற்று",
+        "time-month-jan": "சனவரி"
+    },
+    "state": {
+        "untitled-song": "பெயரிடப்படாத பாடல் {{no}}"
+    },
+    "history-picker": {
+        "import-error-title": "தரவை ஏற்றும்போது பிழைகள்",
+        "clear-title": "வரலாற்றை அழிக்கவும்",
+        "clear-ok": "தெளிவான",
+        "clear-message": "உங்கள் வரலாற்றை அழிக்க விரும்புகிறீர்கள் என்பதில் உறுதியாக இருக்கிறீர்களா? நீங்கள் அண்மைக் காலத்தில் பகிரப்பட்ட இணைப்பைத் திறந்திருந்தால், நீங்கள் முன்பு உருவாக்கிய எந்தவொரு தனிப்பயன் ட்யூன்கள்/இடைவெளிகள்/பாடல்களையும் இது இழக்கக்கூடும்.",
+        "history-alt": "வரலாறு",
+        "clear": "தெளிவான",
+        "shared-link": "நீங்கள் ஒரு பகிரப்பட்ட இணைப்பைத் திறந்துவிட்டீர்கள். உங்கள் முந்தைய பாடல்கள் மற்றும் தாளங்களை இங்கே மீட்டெடுக்கலாம்."
+    },
+    "compose": {
+        "add-to-song-tooltip": "பாடலில் சேர்க்கவும்"
+    },
+    "import-dialog": {
+        "unrecognized-format-error": "அங்கீகரிக்கப்படாத வடிவம்.",
+        "decoding-error": "பிழை டிகோடிங் ஒட்டப்பட்ட தரவு: {{message}}",
+        "title": "இறக்குமதி",
+        "paste-placeholder": "இணைப்பு அல்லது மூல தரவு பொருளை ஒட்டவும்…",
+        "customize-selection": "தேர்வைத் தனிப்பயனாக்குங்கள்",
+        "songs": "பாடல்கள்",
+        "tunes-breaks": "ட்யூன்கள்/இடைவெளிகள்",
+        "song-exists": "பாடல் ஏற்கனவே உள்ளது.",
+        "break-exists-identical": "இடைவெளி ஏற்கனவே உள்ளது.",
+        "break-used": "பாடலில் இடைவெளி பயன்படுத்தப்படுகிறது, முடக்க முடியாது.",
+        "break-exists-different": "ஏற்கனவே உள்ளது. உள்ளக பதிப்பு மீறப்படும்.",
+        "import-button": "இறக்குமதி"
+    },
+    "pattern-list": {
+        "create-pattern-title": "இடைவெளியை உருவாக்கவும்",
+        "create-pattern-empty-name-error": "புதிய இடைவெளிக்கு ஒரு பெயரை உள்ளிடவும்.",
+        "create-pattern-duplicate-name-error": "இந்த பெயர் ஏற்கனவே எடுக்கப்பட்டுள்ளது. தயவுசெய்து வேறு ஒன்றை உள்ளிடவும்.",
+        "create-pattern-ok": "உருவாக்கு",
+        "remove-pattern-title": "இடைவெளியை அகற்று",
+        "remove-pattern-message": "நீங்கள் உண்மையில் {{patternName}} ({{tuneName}}) அகற்ற விரும்புகிறீர்களா?",
+        "remove-pattern-ok": "அகற்று",
+        "create-tune-duplicate-name-error": "இந்த பெயர் ஏற்கனவே எடுக்கப்பட்டுள்ளது. தயவுசெய்து வேறு ஒன்றை உள்ளிடவும்.",
+        "create-tune-title": "டியூன் உருவாக்கவும்",
+        "create-tune-empty-name-error": "புதிய இசைக்கு ஒரு பெயரை உள்ளிடவும்.",
+        "create-tune-ok": "உருவாக்கு",
+        "rename-tune-empty-name-error": "இசைக்கு புதிய பெயரை உள்ளிடவும்.",
+        "rename-tune-duplicate-name-error": "இந்த பெயர் ஏற்கனவே எடுக்கப்பட்டுள்ளது. தயவுசெய்து வேறு ஒன்றை உள்ளிடவும்.",
+        "rename-tune-ok": "மறுபெயரிடுங்கள்",
+        "rename-tune-title": "டியூன் மறுபெயரிடுங்கள்",
+        "copy-tune-title": "நகல் டியூன்",
+        "copy-tune-empty-name-error": "இசைக்கு புதிய பெயரை உள்ளிடவும்.",
+        "copy-tune-ok": "நகலெடு",
+        "copy-tune-duplicate-name-error": "இந்த பெயர் ஏற்கனவே எடுக்கப்பட்டுள்ளது. தயவுசெய்து வேறு ஒன்றை உள்ளிடவும்.",
+        "remove-tune-title": "ட்யூனை அகற்று",
+        "remove-tune-message": "{{tuneName}} ட்யூனை அகற்ற விரும்புகிறீர்களா?",
+        "remove-tune-ok": "அகற்று",
+        "user-created-tune": "பயனர் உருவாக்கிய இசைக்கு",
+        "copy-move-rename-break": "இடைவெளியை நகலெடு/நகர்த்த/மறுபெயரிடுதல்",
+        "copy-break": "நகல் இடைவெளி",
+        "remove-break": "அகற்று",
+        "create-break": "புதிய இடைவெளி",
+        "rename-tune": "டியூன் மறுபெயரிடுங்கள்",
+        "copy-tune": "நகல் டியூன்",
+        "remove-tune": "ட்யூனை அகற்று",
+        "create-tune": "புதிய இசைக்கு"
+    },
+    "rename-pattern-dialog": {
+        "empty-name-error": "இடைவேளைக்கு புதிய பெயரை உள்ளிடவும்.",
+        "title-copy": "நகல் இடைவெளி",
+        "title-rename": "இடைவெளி மறுபெயரிடுதல்",
+        "title-move": "இடைவேளையை நகர்த்தவும்",
+        "duplicate-name-error": "இந்த பெயர் ஏற்கனவே எடுக்கப்பட்டுள்ளது. தயவுசெய்து வேறு பெயரில் தட்டச்சு செய்க.",
+        "new-name": "புதிய பெயர்",
+        "different-tune-copy": "வெவ்வேறு பாடலுக்கு நகலெடுக்கவா?",
+        "different-tune-move": "வெவ்வேறு பாடலுக்கு செல்லவா?",
+        "mode": "பயன்முறை",
+        "mode-rename": "மறுபெயரிடுங்கள்",
+        "mode-move": "நகர்த்தவும்",
+        "mode-copy": "நகலெடு"
+    },
+    "share-dialog": {
+        "title": "பங்கு",
+        "link": "இணைப்பு",
+        "raw-compressed": "மூல (சுருக்கப்பட்ட)",
+        "raw-uncompressed": "மூல (சுருக்கப்படாத)",
+        "link-description": "இந்த முகவரி ஐத் திறப்பது கீழே தேர்ந்தெடுக்கப்பட்ட பாடல்களைத் திறந்து, தேர்ந்தெடுக்கப்பட்ட தாளங்கள்/இடைவெளிகள் பட்டியலில் கிடைக்கும்.",
+        "customize-heading": "தேர்வைத் தனிப்பயனாக்குங்கள்",
+        "raw-description": "பிளேயரில் கீழே தேர்ந்தெடுக்கப்பட்ட பாடல்கள் மற்றும் தாளங்கள்/இடைவெளிகளை உருவாக்க இந்தத் தரவை “இறக்குமதி” பட்டியலில் நகலெடுக்கவும்.",
+        "customize-songs": "பாடல்கள்",
+        "customize-tunes-breaks": "ட்யூன்கள்/இடைவெளிகள்",
+        "customize-tooltip-default": "இயல்புநிலையாக திறக்கப்படும்",
+        "customize-tooltip-used": "பாடலில் பயன்படுத்தப்படுகிறது, முடக்க முடியாது"
+    },
+    "song-picker": {
+        "rename-title": "பாடல் பெயரை உள்ளிடவும்",
+        "copy-tooltip": "நகலெடு",
+        "remove-tooltip": "அகற்று",
+        "rename-ok": "மறுபெயரிடுங்கள்",
+        "copy-of-song-name": "{{name} of இன் நகல்",
+        "copy-song-name": "நகலெடு",
+        "remove-title": "பாடலை அகற்று",
+        "remove-message": "{{name}} பாடலை அகற்ற விரும்புகிறீர்களா?",
+        "remove-ok": "அகற்று",
+        "rename-tooltip": "மறுபெயரிடுங்கள்",
+        "new-song": "புதிய பாடல்"
+    },
+    "song-player-toolbar": {
+        "clear-song-ok": "தெளிவான",
+        "tools": "கருவிகள்",
+        "clear-song": "தெளிவான பாடல்",
+        "export-mp3": "எம்பி 3 ஏற்றுமதி",
+        "export-wav": "ஏற்றுமதி WAV",
+        "import": "இறக்குமதி",
+        "clear-song-title": "தெளிவான பாடல்",
+        "clear-song-message": "தற்போதைய பாடலை அழிக்க விரும்புகிறீர்களா?",
+        "share": "பங்கு"
+    },
+    "song-player": {
+        "all-instruments": "அனைத்தும்",
+        "pick-intruments-tooltip": "கருவிகளைத் தேர்ந்தெடுங்கள்",
+        "remove-tooltip": "அகற்று",
+        "all-instruments-drop": "(எல்லாம்)"
+    },
+    "help": {
+        "user-manual": "பயனர் கையேடு",
+        "report-problem": "ஒரு சிக்கலைப் புகாரளிக்கவும்",
+        "download": "பதிவிறக்கம் {{appName}}",
+        "app": "{{appName}} பயன்பாடு",
+        "source-code": "கிதுபில் மூலக் குறியீடு",
+        "language": "மொழி"
+    },
+    "example-song-player": {
+        "listen": "கேளுங்கள்",
+        "download-mp3": "Mp3 ஆக பதிவிறக்கவும்"
+    },
+    "tune-info": {
+        "notation": "குறியீடு",
+        "notation-info": "குறிப்புகளைக் காண கீழேயுள்ள இடைவெளிகளில் {{pen}} of இல் சொடுக்கு செய்க.",
+        "tune-sheet-pdf": "டியூன் தாள் (பி.டி.எஃப்)",
+        "video": "ஒளிதோற்றம்",
+        "sounds": "ஒலிகள்",
+        "download-mp3": "Mp3 ஆக பதிவிறக்கவும்"
+    },
+    "playback-settings-picker": {
+        "speed": "வேகம்",
+        "speed-reset": "மீட்டமை",
+        "loop": "லூப்",
+        "whistle": "விசில்",
+        "whistle-off": "இல்லை",
+        "whistle-one": "ஒன்று",
+        "whistle-all": "எல்லாவற்றிலும்",
+        "volume-master": "மாச்டர்",
+        "title": "பின்னணி அமைப்புகள்"
+    },
+    "export": {
+        "error-title": "{{type}} ஏற்றுமதி செய்வதில் பிழை"
+    },
+    "overview": {
+        "listen": "கேளுங்கள்",
+        "compose": "எழுதுங்கள்"
+    },
+    "pattern-list-filter": {
+        "filter-placeholder": "வடிகட்டி: {{category}}}"
+    },
+    "pattern-placeholder": {
+        "restore-title": "அசல் மீட்டமை",
+        "restore-message": "உங்கள் மாற்றங்களை {{patternName}} ({{tuneName}}) மாற்றவும் அசல் இடைவெளியை மீட்டெடுக்கவும் விரும்புகிறீர்கள் என்பதில் உறுதியாக இருக்கிறீர்களா?",
+        "restore-ok": "மீட்டமை",
+        "user-created-tooltip": "பயனர் உருவாக்கிய இடைவெளி",
+        "listen-tooltip": "கேளுங்கள்",
+        "show-notes-tooltip": "குறிப்புகளைக் காட்டு",
+        "edit-notes-tooltip": "குறிப்புகளைத் திருத்து",
+        "restore-tooltip": "அசல் மீட்டமை"
+    },
+    "play-pause-stop-button": {
+        "pause": "இடைநிறுத்தம்",
+        "play": "விளையாடுங்கள்",
+        "stop": "நிறுத்து"
+    },
+    "update": {
+        "new-version": "{{appName} of இன் புதிய பதிப்பு கிடைக்கிறது.",
+        "refresh": "புதுப்பிக்க {{refresh}}.",
+        "refresh-refresh": "பக்கத்தைப் புதுப்பிக்கவும்"
+    },
+    "config": {
+        "instruments-ls": "குறைந்த சூர்டோ",
+        "instruments-ms": "நடுப்பகுதியில் காது கேளாதவர்",
+        "instruments-hs": "உயர் சூர்டோ",
+        "instruments-re": "கண்ணீர்",
+        "instruments-ta": "SAMBOURINE",
+        "instruments-sn": "கண்ணி",
+        "instruments-ag": "அகோகச்",
+        "instruments-sh": "சேக்கர்",
+        "instruments-ot": "கூச்சல்",
+        "stroke-description-hd": "கையால் அறைந்து கொள்ளுங்கள்",
+        "stroke-description-0": "கையால் ஈரமான",
+        "stroke-description-sil": "அமைதியான பக்கவாதம்",
+        "stroke-description-fl": "விரிவடைய",
+        "stroke-description-w": "விப்பி (தம்போரிம்) குச்சி",
+        "stroke-description-.": "அமைதியான பக்கவாதம்",
+        "stroke-description-wh": "விசில்",
+        "stroke-description-wh2": "நீண்ட விசில்",
+        "stroke-description-s": "மென்மையான விரிவடைதல்",
+        "time-with-triplets": "மும்மடங்குகளுடன் {{time}",
+        "time-with-quintuplets": "{{time}}} Quintuplets உடன்",
+        "category-all": "அனைத்து தாளங்களும்",
+        "category-common": "பொதுவான தாளங்கள்",
+        "category-uncommon": "சிறப்பான தாளங்கள்",
+        "category-new": "புதிய தாளங்கள்",
+        "category-proposed": "முன்மொழியப்பட்ட தாளங்கள்",
+        "category-custom": "தனிப்பயன் தாளங்கள்",
+        "category-onesurdo": "காது கேளாதவர்",
+        "category-easy": "எளிதானது",
+        "category-medium": "சராசரி",
+        "category-tricky": "தந்திரமான",
+        "category-western": "மேற்கத்திய இசை",
+        "category-cultural-appropriation": "கலாச்சார ஒதுக்கீடு",
+        "stroke-volume-defaults": "இயல்புநிலை",
+        "stroke-volume-shitty": "சிட்டி பேச்சாளர்கள்"
+    },
+    "general": {
+        "untitled-song": "பெயரிடப்படாத பாடல்",
+        "dialog-close": "மூடு",
+        "dialog-cancel": "ரத்துசெய்",
+        "dialog-ok": "சரி"
+    },
+    "i18n": {
+        "general-breaks": "பொது இடைவெளிகள்",
+        "special-breaks": "சிறப்பு இடைவெளிகள்",
+        "shouting-breaks": "கூச்சலிடுதல் இடைவெளிகள்",
+        "tune": "டியூன்",
+        "silence": "{{beats}} ம silence னம்",
+        "whistle-in": "விசில் உள்ளே"
+    },
+    "pattern-length-picker": {
+        "length": "நீளம்: {{length}}"
+    },
+    "pattern-player-dialog": {
+        "share": "பங்கு"
+    },
+    "pattern-player": {
+        "restore-title": "அசல் மீட்டமை",
+        "restore-message": "உங்கள் மாற்றங்களை மாற்றி அசல் இடைவெளியை மீட்டெடுக்க விரும்புகிறீர்கள் என்பதில் உறுதியாக இருக்கிறீர்களா?",
+        "restore-ok": "மீட்டமை",
+        "restore": "அசல் மீட்டமை"
+    },
+    "time-signature-picker": {
+        "time-signature": "நேர கையொப்பம்: {{time}}"
+    },
+    "upbeat-picker": {
+        "upbeat": "உற்சாகம்: {{upbeat}}}"
+    },
+    "mute-button": {
+        "mute-all": "அனைத்து கருவிகளையும் முடக்குகிறது",
+        "unmute-all": "எல்லா கருவிகளையும் ஊடுருவவும்"
+    }
+}

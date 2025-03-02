@@ -1,13 +1,14 @@
-**Sign:** Put one fist on top of the other, as if you were holding a paddle, and
-start paddling.
+** அடையாளம்: ** நீங்கள் ஒரு துடுப்பைப் பிடிப்பது போல, ஒரு முச்டியை மற்றொன்றுக்கு
+மேல் வைத்து, துடுப்பாட்டத்தைத் தொடங்குங்கள்.
 
 ## பின்னணி
 
-**Musical background:** Based on the song with the same name by Arto
-Tunçboyacıyan, an artist part of the Armenian minority in Turkey, and his band
-Armenian Navy Band ([YouTube](https://www.youtube.com/watch?v=OCgrJFbIAcw)).
+**Musical background:** Based on the song with the same பெயர் by Arto
+Tunçboyacıyan, an artist பகுதி of the ஆர்மீனியன் minority in Turkey, and his
+பட்டை ஆர்மீனியன் கடற்படை பட்டை
+([YouTube](https://www.youtube.com/watch?v=OCgrJFbIAcw)).
 
-**History:** Introduced by RoR Berlin in 2022.
+** வரலாறு: ** 2022 இல் ரோர் பெர்லின் அறிமுகப்படுத்தியது.
 
 ## தொல்லை
 

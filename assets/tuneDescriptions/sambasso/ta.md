@@ -1,15 +1,15 @@
-Was chosen as a **Tune of the Year 2021** (along with Bhaṅgṛā).
+2021 ஆம் ஆண்டின் ** டியூனாக தேர்ந்தெடுக்கப்பட்டது ** (பிகாவுடன்).
 
-**Sign:** V with 4 fingers (vulcan salute) on both hands, slide the gaps into
-each other
+** அடையாளம்: ** v இரு கைகளிலும் 4 விரல்களுடன் (வல்கன் சல்யூட்), இடைவெளிகளை
+ஒருவருக்கொருவர் சறுக்கவும்
 
 ## பின்னணி
 
-**Name:** Probably a combination of the words “Samba” and “basso” (Italian for
-“low” or “base”).
+** பெயர்: ** அநேகமாக “சம்பா” மற்றும் “பாசோ” (“குறைந்த” அல்லது “அடிப்படை” க்கு
+இத்தாலியன்) என்ற சொற்களின் கலவையாகும்.
 
-**Musical background:** The Snare and Repi line and the Intro seem to be Samba
-Reggae style. *(More info needed.)*
+** இசை பின்னணி: ** ச்னேர் மற்றும் ரெபி லைன் மற்றும் அறிமுகம் சம்பா ரெக்கே பாணி
+என்று தெரிகிறது. *(மேலும் செய்தி தேவை.)*
 
 ** அடையாளம்: ***(மேலும் செய்தி தேவை.)*
 
