@@ -11,7 +11,7 @@ export function getMaxIndex(arr: Record<number, any>): number | null {
 	const keys = Object.keys(arr);
 	let ret: number | null = null;
 	for(let i=0; i<keys.length; i++) {
-		const t = parseInt(keys[i]);
+		const t = Number(keys[i]);
 		if(!isNaN(t) && (ret == null || t > ret))
 			ret = t;
 	}
