@@ -12,6 +12,11 @@
 
 	export const DEFAULT_FILTER: Filter = { text: "", cat: "all" };
 
+	function tuneSearchText(state: State, name: string): string {
+		const tune = state.tunes[name];
+		return tune.displayName ? tune.displayName + name : name;
+	}
+
 	export function filterPatternList(state: State, params?: Filter | null): string[] {
 		params = params || DEFAULT_FILTER;
 
@@ -19,7 +24,8 @@
 		const tuneNames = getSortedTuneList(state);
 		const text = params && params.text.trim().toLowerCase() || "";
 		for(let i = 0; i < tuneNames.length; i++) {
-			if(text ? (tuneNames[i].toLowerCase().indexOf(text) != -1) : tuneIsInCategory(state.tunes[tuneNames[i]], params.cat))
+			const toSearch = tuneSearchText(state, tuneNames[i]);
+			if(text ? (toSearch.toLowerCase().indexOf(text) != -1) : tuneIsInCategory(state.tunes[tuneNames[i]], params.cat))
 				ret.push(tuneNames[i]);
 		}
 		return ret;
