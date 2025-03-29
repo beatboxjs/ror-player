@@ -326,8 +326,8 @@ export function getSongName(state: State, songIdx?: number): string | undefined 
 	return getI18n().t("state.untitled-song", { no });
 }
 
-function getTuneSortName(tunes: Record<string, Tune>, tuneKey: string): string {
-	return (tunes[tuneKey].displayName ?? tuneKey).toLowerCase();
+function getTuneSortName(tunes: Record<string, Tune>, name: string): string {
+	return (tunes[name].displayName ?? name).toLowerCase();
 }
 
 export function getSortedTuneList(state: State): Array<string> {
@@ -343,7 +343,6 @@ export function getSortedTuneList(state: State): Array<string> {
 			return 1;
 		else
 			return getTuneSortName(state.tunes, a) < getTuneSortName(state.tunes, b) ? -1 : 1;
-
 	});
 }
 
