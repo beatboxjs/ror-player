@@ -19,7 +19,7 @@
         "time-month-oct": "அக்",
         "time-month-nov": "ஒன்பது",
         "time-month-dec": "டிசம்பர்",
-        "time-day-with-year": "{{day}} {{month}} {{{}}}",
+        "time-day-with-year": "{{year}} {{month}} {{day}}",
         "time-day-without-year": "{{day}} {{month}}",
         "time-day-and-time": "{{day}} {{time}}",
         "time-today": "இன்று",
@@ -120,7 +120,7 @@
         "copy-tooltip": "நகலெடு",
         "remove-tooltip": "அகற்று",
         "rename-ok": "மறுபெயரிடுங்கள்",
-        "copy-of-song-name": "{{name} of இன் நகல்",
+        "copy-of-song-name": "{{name}} இன் நகல்",
         "copy-song-name": "நகலெடு",
         "remove-title": "பாடலை அகற்று",
         "remove-message": "{{name}} பாடலை அகற்ற விரும்புகிறீர்களா?",
@@ -189,7 +189,7 @@
     "pattern-placeholder": {
         "restore-title": "அசல் மீட்டமை",
         "restore-message": "உங்கள் மாற்றங்களை {{patternName}} ({{tuneName}}) மாற்றவும் அசல் இடைவெளியை மீட்டெடுக்கவும் விரும்புகிறீர்கள் என்பதில் உறுதியாக இருக்கிறீர்களா?",
-        "restore-ok": "மீட்டமை",
+        "restore-ok": "மீட்டெடு",
         "user-created-tooltip": "பயனர் உருவாக்கிய இடைவெளி",
         "listen-tooltip": "கேளுங்கள்",
         "show-notes-tooltip": "குறிப்புகளைக் காட்டு",
@@ -202,7 +202,7 @@
         "stop": "நிறுத்து"
     },
     "update": {
-        "new-version": "{{appName} of இன் புதிய பதிப்பு கிடைக்கிறது.",
+        "new-version": "{{appName}} இன் புதிய பதிப்பு கிடைக்கிறது.",
         "refresh": "புதுப்பிக்க {{refresh}}.",
         "refresh-refresh": "பக்கத்தைப் புதுப்பிக்கவும்"
     },
@@ -225,7 +225,7 @@
         "stroke-description-wh": "விசில்",
         "stroke-description-wh2": "நீண்ட விசில்",
         "stroke-description-s": "மென்மையான விரிவடைதல்",
-        "time-with-triplets": "மும்மடங்குகளுடன் {{time}",
+        "time-with-triplets": "மும்மடங்குகளுடன் {{time}}",
         "time-with-quintuplets": "{{time}}} Quintuplets உடன்",
         "category-all": "அனைத்து தாளங்களும்",
         "category-common": "பொதுவான தாளங்கள்",
@@ -265,7 +265,7 @@
     "pattern-player": {
         "restore-title": "அசல் மீட்டமை",
         "restore-message": "உங்கள் மாற்றங்களை மாற்றி அசல் இடைவெளியை மீட்டெடுக்க விரும்புகிறீர்கள் என்பதில் உறுதியாக இருக்கிறீர்களா?",
-        "restore-ok": "மீட்டமை",
+        "restore-ok": "மீட்டெடு",
         "restore": "அசல் மீட்டமை"
     },
     "time-signature-picker": {

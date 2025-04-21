@@ -13,8 +13,8 @@ Back](https://youtu.be/8u4D0wAc2AA?t=6m27s)).
 ** அடையாளம்: ** “żurav” என்பது “கிரேன்” (ஒரு வகை பெரிய பறவை) க்கு போலந்து.
 அடையாளம் பறவையின் கொக்கைக் குறிக்கிறது.
 
-**History:** Introduced by RoR Kraków and Ror Trójmiasto on the TNM 2015 in
-Żuravlów.
+**வரலாறு:** TNM 2015 இல் Żuravlów இல் RoR Kraków மற்றும் Ror Trójmiasto
+ஆகியோரால் அறிமுகப்படுத்தப்பட்டது.
 
 ## தொல்லை
 
