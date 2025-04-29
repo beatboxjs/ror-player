@@ -157,23 +157,23 @@ export function songToBeatbox(song: SongParts, state: State, playbackSettings: P
 		}
 	}
 
-	for(let i=0; i<length; i++) {
+	for(let i=0; i<length*4; i++) {
 		for(const inst of config.instrumentKeys) {
-			if(isEnabled(inst, playbackSettings.headphones, playbackSettings.mute) && song[i] && song[i][inst]) {
-				const patternReference = song[i][inst];
+			if(isEnabled(inst, playbackSettings.headphones, playbackSettings.mute) && song[i/4] && song[i/4][inst]) {
+				const patternReference = song[i/4][inst];
 				const pattern = patternReference && getPatternFromState(state, patternReference);
 				if(pattern) {
 					let patternLength = 1;
-					for(let j=i+1; j<i+pattern.length/4 && (!song[j] || !song[j][inst]); j++) // Check if pattern is cut off
+					for(let j=i/4+1; j<i/4+pattern.length/4 && (!song[j] || !song[j][inst]); j++) // Check if pattern is cut off
 						patternLength++;
 
-					insertPattern(i, pattern, inst, patternLength, false);
+					insertPattern(i/4, pattern, inst, patternLength, false);
 				}
 			}
 		}
 
 		if(playbackSettings.whistle) {
-			insertPattern(i, normalizePattern({
+			insertPattern(i/4, normalizePattern({
 				length: 4,
 				time: 1,
 				upbeat: 0,
