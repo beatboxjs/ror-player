@@ -762,6 +762,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		categories: ["new", "uncommon", "tricky"],
 		sheet: sheetUrl + "bomba.pdf",
 		descriptionFilename: "bomba",
+		video: "https://tube.rhythms-of-resistance.org/videos/embed/3898aU5Yn4dd9a1SyxoJn2",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -1707,6 +1708,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		categories: [ "new", "uncommon", "tricky" ],
 		sheet: sheetUrl + "malkhas-akhber.pdf",
 		descriptionFilename: "malkhas-akhber",
+		video: "https://tube.rhythms-of-resistance.org/videos/embed/8wp31sH88dMbxHKxSXGAKM",
 		patterns: {
 			Tune: {
 				loop: true,
@@ -2934,6 +2936,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		categories: [ "new", "uncommon", "medium" ],
 		sheet: sheetUrl + "trans-europa-express.pdf",
 		descriptionFilename: "trans-europa-express",
+		video: "https://tube.rhythms-of-resistance.org/videos/embed/cdgQ9uW6rNwSQDTY5kibZW",
 		patterns: {
 			Tune: {
 				upbeat: 1,
