@@ -570,7 +570,7 @@
 				}
 
 				.timeline {
-					height: 2.5em;
+					height: 2em;
 					border-bottom: 1px solid #888;
 				}
 
