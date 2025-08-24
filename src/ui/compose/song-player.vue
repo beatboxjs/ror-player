@@ -86,11 +86,10 @@
 	const length = computed(() => {
 		let length = getEffectiveSongLength(song.value, state.value);
 		if(isDraggingPattern.value)
-			length++;
+			length = length+4;
 		if(dragOver.value && typeof dragOver.value === 'object')
-			length = Math.max(length, dragOver.value.idx+2);
-		length = Math.max(4, length);
-		return length;
+			length = Math.max(length, dragOver.value.idx+8);
+		return Math.max(16, length);
 	});
 
 	const getColSpan = (instrumentKey: Instrument, i: number) => {
@@ -103,7 +102,7 @@
 			return 1;
 
 		let ret = 1;
-		while(ret<(pattern.length/4)) {
+		while(ret<(pattern.length)) {
 			if(song.value[i+ret] && song.value[i+ret][instrumentKey])
 				break;
 
@@ -279,7 +278,7 @@
 			deleteSongPart(song.value, idx, config.instrumentKeys[instrIdx+i]);
 		}
 
-		const patternLength = Math.ceil((getPatternFromState(state.value, tuneAndPattern) as Pattern).length / 4);
+		const patternLength = (getPatternFromState(state.value, tuneAndPattern) as Pattern).length;
 		for(const part of getAffectedResizePatternRange(instr, idx, dragOver.value.instr as Instrument, dragOver.value.idx, patternLength)) {
 			dropPattern(tuneAndPattern, part[0], part[1]);
 		}
@@ -345,7 +344,7 @@
 				<div class="field all-drop"></div>
 			</div><div class="song-container"><div class="bb-col song" v-for="i in length" :key="i">
 				<div class="timeline">
-					<span v-for="i2 in 4" :key="i2" class="beat" :class="'beat-i-'+((i-1)*4+i2-1)" @click="setPosition((i-1)*4+i2-1, $event)">{{(i-1)*4+i2}}</span>
+					<span class="beat" :class="'beat-i-'+(i-1)" @click="setPosition(i-1, $event)">{{i}}</span>
 				</div>
 				<div
 					:class="`field song-field-${instrumentKey}-${i-1} ${getDragOverClass({ instr: instrumentKey, idx: i-1 })}`"
@@ -495,7 +494,7 @@
 				vertical-align: top;
 
 				&.song {
-					width: 10em;
+					width: 2.5em;
 
 					.field {
 						padding: .2em .5em;
@@ -504,11 +503,12 @@
 							position: relative;
 						}
 
-						@for $i from 1 through 20 {
+						@for $i from 1 through 200 {
 							.pattern-container.colspan-#{$i} {
-								width: 10em * $i - 1em;
+								width: 2.5em * $i - 1em;
 							}
-
+						}
+						@for $i from 1 through 20 {
 							.pattern-container.rowspan-#{$i} {
 								height: 3.4em * $i - .4em;
 							}
@@ -548,8 +548,12 @@
 					padding-right: 5px;
 				}
 
-				&.instrument-actions,&.song {
-					border-right: 1px solid #888;
+                &.song {
+					border-right: 1px solid #ddd;
+				}
+
+				&.instrument-actions,&.song:nth-child(4n) {
+					border-right: 2px solid #888;
 				}
 
 				&.instruments .field,&.instrument-actions .field {
@@ -566,12 +570,12 @@
 				}
 
 				.timeline {
-					height: 2em;
+					height: 2.5em;
 					border-bottom: 1px solid #888;
 				}
 
 				.beat {
-					width: 25%;
+                    width: 100%;
 					cursor: pointer;
 					display: inline-block;
 					padding: 0 .5ex;

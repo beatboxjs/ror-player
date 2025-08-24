@@ -40,15 +40,15 @@ export type Config = {
 	}>;
 
 	/**
-	 * The available time signatures. The key is the number of strokes per beat (the number of beats per bar is fixed to 4), the value is
-	 * the name of the time measurement as it should be shown in the UI.
+	 * The available time signatures. The key is the number of strokes per beat, the value is the name of the time measurement as it should be
+     * shown in the UI.
 	 */
 	times: Record<number, () => string>;
 
 	/**
-	 * The stroke resolution that will be used throughout the app, in number of strokes per beat (the number of beats per bar is fixed to 4).
-	 * This has to be the least common multiple of the available time signatures. For example, to allow for both rhythms that use 4 strokes
-	 * per beat and rhythms that use 3 strokes per beat, the stroke resolution needs to be 12 (or a multiple thereof).
+	 * The stroke resolution that will be used throughout the app, in number of strokes per beat. This has to be the least common multiple of
+     * the available time signatures. For example, to allow for both rhythms that use 4 strokes per beat and rhythms that use 3 strokes per
+     * beat, the stroke resolution needs to be 12 (or a multiple thereof).
 	 */
 	playTime: number;
 
