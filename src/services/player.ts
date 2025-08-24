@@ -130,7 +130,7 @@ export function patternToBeatbox(pattern: Pattern, playbackSettings: PlaybackSet
 export function songToBeatbox(song: SongParts, state: State, playbackSettings: PlaybackSettings): RawPatternWithUpbeat {
 	const length = getEffectiveSongLength(song, state);
 	let maxUpbeat = config.playTime*4;
-	let ret: RawPattern = new Array(maxUpbeat + length*config.playTime*4);
+	let ret: RawPattern = new Array(maxUpbeat + length*config.playTime);
 	let upbeat = 0;
 
 	function insertPattern(idx: number, pattern: Pattern, instrumentKey: Instrument, patternLength: number, whistle: Whistle) {
@@ -143,8 +143,8 @@ export function songToBeatbox(song: SongParts, state: State, playbackSettings: P
 
 		let upbeatHasStarted = false;
 		let idxOffset = pattern.upbeat * config.playTime / pattern.time;
-		idx = idx*config.playTime*4;
-		for(let i = 0; i<(patternLength*config.playTime*4 + idxOffset); i++) {
+		idx = idx*config.playTime;
+		for(let i = 0; i<(patternLength*config.playTime + idxOffset); i++) {
 			if((patternBeatbox[i] || []).length > 0)
 				upbeatHasStarted = true;
 
@@ -164,7 +164,7 @@ export function songToBeatbox(song: SongParts, state: State, playbackSettings: P
 				const pattern = patternReference && getPatternFromState(state, patternReference);
 				if(pattern) {
 					let patternLength = 1;
-					for(let j=i+1; j<i+pattern.length/4 && (!song[j] || !song[j][inst]); j++) // Check if pattern is cut off
+					for(let j=i+1; j<i+pattern.length && (!song[j] || !song[j][inst]); j++) // Check if pattern is cut off
 						patternLength++;
 
 					insertPattern(i, pattern, inst, patternLength, false);
