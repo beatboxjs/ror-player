@@ -1,4 +1,5 @@
-**Sign:** smoke a joint like a cup of tea (with thumb and index finger)
+**Znak:** pal skręta tak jak filiżankę herbaty (używając tylko kciuka i palca
+wskazującego)
 
 ## Kontekst
 
