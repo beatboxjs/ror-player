@@ -1,5 +1,5 @@
-**Sign:** Point with your index fingers to the ground, your thumbs pointing
-towards each other.
+**Znak:** palcami wskazującymi wskaż na ziemie, tak żeby twoje kciuki były
+zwrócone do siebie.
 
 ## Kontekst
 
