@@ -1,6 +1,5 @@
-This tune exists in two variations, one in 4/4 and one in 6/8. Usually, the 4/4
-variation is played, sometimes switching to the 3/4 for a moment while
-increasing the speed.
+Ten rytm istnieje w dwóch wersjach, jedna w metrum 4/4 i druga w 6/8. Częściej
+się gra wersje w 4/4, czasami przechodząc na chwile w 3/4 i podwyższając tempo.
 
 ## Kontekst
 
