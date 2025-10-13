@@ -1,4 +1,4 @@
-**Sign:** Wave an imaginary tissue like saying goodbye to a train.
+**Znak:** Zamachaj wymyśloną chusteczką, tak jakbyś żegnałx odjeżdżający pociąg.
 
 Doppler Break sign: Move your hand in front of your body from one side to the
 other like a train passing by.
