@@ -1,4 +1,4 @@
-**Sign:** “Walk” with two fingers on the other hand.
+**Znak:** "Chodź" dwoma palcami po dłoni.
 
 ## Kontekst
 
