@@ -1,4 +1,4 @@
-Was drawn as the **Tune of the Year 2019**.
+Wylosowano jako **Rytm Roku 2019**.
 
 Start the tune with the intro break (without surdos), then count in the Surdos
 for the "Surdo intro part". Come out of the intro and into the groove using the
