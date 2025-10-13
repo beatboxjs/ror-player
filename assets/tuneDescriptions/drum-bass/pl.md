@@ -1,5 +1,5 @@
-Sounds more like Hip-Hop than Drum ‘n’ Bass but has a really nice groove. Can be
-very cheerful when played quite fast or be groovy when played slow.
+Brzmi bardziej jak Hip-Hop niż Drum'n'Bass ale i tak ma dobry groove. Może być
+bardzo radosny gdy się go gra szybciej albo groovy gdy się go gra wolniej.
 
 The Low Surdo is very important in this tune because it gives the special hip
 hop rhythm and “carries” the tune. There are different versions on the tune
