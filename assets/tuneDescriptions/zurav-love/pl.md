@@ -1,4 +1,4 @@
-Was drawn as the **Tune of the Year 2018**.
+Wylosowano jako **Rytm Roku 2018**.
 
 **Sign:** open and close the beak of a bird with your hands
 
