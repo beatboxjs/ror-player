@@ -1,5 +1,5 @@
-**Sign:** looking angry, forming an A with hands over your head (as a pointed
-cap).
+**Znak:** wkurzona mina, dłonie ułożone w literke A nad głową (przypominające
+spiczastą czapke).
 
 ## Kontekst
 
