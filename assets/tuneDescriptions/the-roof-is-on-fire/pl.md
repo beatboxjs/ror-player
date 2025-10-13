@@ -1,4 +1,4 @@
-Was drawn as a **Tune of the Year 2024**.
+Wylosowany jako **Rytm Roku** 2024.
 
 **Sign:** Form a roof with your hands, interlace the fingers and wiggle them
 like flames.
