@@ -1,4 +1,5 @@
-This tune is in a Tango-like-rhythm which goes along for 8 steps/two bars.
+Ragga ma podobny rytm do stylu Tango, całość rozkłada się na osiem uderzeń / dwa
+takty.
 
 The Surdos are the basis, the complete tune is build upon. In five of the six
 breaks they have a special role; in four of them, they call the
