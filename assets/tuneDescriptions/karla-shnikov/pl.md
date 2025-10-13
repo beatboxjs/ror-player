@@ -1,4 +1,4 @@
-This tune is one of the RoR basics. Often simply called “Karla”.
+Jest to jeden z podstawowych rytmów RoRu. Często zwany po prostu "Karla".
 
 It sounds a bit, as the name implies, like machinegun-fire. As the Breaks have
 steady drum rolls in them, it’s important to aim for a steady even roll.
