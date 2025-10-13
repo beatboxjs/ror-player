@@ -1,4 +1,4 @@
-Was chosen as a **Tune of the Year 2021** (along with Bhaṅgṛā).
+Wybrano jako **Rytm Roku 2021** (wraz z Bhaṅgṛā).
 
 **Sign:** V with 4 fingers (vulcan salute) on both hands, slide the gaps into
 each other
