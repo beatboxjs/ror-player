@@ -1,7 +1,7 @@
-A nice tune based on the famous folk song “What shall we do with the drunken
-sailor?”. The Agogôs and Surdos together make the melody of that song (Agogôs:
-“What shall we do with the drunken sailor”, Surdos in the 4th bar: “Early in the
-morning”).
+Rytm oparty o sławną folkową piosenke "What shall we do with the drunken
+sailor?” (Morskie opowieści). Agogo i Surda wspólnie tworzą melodie tej piosenki
+(Agogo: “What shall we do with the drunken sailor”, Surda w czwartym takcie:
+“Early in the morning”).
 
 **Sign:** build an eyepatch with one hand in front of your eye
 

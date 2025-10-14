@@ -1,4 +1,4 @@
-**Sign:** throw a grenade
+**Znak:** rzucenie granatem
 
 ## Kontekst
 

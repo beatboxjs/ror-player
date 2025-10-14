@@ -1,4 +1,4 @@
-A very energetic tune, which sounds a lot like hip hop.
+Bardzo energiczny rytm, który przypomina hip hop.
 
 For the Surdos it might be quite hard to be in time. While they actually just
 have a few hits to play it’s important for them to be synchronized. Try a

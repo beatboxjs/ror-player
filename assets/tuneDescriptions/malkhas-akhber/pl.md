@@ -1,5 +1,5 @@
-**Sign:** Put one fist on top of the other, as if you were holding a paddle, and
-start paddling.
+**Znak:** Ułóż jedną pięść na drugiej (tak jakbyś trzymałx wiosło) i zacznij
+wiosłować.
 
 ## Kontekst
 

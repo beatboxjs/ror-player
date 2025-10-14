@@ -1,4 +1,4 @@
-**Sign:** with both hands a rotating rope and jump up and down
+**Znak:** udawaj że skaczesz na skakance
 
 ## Kontekst
 

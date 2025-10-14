@@ -1,5 +1,5 @@
-A quite groovy tune that can be played slowly for a long time. The Surdos make a
-melody, so they are suitable to be played by one Surdo player with three Surdos.
+Całkiem groovy rytm, który można grać wolno, przez dłuższy czas. Surda tworzą
+melodię i da się ją zagrać w pojedynkę na trzech surdach.
 
 **Sign:** monkey, both hands in armpits
 

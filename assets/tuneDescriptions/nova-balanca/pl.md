@@ -1,6 +1,6 @@
-The tune is rather easy to learn, because a lot of the voices and breaks are
-similar to other rhythms. Also there are kind of three groups which are each
-synchronized:
+Jest to raczej prosty rytm do nauczenia się bo wiele linii i brejków jest
+podobnych do innych rytmów. Całość możnaby podzielić na trzy grupy, które są z
+sobą zsynchronizowane:
 
 * Surdos playing after each other so it becomes a – quite slow – easy
   memorize-able melody.

@@ -1,4 +1,4 @@
-A funny tune based on the famous song “Tequila” by The Champs.
+Śmieszkowaty rytm oparty na popularnej piosence "Tequila" zespołu The Champs.
 
 The Surdos make together make the melody of the saxophone in the song. It is
 thus important for the sound of the tune to time them right. The rhythm of Low

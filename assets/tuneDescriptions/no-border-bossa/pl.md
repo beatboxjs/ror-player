@@ -1,4 +1,4 @@
-**Sign:** interlock your hands like a fence and then open it.
+**Sign:** złącz dłonie w ogrodzenie z siatki i otwórz je.
 
 ## Kontekst
 

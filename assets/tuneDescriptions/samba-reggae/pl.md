@@ -1,5 +1,5 @@
-This tune is one of the RoR basics. It is (together with ‘Custard’) the RoR-Tune
-which sounds most like “real” Samba.
+Jest to jeden z podstawowych rytmów RoRu. Wśród całego repertuaru RoR (razem z
+"Custard") brzmi najbardziej jak "prawdziwa" Samba.
 
 It is the tune with the most breaks (seven, not counting the tamb-stroke/clave).
 And a lot of breaks also have nice bonuses. For example is every break ended

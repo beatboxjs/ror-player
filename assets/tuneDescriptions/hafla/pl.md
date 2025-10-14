@@ -1,4 +1,4 @@
-It is not the easiest to play but sounds really cool!
+Nie należy do najłatwiejszych ale brzmi świetnie!
 
 **Sign:** spread arms and shake your shoulders and hips
 

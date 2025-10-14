@@ -1,6 +1,6 @@
-This tune is really going forward: The Low Surdo is pushing with techno-like
-damped hits, while the Repinique and Snare voices are one of the most fancy –
-and also most difficult – ones in the RoR repertoire.
+Cały rytm jest bardzo energiczny: Niskie Surdo prowadzi stłumionymi,
+przypominającymi techno uderzeniami. Linie Repi i Werbla są jednymi z bardziej
+finezyjnych i jednymi z najtrudniejszych w całym repertuarze RoRu.
 
 One thing to note is that while most of the instruments have parts that are
 played over 4 beats, the Surdos and Repi have a pattern played over 8. It is

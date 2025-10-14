@@ -1,4 +1,4 @@
-**Sign:** draw a triangle in the air with one hand
+**Znak:** jedną ręką narysuj trójkąt w powietrzu
 
 ## Kontekst
 

@@ -1,5 +1,5 @@
-**Sign:** put the fingertips together with straight fingers, building a top of a
-mountain with both hands
+**Znak:** z wyprostowanymi palcami, złącz opuszki palców tworząc obiema rękoma
+górski szczyt
 
 ## Kontekst
 

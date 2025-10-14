@@ -1,5 +1,5 @@
-**Sign:** Place forearms on top of each other in front of you, fingertips
-aligned with elbows (like in the Estonian folk dance).
+**Znak:** Złóż przedramiona jedno na drugim, tak by opuszki palców wyrównane z
+łokciami (jak w estońskim tańcu ludowym).
 
 ## Kontekst
 

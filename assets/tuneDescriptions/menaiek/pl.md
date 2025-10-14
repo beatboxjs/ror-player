@@ -1,5 +1,5 @@
-**Sign:** put three fingers on your other upper arm (like covering a police
-badge)
+**Znak:** połóż trzy palce na twoim ramieniu (tak jakbyś zakrywałx odznakę
+policyjną)
 
 ## Kontekst
 

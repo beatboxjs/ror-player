@@ -1,5 +1,6 @@
-This tune is in a Tango-rhythm which goes along for 8 steps/two bars. Nearly
-every instrument plays parts of the same rhythm. Therefore it’s easy to learn.
+Hedgehog jest grany w Tango-podobnym rytmie, który rozkłada się na osiem uderzeń
+/ dwa takty. Prawie każdy instrument gra część tego samego rytmu. To sprawia, że
+łatwo się go nauczyć.
 
 Hedgehog sounds great when it is played combined with ragga (a Tango-rhythm
 too). As an example, just try introducing Ragga kick-backs or Zorro break
