@@ -81,7 +81,7 @@ export function getEffectiveSongLength(song: SongParts, state: State): number {
 		const ref = song[maxIndex][instr];
 		const pattern = ref && getPatternFromState(state, ref);
 		if(pattern)
-			length = Math.max(length, pattern.length/4);
+			length = Math.max(length, pattern.length);
 	}
 	return maxIndex + length;
 }
