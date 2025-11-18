@@ -53,10 +53,12 @@
 	}));
 
 	const songParts = computed((): SongParts => {
-		let i = 1;
-		const result = {
-			0: allInstruments([ "General Breaks", "Whistle in" ])
-		} as SongParts;
+		const result = {} as SongParts;
+		let i = 0;
+		if (config.startSongWithWhistleIn) {
+			result[0] = allInstruments([ "General Breaks", "Whistle in" ])
+			let i = 1;
+		}
 		for(const part of normalizedSong.value) {
 			result[i] = allInstruments([ part.tuneName, part.patternName ], part.instruments);
 			i += part.length / 4;
@@ -99,7 +101,7 @@
 <template>
 	<div class="bb-example-song">
 		<div class="song" @click="setPosition($event)" ref="songRef">
-			<div class="card" style="width: 10em;">
+			<div v-if="config.startSongWithWhistleIn" class="card" style="width: 10em;">
 				<span class="tune-name">{{getLocalizedDisplayName("General Breaks")}}</span>
 				<span class="pattern-name">{{getLocalizedDisplayName("Whistle in")}}</span>
 			</div>
