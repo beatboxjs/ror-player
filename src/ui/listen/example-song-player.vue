@@ -57,7 +57,7 @@
 		let i = 0;
 		if (config.startSongWithWhistleIn) {
 			result[0] = allInstruments([ "General Breaks", "Whistle in" ])
-			let i = 1;
+			i = 1;
 		}
 		for(const part of normalizedSong.value) {
 			result[i] = allInstruments([ part.tuneName, part.patternName ], part.instruments);
