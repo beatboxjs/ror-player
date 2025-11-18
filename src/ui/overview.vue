@@ -32,6 +32,8 @@
 
 	const history = new History(props.storage);
 
+	const version = (import.meta.env.APP_VERSION as string | undefined) ?? "dev";
+
 	const sidebarToggleContainer = ref<HTMLElement>();
 
 	watch(() => route.value?.tab, () => {
@@ -74,6 +76,9 @@
 			</template>
 		</div>
 	</div>
+	<footer>
+		Version {{ version }}. Made by <a href="https://www.rhythms-of-resistance.org/" target="_blank">Rhythms of Resistance</a>, see the code <a href="https://github.com/beatboxjs/ror-player" target="_blank">here</a>.
+	</footer>
 </template>
 
 <style lang="scss">
