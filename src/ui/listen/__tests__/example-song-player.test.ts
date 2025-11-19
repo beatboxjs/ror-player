@@ -59,6 +59,10 @@ function createMockState(): State {
 	introPattern.displayName = "Intro DisplayName";
 	introPattern.ls = ["X", " ", " ", " "];
 
+    const whistlePattern = normalizePattern();
+    whistlePattern.displayName = "Whistle-in DisplayName";
+    whistlePattern.ls = ["X", "X", " ", " "];
+
 	return {
 		tunes: {
 			"My Tune": {
@@ -67,7 +71,14 @@ function createMockState(): State {
 				patterns: {
 					"Intro": introPattern
 				}
-			}
+			},
+            "General Breaks": {
+                displayName: "General Breaks DisplayName",
+                categories: [],
+                patterns: {
+                    "Whistle in": whistlePattern
+                }
+            },
 		},
 		songs: [],
 		songIdx: 0,
@@ -108,32 +119,69 @@ async function mountExampleSongPlayer(state: State, props: { tuneName: string; s
 }
 
 describe("example-song-player", () => {
-	const originalStartSongWithWhistleIn = config.startSongWithWhistleIn;
+    const originalStartSongWithWhistleIn = config.startSongWithWhistleIn;
 
-	beforeEach(() => {
-		config.startSongWithWhistleIn = false;
-	});
+    const expectCardContents = (card: Element, tuneName: string, patternName: string) => {
+        const tuneNameElement = card.querySelector(".tune-name");
+        const patternNameElement = card.querySelector(".pattern-name");
+        expect(tuneNameElement?.textContent?.trim()).toBe(tuneName);
+        expect(patternNameElement?.textContent?.trim()).toBe(patternName);
+    }
 
-	afterEach(() => {
-		config.startSongWithWhistleIn = originalStartSongWithWhistleIn;
-	});
+    describe("when the song has no whistle-in", () => {
+        beforeEach(() => {
+            config.startSongWithWhistleIn = false;
+        });
+    
+        afterEach(() => {
+            config.startSongWithWhistleIn = originalStartSongWithWhistleIn;
+        });
+    
+        it("renders tune and pattern names from props", async () => {
+            const mockState = createMockState();
+            const props = {
+                tuneName: "My Tune",
+                song: ["Intro"] as ExampleSong
+            };
 
-	it("renders tune and pattern names from props", async () => {
-		const mockState = createMockState();
-		const props = {
-			tuneName: "My Tune",
-			song: ["Intro"] as ExampleSong
-		};
+            const { container, unmount } = await mountExampleSongPlayer(mockState, props);
 
-		const { container, unmount } = await mountExampleSongPlayer(mockState, props);
+            const cards = container.querySelectorAll(".song .card");
+            expect(cards.length).toBe(1);
 
-		const tuneName = container.querySelector(".tune-name")?.textContent?.trim();
-		const patternName = container.querySelector(".pattern-name")?.textContent?.trim();
+            expectCardContents(cards[0], "My Tune DisplayName", "Intro DisplayName");
+            unmount();
+        });
+    });
 
-		expect(tuneName).toBe("My Tune DisplayName");
-		expect(patternName).toBe("Intro DisplayName");
+    describe("when the song has a whistle-in", () => {
+        beforeEach(() => {
+            config.startSongWithWhistleIn = true;
+        });
+    
+        afterEach(() => {
+            config.startSongWithWhistleIn = originalStartSongWithWhistleIn;
+        });
 
-		unmount();
-	});
+        it("renders the whistle-in and the song", async () => {
+            const mockState = createMockState();
+            const props = {
+                tuneName: "My Tune",
+                song: ["Intro"] as ExampleSong
+            };
+    
+            const { container, unmount } = await mountExampleSongPlayer(mockState, props);
+
+            const cards = container.querySelectorAll(".song .card");
+            expect(cards.length).toBe(2);
+    
+            const whistleInCard = cards[0];
+            expectCardContents(whistleInCard, "General Breaks DisplayName", "Whistle-in DisplayName");
+
+            expectCardContents(cards[1], "My Tune DisplayName", "Intro DisplayName");    
+
+            unmount();
+        });
+    });
 });
 
