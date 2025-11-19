@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { createApp, defineComponent, h, nextTick, ref } from "vue";
+import { defineComponent, h, nextTick, ref } from "vue";
+import { mount } from "@vue/test-utils";
 import type { State } from "../../../state/state";
 import type { ExampleSong } from "../../../state/tune";
 import config, { Instrument } from "../../../config";
@@ -97,9 +98,6 @@ function createMockState(): State {
 }
 
 async function mountExampleSongPlayer(state: State, props: { tuneName: string; song: ExampleSong }) {
-	const container = document.createElement("div");
-	document.body.appendChild(container);
-
 	const wrapper = defineComponent({
 		setup() {
 			provideState(ref(state));
@@ -107,15 +105,13 @@ async function mountExampleSongPlayer(state: State, props: { tuneName: string; s
 		}
 	});
 
-	const app = createApp(wrapper);
-	app.mount(container);
+	const mountedWrapper = mount(wrapper);
 	await nextTick();
 
 	return {
-		container,
+		container: mountedWrapper.element as HTMLElement,
 		unmount() {
-			app.unmount();
-			document.body.removeChild(container);
+			mountedWrapper.unmount();
 		}
 	};
 }
