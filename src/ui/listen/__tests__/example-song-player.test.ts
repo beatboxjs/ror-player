@@ -5,6 +5,7 @@ import type { ExampleSong } from "../../../state/tune";
 import config, { Instrument } from "../../../config";
 import { provideState } from "../../../services/state";
 import ExampleSongPlayer from "../example-song-player.vue";
+import * as playerModule from "../../../services/player";
 import { normalizePattern } from "../../../state/pattern";
 
 vi.mock("../../../services/i18n", () => ({
@@ -12,6 +13,7 @@ vi.mock("../../../services/i18n", () => ({
 	getLocalizedDisplayName: (value: string) => value
 }));
 
+// Necessary to mock beatbox.js to avoid AudioContext errors
 vi.mock("beatbox.js", () => {
 	class MockBeatbox {
 		static registerInstrument = vi.fn();
@@ -120,13 +122,29 @@ async function mountExampleSongPlayer(state: State, props: { tuneName: string; s
 
 describe("example-song-player", () => {
     const originalStartSongWithWhistleIn = config.startSongWithWhistleIn;
+    const songToBeatboxSpy = vi.spyOn(playerModule, "songToBeatbox");
+
+    beforeEach(() => {
+        songToBeatboxSpy.mockClear();
+        songToBeatboxSpy.mockReturnValue({} as any);
+    });
 
     const expectCardContents = (card: Element, tuneName: string, patternName: string) => {
         const tuneNameElement = card.querySelector(".tune-name");
         const patternNameElement = card.querySelector(".pattern-name");
         expect(tuneNameElement?.textContent?.trim()).toBe(tuneName);
         expect(patternNameElement?.textContent?.trim()).toBe(patternName);
-    }
+    };
+
+    // We don't really test the AbstractPlayer here, but we test the construction of its rawPattern argument.
+    const expectRawPatternBuiltWithArguments = (pieces: string[][]) => {
+        expect(songToBeatboxSpy).toHaveBeenCalledTimes(1);
+        const songPartsArg = songToBeatboxSpy.mock.calls[0][0] as Record<number, Record<string, string[]>>;
+        expect(Object.keys(songPartsArg)).toHaveLength(pieces.length);
+        for (let index = 0; index < pieces.length; index++) {
+            expect(songPartsArg[index].ls).toEqual(pieces[index]);
+        }
+    };
 
     describe("when the song has no whistle-in", () => {
         beforeEach(() => {
@@ -143,13 +161,13 @@ describe("example-song-player", () => {
                 tuneName: "My Tune",
                 song: ["Intro"] as ExampleSong
             };
-
             const { container, unmount } = await mountExampleSongPlayer(mockState, props);
 
             const cards = container.querySelectorAll(".song .card");
             expect(cards.length).toBe(1);
-
             expectCardContents(cards[0], "My Tune DisplayName", "Intro DisplayName");
+            expectRawPatternBuiltWithArguments([["My Tune", "Intro"]]);
+
             unmount();
         });
     });
@@ -169,16 +187,14 @@ describe("example-song-player", () => {
                 tuneName: "My Tune",
                 song: ["Intro"] as ExampleSong
             };
-    
             const { container, unmount } = await mountExampleSongPlayer(mockState, props);
 
             const cards = container.querySelectorAll(".song .card");
             expect(cards.length).toBe(2);
-    
             const whistleInCard = cards[0];
             expectCardContents(whistleInCard, "General Breaks DisplayName", "Whistle-in DisplayName");
-
-            expectCardContents(cards[1], "My Tune DisplayName", "Intro DisplayName");    
+            expectCardContents(cards[1], "My Tune DisplayName", "Intro DisplayName");
+            expectRawPatternBuiltWithArguments([["General Breaks", "Whistle in"], ["My Tune", "Intro"]]);
 
             unmount();
         });
