@@ -65,6 +65,11 @@ export type Config = {
 	 * The default speed to use for tunes that don't specify a separate default speed, in beats per minute.
 	 */
 	defaultSpeed: number;
+
+	/**
+	 * Whether to display a whistle-in block to start the example song on a song's main page.
+	 */
+	startSongWithWhistleIn: boolean;
 };
 
 const config: Config = {
@@ -304,7 +309,9 @@ const config: Config = {
 
 	tuneOfTheYear: "The Roof Is on Fire",
 
-	defaultSpeed: 100
+	defaultSpeed: 100,
+
+	startSongWithWhistleIn: true,
 };
 
 // Check some requirements for export so that we don't forget them at some point in the future

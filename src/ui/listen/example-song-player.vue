@@ -35,28 +35,42 @@
 	const songRef = ref<HTMLElement | null>(null);
 	const abstractPlayerRef = ref<InstanceType<typeof AbstractPlayer>>();
 
-	const normalizedSong = computed((): Array<Required<Exclude<ExampleSong[0], string>>> => props.song.flatMap((part) => {
-		const result = {
-			tuneName: props.tuneName,
-			...(typeof part === "string" ? { patternName: part } : part)
-		};
-		const pattern = getPatternFromState(state.value, result.tuneName, result.patternName);
-		if(!pattern)
-			return [];
-		else {
-			return [{
-				length: pattern.length,
-				instruments: config.instrumentKeys,
-				...result
-			}];
+	const normalizedSong = computed((): Array<Required<Exclude<ExampleSong[0], string>>> => {
+		const normalizedSongParts = props.song.flatMap((part) => {
+			const result = {
+				tuneName: props.tuneName,
+				...(typeof part === "string" ? { patternName: part } : part)
+			};
+			const pattern = getPatternFromState(state.value, result.tuneName, result.patternName);
+			if(!pattern)
+				return [];
+			else {
+				return [{
+					length: pattern.length,
+					instruments: config.instrumentKeys,
+					...result
+				}];
+			}
+		});
+
+		if (config.startSongWithWhistleIn) {
+			const whistleInPattern = getPatternFromState(state.value, "General Breaks", "Whistle in");
+			if (whistleInPattern) {
+				return [{
+					tuneName: "General Breaks",
+					patternName: "Whistle in",
+					instruments: config.instrumentKeys,
+					length: whistleInPattern.length,
+				}, ...normalizedSongParts];
+			}
 		}
-	}));
+
+		return normalizedSongParts;
+	});
 
 	const songParts = computed((): SongParts => {
-		let i = 1;
-		const result = {
-			0: allInstruments([ "General Breaks", "Whistle in" ])
-		} as SongParts;
+		const result = {} as SongParts;
+		let i = 0;
 		for(const part of normalizedSong.value) {
 			result[i] = allInstruments([ part.tuneName, part.patternName ], part.instruments);
 			i += part.length / 4;
@@ -99,10 +113,6 @@
 <template>
 	<div class="bb-example-song">
 		<div class="song" @click="setPosition($event)" ref="songRef">
-			<div class="card" style="width: 10em;">
-				<span class="tune-name">{{getLocalizedDisplayName("General Breaks")}}</span>
-				<span class="pattern-name">{{getLocalizedDisplayName("Whistle in")}}</span>
-			</div>
 			<div v-for="(part, i) in normalizedSong" :key="i" class="card" :style="{ width: `${2.5 * part.length }em` }">
 				<span class="tune-name">{{getLocalizedDisplayName(state.tunes[part.tuneName].displayName || part.tuneName)}}</span>
 				<span class="pattern-name">{{getLocalizedDisplayName(state.tunes[part.tuneName].patterns[part.patternName].displayName || part.patternName)}}</span>
