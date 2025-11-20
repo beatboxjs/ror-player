@@ -11,6 +11,25 @@ type RawTune = Partial<Omit<Tune, 'patterns'>> & {
 /**
  * To customize tunes, edit the file below.
  * If it helps, you can use shortcut functions from ./tuneHelpers.ts to create your tunes.
+ *
+ * If you like, you can copy-paste "My first tune" below to get started.
+
+   "My first tune": {
+		patterns: {
+			"Main tune": { // only two instruments used : low surdo and agogo
+				ls: "X   X   X   X   ",
+				ag: " XXX XXX XXX XXX",
+				loop: true, // when opened in the editor, the tune will loop indefinitely
+			},
+			"Break 1": {
+				ls: "X X X X X X X X",
+				ag: "@ls", // agogo plays the same as what low surdo plays
+			},
+		},
+		// exampleSong will be displayed on the tune's page : it will play the tune's patterns in the order they are listed here.
+		exampleSong: [ "Main tune", "Main tune", "Break 1", "Main tune"]
+	},
+
  */
 const sheetUrl = "https://github.com/rhythms-of-resistance/sheetbook/blob/master/generated/single/";
 
