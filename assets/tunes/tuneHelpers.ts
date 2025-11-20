@@ -1,7 +1,5 @@
 import { AllVolumeHack } from "../../src/state/pattern";
 
-export const sheetUrl = "https://github.com/rhythms-of-resistance/sheetbook/blob/master/generated/single/";
-
 export function stretch(from: number, to: number, pattern: string): string {
 	return pattern.split("").concat([ "" ]).join(repeat((to/from)-1, " "));
 }

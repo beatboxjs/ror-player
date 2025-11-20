@@ -1,10 +1,9 @@
 import config, { Instrument } from "./config";
 import { clone } from "./utils";
-import { AllVolumeHack, normalizePattern, Pattern, compressedPatternValidator } from "./state/pattern";
+import { normalizePattern, Pattern } from "./state/pattern";
 import { normalizeTune, Tune } from "./state/tune";
-import * as z from "zod";
 import { PatternReference } from "./state/song";
-import rawTunes from "../assets/tunes/rawTunes";
+import { rawTunes } from "../assets/tunes/rawTunes";
 
 
 const defaultTunes: { [tuneName: string]: Tune } = { };

@@ -1,7 +1,7 @@
 import { compressedPatternValidator } from "../../src/state/pattern";
 import { Tune } from "../../src/state/tune";
 import * as z from "zod";
-import { sheetUrl, stretch, repeat, crescendo, decrescendo } from "./tuneHelpers";
+import { stretch, repeat, crescendo, decrescendo } from "./tuneHelpers";
 
 type RawTune = Partial<Omit<Tune, 'patterns'>> & {
 	patterns: Record<string, z.input<typeof compressedPatternValidator>>;
@@ -12,7 +12,9 @@ type RawTune = Partial<Omit<Tune, 'patterns'>> & {
  * To customize tunes, edit the file below.
  * If it helps, you can use shortcut functions from ./tuneHelpers.ts to create your tunes.
  */
-const rawTunes: {[tuneName: string]: RawTune} = {
+const sheetUrl = "https://github.com/rhythms-of-resistance/sheetbook/blob/master/generated/single/";
+
+export const rawTunes: {[tuneName: string]: RawTune} = {
 	'General Breaks': {
 		categories: [ "common", "uncommon", "new", "proposed", "custom", "onesurdo", "easy", "medium", "tricky", "western", "cultural-appropriation" ],
 		sheet: sheetUrl + "breaks.pdf",
@@ -3337,5 +3339,3 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		exampleSong: [ "Tune", "Tune", "Bra Break", "Tune", "Tune", "Kick Back 1", "Kick Back 1", "Kick Back 2", "Kick Back 2", "Tune", "Tune" ]
 	}
 };
-
-export default rawTunes;
