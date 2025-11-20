@@ -109,6 +109,41 @@
 		return strokeEl ? (strokeEl.offsetLeft + strokeEl.offsetWidth * (stroke - strokeIdx)) : 0;
 	};
 
+    const isTriplet = (ptrn, idx: number, time: number) => {
+        if([3, "3", 6, "6", 9, "9"].includes(time)) return true;
+        if(![12, "12", 24, "24"].includes(time)) return false;
+
+        const hasNote = i => ptrn[i] !== undefined && ptrn[i] !== null && ptrn[i] !== " ";
+        const areEmptyBetween = (s, e) => ptrn.slice(s+1, e).every(i => i === " ");
+
+        if(hasNote(idx)) {
+            for (let step of [2, 4, 8]) {
+                // CASE 1: idx is on the right note of a triplet
+                const left = idx - step;
+                if (left >= 0 && hasNote(left) && areEmptyBetween(left, idx)) return true;
+
+                // CASE 2: idx is on the left note of a triplet
+                const right = idx + step;
+                if (right < ptrn.length && hasNote(right) && areEmptyBetween(idx, right)) return true;
+            }
+            return false;
+        }
+
+        // CASE 3: idx is between two notes of a triplet
+        const next = ptrn.findIndex((v, i) => i >= idx && hasNote(i));
+        const prev = ptrn.findLastIndex((v, i) => i <= idx && hasNote(i));
+        const nextTriplet = (next == -1 ? false : isTriplet(ptrn, next, time));
+        const prevTriplet = (prev == -1 ? false : isTriplet(ptrn, prev, time));
+        if (nextTriplet && prevTriplet && (next-prev <= 8)) return true;
+
+        // CASE 4: a triplet starts or ends in the current beat
+        const inNextBeat = (Math.floor(idx/time) == Math.floor(next/time));
+        const inPrevBeat = (Math.floor(idx/time) == Math.floor(prev/time) && prev%time != 0);
+        if ((inNextBeat && nextTriplet) || (inPrevBeat && prevTriplet)) return true;
+
+        return false;
+    };
+
 	const getBeatClass = (i: number) => {
 		let positiveI = i;
 		while(positiveI < 0) // Support negative numbers properly
@@ -140,6 +175,9 @@
 
 		if(originalPattern.value && (originalPattern.value[instrumentKey][realI] || "").trim() != (pattern.value[instrumentKey][realI] || "").trim())
 			ret.push("has-changes");
+
+        if(isTriplet(pattern.value[instrumentKey], realI, pattern.value.time))
+            ret.push("is-triplet");
 
 		return ret;
 	};
@@ -233,7 +271,7 @@
 		</PatternPlayerToolbar>
 
 		<div class="bb-pattern-player-container" ref="containerRef">
-			<table class="bb-pattern-player" :class="`time-${pattern.time}`">
+			<table class="bb-pattern-player" :class="`time-${pattern.time}`" translate="no">
 				<thead>
 					<tr>
 						<td colspan="2" class="instrument-operations">
@@ -298,10 +336,16 @@
 				border-right: 1px solid #ddd;
 				text-align: center;
 				position: relative;
+                overflow: visible;
+                padding: 0;
 
 				&.has-changes {
 					background-color: #fbe8d0;
 				}
+
+                &.is-triplet {
+                    color: #0000ff;
+                }
 			}
 
 			.stroke-inner {
@@ -357,33 +401,127 @@
 				white-space: nowrap;
 			}
 
-			&.time-2 {
-				.stroke-inner {
-					min-width: 5.4ex;
-				}
+			&.time-2 { /* 64px/beat */
+                .stroke { max-width: 32px; }
+				.stroke-inner { min-width: 32px; }
 			}
 
-			&.time-12 {
-				.stroke-inner {
-					min-width: 1ex;
-				}
+			&.time-3 { /* 63px/beat */
+                .stroke { max-width: 21px; }
+				.stroke-inner { min-width: 21px; }
+			}
 
-				.stroke-0, .stroke-1, .stroke-3, .stroke-4, .stroke-6, .stroke-7, .stroke-9, .stroke-10 {
+			&.time-4 { /* 64px/beat */
+                .stroke { max-width: 16px; }
+				.stroke-inner { min-width: 16px; }
+			}
+
+			&.time-5 { /* 65px/beat */
+                .stroke { max-width: 13px; }
+				.stroke-inner { min-width: 13px; }
+			}
+
+			&.time-6 { /* 66px/beat */
+                .stroke { max-width: 11px; }
+				.stroke-inner { min-width: 11px; }
+				.stroke--2, .stroke--4,
+				.stroke-0,  .stroke-2,  .stroke-4 {
 					border-right: none;
 				}
 			}
 
-			&.time-20 {
-				.stroke-inner {
-					min-width: 1ex;
-				}
-
-				.stroke-0, .stroke-1, .stroke-2, .stroke-3,
-				.stroke-5, .stroke-6, .stroke-7, .stroke-8,
-				.stroke-10,.stroke-11,.stroke-12,.stroke-13,
-				.stroke-15,.stroke-16,.stroke-17,.stroke-18 {
+			&.time-8 { /* 76px/beat */
+                .stroke { max-width: 9.5px; }
+				.stroke-inner { min-width: 9.5px; }
+				.stroke--2, .stroke--4, .stroke--6,
+				.stroke-0,  .stroke-2,  .stroke-4,  .stroke-6 {
 					border-right: none;
 				}
+			}
+
+			&.time-9 { /* 76.5px/beat */
+                .stroke { max-width: 8.5px; }
+				.stroke-inner { min-width: 8.5px; }
+				.stroke--2, .stroke--3, .stroke--5, .stroke--6, .stroke--8,
+				.stroke-0,  .stroke-1,  .stroke-3,  .stroke-4,  .stroke-6,  .stroke-7 {
+					border-right: none;
+				}
+			}
+
+			&.time-12 { /* 78px/beat */
+				.stroke { max-width: 6.5px; }
+				.stroke-inner { min-width: 6.5px; }
+				.stroke--2, .stroke--3, .stroke--5,  .stroke--6,
+				.stroke--8, .stroke--9, .stroke--11,
+				.stroke-0,  .stroke-1,  .stroke-3,   .stroke-4,
+                .stroke-6,  .stroke-7,  .stroke-9,   .stroke-10 {
+					border-right: none;
+				}
+                .stroke.is-triplet {
+                    &.stroke--4, &.stroke--7, &.stroke--10,
+                    &.stroke-2,  &.stroke-5,  &.stroke-8 {
+                        border-right: none;
+                    }
+				    &.stroke--5, &.stroke--9,
+				    &.stroke-3,  &.stroke-7 {
+					    border-right: 1px solid #ddd;
+				    }
+                }
+			}
+
+			&.time-16 { /* 80px/beat */
+				.stroke { max-width: 5px; }
+				.stroke-inner { min-width: 5px; }
+				.stroke--2,  .stroke--3,  .stroke--4,
+				.stroke--6,  .stroke--7,  .stroke--8,
+				.stroke--10, .stroke--11, .stroke--12,
+				.stroke--14, .stroke--15,
+				.stroke-0,   .stroke-1,   .stroke-2,
+				.stroke-4,   .stroke-5,   .stroke-6,
+				.stroke-8,   .stroke-9,   .stroke-10,
+				.stroke-12,  .stroke-13,  .stroke-14 {
+					border-right: none;
+				}
+			}
+
+			&.time-20 { /* 80px/beat */
+				.stroke { max-width: 4px; }
+				.stroke-inner { min-width: 4px; }
+				.stroke--2,  .stroke--3,  .stroke--4,  .stroke--5,
+				.stroke--7,  .stroke--8,  .stroke--9,  .stroke--10,
+				.stroke--12, .stroke--13, .stroke--14, .stroke--15,
+				.stroke--17, .stroke--18, .stroke--19,
+				.stroke-0,   .stroke-1,   .stroke-2,   .stroke-3,
+				.stroke-5,   .stroke-6,   .stroke-7,   .stroke-8,
+				.stroke-10,  .stroke-11,  .stroke-12,  .stroke-13,
+				.stroke-15,  .stroke-16,  .stroke-17,  .stroke-18 {
+					border-right: none;
+				}
+			}
+
+			&.time-24 { /* 84px/beat */
+				.stroke { max-width: 3.5px; }
+				.stroke-inner { min-width: 3.5px; }
+				.stroke--2,  .stroke--3,  .stroke--4,  .stroke--5,  .stroke--6,
+				.stroke--8,  .stroke--9,  .stroke--10, .stroke--11, .stroke--12,
+				.stroke--14, .stroke--15, .stroke--16, .stroke--17, .stroke--18,
+				.stroke--20, .stroke--21, .stroke--22, .stroke--23,
+				.stroke-0,   .stroke-1,   .stroke-2,   .stroke-3,   .stroke-4,
+				.stroke-6,   .stroke-7,   .stroke-8,   .stroke-9,   .stroke-10,
+				.stroke-12,  .stroke-13,  .stroke-14,  .stroke-15,  .stroke-16,
+				.stroke-18,  .stroke-19,  .stroke-20,  .stroke-21,  .stroke-22 {
+					border-right: none;
+				}
+                .stroke.is-triplet {
+                    &.stroke--7, &.stroke--13, &.stroke--19,
+                    &.stroke-5,  &.stroke-11,  &.stroke-17 {
+                        border-right: none;
+                    }
+				    &.stroke--9, &.stroke--17,
+				    &.stroke-7,  &.stroke-15 {
+					    border-right: 1px solid #ddd;
+				    }
+                }
 			}
 		}
 	}
