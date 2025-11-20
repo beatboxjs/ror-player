@@ -53,8 +53,7 @@ Build and host it yourself
 Customise it
 ------------
 
-The tunes are configured in [`src/defaultTunes.ts`](./src/defaultTunes.ts). The format is very similar to the "Raw (uncompressed)" format that
-can be generated in the Share dialog of the player.
+The tunes are configured in [`assets/tunes/rawTunes.ts`](./assets/tunes/rawTunes.ts). The format is very similar to the "Raw (uncompressed)" format that can be generated in the Share dialog of the player.
 
 All the parameters (such as the instruments, samples, time measurements) are configured in [`src/config.ts`](./src/config.ts).
 

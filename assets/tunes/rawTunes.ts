@@ -30,6 +30,7 @@ type RawTune = Partial<Omit<Tune, 'patterns'>> & {
 		exampleSong: [ "Main tune", "Main tune", "Break 1", "Main tune"]
 	},
 
+ * For more detailed help, go to https://player-docs.rhythms-of-resistance.org/guide/technical/config.html
  */
 const sheetUrl = "https://github.com/rhythms-of-resistance/sheetbook/blob/master/generated/single/";
 
