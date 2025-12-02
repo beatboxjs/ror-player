@@ -109,40 +109,25 @@
 		return strokeEl ? (strokeEl.offsetLeft + strokeEl.offsetWidth * (stroke - strokeIdx)) : 0;
 	};
 
-    const isTriplet = (ptrn, idx: number, time: number) => {
-        if([3, "3", 6, "6", 9, "9"].includes(time)) return true;
-        if(![12, "12", 24, "24"].includes(time)) return false;
 
-        const hasNote = i => ptrn[i] !== undefined && ptrn[i] !== null && ptrn[i] !== " ";
-        const areEmptyBetween = (s, e) => ptrn.slice(s+1, e).every(i => i === " ");
+	// Is the beat that this stroke is part of a ternary beat?
+	const isTernaryBeat = (instrumentKey: Instrument, strokeIndex: number) => {
+		if([3, "3", 6, "6", 9, "9"].includes(pattern.value.time)) return true;
+		// We only support 12 and 24 time signatures for now.
+		if(![12, "12", 24, "24"].includes(pattern.value.time)) return false;
 
-        if(hasNote(idx)) {
-            for (let step of [2, 4, 8]) {
-                // CASE 1: idx is on the right note of a triplet
-                const left = idx - step;
-                if (left >= 0 && hasNote(left) && areEmptyBetween(left, idx)) return true;
+		const patternForInstrument = pattern.value[instrumentKey];
+		const hasNote = (i: number) => patternForInstrument[i] !== undefined && patternForInstrument[i] !== null && patternForInstrument[i] !== " ";
 
-                // CASE 2: idx is on the left note of a triplet
-                const right = idx + step;
-                if (right < ptrn.length && hasNote(right) && areEmptyBetween(idx, right)) return true;
-            }
-            return false;
-        }
-
-        // CASE 3: idx is between two notes of a triplet
-        const next = ptrn.findIndex((v, i) => i >= idx && hasNote(i));
-        const prev = ptrn.findLastIndex((v, i) => i <= idx && hasNote(i));
-        const nextTriplet = (next == -1 ? false : isTriplet(ptrn, next, time));
-        const prevTriplet = (prev == -1 ? false : isTriplet(ptrn, prev, time));
-        if (nextTriplet && prevTriplet && (next-prev <= 8)) return true;
-
-        // CASE 4: a triplet starts or ends in the current beat
-        const inNextBeat = (Math.floor(idx/time) == Math.floor(next/time));
-        const inPrevBeat = (Math.floor(idx/time) == Math.floor(prev/time) && prev%time != 0);
-        if ((inNextBeat && nextTriplet) || (inPrevBeat && prevTriplet)) return true;
-
-        return false;
-    };
+		const firstStrokeInBeat = Math.floor(strokeIndex/pattern.value.time)*pattern.value.time; // todo upbeats ?
+		const lastStrokeInBeat = firstStrokeInBeat + pattern.value.time - 1;
+		for (let strokeNum = firstStrokeInBeat; strokeNum < lastStrokeInBeat+1; strokeNum++) {
+			if (strokeNum%3 !==0 && hasNote(strokeNum)) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	const getBeatClass = (i: number) => {
 		let positiveI = i;
@@ -176,7 +161,7 @@
 		if(originalPattern.value && (originalPattern.value[instrumentKey][realI] || "").trim() != (pattern.value[instrumentKey][realI] || "").trim())
 			ret.push("has-changes");
 
-        if(isTriplet(pattern.value[instrumentKey], realI, pattern.value.time))
+        if(isTernaryBeat(instrumentKey, realI))
             ret.push("is-triplet");
 
 		return ret;
