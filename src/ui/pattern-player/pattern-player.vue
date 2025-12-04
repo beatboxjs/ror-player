@@ -323,9 +323,9 @@
 				&.has-changes {
 					background-color: #fbe8d0;
 				}
-				// todo : make "Compose" tab use black for strokes, so that the change to blue is visible.
-				&.is-triplet {
-					color: #0000ff;
+
+				&.is-triplet, &.is-triplet a {
+					color: var(--bs-pink);
 				}
 			}
 
