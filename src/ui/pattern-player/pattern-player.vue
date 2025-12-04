@@ -109,6 +109,24 @@
 		return strokeEl ? (strokeEl.offsetLeft + strokeEl.offsetWidth * (stroke - strokeIdx)) : 0;
 	};
 
+	// Is the beat that this stroke is part of a ternary beat? Used in UI to highlight ternary beats.
+	const isTernaryBeat = (instrumentKey: Instrument, strokeIndex: number) => {
+		// We only support 12 and 24 time signatures for now.
+		if(![12, "12", 24, "24"].includes(pattern.value.time)) return false;
+
+		const patternForInstrument = pattern.value[instrumentKey];
+		const hasNote = (i: number) => patternForInstrument[i] !== undefined && patternForInstrument[i] !== null && patternForInstrument[i] !== " ";
+
+		const firstStrokeInBeat = Math.floor(strokeIndex/pattern.value.time)*pattern.value.time; // todo upbeats ?
+		const lastStrokeInBeat = firstStrokeInBeat + pattern.value.time - 1;
+		for (let strokeNum = firstStrokeInBeat; strokeNum < lastStrokeInBeat+1; strokeNum++) {
+			if (strokeNum%3 !==0 && hasNote(strokeNum)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	const getBeatClass = (i: number) => {
 		let positiveI = i;
 		while(positiveI < 0) // Support negative numbers properly
@@ -140,6 +158,9 @@
 
 		if(originalPattern.value && (originalPattern.value[instrumentKey][realI] || "").trim() != (pattern.value[instrumentKey][realI] || "").trim())
 			ret.push("has-changes");
+
+		if(isTernaryBeat(instrumentKey, realI))
+			ret.push("is-triplet");
 
 		return ret;
 	};
@@ -302,6 +323,10 @@
 				&.has-changes {
 					background-color: #fbe8d0;
 				}
+				// todo : make "Compose" tab use black for strokes, so that the change to blue is visible.
+				&.is-triplet {
+					color: #0000ff;
+				}
 			}
 
 			.stroke-inner {
@@ -371,6 +396,14 @@
 				.stroke-0, .stroke-1, .stroke-3, .stroke-4, .stroke-6, .stroke-7, .stroke-9, .stroke-10 {
 					border-right: none;
 				}
+				.stroke.is-triplet {
+					&.stroke-2, &.stroke-5, &.stroke-8 {
+						border-right: none;
+					}
+					&.stroke-3, &.stroke-7 {
+						border-right: 1px solid #ddd;
+					}
+                } 
 			}
 
 			&.time-20 {
@@ -384,6 +417,23 @@
 				.stroke-15,.stroke-16,.stroke-17,.stroke-18 {
 					border-right: none;
 				}
+			}
+
+			&.time-24 {
+				.stroke-0,   .stroke-1,   .stroke-2,   .stroke-3,   .stroke-4,
+				.stroke-6,   .stroke-7,   .stroke-8,   .stroke-9,   .stroke-10,
+				.stroke-12,  .stroke-13,  .stroke-14,  .stroke-15,  .stroke-16,
+				.stroke-18,  .stroke-19,  .stroke-20,  .stroke-21,  .stroke-22 {
+					border-right: none;
+				}
+                .stroke.is-triplet {
+                    &.stroke-5,  &.stroke-11,  &.stroke-17 {
+                        border-right: none;
+                    }
+					&.stroke-7,  &.stroke-15 {
+						border-right: 1px solid #ddd;
+					}
+                }
 			}
 		}
 	}
