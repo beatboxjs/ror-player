@@ -109,15 +109,9 @@
 		return strokeEl ? (strokeEl.offsetLeft + strokeEl.offsetWidth * (stroke - strokeIdx)) : 0;
 	};
 
-	// Is the beat that this stroke is part of a ternary beat? Used in UI to highlight ternary beats.
-	const isTernaryBeat = (instrumentKey: Instrument, realI: number) => {
-		// realI starts at 0, even if there is an upbeat.
-		// i goes from -upbeat to length*time - 1.
-		const i = realI - pattern.value.upbeat;
-
-		// We only support 12 and 24 time signatures for now.
-		if(![12, "12", 24, "24"].includes(pattern.value.time)) return false;
-
+	// If there is no upbeat, beatI goes from 0 to length - 1.
+	// If there is an upbeat, beatI goes from floor(-upbeat/time) to length - 1.
+	const isTernaryBeat = (instrumentKey: Instrument, beatI: number) => {
 		const patternForInstrument = pattern.value[instrumentKey];
 		const hasNote = (j: number) => {
 			// pattern is an array so its indexes start at 0, not -upbeat.
@@ -125,7 +119,7 @@
 			return patternForInstrument[realJ] !== undefined && patternForInstrument[realJ] !== null && patternForInstrument[realJ] !== " ";
 		}
 
-		const firstStrokeInBeat = Math.floor(i/pattern.value.time)*pattern.value.time;
+		const firstStrokeInBeat = beatI * pattern.value.time;
 		const lastStrokeInBeat = firstStrokeInBeat + pattern.value.time - 1;
 		for (let strokeNum = firstStrokeInBeat; strokeNum <= lastStrokeInBeat; strokeNum++) {
 			if (strokeNum%3 !==0 && hasNote(strokeNum)) {
@@ -134,6 +128,40 @@
 		}
 		return false;
 	}
+
+	const beatIFromStrokeI = (strokeI: number) => {
+		return Math.floor(strokeI/pattern.value.time);
+	}
+
+	// For each instrument, for each stroke, return the CSS class to apply to the stroke : "" or "is-triplet".
+	const ternaryCSSClasses = computed(() => {
+		const ret = {} as Record<Instrument, Record<number, string>>;
+		for (let instrumentKey of config.instrumentKeys) {
+			ret[instrumentKey] = {};
+		}
+
+		// We only support 12 and 24 time signatures for now.
+		if(![12, "12", 24, "24"].includes(pattern.value.time)) return ret;
+
+		const ternaryClassesForInstrument = (instrumentKey: Instrument) => {
+			const areBeatsTernary: Record<number, boolean> = {};
+			for (let beatI = beatIFromStrokeI(-pattern.value.upbeat); beatI < pattern.value.length; beatI++) {
+				areBeatsTernary[beatI] = isTernaryBeat(instrumentKey, beatI);
+			}
+
+			const ternaryCSSClassesForInstrument: Record<number, string> = {};
+			for (let strokeI = -pattern.value.upbeat; strokeI < pattern.value.length*pattern.value.time + pattern.value.upbeat; strokeI++) {
+				ternaryCSSClassesForInstrument[strokeI] = areBeatsTernary[beatIFromStrokeI(strokeI)] ? 'is-triplet' : '';
+			}
+
+			return ternaryCSSClassesForInstrument;
+		}
+
+		for (let instrumentKey of config.instrumentKeys) {
+			ret[instrumentKey] = ternaryClassesForInstrument(instrumentKey);
+		}
+		return ret;
+	});
 
 	const getBeatClass = (i: number) => {
 		let positiveI = i;
@@ -168,9 +196,6 @@
 
 		if(originalPattern.value && (originalPattern.value[instrumentKey][realI] || "").trim() != (pattern.value[instrumentKey][realI] || "").trim())
 			ret.push("has-changes");
-
-		if(isTernaryBeat(instrumentKey, realI))
-			ret.push("is-triplet");
 
 		return ret;
 	};
@@ -281,7 +306,7 @@
 							<HeadphonesButton :instrument="instrumentKey" v-model:playbackSettings="playbackSettings" groupSurdos />
 							<MuteButton :instrument="instrumentKey" v-model:playbackSettings="playbackSettings" />
 						</td>
-						<td v-for="i in pattern.length*pattern.time + pattern.upbeat" :key="i" class="stroke" :class="getStrokeClass(i-1, instrumentKey)" v-tooltip="config.strokesDescription[pattern[instrumentKey][i-1]]?.() || ''">
+						<td v-for="i in pattern.length*pattern.time + pattern.upbeat" :key="i" class="stroke" :class="getStrokeClass(i-1, instrumentKey).concat(ternaryCSSClasses[instrumentKey][i-1-pattern.upbeat])" v-tooltip="config.strokesDescription[pattern[instrumentKey][i-1]]?.() || ''">
 							<span v-if="readonly" class="stroke-inner">{{config.strokes[pattern[instrumentKey][i-1]] || '\xa0'}}</span>
 							<a v-if="!readonly"
 								href="javascript:" class="stroke-inner"
