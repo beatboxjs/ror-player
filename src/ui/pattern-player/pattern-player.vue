@@ -110,16 +110,24 @@
 	};
 
 	// Is the beat that this stroke is part of a ternary beat? Used in UI to highlight ternary beats.
-	const isTernaryBeat = (instrumentKey: Instrument, strokeIndex: number) => {
+	const isTernaryBeat = (instrumentKey: Instrument, realI: number) => {
+		// realI starts at 0, even if there is an upbeat.
+		// i goes from -upbeat to length*time - 1.
+		const i = realI - pattern.value.upbeat;
+
 		// We only support 12 and 24 time signatures for now.
 		if(![12, "12", 24, "24"].includes(pattern.value.time)) return false;
 
 		const patternForInstrument = pattern.value[instrumentKey];
-		const hasNote = (i: number) => patternForInstrument[i] !== undefined && patternForInstrument[i] !== null && patternForInstrument[i] !== " ";
+		const hasNote = (j: number) => {
+			// pattern is an array so its indexes start at 0, not -upbeat.
+			const realJ = j + pattern.value.upbeat;
+			return patternForInstrument[realJ] !== undefined && patternForInstrument[realJ] !== null && patternForInstrument[realJ] !== " ";
+		}
 
-		const firstStrokeInBeat = Math.floor(strokeIndex/pattern.value.time)*pattern.value.time; // todo upbeats ?
+		const firstStrokeInBeat = Math.floor(i/pattern.value.time)*pattern.value.time;
 		const lastStrokeInBeat = firstStrokeInBeat + pattern.value.time - 1;
-		for (let strokeNum = firstStrokeInBeat; strokeNum < lastStrokeInBeat+1; strokeNum++) {
+		for (let strokeNum = firstStrokeInBeat; strokeNum <= lastStrokeInBeat; strokeNum++) {
 			if (strokeNum%3 !==0 && hasNote(strokeNum)) {
 				return true;
 			}
@@ -141,6 +149,8 @@
 	};
 
 	const getStrokeClass = (realI: number, instrumentKey: Instrument) => {
+		// realI starts at 0, even if there is an upbeat.
+		// i goes from -upbeat to length*time - 1.
 		let i = realI - pattern.value.upbeat;
 
 		const ret = [
@@ -392,15 +402,19 @@
 				.stroke-inner {
 					min-width: 1ex;
 				}
-
-				.stroke-0, .stroke-1, .stroke-3, .stroke-4, .stroke-6, .stroke-7, .stroke-9, .stroke-10 {
+				.stroke--2, .stroke--3, .stroke--5,  .stroke--6,
+				.stroke--8, .stroke--9, .stroke--11,
+				.stroke-0,  .stroke-1,  .stroke-3,   .stroke-4,
+                .stroke-6,  .stroke-7,  .stroke-9,   .stroke-10 {
 					border-right: none;
 				}
 				.stroke.is-triplet {
-					&.stroke-2, &.stroke-5, &.stroke-8 {
+					&.stroke--4, &.stroke--7, &.stroke--10,
+                    &.stroke-2,  &.stroke-5,  &.stroke-8 {
 						border-right: none;
 					}
-					&.stroke-3, &.stroke-7 {
+					&.stroke--5, &.stroke--9,
+					&.stroke-3,  &.stroke-7 {
 						border-right: 1px solid #ddd;
 					}
                 } 
@@ -420,6 +434,10 @@
 			}
 
 			&.time-24 {
+				.stroke--2,  .stroke--3,  .stroke--4,  .stroke--5,  .stroke--6,
+				.stroke--8,  .stroke--9,  .stroke--10, .stroke--11, .stroke--12,
+				.stroke--14, .stroke--15, .stroke--16, .stroke--17, .stroke--18,
+				.stroke--20, .stroke--21, .stroke--22, .stroke--23,
 				.stroke-0,   .stroke-1,   .stroke-2,   .stroke-3,   .stroke-4,
 				.stroke-6,   .stroke-7,   .stroke-8,   .stroke-9,   .stroke-10,
 				.stroke-12,  .stroke-13,  .stroke-14,  .stroke-15,  .stroke-16,
@@ -427,9 +445,11 @@
 					border-right: none;
 				}
                 .stroke.is-triplet {
+                    &.stroke--7, &.stroke--13, &.stroke--19,
                     &.stroke-5,  &.stroke-11,  &.stroke-17 {
                         border-right: none;
                     }
+					&.stroke--9, &.stroke--17,
 					&.stroke-7,  &.stroke-15 {
 						border-right: 1px solid #ddd;
 					}
