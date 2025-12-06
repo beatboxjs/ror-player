@@ -161,8 +161,8 @@
 		if(originalPattern.value && (originalPattern.value[instrumentKey][realI] || "").trim() != (pattern.value[instrumentKey][realI] || "").trim())
 			ret.push("has-changes");
 
-        if(isTernaryBeat(instrumentKey, realI))
-            ret.push("is-triplet");
+		if(isTernaryBeat(instrumentKey, i))
+			ret.push("is-triplet");
 
 		return ret;
 	};
@@ -320,34 +320,34 @@
 			.stroke {
 				text-align: center;
 				position: relative;
-                overflow: visible;
-                padding: 0;
+				overflow: visible;
+				padding: 0;
 
-                .stroke-inner {
-                    color: rgb(33, 37, 41);
-                }
+				.stroke-inner {
+					color: rgb(33, 37, 41);
+				}
 
-                &.is-triplet .stroke-inner {
-                    color: #0000ff;
-                }
+				&.is-triplet .stroke-inner {
+					color: #0000ff;
+				}
 
 				&.has-changes {
 					background-color: #fbe8d0;
 				}
 			}
 
-            &.compose {
-                .stroke {
-		    		border-right: 1px solid #f3f3f3;
-                }
-            }
+			&.compose {
+				.stroke {
+					border-right: 1px solid #f3f3f3;
+				}
+			}
 
-            &.listen tr:last-child {
-                .stroke-inner:not(:empty) {
-                    /* Shouting: Hide table lines behind overlapping text */
-                    background-color: #fff;
-                }
-            }
+			&.listen tr:last-child {
+				.stroke-inner:not(:empty) {
+					/* Shouting: Hide table lines behind overlapping text */
+					background-color: #fff;
+				}
+			}
 
 			.stroke-inner {
 				display: inline-block;
@@ -401,133 +401,133 @@
 			tbody th, td.instrument-operations {
 				white-space: nowrap;
 			}
-        }
+		}
 
 		.bb-pattern-player {
 
 			&.time-2 { /* 64px/beat */
-                .stroke { max-width: 32px; }
+				.stroke { max-width: 32px; }
 				.stroke-inner { min-width: 32px; }
 			}
 
 			&.time-3 { /* 63px/beat */
-                .stroke { max-width: 21px; }
+				.stroke { max-width: 21px; }
 				.stroke-inner { min-width: 21px; }
 			}
 
 			&.time-4 { /* 64px/beat */
-                .stroke { max-width: 16px; }
+				.stroke { max-width: 16px; }
 				.stroke-inner { min-width: 16px; }
 			}
 
 			&.time-5 { /* 65px/beat */
-                .stroke { max-width: 13px; }
+				.stroke { max-width: 13px; }
 				.stroke-inner { min-width: 13px; }
 			}
 
 			&.time-6 { /* 66px/beat */
-                .stroke { max-width: 11px; }
+				.stroke { max-width: 11px; }
 				.stroke-inner { min-width: 11px; }
-            }
-			
-            &.time-8 { /* 76px/beat */
-                .stroke { max-width: 9.5px; }
+			}
+
+			&.time-8 { /* 76px/beat */
+				.stroke { max-width: 9.5px; }
 				.stroke-inner { min-width: 9.5px; }
-            }
+			}
 
 			&.time-9 { /* 76.5px/beat */
-                .stroke { max-width: 8.5px; }
+				.stroke { max-width: 8.5px; }
 				.stroke-inner { min-width: 8.5px; }
-            }
+			}
 
-            &.time-12.compose,
-            &.time-16.compose,
-            &.time-20.compose,
-            &.time-24.compose {
-                .stroke { max-width: 8px; }
+			&.time-12.compose,
+			&.time-16.compose,
+			&.time-20.compose,
+			&.time-24.compose {
+				.stroke { max-width: 8px; }
 				.stroke-inner { min-width: 8px; }
-            }
+			}
 
 			&.time-12.listen { /* 78px/beat */
 				.stroke { max-width: 6.5px; }
 				.stroke-inner { min-width: 6.5px; }
-            }
-			
-            &.time-16.listen { /* 80px/beat */
+			}
+
+			&.time-16.listen { /* 80px/beat */
 				.stroke { max-width: 5px; }
 				.stroke-inner { min-width: 5px; }
-            }
-			
-            &.time-20.listen { /* 80px/beat */
+			}
+
+			&.time-20.listen { /* 80px/beat */
 				.stroke { max-width: 4px; }
 				.stroke-inner { min-width: 4px; }
-            }
-			
-            &.time-24.listen { /* 84px/beat */
+			}
+
+			&.time-24.listen { /* 84px/beat */
 				.stroke { max-width: 3.5px; }
 				.stroke-inner { min-width: 3.5px; }
-            }
+			}
 
 			&.time-2 {
 				.stroke-0 {
-				    border-right: 1px solid #ddd;
+					border-right: 1px solid #ddd;
 				}
-            }
+			}
 
 			&.time-3 {
 				.stroke--2, .stroke-0, .stroke-1 {
-				    border-right: 1px solid #ddd;
+					border-right: 1px solid #ddd;
 				}
-            }
+			}
 
 			&.time-4 {
 				.stroke--2, .stroke--3,
-                .stroke-0, .stroke-1, .stroke-2 {
-				    border-right: 1px solid #ddd;
+				.stroke-0, .stroke-1, .stroke-2 {
+					border-right: 1px solid #ddd;
 				}
-            }
+			}
 
 			&.time-5 {
 				.stroke--2, .stroke--3, .stroke--4,
-                .stroke-0, .stroke-1, .stroke-2, .stroke-3 {
-				    border-right: 1px solid #ddd;
+				.stroke-0, .stroke-1, .stroke-2, .stroke-3 {
+					border-right: 1px solid #ddd;
 				}
-            }
+			}
 
 			&.time-6 {
 				.stroke--3, .stroke--5,
 				.stroke-1,  .stroke-3, {
-				    border-right: 1px solid #ddd;
+					border-right: 1px solid #ddd;
 				}
 			}
 
 			&.time-8 {
 				.stroke--3, .stroke--5, .stroke--7,
 				.stroke-1,  .stroke-3,  .stroke-5 {
-				    border-right: 1px solid #ddd;
+					border-right: 1px solid #ddd;
 				}
 			}
 
 			&.time-9 {
 				.stroke--4, .stroke--7,
 				.stroke-2,  .stroke-5 {
-				    border-right: 1px solid #ddd;
+					border-right: 1px solid #ddd;
 				}
 			}
 
 			&.time-12 {
-                .stroke:not(.is-triplet) {
-				    &.stroke--4, &.stroke--7, &.stroke--10,
-				    &.stroke-2,  &.stroke-5,  &.stroke-8 {
-				        border-right: 1px solid #ddd;
-				    }
-                }
-                .stroke.is-triplet {
-				    &.stroke--5, &.stroke--9,
-				    &.stroke-3,  &.stroke-7 {
-					    border-right: 1px solid #ddd;
-				    }
-                }
+				.stroke:not(.is-triplet) {
+					&.stroke--4, &.stroke--7, &.stroke--10,
+					&.stroke-2,  &.stroke-5,  &.stroke-8 {
+						border-right: 1px solid #ddd;
+					}
+				}
+				.stroke.is-triplet {
+					&.stroke--5, &.stroke--9,
+					&.stroke-3,  &.stroke-7 {
+						border-right: 1px solid #ddd;
+					}
+				}
 			}
 
 			&.time-16 {
@@ -545,18 +545,18 @@
 			}
 
 			&.time-24 {
-                .stroke:not(.is-triplet) {
-                    &.stroke--7, &.stroke--13, &.stroke--19,
-                    &.stroke-5,  &.stroke-11,  &.stroke-17 {
-				        border-right: 1px solid #ddd;
-				    }
-                }
-                .stroke.is-triplet {
-				    &.stroke--9, &.stroke--17,
-				    &.stroke-7,  &.stroke-15 {
-					    border-right: 1px solid #ddd;
-				    }
-                }
+				.stroke:not(.is-triplet) {
+					&.stroke--7, &.stroke--13, &.stroke--19,
+					&.stroke-5,  &.stroke-11,  &.stroke-17 {
+						border-right: 1px solid #ddd;
+					}
+				}
+				.stroke.is-triplet {
+					&.stroke--9, &.stroke--17,
+					&.stroke-7,  &.stroke-15 {
+						border-right: 1px solid #ddd;
+					}
+				}
 			}
 		}
 	}
