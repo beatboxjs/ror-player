@@ -256,7 +256,7 @@
 		</PatternPlayerToolbar>
 
 		<div class="bb-pattern-player-container" ref="containerRef">
-			<table class="bb-pattern-player" :class="`time-${pattern.time}`" translate="no">
+			<table class="bb-pattern-player" :class="[`time-${pattern.time}`, readonly ? 'listen' : 'compose']" translate="no">
 				<thead>
 					<tr>
 						<td colspan="2" class="instrument-operations">
@@ -274,7 +274,7 @@
 							<MuteButton :instrument="instrumentKey" v-model:playbackSettings="playbackSettings" />
 						</td>
 						<td v-for="i in pattern.length*pattern.time + pattern.upbeat" :key="i" class="stroke" :class="getStrokeClass(i-1, instrumentKey)" v-tooltip="config.strokesDescription[pattern[instrumentKey][i-1]]?.() || ''">
-							<span v-if="readonly" class="stroke-inner">{{config.strokes[pattern[instrumentKey][i-1]] || '\xa0'}}</span>
+							<span v-if="readonly" class="stroke-inner">{{config.strokes[pattern[instrumentKey][i-1]]}}</span>
 							<a v-if="!readonly"
 								href="javascript:" class="stroke-inner"
 								:id="`bb-pattern-player-stroke-${instrumentKey}-${i-1}`"
@@ -318,20 +318,36 @@
 			table-layout: fixed;
 
 			.stroke {
-				border-right: 1px solid #ddd;
 				text-align: center;
 				position: relative;
                 overflow: visible;
                 padding: 0;
 
+                .stroke-inner {
+                    color: rgb(33, 37, 41);
+                }
+
+                &.is-triplet .stroke-inner {
+                    color: #0000ff;
+                }
+
 				&.has-changes {
 					background-color: #fbe8d0;
 				}
-
-                &.is-triplet {
-                    color: #0000ff;
-                }
 			}
+
+            &.compose {
+                .stroke {
+		    		border-right: 1px solid #f3f3f3;
+                }
+            }
+
+            &.listen tr:last-child {
+                .stroke-inner:not(:empty) {
+                    /* Shouting: Hide table lines behind overlapping text */
+                    background-color: #fff;
+                }
+            }
 
 			.stroke-inner {
 				display: inline-block;
@@ -385,6 +401,9 @@
 			tbody th, td.instrument-operations {
 				white-space: nowrap;
 			}
+        }
+
+		.bb-pattern-player {
 
 			&.time-2 { /* 64px/beat */
                 .stroke { max-width: 32px; }
@@ -409,44 +428,101 @@
 			&.time-6 { /* 66px/beat */
                 .stroke { max-width: 11px; }
 				.stroke-inner { min-width: 11px; }
-				.stroke--2, .stroke--4,
-				.stroke-0,  .stroke-2,  .stroke-4 {
-					border-right: none;
-				}
-			}
-
-			&.time-8 { /* 76px/beat */
+            }
+			
+            &.time-8 { /* 76px/beat */
                 .stroke { max-width: 9.5px; }
 				.stroke-inner { min-width: 9.5px; }
-				.stroke--2, .stroke--4, .stroke--6,
-				.stroke-0,  .stroke-2,  .stroke-4,  .stroke-6 {
-					border-right: none;
-				}
-			}
+            }
 
 			&.time-9 { /* 76.5px/beat */
                 .stroke { max-width: 8.5px; }
 				.stroke-inner { min-width: 8.5px; }
-				.stroke--2, .stroke--3, .stroke--5, .stroke--6, .stroke--8,
-				.stroke-0,  .stroke-1,  .stroke-3,  .stroke-4,  .stroke-6,  .stroke-7 {
-					border-right: none;
+            }
+
+            &.time-12.compose,
+            &.time-16.compose,
+            &.time-20.compose,
+            &.time-24.compose {
+                .stroke { max-width: 8px; }
+				.stroke-inner { min-width: 8px; }
+            }
+
+			&.time-12.listen { /* 78px/beat */
+				.stroke { max-width: 6.5px; }
+				.stroke-inner { min-width: 6.5px; }
+            }
+			
+            &.time-16.listen { /* 80px/beat */
+				.stroke { max-width: 5px; }
+				.stroke-inner { min-width: 5px; }
+            }
+			
+            &.time-20.listen { /* 80px/beat */
+				.stroke { max-width: 4px; }
+				.stroke-inner { min-width: 4px; }
+            }
+			
+            &.time-24.listen { /* 84px/beat */
+				.stroke { max-width: 3.5px; }
+				.stroke-inner { min-width: 3.5px; }
+            }
+
+			&.time-2 {
+				.stroke-0 {
+				    border-right: 1px solid #ddd;
+				}
+            }
+
+			&.time-3 {
+				.stroke--2, .stroke-0, .stroke-1 {
+				    border-right: 1px solid #ddd;
+				}
+            }
+
+			&.time-4 {
+				.stroke--2, .stroke--3,
+                .stroke-0, .stroke-1, .stroke-2 {
+				    border-right: 1px solid #ddd;
+				}
+            }
+
+			&.time-5 {
+				.stroke--2, .stroke--3, .stroke--4,
+                .stroke-0, .stroke-1, .stroke-2, .stroke-3 {
+				    border-right: 1px solid #ddd;
+				}
+            }
+
+			&.time-6 {
+				.stroke--3, .stroke--5,
+				.stroke-1,  .stroke-3, {
+				    border-right: 1px solid #ddd;
 				}
 			}
 
-			&.time-12 { /* 78px/beat */
-				.stroke { max-width: 6.5px; }
-				.stroke-inner { min-width: 6.5px; }
-				.stroke--2, .stroke--3, .stroke--5,  .stroke--6,
-				.stroke--8, .stroke--9, .stroke--11,
-				.stroke-0,  .stroke-1,  .stroke-3,   .stroke-4,
-                .stroke-6,  .stroke-7,  .stroke-9,   .stroke-10 {
-					border-right: none;
+			&.time-8 {
+				.stroke--3, .stroke--5, .stroke--7,
+				.stroke-1,  .stroke-3,  .stroke-5 {
+				    border-right: 1px solid #ddd;
 				}
+			}
+
+			&.time-9 {
+				.stroke--4, .stroke--7,
+				.stroke-2,  .stroke-5 {
+				    border-right: 1px solid #ddd;
+				}
+			}
+
+			&.time-12 {
+                .stroke:not(.is-triplet) {
+				    &.stroke--4, &.stroke--7, &.stroke--10,
+				    &.stroke-2,  &.stroke-5,  &.stroke-8 {
+				        border-right: 1px solid #ddd;
+				    }
+                }
                 .stroke.is-triplet {
-                    &.stroke--4, &.stroke--7, &.stroke--10,
-                    &.stroke-2,  &.stroke-5,  &.stroke-8 {
-                        border-right: none;
-                    }
 				    &.stroke--5, &.stroke--9,
 				    &.stroke-3,  &.stroke-7 {
 					    border-right: 1px solid #ddd;
@@ -454,54 +530,28 @@
                 }
 			}
 
-			&.time-16 { /* 80px/beat */
-				.stroke { max-width: 5px; }
-				.stroke-inner { min-width: 5px; }
-				.stroke--2,  .stroke--3,  .stroke--4,
-				.stroke--6,  .stroke--7,  .stroke--8,
-				.stroke--10, .stroke--11, .stroke--12,
-				.stroke--14, .stroke--15,
-				.stroke-0,   .stroke-1,   .stroke-2,
-				.stroke-4,   .stroke-5,   .stroke-6,
-				.stroke-8,   .stroke-9,   .stroke-10,
-				.stroke-12,  .stroke-13,  .stroke-14 {
-					border-right: none;
+			&.time-16 {
+				.stroke--5, .stroke--9, .stroke--13,
+				.stroke-3,  .stroke-7,  .stroke-11 {
+					border-right: 1px solid #ddd;
 				}
 			}
 
-			&.time-20 { /* 80px/beat */
-				.stroke { max-width: 4px; }
-				.stroke-inner { min-width: 4px; }
-				.stroke--2,  .stroke--3,  .stroke--4,  .stroke--5,
-				.stroke--7,  .stroke--8,  .stroke--9,  .stroke--10,
-				.stroke--12, .stroke--13, .stroke--14, .stroke--15,
-				.stroke--17, .stroke--18, .stroke--19,
-				.stroke-0,   .stroke-1,   .stroke-2,   .stroke-3,
-				.stroke-5,   .stroke-6,   .stroke-7,   .stroke-8,
-				.stroke-10,  .stroke-11,  .stroke-12,  .stroke-13,
-				.stroke-15,  .stroke-16,  .stroke-17,  .stroke-18 {
-					border-right: none;
+			&.time-20 {
+				.stroke--6, .stroke--11, .stroke--16,
+				.stroke-4,  .stroke-9,   .stroke-14 {
+					border-right: 1px solid #ddd;
 				}
 			}
 
-			&.time-24 { /* 84px/beat */
-				.stroke { max-width: 3.5px; }
-				.stroke-inner { min-width: 3.5px; }
-				.stroke--2,  .stroke--3,  .stroke--4,  .stroke--5,  .stroke--6,
-				.stroke--8,  .stroke--9,  .stroke--10, .stroke--11, .stroke--12,
-				.stroke--14, .stroke--15, .stroke--16, .stroke--17, .stroke--18,
-				.stroke--20, .stroke--21, .stroke--22, .stroke--23,
-				.stroke-0,   .stroke-1,   .stroke-2,   .stroke-3,   .stroke-4,
-				.stroke-6,   .stroke-7,   .stroke-8,   .stroke-9,   .stroke-10,
-				.stroke-12,  .stroke-13,  .stroke-14,  .stroke-15,  .stroke-16,
-				.stroke-18,  .stroke-19,  .stroke-20,  .stroke-21,  .stroke-22 {
-					border-right: none;
-				}
-                .stroke.is-triplet {
+			&.time-24 {
+                .stroke:not(.is-triplet) {
                     &.stroke--7, &.stroke--13, &.stroke--19,
                     &.stroke-5,  &.stroke-11,  &.stroke-17 {
-                        border-right: none;
-                    }
+				        border-right: 1px solid #ddd;
+				    }
+                }
+                .stroke.is-triplet {
 				    &.stroke--9, &.stroke--17,
 				    &.stroke-7,  &.stroke-15 {
 					    border-right: 1px solid #ddd;
