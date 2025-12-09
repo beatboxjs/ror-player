@@ -66,15 +66,21 @@
 
 	const rawPattern = computed(() => songToBeatbox(songParts.value, state.value, playbackSettings.value));
 
-	const playStop = () => {
+	const playPause = () => {
 		const p = abstractPlayerRef.value!.getOrCreatePlayer();
 		if(!p.playing) {
 			stopAllPlayers();
 			p.play();
 		} else {
 			p.stop();
-			p.setPosition(0);
 		}
+	};
+
+	const stop = () => {
+		const p = abstractPlayerRef.value!.getOrCreatePlayer();
+		if(p.playing)
+			p.stop();
+		p.setPosition(0);
 	};
 
 	const setPosition = ($event: MouseEvent) => {
@@ -116,7 +122,8 @@
 			/>
 		</div>
 		<ul class="actions icon-list">
-			<li><a href="javascript:" v-tooltip="i18n.t('example-song-player.listen')" @click="playStop()" draggable="false"><fa :icon="abstractPlayerRef?.playerRef?.playing ? 'stop' : 'play-circle'"/></a></li>
+			<li><a href="javascript:" v-tooltip="i18n.t('example-song-player.listen')" @click="playPause()" draggable="false"><fa :icon="abstractPlayerRef?.playerRef?.playing ? 'pause' : 'play-circle'"/></a></li>
+			<li><a href="javascript:" v-tooltip="i18n.t('example-song-player.stop')" @click="stop()" draggable="false"><fa icon="stop"/></a></li>
 			<li><a href="javascript:" v-tooltip="i18n.t('example-song-player.download-mp3')" @click="handleDownload()" draggable="false"><fa icon="download"/></a></li>
 		</ul>
 	</div>
