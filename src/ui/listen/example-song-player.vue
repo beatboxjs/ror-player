@@ -34,6 +34,7 @@
 
 	const songRef = ref<HTMLElement | null>(null);
 	const abstractPlayerRef = ref<InstanceType<typeof AbstractPlayer>>();
+	const getOrCreatePlayer = () => abstractPlayerRef.value!.getOrCreatePlayer();
 
 	const normalizedSong = computed((): Array<Required<Exclude<ExampleSong[0], string>>> => props.song.flatMap((part) => {
 		const result = {
@@ -67,7 +68,7 @@
 	const rawPattern = computed(() => songToBeatbox(songParts.value, state.value, playbackSettings.value));
 
 	const playPause = () => {
-		const p = abstractPlayerRef.value!.getOrCreatePlayer();
+		const p = getOrCreatePlayer();
 		if(!p.playing) {
 			stopAllPlayers();
 			p.play();
@@ -77,7 +78,7 @@
 	};
 
 	const stop = () => {
-		const p = abstractPlayerRef.value!.getOrCreatePlayer();
+		const p = getOrCreatePlayer();
 		if(p.playing)
 			p.stop();
 		p.setPosition(0);
@@ -97,7 +98,7 @@
 		download({
 			type: ExportType.MP3,
 			filename: props.tuneName,
-			player: abstractPlayerRef.value!.getOrCreatePlayer()
+			player: getOrCreatePlayer()
 		});
 	};
 </script>
