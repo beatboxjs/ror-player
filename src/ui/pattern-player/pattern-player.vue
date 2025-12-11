@@ -342,6 +342,12 @@
 				}
 			}
 
+			&.listen {
+				.stroke {
+					border-right: 1px solid #ffffff;
+				}
+			}
+
 			&.listen tr:last-child {
 				.stroke-inner:not(:empty) {
 					/* Shouting: Hide table lines behind overlapping text */
