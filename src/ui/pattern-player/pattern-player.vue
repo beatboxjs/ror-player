@@ -109,6 +109,53 @@
 		return strokeEl ? (strokeEl.offsetLeft + strokeEl.offsetWidth * (stroke - strokeIdx)) : 0;
 	};
 
+
+	// If there is no upbeat, beatI goes from 0 to length - 1.
+	// If there is an upbeat, beatI goes from floor(-upbeat/time) to length - 1.
+	const isTernaryBeat = (instrumentKey: Instrument, beatI: number) => {
+		const patternForInstrument = pattern.value[instrumentKey];
+		const hasNote = (j: number) => {
+			// pattern is an array so its indexes start at 0, not -upbeat.
+			const realJ = j + pattern.value.upbeat;
+			return patternForInstrument[realJ] !== undefined && patternForInstrument[realJ] !== null && patternForInstrument[realJ] !== " ";
+		}
+		const firstStrokeInBeat = beatI * pattern.value.time;
+		const lastStrokeInBeat = firstStrokeInBeat + pattern.value.time - 1;
+		for (let strokeNum = firstStrokeInBeat; strokeNum <= lastStrokeInBeat; strokeNum++) {
+			if (strokeNum%3 !==0 && hasNote(strokeNum)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	const beatIFromStrokeI = (strokeI: number) => {
+		return Math.floor(strokeI/pattern.value.time);
+	}
+	// For each instrument, for each stroke, return the CSS class to apply to the stroke : "" or "is-triplet".
+	const ternaryCSSClasses = computed(() => {
+		const ret = {} as Record<Instrument, Record<number, string>>;
+		for (let instrumentKey of config.instrumentKeys) {
+			ret[instrumentKey] = {};
+		}
+		// We only support 12 and 24 time signatures for now.
+		if(![12, "12", 24, "24"].includes(pattern.value.time)) return ret;
+		const ternaryClassesForInstrument = (instrumentKey: Instrument) => {
+			const areBeatsTernary: Record<number, boolean> = {};
+			for (let beatI = beatIFromStrokeI(-pattern.value.upbeat); beatI < pattern.value.length; beatI++) {
+				areBeatsTernary[beatI] = isTernaryBeat(instrumentKey, beatI);
+			}
+			const ternaryCSSClassesForInstrument: Record<number, string> = {};
+			for (let strokeI = -pattern.value.upbeat; strokeI < pattern.value.length*pattern.value.time + pattern.value.upbeat; strokeI++) {
+				ternaryCSSClassesForInstrument[strokeI] = areBeatsTernary[beatIFromStrokeI(strokeI)] ? 'is-triplet' : '';
+			}
+			return ternaryCSSClassesForInstrument;
+		}
+		for (let instrumentKey of config.instrumentKeys) {
+			ret[instrumentKey] = ternaryClassesForInstrument(instrumentKey);
+		}
+		return ret;
+	});
+
 	const getBeatClass = (i: number) => {
 		let positiveI = i;
 		while(positiveI < 0) // Support negative numbers properly
@@ -123,6 +170,8 @@
 	};
 
 	const getStrokeClass = (realI: number, instrumentKey: Instrument) => {
+		// realI starts at 0, even if there is an upbeat.
+		// i goes from -upbeat to length*time - 1.
 		let i = realI - pattern.value.upbeat;
 
 		const ret = [
@@ -233,7 +282,7 @@
 		</PatternPlayerToolbar>
 
 		<div class="bb-pattern-player-container" ref="containerRef">
-			<table class="bb-pattern-player" :class="`time-${pattern.time}`">
+			<table class="bb-pattern-player" :class="[`time-${pattern.time}`, readonly ? 'listen' : 'compose']" translate="no">
 				<thead>
 					<tr>
 						<td colspan="2" class="instrument-operations">
@@ -250,8 +299,8 @@
 							<HeadphonesButton :instrument="instrumentKey" v-model:playbackSettings="playbackSettings" groupSurdos />
 							<MuteButton :instrument="instrumentKey" v-model:playbackSettings="playbackSettings" />
 						</td>
-						<td v-for="i in pattern.length*pattern.time + pattern.upbeat" :key="i" class="stroke" :class="getStrokeClass(i-1, instrumentKey)" v-tooltip="config.strokesDescription[pattern[instrumentKey][i-1]]?.() || ''">
-							<span v-if="readonly" class="stroke-inner">{{config.strokes[pattern[instrumentKey][i-1]] || '\xa0'}}</span>
+						<td v-for="i in pattern.length*pattern.time + pattern.upbeat" :key="i" class="stroke" :class="getStrokeClass(i-1, instrumentKey).concat(ternaryCSSClasses[instrumentKey][i-1-pattern.upbeat])" v-tooltip="config.strokesDescription[pattern[instrumentKey][i-1]]?.() || ''">
+							<span v-if="readonly" class="stroke-inner">{{config.strokes[pattern[instrumentKey][i-1]]}}</span>
 							<a v-if="!readonly"
 								href="javascript:" class="stroke-inner"
 								:id="`bb-pattern-player-stroke-${instrumentKey}-${i-1}`"
@@ -295,12 +344,40 @@
 			table-layout: fixed;
 
 			.stroke {
-				border-right: 1px solid #ddd;
 				text-align: center;
 				position: relative;
+				overflow: visible;
+				padding: 0;
+
+				.stroke-inner {
+					color: rgb(33, 37, 41);
+				}
+
+				&.is-triplet .stroke-inner {
+					color: var(--bs-pink);
+				}
 
 				&.has-changes {
 					background-color: #fbe8d0;
+				}
+			}
+
+			&.compose {
+				.stroke {
+					border-right: 1px solid #f3f3f3;
+				}
+			}
+
+			&.listen {
+				.stroke {
+					border-right: 1px solid #ffffff;
+				}
+			}
+
+			&.listen tr:last-child {
+				.stroke-inner:not(:empty) {
+					/* Shouting: Hide table lines behind overlapping text */
+					background-color: #fff;
 				}
 			}
 
@@ -356,33 +433,161 @@
 			tbody th, td.instrument-operations {
 				white-space: nowrap;
 			}
+		}
+
+		.bb-pattern-player {
+
+			&.time-2 { /* 64px/beat */
+				.stroke { max-width: 32px; }
+				.stroke-inner { min-width: 32px; }
+			}
+
+			&.time-3 { /* 63px/beat */
+				.stroke { max-width: 21px; }
+				.stroke-inner { min-width: 21px; }
+			}
+
+			&.time-4 { /* 64px/beat */
+				.stroke { max-width: 16px; }
+				.stroke-inner { min-width: 16px; }
+			}
+
+			&.time-5 { /* 65px/beat */
+				.stroke { max-width: 13px; }
+				.stroke-inner { min-width: 13px; }
+			}
+
+			&.time-6 { /* 66px/beat */
+				.stroke { max-width: 11px; }
+				.stroke-inner { min-width: 11px; }
+			}
+
+			&.time-8 { /* 76px/beat */
+				.stroke { max-width: 9.5px; }
+				.stroke-inner { min-width: 9.5px; }
+			}
+
+			&.time-9 { /* 76.5px/beat */
+				.stroke { max-width: 8.5px; }
+				.stroke-inner { min-width: 8.5px; }
+			}
+
+			&.time-12.compose,
+			&.time-16.compose,
+			&.time-20.compose,
+			&.time-24.compose {
+				.stroke { max-width: 8px; }
+				.stroke-inner { min-width: 8px; }
+			}
+
+			&.time-12.listen { /* 78px/beat */
+				.stroke { max-width: 6.5px; }
+				.stroke-inner { min-width: 6.5px; }
+			}
+
+			&.time-16.listen { /* 80px/beat */
+				.stroke { max-width: 5px; }
+				.stroke-inner { min-width: 5px; }
+			}
+
+			&.time-20.listen { /* 80px/beat */
+				.stroke { max-width: 4px; }
+				.stroke-inner { min-width: 4px; }
+			}
+
+			&.time-24.listen { /* 84px/beat */
+				.stroke { max-width: 3.5px; }
+				.stroke-inner { min-width: 3.5px; }
+			}
 
 			&.time-2 {
-				.stroke-inner {
-					min-width: 5.4ex;
+				.stroke-0 {
+					border-right: 1px solid #ddd;
+				}
+			}
+
+			&.time-3 {
+				.stroke--2, .stroke-0, .stroke-1 {
+					border-right: 1px solid #ddd;
+				}
+			}
+
+			&.time-4 {
+				.stroke--2, .stroke--3,
+				.stroke-0, .stroke-1, .stroke-2 {
+					border-right: 1px solid #ddd;
+				}
+			}
+
+			&.time-5 {
+				.stroke--2, .stroke--3, .stroke--4,
+				.stroke-0, .stroke-1, .stroke-2, .stroke-3 {
+					border-right: 1px solid #ddd;
+				}
+			}
+
+			&.time-6 {
+				.stroke--3, .stroke--5,
+				.stroke-1,  .stroke-3, {
+					border-right: 1px solid #ddd;
+				}
+			}
+
+			&.time-8 {
+				.stroke--3, .stroke--5, .stroke--7,
+				.stroke-1,  .stroke-3,  .stroke-5 {
+					border-right: 1px solid #ddd;
+				}
+			}
+
+			&.time-9 {
+				.stroke--4, .stroke--7,
+				.stroke-2,  .stroke-5 {
+					border-right: 1px solid #ddd;
 				}
 			}
 
 			&.time-12 {
-				.stroke-inner {
-					min-width: 1ex;
+				.stroke:not(.is-triplet) {
+					&.stroke--4, &.stroke--7, &.stroke--10,
+					&.stroke-2,  &.stroke-5,  &.stroke-8 {
+						border-right: 1px solid #ddd;
+					}
 				}
+				.stroke.is-triplet {
+					&.stroke--5, &.stroke--9,
+					&.stroke-3,  &.stroke-7 {
+						border-right: 1px solid #ddd;
+					}
+				}
+			}
 
-				.stroke-0, .stroke-1, .stroke-3, .stroke-4, .stroke-6, .stroke-7, .stroke-9, .stroke-10 {
-					border-right: none;
+			&.time-16 {
+				.stroke--5, .stroke--9, .stroke--13,
+				.stroke-3,  .stroke-7,  .stroke-11 {
+					border-right: 1px solid #ddd;
 				}
 			}
 
 			&.time-20 {
-				.stroke-inner {
-					min-width: 1ex;
+				.stroke--6, .stroke--11, .stroke--16,
+				.stroke-4,  .stroke-9,   .stroke-14 {
+					border-right: 1px solid #ddd;
 				}
+			}
 
-				.stroke-0, .stroke-1, .stroke-2, .stroke-3,
-				.stroke-5, .stroke-6, .stroke-7, .stroke-8,
-				.stroke-10,.stroke-11,.stroke-12,.stroke-13,
-				.stroke-15,.stroke-16,.stroke-17,.stroke-18 {
-					border-right: none;
+			&.time-24 {
+				.stroke:not(.is-triplet) {
+					&.stroke--7, &.stroke--13, &.stroke--19,
+					&.stroke-5,  &.stroke-11,  &.stroke-17 {
+						border-right: 1px solid #ddd;
+					}
+				}
+				.stroke.is-triplet {
+					&.stroke--9, &.stroke--17,
+					&.stroke-7,  &.stroke-15 {
+						border-right: 1px solid #ddd;
+					}
 				}
 			}
 		}
