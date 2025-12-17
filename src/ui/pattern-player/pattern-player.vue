@@ -110,24 +110,51 @@
 	};
 
 
-	// Is the beat that this stroke is part of a ternary beat?
-	const isTernaryBeat = (instrumentKey: Instrument, strokeIndex: number) => {
-		if([3, "3", 6, "6", 9, "9"].includes(pattern.value.time)) return true;
-		// We only support 12 and 24 time signatures for now.
-		if(![12, "12", 24, "24"].includes(pattern.value.time)) return false;
-
+	// If there is no upbeat, beatI goes from 0 to length - 1.
+	// If there is an upbeat, beatI goes from floor(-upbeat/time) to length - 1.
+	const isTernaryBeat = (instrumentKey: Instrument, beatI: number) => {
 		const patternForInstrument = pattern.value[instrumentKey];
-		const hasNote = (i: number) => patternForInstrument[i] !== undefined && patternForInstrument[i] !== null && patternForInstrument[i] !== " ";
-
-		const firstStrokeInBeat = Math.floor(strokeIndex/pattern.value.time)*pattern.value.time; // todo upbeats ?
+		const hasNote = (j: number) => {
+			// pattern is an array so its indexes start at 0, not -upbeat.
+			const realJ = j + pattern.value.upbeat;
+			return patternForInstrument[realJ] !== undefined && patternForInstrument[realJ] !== null && patternForInstrument[realJ] !== " ";
+		}
+		const firstStrokeInBeat = beatI * pattern.value.time;
 		const lastStrokeInBeat = firstStrokeInBeat + pattern.value.time - 1;
-		for (let strokeNum = firstStrokeInBeat; strokeNum < lastStrokeInBeat+1; strokeNum++) {
+		for (let strokeNum = firstStrokeInBeat; strokeNum <= lastStrokeInBeat; strokeNum++) {
 			if (strokeNum%3 !==0 && hasNote(strokeNum)) {
 				return true;
 			}
 		}
 		return false;
 	}
+	const beatIFromStrokeI = (strokeI: number) => {
+		return Math.floor(strokeI/pattern.value.time);
+	}
+	// For each instrument, for each stroke, return the CSS class to apply to the stroke : "" or "is-triplet".
+	const ternaryCSSClasses = computed(() => {
+		const ret = {} as Record<Instrument, Record<number, string>>;
+		for (let instrumentKey of config.instrumentKeys) {
+			ret[instrumentKey] = {};
+		}
+		// We only support 12 and 24 time signatures for now.
+		if(![12, "12", 24, "24"].includes(pattern.value.time)) return ret;
+		const ternaryClassesForInstrument = (instrumentKey: Instrument) => {
+			const areBeatsTernary: Record<number, boolean> = {};
+			for (let beatI = beatIFromStrokeI(-pattern.value.upbeat); beatI < pattern.value.length; beatI++) {
+				areBeatsTernary[beatI] = isTernaryBeat(instrumentKey, beatI);
+			}
+			const ternaryCSSClassesForInstrument: Record<number, string> = {};
+			for (let strokeI = -pattern.value.upbeat; strokeI < pattern.value.length*pattern.value.time + pattern.value.upbeat; strokeI++) {
+				ternaryCSSClassesForInstrument[strokeI] = areBeatsTernary[beatIFromStrokeI(strokeI)] ? 'is-triplet' : '';
+			}
+			return ternaryCSSClassesForInstrument;
+		}
+		for (let instrumentKey of config.instrumentKeys) {
+			ret[instrumentKey] = ternaryClassesForInstrument(instrumentKey);
+		}
+		return ret;
+	});
 
 	const getBeatClass = (i: number) => {
 		let positiveI = i;
@@ -143,6 +170,8 @@
 	};
 
 	const getStrokeClass = (realI: number, instrumentKey: Instrument) => {
+		// realI starts at 0, even if there is an upbeat.
+		// i goes from -upbeat to length*time - 1.
 		let i = realI - pattern.value.upbeat;
 
 		const ret = [
@@ -160,9 +189,6 @@
 
 		if(originalPattern.value && (originalPattern.value[instrumentKey][realI] || "").trim() != (pattern.value[instrumentKey][realI] || "").trim())
 			ret.push("has-changes");
-
-		if(isTernaryBeat(instrumentKey, i))
-			ret.push("is-triplet");
 
 		return ret;
 	};
@@ -273,7 +299,7 @@
 							<HeadphonesButton :instrument="instrumentKey" v-model:playbackSettings="playbackSettings" groupSurdos />
 							<MuteButton :instrument="instrumentKey" v-model:playbackSettings="playbackSettings" />
 						</td>
-						<td v-for="i in pattern.length*pattern.time + pattern.upbeat" :key="i" class="stroke" :class="getStrokeClass(i-1, instrumentKey)" v-tooltip="config.strokesDescription[pattern[instrumentKey][i-1]]?.() || ''">
+						<td v-for="i in pattern.length*pattern.time + pattern.upbeat" :key="i" class="stroke" :class="getStrokeClass(i-1, instrumentKey).concat(ternaryCSSClasses[instrumentKey][i-1-pattern.upbeat])" v-tooltip="config.strokesDescription[pattern[instrumentKey][i-1]]?.() || ''">
 							<span v-if="readonly" class="stroke-inner">{{config.strokes[pattern[instrumentKey][i-1]]}}</span>
 							<a v-if="!readonly"
 								href="javascript:" class="stroke-inner"
@@ -328,7 +354,7 @@
 				}
 
 				&.is-triplet .stroke-inner {
-					color: #0000ff;
+					color: var(--bs-pink);
 				}
 
 				&.has-changes {
