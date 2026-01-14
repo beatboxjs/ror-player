@@ -5,30 +5,30 @@ import { clone } from "../utils";
 import defaultTunes from "../defaultTunes";
 import { CompressedPattern, compressedPatternValidator, compressPattern, Pattern, patternFromCompressed, PatternOptional } from "./pattern";
 import config from "../config";
-import * as z from "zod";
+import * as v from "valibot";
 import { getI18n } from "../services/i18n";
 
-export type State = z.infer<typeof stateValidator>;
-export const stateValidator = z.object({
-	songs: z.array(songValidator).default(() => []),
-	tunes: z.record(z.string(), tuneValidator).default(() => defaultTunes),
-	songIdx: z.number().default(0),
+export type State = v.InferOutput<typeof stateValidator>;
+export const stateValidator = v.optional(v.object({
+	songs: v.optional(v.array(songValidator), () => []),
+	tunes: v.optional(v.record(v.string(), tuneValidator), () => defaultTunes),
+	songIdx: v.optional(v.number(), 0),
 	playbackSettings: playbackSettingsValidator
-}).default(() => ({}));
+}), () => ({}));
 
 export type PatternOrTuneReference = [string, string | null];
 
-export type CompressedState = z.infer<typeof compressedStateValidator>;
-export const compressedStateValidator = z.object({
+export type CompressedState = v.InferOutput<typeof compressedStateValidator>;
+export const compressedStateValidator = v.object({
 	/** Patterns by pattern name by tune name */
-	patterns: z.record(z.record(compressedPatternValidator)).optional(),
-	songs: compressedSongsValidator.or(z.array(compressedSongValidator)).optional(),
-	songIdx: z.number().optional(),
-	playbackSettings: playbackSettingsValidator.optional()
+	patterns: v.optional(v.record(v.string(), v.record(v.string(), compressedPatternValidator))),
+	songs: v.optional(v.union([compressedSongsValidator, v.array(compressedSongValidator)])),
+	songIdx: v.optional(v.number()),
+	playbackSettings: v.optional(playbackSettingsValidator)
 });
 
-export function normalizeState(data?: z.input<typeof stateValidator>): State {
-	return stateValidator.parse(data);
+export function normalizeState(data?: v.InferInput<typeof stateValidator>): State {
+	return v.parse(stateValidator, data);
 }
 
 export function extendState(

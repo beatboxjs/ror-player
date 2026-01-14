@@ -1,43 +1,26 @@
 import { expect, test, vi } from "vitest";
-import * as z from "zod";
-import { computedProperties, numberRecordValidator, requiredRecordValidator } from "../utils";
+import * as v from "valibot";
+import { computedProperties, numberRecordValidator } from "../utils";
 import { Ref, reactive, ref } from "vue";
 
 test('numberKeyValidator', () => {
-	const record = numberRecordValidator(z.literal('val'));
+	const record = numberRecordValidator(v.literal('val'));
 
 	// Test valid object
-	expect(record.parse({ 1: 'val' })).toEqual({ 1: 'val' });
+	expect(v.parse(record, { 1: 'val' })).toEqual({ 1: 'val' });
 
 	// Test additional key
-	expect(record.parse({ 1: 'val', 'test': 'val' })).toEqual({ 1: 'val' });
+	expect(v.parse(record, { 1: 'val', 'test': 'val' })).toEqual({ 1: 'val' });
 
 	// Test invalid value
-	expect(() => record.parse({ 1: 'val2' })).toThrow('Invalid literal value');
+	expect(() => v.parse(record, { 1: 'val2' })).toThrow('Invalid type');
 
 	// Test intersection type (with additional key)
-	expect(record.and(z.object({ test: z.literal('val2') })).parse({ 1: 'val', test: 'val2', test2: 'val3' })).toEqual({ 1: 'val', test: 'val2' });
+	expect(v.parse(v.intersect([record, v.object({ test: v.literal('val2') })]), { 1: 'val', test: 'val2', test2: 'val3' })).toEqual({ 1: 'val', test: 'val2' });
 
 	// Test intersection type (with additional key with wrong value)
-	expect(() => record.and(z.object({ test: z.literal('val2') })).parse({ 1: 'val', test: 'val3' })).toThrow('Invalid literal value');
+	expect(() => v.parse(v.intersect([record, v.object({ test: v.literal('val2') })]), { 1: 'val', test: 'val3' })).toThrow('Invalid type');
 });
-
-test('requiredRecordValidator', () => {
-	const record = requiredRecordValidator(['one', 'two'], z.literal('val'));
-
-	// Test valid object
-	expect(record.parse({ one: 'val', two: 'val' })).toEqual({ one: 'val', two: 'val' });
-
-	// Test additional property being ignored
-	expect(record.parse({ one: 'val', two: 'val', three: 'val' })).toEqual({ one: 'val', two: 'val' });
-
-	// Test missing key
-	expect(() => record.parse({ one: 'val' })).toThrow('Invalid literal value');
-
-	// Test invalid value
-	expect(() => record.parse({ one: 'val2', two: 'val' })).toThrow('Invalid literal value');
-});
-
 
 test('computedProperties', () => {
 	const obj: Ref<Record<string, number>> = ref({ a: 1, b: 2 });

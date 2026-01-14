@@ -4419,6 +4419,7 @@ __metadata:
     sass: "npm:^1.83.1"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.7.3"
+    valibot: "npm:^1.0.0-beta.14"
     vite: "npm:^6.0.7"
     vite-plugin-markdown: "npm:^2.2.0"
     vite-plugin-singlefile: "npm:^2.1.0"
@@ -4426,7 +4427,6 @@ __metadata:
     vue: "npm:^3.5.13"
     vue-tsc: "npm:^2.2.0"
     vue3-touch-events: "npm:^4.2.0"
-    zod: "npm:^3.24.1"
   languageName: unknown
   linkType: soft
 
@@ -5090,6 +5090,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"valibot@npm:^1.0.0-beta.14":
+  version: 1.0.0-beta.14
+  resolution: "valibot@npm:1.0.0-beta.14"
+  peerDependencies:
+    typescript: ">=5"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 10/6d0e34f9734b7826baecc3960c11bb8a319e23c6b7168eebb06c1885bca78221272f40395b64dac754219b102af576e1c64b65bc1a235e93e9cb7a1342b60174
+  languageName: node
+  linkType: hard
+
 "vite-node@npm:2.1.8":
   version: 2.1.8
   resolution: "vite-node@npm:2.1.8"
@@ -5531,12 +5543,5 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: 10/f77b3d8d00310def622123df93d4ee654fc6a0096182af8bd60679ddcdfb3474c56c6c7190817c84a2785648cdee9d721c0154eb45698c62176c322fb46fc700
-  languageName: node
-  linkType: hard
-
-"zod@npm:^3.24.1":
-  version: 3.24.1
-  resolution: "zod@npm:3.24.1"
-  checksum: 10/54e25956495dec22acb9399c168c6ba657ff279801a7fcd0530c414d867f1dcca279335e160af9b138dd70c332e17d548be4bc4d2f7eaf627dead50d914fec27
   languageName: node
   linkType: hard

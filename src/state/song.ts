@@ -1,49 +1,49 @@
 import { getPatternFromState, PatternOrTuneReference, State } from "./state";
 import config, {Instrument, instrumentValidator} from "../config";
-import { getMaxIndex, numberRecordValidator, numberToString, requiredRecordValidator } from "../utils";
+import { getMaxIndex, numberRecordValidator, numberToString } from "../utils";
 import { isEqual } from "lodash-es";
-import * as z from "zod";
+import * as v from "valibot";
 
-export type PatternReference = z.infer<typeof patternReferenceValidator>;
-export const patternReferenceValidator = z.tuple([z.string(), z.string()]);
+export type PatternReference = v.InferOutput<typeof patternReferenceValidator>;
+export const patternReferenceValidator = v.tuple([v.string(), v.string()]);
 
-export type SongPart = z.infer<typeof songPartValidator>;
-export const songPartValidator = z.record(instrumentValidator, patternReferenceValidator.optional());
+export type SongPart = v.InferOutput<typeof songPartValidator>;
+export const songPartValidator = v.record(instrumentValidator, v.optional(patternReferenceValidator));
 
-export type SongParts = z.infer<typeof songPartsValidator>;
+export type SongParts = v.InferOutput<typeof songPartsValidator>;
 export const songPartsValidator = numberRecordValidator(songPartValidator);
 
-export type Song = z.infer<typeof songValidator>;
-export const songValidator = songPartsValidator.and(z.object({
-	name: z.string().default("")
-})).default(() => ({}))
+export type Song = v.InferOutput<typeof songValidator>;
+export const songValidator = v.optional(v.intersect([songPartsValidator, v.object({
+	name: v.optional(v.string(), "")
+})]), () => ({}));
 
 /**
  * A single beat in a compressed song. Can be a pattern index from the pattern key index (see PatternIndexKeys below) or a full pattern reference,
  * for all instruments at once or by instrument key.
  */
-type CompressedSongBeat = z.infer<typeof compressedSongBeatValidator>;
-const compressedSongBeatValidator = z.union([z.string(), patternReferenceValidator, requiredRecordValidator(instrumentValidator.options, z.string().or(patternReferenceValidator))]);
+type CompressedSongBeat = v.InferOutput<typeof compressedSongBeatValidator>;
+const compressedSongBeatValidator = v.union([v.string(), patternReferenceValidator, v.object(v.entriesFromList(instrumentValidator.options, v.union([v.string(), patternReferenceValidator])))]);
 
-export type CompressedSong = z.infer<typeof compressedSongValidator>;
-export const compressedSongValidator = z.object({
-	name: z.string(),
-	beats: z.array(compressedSongBeatValidator).or(numberRecordValidator(compressedSongBeatValidator))
+export type CompressedSong = v.InferOutput<typeof compressedSongValidator>;
+export const compressedSongValidator = v.object({
+	name: v.string(),
+	beats: v.union([v.array(compressedSongBeatValidator), numberRecordValidator(compressedSongBeatValidator)])
 });
 
 /** Maps a key to a pattern reference. The (short) key can be used in the compressed song instead of the full pattern reference. */
-type PatternIndexKeys = z.infer<typeof patternIndexKeysValidator>;
-const patternIndexKeysValidator = z.record(z.string(), patternReferenceValidator.or(z.null()));
+type PatternIndexKeys = v.InferOutput<typeof patternIndexKeysValidator>;
+const patternIndexKeysValidator = v.record(v.string(), v.union([patternReferenceValidator, v.null()]));
 
 /** An array of compressed songs, using a common pattern key index. */
-export type CompressedSongs = z.infer<typeof compressedSongsValidator>;
-export const compressedSongsValidator = z.object({
-	keys: patternIndexKeysValidator.optional(),
-	songs: z.array(compressedSongValidator)
+export type CompressedSongs = v.InferOutput<typeof compressedSongsValidator>;
+export const compressedSongsValidator = v.object({
+	keys: v.optional(patternIndexKeysValidator),
+	songs: v.array(compressedSongValidator)
 });
 
-export function normalizeSong(data?: z.input<typeof songValidator>): Song {
-	return songValidator.parse(data);
+export function normalizeSong(data?: v.InferInput<typeof songValidator>): Song {
+	return v.parse(songValidator, data);
 }
 
 export function getSongLength(song: SongParts): number {

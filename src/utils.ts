@@ -1,6 +1,6 @@
 import { inflateRaw, deflateRaw } from "pako";
 import { decode } from "base64-arraybuffer";
-import * as z from "zod";
+import * as v from "valibot";
 import { AllowedComponentProps, ComponentPublicInstance, computed, ComputedRef, EffectScope, effectScope, Ref, ref, toRef, VNodeProps, watch } from "vue";
 
 export type AnyRef<T> = T | Ref<T> | (() => T);
@@ -99,46 +99,15 @@ export async function sleep(millis: number = 0): Promise<void> {
 }
 
 /**
- * Transform the result of a zod scheme to another type and validates that type against another zod scheme.
- * The result of this function basically equals inputSchema.transform((val) => outputSchema.parse(transformer(val))),
- * but errors thrown during the transformation are handled gracefully (since at the moment, zod transformers
- * do not natively support exceptions).
+ * Returns a validator representing a Record<number, any>, picking only number keys from an object. This differs from the usual
+ * records that valibot provides, as they throw an error for invalid keys rather than ignoring them.
  */
-export function transformValidator<Output, Input1, Input2, Input3>(inputSchema: z.ZodType<Input2, any, Input1>, transformer: (input: Input2) => Input3, outputSchema: z.ZodType<Output, any, Input3>): z.ZodEffects<z.ZodEffects<z.ZodType<Input2, any, Input1>, Input2>, Output> {
-	// For now we have to parse the schema twice, since transform() is not allowed to throw exceptions.
-	// See https://github.com/colinhacks/zod/pull/420
-	return inputSchema.superRefine((val, ctx) => {
-		try {
-			const result = outputSchema.safeParse(transformer(val));
-			if (!result.success) {
-				for (const issue of result.error.errors) {
-					ctx.addIssue(issue);
-				}
-			}
-		} catch (err: any) {
-			ctx.addIssue({
-				code: z.ZodIssueCode.custom,
-				message: err.message,
-			});
-		}
-	}).transform((val) => outputSchema.parse(transformer(val)));
-}
-
-/**
- * Returns a validator representing a Record<number, any>, picking only number keys from an object. zod does not support these
- * out of the box, since a record key is always a string and thus cannot be validated with z.number().
- */
-export function numberRecordValidator<Value extends z.ZodTypeAny>(valueType: Value): z.ZodRecord<z.ZodType<number, any, number>, Value> {
-	return transformValidator(z.record(z.any()), (value) => Object.fromEntries(Object.entries(value).filter(([key]) => !isNaN(Number(key)))), z.record(valueType)) as any;
-}
-
-/**
- * Returns a validator representing a record with a fixed set of keys, with all keys being required. Zod only supports enums with optional
- * values.
- * Invalid keys are removed from the parsed object, missing keys and invalid values raise errors.
- */
-export function requiredRecordValidator<T extends [string, ...string[]], Value extends z.ZodTypeAny>(keys: T, valueType: Value): z.ZodObject<Record<T[number], Value>> {
-	return z.object(Object.fromEntries(keys.map((key) => [key, valueType])) as Record<T[number], Value>);
+export function numberRecordValidator<Value extends v.BaseSchema<unknown, unknown, v.BaseIssue<unknown>>>(valueType: Value): v.BaseSchema<Record<any, v.InferInput<Value>>, Record<number, v.InferOutput<Value>>, v.BaseIssue<unknown>> {
+	return v.pipe(
+		v.record(v.any(), v.any()),
+		v.transform((value) => Object.fromEntries(Object.entries(value).filter(([key]) => !isNaN(Number(key))))),
+		v.record(v.pipe(v.any(), v.transform(Number)), valueType)
+	);
 }
 
 export type ComponentProps<Component extends new (...args: any) => ComponentPublicInstance<any, any, any, any, any, any, any, any, any, any, any>> = Omit<InstanceType<Component>["$props"], keyof VNodeProps | keyof AllowedComponentProps>;

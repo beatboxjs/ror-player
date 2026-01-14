@@ -1,18 +1,18 @@
-import * as z from "zod";
+import * as v from "valibot";
 import { getI18n } from "./services/i18n";
 
 const instrumentKeys = ["ls", "ms", "hs", "re", "sn", "ta", "ag", "sh", "ot"] as const;
-export const instrumentValidator = z.enum(instrumentKeys);
-export type Instrument = z.infer<typeof instrumentValidator>;
+export const instrumentValidator = v.picklist(instrumentKeys);
+export type Instrument = v.InferOutput<typeof instrumentValidator>;
 
-export const strokeValidator = z.string();
+export const strokeValidator = v.string();
 /** A stroke is a single sound that an instrument makes. It is identified by a single letter, corresponding to the file name of the audio file in assets/audio/. */
-export type Stroke = z.infer<typeof strokeValidator>;
+export type Stroke = v.InferOutput<typeof strokeValidator>;
 
 const categoryKeys = ["common", "uncommon", "new", "proposed", "custom", "onesurdo", "easy", "medium", "tricky", "western", "cultural-appropriation", "all"] as const;
-export const categoryValidator = z.enum(categoryKeys);
+export const categoryValidator = v.picklist(categoryKeys);
 /** Categories by which the tune list can be filtered. Each tune can be part of any number of categories. */
-export type Category = z.infer<typeof categoryValidator>;
+export type Category = v.InferOutput<typeof categoryValidator>;
 
 export type Config = {
 	/** The name of the app as it should be shown throughout the UI, such as “RoR Player” */

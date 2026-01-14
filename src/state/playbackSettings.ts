@@ -1,35 +1,35 @@
 import config, { instrumentValidator } from "../config";
-import { clone, requiredRecordValidator } from "../utils";
-import * as z from "zod";
+import { clone } from "../utils";
+import * as v from "valibot";
 
-export type Headphones = z.infer<typeof headphonesValidator>;
-export const headphonesValidator = z.array(instrumentValidator);
+export type Headphones = v.InferOutput<typeof headphonesValidator>;
+export const headphonesValidator = v.array(instrumentValidator);
 
-export type Mute = z.infer<typeof muteValidator>;
-export const muteValidator = z.record(instrumentValidator, z.boolean().optional());
+export type Mute = v.InferOutput<typeof muteValidator>;
+export const muteValidator = v.record(instrumentValidator, v.optional(v.boolean()));
 
-export type Whistle = z.infer<typeof whistleValidator>; // 1: Whistle on one, 2: whistle on all beats
-export const whistleValidator = z.union([z.literal(false), z.literal(1), z.literal(2)]);
+export type Whistle = v.InferOutput<typeof whistleValidator>; // 1: Whistle on one, 2: whistle on all beats
+export const whistleValidator = v.union([v.literal(false), v.literal(1), v.literal(2)]);
 
-export type Volumes = z.infer<typeof volumesValidator>;
-export const volumesValidator = requiredRecordValidator(instrumentValidator.options, z.number());
+export type Volumes = v.InferOutput<typeof volumesValidator>;
+export const volumesValidator = v.object(v.entriesFromList(instrumentValidator.options, v.number()));
 
-export type PlaybackSettings = z.infer<typeof playbackSettingsValidator>;
-export const playbackSettingsValidator = z.object({
-	speed: z.number().default(config.defaultSpeed),
-	headphones: headphonesValidator.default(() => []),
-	mute: muteValidator.default(() => ({})),
-	volume: z.number().default(1),
-	volumes: volumesValidator.default(() => clone(config.volumePresets[Object.keys(config.volumePresets)[0]].volumes)),
-	loop: z.boolean().default(false),
-	length: z.number().optional(), // Cut off after a certain amount of beats
-	whistle: whistleValidator.default(false)
-}).default(() => ({}));
+export type PlaybackSettings = v.InferOutput<typeof playbackSettingsValidator>;
+export const playbackSettingsValidator = v.optional(v.object({
+	speed: v.optional(v.number(), config.defaultSpeed),
+	headphones: v.optional(headphonesValidator, () => []),
+	mute: v.optional(muteValidator, () => ({})),
+	volume: v.optional(v.number(), 1),
+	volumes: v.optional(volumesValidator, () => clone(config.volumePresets[Object.keys(config.volumePresets)[0]].volumes)),
+	loop: v.optional(v.boolean(), false),
+	length: v.optional(v.number()), // Cut off after a certain amount of beats
+	whistle: v.optional(whistleValidator, false)
+}), () => ({}));
 
-type PlaybackSettingsOptional = z.input<typeof playbackSettingsValidator>;
+type PlaybackSettingsOptional = v.InferInput<typeof playbackSettingsValidator>;
 
 export function normalizePlaybackSettings(data?: PlaybackSettingsOptional): PlaybackSettings {
-	return playbackSettingsValidator.parse(data);
+	return v.parse(playbackSettingsValidator, data);
 }
 
 export function updatePlaybackSettings(playbackSettings: PlaybackSettings, update: PlaybackSettingsOptional): void {

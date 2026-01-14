@@ -2,7 +2,7 @@ import config, { Instrument } from "./config";
 import { clone } from "./utils";
 import { AllVolumeHack, normalizePattern, Pattern, compressedPatternValidator } from "./state/pattern";
 import { normalizeTune, Tune } from "./state/tune";
-import * as z from "zod";
+import * as v from "valibot";
 import { PatternReference } from "./state/song";
 
 function stretch(from: number, to: number, pattern: string): string {
@@ -36,7 +36,7 @@ function decrescendo(length: number): AllVolumeHack {
 const sheetUrl = "https://github.com/rhythms-of-resistance/sheetbook/blob/master/generated/single/";
 
 type RawTune = Partial<Omit<Tune, 'patterns'>> & {
-	patterns: Record<string, z.input<typeof compressedPatternValidator>>;
+	patterns: Record<string, v.InferInput<typeof compressedPatternValidator>>;
 	time?: number;
 };
 

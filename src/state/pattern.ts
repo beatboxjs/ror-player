@@ -1,23 +1,23 @@
 import config, { Instrument, instrumentValidator, strokeValidator } from "../config";
 import { isEqual } from "lodash-es";
-import { clone, numberRecordValidator, requiredRecordValidator, transformValidator } from "../utils";
+import { clone, numberRecordValidator } from "../utils";
 import { applyDiffString, getDiffString } from "./patternDiff";
-import * as z from "zod";
+import * as v from "valibot";
 
 /** The notes of a pattern: a set of strokes that each instrument plays in a certain order. It is wise to use a sparse array for the strokes. */
-export type Beats = z.infer<typeof beatsValidator>;
-export const beatsValidator = requiredRecordValidator(instrumentValidator.options, z.array(strokeValidator).default(() => []));
+export type Beats = v.InferOutput<typeof beatsValidator>;
+export const beatsValidator = v.object(v.entriesFromList(instrumentValidator.options, v.optional(v.array(strokeValidator), () => [])));
 
 /** The notes of a pattern, compressed using compressPattern(). */
-const beatsStringValidator = z.record(instrumentValidator, z.string().optional());
+const beatsStringValidator = v.record(instrumentValidator, v.optional(v.string()));
 
 /**
  * A (hacky) way to specify a separate volume for each stroke in a pattern (for example to achieve crescendo), for all instruments at once.
  * A record where the key is the index in the stroke array and the value is the volume between 0 and 1.
  * Setting the volume for a particular stroke will also affect the following strokes within the same pattern (until a new volume is defined).
  */
-export type AllVolumeHack = z.infer<typeof allVolumeHackValidator>;
-export const allVolumeHackValidator = numberRecordValidator(z.number());
+export type AllVolumeHack = v.InferOutput<typeof allVolumeHackValidator>;
+export const allVolumeHackValidator = numberRecordValidator(v.number());
 
 /**
  * A (hacky) way to specify a separate volume for each stroke in a pattern (for example to achieve crescendo) for each instrument.
@@ -25,42 +25,46 @@ export const allVolumeHackValidator = numberRecordValidator(z.number());
  * Setting the volume for a particular stroke will also affect the following strokes within the same pattern (until a new volume is defined).
  * For legacy reasons, also supports AllVolumeHack as an input type and automatically converts it.
  */
-export type InstrumentVolumeHack = z.infer<typeof instrumentVolumeHackValidator>;
-const strictInstrumentVolumeHackValidator = z.record(instrumentValidator, allVolumeHackValidator);
-export const instrumentVolumeHackValidator = transformValidator(strictInstrumentVolumeHackValidator.or(allVolumeHackValidator), (val) => {
-	if (Object.keys(val).every((key) => key.match(/^[0-9]+$/))) {
-		// Legacy volume hack: one volume per stroke (not differentiated by instruments)
-		return Object.fromEntries(config.instrumentKeys.map((instr) => [instr, clone(val)]));
-	} else {
-		return val;
-	}
-}, strictInstrumentVolumeHackValidator);
+export type InstrumentVolumeHack = v.InferOutput<typeof instrumentVolumeHackValidator>;
+const strictInstrumentVolumeHackValidator = v.record(instrumentValidator, allVolumeHackValidator);
+export const instrumentVolumeHackValidator = v.pipe(
+	v.union([strictInstrumentVolumeHackValidator, allVolumeHackValidator]),
+	v.transform((val) => {
+		if (Object.keys(val).every((key) => key.match(/^[0-9]+$/))) {
+			// Legacy volume hack: one volume per stroke (not differentiated by instruments)
+			return Object.fromEntries(config.instrumentKeys.map((instr) => [instr, clone(val)]));
+		} else {
+			return val;
+		}
+	}),
+	strictInstrumentVolumeHackValidator
+);
 
-type PatternProperties = z.infer<typeof patternPropertiesValidator>;
-const patternPropertiesValidator = z.object({
-	length: z.number().default(4),
-	time: z.coerce.number().finite().default(4), // For some reason, in some old patterns this is a string, see https://github.com/beatboxjs/ror-player/issues/46
-	speed: z.number().default(() => config.defaultSpeed),
-	upbeat: z.number().default(0),
-	loop: z.boolean().default(false),
-	displayName: z.string().optional(),
-	volumeHack: instrumentVolumeHackValidator.optional()
+type PatternProperties = v.InferOutput<typeof patternPropertiesValidator>;
+const patternPropertiesValidator = v.object({
+	length: v.optional(v.number(), 4),
+	time: v.optional(v.pipe(v.any(), v.transform(Number), v.finite()), 4), // For some reason, in some old patterns this is a string, see https://github.com/beatboxjs/ror-player/issues/46
+	speed: v.optional(v.number(), () => config.defaultSpeed),
+	upbeat: v.optional(v.number(), 0),
+	loop: v.optional(v.boolean(), false),
+	displayName: v.optional(v.string()),
+	volumeHack: v.optional(instrumentVolumeHackValidator)
 });
 
 /**
  * A pattern is a collection of strokes that each instruments plays in a certain order.
  */
-export type Pattern = z.infer<typeof patternValidator>;
-export const patternValidator = patternPropertiesValidator.and(beatsValidator).default(() => ({}));
+export type Pattern = v.InferOutput<typeof patternValidator>;
+export const patternValidator = v.optional(v.intersect([patternPropertiesValidator, beatsValidator]), () => ({}));
 
-export type PatternOptional = z.input<typeof patternValidator>;
+export type PatternOptional = v.InferInput<typeof patternValidator>;
 
-export type CompressedPattern = z.infer<typeof compressedPatternValidator>;
-export const compressedPatternValidator = patternPropertiesValidator.partial().and(beatsStringValidator);
+export type CompressedPattern = v.InferOutput<typeof compressedPatternValidator>;
+export const compressedPatternValidator = v.intersect([v.partial(patternPropertiesValidator), beatsStringValidator]);
 
 
 export function normalizePattern(data?: PatternOptional): Pattern {
-	return patternValidator.parse(data);
+	return v.parse(patternValidator, data);
 }
 
 

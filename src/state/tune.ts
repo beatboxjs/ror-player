@@ -1,29 +1,29 @@
 import { Category, categoryValidator, instrumentValidator } from "../config";
 import { normalizePattern, PatternOptional, patternValidator } from "./pattern";
-import * as z from "zod";
+import * as v from "valibot";
 
-export type ExampleSong = z.infer<typeof exampleSongValidator>;
-export const exampleSongValidator = z.array(z.string().or(z.object({
-	tuneName: z.string().optional(),
-	patternName: z.string(),
-	length: z.number().optional(),
-	instruments: z.array(instrumentValidator).optional()
-})));
+export type ExampleSong = v.InferOutput<typeof exampleSongValidator>;
+export const exampleSongValidator = v.array(v.union([v.string(), v.object({
+	tuneName: v.optional(v.string()),
+	patternName: v.string(),
+	length: v.optional(v.number()),
+	instruments: v.optional(v.array(instrumentValidator))
+})]));
 
-export type Tune = z.infer<typeof tuneValidator>;
-export const tuneValidator = z.object({
-	patterns: z.record(z.string(), patternValidator).default(() => ({})),
-	categories: z.array(categoryValidator).default(() => []),
-	displayName: z.string().optional(),
-	sheet: z.string().optional(),
-	video: z.string().optional(),
-	descriptionFilename: z.string().optional(),
-	speed: z.number().optional(),
-	exampleSong: exampleSongValidator.optional()
-}).default(() => ({}));
+export type Tune = v.InferOutput<typeof tuneValidator>;
+export const tuneValidator = v.optional(v.object({
+	patterns: v.optional(v.record(v.string(), patternValidator), () => ({})),
+	categories: v.optional(v.array(categoryValidator), () => []),
+	displayName: v.optional(v.string()),
+	sheet: v.optional(v.string()),
+	video: v.optional(v.string()),
+	descriptionFilename: v.optional(v.string()),
+	speed: v.optional(v.number()),
+	exampleSong: v.optional(exampleSongValidator)
+}), () => ({}));
 
-export function normalizeTune(data?: z.input<typeof tuneValidator>): Tune {
-	return tuneValidator.parse(data);
+export function normalizeTune(data?: v.InferInput<typeof tuneValidator>): Tune {
+	return v.parse(tuneValidator, data);
 }
 
 export function extendTune(tune: Tune, data: Partial<Tune>, selectPattern?: (patternName: string) => boolean): void {
