@@ -89,7 +89,7 @@
 
 	watch(() => props.show && !!props.element, async (shouldShow) => {
 		if (shouldShow) {
-			show();
+			void show();
 		} else {
 			hide();
 		}

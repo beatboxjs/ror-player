@@ -25,7 +25,7 @@
 	<div class="dropdown">
 		<button class="btn btn-secondary dropdown-toggle" :class="buttonClass" data-bs-toggle="dropdown">{{config.times[props.modelValue]?.() || `${props.modelValue}⁄4`}}</button>
 		<ul class="dropdown-menu">
-			<li v-for="(desc, ti) in config.times" :key="ti"><a class="dropdown-item" :class="{ active: props.modelValue == ti }" href="javascript:" @click="handleUpdate(ti)" draggable="false">{{i18n.t("time-signature-picker.time-signature", { time: desc() })}}</a></li>
+			<li v-for="(desc, ti) in config.times" :key="ti"><a class="dropdown-item" :class="{ active: props.modelValue === Number(ti) }" href="javascript:" @click="handleUpdate(Number(ti))" draggable="false">{{i18n.t("time-signature-picker.time-signature", { time: desc() })}}</a></li>
 		</ul>
 	</div>
 </template>

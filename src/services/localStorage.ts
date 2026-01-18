@@ -34,5 +34,5 @@ watch(reactiveLocalStorage, () => {
 }, { deep: true });
 
 export function ensurePersistentStorage(): void {
-	navigator.storage?.persist?.();
+	void navigator.storage?.persist?.();
 }

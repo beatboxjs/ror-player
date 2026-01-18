@@ -28,8 +28,9 @@
 	watch(importData, () => {
 		if (importData.value) {
 			const errs = props.history.loadEncodedString(importData.value);
-			if(errs.length > 0)
-				showAlert({ title: () => i18n.t("history-picker.import-error-title"), message: errs.join("\n"), variant: 'warning' });
+			if(errs.length > 0) {
+				void showAlert({ title: () => i18n.t("history-picker.import-error-title"), message: errs.join("\n"), variant: 'warning' });
+			}
 			showPopover.value = true;
 			importData.value = undefined;
 		}

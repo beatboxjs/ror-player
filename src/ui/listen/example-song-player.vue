@@ -88,7 +88,7 @@
 	const getPositionMarkerLeft = ({ position, player }: PositionData<false>) => (position / player._pattern.length) * songRef.value!.scrollWidth;
 
 	const handleDownload = () => {
-		download({
+		void download({
 			type: ExportType.MP3,
 			filename: props.tuneName,
 			player: abstractPlayerRef.value!.getOrCreatePlayer()

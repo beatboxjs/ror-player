@@ -1,4 +1,4 @@
-import { createApp, defineComponent, h, ref } from "vue";
+import { createApp, defineComponent, Directive, h, ref } from "vue";
 import "./bootstrap.scss";
 import "./bootstrap";
 import "./app.scss";
@@ -39,5 +39,11 @@ createApp(Root, { config: { performance: true } })
 	.use<Vue3TouchEventsOptions>(Vue3TouchEvents, {})
 	.component('fa', FontAwesomeIcon)
 	.mount('#app');
+
+declare module "vue" {
+	export interface GlobalDirectives {
+		vTouch: Directive;
+	}
+}
 
 document.getElementById('loading')!.remove();

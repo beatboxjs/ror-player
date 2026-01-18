@@ -1,0 +1,11 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"composite": true,
+		"outDir": "out.node"
+	},
+	"include": [
+		"vite.config.ts",
+		"rollup-audio-files.ts"
+	]
+}

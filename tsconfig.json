@@ -4,11 +4,14 @@
 		"esModuleInterop": true,
 		"strict": true,
 		"sourceMap": true,
-		"moduleResolution": "node",
+		"moduleResolution": "bundler",
 		"module": "esnext",
 		"isolatedModules": true,
 		"skipLibCheck": true
 	},
+	"references": [
+		{ "path": "./tsconfig.node.json" }
+	],
 	"include": ["src/**/*.ts", "src/**/*.vue"],
 	"vueCompilerOptions": {
 		"strictTemplates": true

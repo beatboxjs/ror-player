@@ -209,7 +209,7 @@
 			strokeDropdownPopover.value = undefined;
 		}
 
-		nextTick(() => {
+		void nextTick(() => {
 			if (currentStrokeDropdown.value) {
 				strokeDropdownPopover.value = new CustomPopover(`#bb-pattern-player-stroke-${currentStrokeDropdown.value.instr}-${currentStrokeDropdown.value.i}`, { content: strokeDropdownRef.value!, placement: 'bottom' });
 				strokeDropdownPopover.value.show();

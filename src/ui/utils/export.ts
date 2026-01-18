@@ -44,7 +44,7 @@ export async function download({ type, player, filename }: ExportArgs): Promise<
 
 		// eslint-disable-next-line no-console
 		console.error(`Error exporting ${type.toUpperCase()}`, err.stack || err);
-		showAlert({ title: () => getI18n().t("export.error-title", { type: type.toUpperCase() }), message: err.message, variant: "danger" });
+		void showAlert({ title: () => getI18n().t("export.error-title", { type: type.toUpperCase() }), message: err.message, variant: "danger" });
 	} finally {
 		progressApp.unmount();
 		progressEl.remove();

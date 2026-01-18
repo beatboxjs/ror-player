@@ -32,7 +32,7 @@
 			if(!filterPatternList(state.value, filter.value).includes(tuneName.value))
 				filter.value = { text: "", cat: "all" };
 
-			nextTick(() => {
+			void nextTick(() => {
 				scrollToTune();
 			});
 		}

@@ -8,9 +8,9 @@ export function registerServiceWorker(): void {
 				console.error("Error registering service worker", err.stack || err);
 			});
 		} else {
-			navigator.serviceWorker.getRegistrations().then(function(registrations) {
+			void navigator.serviceWorker.getRegistrations().then(function(registrations) {
 				for(const registration of registrations) {
-					registration.unregister()
+					void registration.unregister();
 				}
 			});
 		}

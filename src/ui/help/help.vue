@@ -25,7 +25,7 @@
 	const downloadFilename = config.appName.toLowerCase().replace(/[-_ ]+/g, "-") + '.html';
 
 	const selectLanguage = (lang: string) => {
-		i18n.changeLanguage(lang);
+		void i18n.changeLanguage(lang);
 		reactiveLocalStorage.lang = lang;
 	};
 

@@ -28,7 +28,7 @@ for(const i in audioFiles) {
 	}
 
 	const decompressed = inflateRaw(new Uint8Array(decode(audioFiles[i])));
-	Beatbox.registerInstrument(`${m[1]}_${String.fromCodePoint(parseInt(m[2], 16))}`, decompressed.buffer as ArrayBuffer);
+	void Beatbox.registerInstrument(`${m[1]}_${String.fromCodePoint(parseInt(m[2], 16))}`, decompressed.buffer as ArrayBuffer);
 }
 
 let currentNumber = 0;
@@ -36,6 +36,12 @@ let currentNumber = 0;
 const players: {
 	[id: number]: Beatbox;
 } = { };
+
+declare module "beatbox.js" {
+	interface BeatboxEvents {
+		setPosition: [];
+	}
+}
 
 class CustomBeatbox extends Beatbox {
 	setPosition(position: number) {
@@ -189,7 +195,7 @@ export function songToBeatbox(song: SongParts, state: State, playbackSettings: P
 
 export function stopAllPlayers(): void {
 	for(const id of Object.keys(players) as unknown as number[]) {
-		players[id].stop();
+		void players[id].stop();
 	}
 }
 

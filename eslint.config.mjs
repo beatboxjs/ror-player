@@ -1,19 +1,38 @@
-/* eslint-env node */
-module.exports = {
-	root: true,
-	parser: 'vue-eslint-parser',
-	parserOptions: {
-		project: [
-			`${__dirname}/tsconfig.json`
-		],
-		extraFileExtensions: ['.vue'],
-		parser: "@typescript-eslint/parser"
+import tseslint from "typescript-eslint";
+import importPlugin from "eslint-plugin-import";
+import vuePlugin from "eslint-plugin-vue";
+import globals from "globals";
+
+export default tseslint.config({
+	ignores: ["**/dist/*", "**/out.*/*", "**/vite.config.ts.timestamp-*.mjs"]
+}, {
+	extends: [
+		tseslint.configs.base,
+		{ ...importPlugin.flatConfigs.recommended, rules: {} },
+		importPlugin.flatConfigs.typescript,
+		...vuePlugin.configs['flat/essential']
+	],
+
+	files: ['**/*.{js,mjs,cjs,ts,mts,cts,vue}'],
+
+	languageOptions: {
+		globals: globals.browser, // ...globals.node,
+		parserOptions: {
+			parser: tseslint.parser,
+			tsconfigRootDir: import.meta.dirname,
+			project: ["tsconfig.json"],
+			extraFileExtensions: [".vue"]
+		}
 	},
-	plugins: ['@typescript-eslint', 'import'],
-	extends: ['plugin:vue/vue3-essential', 'plugin:import/typescript'],
-	env: {
-		node: true
+
+	settings: {
+		"import/resolver": {
+			"typescript": {
+				projectService: true
+			}
+		},
 	},
+
 	rules: {
 		"@typescript-eslint/explicit-module-boundary-types": ["warn", { "allowArgumentsExplicitlyTypedAsAny": true }],
 		"import/no-unresolved": ["error", { "ignore": [ "\\?raw$", "virtual:audioFiles" ], "caseSensitive": true }],
@@ -22,14 +41,18 @@ module.exports = {
 		"import/no-named-as-default": "off",
 		"import/no-named-as-default-member": ["warn"],
 		"import/no-duplicates": ["warn"],
-		"import/namespace": ["error"],
 		"import/default": ["error"],
 		"@typescript-eslint/no-extra-non-null-assertion": ["error"],
 		"@typescript-eslint/no-non-null-asserted-optional-chain": ["error"],
 		"@typescript-eslint/prefer-as-const": ["error"],
 		"no-restricted-globals": ["error", "$"],
 		"no-restricted-imports": ["error", "vue/types/umd"],
-		"@typescript-eslint/no-throw-literal": ["error"],
+		"no-throw-literal": ["error"],
+		"vue/multi-word-component-names": ["off"],
+		"@typescript-eslint/no-base-to-string": ["error"],
+		"@typescript-eslint/no-misused-promises": ["error", { checksVoidReturn: false }],
+		"vue/return-in-computed-property": ["off"],
+		"@typescript-eslint/no-floating-promises": ["error"],
 
 		"constructor-super": ["error"],
 		"for-direction": ["error"],
@@ -84,8 +107,11 @@ module.exports = {
 		"no-warning-comments": ["warn"],
 		"require-yield": ["error"],
 		"use-isnan": ["error"],
-		"valid-typeof": ["error"],
-
-		"vue/multi-word-component-names": "off"
-	}
-};
+		"valid-typeof": ["error"]
+	},
+}, {
+	files: ["**/*.{js,cjs,mjs}"],
+	extends: [
+		tseslint.configs.disableTypeChecked
+	]
+});

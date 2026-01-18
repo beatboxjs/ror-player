@@ -50,7 +50,7 @@
 	};
 
 	const handleDownload = (type: ExportType) => {
-		download({
+		void download({
 			type,
 			filename: getSongName(state.value, songIdx.value)!,
 			player: getPlayerById(props.player.id)

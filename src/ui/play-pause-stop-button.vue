@@ -17,12 +17,12 @@
 			player.value.play();
 		}
 		else
-			player.value.stop();
+			void player.value.stop();
 	};
 
 	const stop = () => {
 		if(player.value.playing)
-			player.value.stop();
+			void player.value.stop();
 		player.value.setPosition(0);
 	};
 </script>
