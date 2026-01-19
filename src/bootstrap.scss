@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $btn-transition: color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out; // Delete background-color from transition
 $enable-shadows: true;
 $enable-gradients: true;
