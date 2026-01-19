@@ -93,7 +93,7 @@
 </script>
 
 <template>
-	<HybridPopoverButton custom-class="bb-playback-settings" variant="light" :title="i18n.t('playback-settings-picker.title')">
+	<HybridPopoverButton custom-class="bb-playback-settings" variant="secondary" :title="i18n.t('playback-settings-picker.title')">
 		<template #button>
 			<fa icon="sliders-h"/> <fa icon="caret-down"/>
 		</template>
@@ -211,7 +211,7 @@
 		}
 
 		td.master {
-			border-right: 1px solid #dee2e6;
+			border-right: 1px solid var(--bs-border-color);
 			padding-left: 0;
 			padding-right: 8px;
 
@@ -221,7 +221,7 @@
 		}
 
 		.inactive {
-			color: #bbb;
+			color: var(--bb-disabled-link-color);
 		}
 	}
 </style>

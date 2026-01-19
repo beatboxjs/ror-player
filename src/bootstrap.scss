@@ -53,6 +53,18 @@ $secondary: #fff;
 
 // Customizations
 
+// Custom theme color "modified" to indicate local changes
+$modified: #fdf4e8;
+$modified-dark: #7d6b5e; // Recommended by AI as a dark mode equivalent
+$theme-colors: map.set($theme-colors, "modified", $modified);
+
+:root {
+	--bb-modified: #{$modified};
+	@include color-mode(dark) {
+		--bb-modified: #{$modified-dark};
+	}
+}
+
 // Set button style to bootstrap v3 theme
 @each $color, $value in $theme-colors {
 	.btn-#{$color} {
@@ -103,6 +115,31 @@ $secondary: #fff;
 	@include button-outline-variant(#6c757d);
 }
 
+// Above, we override $secondary with white like in Bootstrap 3 instead of gray like in Bootstrap 4/5. In dark mode, use gray again.
+$theme-colors-dark: (
+	secondary: $gray-600,
+	modified: $modified-dark
+);
+
+@include color-mode(dark) {
+	@each $color, $value in $theme-colors-dark {
+		.btn-#{$color} {
+			@include button-variant($value, $value);
+
+			$border: darken($value, 14%);
+			--#{$prefix}btn-border-color: #{$border};
+			--#{$prefix}btn-hover-border-color: #{darken($border, 12%)};
+			--#{$prefix}btn-active-border-color: #{$border};
+
+			--#{$prefix}btn-hover-bg: #{darken($value, 12%)};
+			--#{$prefix}btn-active-bg: #{darken($value, 12%)};
+			--#{$prefix}btn-disabled-bg: #{darken($value, 12%)};
+
+			@include gradient-y($start-color: $value, $end-color: darken($value, 12%));
+		}
+	}
+}
+
 h1 {
 	margin-top: 1.5rem;
 	margin-bottom: 2rem;
@@ -115,7 +152,7 @@ h1 {
 
 h2 {
 	padding-bottom: .3rem;
-	border-bottom: 1px solid #eaecef;
+	border-bottom: 1px solid var(--bs-secondary-bg);
 	margin-bottom: 1rem;
 	margin-top: 2rem;
 

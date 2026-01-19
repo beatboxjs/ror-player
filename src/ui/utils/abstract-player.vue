@@ -133,7 +133,7 @@
 		position: absolute;
 		top: 0;
 		height: 100%;
-		border-left: 1px solid #000;
+		border-left: 1px solid var(--bs-body-color);
 		transition: left 0.1s linear;
 		pointer-events: none;
 		display: none;

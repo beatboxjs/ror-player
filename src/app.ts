@@ -1,4 +1,4 @@
-import { createApp, defineComponent, Directive, h, ref } from "vue";
+import { createApp, defineComponent, Directive, h, ref, watchEffect } from "vue";
 import "./bootstrap.scss";
 import "./bootstrap";
 import "./app.scss";
@@ -10,6 +10,7 @@ import { faBars, faCaretDown, faCheck, faClock, faCode, faCog, faCopy, faDownloa
 import Vue3TouchEvents, { Vue3TouchEventsOptions } from "vue3-touch-events";
 import { ensurePersistentStorage, reactiveLocalStorage } from "./services/localStorage";
 import { reactiveLocationHash } from "./services/router";
+import { theme } from "./services/bootstrap";
 
 registerServiceWorker();
 
@@ -47,3 +48,7 @@ declare module "vue" {
 }
 
 document.getElementById('loading')!.remove();
+
+watchEffect(() => {
+	document.documentElement.setAttribute("data-bs-theme", theme.value);
+});

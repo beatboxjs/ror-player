@@ -221,23 +221,14 @@
 			top: 2px;
 			right: 2px;
 			border-radius: 5px;
-			background: rgba(255, 255, 255, 0.5);
+			background: color-mix(in srgb, var(--bs-card-bg) 50%, transparent);
 			opacity: 0.5;
 			transition: opacity .3s, background-color .3s;
 
 			&:hover {
 				opacity: 1;
-				background-color: #fff;
+				background-color: var(--bs-card-bg);
 			}
-		}
-
-		.position-marker {
-			position: absolute;
-			top: 0;
-			height: 100%;
-			border-left: 1px solid #000;
-			transition: left 0.1s linear;
-			pointer-events: none;
 		}
 
 	}

@@ -11,10 +11,33 @@
 		<link rel="apple-touch-icon" href="./app-180.png">
 		<link rel="manifest" href="./manifest.json">
 		<style>
+			:root {
+				--bs-body-color: #212529;
+				--bs-body-bg: #fff;
+			}
+
+			@media (prefers-color-scheme: dark) {
+				:root {
+					--bs-body-color: #dee2e6;
+					--bs-body-bg: #212529;
+				}
+			}
+
+			html,body {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				background-color: var(--bs-body-bg);
+			}
+
 			#loading {
+				padding: 5px 10px;
 				font-size: 24.5px;
 				font-weight: 500;
-				color: #495057;
+				line-height: 1.5;
+				color: var(--bs-body-color);
 				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 			}
 
@@ -25,7 +48,7 @@
 				transform: translate(-50% -50%);
 				width: 28px;
 				height: 28px;
-				border: 3.5px solid #495057;
+				border: 3.5px solid var(--bs-body-color);
 				border-right-color: transparent;
 				border-radius: 50%;
 				animation: spinner-border .75s linear infinite;

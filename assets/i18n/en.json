@@ -165,7 +165,11 @@
 		"download": "Download {{appName}}",
 		"app": "{{appName}} app",
 		"source-code": "Source code on GitHub",
-		"language": "Language"
+		"language": "Language",
+		"colour-mode": "Colour mode",
+		"colour-mode-auto": "auto",
+		"colour-mode-light": "light",
+		"colour-mode-dark": "dark"
 	},
 	"example-song-player": {
 		"listen": "Listen",

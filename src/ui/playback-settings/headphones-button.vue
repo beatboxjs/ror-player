@@ -46,6 +46,6 @@
 
 <style lang="scss">
 	.bb-headphones-button.inactive {
-		color: #bbb;
+		color: var(--bb-disabled-link-color);
 	}
 </style>

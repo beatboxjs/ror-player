@@ -437,8 +437,8 @@
 				margin-left: 25px;
 				padding: 15px;
 				border-radius: 60px;
-				background: #fff;
-				box-shadow: 0 0 10px #000;
+				background: var(--bs-body-bg);
+				box-shadow: 0 0 10px var(--bs-body-color);
 				z-index: 100;
 			}
 		}
@@ -450,7 +450,7 @@
 		}
 
 		.drag-over {
-			background: #def;
+			background: var(--bs-primary-bg-subtle);
 		}
 
 		.pattern-container {
@@ -529,7 +529,7 @@
 								display: block;
 								width: 0;
 								height: 0;
-								color: #666;
+								color: var(--bs-border-color);
 								border-bottom: 8px solid;
 								border-right: 8px solid;
 								border-top: 8px solid transparent;
@@ -549,7 +549,7 @@
 				}
 
 				&.instrument-actions,&.song {
-					border-right: 1px solid #888;
+					border-right: 1px solid var(--bb-strong-border-color);
 				}
 
 				&.instruments .field,&.instrument-actions .field {
@@ -567,7 +567,7 @@
 
 				.timeline {
 					height: 2em;
-					border-bottom: 1px solid #888;
+					border-bottom: 1px solid var(--bb-strong-border-color);
 				}
 
 				.beat {
@@ -580,7 +580,7 @@
 				}
 
 				.all-drop {
-					border-top: 1px solid #888;
+					border-top: 1px solid var(--bb-strong-border-color);
 				}
 
 				&.song .all-drop {
@@ -588,14 +588,14 @@
 					text-align: center;
 					line-height: 3.4em;
 					vertical-align: center;
-					border-bottom: 1px solid #888;
+					border-bottom: 1px solid var(--bb-strong-border-color);
 				}
 			}
 		}
 
 		.song-player-container .bb-col .beat.active {
-			background-color: #3a94a5;
-			color: #fff;
+			background-color: var(--bb-active-beat-bg);
+			color: var(--bb-active-beat-color);
 			transition: none;
 		}
 

@@ -75,7 +75,6 @@
 <style lang="scss">
 	.bb-pattern-list-filter input {
 		&::placeholder {
-			color: #888;
 			opacity: 1;
 			font-style: italic;
 		}

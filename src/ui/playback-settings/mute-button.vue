@@ -45,6 +45,6 @@
 
 <style lang="scss">
 	.bb-mute-button.inactive {
-		color: #bbb;
+		color: var(--bb-disabled-link-color);
 	}
 </style>

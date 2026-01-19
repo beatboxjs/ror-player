@@ -295,12 +295,12 @@
 			table-layout: fixed;
 
 			.stroke {
-				border-right: 1px solid #ddd;
+				border-right: 1px solid var(--bs-border-color);
 				text-align: center;
 				position: relative;
 
 				&.has-changes {
-					background-color: #fbe8d0;
+					background-color: var(--bb-modified);
 				}
 			}
 
@@ -309,19 +309,20 @@
 				min-width: 2.7ex;
 				min-height: 1em;
 				text-decoration: none;
+				color: inherit;
 			}
 
 			thead td {
-				border-bottom: 1px solid #aaa;
+				border-bottom: 1px solid var(--bb-strong-border-color);
 				padding-bottom: .5ex;
 			}
 
 			.beat, .stroke.before-beat {
-				border-right: 1px solid #aaa;
+				border-right: 1px solid var(--bb-strong-border-color);
 			}
 
 			.instrument-operations, .stroke.before-bar, .beat.before-bar {
-				border-right: 2px solid #888;
+				border-right: 2px solid var(--bb-strong-border-color);
 			}
 
 			.instrument-operations {
@@ -344,8 +345,8 @@
 			}
 
 			.beat.active span {
-				background-color: #3a94a5;
-				color: #fff;
+				background-color: var(--bb-active-beat-bg);
+				color: var(--bb-active-beat-color);
 				transition: none;
 			}
 

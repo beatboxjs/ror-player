@@ -1,4 +1,8 @@
 import { computed, Ref, ref } from "vue";
+import { reactiveLocalStorage } from "./localStorage";
+import * as z from "zod";
+
+export type ThemeColour = "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark" | "modified";
 
 const breakpointMinWidth = {
 	// See https://getbootstrap.com/docs/5.3/layout/breakpoints/#available-breakpoints
@@ -42,3 +46,27 @@ export function useMaxBreakpoint(breakpoint: Breakpoint): Ref<boolean> {
 export function useMinBreakpoint(breakpoint: Breakpoint): Ref<boolean> {
 	return computed(() => breakpoints.indexOf(reactiveBreakpoint.value) >= breakpoints.indexOf(breakpoint));
 }
+
+const prefersDarkModeQuery = matchMedia('(prefers-color-scheme: dark)');
+const prefersDarkModeUpdate = ref(0);
+const prefersDarkMode = computed(() => {
+	prefersDarkModeUpdate.value;
+	return prefersDarkModeQuery.matches;
+});
+prefersDarkModeQuery.addEventListener("change", () => {
+	prefersDarkModeUpdate.value++;
+});
+
+const themePreferenceValidator = z.enum(["light", "dark"]).optional().catch(undefined);
+type ThemePreference = z.infer<typeof themePreferenceValidator>;
+export const themePreference = computed<ThemePreference>({
+	get: () => themePreferenceValidator.parse(reactiveLocalStorage["theme"]),
+	set: (val) => {
+		if (val != null) {
+			reactiveLocalStorage["theme"] = val;
+		} else {
+			delete reactiveLocalStorage["theme"];
+		}
+	}
+});
+export const theme = computed(() => themePreference.value ?? (prefersDarkMode.value ? "dark" : "light"));

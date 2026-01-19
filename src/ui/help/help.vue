@@ -11,6 +11,7 @@
 	import { useModal } from "../utils/modal";
 	import { getAppInstructionsHtml, LANGUAGES, useI18n } from "../../services/i18n";
 	import { reactiveLocalStorage } from "../../services/localStorage";
+	import { themePreference } from "../../services/bootstrap";
 
 	const i18n = useI18n();
 
@@ -56,6 +57,28 @@
 						@click.stop="selectLanguage(lang)"
 					>{{lang}}</a>
 				</li>
+				<li><hr class="dropdown-divider"></li>
+				<li><h6 class="dropdown-header">{{i18n.t("help.colour-mode")}}</h6></li>
+				<li class="bb-colour-mode-picker">
+					<a
+						class="dropdown-item"
+						:class="{ active: themePreference == null }"
+						href="javascript:"
+						@click.stop="themePreference = undefined"
+					>{{i18n.t("help.colour-mode-auto")}}</a>
+					<a
+						class="dropdown-item"
+						:class="{ active: themePreference === 'light' }"
+						href="javascript:"
+						@click.stop="themePreference = 'light'"
+					>{{i18n.t("help.colour-mode-light")}}</a>
+					<a
+						class="dropdown-item"
+						:class="{ active: themePreference == 'dark' }"
+						href="javascript:"
+						@click.stop="themePreference = 'dark'"
+					>{{i18n.t("help.colour-mode-dark")}}</a>
+				</li>
 			</ul>
 		</div>
 
@@ -87,6 +110,15 @@
 		.bb-language-picker {
 			display: grid;
 			grid-template-columns: repeat(auto-fill, 50px);
+
+			> .dropdown-item {
+				text-align: center;
+			}
+		}
+
+		.bb-colour-mode-picker {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
 
 			> .dropdown-item {
 				text-align: center;

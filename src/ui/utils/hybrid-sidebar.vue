@@ -89,8 +89,8 @@
 	.bb-hybrid-sidebar {
 		padding: 1.2em;
 		width: 20em;
-		background: #fff;
-		border-right: 1px solid #dee2e6;
+		background: var(--bs-body-bg);
+		border-right: 1px solid var(--bs-border-color);
 		display: flex;
 		flex-direction: column;
 

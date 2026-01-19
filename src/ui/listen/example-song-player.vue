@@ -158,9 +158,9 @@
 			display: flex;
 			align-items: center;
 			border-radius: 5px;
-			background-color: rgba(255, 255, 255, 0.8);
+			background-color: color-mix(in srgb, var(--bs-card-bg) 80%, transparent);
 			transition: background-color .3s;
-			box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #fff;
+			box-shadow: 0 0 2px var(--bs-card-bg), 0 0 5px var(--bs-card-bg), 0 0 10px var(--bs-card-bg);
 
 			li {
 				opacity: 0.5;
@@ -168,7 +168,7 @@
 			}
 
 			&:hover {
-				background-color: rgba(255, 255, 255, 1);
+				background-color: var(--bs-card-bg);
 
 				li {
 					opacity: 1;
