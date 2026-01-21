@@ -1439,7 +1439,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				ls: 'X X     X       X       X X     X   X   X   X   X       X       ',
 				ms: '@ls',
 				hs: '@ls',
-				re: '   XXX    XXX XX  XXXXX     X XX  XX  XX  XX  XX  X   X     X   ',
+				re: '    XXX   XXX XX  XXXXX     X XX  XX  XX  XX  XX  X   X     X   ',
 				sn: '@re',
 				ta: '@re',
 				ag: '@re',
