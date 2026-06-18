@@ -34,7 +34,7 @@ that the new wave will come and bring the deported slaves back home.
 * **Surdo:** średni
 * **Repi:** łatwy
 * **Werbel:** łatwy
-* **:Tamborim:** łatwy
+* **Tamborim:** łatwy
 * **Agogô:** easy – in fact the same as in Karla Shnikov
 
 ## Brejki
