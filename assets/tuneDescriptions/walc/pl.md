@@ -20,5 +20,5 @@ our tune comes from Polish “walc” for Waltz and “walcz” for “fight!”
 * **Surda:** łatwy
 * **Repi:** łatwy
 * **Werbel:** średni
-* **:Tamborim:** łatwy
+* **Tamborim:** łatwy
 * **Agogô:** łatwy
