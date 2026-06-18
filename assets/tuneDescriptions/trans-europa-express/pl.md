@@ -27,6 +27,6 @@ Kraftwerk ([YouTube](https://www.youtube.com/watch?v=XMVokT5e0zs)).
 * **Surda:** łatwy
 * **Repi:** tricky
 * **Werbel:** średni
-* **:Tamborim:** łatwy
+* **Tamborim:** łatwy
 * **Agogô:** łatwy
 * **Shaker:** tricky
