@@ -35,10 +35,10 @@ the name.)*
 
 * **Niskie Surdo:** łatwy
 * **Mid Surdo:** easy
-* **High Surdo:** easy
+* **High Surdo:** łatwy
 * **Repi:** średni
 * **Werbel:** średni
-* **:Tamborim:** łatwy
+* **Tamborim:** łatwy
 * **Agogô:** średni
 
 ## Brejki
