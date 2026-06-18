@@ -20,8 +20,8 @@ does not imitate any particular genre or song.
 
 * **Niskie Surdo:** łatwy
 * **Mid Surdo:** medium
-* **High Surdo:** easy
+* **High Surdo:** łatwy
 * **Repi:** średni
-* **Snare:** tricky
+* **Werbel:** podchwytliwy
 * **Tamborim:** tricky
 * **Agogô:** średni
