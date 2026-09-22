@@ -22,4 +22,4 @@ in the official tune sheets. Was rediscovered in 2021.
 * **Repi:** trudny
 * **Snare:** hard
 * **Tamborim:** średni
-* **Agogô:** hard
+* **Agogô:** trudny

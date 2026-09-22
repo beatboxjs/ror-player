@@ -27,9 +27,9 @@ głównych figur ruch antywięziennego.
 2000 r. Kiedyś się nazywał "James Brown" (znany muzyk z USA) i znak przedstawiał
 fryzurę afro. James Brown zaczął nosić afro dopiero później, kiedy stało się ono
 symbolem Czarnej dumy. Rytm został przemianowany z powodu oskarżeń o przemoc
-domową i gwałt skierowanych w Jamesa Browna. Wybrano Angele Davis, ponieważ
+domową i gwałt skierowanych w Jamesa Browna. Wybrano Angelę Davis, ponieważ
 pasowała do ówczesnego znaku. Później zmieniono znak rytmu. Uważamy, że zarówno
-stary znak sam w sobie, jak i fakt, że wybrano Angele Davis ze względu na jej
+stary znak sam w sobie, jak i fakt, że wybrano Angelę Davis ze względu na jej
 afro, jest rasistowski.
 
 ## Kontrowersje
@@ -48,7 +48,7 @@ i aktywnie współpracowała z opresyjnym reżimem Związku Radzieckiego.
 * **Wysokie Surdo:** średni
 * **Repi:** łatwy
 * **Werbel:** łatwy (istnieją różne wariacje)
-* **:Tamborim:** łatwy
+* **Tamborim:** łatwy
 * **Agogô:** średni
 
 ## Brejki

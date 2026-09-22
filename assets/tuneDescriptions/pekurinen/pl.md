@@ -19,8 +19,8 @@ non-military civil service.
 
 * **Niskie Surdo:** łatwy
 * **Mid Surdo:** easy
-* **High Surdo:** easy
+* **High Surdo:** łatwy
 * **Repi:** tricky
-* **Snare:** tricky
+* **Werbel:** podchwytliwy
 * **Tamborim:** tricky
 * **Agogô:** średni
