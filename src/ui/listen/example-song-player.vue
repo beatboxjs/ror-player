@@ -34,6 +34,7 @@
 
 	const songRef = ref<HTMLElement | null>(null);
 	const abstractPlayerRef = ref<InstanceType<typeof AbstractPlayer>>();
+	const getOrCreatePlayer = () => abstractPlayerRef.value!.getOrCreatePlayer();
 
 	const normalizedSong = computed((): Array<Required<Exclude<ExampleSong[0], string>>> => props.song.flatMap((part) => {
 		const result = {
@@ -66,15 +67,21 @@
 
 	const rawPattern = computed(() => songToBeatbox(songParts.value, state.value, playbackSettings.value));
 
-	const playStop = () => {
-		const p = abstractPlayerRef.value!.getOrCreatePlayer();
+	const playPause = () => {
+		const p = getOrCreatePlayer();
 		if(!p.playing) {
 			stopAllPlayers();
 			p.play();
 		} else {
 			p.stop();
-			p.setPosition(0);
 		}
+	};
+
+	const stop = () => {
+		const p = getOrCreatePlayer();
+		if(p.playing)
+			p.stop();
+		p.setPosition(0);
 	};
 
 	const setPosition = ($event: MouseEvent) => {
@@ -91,7 +98,7 @@
 		void download({
 			type: ExportType.MP3,
 			filename: props.tuneName,
-			player: abstractPlayerRef.value!.getOrCreatePlayer()
+			player: getOrCreatePlayer()
 		});
 	};
 </script>
@@ -116,7 +123,8 @@
 			/>
 		</div>
 		<ul class="actions icon-list">
-			<li><a href="javascript:" v-tooltip="i18n.t('example-song-player.listen')" @click="playStop()" draggable="false"><fa :icon="abstractPlayerRef?.playerRef?.playing ? 'stop' : 'play-circle'"/></a></li>
+			<li><a href="javascript:" v-tooltip="i18n.t('example-song-player.listen')" @click="playPause()" draggable="false"><fa :icon="abstractPlayerRef?.playerRef?.playing ? 'pause' : 'play-circle'"/></a></li>
+			<li><a href="javascript:" v-tooltip="i18n.t('example-song-player.stop')" @click="stop()" draggable="false"><fa icon="stop"/></a></li>
 			<li><a href="javascript:" v-tooltip="i18n.t('example-song-player.download-mp3')" @click="handleDownload()" draggable="false"><fa icon="download"/></a></li>
 		</ul>
 	</div>
