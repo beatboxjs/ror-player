@@ -7,6 +7,7 @@
 	import { History } from "../services/history";
 	import { Route, useRouter } from "../services/router";
 	import Compose from "./compose/compose.vue";
+	import Practice from "./practice/practice.vue";
 	import { useRefWithOverride } from "../utils";
 	import { useI18n } from "../services/i18n";
 
@@ -51,6 +52,7 @@
 			<span class="bb-sidebar-toggle-container" ref="sidebarToggleContainer"></span>
 			<span class="nav-item"><a class="nav-link" :class="{ active: route.tab === 'listen' }" href="javascript:" @click="route.tab = 'listen'">{{i18n.t('overview.listen')}}</a></span>
 			<span class="nav-item"><a class="nav-link" :class="{ active: route.tab === 'compose' }" href="javascript:" @click="route.tab = 'compose'">{{i18n.t('overview.compose')}}</a></span>
+			<span class="nav-item"><a class="nav-link" :class="{ active: route.tab === 'practice' }" href="javascript:" @click="route.tab = 'practice'">{{i18n.t('overview.practice')}}</a></span>
 		</div>
 
 		<div class="bb-overview-content">
@@ -69,6 +71,15 @@
 					v-model:expandTune="route.tuneName"
 					v-model:editPattern="route.patternName"
 					v-model:importData="route.importData"
+					:sidebarToggleContainer="sidebarToggleContainer"
+				/>
+			</template>
+
+			<template v-if="route.tab === 'practice'">
+				<Practice
+					:tuneName="route.tuneName"
+					@update:tuneName="route.tuneName = $event"
+					v-model:patternName="route.patternName"
 					:sidebarToggleContainer="sidebarToggleContainer"
 				/>
 			</template>

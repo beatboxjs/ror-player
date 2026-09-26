@@ -19,6 +19,7 @@
     "test-watch": "vitest"
   },
   "devDependencies": {
+    "@types/audioworklet": "^0.0.100",
     "@types/bootstrap": "^5.2.10",
     "@types/file-saver": "^2.0.7",
     "@types/lodash-es": "^4.17.12",
@@ -45,6 +46,9 @@
     "vue-tsc": "^3.2.2"
   },
   "author": "Candid Dauth",
+  "resolutions": {
+    "beatbox.js": "5.0.1"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.1.0",
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
