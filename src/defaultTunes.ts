@@ -2996,6 +2996,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		categories: [ "uncommon", "new", "easy"],
 		sheet: sheetUrl + "underground.pdf",
 		descriptionFilename: "underground",
+		video: "https://tube.rhythms-of-resistance.org/videos/embed/pRgynnokCSteHykAiShJpJ",
 		patterns: {
 			Tune: {
 				loop: true,
