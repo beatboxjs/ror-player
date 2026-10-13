@@ -26,5 +26,5 @@ also often associated with drumming).
 * **Surda:** łatwy
 * **Repi:** średni
 * **Werbel:** średni
-* **:Tamborim:** łatwy
+* **Tamborim:** łatwy
 * **Agogô:** tricky

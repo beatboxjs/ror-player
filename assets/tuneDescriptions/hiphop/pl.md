@@ -29,4 +29,4 @@ Was rediscovered in 2021.
 * **Repi:** łatwy
 * **Snare:** hard
 * **Tamborim:** hard
-* **Agogô:** hard
+* **Agogô:** trudny

@@ -36,10 +36,10 @@ in 2006, although it is not clear whether it is the same tune.
 
 * **Niskie Surdo:** trudny
 * **Mid Surdo:** easy
-* **High Surdo:** easy
+* **High Surdo:** łatwy
 * **Repi:** trudny
 * **Werbel:** średni
-* **:Tamborim:** łatwy
+* **Tamborim:** łatwy
 * **Agogô:** średni
 
 ## Brejki

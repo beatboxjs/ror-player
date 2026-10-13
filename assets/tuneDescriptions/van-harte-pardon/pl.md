@@ -25,4 +25,4 @@ heart”, hence the heart.
 * **Repi:** średni
 * **Werbel:** średni
 * **Tamborim:** średni
-* **Agogô:** hard
+* **Agogô:** trudny

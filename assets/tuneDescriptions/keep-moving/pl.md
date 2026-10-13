@@ -35,5 +35,5 @@ moments to reflect and (natural) silence.
 * **Repi:** trudny
 * **Snare:** hard
 * **Tamborim:** hard
-* **Agogô:** hard
+* **Agogô:** trudny
 * **Shaker:** hard

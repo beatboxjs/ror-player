@@ -76,5 +76,5 @@ ongoing debate on whether this tune should be abandoned.
 * **Surda:** łatwy
 * **Repi:** średni
 * **Snare:** hard
-* **:Tamborim:** łatwy
+* **Tamborim:** łatwy
 * **Agogô:** średni
