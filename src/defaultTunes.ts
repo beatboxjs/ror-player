@@ -3010,24 +3010,26 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 				sh: '................................'
 			},
 			'Intro': {
-				ls: '            A               A                              A   ',
+				ls: '                                                               ',
 				ms: '@ls',
 				hs: '@ls',
 				sn: '@ls',
 				ta: '@ls',
 				ag: '@ls',
 				sh: '@ls',
-				re: 's..X  X     A   s..X  X     A   s..X    S..X   S..X  X     A   ',
+				re: 's..X  X         s..X  X         s..X    s..X   s..X  X         ',
+				ot: '            A               A                              A   '
 			},
 			'Break 1': {
-				ls: 'X  XX X X  X  X X  XX X A       ',
+				ls: 'X  XX X X  X  X X  XX X         ',
 				ms: '@ls',
 				hs: '@ls',
 				re: '@ls',
 				sn: '@ls',
 				ta: '@ls',
 				ag: '@ls',
-				sh: '@ls'
+				sh: '@ls',
+				ot: '                        A       '
 			}
 		},
 		exampleSong: [ "Intro", "Tune", "Break 1", "Tune"]
