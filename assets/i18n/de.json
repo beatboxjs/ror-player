@@ -114,7 +114,11 @@
         "download": "{{appName}} herunterladen",
         "app": "{{appName}} als App",
         "source-code": "Quellcode auf GitHub",
-        "report-problem": "Fehler melden"
+        "report-problem": "Fehler melden",
+        "colour-mode": "Farbmodus",
+        "colour-mode-auto": "automatisch",
+        "colour-mode-light": "hell",
+        "colour-mode-dark": "dunkel"
     },
     "tune-info": {
         "notation": "Noten",
