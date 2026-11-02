@@ -19,8 +19,8 @@ Tanz von Kaerajaan gespielt wird.
 
 ## Schwierigkeit
 
-* **Surdos:** einfach
-* **Repi:** schwierig
-* **Snare:** einfach
+* **Surdos:** leicht
+* **Repi:** schwer
+* **Snare:** leicht
 * **Tamborim:** mittel
 * **Agogô:** mittel
