@@ -1,37 +1,41 @@
-## Sign
+## Handzeichen
 
-Put the back of your hand against your forehead, then open your hand to
-represent a headlamp switching on.
+Halte eine Faust mit der Rückhand an deine Stirn und öffne deine Finger, um eine
+Stirnlampe, die angeschaltet wird zu symbolisieren.
 
-## Background
+## Hintergrund
 
-**Name:** "Underground" in this case means "beneath the surface of the ground",
-and more precisely the catacombs, but can also refer to the underground
-counterculture movement. The term underground can also be associated with
-underground collective actions pursuing political and social change without
-exposing individual identities.
+**Name:** "Underground" (Untergrund) bedeutet in diesem Fall "unter der
+Oberfläche" und speziell die Katakomben, kann sich aber auch auf den Untergrund
+als kulturelle Gegenbewegung beziehen. Die Bezeichnung "Underground" kann
+dementsprechend auch mit heimlichen kollektiven Aktionen in Verbindung gebracht
+werden, die politischen und sozialen Wandel bewirken wollen, ohne Identitäten
+preiszugeben.
 
-**Musical background:** Based on Depeche Mode's song "Black Celebration" and
-another gothic song. The tune was written by a NewWave Post-punk fan, a
-catacombs enthousiast, and slightly modified by the whole RoR Paris group.
+**Musikalischer Hintergrund:** Basiert auf dem Song von Depeche Mode "Black
+Celebration" und einem anderen Gothic Song. Der Tune wurde von einer Person
+geschrieben, die NewWave Post-Punk-Fan und begeistert von Katakomben ist und
+wurde von der gesamten RoR Paris Gruppe angepasst.
 
-**History:** While meandering through Paris catacombs with a few RoR members,
-the collective idea of going back again to play drums (and eventually record a
-video for an existing tune) popped-up rapidly. Gradually, the idea became :
-composing and filming a new tune with a catacombs theme. The name "Underground"
-was proposed later. Was introduced to the Network at TNM 2026.
+**Geschichte:** Während ein paar RoRies durch die Katakomben von Paris
+streiften, entstand schnell die kollektive Idee, zurückzukommen und dort zu
+trommeln (und eventuell ein Video eines bereits existierenden Tunes
+aufzunehmen). Stück für Stück wurde daraus die Idee, einen neuen Tune zu
+komponieren, der mit Katakomben zu tun hat und ihn dort zu filmen. Der Name
+"Underground" wurde später vorgeschlagen. Der Tune wurde von RoR Paris auf dem
+TNM 2026 in Österreich vorgestellt.
 
-## Difficulty
+## Schwierigkeit
 
-Good to begin with, because all instruments are quite easy:
+Gut geeignet als Einstieg, da alle Instrumente relativ einfach zu spielen sind:
 
-* **Surdos:** easy
-* **Repi:** hard
-* **Snare:** easy
-* **Tamborim:** easy
-* **Agogô:** medium
+* **Surdos:** leicht
+* **Repi:** schwer
+* **Snare:** leicht
+* **Tamborim:** einfach
+* **Agogô:** mittel
 
 ## Breaks
 
-* Intro: only repinique with OÏ answers
-* Break 1: Everybody plays the agogo part
+* Intro: Nur Repinique mit "Oi" Antworten
+* Break 1: Alle spielen die Agogô Stimme
