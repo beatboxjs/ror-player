@@ -47,7 +47,7 @@ für den Tune zu erfinden.
 * **Surdos:** mittel (es ist wichtig, dass der Doppelschlag zwischen jedem Takt
   nicht zu schnell gespielt wird.)
 * **Repi:** mittel
-* **Snare:** einfach
+* **Snare:** leicht
 * **Tamborim:** einfach
 * **Agogô:** einfach
 
