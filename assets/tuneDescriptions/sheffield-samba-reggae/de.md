@@ -33,7 +33,7 @@ basiert.
 * **Tiefe Surdo:** mittel
 * **Mittlere Surdo:** einfach
 * **Hohe Surdo:** mittel
-* **Repi:** schwierig
+* **Repi:** schwer
 * **Snare:** schwierig
 * **Tamborim:** mittel
 * **Agogô:** mittel
