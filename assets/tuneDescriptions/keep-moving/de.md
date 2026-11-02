@@ -34,7 +34,7 @@ Pausen, Zeit für Reflektion und (natürliche) Stille hinzuweisen.
 * **Tiefe Surdo:** einfach
 * **Mittlere Surdo:** mittel
 * **Hohe Surdo:** schwierig
-* **Repi:** schwierig
+* **Repi:** schwer
 * **Snare:** schwierig
 * **Tamborim:** schwierig
 * **Agogô:** schwierig
