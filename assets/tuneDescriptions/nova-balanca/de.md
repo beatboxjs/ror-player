@@ -33,7 +33,7 @@ Sklav_innen zurück nach Hause bringt.
 
 * **Surdos:** mittel
 * **Repi:** einfach
-* **Snare:** einfach
+* **Snare:** leicht
 * **Tamborim:** einfach
 * **Agogô:** einfach – sie spielt das gleiche wie in Karla Shnikov
 

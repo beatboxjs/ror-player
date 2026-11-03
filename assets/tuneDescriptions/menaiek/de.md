@@ -19,7 +19,7 @@ verdeckt
 
 * **Tiefe Surdo:** einfach
 * **Mittlere/hohe Surdo:** schwierig
-* **Repi:** schwierig
+* **Repi:** schwer
 * **Snare:** schwierig
 * **Tamborim:** schwierig
 * **Agogô:** mittel

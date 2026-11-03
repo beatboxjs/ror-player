@@ -25,7 +25,7 @@ Express von Kraftwerk ([YouTube](https://www.youtube.com/watch?v=XMVokT5e0zs)).
 
 ## Schwierigkeit
 
-* **Surdos:** einfach
+* **Surdos:** leicht
 * **Repi:** schwierig
 * **Snare:** mittel
 * **Tamborim:** einfach
