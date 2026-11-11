@@ -10,6 +10,10 @@ export type Route = {
 	tuneName?: string;
 	patternName?: string;
 	importData?: string;
+} | {
+	tab: "practice";
+	tuneName?: string;
+	patternName?: string;
 };
 
 const ROUTES = {
@@ -22,6 +26,9 @@ const ROUTES = {
 	"compose-importAndTune": "/compose/:importData/:tuneName/",
 	"compose-importAndPattern": "/compose/:importData/:tuneName/:patternName",
 	"compose-import": "/compose/:importData",
+	"practice": "/practice/",
+	"practice-tune": "/practice/:tuneName/",
+	"practice-pattern": "/practice/:tuneName/:patternName",
 	"legacy-tune": "/:tuneName/",
 	"legacy-pattern": "/:tuneName/:patternName",
 	"legacy-importAndTune": "/:importData/:tuneName/",
@@ -55,6 +62,15 @@ function pathToRoute(path: string): Route {
 				tab: "listen",
 				tuneName: match.params?.tuneName,
 				patternName: match.params?.patternName
+			};
+
+		case "practice":
+		case "practice-tune":
+		case "practice-pattern":
+			return {
+				tab: "practice",
+				tuneName: match.params?.tuneName,
+				patternName: match.params?.patternName,
 			};
 
 		case "compose":
@@ -101,6 +117,17 @@ function routeToPath(route: Route): string {
 			} else {
 				match = { name: route.importData ? "compose-importAndPattern" : "compose-pattern", params: { importData: route.importData, tuneName: route.tuneName, patternName: route.patternName } };
 			}
+			break;
+
+		case "practice":
+			if (!route.tuneName) {
+				match = { name: "practice" };
+			} else if (!route.patternName) {
+				match = { name: "practice-tune", params: { tuneName: route.tuneName } };
+			} else {
+				match = { name: "practice-pattern", params: { tuneName: route.tuneName, patternName: route.patternName } };
+			}
+			break;
 	}
 
 	if (!match) {

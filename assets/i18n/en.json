@@ -221,7 +221,92 @@
 	},
 	"overview": {
 		"listen": "Listen",
-		"compose": "Compose"
+		"compose": "Compose",
+		"practice": "Practice"
+	},
+	"practice": {
+		"pick-tune": "Pick a tune from the sidebar to start practicing.",
+		"no-hits": "No strokes to practice for this instrument.",
+		"results": {
+			"title": "Session results"
+		},
+		"score": {
+			"title": "Score",
+			"avgDelta": "Timing",
+			"drift": "Drift",
+			"hits": "Hits",
+			"misses": "Misses",
+			"extras": "Extras",
+			"behind": "behind",
+			"early": "early",
+			"sessionTotals": "Session totals",
+			"idle": "Press ▶ to begin"
+		},
+		"mic": {
+			"listening": "listening",
+			"stopped": "stopped"
+		},
+		"toolbar": {
+			"start": "Start",
+			"stop": "Stop",
+			"part": "Part",
+			"instrument": "Instrument",
+			"modeInstrument": "Instrument",
+			"modeBand": "Band"
+		},
+		"speed": {
+			"label": "Speed",
+			"reset": "Reset"
+		},
+		"difficulty": {
+			"label": "Difficulty",
+			"easy": "Easy",
+			"normal": "Normal",
+			"hard": "Hard"
+		},
+		"latency": {
+			"label": "Latency offset",
+			"calibrate": "Calibrate…"
+		},
+		"sensitivity": {
+			"label": "Sensitivity",
+			"reset": "Reset"
+		},
+		"settings": {
+			"title": "Settings"
+		},
+		"calibration": {
+			"title": "Calibrate latency",
+			"idle-instructions": "This plays a series of clicks through your speakers and listens with your microphone to measure audio latency. Turn your speakers up, keep the room quiet, then press Start.",
+			"listening": "Listening… measuring latency, please wait.",
+			"result-median": "Measured latency: {{median}} ms",
+			"result-spread": "Spread: {{spread}} ms",
+			"spread-warning": "High spread — consider trying again.",
+			"fail-too-few": "Couldn't hear enough clicks — turn your volume up, move the mic closer, or reduce background noise.",
+			"fail-too-noisy": "Readings were inconsistent — try again somewhere quieter.",
+			"fail-worklet": "Audio setup failed — please try again.",
+			"fail-mic-denied": "Microphone access is needed to measure latency. Enable it in your browser, or set the offset manually with the slider.",
+			"retry": "Try again",
+			"cancel": "Cancel",
+			"start": "Start",
+			"apply": "Apply {{median}} ms"
+		},
+		"permission": {
+			"title": "Use your microphone?",
+			"body": "To score your timing, Practice listens to the microphone and compares what it hears with the partition.",
+			"privacy": "Audio is processed locally on your device and never leaves it.",
+			"cancel": "Cancel",
+			"enable": "Enable microphone"
+		},
+		"headphones": {
+			"title": "Headphones recommended",
+			"body": "For accurate scoring, please use headphones — otherwise the microphone will hear the playback, not just you.",
+			"continue": "Continue"
+		},
+		"rotate": {
+			"title": "Rotate to landscape",
+			"hint": "Practice needs the width to show your timing and the pattern together."
+		}
 	},
 	"pattern-list-filter": {
 		"filter-placeholder": "Filter: {{category}}"
@@ -264,6 +349,7 @@
 		"stroke-description-.": "Silent stroke",
 		"stroke-description-wh": "Whistle",
 		"stroke-description-wh2": "Long whistle",
+		"stroke-description-whistle-in": "Whistle-in cue (single long blast)",
 		"stroke-description-s": "Soft flare",
 		"time-with-triplets": "{{time}} with triplets",
 		"time-with-quintuplets": "{{time}} with quintuplets",

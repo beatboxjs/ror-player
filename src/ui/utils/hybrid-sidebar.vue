@@ -8,19 +8,22 @@
 
 <script setup lang="ts">
 	import { computed, ref, TeleportProps } from 'vue';
-	import { useMaxBreakpoint } from '../../services/bootstrap';
+	import { useMaxBreakpoint, type Breakpoint } from '../../services/bootstrap';
 	import Backdrop from "./backdrop.vue";
 
-	const props = defineProps<{
+	const props = withDefaults(defineProps<{
 		isExpanded: boolean;
 		toggleContainer?: TeleportProps['to'];
-	}>();
+		expandBreakpoint?: Breakpoint;
+	}>(), {
+		expandBreakpoint: "sm"
+	});
 
 	const emit = defineEmits<{
 		"update:isExpanded": [isVisible: boolean];
 	}>();
 
-	const shouldUseExpand = useMaxBreakpoint("sm");
+	const shouldUseExpand = useMaxBreakpoint(props.expandBreakpoint);
 
 	const isExpanded = computed({
 		get: () => props.isExpanded,
