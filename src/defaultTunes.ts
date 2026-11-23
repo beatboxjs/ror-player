@@ -3032,6 +3032,70 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 		},
 		exampleSong: [ "Intro", "Tune", "Break 1", "Tune"]
 	},
+	'Unisexklo': {
+		categories: [ "uncommon", "new", "tricky"],
+		sheet: sheetUrl + "unisexklo.pdf",
+		speed: 115,
+		descriptionFilename: "unisexklo",
+		video: "https://tube.rhythms-of-resistance.org/videos/embed/25eVt5noPLfCaop4e48T7Q",
+		patterns: {
+			Tune: {
+				upbeat: 2,
+				loop: true,
+				ls: '  X     X   X  X                  X     X   X  X                  ',
+				ms: '                XX      X  X  X                 XX      X  X  X   ',
+				hs: '                  X  X                            X  X            ',
+				re: 'X f   r X f   r   X X r X rrX f     X r XXrrX f   X X r XXX X f   ',
+				sn: '  ....X.......X.......X...XX..X.......X.......X.......X...XX..X...',
+				ta: 'X X     X X       X X X X XXX X     X X XXXXX X   X X X XXX X X   ',
+				ag: '  o a o   o   o   o   o   o a o   o a o   o   o   o   o   o a o   ',
+				sh: '  X.....X.X.....X.X.....X.X.....X.X.....X.X.....X.X.....X.X.....X.',
+				ot: 'E E     N N                                                       '
+			},
+			'Intro': {
+				ls: 'X     X   X  X                  X     X   X  X                  ',
+				ms: '              XX      X  X  X                 XX      X  X  X   ',
+				hs: '                X  X                            X  X            ',
+				ag: 'o a o   o   o   o   o   o a o   o a o   o   o   o   o   o a o   ',
+			},
+			'Break 1': {
+				upbeat: 2,
+				ot: 'E E     N N       '
+			},
+			'Break 2': {
+				upbeat: 2,
+				ls: 'X X     X X       X X X X rrX X     X X XXrrX X   X X r XXX X X   ',
+				ms: '@ls',
+				hs: '@ls',
+				re: '@ls',
+				sn: '@ls',
+				ta: 'X X     X X       X X X X XXX X     X X XXrrX X   X X r XXX X X   ',
+				ag: 'o o     o o       o o o o aao o     o o ooaao o   o o a ooo o o   '				
+			},
+			'Tune after break 1': {
+				ls: '                X     X   X  X                  ',
+				ms: '      X  X  X                 XX      X  X  X   ',
+				hs: 'X  X                            X  X            ',
+				re: 'X X r X rrX f     X r XXrrX f   X X r XXX X f X ',
+				sn: '....X...XX..X.......X.......X.......X...XX..X...',
+				ta: 'X X X X XXX X     X X XXXXX X   X X X XXX X X X ',
+				ag: 'o   o   o a o   o a o   o   o   o   o   o a o   ',
+				sh: 'X.....X.X.....X.X.....X.X.....X.X.....X.X.....X.'
+			},
+			'Tofu Kick Back': {
+				loop: true,
+				ls: 'X  XXXXXX X     X  XXXXXX       X  XXXXXX X   XXX X X X X X     ',
+				ms: 'X  XXXXXX X     X  XXXXXX       X  XXXXXX X   XXX X X X X   X   ',
+				hs: 'X  XXXXXX X     X  XXXXXX       X  XXXXXX X   XXX X X X X     X ',
+				re: '            X X             X               X                   ',
+				sn: '@re',
+				ta: '@re',
+				ag: '            o o             o               o                   ',
+				sh: '............X.X.............X...............X...................'
+				}
+			},
+		exampleSong: [ "Intro", "Tune", "Tune", "Break 2", "Tune", "Break 1", "Tune after break 1", "Break 1", "Break 1", "Break 1", "Break 1", "Tune", "Tofu Kick Back", "Tofu Kick Back", "Tofu Kick Back", "Break 1" ]
+	},
 	'Van Harte Pardon': {
 		categories: [ "uncommon", "tricky" ],
 		sheet: sheetUrl + "van-harte-pardon.pdf",
