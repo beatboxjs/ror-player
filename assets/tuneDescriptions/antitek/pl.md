@@ -30,4 +30,4 @@ revival.
 * **Repi:** medium
 * **Werbel:** łatwy
 * **Tamborim:** średni
-* **Agogô:** medium
+* **Agogô:** średni

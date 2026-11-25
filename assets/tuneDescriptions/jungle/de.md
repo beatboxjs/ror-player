@@ -20,7 +20,7 @@ entdeckt.
 * **Tiefe Surdo:** einfach
 * **Mittlere Surdo:** mittel
 * **Hohe Surdo:** schwierig
-* **Repi:** schwierig
+* **Repi:** schwer
 * **Snare:** schwierig
 * **Tamborim:** mittel
 * **Agogô:** schwierig

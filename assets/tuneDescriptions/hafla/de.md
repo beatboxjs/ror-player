@@ -20,7 +20,7 @@ Beispiel der Dumbek ([Wikipedia](https://en.wikipedia.org/wiki/Dumbek_rhythms)).
 * **Tiefe Surdo:** einfach
 * **Mittlere Surdo:** mittel
 * **Hohe Surdo:** einfach
-* **Repi:** schwierig
+* **Repi:** schwer
 * **Snare:** schwierig
 * **Tamborim:** mittel
 * **Agogô:** mittel

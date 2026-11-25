@@ -42,7 +42,7 @@ Dobry rytm do nauczenia się jako pierwszy bo wszystkie instrumenty mają dosyć
 * **Repi:** średni (Repi nie jest najprostsza, ale wciąż jest to dobry rytm do
   nauki na początku, bo zawiera parę różnych typów uderzeń na Repi)
 * **Werbel:** łatwy
-* **:Tamborim:** łatwy
+* **Tamborim:** łatwy
 * **Agogô:** łatwy (łatwo się zgrać z Surdami, ich uderzenia się w większości
   pokrywają z tym co gra Agogô)
 

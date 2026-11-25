@@ -35,13 +35,13 @@ und 3 und die Snare auf der 2 und 4. Demnach klingt dieser Tune nicht wie Funk.
 
 ## Schwierigkeit
 
-Gut geeignet als Einstig, weil alle Instrumente recht einfach zu spielen sind:
+Gut geeignet als Einstieg, da alle Instrumente relativ einfach zu spielen sind:
 
 * **Surdos:** einfach (alle Surdos spielen das gleiche und es gibt eine Menge
   Merksprüche)
 * **Repi:** mittel (die Repi ist nicht einfach, aber der Tune ist trotzdem gut
   für den Einstieg, weil sie die verschiedenen Arten von Repischlägen spielt)
-* **Snare:** einfach
+* **Snare:** leicht
 * **Tamborim:** einfach
 * **Agogô:** einfach (sie kann fast alle Schläge bei der Surdo abschauen)
 

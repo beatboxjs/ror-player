@@ -44,7 +44,7 @@ name+sign for the tune.
   played to fast.)
 * **Repi:** średni
 * **Werbel:** łatwy
-* **:Tamborim:** łatwy
+* **Tamborim:** łatwy
 * **Agogô:** łatwy
 
 ## Brejki

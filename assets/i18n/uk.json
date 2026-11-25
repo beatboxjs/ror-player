@@ -198,7 +198,11 @@
         "download": "Завантажити {{appName}}",
         "report-problem": "Повідомте про проблему",
         "user-manual": "Посібник користувача",
-        "language": "Мова"
+        "language": "Мова",
+        "colour-mode": "Колірний режим",
+        "colour-mode-auto": "авто",
+        "colour-mode-light": "світло",
+        "colour-mode-dark": "темний"
     },
     "playback-settings-picker": {
         "loop": "Петля",

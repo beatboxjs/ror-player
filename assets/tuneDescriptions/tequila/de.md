@@ -37,8 +37,8 @@ Salzstreuer dar.
 * **Tiefe Surdo:** schwierig
 * **Mittlere Surdo:** mittel
 * **Hohe Surdo:** einfach
-* **Repi:** schwierig
-* **Snare:** einfach
+* **Repi:** schwer
+* **Snare:** leicht
 * **Tamborim:** einfach
 * **Agogô:** mittel
 

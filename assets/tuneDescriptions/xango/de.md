@@ -80,7 +80,7 @@ gibt laufende Diskussionen darüber, ob er entfernt werden sollte.
 
 ## Schwierigkeit
 
-* **Surdos:** einfach
+* **Surdos:** leicht
 * **Repi:** mittel
 * **Snare:** schwierig
 * **Tamborim:** einfach

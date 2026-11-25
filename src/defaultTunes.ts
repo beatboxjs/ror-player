@@ -1660,6 +1660,7 @@ const rawTunes: {[tuneName: string]: RawTune} = {
 	},
 	"Keep Moving": {
 		categories: ["new", "uncommon", "tricky"],
+		sheet: sheetUrl + "keep-moving.pdf",
 		descriptionFilename: "keep-moving",
 		patterns: {
 			Tune: {

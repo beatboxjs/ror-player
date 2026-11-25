@@ -30,8 +30,8 @@ die Propaganda für Kernkraft zu verstärken.
 
 ## Schwierigkeit
 
-* **Surdos:** einfach
+* **Surdos:** leicht
 * **Repi:** mittel
-* **Snare:** einfach
+* **Snare:** leicht
 * **Tamborim:** mittel
 * **Agogô:** mittel
