@@ -281,7 +281,8 @@ const config: Config = {
 		6: () => "3⁄4",
 		8: () => "8⁄8",
 		12: () => getI18n().t("config.time-with-triplets", { time: "4⁄4" }),
-		20: () => getI18n().t("config.time-with-quintuplets", { time: "4⁄4" })
+		20: () => getI18n().t("config.time-with-quintuplets", { time: "4⁄4" }),
+		24: () => getI18n().t("config.time-with-sextuplets", { time: "4⁄4" }),
 	},
 
 	// Time measurement that is used for beatbox.js. Should be able to represent all the time measurements above

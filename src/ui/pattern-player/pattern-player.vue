@@ -109,6 +109,60 @@
 		return strokeEl ? (strokeEl.offsetLeft + strokeEl.offsetWidth * (stroke - strokeIdx)) : 0;
 	};
 
+	// If there is no upbeat, beatI goes from 0 to length - 1.
+	// If there is an upbeat, beatI goes from floor(-upbeat/time) to length - 1.
+	const isTernaryBeat = (instrumentKey: Instrument, beatI: number) => {
+		const patternForInstrument = pattern.value[instrumentKey];
+		const hasNote = (j: number) => {
+			// pattern is an array so its indexes start at 0, not -upbeat.
+			const realJ = j + pattern.value.upbeat;
+			return patternForInstrument[realJ] !== undefined && patternForInstrument[realJ] !== null && patternForInstrument[realJ] !== " ";
+		}
+
+		const firstStrokeInBeat = beatI * pattern.value.time;
+		const lastStrokeInBeat = firstStrokeInBeat + pattern.value.time - 1;
+		for (let strokeNum = firstStrokeInBeat; strokeNum <= lastStrokeInBeat; strokeNum++) {
+			if (strokeNum%3 !==0 && hasNote(strokeNum)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	const beatIFromStrokeI = (strokeI: number) => {
+		return Math.floor(strokeI/pattern.value.time);
+	}
+
+	// For each instrument, for each stroke, return the CSS class to apply to the stroke : "" or "is-triplet".
+	const ternaryCSSClasses = computed(() => {
+		const ret = {} as Record<Instrument, Record<number, string>>;
+		for (let instrumentKey of config.instrumentKeys) {
+			ret[instrumentKey] = {};
+		}
+
+		// We only support 12 and 24 time signatures for now.
+		if(![12, "12", 24, "24"].includes(pattern.value.time)) return ret;
+
+		const ternaryClassesForInstrument = (instrumentKey: Instrument) => {
+			const areBeatsTernary: Record<number, boolean> = {};
+			for (let beatI = beatIFromStrokeI(-pattern.value.upbeat); beatI < pattern.value.length; beatI++) {
+				areBeatsTernary[beatI] = isTernaryBeat(instrumentKey, beatI);
+			}
+
+			const ternaryCSSClassesForInstrument: Record<number, string> = {};
+			for (let strokeI = -pattern.value.upbeat; strokeI < pattern.value.length*pattern.value.time + pattern.value.upbeat; strokeI++) {
+				ternaryCSSClassesForInstrument[strokeI] = areBeatsTernary[beatIFromStrokeI(strokeI)] ? 'is-triplet' : '';
+			}
+
+			return ternaryCSSClassesForInstrument;
+		}
+
+		for (let instrumentKey of config.instrumentKeys) {
+			ret[instrumentKey] = ternaryClassesForInstrument(instrumentKey);
+		}
+		return ret;
+	});
+
 	const getBeatClass = (i: number) => {
 		let positiveI = i;
 		while(positiveI < 0) // Support negative numbers properly
@@ -123,6 +177,8 @@
 	};
 
 	const getStrokeClass = (realI: number, instrumentKey: Instrument) => {
+		// realI starts at 0, even if there is an upbeat.
+		// i goes from -upbeat to length*time - 1.
 		let i = realI - pattern.value.upbeat;
 
 		const ret = [
@@ -250,7 +306,7 @@
 							<HeadphonesButton :instrument="instrumentKey" v-model:playbackSettings="playbackSettings" groupSurdos />
 							<MuteButton :instrument="instrumentKey" v-model:playbackSettings="playbackSettings" />
 						</td>
-						<td v-for="i in pattern.length*pattern.time + pattern.upbeat" :key="i" class="stroke" :class="getStrokeClass(i-1, instrumentKey)" v-tooltip="config.strokesDescription[pattern[instrumentKey][i-1]]?.() || ''">
+						<td v-for="i in pattern.length*pattern.time + pattern.upbeat" :key="i" class="stroke" :class="getStrokeClass(i-1, instrumentKey).concat(ternaryCSSClasses[instrumentKey][i-1-pattern.upbeat])" v-tooltip="config.strokesDescription[pattern[instrumentKey][i-1]]?.() || ''">
 							<span v-if="readonly" class="stroke-inner">{{config.strokes[pattern[instrumentKey][i-1]] || '\xa0'}}</span>
 							<a v-if="!readonly"
 								href="javascript:" class="stroke-inner"
@@ -301,6 +357,10 @@
 
 				&.has-changes {
 					background-color: var(--bb-modified);
+				}
+
+				&.is-triplet, &.is-triplet a {
+					color: var(--bs-pink);
 				}
 			}
 
@@ -368,10 +428,22 @@
 				.stroke-inner {
 					min-width: 1ex;
 				}
-
-				.stroke-0, .stroke-1, .stroke-3, .stroke-4, .stroke-6, .stroke-7, .stroke-9, .stroke-10 {
+				.stroke--2, .stroke--3, .stroke--5,  .stroke--6,
+				.stroke--8, .stroke--9, .stroke--11,
+				.stroke-0,  .stroke-1,  .stroke-3,   .stroke-4,
+                .stroke-6,  .stroke-7,  .stroke-9,   .stroke-10 {
 					border-right: none;
 				}
+				.stroke.is-triplet {
+					&.stroke--4, &.stroke--7, &.stroke--10,
+                    &.stroke-2,  &.stroke-5,  &.stroke-8 {
+						border-right: none;
+					}
+					&.stroke--5, &.stroke--9,
+					&.stroke-3,  &.stroke-7 {
+						border-right: 1px solid #ddd;
+					}
+                } 
 			}
 
 			&.time-20 {
@@ -385,6 +457,29 @@
 				.stroke-15,.stroke-16,.stroke-17,.stroke-18 {
 					border-right: none;
 				}
+			}
+
+			&.time-24 {
+				.stroke--2,  .stroke--3,  .stroke--4,  .stroke--5,  .stroke--6,
+				.stroke--8,  .stroke--9,  .stroke--10, .stroke--11, .stroke--12,
+				.stroke--14, .stroke--15, .stroke--16, .stroke--17, .stroke--18,
+				.stroke--20, .stroke--21, .stroke--22, .stroke--23,
+				.stroke-0,   .stroke-1,   .stroke-2,   .stroke-3,   .stroke-4,
+				.stroke-6,   .stroke-7,   .stroke-8,   .stroke-9,   .stroke-10,
+				.stroke-12,  .stroke-13,  .stroke-14,  .stroke-15,  .stroke-16,
+				.stroke-18,  .stroke-19,  .stroke-20,  .stroke-21,  .stroke-22 {
+					border-right: none;
+				}
+                .stroke.is-triplet {
+                    &.stroke--7, &.stroke--13, &.stroke--19,
+                    &.stroke-5,  &.stroke-11,  &.stroke-17 {
+                        border-right: none;
+                    }
+					&.stroke--9, &.stroke--17,
+					&.stroke-7,  &.stroke-15 {
+						border-right: 1px solid #ddd;
+					}
+                }
 			}
 		}
 	}
