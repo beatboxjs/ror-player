@@ -35,7 +35,7 @@ Fußballspieler_innen machen.
 * **Tiefe Surdo:** einfach
 * **Mittlere Surdo:** mittel
 * **Hohe Surdo:** einfach
-* **Repi:** schwierig
+* **Repi:** schwer
 * **Snare:** mittel
 * **Tamborim:** mittel
 * **Agogô:** schwierig (aber ein Ohrwurm)

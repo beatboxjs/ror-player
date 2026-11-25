@@ -52,9 +52,9 @@ Namaste.
 
 ## Schwierigkeit
 
-* **Surdos:** einfach
+* **Surdos:** leicht
 * **Repi:** einfach
-* **Snare:** einfach
+* **Snare:** leicht
 * **Tamborim:** mittel
 * **Agogô:** einfach
 

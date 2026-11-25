@@ -15,7 +15,7 @@
 * **Tiefe Surdo:** mittel
 * **Mittlere Surdo:** schwierig
 * **Hohe Surdo:** mittel
-* **Repi:** schwierig
+* **Repi:** schwer
 * **Snare:** mittel
 * **Tamborim:** mittel
 * **Agogô:** einfach

@@ -18,8 +18,8 @@ wurde es dort schon vorher gespielt?
 
 ## Schwierigkeit
 
-* **Surdos:** einfach
-* **Repi:** schwierig
+* **Surdos:** leicht
+* **Repi:** schwer
 * **Snare:** schwierig
 * **Tamborim:** schwierig
 * **Agogô:** mittel

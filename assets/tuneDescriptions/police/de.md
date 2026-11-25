@@ -11,8 +11,8 @@ zusammengestellt. Das Lied kritisiert Polizeigewalt und systemischen Rassismus.
 
 * **Tiefe Surdo:** einfach
 * **Mittlere/hohe Surdo**: mittel
-* **Repi:** schwierig
-* **Snare:** einfach
+* **Repi:** schwer
+* **Snare:** leicht
 * **Tamborim:** mittel
 * **Agogô:** einfach
 

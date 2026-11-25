@@ -18,6 +18,6 @@ Auswirkungen von Umweltverschmutzung.
 * **Mittlere Surdo:** einfach
 * **Hohe Surdo:** mittel
 * **Repi:** schwierig
-* **Snare:** einfach
+* **Snare:** leicht
 * **Tamborim:** schwierig
 * **Agogô:** mittel

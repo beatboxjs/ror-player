@@ -14,7 +14,7 @@ ist, und seiner Band Armenian Navy Band
 
 * **Tiefe Surdo:** einfach
 * **Mittlere/hohe Surdo**: mittel
-* **Repi:** schwierig
+* **Repi:** schwer
 * **Snare:** schwierig
 * **Tamborim:** einfach
 * **Agogô:** schwierig

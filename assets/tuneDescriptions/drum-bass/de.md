@@ -40,7 +40,7 @@ wobei nicht klar ist, ob es sich um den selben Tune handelt.
 * **Tiefe Surdo:** schwierig
 * **Mittlere Surdo:** einfach
 * **Hohe Surdo:** einfach
-* **Repi:** schwierig
+* **Repi:** schwer
 * **Snare:** mittel
 * **Tamborim:** einfach
 * **Agogô:** mittel
